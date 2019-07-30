@@ -1,0 +1,87 @@
+[2019-07-30 08:57:59] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgdynamgraph.dao.core.CgDynamGraphDao }
+[2019-07-30 08:57:59] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormFieldDao }
+[2019-07-30 08:57:59] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormVersionDao }
+[2019-07-30 08:57:59] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.upload.CgFormUploadDao }
+[2019-07-30 08:57:59] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgreport.dao.core.CgReportDao }
+[2019-07-30 08:57:59] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.system.dao.DepartAuthGroupDao }
+[2019-07-30 08:57:59] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.system.dao.JeecgDictDao }
+[2019-07-30 08:57:59] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.demo.dao.JeecgMinidaoDao }
+[2019-07-30 08:57:59] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.mutiLang.dao.P3MutiLangDao }
+[2019-07-30 08:57:59] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.tag.select.dict.dao.TSTypeDao }
+[2019-07-30 08:57:59] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.tag.select.table.dao.CustomTableDao }
+[2019-07-30 08:57:59] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.dao.TSOperationDao }
+[2019-07-30 08:57:59] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.actInvite.dao.WxActInviteDao }
+[2019-07-30 08:57:59] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.auth.dao.JwSystemAuthDao }
+[2019-07-30 08:57:59] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderCustomDao }
+[2019-07-30 08:57:59] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderMainDao }
+[2019-07-30 08:57:59] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderProductDao }
+[2019-07-30 08:57:59] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.chat.dao.ChatMessageHistoryDao }
+[2019-07-30 08:57:59] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.chat.dao.ImDao }
+[2019-07-30 08:57:59] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailAttachDao }
+[2019-07-30 08:57:59] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailDao }
+[2019-07-30 08:57:59] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailReceiverDao }
+[2019-07-30 08:57:59] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailTSBaseUserDao }
+[2019-07-30 08:57:59] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailTSUserDao }
+[2019-07-30 08:58:00] [INFO] [com.alibaba.druid.pool.DruidDataSource:928] {dataSource-1} inited
+[2019-07-30 08:58:02] [WARN] [org.hibernate.id.UUIDHexGenerator:59] HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+[2019-07-30 08:58:03] [WARN] [net.sf.ehcache.config.CacheConfiguration:698] Cache 'foreverCache' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'foreverCache' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+[2019-07-30 08:58:04] [INFO] [org.quartz.impl.StdSchedulerFactory:1208] Using default implementation for ThreadExecutor
+[2019-07-30 08:58:04] [INFO] [org.quartz.core.SchedulerSignalerImpl:61] Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2019-07-30 08:58:04] [INFO] [org.quartz.core.QuartzScheduler:229] Quartz Scheduler v.2.3.0 created.
+[2019-07-30 08:58:04] [INFO] [org.quartz.simpl.RAMJobStore:155] RAMJobStore initialized.
+[2019-07-30 08:58:04] [INFO] [org.quartz.core.QuartzScheduler:294] Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactory' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2019-07-30 08:58:04] [INFO] [org.quartz.impl.StdSchedulerFactory:1362] Quartz scheduler 'schedulerFactory' initialized from an externally provided properties instance.
+[2019-07-30 08:58:04] [INFO] [org.quartz.impl.StdSchedulerFactory:1366] Quartz scheduler version: 2.3.0
+[2019-07-30 08:58:04] [INFO] [org.quartz.core.QuartzScheduler:2287] JobFactory set to: org.jeecgframework.web.system.sms.util.JQuartzJobFactory@4d75a602
+[2019-07-30 08:58:05] [INFO] [org.jeecgframework.core.timer.DynamicTask:252]  register time task class num is [0] 
+[2019-07-30 08:58:07] [INFO] [org.jeecgframework.core.timer.DataBaseSchedulerFactoryBean:648] Starting Quartz Scheduler now
+[2019-07-30 08:58:07] [INFO] [org.quartz.core.QuartzScheduler:547] Scheduler schedulerFactory_$_NON_CLUSTERED started.
+[2019-07-30 08:58:07] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:180]   ------ 初始化字典组 【系统缓存】-----------typeGroupsList-----size: [40]
+[2019-07-30 08:58:07] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:181]   ------ 初始化字典 【系统缓存】-----------typesList-----size: [40]
+[2019-07-30 08:58:07] [INFO] [org.jeecgframework.web.system.service.impl.MutiLangServiceImpl:43]   ------ 初始化国际化语言【系统缓存】  ------ size: [1219] 
+[2019-07-30 08:58:07] [INFO] [org.jeecgframework.web.system.service.impl.DynamicDataSourceServiceImpl:41]   ------ 初始化动态数据源配置【系统缓存】---------size: [2] 
+[2019-07-30 08:59:31] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:223]  >>>>>>>>>>>>>>>>>>>>>>>>>>  Login 用户登录成功，初始化Main首页用户信息  （Main 首页加载逻辑）  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+[2019-07-30 08:59:31] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:264] login 资源路径returnURL：null
+[2019-07-30 08:59:32] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\20170502\4afbfbedab64034f9015f1bca8c379310b551dab.jpg (系统找不到指定的路径。)
+[2019-07-30 08:59:32] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\upload\files\20180715\qq_1531625977907.jpg (系统找不到指定的路径。)
+[2019-07-30 09:05:59] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:224]   ------ 重置字典分组缓存&字典缓存【系统缓存】  ------ refleshTypeGroupCach --------  
+[2019-07-30 09:06:20] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:213]   ------ 重置字典缓存【系统缓存】  ----------- typegroupcode: [check_res] 
+[2019-07-30 09:06:33] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:213]   ------ 重置字典缓存【系统缓存】  ----------- typegroupcode: [check_res] 
+[2019-07-30 09:06:47] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:213]   ------ 重置字典缓存【系统缓存】  ----------- typegroupcode: [check_res] 
+[2019-07-30 09:08:45] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:224]   ------ 重置字典分组缓存&字典缓存【系统缓存】  ------ refleshTypeGroupCach --------  
+[2019-07-30 09:09:24] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:213]   ------ 重置字典缓存【系统缓存】  ----------- typegroupcode: [gathering] 
+[2019-07-30 09:09:33] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:213]   ------ 重置字典缓存【系统缓存】  ----------- typegroupcode: [gathering] 
+[2019-07-30 09:09:45] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:213]   ------ 重置字典缓存【系统缓存】  ----------- typegroupcode: [gathering] 
+[2019-07-30 09:10:45] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:224]   ------ 重置字典分组缓存&字典缓存【系统缓存】  ------ refleshTypeGroupCach --------  
+[2019-07-30 09:11:29] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:213]   ------ 重置字典缓存【系统缓存】  ----------- typegroupcode: [state] 
+[2019-07-30 09:11:38] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:213]   ------ 重置字典缓存【系统缓存】  ----------- typegroupcode: [state] 
+[2019-07-30 09:11:57] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:224]   ------ 重置字典分组缓存&字典缓存【系统缓存】  ------ refleshTypeGroupCach --------  
+[2019-07-30 09:12:15] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:213]   ------ 重置字典缓存【系统缓存】  ----------- typegroupcode: [proj_prog] 
+[2019-07-30 09:12:21] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:213]   ------ 重置字典缓存【系统缓存】  ----------- typegroupcode: [proj_prog] 
+[2019-07-30 09:12:29] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:213]   ------ 重置字典缓存【系统缓存】  ----------- typegroupcode: [proj_prog] 
+[2019-07-30 09:12:54] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:224]   ------ 重置字典分组缓存&字典缓存【系统缓存】  ------ refleshTypeGroupCach --------  
+[2019-07-30 09:13:05] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:213]   ------ 重置字典缓存【系统缓存】  ----------- typegroupcode: [proj_per] 
+[2019-07-30 09:13:10] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:213]   ------ 重置字典缓存【系统缓存】  ----------- typegroupcode: [proj_per] 
+[2019-07-30 09:13:15] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:213]   ------ 重置字典缓存【系统缓存】  ----------- typegroupcode: [proj_per] 
+[2019-07-30 09:13:20] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:213]   ------ 重置字典缓存【系统缓存】  ----------- typegroupcode: [proj_per] 
+[2019-07-30 09:13:25] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:213]   ------ 重置字典缓存【系统缓存】  ----------- typegroupcode: [proj_per] 
+[2019-07-30 09:13:29] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:213]   ------ 重置字典缓存【系统缓存】  ----------- typegroupcode: [proj_per] 
+[2019-07-30 09:13:36] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:213]   ------ 重置字典缓存【系统缓存】  ----------- typegroupcode: [proj_per] 
+[2019-07-30 09:13:42] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:213]   ------ 重置字典缓存【系统缓存】  ----------- typegroupcode: [proj_per] 
+[2019-07-30 09:13:49] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:213]   ------ 重置字典缓存【系统缓存】  ----------- typegroupcode: [proj_per] 
+[2019-07-30 09:13:54] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:213]   ------ 重置字典缓存【系统缓存】  ----------- typegroupcode: [proj_per] 
+[2019-07-30 09:14:00] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:213]   ------ 重置字典缓存【系统缓存】  ----------- typegroupcode: [proj_per] 
+[2019-07-30 09:14:08] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:213]   ------ 重置字典缓存【系统缓存】  ----------- typegroupcode: [proj_per] 
+[2019-07-30 09:14:51] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:213]   ------ 重置字典缓存【系统缓存】  ----------- typegroupcode: [proj_per] 
+[2019-07-30 09:15:19] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:213]   ------ 重置字典缓存【系统缓存】  ----------- typegroupcode: [proj_per] 
+[2019-07-30 09:18:00] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:223]  >>>>>>>>>>>>>>>>>>>>>>>>>>  Login 用户登录成功，初始化Main首页用户信息  （Main 首页加载逻辑）  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+[2019-07-30 09:18:00] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:264] login 资源路径returnURL：null
+[2019-07-30 09:18:01] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\20170502\4afbfbedab64034f9015f1bca8c379310b551dab.jpg (系统找不到指定的路径。)
+[2019-07-30 09:18:01] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\upload\files\20180715\qq_1531625977907.jpg (系统找不到指定的路径。)

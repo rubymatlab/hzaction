@@ -4,8 +4,8 @@
 <div class="easyui-layout" fit="true">
   <div region="center" style="padding:0px;border:0px">
 	<t:tabs id="tt" iframe="false" tabPosition="top" fit="false">
-	 <t:tab iframe="vmBusProjectManagerController.do?index&bpmStatus=1" icon="icon-search" title="未审核" id="checking"></t:tab>
-	 <t:tab iframe="vmBusProjectManagerController.do?index&bpmStatus=2" icon="icon-search" title="已审核" id="checked"></t:tab>
+	 <t:tab iframe="vmBusProjectManagerController.do?index&bpmStatus=0" icon="icon-search" title="未审核" id="checking"></t:tab>
+	 <t:tab iframe="vmBusProjectManagerController.do?index&bpmStatus=1" icon="icon-search" title="已审核" id="checked"></t:tab>
 	</t:tabs>
 	</div>
  </div>

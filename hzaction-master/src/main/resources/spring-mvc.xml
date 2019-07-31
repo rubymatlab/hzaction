@@ -172,6 +172,8 @@
 						<!-- 菜单样式图标预览 -->
 						<value>webpage/common/functionIconStyleList.jsp</value>
 						<value>chat/imController/showOrDownByurl.do</value>
+						<!-- 自定义接口 -->
+						<value>vmBusPoContractController/getSupplier.do</value>
 						<!-- 接收远程定时任务开关指令 -->
 						<value>timeTaskController.do?remoteTask</value>
 						<!-- swagger支持  -->

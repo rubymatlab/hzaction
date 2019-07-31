@@ -209,7 +209,7 @@ public class VmBusProjectManagerServiceImpl extends CommonServiceImpl implements
 	private void doAddBus(VmBusProjectManagerEntity t) throws Exception{
 		//-----------------sql增强 start----------------------------
 	 	//sql增强第1条
-	 	String sqlEnhance_1 ="update bus_project_manager set bpm_status='2' where id='#{id}'";
+	 	String sqlEnhance_1 ="update bus_project_manager set bpm_status='1' where id='#{id}'";
 	 	this.executeSqlEnhance(sqlEnhance_1,t);
 	 	//-----------------sql增强 end------------------------------
 	 	

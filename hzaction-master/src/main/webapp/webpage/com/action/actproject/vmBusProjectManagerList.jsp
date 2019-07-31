@@ -38,10 +38,10 @@
    <t:dgToolBar title="导入" icon="icon-put" funname="ImportXls"></t:dgToolBar>
    <t:dgToolBar title="导出" icon="icon-putout" funname="ExportXls"></t:dgToolBar>
    <t:dgToolBar title="模板下载" icon="icon-putout" funname="ExportXlsByT"></t:dgToolBar> --%>
-   <c:if test="${bpmStatus == 1}">
+   <c:if test="${bpmStatus == 0}">
    	<t:dgToolBar title="项目确认审核" icon="icon-edit"  url="vmBusProjectManagerController.do?doUpdateStatus" funname="doUpdateStatus" ></t:dgToolBar>
    </c:if>
-   <c:if test="${bpmStatus == 2}">
+   <c:if test="${bpmStatus == 1}">
    	<t:dgToolBar title="刷新" icon="icon-reload"  url="vmBusProjectManagerController.do?doReload" funname="doReload" ></t:dgToolBar>
    </c:if>
   </t:datagrid>

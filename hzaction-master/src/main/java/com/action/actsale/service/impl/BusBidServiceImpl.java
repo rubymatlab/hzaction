@@ -1,7 +1,9 @@
 package com.action.actsale.service.impl;
-import com.action.actsale.service.BusProjectServiceI;
+import com.action.actsale.service.BusBidServiceI;
 import org.jeecgframework.core.common.service.impl.CommonServiceImpl;
-import com.action.actsale.entity.BusProjectEntity;
+import com.action.actsale.entity.BusBidEntity;
+import com.action.actsale.entity.VwBusBidEntity;
+
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.HashMap;
@@ -18,24 +20,24 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.jeecgframework.core.util.ResourceUtil;
 
-@Service("busProjectService")
+@Service("busBidService")
 @Transactional
-public class BusProjectServiceImpl extends CommonServiceImpl implements BusProjectServiceI {
+public class BusBidServiceImpl extends CommonServiceImpl implements BusBidServiceI {
 
 	@Autowired
 	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 	
- 	public void delete(BusProjectEntity entity) throws Exception{
+ 	public void delete(BusBidEntity entity) throws Exception{
  		super.delete(entity);
  	}
  	
- 	public Serializable save(BusProjectEntity entity) throws Exception{
+ 	public Serializable save(BusBidEntity entity) throws Exception{
  		Serializable t = super.save(entity);
  		return t;
  	}
  	
- 	public void saveOrUpdate(BusProjectEntity entity) throws Exception{
+ 	public void saveOrUpdate(BusBidEntity entity) throws Exception{
  		super.saveOrUpdate(entity);
  	}
- 	
+ 
 }

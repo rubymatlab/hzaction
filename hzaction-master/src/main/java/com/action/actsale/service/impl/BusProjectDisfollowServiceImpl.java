@@ -1,7 +1,7 @@
 package com.action.actsale.service.impl;
-import com.action.actsale.service.BusProjectServiceI;
+import com.action.actsale.service.BusProjectDisfollowServiceI;
 import org.jeecgframework.core.common.service.impl.CommonServiceImpl;
-import com.action.actsale.entity.BusProjectEntity;
+import com.action.actsale.entity.BusProjectDisfollowEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import java.util.HashMap;
@@ -18,23 +18,23 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.jeecgframework.core.util.ResourceUtil;
 
-@Service("busProjectService")
+@Service("busProjectDisfollowService")
 @Transactional
-public class BusProjectServiceImpl extends CommonServiceImpl implements BusProjectServiceI {
+public class BusProjectDisfollowServiceImpl extends CommonServiceImpl implements BusProjectDisfollowServiceI {
 
 	@Autowired
 	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 	
- 	public void delete(BusProjectEntity entity) throws Exception{
+ 	public void delete(BusProjectDisfollowEntity entity) throws Exception{
  		super.delete(entity);
  	}
  	
- 	public Serializable save(BusProjectEntity entity) throws Exception{
+ 	public Serializable save(BusProjectDisfollowEntity entity) throws Exception{
  		Serializable t = super.save(entity);
  		return t;
  	}
  	
- 	public void saveOrUpdate(BusProjectEntity entity) throws Exception{
+ 	public void saveOrUpdate(BusProjectDisfollowEntity entity) throws Exception{
  		super.saveOrUpdate(entity);
  	}
  	

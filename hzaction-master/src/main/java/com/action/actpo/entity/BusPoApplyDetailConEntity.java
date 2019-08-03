@@ -19,52 +19,55 @@ import org.jeecgframework.poi.excel.annotation.Excel;
 
 /**   
  * @Title: Entity
- * @Description: 采购合同付款明细
+ * @Description: 采购申请明细
  * @author onlineGenerator
  * @date 2019-08-01 18:12:42
  * @version V1.0   
  *
  */
 @Entity
-@Table(name = "bus_po_contract_pay", schema = "")
+@Table(name = "bus_po_apply_detail_con", schema = "")
 @SuppressWarnings("serial")
-public class BusPoContractPayEntity implements java.io.Serializable {
-	/**主键*/
+public class BusPoApplyDetailConEntity implements java.io.Serializable {
+	/**id*/
 	private java.lang.String id;
 	/**创建人名称*/
+	@Excel(name="创建人名称",width=15)
 	private java.lang.String createName;
 	/**创建人登录名称*/
+	@Excel(name="创建人登录名称",width=15)
 	private java.lang.String createBy;
 	/**创建日期*/
+	@Excel(name="创建日期",width=15,format = "yyyy-MM-dd")
 	private java.util.Date createDate;
 	/**更新人名称*/
+	@Excel(name="更新人名称",width=15)
 	private java.lang.String updateName;
 	/**更新人登录名称*/
+	@Excel(name="更新人登录名称",width=15)
 	private java.lang.String updateBy;
 	/**更新日期*/
+	@Excel(name="更新日期",width=15,format = "yyyy-MM-dd")
 	private java.util.Date updateDate;
 	/**所属部门*/
+	@Excel(name="所属部门",width=15)
 	private java.lang.String sysOrgCode;
 	/**所属公司*/
+	@Excel(name="所属公司",width=15)
 	private java.lang.String sysCompanyCode;
 	/**流程状态*/
+	@Excel(name="流程状态",width=15)
 	private java.lang.String bpmStatus;
-	/**费用分期*/
-	@Excel(name="费用分期",width=15,dicCode="cost_stag")
-	private java.lang.String bpcpProgre;
-	/**计划付款金额*/
-	@Excel(name="计划付款金额",width=15)
-	private java.lang.String bpcpPayAmount;
-	/**计划付款日期*/
-	@Excel(name="计划付款日期",width=15,format = "yyyy-MM-dd")
-	private java.util.Date bpcpDate;
 	/**采购合同外键*/
 	@Excel(name="采购合同外键",width=15)
 	private java.lang.String fromId;
+	/**采购申请明细外键*/
+	@Excel(name="采购申请明细外键",width=15)
+	private java.lang.String fromPoApplyDetId;
 	
 	/**
 	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  主键
+	 *@return: java.lang.String  id
 	 */
 	@Id
 	@GeneratedValue(generator = "paymentableGenerator")
@@ -77,7 +80,7 @@ public class BusPoContractPayEntity implements java.io.Serializable {
 
 	/**
 	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  主键
+	 *@param: java.lang.String  id
 	 */
 	public void setId(java.lang.String id){
 		this.id = id;
@@ -247,60 +250,6 @@ public class BusPoContractPayEntity implements java.io.Serializable {
 	
 	/**
 	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  费用分期
-	 */
-	
-	@Column(name ="BPCP_PROGRE",nullable=true,length=32)
-	public java.lang.String getBpcpProgre(){
-		return this.bpcpProgre;
-	}
-
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  费用分期
-	 */
-	public void setBpcpProgre(java.lang.String bpcpProgre){
-		this.bpcpProgre = bpcpProgre;
-	}
-	
-	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  计划付款金额
-	 */
-	
-	@Column(name ="BPCP_PAY_AMOUNT",nullable=true,length=32)
-	public java.lang.String getBpcpPayAmount(){
-		return this.bpcpPayAmount;
-	}
-
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  计划付款金额
-	 */
-	public void setBpcpPayAmount(java.lang.String bpcpPayAmount){
-		this.bpcpPayAmount = bpcpPayAmount;
-	}
-	
-	/**
-	 *方法: 取得java.util.Date
-	 *@return: java.util.Date  计划付款日期
-	 */
-	
-	@Column(name ="BPCP_DATE",nullable=true)
-	public java.util.Date getBpcpDate(){
-		return this.bpcpDate;
-	}
-
-	/**
-	 *方法: 设置java.util.Date
-	 *@param: java.util.Date  计划付款日期
-	 */
-	public void setBpcpDate(java.util.Date bpcpDate){
-		this.bpcpDate = bpcpDate;
-	}
-	
-	/**
-	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  采购合同外键
 	 */
 	
@@ -315,6 +264,24 @@ public class BusPoContractPayEntity implements java.io.Serializable {
 	 */
 	public void setFromId(java.lang.String fromId){
 		this.fromId = fromId;
+	}
+	
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  采购申请明细外键
+	 */
+	
+	@Column(name ="FROM_PO_APPLY_DET_ID",nullable=true,length=32)
+	public java.lang.String getFromPoApplyDetId(){
+		return this.fromPoApplyDetId;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  采购申请明细外键
+	 */
+	public void setFromPoApplyDetId(java.lang.String fromPoApplyDetId){
+		this.fromPoApplyDetId = fromPoApplyDetId;
 	}
 	
 }

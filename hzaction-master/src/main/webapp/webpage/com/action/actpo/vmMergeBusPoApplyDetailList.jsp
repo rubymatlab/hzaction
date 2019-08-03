@@ -1,33 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
-<script type="text/javascript">
-	$('#addVmMergeBusPoApplyDetailBtn').linkbutton({   
-	    iconCls: 'icon-add'  
-	});  
-	$('#delVmMergeBusPoApplyDetailBtn').linkbutton({   
-	    iconCls: 'icon-remove'  
-	}); 
-	$('#addVmMergeBusPoApplyDetailBtn').bind('click', function(){   
- 		 var tr =  $("#add_vmMergeBusPoApplyDetail_table_template tr").clone();
-	 	 $("#add_vmMergeBusPoApplyDetail_table").append(tr);
-	 	 resetTrNum('add_vmMergeBusPoApplyDetail_table');
-	 	 return false;
-    });  
-	$('#delVmMergeBusPoApplyDetailBtn').bind('click', function(){   
-		$("#add_vmMergeBusPoApplyDetail_table").find("input[name$='ck']:checked").parent().parent().remove();  
-        resetTrNum('add_vmMergeBusPoApplyDetail_table'); 
-        return false;
-    }); 
-    $(document).ready(function(){
-    	$(".datagrid-toolbar").parent().css("width","auto");
-    	if(location.href.indexOf("load=detail")!=-1){
-			$(":input").attr("disabled","true");
-			$(".datagrid-toolbar").hide();
-		}
-    });
-</script>
+
 <div style="padding: 3px; height: 25px;width:auto;" class="datagrid-toolbar">
-	<a id="addVmMergeBusPoApplyDetailBtn" href="#">添加</a> <a id="delVmMergeBusPoApplyDetailBtn" href="#">删除</a> 
+	<a id="addVmMergeBusPoApplyDetailBtn" href="#">选择新增</a> <a id="delVmMergeBusPoApplyDetailBtn" href="#">删除</a> 
 </div>
 <table border="0" cellpadding="2" cellspacing="0" id="vmMergeBusPoApplyDetail_table">
 	<tr bgcolor="#E6E6E6">
@@ -53,7 +28,7 @@
 				  </td>
 	</tr>
 	<tbody id="add_vmMergeBusPoApplyDetail_table">
-	<c:if test="${fn:length(vmMergeBusPoApplyDetailList)  <= 0 }">
+	<c:if test="${fn:length(vmMergeBusPoApplyDetailList)  <= 0 && false }">
 			<tr>
 				<td align="center"><div style="width: 25px;" name="xh">1</div></td>
 				<td align="center"><input style="width:20px;"  type="checkbox" name="ck"/></td>
@@ -137,3 +112,83 @@
 	</c:if>	
 	</tbody>
 </table>
+
+<script type="text/javascript">
+	$('#addVmMergeBusPoApplyDetailBtn').linkbutton({   
+	    iconCls: 'icon-add'  
+	});  
+	$('#delVmMergeBusPoApplyDetailBtn').linkbutton({   
+	    iconCls: 'icon-remove'  
+	}); 
+	$('#addVmMergeBusPoApplyDetailBtn').bind('click', function(){   
+		popupClickMerge(this,'bpad_name,bpad_brand,bpad_model,bpad_number,bpad_remark','bpadName,bpadBrand,bpadModel,bpadNumber,bpadRemark','rf_bus_po_apply_detail')
+	 	 return false;
+		
+		
+/*  		 var tr =  $("#add_vmMergeBusPoApplyDetail_table_template tr").clone();
+	 	 $("#add_vmMergeBusPoApplyDetail_table").append(tr);
+	 	 resetTrNum('add_vmMergeBusPoApplyDetail_table'); */
+    });  
+	$('#delVmMergeBusPoApplyDetailBtn').bind('click', function(){   
+		$("#add_vmMergeBusPoApplyDetail_table").find("input[name$='ck']:checked").parent().parent().remove();  
+        resetTrNum('add_vmMergeBusPoApplyDetail_table'); 
+        return false;
+    }); 
+    $(document).ready(function(){
+    	$(".datagrid-toolbar").parent().css("width","auto");
+    	if(location.href.indexOf("load=detail")!=-1){
+			$(":input").attr("disabled","true");
+			$(".datagrid-toolbar").hide();
+		}
+    });
+// 重新popupClick 方法
+function popupClickMerge(pobj, tablefield, inputnames, pcode) {
+    if (inputnames == "" || pcode == "") {
+        alert($.i18n.prop('popup.param.error.msg'));
+        return;
+    }
+        $.dialog({
+            content: "url:cgReportController.do?popup&id=" + pcode,
+            zIndex: getzIndex(),
+            lock: true,
+            title: $.i18n.prop('common.select'),
+            width: 800,
+            height: 400,
+            parent: windowapi,
+            cache: false,
+            ok: function () {
+                iframe = this.iframe.contentWindow;
+                var selected = iframe.getSelectRows();
+                if (selected == '' || selected == null) {
+                    alert($.i18n.prop('common.select.please'));
+                    return false;
+                } else {
+                    //对应数据库字段不为空的情况下,根据表单中字典TEXT的值来取popup的值 
+                    if (tablefield != "" && tablefield != null) {
+                        var fields = inputnames.split(",");
+                        var tableF = tablefield.split(",");
+                     	for(var i = 0; i < selected.length; i++){
+                     		 var tr =  $("#add_vmMergeBusPoApplyDetail_table_template tr").clone();
+                	 		 $("#add_vmMergeBusPoApplyDetail_table").append(tr);
+                	 		resetTrNum('add_vmMergeBusPoApplyDetail_table');
+                     		//busPoContractDetailList[#index#].bpcdNumber
+                     		var name = $(tr).find("input").eq(2).attr("name")
+                     		var inputs = name.split(".");
+                     		fields.forEach(function(item, index){
+                     			$("input[name='"+inputs[0]+"."+ item +"']").val(selected[i][tableF[index]])
+                     		}) 
+                     	}
+                     	resetTrNum('add_vmMergeBusPoApplyDetail_table');
+                    }
+                }
+            },
+            cancelVal: $.i18n.prop('dialog.close'),
+            cancel: true // 为true等价于function(){}
+        });
+}
+</script>
+
+
+
+
+

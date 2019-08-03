@@ -47,6 +47,20 @@
  </div>
  <script type="text/javascript">
  
+
+$("#vmBusPoContractListForm input[name=bpmProjName]").addClass("easyui-combogrid").attr("data-options",
+			"panelWidth: 500,"+ 
+            "idField: 'id', "+ 
+            "textField: 'bpmProjName', "+
+            "url: 'vmBusProjectManagerController.do?datagrid&field=id,bpmProjId,bpmProjName', "+ 
+            "columns: [[ "+
+             "   {field:'bpmProjId',title:'项目编号',width:80}, "+
+              "  {field:'bpmProjName',title:'项目名称',width:120} "+ 
+            "]], "+ 
+             "fitColumns: true,"
+		)
+
+
 //导入
 function ImportXls() {
 	openuploadwin('Excel导入', 'vmBusPoContractController.do?upload', "vmBusPoContractList");

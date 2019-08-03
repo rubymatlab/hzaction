@@ -126,7 +126,8 @@ public class VmBusProjectManagerController extends BaseController {
 	public void datagrid(VmBusProjectManagerEntity vmBusProjectManager,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
 		CriteriaQuery cq = new CriteriaQuery(VmBusProjectManagerEntity.class, dataGrid);
 		//查询条件组装器
-		if(vmBusProjectManager.getBpmProjName() != null) {
+		String projName = vmBusProjectManager.getBpmProjName();
+		if(projName != null && projName.indexOf("*") == -1) {
 			vmBusProjectManager.setBpmProjName("*" + vmBusProjectManager.getBpmProjName() + "*");
 		}
 		if(vmBusProjectManager.getBpmProjId() != null) {
@@ -135,8 +136,10 @@ public class VmBusProjectManagerController extends BaseController {
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, vmBusProjectManager, request.getParameterMap());
 		try{
 		//自定义追加查询条件
-		String bpmStatus = vmBusProjectManager.getBpmStatus();
-		cq.add(Restrictions.eq("bpmStatus", bpmStatus));
+		if( vmBusProjectManager.getBpmStatus() != null) {
+			String bpmStatus = vmBusProjectManager.getBpmStatus();
+			cq.add(Restrictions.eq("bpmStatus", bpmStatus));			
+		}
 		}catch (Exception e) {
 			throw new BusinessException(e.getMessage());
 		}

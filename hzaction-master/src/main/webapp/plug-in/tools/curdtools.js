@@ -1,85 +1,4 @@
-﻿﻿﻿﻿﻿﻿(function($){
-	/*
-	 * Author : Yang
-	 *	下拉检索查询
-	 * */
-	$.fn.extend({
-		dropDownSelect:function(options){
-			var _this = this;
-			var dropdowMenu = $(_this).parent().find(".dropdown-menu").eq(0);
-			var oData = new Array();
-			var timer = null;
-			var attrs = new Array();
-			var URL = options.url || ""
-			init();
-			function init(){
-				dropdowMenu.hide();
-				getData("");
-				bindEvent();
-			}
-			function bindEvent(){
-				$(_this).blur(function(){
-					dropdowMenu.hide();
-				})
-				.focus(function(){
-					dropdowMenu.show();
-				})
-				// 输入筛选
-				.on("input",function(e){
-					clearTimeout(timer);
-					timer = setTimeout(function(){
-						getData($(_this).val());
-					}, 200)
-				})
-				$(_this).parent().find("button").on("click",function(){
-
-					_this[0].focus();
-				})
-			}
-			function getData(keyword){
-				$.ajax({
-					method: "GET",
-					url: URL + keyword,
-					success:function(res){
-						renderData(JSON.parse(res))
-					},
-					fail:function(err){
-						console.log(err)
-					}
-				})
-			}
-			function renderData(data){
-				if(data.code == 200){
-					oData = data.value
-					var html = "<table><tbody>"
-					oData.forEach(function(item, index){
-						html += "<tr>"
-						for(var key in item){
-							html += "<td data-"+key+">"+ item[key] +"</td>"
-						}
-					})
-					html += "</tbody></table>"
-	//				显示
-					dropdowMenu.html(html)
-					bindEvent2tr();
-				}
-			}
-			function bindEvent2tr(){
-				dropdowMenu.find("table").eq(0).on("mousedown","tr",function(e){
-					var index = $(e.currentTarget).index();
-					for(var key in oData[index]){
-						var tId = key.replace(/_\w/g, function($){return $.slice(1).toUpperCase()})
-						$("#"+ tId) && console.log($("#"+ tId).val(oData[index][key]))
-					}
-					
-					
-				})
-			}	
-		}
-	})	
-
-})(jQuery)
-
+﻿﻿﻿﻿﻿﻿
 //console.log兼容问题
 if(!window.console){
     window.console = {};
@@ -1702,7 +1621,7 @@ function popupClick(pobj,tablefield,inputnames,pcode) {
 			});
 		}
 	}
-//add--end--Author:gengjiajia date:20160802 for: TASK #1175 批量添加数据的时popup多值的传递
+//add--end--Author:gengjiajia date:20160802 for: TASK #1175 批量添加数据的时popup多值的传递z
 
 /*
  * 鼠标放在图片上方，显示大图

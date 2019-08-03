@@ -289,27 +289,27 @@ function delIndexBtnClick() {
 function resetTrNum(tableId) {
 	$(tableId + " tbody tr").each(function(i) {
 		$(':input, select,a', this).each(function() {
-					var $this = $(this), name = $this.attr('name'), val = $this
-							.val();
-					if (name != null && name.indexOf("#index#") >= 0) {
-						$this.attr("name", name.replace('#index#', i));
-						/*if (name.indexOf('orderNum') >= 0) {  Date20131212 liuht取消重置orderNumber
-							$this.val(getMaxNum());
-						}*/
-					} else if (name != null && name.indexOf("_index") >= 0) {
-						$this.attr("name", name.replace('_index', i));
-					} else if (name != null && name != "ck") {
-						$this.attr("name", name.replace(getNowIndex(name), i));
-					}
-					//代码移动位置，优化调整     Date20131212
-					if (name != null && name.indexOf("rownumber") >= 0) {
-						$this.html(i+1);   // 移动tr|新加行|删除行 ---重置 rownumber值
-					}
-					if (name != null && name.indexOf("orderNum") >= 0) {
-						$this.val(i+1);   // 移动tr|新加行|删除行 ---重置 orderNumber值
-					}
-					
-				});
+			var $this = $(this), name = $this.attr('name'), val = $this
+					.val();
+			if (name != null && name.indexOf("#index#") >= 0) {
+				$this.attr("name", name.replace('#index#', i));
+				/*if (name.indexOf('orderNum') >= 0) {  Date20131212 liuht取消重置orderNumber
+					$this.val(getMaxNum());
+				}*/
+			} else if (name != null && name.indexOf("_index") >= 0) {
+				$this.attr("name", name.replace('_index', i));
+			} else if (name != null && name != "ck") {
+				$this.attr("name", name.replace(getNowIndex(name), i));
+			}
+			//代码移动位置，优化调整     Date20131212
+			if (name != null && name.indexOf("rownumber") >= 0) {
+				$this.html(i+1);   // 移动tr|新加行|删除行 ---重置 rownumber值
+			}
+			if (name != null && name.indexOf("orderNum") >= 0) {
+				$this.val(i+1);   // 移动tr|新加行|删除行 ---重置 orderNumber值
+			}
+			
+		});
 	});
 	jformTypeChange();
 }

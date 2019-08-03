@@ -27,40 +27,7 @@
 	  border-radius: 4px;
   }
   /* Author: Yang  */
-  .dropdown{
-		position: relative;
-		display: inline-block;
-		border-collapse: separate;
-	}
-	.dropdown button{
-		position: absolute;
-		right: 0;
-		font-size:10px;
-		height:100%;
-		width:20px;
-		padding:0px;
-	}
-	.dropdown ul.dropdown-menu{
-		position: absolute;
-		z-index: 999;
-		background: #ffffff;
-		max-height: 200px;
-		overflow-y:scroll;
-		width: 420px;
-		display:none;
-		
-	}
-	.dropdown ul.dropdown-menu table{
-		width: 100%;
-	}
-	.dropdown ul.dropdown-menu table tbody tr td{
-		-webkit-user-select: none;
-		-moz-user-select: none;
-		-ms-user-select: none;
-	}
-	.dropdown ul.dropdown-menu table tbody tr:hover td{
-		background: #fff;
-	}
+
   </style>
   <t:base type="jquery,easyui,tools,DatePicker"></t:base>
   <script type="text/javascript">
@@ -75,7 +42,7 @@
  </script>
  </head>
  <body style="overflow-x: hidden;">
-  <t:formvalid formid="formobj" dialog="true" usePlugin="password" layout="table" tiptype="1" action="vmBusPoContractController.do?doAdd" >
+  <t:formvalid formid="formobj" dialog="true" usePlugin="password" layout="table" tiptype="1" action="vmBusPoContractController.do?doAdd" beforeSubmit="checkSubmit">
 					<input id="id" name="id" type="hidden" value="${vmBusPoContractPage.id }"/>
 	<table cellpadding="0" cellspacing="1" class="formtable">
 		<tr>
@@ -101,30 +68,46 @@
 				<label class="Validform_label">项目名称:</label>
 			</td>
 			<td class="value">
-		     	<!--  <input id="bpmProjName" name="bpmProjName" type="text" maxlength="50" style="width: 150px" class="inputxt"  ignore="ignore" />
+		     	<input id="bpmProjName" name="bpmProjName" type="text" maxlength="50" style="width: 150px" class="inputxt easyui-combogrid"  ignore="ignore" data-options="
+			            panelWidth: 500,
+			            idField: 'id',
+			            textField: 'bpmProjName',
+			            url: 'vmBusProjectManagerController.do?datagrid&field=id,bpmProjId,bpmProjName',
+			            columns: [[
+			                {field:'bpmProjId',title:'项目编号',width:80},
+			                {field:'bpmProjName',title:'项目名称',width:120}
+			            ]],
+			            onSelect: function (row,data) {
+			            	$('#bpmProjId').val(data.bpmProjId);
+					    },
+			             fitColumns: true
+			        " />
 				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">项目名称</label> -->
-
-				<div class="dropdown">
-					<input type="text" class="inputxt" id="bpmProjName" name="bpmProjName" maxlength="50" ignore="ignore" >
-					<button type="button">▼</button>
-					<ul class="dropdown-menu" role="menu">
-					</ul>
-				</div>
+				<label class="Validform_label" style="display: none;">项目名称</label>
+				
 			</td>
 			<td align="right">
 				<label class="Validform_label">供应商:</label>
 			</td>
 			<td class="value">
-<!-- 		     	 <input id="bsName" name="bsName" type="text" maxlength="100" style="width: 150px" class="inputxt"  ignore="ignore" />
-				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">供应商</label> -->
-				<div class="dropdown">
-					<input type="text" class="inputxt" id="bsName" name="bsName" maxlength="100" ignore="ignore" >
-					<button type="button">▼</button>
-					<ul class="dropdown-menu" role="menu">
-					</ul>
-				</div>
+		     	 <input id="bsName" name="bsName" type="text" maxlength="100" style="width: 150px" class="inputxt easyui-combogrid"  ignore="ignore"  data-options="
+			            panelWidth: 500,
+			            idField: 'id',
+			            textField: 'bsName',
+			            url: 'basSupplierController.do?datagrid&field=id,bsName,bsContact,bsTelNo',
+			            columns: [[
+			                {field:'bsName',title:'供应商',width:80},
+			                {field:'bsContact',title:'供应商联系人',width:120},
+			                 {field:'bsTelNo',title:'供应商电话',width:120}
+			            ]],
+			            onSelect: function (row,data) {
+			            	$('#bsContact').val(data.bsContact);
+			            	$('#bsTelNo').val(data.bsTelNo);
+					    },
+			             fitColumns: true
+			        " />
+ 				<span class="Validform_checktip"></span>
+				<label class="Validform_label" style="display: none;">供应商</label>
 			</td>
 		</tr>
 		<tr>
@@ -140,7 +123,7 @@
 				<label class="Validform_label">供应商联系人:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bsContact" name="bsContact" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
+		     	 <input id="bsContact" name="bsContact" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">供应商联系人</label>
 			</td>
@@ -320,5 +303,13 @@
 		</table>
  </body>
  <script src = "webpage/com/action/actpo/vmBusPoContract.js"></script>
+ <script>
  
+ function checkSubmit(){
+		var tList = arguments[0].context
+		var tName = "AX-"+new Date().getFullYear()+"KHJC"+"-000001"
+		$(tList).find("#bpcPoNo").val(tName)
+}
+ 
+ </script>
 	

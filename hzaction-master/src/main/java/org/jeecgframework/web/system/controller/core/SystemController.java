@@ -1560,6 +1560,7 @@ public class SystemController extends BaseController {
 	@RequestMapping("/filedeal")
     @ResponseBody
     public AjaxJson filedeal(HttpServletRequest request, HttpServletResponse response) {
+		logger.info("-- 上传文件拉 --");
         AjaxJson j = new AjaxJson();
         String msg="啥都没干-没传参数吧！";
         String upFlag=request.getParameter("isup");
@@ -1571,7 +1572,6 @@ public class SystemController extends BaseController {
         //默认上传文件是否转换为swf，实现在线预览功能开关
 		String globalSwfTransformFlag = ResourceUtil.getConfigByName("swf.transform.flag");
 
-		
         logger.debug("----ctxPath-----"+ctxPath);
         try {
 	        //如果是上传操作

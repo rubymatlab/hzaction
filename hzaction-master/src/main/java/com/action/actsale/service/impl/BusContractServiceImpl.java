@@ -80,7 +80,7 @@ public class BusContractServiceImpl extends CommonServiceImpl implements BusCont
 
 
 	public BusProjectManagerEntity addBusProjectManager(BusContractEntity t) {
-		//		 	String sqlInsert="insert into bus_project_manager values(:id,:bpm_name,:bpm_proj_prog,:bpm_prog_per,:bpm_status,:bpm_follow_remark,:from_proj_id,:from_cust_id)";
+		//String sqlInsert="insert into bus_project_manager values(:id,:bpm_name,:bpm_proj_prog,:bpm_prog_per,:bpm_status,:bpm_follow_remark,:from_proj_id,:from_cust_id)";
 		BusProjectManagerEntity projectManagerEntity = new BusProjectManagerEntity();
 		projectManagerEntity.setBpmName(t.getFromProjName());
 		projectManagerEntity.setBpmStatus("1");

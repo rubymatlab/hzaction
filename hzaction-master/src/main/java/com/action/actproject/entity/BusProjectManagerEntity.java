@@ -68,6 +68,14 @@ public class BusProjectManagerEntity implements java.io.Serializable {
 	@Excel(name="客户资料外键",width=15)
 	private java.lang.String fromCustId;
 	
+	/**项目编号*/
+	@Excel(name="项目编号",width=15)
+	private java.lang.String bpmProjId;
+	/**合同管理外键*/
+	@Excel(name="合同管理外键",width=15)
+	private java.lang.String fromContractId;
+	
+	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  主键
@@ -357,6 +365,38 @@ public class BusProjectManagerEntity implements java.io.Serializable {
 	 */
 	public void setFromCustId(java.lang.String fromCustId){
 		this.fromCustId = fromCustId;
+	}
+	
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  项目编号
+	 */
+	@Column(name ="bpm_proj_id",nullable=true,length=32)
+	public java.lang.String getBpmProjId(){
+		return this.bpmProjId;
+	}
+	
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  项目编号
+	 */
+	public void setBpmProjId(java.lang.String bpmProjId){
+		this.bpmProjId = bpmProjId;
+	}
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  合同管理外键
+	 */
+	@Column(name ="from_contract_id",nullable=true,length=32)
+	public java.lang.String getFromContractId() {
+		return fromContractId;
+	}
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  合同管理外键
+	 */
+	public void setFromContractId(java.lang.String fromContractId) {
+		this.fromContractId = fromContractId;
 	}
 	
 }

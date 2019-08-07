@@ -1,11 +1,16 @@
 package com.action.actpo.controller;
 import com.action.actpo.entity.VmBusPoContractEntity;
+import com.action.actpo.service.BusPoContractServiceI;
 import com.action.actpo.service.VmBusPoContractServiceI;
 import com.action.actpo.page.VmBusPoContractPage;
 import com.action.actpo.entity.VmMergeBusPoApplyDetailEntity;
 import com.action.actpo.entity.BusPoContractPayEntity;
+import com.action.actpo.entity.BusPoApplyDetailConEntity;
 import com.action.actpo.entity.BusPoContractDetailEntity;
+import com.action.actpo.entity.BusPoContractEntity;
+
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 import java.text.SimpleDateFormat;
 import javax.servlet.http.HttpServletRequest;
@@ -88,6 +93,8 @@ public class VmBusPoContractController extends BaseController {
 
 	@Autowired
 	private VmBusPoContractServiceI vmBusPoContractService;
+	@Autowired
+	private BusPoContractServiceI busPoContractService;
 	@Autowired
 	private SystemService systemService;
 	@Autowired
@@ -180,7 +187,9 @@ public class VmBusPoContractController extends BaseController {
 		vmBusPoContract = systemService.getEntity(VmBusPoContractEntity.class, vmBusPoContract.getId());
 		String message = "采购合同视图删除成功";
 		try{
-			vmBusPoContractService.delMain(vmBusPoContract);
+			BusPoContractEntity busPoContract = new BusPoContractEntity();
+			MyBeanUtils.copyBeanNotNull2Bean(vmBusPoContract,busPoContract);
+			busPoContractService.delMain(busPoContract);
 			systemService.addLog(message, Globals.Log_Type_DEL, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();
@@ -206,7 +215,10 @@ public class VmBusPoContractController extends BaseController {
 				VmBusPoContractEntity vmBusPoContract = systemService.getEntity(VmBusPoContractEntity.class,
 				id
 				);
-				vmBusPoContractService.delMain(vmBusPoContract);
+				BusPoContractEntity busPoContract = new BusPoContractEntity();
+				MyBeanUtils.copyBeanNotNull2Bean(vmBusPoContract,busPoContract);
+				busPoContractService.delMain(busPoContract);
+//				vmBusPoContractService.delMain(vmBusPoContract);
 				systemService.addLog(message, Globals.Log_Type_DEL, Globals.Log_Leavel_INFO);
 			}
 		}catch(Exception e){
@@ -233,7 +245,42 @@ public class VmBusPoContractController extends BaseController {
 		AjaxJson j = new AjaxJson();
 		String message = "添加成功";
 		try{
-			vmBusPoContractService.addMain(vmBusPoContract, vmMergeBusPoApplyDetailList,busPoContractPayList,busPoContractDetailList);
+			// 添加流水号	-->   AX-年份-客户简称-三位序列号-CG-001 --> 项目编号+ -CG-001 
+			String proj_id = vmBusPoContract.getBpmProjId();// 项目编号
+			String sql = "select bpc_po_no, bpm_proj_id from vm_bus_po_contract where bpm_proj_id='"+ proj_id +"' ORDER BY create_date desc limit 1";
+			List<Map<String,Object>> data = this.systemService.findForJdbc(sql);
+			String snameNo = "001";
+			if(data.size() != 0) {
+				String[] tempArr = data.get(0).get("bpc_po_no").toString().split("-");
+				int cur = Integer.parseInt(tempArr[tempArr.length-1]);
+				snameNo = ++cur + "";
+				if(snameNo.length() == 1) {
+					snameNo = "00"+snameNo;
+				}
+				if(snameNo.length() == 2){
+					snameNo = "0"+snameNo;
+				}
+			}
+			
+			int year =Calendar.getInstance().get(Calendar.YEAR);
+
+			String pipeNum = proj_id +"-CG-"+ snameNo;
+			
+			BusPoContractEntity busPoContract = new BusPoContractEntity();
+			MyBeanUtils.copyBeanNotNull2Bean(vmBusPoContract,busPoContract);
+			busPoContract.setBpcPoNo(pipeNum);
+			List<BusPoApplyDetailConEntity> busPoApplyDetailConList = new ArrayList<BusPoApplyDetailConEntity>();
+			BusPoApplyDetailConEntity busPoApplyDetailConEntity = null;
+			for(VmMergeBusPoApplyDetailEntity entity : vmMergeBusPoApplyDetailList) {
+				busPoApplyDetailConEntity = new BusPoApplyDetailConEntity();
+				busPoApplyDetailConEntity.setFromPoApplyDetId(entity.getId());// 采购申请明细
+				busPoApplyDetailConList.add(busPoApplyDetailConEntity);
+			}
+			
+			busPoContractService.addMain(busPoContract, busPoContractPayList,busPoApplyDetailConList,busPoContractDetailList);
+			
+			//vmBusPoContractService.addMain(vmBusPoContract, vmMergeBusPoApplyDetailList,busPoContractPayList,busPoContractDetailList);
+			
 			systemService.addLog(message, Globals.Log_Type_INSERT, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();
@@ -258,7 +305,17 @@ public class VmBusPoContractController extends BaseController {
 		AjaxJson j = new AjaxJson();
 		String message = "更新成功";
 		try{
-			vmBusPoContractService.updateMain(vmBusPoContract, vmMergeBusPoApplyDetailList,busPoContractPayList,busPoContractDetailList);
+			BusPoContractEntity busPoContract = new BusPoContractEntity();
+			MyBeanUtils.copyBeanNotNull2Bean(vmBusPoContract,busPoContract);
+			List<BusPoApplyDetailConEntity> busPoApplyDetailConList = new ArrayList<BusPoApplyDetailConEntity>();
+			BusPoApplyDetailConEntity busPoApplyDetailConEntity = null;
+			for(VmMergeBusPoApplyDetailEntity entity : vmMergeBusPoApplyDetailList) {
+				busPoApplyDetailConEntity = new BusPoApplyDetailConEntity();
+				busPoApplyDetailConEntity.setFromPoApplyDetId(entity.getId());// 采购申请明细
+				busPoApplyDetailConList.add(busPoApplyDetailConEntity);
+			}
+			busPoContractService.addMain(busPoContract, busPoContractPayList,busPoApplyDetailConList,busPoContractDetailList);
+//			vmBusPoContractService.updateMain(vmBusPoContract, vmMergeBusPoApplyDetailList,busPoContractPayList,busPoContractDetailList);
 			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();
@@ -359,6 +416,8 @@ public class VmBusPoContractController extends BaseController {
 	    try{
 	    	List<BusPoContractDetailEntity> busPoContractDetailEntityList = systemService.findHql(hql2,id2);
 			req.setAttribute("busPoContractDetailList", busPoContractDetailEntityList);
+			// 总金额
+			req.setAttribute("puredAmount", vmBusPoContract.getAllAmount());
 		}catch(Exception e){
 			logger.info(e.getMessage());
 		}
@@ -415,6 +474,57 @@ public class VmBusPoContractController extends BaseController {
         return NormalExcelConstants.JEECG_EXCEL_VIEW;
 	}
 
+    /**
+     * 导入页面跳转
+	 */
+    
+	@RequestMapping(params = "uploadContDetail")
+	public ModelAndView uploadContDetail(HttpServletRequest req) {
+		req.setAttribute("controller_name", "vmBusPoContractController");
+		req.setAttribute("method_name", "importContDetailExcel");
+		return new ModelAndView("com/action/actpo/con_imp_file");
+	}
+	/**
+	 * 
+     *	excel导入采购合同明细
+     *	
+     *
+     * */
+	
+	@RequestMapping(params = "importContDetailExcel", method = RequestMethod.POST)
+	@ResponseBody
+	public AjaxJson importContDetailExcel(HttpServletRequest request, HttpServletResponse response) {
+		AjaxJson j = new AjaxJson();
+		
+		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
+		Map<String, MultipartFile> fileMap = multipartRequest.getFileMap();
+		for (Map.Entry<String, MultipartFile> entity : fileMap.entrySet()) {
+			MultipartFile file = entity.getValue();// 获取上传文件对象
+			ImportParams params = new ImportParams();
+			params.setTitleRows(0);
+			params.setHeadRows(1);
+			params.setNeedSave(true);
+			try {
+				List<BusPoContractDetailEntity> listBusPoContractDetailEntitys = ExcelImportUtil.importExcel(file.getInputStream(),BusPoContractDetailEntity.class,params);
+				j.setMsg("文件导入成功！");
+				j.setObj(listBusPoContractDetailEntitys);		
+			} catch (Exception e) {
+				j.setMsg("文件导入失败！");
+				logger.error(ExceptionUtil.getExceptionMessage(e));
+			}finally{
+				try {
+					file.getInputStream().close();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+			}
+			}
+			return j;
+	}
+    
+	
+	
+	
     /**
 	 * 通过excel导入数据
 	 * @param request

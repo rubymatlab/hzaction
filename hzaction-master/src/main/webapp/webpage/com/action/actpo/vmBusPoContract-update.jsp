@@ -146,7 +146,7 @@
 				<label class="Validform_label">采购日期:</label>
 			</td>
 			<td class="value">
-					  <input id="bpcPoDate" name="bpcPoDate" type="text" style="width: 150px"   ignore="ignore"  value='<fmt:formatDate value='${vmBusPoContractPage.bpcPoDate}' type="date" pattern="yyyy-MM-dd hh:mm:ss"/>'/>
+					  <input id="bpcPoDate" name="bpcPoDate" type="text" style="width: 150px" class="Wdate"  ignore="ignore" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" value='<fmt:formatDate value='${vmBusPoContractPage.bpcPoDate}' type="date" pattern="yyyy-MM-dd hh:mm:ss"/>'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">采购日期</label>
 			</td>

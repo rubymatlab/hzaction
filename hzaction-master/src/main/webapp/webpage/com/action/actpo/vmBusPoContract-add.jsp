@@ -70,21 +70,26 @@
 			<td class="value">
 		     	<input id="bpmProjName" name="bpmProjName" type="text" maxlength="50" style="width: 150px" class="inputxt easyui-combogrid"  ignore="ignore" data-options="
 			            panelWidth: 500,
-			            idField: 'id',
+			            idField: 'bpmProjName',
 			            textField: 'bpmProjName',
-			            url: 'vmBusProjectManagerController.do?datagrid&field=id,bpmProjId,bpmProjName',
+			            url: 'vmBusProjectManagerController.do?datagrid&field=id,bpmProjId,bpmProjName,bpmCustSName',
 			            columns: [[
 			                {field:'bpmProjId',title:'项目编号',width:80},
 			                {field:'bpmProjName',title:'项目名称',width:120}
 			            ]],
 			            onSelect: function (row,data) {
 			            	$('#bpmProjId').val(data.bpmProjId);
+			            	$('#fromProjmId').val(data.id);
+			            	$('#bpmCustSName').val(data.bpmCustSName);
+			            	window.projectId = data.id;
 					    },
 			             fitColumns: true
 			        " />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">项目名称</label>
-				
+				<input type="hidden" id="fromProjmId" name="fromProjmId" ignore="ignore" class="inputxt">
+				<input type="hidden" id="fromSuppId" name="fromSuppId" ignore="ignore" class="inputxt">
+				<input type="hidden" id="bpmCustSName" name="bpmCustSName" ignore="ignore" class="inputxt">
 			</td>
 			<td align="right">
 				<label class="Validform_label">供应商:</label>
@@ -92,7 +97,7 @@
 			<td class="value">
 		     	 <input id="bsName" name="bsName" type="text" maxlength="100" style="width: 150px" class="inputxt easyui-combogrid"  ignore="ignore"  data-options="
 			            panelWidth: 500,
-			            idField: 'id',
+			            idField: 'bsName',
 			            textField: 'bsName',
 			            url: 'basSupplierController.do?datagrid&field=id,bsName,bsContact,bsTelNo',
 			            columns: [[
@@ -103,6 +108,7 @@
 			            onSelect: function (row,data) {
 			            	$('#bsContact').val(data.bsContact);
 			            	$('#bsTelNo').val(data.bsTelNo);
+			            	$('#fromSuppId').val(data.id)
 					    },
 			             fitColumns: true
 			        " />
@@ -210,6 +216,7 @@
 		<tr>
 			 <td align="center"><div style="width: 25px;" name="xh"></div></td>
 			 <td align="center"><input style="width:20px;" type="checkbox" name="ck"/></td>
+	 			<input name="vmMergeBusPoApplyDetailList[#index#].id" type="hidden"/>
 				  <td align="left">
 					  	<input name="vmMergeBusPoApplyDetailList[#index#].bpadName" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">名称</label>
@@ -287,17 +294,17 @@
 					  <label class="Validform_label" style="display: none;">单价</label>
 				  </td>
 				  <td align="left">
-					  	<input name="busPoContractDetailList[#index#].bpcdAmount" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
+					  	<input name="busPoContractDetailList[#index#].bpcdAmount"  disabled='disabled' maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">金额</label>
 				  </td>
 				  <td align="left">
 					  	<input name="busPoContractDetailList[#index#].bpcdRemark" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">备注</label>
 				  </td>
-				  <td align="left">
+<!-- 				  <td align="left">
 					  	<input name="busPoContractDetailList[#index#].fromId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">采购合同外键</label>
-				  </td>
+				  </td> -->
 			</tr>
 		 </tbody>
 		</table>
@@ -306,9 +313,7 @@
  <script>
  
  function checkSubmit(){
-		var tList = arguments[0].context
-		var tName = "AX-"+new Date().getFullYear()+"KHJC"+"-000001"
-		$(tList).find("#bpcPoNo").val(tName)
+
 }
  
  </script>

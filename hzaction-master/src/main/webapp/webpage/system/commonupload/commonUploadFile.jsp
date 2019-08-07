@@ -32,20 +32,20 @@ function commonUpload(callback,inputId){
     $.dialog({
            content: "url:systemController.do?commonUpload",
            lock : true,
-           title:"文件上传",
+           title: "文件上传",
            zIndex:getzIndex(),
            width:700,
            height: 200,
            parent:windowapi,
            cache:false,
-       ok: function(){
+	       ok: function(){
                var iframe = this.iframe.contentWindow;
                iframe.uploadCallback(callback,inputId);
                return true;
-       },
-       cancelVal: '关闭',
-       cancel: function(){
-       } 
+	       },
+	       cancelVal: '关闭',
+	       cancel: function(){
+	       } 
    });
 }
 //通用弹出式文件上传-回调

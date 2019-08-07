@@ -184,4 +184,4 @@
 		 </tbody>
 		</table>
  </body>
- <script src = "webpage/com/anxin/busprojectmanager/vmBusProjectManager.js"></script>	
+ <script src = "webpage/com/action/actproject/vmBusProjectManager.js"></script>

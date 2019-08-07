@@ -59,6 +59,8 @@ public class VmBusProjectManagerEntity implements java.io.Serializable {
 	/**客户名称*/
 	@Excel(name="客户名称",width=15)
 	private java.lang.String bpmCustName;
+	/** 客户简称 **/
+	private java.lang.String bpmCustSName;
 	/**项目经理*/
 	private java.lang.String bpmManager;
 	/**应收总金额*/
@@ -322,6 +324,19 @@ public class VmBusProjectManagerEntity implements java.io.Serializable {
 	 */
 	public void setBpmCustName(java.lang.String bpmCustName){
 		this.bpmCustName = bpmCustName;
+	}
+	
+	@Column(name ="BPM_CUST_S_NAME",nullable=true,length=32)
+	public java.lang.String getBpmCustSName(){
+		return this.bpmCustSName;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  客户简称
+	 */
+	public void setBpmCustSName(java.lang.String bpmCustSName){
+		this.bpmCustSName = bpmCustSName;
 	}
 	
 	/**

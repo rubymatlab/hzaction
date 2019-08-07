@@ -27,7 +27,10 @@
     });
 </script>
 <div style="padding: 3px; height: 25px;width:auto;" class="datagrid-toolbar">
-	<a id="addBusPoContractPayBtn" href="#">添加</a> <a id="delBusPoContractPayBtn" href="#">删除</a> 
+	<a id="addBusPoContractPayBtn" href="#">添加</a> 
+	<a id="delBusPoContractPayBtn" href="#">删除</a>
+ 	<a id="uploadBtn" href="#">	采购情况汇报</a>
+ 	<a id="uploadBtn2" href="#">附件</a>
 </div>
 <table border="0" cellpadding="2" cellspacing="0" id="busPoContractPay_table">
 	<tr bgcolor="#E6E6E6">

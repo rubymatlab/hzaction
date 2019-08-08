@@ -232,6 +232,13 @@
     	            },
     	            uploaded(row){
     	            	var data = row.obj;
+    	            	var flag = false;
+    	            	for(var key in data[0]){
+    	            		if(data[0][key] != null){
+    	            			flag = true
+    	            		}
+    	            	}
+    	            	if(flag != true) return false;
     	            	for(var i = 0; i< data.length; i++){
     	            		 var tr =  $("#add_busPoContractDetail_table_template tr").clone();
 	            	 			 $("#add_busPoContractDetail_table").append(tr);

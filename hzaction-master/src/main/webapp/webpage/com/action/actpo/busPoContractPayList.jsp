@@ -7,6 +7,12 @@
 	$('#delBusPoContractPayBtn').linkbutton({   
 	    iconCls: 'icon-remove'  
 	}); 
+	$('#uploadBtn').linkbutton({   
+	    iconCls: 'icon-remove'  
+	}); 
+	$('#uploadBtn2').linkbutton({   
+	    iconCls: 'icon-remove'  
+	}); 
 	$('#addBusPoContractPayBtn').bind('click', function(){   
  		 var tr =  $("#add_busPoContractPay_table_template tr").clone();
 	 	 $("#add_busPoContractPay_table").append(tr);
@@ -118,3 +124,15 @@
 	</c:if>	
 	</tbody>
 </table>
+<script>
+	$('#uploadBtn').linkbutton({   
+	    iconCls: 'icon-undo'  
+	}); 
+	$('#uploadBtn2').linkbutton({   
+	    iconCls: 'icon-undo'  
+	}); 
+	// 绑定采购请款汇报
+	$('#uploadBtn').bind("click",function(e){
+		 add("文件录入", "jeecgFormDemoController.do?addFiles","fList")
+	})
+</script>

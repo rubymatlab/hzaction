@@ -1,4 +1,4 @@
-package com.action.actproject.entity;
+package com.action.actsale.entity;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.lang.String;
@@ -19,16 +19,16 @@ import org.jeecgframework.poi.excel.annotation.Excel;
 
 /**   
  * @Title: Entity
- * @Description: 项目管理
+ * @Description: 合同明细报价附表
  * @author onlineGenerator
- * @date 2019-07-26 20:09:21
+ * @date 2019-07-26 16:28:39
  * @version V1.0   
  *
  */
 @Entity
-@Table(name = "bus_project_manager", schema = "")
+@Table(name = "bus_con_quoted_price", schema = "")
 @SuppressWarnings("serial")
-public class BusProjectManagerEntity implements java.io.Serializable {
+public class BusConQuotedPriceEntity implements java.io.Serializable {
 	/**主键*/
 	private java.lang.String id;
 	/**创建人名称*/
@@ -49,32 +49,27 @@ public class BusProjectManagerEntity implements java.io.Serializable {
 	private java.lang.String sysCompanyCode;
 	/**流程状态*/
 	private java.lang.String bpmStatus;
-	/**项目名称*/
-	@Excel(name="项目名称",width=15)
-	private java.lang.String bpmName;
-	/**项目进度*/
-	@Excel(name="项目进度",width=15)
-	private java.lang.String bpmProjProg;
-	/**进度百分比*/
-	@Excel(name="进度百分比",width=15)
-	private java.lang.String bpmProgPer;
-	/**收款计划备注*/
-	@Excel(name="收款计划备注",width=15)
-	private java.lang.String bpmFollowRemark;
-	/**项目立项外键*/
-	@Excel(name="项目立项外键",width=15)
-	private java.lang.String fromProjId;
-	/**客户资料外键*/
-	@Excel(name="客户资料外键",width=15)
-	private java.lang.String fromCustId;
-	
-	/**项目编号*/
-	@Excel(name="项目编号",width=15)
-	private java.lang.String bpmProjId;
-	/**合同管理外键*/
-	@Excel(name="合同管理外键",width=15)
-	private java.lang.String fromContractId;
-	
+	/**名称*/
+	@Excel(name="名称",width=15)
+	private java.lang.String bcqpName;
+	/**品牌*/
+	@Excel(name="品牌",width=15)
+	private java.lang.String bcqpBrand;
+	/**型号*/
+	@Excel(name="型号",width=15)
+	private java.lang.String bcqpModel;
+	/**数量*/
+	@Excel(name="数量",width=15)
+	private java.math.BigDecimal bcqpQty;
+	/**单价*/
+	@Excel(name="单价",width=15)
+	private java.math.BigDecimal bcqpPrice;
+	/**金额*/
+	@Excel(name="金额",width=15)
+	private java.math.BigDecimal bcqpAmount;
+	/**合同管理外键
+	@Excel(name="合同管理外键",width=15)*/
+	private java.lang.String busContractId;
 	
 	/**
 	 *方法: 取得java.lang.String
@@ -83,7 +78,6 @@ public class BusProjectManagerEntity implements java.io.Serializable {
 	@Id
 	@GeneratedValue(generator = "paymentableGenerator")
 	@GenericGenerator(name = "paymentableGenerator", strategy = "uuid")
-	
 	@Column(name ="ID",nullable=false,length=36)
 	public java.lang.String getId(){
 		return this.id;
@@ -138,7 +132,7 @@ public class BusProjectManagerEntity implements java.io.Serializable {
 	 *@return: java.util.Date  创建日期
 	 */
 	
-	@Column(name ="CREATE_DATE",nullable=true)
+	@Column(name ="CREATE_DATE",nullable=true,length=20)
 	public java.util.Date getCreateDate(){
 		return this.createDate;
 	}
@@ -192,7 +186,7 @@ public class BusProjectManagerEntity implements java.io.Serializable {
 	 *@return: java.util.Date  更新日期
 	 */
 	
-	@Column(name ="UPDATE_DATE",nullable=true)
+	@Column(name ="UPDATE_DATE",nullable=true,length=20)
 	public java.util.Date getUpdateDate(){
 		return this.updateDate;
 	}
@@ -261,142 +255,140 @@ public class BusProjectManagerEntity implements java.io.Serializable {
 	
 	/**
 	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  项目名称
+	 *@return: java.lang.String  名称
 	 */
 	
-	@Column(name ="BPM_NAME",nullable=true,length=32)
-	public java.lang.String getBpmName(){
-		return this.bpmName;
+	@Column(name ="BCQP_NAME",nullable=true,length=32)
+	public java.lang.String getBcqpName(){
+		return this.bcqpName;
 	}
 
 	/**
 	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  项目名称
+	 *@param: java.lang.String  名称
 	 */
-	public void setBpmName(java.lang.String bpmName){
-		this.bpmName = bpmName;
+	public void setBcqpName(java.lang.String bcqpName){
+		this.bcqpName = bcqpName;
 	}
 	
 	/**
 	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  项目进度
+	 *@return: java.lang.String  品牌
 	 */
 	
-	@Column(name ="BPM_PROJ_PROG",nullable=true,length=32)
-	public java.lang.String getBpmProjProg(){
-		return this.bpmProjProg;
+	@Column(name ="BCQP_BRAND",nullable=true,length=32)
+	public java.lang.String getBcqpBrand(){
+		return this.bcqpBrand;
 	}
 
 	/**
 	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  项目进度
+	 *@param: java.lang.String  品牌
 	 */
-	public void setBpmProjProg(java.lang.String bpmProjProg){
-		this.bpmProjProg = bpmProjProg;
+	public void setBcqpBrand(java.lang.String bcqpBrand){
+		this.bcqpBrand = bcqpBrand;
 	}
 	
 	/**
 	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  进度百分比
+	 *@return: java.lang.String  型号
 	 */
 	
-	@Column(name ="BPM_PROG_PER",nullable=true,length=32)
-	public java.lang.String getBpmProgPer(){
-		return this.bpmProgPer;
+	@Column(name ="BCQP_MODEL",nullable=true,length=32)
+	public java.lang.String getBcqpModel(){
+		return this.bcqpModel;
 	}
 
 	/**
 	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  进度百分比
+	 *@param: java.lang.String  型号
 	 */
-	public void setBpmProgPer(java.lang.String bpmProgPer){
-		this.bpmProgPer = bpmProgPer;
+	public void setBcqpModel(java.lang.String bcqpModel){
+		this.bcqpModel = bcqpModel;
 	}
 	
 	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  收款计划备注
+	 *方法: 取得java.math.BigDecimal
+	 *@return: java.math.BigDecimal  数量
 	 */
 	
-	@Column(name ="BPM_FOLLOW_REMARK",nullable=true,length=32)
-	public java.lang.String getBpmFollowRemark(){
-		return this.bpmFollowRemark;
+	@Column(name ="BCQP_QTY",nullable=true,length=32)
+	public java.math.BigDecimal getBcqpQty(){
+		return this.bcqpQty;
 	}
 
 	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  收款计划备注
+	 *方法: 设置java.math.BigDecimal
+	 *@param: java.math.BigDecimal  数量
 	 */
-	public void setBpmFollowRemark(java.lang.String bpmFollowRemark){
-		this.bpmFollowRemark = bpmFollowRemark;
+	public void setBcqpQty(java.math.BigDecimal bcqpQty){
+		this.bcqpQty = bcqpQty;
 	}
 	
 	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  项目立项外键
+	 *方法: 取得java.math.BigDecimal
+	 *@return: java.math.BigDecimal  单价
 	 */
 	
-	@Column(name ="FROM_PROJ_ID",nullable=true,length=32)
-	public java.lang.String getFromProjId(){
-		return this.fromProjId;
+	@Column(name ="BCQP_PRICE",nullable=true,length=32)
+	public java.math.BigDecimal getBcqpPrice(){
+		return this.bcqpPrice;
 	}
 
 	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  项目立项外键
+	 *方法: 设置java.math.BigDecimal
+	 *@param: java.math.BigDecimal  单价
 	 */
-	public void setFromProjId(java.lang.String fromProjId){
-		this.fromProjId = fromProjId;
+	public void setBcqpPrice(java.math.BigDecimal bcqpPrice){
+		this.bcqpPrice = bcqpPrice;
 	}
 	
 	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  客户资料外键
+	 *方法: 取得java.math.BigDecimal
+	 *@return: java.math.BigDecimal  金额
 	 */
 	
-	@Column(name ="FROM_CUST_ID",nullable=true,length=32)
-	public java.lang.String getFromCustId(){
-		return this.fromCustId;
+	@Column(name ="BCQP_AMOUNT",nullable=true,length=32)
+	public java.math.BigDecimal getBcqpAmount(){
+		return this.bcqpAmount;
 	}
 
 	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  客户资料外键
+	 *方法: 设置java.math.BigDecimal
+	 *@param: java.math.BigDecimal  金额
 	 */
-	public void setFromCustId(java.lang.String fromCustId){
-		this.fromCustId = fromCustId;
+	public void setBcqpAmount(java.math.BigDecimal bcqpAmount){
+		this.bcqpAmount = bcqpAmount;
 	}
 	
-	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  项目编号
-	 */
-	@Column(name ="bpm_proj_id",nullable=true,length=32)
-	public java.lang.String getBpmProjId(){
-		return this.bpmProjId;
-	}
-	
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  项目编号
-	 */
-	public void setBpmProjId(java.lang.String bpmProjId){
-		this.bpmProjId = bpmProjId;
-	}
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  合同管理外键
-	 */
-	@Column(name ="from_contract_id",nullable=true,length=32)
-	public java.lang.String getFromContractId() {
-		return fromContractId;
-	}
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  合同管理外键
 	 */
-	public void setFromContractId(java.lang.String fromContractId) {
-		this.fromContractId = fromContractId;
+	
+	@Column(name ="BUS_CONTRACT_ID",nullable=true,length=32)
+	public java.lang.String getBusContractId(){
+		return this.busContractId;
 	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  合同管理外键
+	 */
+	public void setBusContractId(java.lang.String busContractId){
+		this.busContractId = busContractId;
+	}
+
+	@Override
+	public String toString() {
+		return "BusConQuotedPriceEntity [id=" + id + ", createName=" + createName + ", createBy=" + createBy
+				+ ", createDate=" + createDate + ", updateName=" + updateName + ", updateBy=" + updateBy
+				+ ", updateDate=" + updateDate + ", sysOrgCode=" + sysOrgCode + ", sysCompanyCode=" + sysCompanyCode
+				+ ", bpmStatus=" + bpmStatus + ", bcqpName=" + bcqpName + ", bcqpBrand=" + bcqpBrand + ", bcqpModel="
+				+ bcqpModel + ", bcqpQty=" + bcqpQty + ", bcqpPrice=" + bcqpPrice + ", bcqpAmount=" + bcqpAmount
+				+ ", busContractId=" + busContractId + "]";
+	}
+	
+	
 	
 }

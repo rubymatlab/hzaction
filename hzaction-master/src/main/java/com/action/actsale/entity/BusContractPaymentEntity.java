@@ -1,4 +1,4 @@
-package com.action.actproject.entity;
+package com.action.actsale.entity;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.lang.String;
@@ -19,16 +19,16 @@ import org.jeecgframework.poi.excel.annotation.Excel;
 
 /**   
  * @Title: Entity
- * @Description: 项目管理
+ * @Description: 合同约定收款附表
  * @author onlineGenerator
- * @date 2019-07-26 20:09:21
+ * @date 2019-07-18 19:54:51
  * @version V1.0   
  *
  */
 @Entity
-@Table(name = "bus_project_manager", schema = "")
+@Table(name = "bus_contract_payment", schema = "")
 @SuppressWarnings("serial")
-public class BusProjectManagerEntity implements java.io.Serializable {
+public class BusContractPaymentEntity implements java.io.Serializable {
 	/**主键*/
 	private java.lang.String id;
 	/**创建人名称*/
@@ -49,33 +49,28 @@ public class BusProjectManagerEntity implements java.io.Serializable {
 	private java.lang.String sysCompanyCode;
 	/**流程状态*/
 	private java.lang.String bpmStatus;
-	/**项目名称*/
-	@Excel(name="项目名称",width=15)
-	private java.lang.String bpmName;
-	/**项目进度*/
-	@Excel(name="项目进度",width=15)
-	private java.lang.String bpmProjProg;
-	/**进度百分比*/
-	@Excel(name="进度百分比",width=15)
-	private java.lang.String bpmProgPer;
-	/**收款计划备注*/
-	@Excel(name="收款计划备注",width=15)
-	private java.lang.String bpmFollowRemark;
-	/**项目立项外键*/
-	@Excel(name="项目立项外键",width=15)
-	private java.lang.String fromProjId;
-	/**客户资料外键*/
-	@Excel(name="客户资料外键",width=15)
-	private java.lang.String fromCustId;
+	/**进度款分期*/
+	@Excel(name="进度款分期",width=15,dicCode="gathering")
+	private java.lang.String bcpProgrePayment;
+	/**合同金额*/
+	@Excel(name="合同金额",width=15)
+	private BigDecimal bcpContractAmount;
+	/**付款条件*/
+	@Excel(name="付款条件",width=15)
+	private java.lang.String bcpPaymentClause;
+	/**合同管理表主键*/
+	private java.lang.String busContractId;
 	
-	/**项目编号*/
-	@Excel(name="项目编号",width=15)
-	private java.lang.String bpmProjId;
-	/**合同管理外键*/
-	@Excel(name="合同管理外键",width=15)
-	private java.lang.String fromContractId;
-	
-	
+	@Override
+	public String toString() {
+		return "BusContractPaymentEntity [id=" + id + ", createName=" + createName + ", createBy=" + createBy
+				+ ", createDate=" + createDate + ", updateName=" + updateName + ", updateBy=" + updateBy
+				+ ", updateDate=" + updateDate + ", sysOrgCode=" + sysOrgCode + ", sysCompanyCode=" + sysCompanyCode
+				+ ", bpmStatus=" + bpmStatus + ", bcpProgrePayment=" + bcpProgrePayment + ", bcpContractAmount="
+				+ bcpContractAmount + ", bcpPaymentClause=" + bcpPaymentClause + ", busContractId=" + busContractId
+				+ "]";
+	}
+
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  主键
@@ -138,7 +133,7 @@ public class BusProjectManagerEntity implements java.io.Serializable {
 	 *@return: java.util.Date  创建日期
 	 */
 	
-	@Column(name ="CREATE_DATE",nullable=true)
+	@Column(name ="CREATE_DATE",nullable=true,length=20)
 	public java.util.Date getCreateDate(){
 		return this.createDate;
 	}
@@ -192,7 +187,7 @@ public class BusProjectManagerEntity implements java.io.Serializable {
 	 *@return: java.util.Date  更新日期
 	 */
 	
-	@Column(name ="UPDATE_DATE",nullable=true)
+	@Column(name ="UPDATE_DATE",nullable=true,length=20)
 	public java.util.Date getUpdateDate(){
 		return this.updateDate;
 	}
@@ -261,142 +256,74 @@ public class BusProjectManagerEntity implements java.io.Serializable {
 	
 	/**
 	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  项目名称
+	 *@return: java.lang.String  进度款分期
 	 */
 	
-	@Column(name ="BPM_NAME",nullable=true,length=32)
-	public java.lang.String getBpmName(){
-		return this.bpmName;
+	@Column(name ="BCP_PROGRE_PAYMENT",nullable=true,length=32)
+	public java.lang.String getBcpProgrePayment(){
+		return this.bcpProgrePayment;
 	}
 
 	/**
 	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  项目名称
+	 *@param: java.lang.String  进度款分期
 	 */
-	public void setBpmName(java.lang.String bpmName){
-		this.bpmName = bpmName;
+	public void setBcpProgrePayment(java.lang.String bcpProgrePayment){
+		this.bcpProgrePayment = bcpProgrePayment;
+	}
+	
+	/**
+	 *方法: 取得java.math.BigDecimal
+	 *@return: java.math.BigDecimal  合同金额
+	 */
+	
+	@Column(name ="BCP_CONTRACT_AMOUNT",nullable=true,length=32)
+	public BigDecimal getBcpContractAmount(){
+		return this.bcpContractAmount;
+	}
+
+	/**
+	 *方法: 设置java.math.BigDecimal
+	 *@param: java.math.BigDecimal  合同金额
+	 */
+	public void setBcpContractAmount(BigDecimal bcpContractAmount){
+		this.bcpContractAmount = bcpContractAmount;
 	}
 	
 	/**
 	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  项目进度
+	 *@return: java.lang.String  付款条件
 	 */
 	
-	@Column(name ="BPM_PROJ_PROG",nullable=true,length=32)
-	public java.lang.String getBpmProjProg(){
-		return this.bpmProjProg;
+	@Column(name ="BCP_PAYMENT_CLAUSE",nullable=true,length=32)
+	public java.lang.String getBcpPaymentClause(){
+		return this.bcpPaymentClause;
 	}
 
 	/**
 	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  项目进度
+	 *@param: java.lang.String  付款条件
 	 */
-	public void setBpmProjProg(java.lang.String bpmProjProg){
-		this.bpmProjProg = bpmProjProg;
+	public void setBcpPaymentClause(java.lang.String bcpPaymentClause){
+		this.bcpPaymentClause = bcpPaymentClause;
 	}
 	
 	/**
 	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  进度百分比
+	 *@return: java.lang.String  合同管理表主键
 	 */
 	
-	@Column(name ="BPM_PROG_PER",nullable=true,length=32)
-	public java.lang.String getBpmProgPer(){
-		return this.bpmProgPer;
+	@Column(name ="BUS_CONTRACT_ID",nullable=true,length=32)
+	public java.lang.String getBusContractId(){
+		return this.busContractId;
 	}
 
 	/**
 	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  进度百分比
+	 *@param: java.lang.String  合同管理表主键
 	 */
-	public void setBpmProgPer(java.lang.String bpmProgPer){
-		this.bpmProgPer = bpmProgPer;
-	}
-	
-	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  收款计划备注
-	 */
-	
-	@Column(name ="BPM_FOLLOW_REMARK",nullable=true,length=32)
-	public java.lang.String getBpmFollowRemark(){
-		return this.bpmFollowRemark;
-	}
-
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  收款计划备注
-	 */
-	public void setBpmFollowRemark(java.lang.String bpmFollowRemark){
-		this.bpmFollowRemark = bpmFollowRemark;
-	}
-	
-	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  项目立项外键
-	 */
-	
-	@Column(name ="FROM_PROJ_ID",nullable=true,length=32)
-	public java.lang.String getFromProjId(){
-		return this.fromProjId;
-	}
-
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  项目立项外键
-	 */
-	public void setFromProjId(java.lang.String fromProjId){
-		this.fromProjId = fromProjId;
-	}
-	
-	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  客户资料外键
-	 */
-	
-	@Column(name ="FROM_CUST_ID",nullable=true,length=32)
-	public java.lang.String getFromCustId(){
-		return this.fromCustId;
-	}
-
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  客户资料外键
-	 */
-	public void setFromCustId(java.lang.String fromCustId){
-		this.fromCustId = fromCustId;
-	}
-	
-	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  项目编号
-	 */
-	@Column(name ="bpm_proj_id",nullable=true,length=32)
-	public java.lang.String getBpmProjId(){
-		return this.bpmProjId;
-	}
-	
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  项目编号
-	 */
-	public void setBpmProjId(java.lang.String bpmProjId){
-		this.bpmProjId = bpmProjId;
-	}
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  合同管理外键
-	 */
-	@Column(name ="from_contract_id",nullable=true,length=32)
-	public java.lang.String getFromContractId() {
-		return fromContractId;
-	}
-	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  合同管理外键
-	 */
-	public void setFromContractId(java.lang.String fromContractId) {
-		this.fromContractId = fromContractId;
+	public void setBusContractId(java.lang.String busContractId){
+		this.busContractId = busContractId;
 	}
 	
 }

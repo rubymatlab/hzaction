@@ -475,7 +475,7 @@ public class VmBusPoContractController extends BaseController {
 	}
 
     /**
-     * 导入页面跳转
+     * 导入页面跳转（采购合同明细）
 	 */
     
 	@RequestMapping(params = "uploadContDetail")
@@ -507,6 +507,7 @@ public class VmBusPoContractController extends BaseController {
 			try {
 				List<BusPoContractDetailEntity> listBusPoContractDetailEntitys = ExcelImportUtil.importExcel(file.getInputStream(),BusPoContractDetailEntity.class,params);
 				j.setMsg("文件导入成功！");
+				System.out.println(listBusPoContractDetailEntitys.get(0).getClass());
 				j.setObj(listBusPoContractDetailEntitys);		
 			} catch (Exception e) {
 				j.setMsg("文件导入失败！");

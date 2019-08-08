@@ -24,6 +24,8 @@
         resetTrNum('add_busPoContractPay_table'); 
         return false;
     }); 
+	
+	
     $(document).ready(function(){
     	$(".datagrid-toolbar").parent().css("width","auto");
     	if(location.href.indexOf("load=detail")!=-1){

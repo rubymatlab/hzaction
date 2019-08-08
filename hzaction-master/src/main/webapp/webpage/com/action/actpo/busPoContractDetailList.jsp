@@ -132,7 +132,7 @@
 					  <label class="Validform_label" style="display: none;">单价</label>
 				   </td>
 				   <td align="left">
-					  	<input name="busPoContractDetailList[${stuts.index }].bpcdAmount" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bpcdAmount }"/>
+					  	<input name="busPoContractDetailList[${stuts.index }].bpcdAmount" maxlength="32" type="text" disabled="disabled" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bpcdAmount }"/>
 					  <label class="Validform_label" style="display: none;">金额</label>
 				   </td>
 				   <td align="left">
@@ -315,6 +315,9 @@ function popupClickContractDetail(pobj, tablefield, inputnames, pcode) {
     });
 }
 // 输入框事件绑定
+$(function(){
+	firstCompute();
+})
 function firstCompute(){
 	// 生成的时候计算一遍 （在进行监听）
 	var oInput = $("input[name$='.bpcdPrice']").add("input[name$='.bpcdNumber']").add("input[name$='.bpcdAmount']");

@@ -1,5 +1,4 @@
 (function ($) {
-    console.log(123111)
     //设置值
     function _setValues(jq, values, remainText) {
         var options = $.data(jq, "combogrid").options;

@@ -45,12 +45,13 @@
   </t:datagrid>
   </div>
  </div>
+  <script src = "webpage/com/action/actpo/dropdown.js"></script>
  <script type="text/javascript">
  
-
+// 项目名称
 $("#vmBusPoContractListForm input[name=bpmProjName]").addClass("easyui-combogrid").attr("data-options",
 			"panelWidth: 500,"+ 
-            "idField: 'id', "+ 
+            "idField: 'bpmProjName', "+ 
             "textField: 'bpmProjName', "+
             "url: 'vmBusProjectManagerController.do?datagrid&field=id,bpmProjId,bpmProjName', "+ 
             "columns: [[ "+
@@ -60,6 +61,19 @@ $("#vmBusPoContractListForm input[name=bpmProjName]").addClass("easyui-combogrid
              "fitColumns: true,"
 		)
 
+// 供应商
+$("#vmBusPoContractListForm input[name=bsName]").addClass("easyui-combogrid").attr("data-options",
+           "panelWidth: 500, "+
+           "idField: 'bsName', "+
+           "textField: 'bsName', "+
+           "url: 'basSupplierController.do?datagrid&field=id,bsName,bsContact,bsTelNo', "+
+           "columns: [[ "+ 
+           "    {field:'bsName',title:'供应商',width:80},"+
+           "    {field:'bsContact',title:'供应商联系人',width:120},"+
+           "]],"+
+           " fitColumns: true "
+		)
+		
 
 //导入
 function ImportXls() {

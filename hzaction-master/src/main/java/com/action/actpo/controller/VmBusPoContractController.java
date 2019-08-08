@@ -314,7 +314,7 @@ public class VmBusPoContractController extends BaseController {
 				busPoApplyDetailConEntity.setFromPoApplyDetId(entity.getId());// 采购申请明细
 				busPoApplyDetailConList.add(busPoApplyDetailConEntity);
 			}
-			busPoContractService.addMain(busPoContract, busPoContractPayList,busPoApplyDetailConList,busPoContractDetailList);
+			busPoContractService.updateMain(busPoContract, busPoContractPayList,busPoApplyDetailConList,busPoContractDetailList);
 //			vmBusPoContractService.updateMain(vmBusPoContract, vmMergeBusPoApplyDetailList,busPoContractPayList,busPoContractDetailList);
 			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
 		}catch(Exception e){

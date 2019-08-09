@@ -21,7 +21,7 @@ import org.jeecgframework.poi.excel.annotation.Excel;
  * @Title: Entity
  * @Description: 合同明细报价附表
  * @author onlineGenerator
- * @date 2019-07-26 16:28:39
+ * @date 2019-08-07 14:26:12
  * @version V1.0   
  *
  */
@@ -29,25 +29,34 @@ import org.jeecgframework.poi.excel.annotation.Excel;
 @Table(name = "bus_con_quoted_price", schema = "")
 @SuppressWarnings("serial")
 public class BusConQuotedPriceEntity implements java.io.Serializable {
-	/**主键*/
+	/**id*/
 	private java.lang.String id;
 	/**创建人名称*/
+	//@Excel(name="创建人名称",width=15)
 	private java.lang.String createName;
 	/**创建人登录名称*/
+	//@Excel(name="创建人登录名称",width=15)
 	private java.lang.String createBy;
 	/**创建日期*/
+	//@Excel(name="创建日期",width=15,format = "yyyy-MM-dd")
 	private java.util.Date createDate;
 	/**更新人名称*/
+	//@Excel(name="更新人名称",width=15)
 	private java.lang.String updateName;
 	/**更新人登录名称*/
+	//@Excel(name="更新人登录名称",width=15)
 	private java.lang.String updateBy;
 	/**更新日期*/
+	//@Excel(name="更新日期",width=15,format = "yyyy-MM-dd")
 	private java.util.Date updateDate;
 	/**所属部门*/
+	//@Excel(name="所属部门",width=15)
 	private java.lang.String sysOrgCode;
 	/**所属公司*/
+	//@Excel(name="所属公司",width=15)
 	private java.lang.String sysCompanyCode;
 	/**流程状态*/
+	//@Excel(name="流程状态",width=15)
 	private java.lang.String bpmStatus;
 	/**名称*/
 	@Excel(name="名称",width=15)
@@ -60,20 +69,20 @@ public class BusConQuotedPriceEntity implements java.io.Serializable {
 	private java.lang.String bcqpModel;
 	/**数量*/
 	@Excel(name="数量",width=15)
-	private java.math.BigDecimal bcqpQty;
+	private java.lang.Double bcqpQty;
 	/**单价*/
 	@Excel(name="单价",width=15)
-	private java.math.BigDecimal bcqpPrice;
+	private java.lang.Double bcqpPrice;
 	/**金额*/
 	@Excel(name="金额",width=15)
-	private java.math.BigDecimal bcqpAmount;
-	/**合同管理外键
-	@Excel(name="合同管理外键",width=15)*/
+	private java.lang.Double bcqpAmount;
+	/**合同管理外键*/
+	//@Excel(name="合同管理外键",width=15)
 	private java.lang.String busContractId;
 	
 	/**
 	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  主键
+	 *@return: java.lang.String  id
 	 */
 	@Id
 	@GeneratedValue(generator = "paymentableGenerator")
@@ -85,7 +94,7 @@ public class BusConQuotedPriceEntity implements java.io.Serializable {
 
 	/**
 	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  主键
+	 *@param: java.lang.String  id
 	 */
 	public void setId(java.lang.String id){
 		this.id = id;
@@ -132,7 +141,7 @@ public class BusConQuotedPriceEntity implements java.io.Serializable {
 	 *@return: java.util.Date  创建日期
 	 */
 	
-	@Column(name ="CREATE_DATE",nullable=true,length=20)
+	@Column(name ="CREATE_DATE",nullable=true)
 	public java.util.Date getCreateDate(){
 		return this.createDate;
 	}
@@ -186,7 +195,7 @@ public class BusConQuotedPriceEntity implements java.io.Serializable {
 	 *@return: java.util.Date  更新日期
 	 */
 	
-	@Column(name ="UPDATE_DATE",nullable=true,length=20)
+	@Column(name ="UPDATE_DATE",nullable=true)
 	public java.util.Date getUpdateDate(){
 		return this.updateDate;
 	}
@@ -308,56 +317,56 @@ public class BusConQuotedPriceEntity implements java.io.Serializable {
 	}
 	
 	/**
-	 *方法: 取得java.math.BigDecimal
-	 *@return: java.math.BigDecimal  数量
+	 *方法: 取得java.lang.Double
+	 *@return: java.lang.Double  数量
 	 */
 	
-	@Column(name ="BCQP_QTY",nullable=true,length=32)
-	public java.math.BigDecimal getBcqpQty(){
+	@Column(name ="BCQP_QTY",nullable=true,length=22)
+	public java.lang.Double getBcqpQty(){
 		return this.bcqpQty;
 	}
 
 	/**
-	 *方法: 设置java.math.BigDecimal
-	 *@param: java.math.BigDecimal  数量
+	 *方法: 设置java.lang.Double
+	 *@param: java.lang.Double  数量
 	 */
-	public void setBcqpQty(java.math.BigDecimal bcqpQty){
+	public void setBcqpQty(java.lang.Double bcqpQty){
 		this.bcqpQty = bcqpQty;
 	}
 	
 	/**
-	 *方法: 取得java.math.BigDecimal
-	 *@return: java.math.BigDecimal  单价
+	 *方法: 取得java.lang.Double
+	 *@return: java.lang.Double  单价
 	 */
 	
-	@Column(name ="BCQP_PRICE",nullable=true,length=32)
-	public java.math.BigDecimal getBcqpPrice(){
+	@Column(name ="BCQP_PRICE",nullable=true,length=22)
+	public java.lang.Double getBcqpPrice(){
 		return this.bcqpPrice;
 	}
 
 	/**
-	 *方法: 设置java.math.BigDecimal
-	 *@param: java.math.BigDecimal  单价
+	 *方法: 设置java.lang.Double
+	 *@param: java.lang.Double  单价
 	 */
-	public void setBcqpPrice(java.math.BigDecimal bcqpPrice){
+	public void setBcqpPrice(java.lang.Double bcqpPrice){
 		this.bcqpPrice = bcqpPrice;
 	}
 	
 	/**
-	 *方法: 取得java.math.BigDecimal
-	 *@return: java.math.BigDecimal  金额
+	 *方法: 取得java.lang.Double
+	 *@return: java.lang.Double  金额
 	 */
 	
-	@Column(name ="BCQP_AMOUNT",nullable=true,length=32)
-	public java.math.BigDecimal getBcqpAmount(){
+	@Column(name ="BCQP_AMOUNT",nullable=true,length=22)
+	public java.lang.Double getBcqpAmount(){
 		return this.bcqpAmount;
 	}
 
 	/**
-	 *方法: 设置java.math.BigDecimal
-	 *@param: java.math.BigDecimal  金额
+	 *方法: 设置java.lang.Double
+	 *@param: java.lang.Double  金额
 	 */
-	public void setBcqpAmount(java.math.BigDecimal bcqpAmount){
+	public void setBcqpAmount(java.lang.Double bcqpAmount){
 		this.bcqpAmount = bcqpAmount;
 	}
 	
@@ -381,14 +390,9 @@ public class BusConQuotedPriceEntity implements java.io.Serializable {
 
 	@Override
 	public String toString() {
-		return "BusConQuotedPriceEntity [id=" + id + ", createName=" + createName + ", createBy=" + createBy
-				+ ", createDate=" + createDate + ", updateName=" + updateName + ", updateBy=" + updateBy
-				+ ", updateDate=" + updateDate + ", sysOrgCode=" + sysOrgCode + ", sysCompanyCode=" + sysCompanyCode
-				+ ", bpmStatus=" + bpmStatus + ", bcqpName=" + bcqpName + ", bcqpBrand=" + bcqpBrand + ", bcqpModel="
-				+ bcqpModel + ", bcqpQty=" + bcqpQty + ", bcqpPrice=" + bcqpPrice + ", bcqpAmount=" + bcqpAmount
+		return "BusConQuotedPriceEntity [bcqpName=" + bcqpName + ", bcqpBrand=" + bcqpBrand + ", bcqpModel=" + bcqpModel
+				+ ", bcqpQty=" + bcqpQty + ", bcqpPrice=" + bcqpPrice + ", bcqpAmount=" + bcqpAmount
 				+ ", busContractId=" + busContractId + "]";
 	}
-	
-	
 	
 }

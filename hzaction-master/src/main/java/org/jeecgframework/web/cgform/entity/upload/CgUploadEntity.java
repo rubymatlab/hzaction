@@ -49,6 +49,11 @@ public class CgUploadEntity extends TSAttachment implements java.io.Serializable
 	public void setCgformField(String cgformField) {
 		this.cgformField = cgformField;
 	}
+	@Override
+	public String toString() {
+		return "CgUploadEntity [cgformName=" + cgformName + ", cgformId=" + cgformId + ", cgformField=" + cgformField
+				+ "]";
+	}
 	
 	
 }

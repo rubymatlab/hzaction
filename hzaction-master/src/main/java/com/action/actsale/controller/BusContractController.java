@@ -1,6 +1,7 @@
 package com.action.actsale.controller;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -13,7 +14,6 @@ import javax.validation.Validator;
 import org.apache.commons.lang3.StringUtils;
 import org.jeecgframework.core.beanvalidator.BeanValidators;
 import org.jeecgframework.core.common.controller.BaseController;
-import org.jeecgframework.core.common.dao.impl.CommonDao;
 import org.jeecgframework.core.common.exception.BusinessException;
 import org.jeecgframework.core.common.hibernate.qbc.CriteriaQuery;
 import org.jeecgframework.core.common.model.json.AjaxJson;
@@ -25,11 +25,14 @@ import org.jeecgframework.core.util.ResourceUtil;
 import org.jeecgframework.core.util.StringUtil;
 import org.jeecgframework.jwt.util.ResponseMessage;
 import org.jeecgframework.jwt.util.Result;
+import org.jeecgframework.p3.core.utils.common.HttpUtil.Response;
 import org.jeecgframework.poi.excel.ExcelImportUtil;
 import org.jeecgframework.poi.excel.entity.ExportParams;
 import org.jeecgframework.poi.excel.entity.ImportParams;
 import org.jeecgframework.poi.excel.entity.vo.NormalExcelConstants;
 import org.jeecgframework.tag.core.easyui.TagUtil;
+import org.jeecgframework.web.cgform.entity.upload.CgUploadEntity;
+import org.jeecgframework.web.cgform.service.config.CgFormFieldServiceI;
 import org.jeecgframework.web.system.service.SystemService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -60,12 +63,11 @@ import com.alibaba.fastjson.JSONArray;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
-
 /**   
  * @Title: Controller
  * @Description: 合同管理
  * @author onlineGenerator
- * @date 2019-07-18 23:54:48
+ * @date 2019-08-07 14:26:12
  * @version V1.0   
  *
  */
@@ -81,22 +83,33 @@ public class BusContractController extends BaseController {
 	private SystemService systemService;
 	@Autowired
 	private Validator validator;
-	/*@Autowired
-	private BusContractMiniDao busContractMiniDao;*/
-	
-	private CommonDao commomDao = new CommonDao();
+	@Autowired
+	private CgFormFieldServiceI cgFormFieldService;
 	
 	
 	/**
-	 * 测试数据库操作接口
+	 * 自定义按钮-sql增强-测试button
+	 * @param ids
 	 * @return
 	 */
-	/*@RequestMapping(params="getList")
+	@RequestMapping(params = "affirmButton")
 	@ResponseBody
-	public List<BusContractEntity> getList(){
-		busContractService.getList();	//使用jeecg的JDBC模板
-		return busContractDao.getList();	//使用miniDao注解
-	}*/
+	public AjaxJson affirmButton(BusContractEntity busContract, HttpServletRequest request) {
+		AjaxJson j = new AjaxJson();
+		String message = "合同确定成功";
+		BusContractEntity t = busContractService.get(BusContractEntity.class, busContract.getId());
+		try{
+			//自定义sql增强按钮
+			busContractService.affirmButton(t);
+			
+			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
+		}catch(Exception e){
+			e.printStackTrace();
+			message = "合同确定失败";
+		}
+		j.setMsg(message);
+		return j;
+	}
 	
 	
 	/**
@@ -108,15 +121,15 @@ public class BusContractController extends BaseController {
 	public ModelAndView list(HttpServletRequest request) {
 		return new ModelAndView("com/action/actsale/busContractList");
 	}
+	@RequestMapping(params = "list0")
+	public ModelAndView list0(HttpServletRequest request) {
+		return new ModelAndView("com/action/actsale/busContractList0");
+	}
 	@RequestMapping(params = "list1")
 	public ModelAndView list1(HttpServletRequest request) {
 		return new ModelAndView("com/action/actsale/busContractList1");
 	}
-	@RequestMapping(params = "list2")
-	public ModelAndView list2(HttpServletRequest request) {
-		return new ModelAndView("com/action/actsale/busContractList2");
-	}
-
+	
 	/**
 	 * easyui AJAX请求数据
 	 * 
@@ -125,10 +138,11 @@ public class BusContractController extends BaseController {
 	 * @param dataGrid
 	 * @param user
 	 */
+
 	@RequestMapping(params = "datagrid")
 	public void datagrid(BusContractEntity busContract,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
 		String contractState = request.getParameter("contractState");
-		logger.info("-- 合同完成状态（1未完成，2已完成） --"+contractState);
+		logger.info("-- 合同完成状态（0制作中，1已审核） --"+contractState);
 		
 		CriteriaQuery cq = new CriteriaQuery(BusContractEntity.class, dataGrid);
 		//查询条件组装器
@@ -163,7 +177,6 @@ public class BusContractController extends BaseController {
 		try{
 			busContractService.delMain(busContract);
 			systemService.addLog(message, Globals.Log_Type_DEL, Globals.Log_Leavel_INFO);
-			
 		}catch(Exception e){
 			e.printStackTrace();
 			message = "合同管理删除失败";
@@ -209,14 +222,13 @@ public class BusContractController extends BaseController {
 	@RequestMapping(params = "doAdd")
 	@ResponseBody
 	public AjaxJson doAdd(BusContractEntity busContract,BusContractPage busContractPage, HttpServletRequest request) {
-		List<BusCostBudgetingEntity> busCostBudgetingList =  busContractPage.getBusCostBudgetingList();
+		List<BusConQuotedPriceEntity> busConQuotedPriceList =  busContractPage.getBusConQuotedPriceList();
 		List<BusContractPaymentEntity> busContractPaymentList =  busContractPage.getBusContractPaymentList();
-		List<BusConQuotedPriceEntity> busConQuotedPriceList = busContractPage.getBusConQuotedPriceList();
-
+		List<BusCostBudgetingEntity> busCostBudgetingList =  busContractPage.getBusCostBudgetingList();
 		AjaxJson j = new AjaxJson();
 		String message = "添加成功";
 		try{
-			busContractService.addMain(busContract, busCostBudgetingList,busContractPaymentList,busConQuotedPriceList);
+			busContractService.addMain(busContract, busConQuotedPriceList,busContractPaymentList,busCostBudgetingList);
 			systemService.addLog(message, Globals.Log_Type_INSERT, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();
@@ -224,10 +236,9 @@ public class BusContractController extends BaseController {
 			throw new BusinessException(e.getMessage());
 		}
 		j.setMsg(message);
+		j.setObj(busContract);
 		return j;
 	}
-	
-	
 	/**
 	 * 更新合同管理
 	 * 
@@ -237,18 +248,13 @@ public class BusContractController extends BaseController {
 	@RequestMapping(params = "doUpdate")
 	@ResponseBody
 	public AjaxJson doUpdate(BusContractEntity busContract,BusContractPage busContractPage, HttpServletRequest request) {
-		List<BusCostBudgetingEntity> busCostBudgetingList =  busContractPage.getBusCostBudgetingList();
+		List<BusConQuotedPriceEntity> busConQuotedPriceList =  busContractPage.getBusConQuotedPriceList();
 		List<BusContractPaymentEntity> busContractPaymentList =  busContractPage.getBusContractPaymentList();
-		List<BusConQuotedPriceEntity> busConQuotedPriceList = busContractPage.getBusConQuotedPriceList();
+		List<BusCostBudgetingEntity> busCostBudgetingList =  busContractPage.getBusCostBudgetingList();
 		AjaxJson j = new AjaxJson();
 		String message = "更新成功";
 		try{
-			logger.info("-- 更新合同管理-成本预算 --"+busCostBudgetingList.size());
-			logger.info("-- 更新合同管理-约定收款 --"+busContractPaymentList.size());
-			logger.info("-- 更新合同管理-合同管理id --"+busContract.getId());
-
-			
-			busContractService.updateMain(busContract, busCostBudgetingList,busContractPaymentList,busConQuotedPriceList);
+			busContractService.updateMain(busContract, busConQuotedPriceList,busContractPaymentList,busCostBudgetingList);
 			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();
@@ -258,8 +264,7 @@ public class BusContractController extends BaseController {
 		j.setMsg(message);
 		return j;
 	}
-	
-	
+
 	/**
 	 * 合同管理新增页面跳转
 	 * 
@@ -290,51 +295,7 @@ public class BusContractController extends BaseController {
 	
 	
 	/**
-	 * 加载明细列表[1]
-	 * 
-	 * @return
-	 */
-	@RequestMapping(params = "busCostBudgetingList")
-	public ModelAndView busCostBudgetingList(BusContractEntity busContract, HttpServletRequest req) {
-	
-		//===================================================================================
-		//获取参数
-		Object id0 = busContract.getId();
-		//===================================================================================
-		//查询-1
-	    String hql0 = "from BusCostBudgetingEntity where 1 = 1 AND busContractId = ? ";
-	    try{
-	    	List<BusCostBudgetingEntity> busCostBudgetingEntityList = systemService.findHql(hql0,id0);
-			req.setAttribute("busCostBudgetingList", busCostBudgetingEntityList);
-		}catch(Exception e){
-			logger.info(e.getMessage());
-		}
-		return new ModelAndView("com/action/actsale/busCostBudgetingList");
-	}
-	/**
-	 * 加载明细列表[2]
-	 * 
-	 * @return
-	 */
-	@RequestMapping(params = "busContractPaymentList")
-	public ModelAndView busContractPaymentList(BusContractEntity busContract, HttpServletRequest req) {
-	
-		//===================================================================================
-		//获取参数
-		Object id1 = busContract.getId();
-		//===================================================================================
-		//查询-2
-	    String hql1 = "from BusContractPaymentEntity where 1 = 1 AND busContractId = ? order by bcpProgrePayment asc";
-	    try{
-	    	List<BusContractPaymentEntity> busContractPaymentEntityList = systemService.findHql(hql1,id1);
-			req.setAttribute("busContractPaymentList", busContractPaymentEntityList);
-		}catch(Exception e){
-			logger.info(e.getMessage());
-		}
-		return new ModelAndView("com/action/actsale/busContractPaymentList");
-	}
-	/**
-	 * 加载明细列表[3]
+	 * 加载明细列表[合同明细报价附表]
 	 * 
 	 * @return
 	 */
@@ -350,13 +311,56 @@ public class BusContractController extends BaseController {
 	    try{
 	    	List<BusConQuotedPriceEntity> busConQuotedPriceEntityList = systemService.findHql(hql0,id0);
 			req.setAttribute("busConQuotedPriceList", busConQuotedPriceEntityList);
+			logger.info("-- 查询-合同明细报价附表:{} --",busConQuotedPriceEntityList);
 		}catch(Exception e){
 			logger.info(e.getMessage());
 		}
-	    req.setAttribute("id", id0+"");
 		return new ModelAndView("com/action/actsale/busConQuotedPriceList");
 	}
+	/**
+	 * 加载明细列表[合同约定收款附表]
+	 * 
+	 * @return
+	 */
+	@RequestMapping(params = "busContractPaymentList")
+	public ModelAndView busContractPaymentList(BusContractEntity busContract, HttpServletRequest req) {
 	
+		//===================================================================================
+		//获取参数
+		Object id1 = busContract.getId();
+		//===================================================================================
+		//查询-合同约定收款附表
+	    String hql1 = "from BusContractPaymentEntity where 1 = 1 AND busContractId = ? order by bcpProgrePayment asc ";
+	    try{
+	    	List<BusContractPaymentEntity> busContractPaymentEntityList = systemService.findHql(hql1,id1);
+			req.setAttribute("busContractPaymentList", busContractPaymentEntityList);
+		}catch(Exception e){
+			logger.info(e.getMessage());
+		}
+		return new ModelAndView("com/action/actsale/busContractPaymentList");
+	}
+	/**
+	 * 加载明细列表[成本预算附表]
+	 * 
+	 * @return
+	 */
+	@RequestMapping(params = "busCostBudgetingList")
+	public ModelAndView busCostBudgetingList(BusContractEntity busContract, HttpServletRequest req) {
+	
+		//===================================================================================
+		//获取参数
+		Object id2 = busContract.getId();
+		//===================================================================================
+		//查询-成本预算附表
+	    String hql2 = "from BusCostBudgetingEntity where 1 = 1 AND busContractId = ? ";
+	    try{
+	    	List<BusCostBudgetingEntity> busCostBudgetingEntityList = systemService.findHql(hql2,id2);
+			req.setAttribute("busCostBudgetingList", busCostBudgetingEntityList);
+		}catch(Exception e){
+			logger.info(e.getMessage());
+		}
+		return new ModelAndView("com/action/actsale/busCostBudgetingList");
+	}
 
     /**
     * 导出excel
@@ -366,17 +370,6 @@ public class BusContractController extends BaseController {
     */
     @RequestMapping(params = "exportXls")
     public String exportXls(BusContractEntity busContract,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid,ModelMap map) {
-    	//???
-    	/*logger.info("-- 导出excel ---");
-    	logger.info("BusContractEntity："+busContract.toString());
-    	logger.info("DataGrid："+dataGrid.toString());
-    	Iterator<Entry<String, Object>> iterator = map.entrySet().iterator();
-    	while(iterator.hasNext()) {
-    		Entry<String, Object> entry = iterator.next();
-    		logger.info("key:"+entry.getKey()+"\t value:"+entry.getValue());
-    	}*/
-    	
-    	
     	CriteriaQuery cq = new CriteriaQuery(BusContractEntity.class, dataGrid);
     	//查询条件组装器
     	org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, busContract);
@@ -393,22 +386,18 @@ public class BusContractController extends BaseController {
         		try{
         		BusContractPage page=new BusContractPage();
         		   MyBeanUtils.copyBeanNotNull2Bean(entity,page);
-        		   
             	    Object id0 = entity.getId();
-				    String hql0 = "from BusCostBudgetingEntity where 1 = 1 AND busContractId = ? ";
-        	        List<BusCostBudgetingEntity> busCostBudgetingEntityList = systemService.findHql(hql0,id0);
-            		page.setBusCostBudgetingList(busCostBudgetingEntityList);
-            		
+				    String hql0 = "from BusConQuotedPriceEntity where 1 = 1 AND busContractId = ? ";
+        	        List<BusConQuotedPriceEntity> busConQuotedPriceEntityList = systemService.findHql(hql0,id0);
+            		page.setBusConQuotedPriceList(busConQuotedPriceEntityList);
             	    Object id1 = entity.getId();
 				    String hql1 = "from BusContractPaymentEntity where 1 = 1 AND busContractId = ? ";
         	        List<BusContractPaymentEntity> busContractPaymentEntityList = systemService.findHql(hql1,id1);
             		page.setBusContractPaymentList(busContractPaymentEntityList);
-            		
-            		Object id2 = entity.getId();
-            		String hql2 = "from BusConQuotedPriceEntity where 1 = 1 AND busContractId = ? ";
-            		List<BusConQuotedPriceEntity> busConQuotedPriceEntityList = systemService.findHql(hql2,id2);
-            		page.setBusConQuotedPriceList(busConQuotedPriceEntityList);
-
+            	    Object id2 = entity.getId();
+				    String hql2 = "from BusCostBudgetingEntity where 1 = 1 AND busContractId = ? ";
+        	        List<BusCostBudgetingEntity> busCostBudgetingEntityList = systemService.findHql(hql2,id2);
+            		page.setBusCostBudgetingList(busCostBudgetingEntityList);
             		pageList.add(page);
             	}catch(Exception e){
             		logger.info(e.getMessage());
@@ -417,7 +406,7 @@ public class BusContractController extends BaseController {
         }
         map.put(NormalExcelConstants.FILE_NAME,"合同管理");
         map.put(NormalExcelConstants.CLASS,BusContractPage.class);
-        map.put(NormalExcelConstants.PARAMS,new ExportParams("合同管理列表", "导出人:安信",
+        map.put(NormalExcelConstants.PARAMS,new ExportParams("合同管理列表", "导出人:Jeecg",
             "导出信息"));
         map.put(NormalExcelConstants.DATA_LIST,pageList);
         return NormalExcelConstants.JEECG_EXCEL_VIEW;
@@ -432,13 +421,11 @@ public class BusContractController extends BaseController {
 	@RequestMapping(params = "importExcel", method = RequestMethod.POST)
 	@ResponseBody
 	public AjaxJson importExcel(HttpServletRequest request, HttpServletResponse response) {
-		logger.info("-- 通过excel导入数据 --");
 		AjaxJson j = new AjaxJson();
 		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 		Map<String, MultipartFile> fileMap = multipartRequest.getFileMap();
 		for (Map.Entry<String, MultipartFile> entity : fileMap.entrySet()) {
 			MultipartFile file = entity.getValue();// 获取上传文件对象
-			
 			ImportParams params = new ImportParams();
 			params.setTitleRows(2);
 			params.setHeadRows(2);
@@ -449,10 +436,12 @@ public class BusContractController extends BaseController {
 				for (BusContractPage page : list) {
 					entity1=new BusContractEntity();
 					MyBeanUtils.copyBeanNotNull2Bean(page,entity1);
-		            busContractService.addMain(entity1, page.getBusCostBudgetingList(),page.getBusContractPaymentList(),page.getBusConQuotedPriceList());
+		            busContractService.addMain(entity1, page.getBusConQuotedPriceList(),page.getBusContractPaymentList(),page.getBusCostBudgetingList());
 				}
+				logger.info("-- 文件导入成功! --");
 				j.setMsg("文件导入成功！");
 			} catch (Exception e) {
+				logger.info("-- 文件导入失败! --");
 				j.setMsg("文件导入失败！");
 				logger.error(ExceptionUtil.getExceptionMessage(e));
 			}finally{
@@ -471,10 +460,10 @@ public class BusContractController extends BaseController {
 	 * @param	id:主表的id
 	 * @return
 	 */
-	@RequestMapping(params = "importExcelDetail", method = RequestMethod.POST)
+	@RequestMapping(params="importExcelDetail", method = RequestMethod.POST)
 	@ResponseBody
-	public AjaxJson importExcelDetail(String id,HttpServletRequest request, HttpServletResponse response) {
-		logger.info("-- 通过excel导入【明细报价附表】 合同管理外键:{}--",id);
+	public AjaxJson importExcelDetail(String contractId,HttpServletRequest request, HttpServletResponse response) {
+		logger.info("-- 通过excel导入【明细报价附表】 合同管理外键:{}--",contractId);
 		AjaxJson j = new AjaxJson();
 		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 		Map<String, MultipartFile> fileMap = multipartRequest.getFileMap();
@@ -483,19 +472,30 @@ public class BusContractController extends BaseController {
 			logger.info("-- 文件名称:{}--",file.getOriginalFilename());
 			
 			ImportParams params = new ImportParams();
-			params.setTitleRows(0);
-			params.setHeadRows(0);
+			params.setTitleRows(0);//excel文件的标题行数
+			params.setHeadRows(1);//excel文件中表头行数
 			params.setNeedSave(true);
 			try {
 				List<BusConQuotedPriceEntity> list =  ExcelImportUtil.importExcel(file.getInputStream(), BusConQuotedPriceEntity.class, params);
 				for (BusConQuotedPriceEntity busConQuotedPriceEntity : list) {
-					busConQuotedPriceEntity.setBusContractId(id);
-					System.out.println(busConQuotedPriceEntity);
-					busContractService.save(busConQuotedPriceEntity);
+					logger.info("-- 通过excel导入附表数据:{} --",busConQuotedPriceEntity);
+					BusConQuotedPriceEntity newBusConQuotedPriceEntity = new BusConQuotedPriceEntity();
+					newBusConQuotedPriceEntity.setBcqpName(busConQuotedPriceEntity.getBcqpName());
+					newBusConQuotedPriceEntity.setBcqpBrand(busConQuotedPriceEntity.getBcqpBrand());
+					newBusConQuotedPriceEntity.setBcqpModel(busConQuotedPriceEntity.getBcqpModel());
+					newBusConQuotedPriceEntity.setBcqpQty(busConQuotedPriceEntity.getBcqpQty());
+					newBusConQuotedPriceEntity.setBcqpPrice(busConQuotedPriceEntity.getBcqpPrice());
+					newBusConQuotedPriceEntity.setBcqpAmount(busConQuotedPriceEntity.getBcqpAmount());
+					newBusConQuotedPriceEntity.setBusContractId(contractId);
+					logger.info("-- 数据库保存该对象:{} --",newBusConQuotedPriceEntity);
+					busContractService.save(newBusConQuotedPriceEntity);
 				}
+				logger.info("-- 文件导入成功! --");
+				j.setObj(list);
 				j.setMsg("文件导入成功！");
 			} catch (Exception e) {
 				j.setMsg("文件导入失败！");
+				logger.info("-- 文件导入失败! --");
 				logger.error(ExceptionUtil.getExceptionMessage(e));
 			}finally{
 				try {
@@ -528,12 +528,14 @@ public class BusContractController extends BaseController {
 	*/
 	@RequestMapping(params = "upload")
 	public ModelAndView upload(HttpServletRequest req) {
-		req.setAttribute("controller_name", "busContractController");
-		if("1".equals(req.getParameter("detail"))) {
-			req.setAttribute("method_name", "importExcelDetail");
-			req.setAttribute("id", req.getParameter("id"));
+		/*req.setAttribute("controller_name", "busContractController");
+		String contractId = req.getParameter("contractId");
+		if(contractId!=null) {
+			req.setAttribute("contractId", contractId);
+			return new ModelAndView("com/action/actsale/ax_busContract_pub_excel_upload");
 		}
-		return new ModelAndView("common/upload/pub_excel_upload");
+		return new ModelAndView("common/upload/pub_excel_upload");*/
+		return new ModelAndView("com/action/actsale/ax_busContract_pub_excel_upload");
 	}
 
  	
@@ -556,12 +558,16 @@ public class BusContractController extends BaseController {
         		   MyBeanUtils.copyBeanNotNull2Bean(entity,page);
 					Object id0 = entity.getId();
 					Object id1 = entity.getId();
-				     String hql0 = "from BusCostBudgetingEntity where 1 = 1 AND busContractId = ? ";
-	    			List<BusCostBudgetingEntity> busCostBudgetingOldList = this.busContractService.findHql(hql0,id0);
-            		page.setBusCostBudgetingList(busCostBudgetingOldList);
+					Object id2 = entity.getId();
+				     String hql0 = "from BusConQuotedPriceEntity where 1 = 1 AND busContractId = ? ";
+	    			List<BusConQuotedPriceEntity> busConQuotedPriceOldList = this.busContractService.findHql(hql0,id0);
+            		page.setBusConQuotedPriceList(busConQuotedPriceOldList);
 				     String hql1 = "from BusContractPaymentEntity where 1 = 1 AND busContractId = ? ";
 	    			List<BusContractPaymentEntity> busContractPaymentOldList = this.busContractService.findHql(hql1,id1);
             		page.setBusContractPaymentList(busContractPaymentOldList);
+				     String hql2 = "from BusCostBudgetingEntity where 1 = 1 AND busContractId = ? ";
+	    			List<BusCostBudgetingEntity> busCostBudgetingOldList = this.busContractService.findHql(hql2,id2);
+            		page.setBusCostBudgetingList(busCostBudgetingOldList);
             		pageList.add(page);
             	}catch(Exception e){
             		logger.info(e.getMessage());
@@ -584,12 +590,16 @@ public class BusContractController extends BaseController {
 			MyBeanUtils.copyBeanNotNull2Bean(task, page);
 				Object id0 = task.getId();
 				Object id1 = task.getId();
-		    String hql0 = "from BusCostBudgetingEntity where 1 = 1 AND busContractId = ? ";
-			List<BusCostBudgetingEntity> busCostBudgetingOldList = this.busContractService.findHql(hql0,id0);
-    		page.setBusCostBudgetingList(busCostBudgetingOldList);
+				Object id2 = task.getId();
+		    String hql0 = "from BusConQuotedPriceEntity where 1 = 1 AND busContractId = ? ";
+			List<BusConQuotedPriceEntity> busConQuotedPriceOldList = this.busContractService.findHql(hql0,id0);
+    		page.setBusConQuotedPriceList(busConQuotedPriceOldList);
 		    String hql1 = "from BusContractPaymentEntity where 1 = 1 AND busContractId = ? ";
 			List<BusContractPaymentEntity> busContractPaymentOldList = this.busContractService.findHql(hql1,id1);
     		page.setBusContractPaymentList(busContractPaymentOldList);
+		    String hql2 = "from BusCostBudgetingEntity where 1 = 1 AND busContractId = ? ";
+			List<BusCostBudgetingEntity> busCostBudgetingOldList = this.busContractService.findHql(hql2,id2);
+    		page.setBusCostBudgetingList(busCostBudgetingOldList);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -607,9 +617,9 @@ public class BusContractController extends BaseController {
 		}
 
 		//保存
-		List<BusCostBudgetingEntity> busCostBudgetingList =  busContractPage.getBusCostBudgetingList();
+		List<BusConQuotedPriceEntity> busConQuotedPriceList =  busContractPage.getBusConQuotedPriceList();
 		List<BusContractPaymentEntity> busContractPaymentList =  busContractPage.getBusContractPaymentList();
-		List<BusConQuotedPriceEntity> busConQuotedPriceList = busContractPage.getBusConQuotedPriceList();
+		List<BusCostBudgetingEntity> busCostBudgetingList =  busContractPage.getBusCostBudgetingList();
 		
 		BusContractEntity busContract = new BusContractEntity();
 		try{
@@ -619,7 +629,7 @@ public class BusContractController extends BaseController {
             return Result.error("保存合同管理失败");
         }
 		try {
-			busContractService.addMain(busContract, busCostBudgetingList,busContractPaymentList,busConQuotedPriceList);
+			busContractService.addMain(busContract, busConQuotedPriceList,busContractPaymentList,busCostBudgetingList);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -639,9 +649,9 @@ public class BusContractController extends BaseController {
 		}
 
 		//保存
-		List<BusCostBudgetingEntity> busCostBudgetingList =  busContractPage.getBusCostBudgetingList();
+		List<BusConQuotedPriceEntity> busConQuotedPriceList =  busContractPage.getBusConQuotedPriceList();
 		List<BusContractPaymentEntity> busContractPaymentList =  busContractPage.getBusContractPaymentList();
-		List<BusConQuotedPriceEntity> busConQuotedPriceList = busContractPage.getBusConQuotedPriceList();
+		List<BusCostBudgetingEntity> busCostBudgetingList =  busContractPage.getBusCostBudgetingList();
 		
 		BusContractEntity busContract = new BusContractEntity();
 		try{
@@ -651,7 +661,7 @@ public class BusContractController extends BaseController {
             return Result.error("合同管理更新失败");
         }
 		try {
-			busContractService.updateMain(busContract, busCostBudgetingList,busContractPaymentList,busConQuotedPriceList);
+			busContractService.updateMain(busContract, busConQuotedPriceList,busContractPaymentList,busCostBudgetingList);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -680,29 +690,35 @@ public class BusContractController extends BaseController {
 
 		return Result.success();
 	}
-	
 	/**
-	 * 自定义按钮-sql增强-测试button
-	 * @param ids
-	 * @return
+	 * 获取文件附件信息
+	 * 
+	 * @param id busContract主键id
 	 */
-	@RequestMapping(params = "affirmButton")
+	@RequestMapping(params = "getFiles")
 	@ResponseBody
-	public AjaxJson affirmButton(BusContractEntity busContract, HttpServletRequest request) {
-		AjaxJson j = new AjaxJson();
-		String message = "合同确定成功";
-		BusContractEntity t = busContractService.get(BusContractEntity.class, busContract.getId());
-		try{
-			//自定义sql增强按钮
-			busContractService.affirmButton(t);
-			
-			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
-		}catch(Exception e){
-			e.printStackTrace();
-			message = "合同确定失败";
+	public AjaxJson getFiles(String id){
+		List<CgUploadEntity> uploadBeans = cgFormFieldService.findByProperty(CgUploadEntity.class, "cgformId", id);
+		List<Map<String,Object>> files = new ArrayList<Map<String,Object>>(0);
+		for(CgUploadEntity b:uploadBeans){
+			String title = b.getAttachmenttitle();//附件名
+			String fileKey = b.getId();//附件主键
+			String path = b.getRealpath();//附件路径
+			String field = b.getCgformField();//表单中作为附件控件的字段
+			Map<String, Object> file = new HashMap<String, Object>();
+			file.put("title", title);
+			file.put("fileKey", fileKey);
+			file.put("path", path);
+			file.put("field", field==null?"":field);
+			files.add(file);
 		}
-		j.setMsg(message);
+		AjaxJson j = new AjaxJson();
+		j.setObj(files);
 		return j;
 	}
+	
+	
+	
+	
 	
 }

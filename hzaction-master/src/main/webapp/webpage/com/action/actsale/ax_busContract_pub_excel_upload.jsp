@@ -5,14 +5,22 @@
 <head>
 <title>通用Excel导入${controller_name}</title>
 <t:base type="jquery,easyui,tools"></t:base>
-<script src="webapp/plug-in/plupload/plupload.full.min.js" ></script>
 </head>
 <body style="overflow-y: hidden" scroll="no">
 <t:formvalid formid="formobj" layout="div" dialog="true" beforeSubmit="upload">
 	<fieldset class="step">
-	<div class="form"><t:upload name="fiels" width="120" buttonText="选择要导入的文件" uploader="${controller_name}.do?${empty method_name?'importExcel':method_name }" extend="*.xls;*.xlsx" id="file_upload" formData="documentTitle"></t:upload></div>
+	<div class="form"><t:upload name="fiels" dialog="false" onUploadSuccess="uploadSuccess"  width="120" buttonText="选择要导入的文件" 
+		uploader="busContractController.do?importExcelDetail" extend="*.xls;*.xlsx" id="file_upload" formData="documentTitle"></t:upload></div>
 	<div class="form" id="filediv" style="height: 50px"></div>
 	</fieldset>
 </t:formvalid>
+<script>
+	function uploadSuccess(row,files,info){
+		//回调事件
+		frameElement.api.config.button[0].uploaded(row);
+		//关闭dialog窗口事件
+		frameElement.api.close();
+	}
+</script>
 </body>
 </html>

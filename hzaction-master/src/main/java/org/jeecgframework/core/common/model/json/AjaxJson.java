@@ -16,6 +16,7 @@ public class AjaxJson {
 	private String msg = "操作成功";// 提示信息
 	private Object obj = null;// 其他信息
 	private Map<String, Object> attributes;// 其他参数
+	
 	public Map<String, Object> getAttributes() {
 		return attributes;
 	}

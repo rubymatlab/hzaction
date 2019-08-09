@@ -196,13 +196,11 @@ public class CgUploadController extends BaseController {
 		cgUploadService.deleteFile(file);
 		systemService.addLog(message, Globals.Log_Type_DEL,Globals.Log_Leavel_INFO);
 		
-		//wmt
-		//如果在合同管理表操作删除文件的，则进if
-		if("bus_contract".equals(file.getCgformName())) {
-			busContractMiniDao.delete(file.getId());
-			logger.info("=======删除附件文件ID为:"+file.getId()+"的数据信息=====删除成功======");
-		}
-		//wmt
+		//AX
+		//在安信项目下操作删除文件
+		busContractMiniDao.delete(file.getId());
+		logger.info("=======删除附件文件ID为:"+file.getId()+"的数据信息=====删除成功======");
+		//AX
 		
 		j.setSuccess(true);
 		j.setMsg(message);

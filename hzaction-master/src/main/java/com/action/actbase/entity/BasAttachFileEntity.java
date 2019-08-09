@@ -47,9 +47,6 @@ public class BasAttachFileEntity implements java.io.Serializable {
 	/**业务外键*/
 	@Excel(name="业务外键",width=15)
 	private java.lang.String bafBusId;
-	/**序号*/
-	@Excel(name="序号",width=15)
-	private java.lang.Integer bafSeqNo;
 	/**文件路径*/
 	@Excel(name="文件路径",width=15)
 	private java.lang.String bafPath;
@@ -260,23 +257,6 @@ public class BasAttachFileEntity implements java.io.Serializable {
 	 */
 	public void setBafBusId(java.lang.String bafBusId){
 		this.bafBusId = bafBusId;
-	}
-	/**
-	 *方法: 取得java.lang.Integer
-	 *@return: java.lang.Integer  序号
-	 */
-
-	@Column(name ="BAF_SEQ_NO",nullable=true,length=32)
-	public java.lang.Integer getBafSeqNo(){
-		return this.bafSeqNo;
-	}
-
-	/**
-	 *方法: 设置java.lang.Integer
-	 *@param: java.lang.Integer  序号
-	 */
-	public void setBafSeqNo(java.lang.Integer bafSeqNo){
-		this.bafSeqNo = bafSeqNo;
 	}
 	/**
 	 *方法: 取得java.lang.String

@@ -2772,3 +2772,146 @@ org.jeecgframework.core.common.exception.BusinessException: Batch update returne
 [2019-08-09 10:26:58] [INFO] [com.action.actsale.controller.BusContractController:147] -- 合同完成状态（0制作中，1已审核） --0
 [2019-08-09 10:26:58] [INFO] [com.action.actsale.controller.BusContractController:147] -- 合同完成状态（0制作中，1已审核） --0
 [2019-08-09 10:26:59] [INFO] [com.action.actsale.controller.BusContractController:147] -- 合同完成状态（0制作中，1已审核） --0
+[2019-08-09 11:29:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgdynamgraph.dao.core.CgDynamGraphDao }
+[2019-08-09 11:29:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormFieldDao }
+[2019-08-09 11:29:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormVersionDao }
+[2019-08-09 11:29:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.upload.CgFormUploadDao }
+[2019-08-09 11:29:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgreport.dao.core.CgReportDao }
+[2019-08-09 11:29:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.system.dao.DepartAuthGroupDao }
+[2019-08-09 11:29:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.system.dao.JeecgDictDao }
+[2019-08-09 11:29:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.demo.dao.JeecgMinidaoDao }
+[2019-08-09 11:29:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.mutiLang.dao.P3MutiLangDao }
+[2019-08-09 11:29:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.tag.select.dict.dao.TSTypeDao }
+[2019-08-09 11:29:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.tag.select.table.dao.CustomTableDao }
+[2019-08-09 11:29:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.dao.TSOperationDao }
+[2019-08-09 11:29:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.actInvite.dao.WxActInviteDao }
+[2019-08-09 11:29:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.auth.dao.JwSystemAuthDao }
+[2019-08-09 11:29:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderCustomDao }
+[2019-08-09 11:29:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderMainDao }
+[2019-08-09 11:29:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderProductDao }
+[2019-08-09 11:29:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.chat.dao.ChatMessageHistoryDao }
+[2019-08-09 11:29:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.chat.dao.ImDao }
+[2019-08-09 11:29:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailAttachDao }
+[2019-08-09 11:29:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailDao }
+[2019-08-09 11:29:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailReceiverDao }
+[2019-08-09 11:29:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailTSBaseUserDao }
+[2019-08-09 11:29:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailTSUserDao }
+[2019-08-09 11:29:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.action.actsale.dao.BusContractMiniDao }
+[2019-08-09 11:29:04] [INFO] [com.alibaba.druid.pool.DruidDataSource:928] {dataSource-1} inited
+[2019-08-09 11:29:06] [WARN] [org.hibernate.id.UUIDHexGenerator:59] HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+[2019-08-09 11:29:07] [WARN] [net.sf.ehcache.config.CacheConfiguration:698] Cache 'foreverCache' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'foreverCache' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+[2019-08-09 11:29:10] [INFO] [org.quartz.impl.StdSchedulerFactory:1208] Using default implementation for ThreadExecutor
+[2019-08-09 11:29:10] [INFO] [org.quartz.core.SchedulerSignalerImpl:61] Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2019-08-09 11:29:10] [INFO] [org.quartz.core.QuartzScheduler:229] Quartz Scheduler v.2.3.0 created.
+[2019-08-09 11:29:10] [INFO] [org.quartz.simpl.RAMJobStore:155] RAMJobStore initialized.
+[2019-08-09 11:29:10] [INFO] [org.quartz.core.QuartzScheduler:294] Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactory' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2019-08-09 11:29:10] [INFO] [org.quartz.impl.StdSchedulerFactory:1362] Quartz scheduler 'schedulerFactory' initialized from an externally provided properties instance.
+[2019-08-09 11:29:10] [INFO] [org.quartz.impl.StdSchedulerFactory:1366] Quartz scheduler version: 2.3.0
+[2019-08-09 11:29:10] [INFO] [org.quartz.core.QuartzScheduler:2287] JobFactory set to: org.jeecgframework.web.system.sms.util.JQuartzJobFactory@575e2e8a
+[2019-08-09 11:29:11] [INFO] [org.jeecgframework.core.timer.DynamicTask:252]  register time task class num is [0] 
+[2019-08-09 11:29:15] [INFO] [org.jeecgframework.core.timer.DataBaseSchedulerFactoryBean:648] Starting Quartz Scheduler now
+[2019-08-09 11:29:15] [INFO] [org.quartz.core.QuartzScheduler:547] Scheduler schedulerFactory_$_NON_CLUSTERED started.
+[2019-08-09 11:29:15] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:180]   ------ 初始化字典组 【系统缓存】-----------typeGroupsList-----size: [51]
+[2019-08-09 11:29:15] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:181]   ------ 初始化字典 【系统缓存】-----------typesList-----size: [51]
+[2019-08-09 11:29:15] [INFO] [org.jeecgframework.web.system.service.impl.MutiLangServiceImpl:43]   ------ 初始化国际化语言【系统缓存】  ------ size: [1219] 
+[2019-08-09 11:29:15] [INFO] [org.jeecgframework.web.system.service.impl.DynamicDataSourceServiceImpl:41]   ------ 初始化动态数据源配置【系统缓存】---------size: [2] 
+[2019-08-09 11:29:24] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:223]  >>>>>>>>>>>>>>>>>>>>>>>>>>  Login 用户登录成功，初始化Main首页用户信息  （Main 首页加载逻辑）  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+[2019-08-09 11:29:24] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:264] login 资源路径returnURL：null
+[2019-08-09 11:29:25] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\upload\files\20180715\qq_1531625977907.jpg (系统找不到指定的路径。)
+[2019-08-09 11:29:25] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\20170502\4afbfbedab64034f9015f1bca8c379310b551dab.jpg (系统找不到指定的路径。)
+[2019-08-09 11:29:27] [INFO] [com.action.actsale.controller.BusContractController:146] -- 合同完成状态（0制作中，1已审核） --0
+[2019-08-09 11:29:27] [INFO] [com.action.actsale.controller.BusContractController:146] -- 合同完成状态（0制作中，1已审核） --1
+[2019-08-09 11:29:43] [INFO] [org.jeecgframework.core.util.LogUtil:228] [org.jeecgframework.core.util.FileUtils:delete():167] - 错误: G:\software\git\hzaction\hzaction-master\src\main\webapp\upload/files/201908081802195G12A1Nm.xls不存在!
+[2019-08-09 11:29:43] [INFO] [org.jeecgframework.core.util.LogUtil:228] [org.jeecgframework.core.util.FileUtils:delete():167] - 错误: G:\software\git\hzaction\hzaction-master\src\main\webapp\upload/files/201908081802195G12A1Nm.pdf不存在!
+[2019-08-09 11:29:43] [INFO] [org.jeecgframework.core.util.LogUtil:228] [org.jeecgframework.core.util.FileUtils:delete():167] - 错误: G:\software\git\hzaction\hzaction-master\src\main\webapp\upload/files/201908081802195G12A1Nm.swf不存在!
+[2019-08-09 11:29:43] [INFO] [org.jeecgframework.web.cgform.controller.upload.CgUploadController:202] =======删除附件文件ID为:4028aa816c7079dd016c70ade2810017的数据信息=====删除成功======
+[2019-08-09 11:29:44] [INFO] [com.action.actsale.controller.BusContractController:146] -- 合同完成状态（0制作中，1已审核） --0
+[2019-08-09 11:40:32] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:223]  >>>>>>>>>>>>>>>>>>>>>>>>>>  Login 用户登录成功，初始化Main首页用户信息  （Main 首页加载逻辑）  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+[2019-08-09 11:40:32] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:264] login 资源路径returnURL：null
+[2019-08-09 11:40:33] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\upload\files\20180715\qq_1531625977907.jpg (系统找不到指定的路径。)
+[2019-08-09 11:40:33] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\20170502\4afbfbedab64034f9015f1bca8c379310b551dab.jpg (系统找不到指定的路径。)
+[2019-08-09 12:23:44] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgdynamgraph.dao.core.CgDynamGraphDao }
+[2019-08-09 12:23:44] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormFieldDao }
+[2019-08-09 12:23:44] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormVersionDao }
+[2019-08-09 12:23:44] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.upload.CgFormUploadDao }
+[2019-08-09 12:23:44] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgreport.dao.core.CgReportDao }
+[2019-08-09 12:23:44] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.system.dao.DepartAuthGroupDao }
+[2019-08-09 12:23:44] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.system.dao.JeecgDictDao }
+[2019-08-09 12:23:44] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.demo.dao.JeecgMinidaoDao }
+[2019-08-09 12:23:44] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.mutiLang.dao.P3MutiLangDao }
+[2019-08-09 12:23:44] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.tag.select.dict.dao.TSTypeDao }
+[2019-08-09 12:23:44] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.tag.select.table.dao.CustomTableDao }
+[2019-08-09 12:23:44] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.dao.TSOperationDao }
+[2019-08-09 12:23:44] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.actInvite.dao.WxActInviteDao }
+[2019-08-09 12:23:44] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.auth.dao.JwSystemAuthDao }
+[2019-08-09 12:23:44] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderCustomDao }
+[2019-08-09 12:23:44] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderMainDao }
+[2019-08-09 12:23:44] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderProductDao }
+[2019-08-09 12:23:44] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.chat.dao.ChatMessageHistoryDao }
+[2019-08-09 12:23:44] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.chat.dao.ImDao }
+[2019-08-09 12:23:44] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailAttachDao }
+[2019-08-09 12:23:44] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailDao }
+[2019-08-09 12:23:44] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailReceiverDao }
+[2019-08-09 12:23:44] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailTSBaseUserDao }
+[2019-08-09 12:23:44] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailTSUserDao }
+[2019-08-09 12:23:44] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.action.actsale.dao.BusContractMiniDao }
+[2019-08-09 12:23:45] [INFO] [com.alibaba.druid.pool.DruidDataSource:928] {dataSource-1} inited
+[2019-08-09 12:23:48] [WARN] [org.hibernate.id.UUIDHexGenerator:59] HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+[2019-08-09 12:23:49] [WARN] [net.sf.ehcache.config.CacheConfiguration:698] Cache 'foreverCache' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'foreverCache' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+[2019-08-09 12:23:51] [INFO] [org.quartz.impl.StdSchedulerFactory:1208] Using default implementation for ThreadExecutor
+[2019-08-09 12:23:52] [INFO] [org.quartz.core.SchedulerSignalerImpl:61] Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2019-08-09 12:23:52] [INFO] [org.quartz.core.QuartzScheduler:229] Quartz Scheduler v.2.3.0 created.
+[2019-08-09 12:23:52] [INFO] [org.quartz.simpl.RAMJobStore:155] RAMJobStore initialized.
+[2019-08-09 12:23:52] [INFO] [org.quartz.core.QuartzScheduler:294] Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactory' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2019-08-09 12:23:52] [INFO] [org.quartz.impl.StdSchedulerFactory:1362] Quartz scheduler 'schedulerFactory' initialized from an externally provided properties instance.
+[2019-08-09 12:23:52] [INFO] [org.quartz.impl.StdSchedulerFactory:1366] Quartz scheduler version: 2.3.0
+[2019-08-09 12:23:52] [INFO] [org.quartz.core.QuartzScheduler:2287] JobFactory set to: org.jeecgframework.web.system.sms.util.JQuartzJobFactory@7dfd7255
+[2019-08-09 12:23:52] [INFO] [org.jeecgframework.core.timer.DynamicTask:252]  register time task class num is [0] 
+[2019-08-09 12:23:55] [INFO] [org.jeecgframework.core.timer.DataBaseSchedulerFactoryBean:648] Starting Quartz Scheduler now
+[2019-08-09 12:23:55] [INFO] [org.quartz.core.QuartzScheduler:547] Scheduler schedulerFactory_$_NON_CLUSTERED started.
+[2019-08-09 12:23:55] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:180]   ------ 初始化字典组 【系统缓存】-----------typeGroupsList-----size: [51]
+[2019-08-09 12:23:55] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:181]   ------ 初始化字典 【系统缓存】-----------typesList-----size: [51]
+[2019-08-09 12:23:56] [INFO] [org.jeecgframework.web.system.service.impl.MutiLangServiceImpl:43]   ------ 初始化国际化语言【系统缓存】  ------ size: [1219] 
+[2019-08-09 12:23:56] [INFO] [org.jeecgframework.web.system.service.impl.DynamicDataSourceServiceImpl:41]   ------ 初始化动态数据源配置【系统缓存】---------size: [2] 
+[2019-08-09 12:24:13] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:223]  >>>>>>>>>>>>>>>>>>>>>>>>>>  Login 用户登录成功，初始化Main首页用户信息  （Main 首页加载逻辑）  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+[2019-08-09 12:24:13] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:264] login 资源路径returnURL：null
+[2019-08-09 12:24:14] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\20170502\4afbfbedab64034f9015f1bca8c379310b551dab.jpg (系统找不到指定的路径。)
+[2019-08-09 12:24:14] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\upload\files\20180715\qq_1531625977907.jpg (系统找不到指定的路径。)
+[2019-08-09 12:24:16] [INFO] [com.action.actsale.controller.BusContractController:146] -- 合同完成状态（0制作中，1已审核） --0
+[2019-08-09 12:24:16] [INFO] [com.action.actsale.controller.BusContractController:146] -- 合同完成状态（0制作中，1已审核） --1
+[2019-08-09 12:24:34] [INFO] [com.action.actsale.controller.BusContractController:315] -- 查询-合同明细报价附表:[BusConQuotedPriceEntity [bcqpName=1, bcqpBrand=1, bcqpModel=1, bcqpQty=1.0, bcqpPrice=1.0, bcqpAmount=1.0, busContractId=2c94b32c6c4c8b0e016c4c94a0600009], BusConQuotedPriceEntity [bcqpName=OPPO智能手机, bcqpBrand=OPPO, bcqpModel=A57, bcqpQty=1.0, bcqpPrice=200.1, bcqpAmount=200.1, busContractId=2c94b32c6c4c8b0e016c4c94a0600009]] --
+[2019-08-09 12:24:42] [INFO] [com.action.actsale.controller.BusContractController:146] -- 合同完成状态（0制作中，1已审核） --0
+[2019-08-09 12:24:42] [INFO] [org.jeecgframework.web.cgform.controller.upload.CgUploadController:90] -- cgUploadEntity 智能表单文件上传实体 --
+[2019-08-09 12:24:42] [INFO] [org.jeecgframework.web.cgform.controller.upload.CgUploadController:97] --cgUploadController--saveFiles--上传文件-----{id:2c94b32c6c4c8b0e016c4c94a0600009}  {tableName：bus_contract}  {cgField:BC_CONTRACT_FILE}
+[2019-08-09 12:24:43] [INFO] [org.jeecgframework.core.extend.swftools.OpenOfficePDFConverter:64] office转换服务启动失败!详细信息:java.lang.IllegalArgumentException: officeHome must exist and be a directory
+[2019-08-09 12:24:43] [INFO] [org.jeecgframework.core.extend.swftools.OpenOfficePDFConverter:29] 进行文档转换转换:G:\software\git\hzaction\hzaction-master\src\main\webapp\/upload/files/20190809122443FTtR6eKt.xls --> G:\software\git\hzaction\hzaction-master\src\main\webapp\/upload/files/20190809122443FTtR6eKt.pdf
+[2019-08-09 12:24:43] [INFO] [org.jeecgframework.core.extend.swftools.OpenOfficePDFConverter:35] 
+[2019-08-09 12:24:43] [INFO] [org.jeecgframework.core.extend.swftools.OpenOfficePDFConverter:69] 关闭office转换服务....
+[2019-08-09 12:24:43] [INFO] [org.jeecgframework.core.extend.swftools.OpenOfficePDFConverter:73] 关闭office转换成功!
+[2019-08-09 12:24:43] [INFO] [org.jeecgframework.core.extend.swftools.OpenOfficePDFConverter:39] 进行文档转换转换---- 结束----
+[2019-08-09 12:24:43] [INFO] [org.jeecgframework.core.util.LogUtil:228] [org.jeecgframework.core.extend.swftools.SWFToolsSWFConverter:convert2SWF():29] - PDF文件不存在！
+[2019-08-09 12:24:43] [INFO] [org.jeecgframework.web.cgform.controller.upload.CgUploadController:112] --cgUploadController--saveFiles--上传文件----数据库保存转换成功-----
+[2019-08-09 12:24:43] [INFO] [org.jeecgframework.web.cgform.controller.upload.CgUploadController:117] --cgUploadController--saveFiles--上传文件----回写业务数据表字段文件路径-----
+[2019-08-09 12:24:43] [INFO] [org.jeecgframework.web.cgform.controller.upload.CgUploadController:126] --cgUploadController--saveFiles--上传文件----操作成功-----
+[2019-08-09 12:24:43] [INFO] [org.jeecgframework.web.cgform.controller.upload.CgUploadController:140] ID:4028aa816c749e51016c749f27820002,附件分类:1,业务外键:2c94b32c6c4c8b0e016c4c94a0600009,文件路径:upload/files/20190809122443FTtR6eKt.xls,文件名称:明细报表测试.xls
+[2019-08-09 12:24:43] [INFO] [org.jeecgframework.web.cgform.controller.upload.CgUploadController:143] ----bas_attach_file--saveFiles--上传合同电子档的信息保存到数据库----操作成功----【WMT】
+[2019-08-09 12:24:43] [INFO] [com.action.actsale.controller.BusContractController:146] -- 合同完成状态（0制作中，1已审核） --0
+[2019-08-09 12:24:57] [INFO] [org.jeecgframework.core.util.LogUtil:228] [org.jeecgframework.core.util.FileUtils:delete():171] - --------成功删除文件---------G:\software\git\hzaction\hzaction-master\src\main\webapp\upload/files/20190809122443FTtR6eKt.xls
+[2019-08-09 12:24:57] [INFO] [org.jeecgframework.core.util.LogUtil:228] [org.jeecgframework.core.util.FileUtils:delete():167] - 错误: G:\software\git\hzaction\hzaction-master\src\main\webapp\upload/files/20190809122443FTtR6eKt.pdf不存在!
+[2019-08-09 12:24:57] [INFO] [org.jeecgframework.core.util.LogUtil:228] [org.jeecgframework.core.util.FileUtils:delete():167] - 错误: G:\software\git\hzaction\hzaction-master\src\main\webapp\upload/files/20190809122443FTtR6eKt.swf不存在!
+[2019-08-09 12:24:57] [INFO] [org.jeecgframework.web.cgform.controller.upload.CgUploadController:202] =======删除附件文件ID为:4028aa816c749e51016c749f27820002的数据信息=====删除成功======
+[2019-08-09 12:24:58] [INFO] [com.action.actsale.controller.BusContractController:146] -- 合同完成状态（0制作中，1已审核） --0

@@ -294,7 +294,8 @@
 			<td class="value">
 		<table id="bc_contract_file_fileTable"></table>
 		<div class="form jeecgDetail">
-			<t:upload name="bcContractFile" id="bcContractFile" queueID="filediv_bcContractFile" outhtml="false" uploader="cgUploadController.do?saveFiles&bafAttachClass=1"  extend="office" buttonText='添加文件'  onUploadStart="bcContractFileOnUploadStart"> </t:upload>
+			<t:upload name="bcContractFile" id="bcContractFile" queueID="filediv_bcContractFile" outhtml="false" 
+				uploader="cgUploadController.do?saveFiles&bafAttachClass=1"  extend="office" buttonText='添加文件'  onUploadStart="bcContractFileOnUploadStart"> </t:upload>
 			<div class="form" id="filediv_bcContractFile"></div>
 			<script type="text/javascript">
 				function bcContractFileOnUploadStart(file){

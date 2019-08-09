@@ -48,7 +48,7 @@
 				<label class="Validform_label">采购合同编号:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bpcPoNo" name="bpcPoNo" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vmBusPoContractPage.bpcPoNo}'/>
+		     	 <input id="bpcPoNo" name="bpcPoNo" type="text" disabled="disabled" maxlength="32" style="width: 60%" class="inputxt"  ignore="ignore"  value='${vmBusPoContractPage.bpcPoNo}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">采购合同编号</label>
 			</td>
@@ -56,7 +56,7 @@
 				<label class="Validform_label">项目编号:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bpmProjId" name="bpmProjId" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vmBusPoContractPage.bpmProjId}'/>
+		     	 <input id="bpmProjId" name="bpmProjId" type="text" disabled="disabled" maxlength="32" style="width: 60%" class="inputxt"  ignore="ignore"  value='${vmBusPoContractPage.bpmProjId}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">项目编号</label>
 			</td>
@@ -66,7 +66,7 @@
 				<label class="Validform_label">项目名称:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bpmProjName" name="bpmProjName" type="text" maxlength="50" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vmBusPoContractPage.bpmProjName}'/>
+		     	 <input id="bpmProjName" name="bpmProjName" type="text" disabled="disabled" maxlength="50" style="width: 60%" class="inputxt"  ignore="ignore"  value='${vmBusPoContractPage.bpmProjName}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">项目名称</label>
 			</td>
@@ -74,7 +74,7 @@
 				<label class="Validform_label">供应商:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bsName" name="bsName" type="text" maxlength="100" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vmBusPoContractPage.bsName}'/>
+		     	 <input id="bsName" name="bsName" type="text" maxlength="100" disabled="disabled" style="width: 60%" class="inputxt"  ignore="ignore"  value='${vmBusPoContractPage.bsName}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">供应商</label>
 			</td>
@@ -84,7 +84,7 @@
 				<label class="Validform_label">采购是否已完成:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bpcPoOver" name="bpcPoOver" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vmBusPoContractPage.bpcPoOver}'/>
+		     	 <input id="bpcPoOver" name="bpcPoOver" type="text" maxlength="32" style="width: 60%" class="inputxt"  ignore="ignore"  value='${vmBusPoContractPage.bpcPoOver}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">采购是否已完成</label>
 			</td>
@@ -92,27 +92,27 @@
 				<label class="Validform_label">供应商联系人:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bsContact" name="bsContact" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vmBusPoContractPage.bsContact}'/>
+		     	 <input id="bsContact" name="bsContact" type="text" disabled="disabled" maxlength="32" style="width: 60%" class="inputxt"  ignore="ignore"  value='${vmBusPoContractPage.bsContact}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">供应商联系人</label>
 			</td>
 		</tr>
 		<tr>
 			<td align="right">
-				<label class="Validform_label">供应商联系人电话:</label>
-			</td>
-			<td class="value">
-		     	 <input id="bsTelNo" name="bsTelNo" type="text" maxlength="32" style="width: 150px" class="inputxt"  datatype="m" ignore="ignore"  value='${vmBusPoContractPage.bsTelNo}'/>
-				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">供应商联系人电话</label>
-			</td>
-			<td align="right">
 				<label class="Validform_label">收货人:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bpcRecPeople" name="bpcRecPeople" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vmBusPoContractPage.bpcRecPeople}'/>
+		     	 <input id="bpcRecPeople" name="bpcRecPeople" type="text" maxlength="32" style="width: 60%" class="inputxt"  ignore="ignore"  value='${vmBusPoContractPage.bpcRecPeople}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">收货人</label>
+			</td>
+			<td align="right">
+				<label class="Validform_label">供应商联系人电话:</label>
+			</td>
+			<td class="value">
+		     	 <input id="bsTelNo" name="bsTelNo" type="text" maxlength="32" disabled="disabled" style="width: 60%" class="inputxt"  datatype="m" ignore="ignore"  value='${vmBusPoContractPage.bsTelNo}'/>
+				<span class="Validform_checktip"></span>
+				<label class="Validform_label" style="display: none;">供应商联系人电话</label>
 			</td>
 		</tr>
 		<tr>
@@ -120,7 +120,7 @@
 				<label class="Validform_label">收货人电话:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bpcRecTel" name="bpcRecTel" type="text" maxlength="32" style="width: 150px" class="inputxt"  datatype="m" ignore="ignore"  value='${vmBusPoContractPage.bpcRecTel}'/>
+		     	 <input id="bpcRecTel" name="bpcRecTel" type="text" maxlength="32" style="width: 60%" class="inputxt"  datatype="m" ignore="ignore"  value='${vmBusPoContractPage.bpcRecTel}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">收货人电话</label>
 			</td>
@@ -128,7 +128,7 @@
 				<label class="Validform_label">收货地址:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bpcRecAddr" name="bpcRecAddr" type="text" maxlength="100" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vmBusPoContractPage.bpcRecAddr}'/>
+		     	 <input id="bpcRecAddr" name="bpcRecAddr" type="text" maxlength="100" style="width: 60%" class="inputxt"  ignore="ignore"  value='${vmBusPoContractPage.bpcRecAddr}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">收货地址</label>
 			</td>
@@ -138,7 +138,7 @@
 				<label class="Validform_label">采购员:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bpcPoPeople" name="bpcPoPeople" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vmBusPoContractPage.bpcPoPeople}'/>
+		     	 <input id="bpcPoPeople" name="bpcPoPeople" type="text" maxlength="32" style="width: 60%" class="inputxt"  ignore="ignore"  value='${vmBusPoContractPage.bpcPoPeople}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">采购员</label>
 			</td>
@@ -146,7 +146,7 @@
 				<label class="Validform_label">采购日期:</label>
 			</td>
 			<td class="value">
-					  <input id="bpcPoDate" name="bpcPoDate" type="text" style="width: 150px"   ignore="ignore"  value='<fmt:formatDate value='${vmBusPoContractPage.bpcPoDate}' type="date" pattern="yyyy-MM-dd hh:mm:ss"/>'/>
+					  <input id="bpcPoDate" name="bpcPoDate" type="text" style="width: 60%" class="Wdate"  ignore="ignore" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" value='<fmt:formatDate value='${vmBusPoContractPage.bpcPoDate}' type="date" pattern="yyyy-MM-dd hh:mm:ss"/>'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">采购日期</label>
 			</td>
@@ -155,8 +155,8 @@
 			<td align="right">
 				<label class="Validform_label">采购情况汇报:</label>
 			</td>
-			<td class="value">
-		     	 <input id="bpSitReport" name="bpSitReport" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vmBusPoContractPage.bpSitReport}'/>
+			<td class="value" colspan="3"> 
+				<textarea  id="bpSitReport" style="height:auto;width:95%;" class="inputxt" rows="6" name="bpSitReport"  ignore="ignore" >${vmBusPoContractPage.bpSitReport}</textarea>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">采购情况汇报</label>
 			</td>
@@ -199,10 +199,10 @@
 					  		<input name="vmMergeBusPoApplyDetailList[#index#].bpadRemark" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">备注</label>
 				  </td>
-				  <td align="left">
+<!-- 				  <td align="left">
 					  		<input name="vmMergeBusPoApplyDetailList[#index#].fromId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">采购合同外键</label>
-				  </td>
+				  </td> -->
 			</tr>
 		 </tbody>
 		<tbody id="add_busPoContractPay_table_template">
@@ -221,10 +221,10 @@
 							<input name="busPoContractPayList[#index#].bpcpDate" maxlength="0" type="text" class="Wdate" onClick="WdatePicker()"  style="width:150px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">计划付款日期</label>
 				  </td>
-				  <td align="left">
+<!-- 				  <td align="left">
 					  		<input name="busPoContractPayList[#index#].fromId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">采购合同外键</label>
-				  </td>
+				  </td> -->
 			</tr>
 		 </tbody>
 		<tbody id="add_busPoContractDetail_table_template">
@@ -263,12 +263,13 @@
 					  		<input name="busPoContractDetailList[#index#].bpcdRemark" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">备注</label>
 				  </td>
-				  <td align="left">
+<!-- 				  <td align="left">
 					  		<input name="busPoContractDetailList[#index#].fromId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">采购合同外键</label>
-				  </td>
+				  </td> -->
 			</tr>
 		 </tbody>
 		</table>
  </body>
  <script src = "webpage/com/action/actpo/vmBusPoContract.js"></script>	
+ <script src = "webpage/com/action/actpo/dropdown.js"></script>

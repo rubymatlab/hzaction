@@ -7,6 +7,9 @@
 	$('#delBusPoContractPayBtn').linkbutton({   
 	    iconCls: 'icon-remove'  
 	}); 
+	$('#uploadBtn').linkbutton({   
+	    iconCls: 'icon-remove'  
+	}); 
 	$('#addBusPoContractPayBtn').bind('click', function(){   
  		 var tr =  $("#add_busPoContractPay_table_template tr").clone();
 	 	 $("#add_busPoContractPay_table").append(tr);
@@ -18,6 +21,8 @@
         resetTrNum('add_busPoContractPay_table'); 
         return false;
     }); 
+	
+	
     $(document).ready(function(){
     	$(".datagrid-toolbar").parent().css("width","auto");
     	if(location.href.indexOf("load=detail")!=-1){
@@ -27,7 +32,9 @@
     });
 </script>
 <div style="padding: 3px; height: 25px;width:auto;" class="datagrid-toolbar">
-	<a id="addBusPoContractPayBtn" href="#">添加</a> <a id="delBusPoContractPayBtn" href="#">删除</a> 
+	<a id="addBusPoContractPayBtn" href="#">添加</a> 
+	<a id="delBusPoContractPayBtn" href="#">删除</a>
+ 	<a id="uploadBtn" href="#">附件</a>
 </div>
 <table border="0" cellpadding="2" cellspacing="0" id="busPoContractPay_table">
 	<tr bgcolor="#E6E6E6">
@@ -42,9 +49,9 @@
 				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
 						计划付款日期
 				  </td>
-				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
+<!-- 				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
 						采购合同外键
-				  </td>
+				  </td> -->
 	</tr>
 	<tbody id="add_busPoContractPay_table">
 	<c:if test="${fn:length(busPoContractPayList)  <= 0 }">
@@ -73,10 +80,10 @@
 							<input name="busPoContractPayList[0].bpcpDate" maxlength="0"  type="text" class="Wdate" onClick="WdatePicker()"  style="width:150px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">计划付款日期</label>
 					</td>
-				  <td align="left">
+<!-- 				  <td align="left">
 					  	<input name="busPoContractPayList[0].fromId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">采购合同外键</label>
-					</td>
+					</td> -->
    			</tr>
 	</c:if>
 	<c:if test="${fn:length(busPoContractPayList)  > 0 }">
@@ -106,12 +113,21 @@
 							<input name="busPoContractPayList[${stuts.index }].bpcpDate" maxlength="0" type="text" class="Wdate" onClick="WdatePicker()"  style="width:150px;"   ignore="ignore"  value="<fmt:formatDate value='${poVal.bpcpDate}' type="date" pattern="yyyy-MM-dd"/>"/>
 					  <label class="Validform_label" style="display: none;">计划付款日期</label>
 				   </td>
-				   <td align="left">
+<%-- 				   <td align="left">
 					  	<input name="busPoContractPayList[${stuts.index }].fromId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.fromId }"/>
 					  <label class="Validform_label" style="display: none;">采购合同外键</label>
-				   </td>
+				   </td> --%>
    			</tr>
 		</c:forEach>
 	</c:if>	
 	</tbody>
 </table>
+<script>
+	$('#uploadBtn').linkbutton({   
+	    iconCls: 'icon-undo'  
+	}); 
+	// 绑定采购请款汇报
+	$('#uploadBtn').bind("click",function(e){
+		 add("文件录入", "jeecgFormDemoController.do?addFiles","fList")
+	})
+</script>

@@ -74,7 +74,7 @@ public class BusPoContractDetailEntity implements java.io.Serializable {
 	@Excel(name="备注",width=15)
 	private java.lang.String bpcdRemark;
 	/**采购合同外键*/
-	@Excel(name="采购合同外键",width=15)
+//	@Excel(name="采购合同外键",width=15)
 	private java.lang.String fromId;
 	
 	/**

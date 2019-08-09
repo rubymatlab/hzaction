@@ -25,7 +25,6 @@ import org.jeecgframework.core.util.ResourceUtil;
 import org.jeecgframework.core.util.StringUtil;
 import org.jeecgframework.jwt.util.ResponseMessage;
 import org.jeecgframework.jwt.util.Result;
-import org.jeecgframework.p3.core.utils.common.HttpUtil.Response;
 import org.jeecgframework.poi.excel.ExcelImportUtil;
 import org.jeecgframework.poi.excel.entity.ExportParams;
 import org.jeecgframework.poi.excel.entity.ImportParams;
@@ -129,10 +128,12 @@ public class BusContractController extends BaseController {
 	public ModelAndView list1(HttpServletRequest request) {
 		return new ModelAndView("com/action/actsale/busContractList1");
 	}
-	
+	@RequestMapping(params = "list2")
+	public ModelAndView list2(HttpServletRequest request) {
+		return new ModelAndView("com/action/actsale/busContractList2");
+	}
 	/**
 	 * easyui AJAX请求数据
-	 * 
 	 * @param request
 	 * @param response
 	 * @param dataGrid
@@ -631,7 +632,6 @@ public class BusContractController extends BaseController {
 		try {
 			busContractService.addMain(busContract, busConQuotedPriceList,busContractPaymentList,busCostBudgetingList);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -663,7 +663,6 @@ public class BusContractController extends BaseController {
 		try {
 			busContractService.updateMain(busContract, busConQuotedPriceList,busContractPaymentList,busCostBudgetingList);
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 

@@ -100,7 +100,8 @@ public class VmBusPoContractEntity implements java.io.Serializable {
 	private java.lang.String bpManager;
 	/**客户名称*/
 	private java.lang.String bcName;
-	
+	/** 客户简称 **/
+	private java.lang.String bpmCustSName;
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  主键
@@ -625,5 +626,24 @@ public class VmBusPoContractEntity implements java.io.Serializable {
 	public void setBcName(java.lang.String bcName){
 		this.bcName = bcName;
 	}
+	
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  客户简称
+	 */
+	
+	@Column(name ="BPM_CUST_S_NAME",nullable=true,length=50)
+	public java.lang.String getBpmCustSName(){
+		return this.bpmCustSName;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  客户简称
+	 */
+	public void setBpmCustSName(java.lang.String bpmCustSName){
+		this.bpmCustSName = bpmCustSName;
+	}
+	
 	
 }

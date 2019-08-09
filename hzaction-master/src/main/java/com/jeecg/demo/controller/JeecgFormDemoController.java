@@ -361,9 +361,6 @@ public class JeecgFormDemoController extends BaseController {
 		}
 		return ajaxJson;
 	}
-	
-
-
 	/**
 	 * 文件添加跳转
 	 *

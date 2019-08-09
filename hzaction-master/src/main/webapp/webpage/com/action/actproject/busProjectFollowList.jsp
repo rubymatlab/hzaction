@@ -1,31 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
-<script type="text/javascript">
-	$('#addBusProjectFollowBtn').linkbutton({   
-	    iconCls: 'icon-add'  
-	});  
-	$('#delBusProjectFollowBtn').linkbutton({   
-	    iconCls: 'icon-remove'  
-	}); 
-	$('#addBusProjectFollowBtn').bind('click', function(){   
- 		 var tr =  $("#add_busProjectFollow_table_template tr").clone();
-	 	 $("#add_busProjectFollow_table").append(tr);
-	 	 resetTrNum('add_busProjectFollow_table');
-	 	 return false;
-    });  
-	$('#delBusProjectFollowBtn').bind('click', function(){   
-		$("#add_busProjectFollow_table").find("input[name$='ck']:checked").parent().parent().remove();  
-        resetTrNum('add_busProjectFollow_table'); 
-        return false;
-    }); 
-    $(document).ready(function(){
-    	$(".datagrid-toolbar").parent().css("width","auto");
-    	if(location.href.indexOf("load=detail")!=-1){
-			$(":input").attr("disabled","true");
-			$(".datagrid-toolbar").hide();
-		}
-    });
-</script>
+
 <div style="padding: 3px; height: 25px;width:auto;" class="datagrid-toolbar">
 	<a id="addBusProjectFollowBtn" href="#">添加</a> <a id="delBusProjectFollowBtn" href="#">删除</a> 
 </div>
@@ -148,3 +123,29 @@
 	</c:if>	
 	</tbody>
 </table>
+<script type="text/javascript">
+	$('#addBusProjectFollowBtn').linkbutton({   
+	    iconCls: 'icon-add'  
+	});  
+	$('#delBusProjectFollowBtn').linkbutton({   
+	    iconCls: 'icon-remove'  
+	}); 
+	$('#addBusProjectFollowBtn').bind('click', function(){   
+ 		 var tr =  $("#add_busProjectFollow_table_template tr").clone();
+	 	 $("#add_busProjectFollow_table").append(tr);
+	 	 resetTrNum('add_busProjectFollow_table');
+	 	 return false;
+    });  
+	$('#delBusProjectFollowBtn').bind('click', function(){   
+		$("#add_busProjectFollow_table").find("input[name$='ck']:checked").parent().parent().remove();  
+        resetTrNum('add_busProjectFollow_table'); 
+        return false;
+    }); 
+    $(document).ready(function(){
+    	$(".datagrid-toolbar").parent().css("width","auto");
+    	if(location.href.indexOf("load=detail")!=-1){
+			$(":input").attr("disabled","true");
+			$(".datagrid-toolbar").hide();
+		}
+    });
+</script>

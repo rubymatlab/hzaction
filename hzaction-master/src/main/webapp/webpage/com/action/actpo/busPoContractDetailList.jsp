@@ -1,44 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
-<script type="text/javascript">
-	$('#selectAddBusPoContractDetailBtn').linkbutton({   
-	    iconCls: 'icon-add'  
-	}); 
-	$('#addBusPoContractDetailBtn').linkbutton({   
-	    iconCls: 'icon-add'  
-	});  
-	$('#delBusPoContractDetailBtn').linkbutton({   
-	    iconCls: 'icon-remove'  
-	}); 
-	$('#selectAddBusPoContractDetailBtn').bind('click', function(){   
-		popupClickContractDetail(this,'bpad_name,bpad_brand,bpad_model,bpad_number,bpad_remark','bpcdName,bpcdBrand,bpcdModel,bpcdNumber,bpcdRemark','rf_bus_po_apply_detail')
- 		/*  var tr =  $("#add_busPoContractDetail_table_template tr").clone();
-	 	 $("#add_busPoContractDetail_table").append(tr);
-	 	 resetTrNum('add_busPoContractDetail_table'); */
-	 	 return false;
-    });  
-	$("#addBusPoContractDetailBtn").bind("click",function(){
-		var tr =  $("#add_busPoContractDetail_table_template tr").clone();
-	 	 $("#add_busPoContractDetail_table").append(tr);
-	 	 resetTrNum('add_busPoContractDetail_table');
-	})
-	$('#delBusPoContractDetailBtn').bind('click', function(){   
-		$("#add_busPoContractDetail_table").find("input[name$='ck']:checked").parent().parent().remove();  
-        resetTrNum('add_busPoContractDetail_table'); 
-        return false;
-    }); 
-    $(document).ready(function(){
-    	$(".datagrid-toolbar").parent().css("width","auto");
-    	if(location.href.indexOf("load=detail")!=-1){
-			$(":input").attr("disabled","true");
-			$(".datagrid-toolbar").hide();
-		}
-    });
-</script>
+
 <div style="padding: 3px; height: 25px;width:auto;" class="datagrid-toolbar">
-	<a id="selectAddBusPoContractDetailBtn" href="#">选择新增</a>
 	<a id="addBusPoContractDetailBtn" href="#">添加</a>
 	 <a id="delBusPoContractDetailBtn" href="#">删除</a> 
+	<a id="selectAddBusPoContractDetailBtn" href="#">选择新增</a>
+	<a id="importBusPoContractDetailBtn" href="#">excel导入</a>
 </div>
 <table border="0" cellpadding="2" cellspacing="0" id="busPoContractDetail_table">
 	<tr bgcolor="#E6E6E6">
@@ -68,9 +35,9 @@
 	  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
 			备注
 	  </td>
-	  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
+<!-- 	  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
 			采购合同外键
-	  </td>
+	  </td> -->
 	</tr>
 	<tbody id="add_busPoContractDetail_table">
 	<c:if test="${fn:length(busPoContractDetailList)  <= 0 && false }">
@@ -119,10 +86,10 @@
 					  	<input name="busPoContractDetailList[0].bpcdRemark" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">备注</label>
 					</td>
-				  <td align="left">
+<!-- 				  <td align="left">
 					  	<input name="busPoContractDetailList[0].fromId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">采购合同外键</label>
-					</td>
+					</td> -->
    			</tr>
 	</c:if>
 	<c:if test="${fn:length(busPoContractDetailList)  > 0 }">
@@ -165,71 +132,224 @@
 					  <label class="Validform_label" style="display: none;">单价</label>
 				   </td>
 				   <td align="left">
-					  	<input name="busPoContractDetailList[${stuts.index }].bpcdAmount" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bpcdAmount }"/>
+					  	<input name="busPoContractDetailList[${stuts.index }].bpcdAmount" maxlength="32" type="text" disabled="disabled" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bpcdAmount }"/>
 					  <label class="Validform_label" style="display: none;">金额</label>
 				   </td>
 				   <td align="left">
 					  	<input name="busPoContractDetailList[${stuts.index }].bpcdRemark" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bpcdRemark }"/>
 					  <label class="Validform_label" style="display: none;">备注</label>
 				   </td>
-				   <td align="left">
+<%-- 				   <td align="left">
 					  	<input name="busPoContractDetailList[${stuts.index }].fromId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.fromId }"/>
 					  <label class="Validform_label" style="display: none;">采购合同外键</label>
-				   </td>
+				   </td> --%>
    			</tr>
 		</c:forEach>
 	</c:if>	
 	</tbody>
 </table>
 
-<script>
+<table>
+	<tbody>
+	<tr>
+			<td align="right">
+				<label class="Validform_label">采购金额：</label>
+			</td>
+			<td class="value">
+		     	 <input id="purAmount" name="purAmount" type="text" disabled='disabled'  maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
+			</td>
+			<td align="right">
+				<label class="Validform_label">已购金额：</label>
+			</td>
+			<td class="value">
+		     	 <input id="puredAmount" name="puredAmount" disabled='disabled' value="${puredAmount} "  type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"/>
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+
+<script type="text/javascript">
+	$('#selectAddBusPoContractDetailBtn').linkbutton({   
+	    iconCls: 'icon-add'  
+	}); 
+	$('#addBusPoContractDetailBtn').linkbutton({   
+	    iconCls: 'icon-add'  
+	});  
+	$('#delBusPoContractDetailBtn').linkbutton({   
+	    iconCls: 'icon-remove'  
+	}); 
+	$('#importBusPoContractDetailBtn').linkbutton({   
+	    iconCls: 'icon-undo'  
+	}); 
+	// 选择新增
+	$('#selectAddBusPoContractDetailBtn').bind('click', function(){   
+		popupClickContractDetail(this,'bpad_name,bpad_brand,bpad_model,bpad_number,bpad_remark','bpcdName,bpcdBrand,bpcdModel,bpcdNumber,bpcdRemark','rf_bus_po_apply_detail')
+ 		/*  var tr =  $("#add_busPoContractDetail_table_template tr").clone();
+	 	 $("#add_busPoContractDetail_table").append(tr);
+	 	 resetTrNum('add_busPoContractDetail_table'); */
+	 	 return false;
+    });  
+	$("#addBusPoContractDetailBtn").bind("click",function(){
+		var tr =  $("#add_busPoContractDetail_table_template tr").clone();
+	 	 $("#add_busPoContractDetail_table").append(tr);
+	 	 resetTrNum('add_busPoContractDetail_table');
+	 	inputBindEvents(tr)
+	})
+	$('#delBusPoContractDetailBtn').bind('click', function(){   
+		$("#add_busPoContractDetail_table").find("input[name$='ck']:checked").parent().parent().remove();  
+        resetTrNum('add_busPoContractDetail_table'); 
+        return false;
+    }); 
+	
+	// 导入excel
+	$('#importBusPoContractDetailBtn').bind("click",function(e){   
+		importBPCDExcel('Excel导入', 'vmBusPoContractController.do?uploadContDetail', "vmBusPoContractList");
+	}); 
+	
+    $(document).ready(function(){
+    	$(".datagrid-toolbar").parent().css("width","auto");
+    	if(location.href.indexOf("load=detail")!=-1){
+			$(":input").attr("disabled","true");
+			$(".datagrid-toolbar").hide();
+		}
+    });
+	// 导入文件重写
+    function importBPCDExcel(title, url,name,width, height) {
+    	gridname=name;
+    	$.dialog({
+    	    content: 'url:'+url,
+    		zIndex: getzIndex(),
+    	    cache:false,
+    	    button: [
+    	        {
+    	            name: $.i18n.prop('upload.file.begin'),
+    	            callback: function(){
+    	            	iframe = this.iframe.contentWindow;
+    					iframe.upload();
+    					var row = this.iframe
+    					return false;
+    	            },
+    	            uploaded(row){
+    	            	var data = row.obj;
+    	            	var flag = false;
+    	            	for(var key in data[0]){
+    	            		if(data[0][key] != null){
+    	            			flag = true
+    	            		}
+    	            	}
+    	            	if(flag != true) return false;
+    	            	for(var i = 0; i< data.length; i++){
+    	            		 var tr =  $("#add_busPoContractDetail_table_template tr").clone();
+	            	 			 $("#add_busPoContractDetail_table").append(tr);
+	            	 			inputBindEvents(tr)
+	            	 			resetTrNum('add_busPoContractDetail_table');
+	                 		//busPoContractDetailList[#index#].bpcdNumber
+	                 		var name = $(tr).find("input").eq(2).attr("name")
+	                 		var inputs = name.split(".");
+	                 		for(var key in data[i]){
+	                 			$("input[name='"+inputs[0]+"."+ key +"']")
+	                 			&& 
+	                 			$("input[name='"+inputs[0]+"."+ key +"']").val(data[i][key])
+	                 		}
+    	            	}
+    	            	firstCompute();
+    	            },
+    	            focus: true
+    	        },
+    	        {
+    	            name: $.i18n.prop('upload.file.cancel'),
+    	            callback: function(){
+    	            	iframe = this.iframe.contentWindow;
+    					iframe.cancel();
+    	            }
+    	        }
+    	    ]
+    	});
+    }
+    
+   // popup事件重写 
 function popupClickContractDetail(pobj, tablefield, inputnames, pcode) {
     if (inputnames == "" || pcode == "") {
         alert($.i18n.prop('popup.param.error.msg'));
         return;
     }
-        $.dialog({
-            content: "url:cgReportController.do?popup&id=" + pcode,
-            zIndex: getzIndex(),
-            lock: true,
-            title: $.i18n.prop('common.select'),
-            width: 800,
-            height: 400,
-            parent: windowapi,
-            cache: false,
-            ok: function () {
-                iframe = this.iframe.contentWindow;
-                var selected = iframe.getSelectRows();
-                if (selected == '' || selected == null) {
-                    alert($.i18n.prop('common.select.please'));
-                    return false;
-                } else {
-                    //对应数据库字段不为空的情况下,根据表单中字典TEXT的值来取popup的值 
-                    if (tablefield != "" && tablefield != null) {
-                        var fields = inputnames.split(",");
-                        var tableF = tablefield.split(",");
-                     	for(var i = 0; i < selected.length; i++){
-                     		 var tr =  $("#add_busPoContractDetail_table_template tr").clone();
-                	 			 $("#add_busPoContractDetail_table").append(tr);
-                	 			resetTrNum('add_busPoContractDetail_table');
-                     		//busPoContractDetailList[#index#].bpcdNumber
-                     		var name = $(tr).find("input").eq(2).attr("name")
-                     		var inputs = name.split(".");
-                    		fields.forEach(function(item, index){
-                     			$("input[name='"+inputs[0]+"."+ item +"']").val(selected[i][tableF[index]])
-                     			
-                     		}) 
-                     		
-                     	}
-
-                    }
+    $.dialog({
+        content: "url:cgReportController.do?popup&id=" + pcode + "&idkey="+ window.projectId,
+        zIndex: getzIndex(),
+        lock: true,
+        title: $.i18n.prop('common.select'),
+        width: 800,
+        height: 400,
+        parent: windowapi,
+        cache: false,
+        ok: function () {
+            iframe = this.iframe.contentWindow;
+            var selected = iframe.getSelectRows();
+            if (selected == '' || selected == null) {
+                alert($.i18n.prop('common.select.please'));
+                return false;
+            } else {
+                //对应数据库字段不为空的情况下,根据表单中字典TEXT的值来取popup的值 
+                if (tablefield != "" && tablefield != null) {
+                    var fields = inputnames.split(",");
+                    var tableF = tablefield.split(",");
+                 	for(var i = 0; i < selected.length; i++){
+                 		 var tr = $("#add_busPoContractDetail_table_template tr").clone();
+            	 			 $("#add_busPoContractDetail_table").append(tr);
+            	 			inputBindEvents(tr)
+            	 			resetTrNum('add_busPoContractDetail_table');
+                 		//busPoContractDetailList[#index#].bpcdNumber
+                 		var name = $(tr).find("input").eq(2).attr("name")
+                 		var inputs = name.split(".");
+                		fields.forEach(function(item, index){
+                 			$("input[name='"+inputs[0]+"."+ item +"']").val(selected[i][tableF[index]])
+                 		}) 
+                 	}
                 }
-            },
-            cancelVal: $.i18n.prop('dialog.close'),
-            cancel: true // 为true等价于function(){}
-        });
+                firstCompute();
+            }
+        },
+        cancelVal: $.i18n.prop('dialog.close'),
+        cancel: true // 为true等价于function(){}
+    });
 }
-
+// 输入框事件绑定
+$(function(){
+	firstCompute();
+})
+function firstCompute(){
+	// 生成的时候计算一遍 （在进行监听）
+	var oInput = $("input[name$='.bpcdPrice']").add("input[name$='.bpcdNumber']").add("input[name$='.bpcdAmount']");
+	for(var i = 0; i < oInput.length; i += 3){
+		var tRes = +$(oInput[i]).val() * +$(oInput[i+1]).val()
+		$(oInput[i+2]).val(tRes.toFixed(2));	
+	}
+	computeTotal();
+	
+}
+function inputBindEvents(tr){
+	var $tr = $(tr);
+	var pInp = $tr.find("input[name$='.bpcdPrice']"),
+		nInp = $tr.find("input[name$='.bpcdNumber']"),
+		aInp = $tr.find("input[name$='.bpcdAmount']");
+	pInp.bind("change",function(e){
+		aInp.val(+pInp.val() * +nInp.val())
+		computeTotal();
+	})
+	nInp.bind("change",function(e){
+		aInp.val(+pInp.val() * +nInp.val())
+		computeTotal();
+	})
+}
+function computeTotal(){
+	var aInp = $("input[name$='.bpcdAmount']")
+	var tRes = 0;
+	aInp.each(function(index, item){
+		tRes += +$(item).val()
+	})
+	$("#purAmount").val(tRes.toFixed(2))
+}
 
 
 </script>

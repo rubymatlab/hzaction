@@ -42,7 +42,7 @@
  </script>
  </head>
  <body style="overflow-x: hidden;">
-  <t:formvalid formid="formobj" dialog="true" usePlugin="password" layout="table" tiptype="1" action="vmBusPoContractController.do?doAdd" beforeSubmit="checkSubmit">
+  <t:formvalid formid="formobj" dialog="true" usePlugin="password" layout="table" tiptype="1" action="vmBusPoContractController.do?doAdd" >
 					<input id="id" name="id" type="hidden" value="${vmBusPoContractPage.id }"/>
 	<table cellpadding="0" cellspacing="1" class="formtable">
 		<tr>
@@ -50,7 +50,7 @@
 				<label class="Validform_label">采购合同编号:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bpcPoNo" name="bpcPoNo" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
+		     	 <input id="bpcPoNo" name="bpcPoNo" disabled="disabled" type="text" maxlength="32" style="width: 60%" class="inputxt"  ignore="ignore" />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">采购合同编号</label>
 			</td>
@@ -58,7 +58,7 @@
 				<label class="Validform_label">项目编号:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bpmProjId" name="bpmProjId" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
+		     	 <input id="bpmProjId" name="bpmProjId" disabled="disabled" type="text" maxlength="32" style="width: 60%" class="inputxt"  ignore="ignore" />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">项目编号</label>
 			</td>
@@ -68,31 +68,36 @@
 				<label class="Validform_label">项目名称:</label>
 			</td>
 			<td class="value">
-		     	<input id="bpmProjName" name="bpmProjName" type="text" maxlength="50" style="width: 150px" class="inputxt easyui-combogrid"  ignore="ignore" data-options="
+		     	<input id="bpmProjName" name="bpmProjName" type="text" maxlength="50" style="width: 300px;" class="inputxt easyui-combogrid"  ignore="ignore" data-options="
 			            panelWidth: 500,
-			            idField: 'id',
+			            idField: 'bpmProjName',
 			            textField: 'bpmProjName',
-			            url: 'vmBusProjectManagerController.do?datagrid&field=id,bpmProjId,bpmProjName',
+			            url: 'vmBusProjectManagerController.do?datagrid&field=id,bpmProjId,bpmProjName,bpmCustSName',
 			            columns: [[
 			                {field:'bpmProjId',title:'项目编号',width:80},
 			                {field:'bpmProjName',title:'项目名称',width:120}
 			            ]],
 			            onSelect: function (row,data) {
 			            	$('#bpmProjId').val(data.bpmProjId);
+			            	$('#fromProjmId').val(data.id);
+			            	$('#bpmCustSName').val(data.bpmCustSName);
+			            	window.projectId = data.id;
 					    },
 			             fitColumns: true
 			        " />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">项目名称</label>
-				
+				<input type="hidden" id="fromProjmId" name="fromProjmId" ignore="ignore" class="inputxt">
+				<input type="hidden" id="fromSuppId" name="fromSuppId" ignore="ignore" class="inputxt">
+				<input type="hidden" id="bpmCustSName" name="bpmCustSName" ignore="ignore" class="inputxt">
 			</td>
 			<td align="right">
 				<label class="Validform_label">供应商:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bsName" name="bsName" type="text" maxlength="100" style="width: 150px" class="inputxt easyui-combogrid"  ignore="ignore"  data-options="
+		     	 <input id="bsName" name="bsName" type="text" maxlength="100" style="width: 300px" class="inputxt easyui-combogrid"  ignore="ignore"  data-options="
 			            panelWidth: 500,
-			            idField: 'id',
+			            idField: 'bsName',
 			            textField: 'bsName',
 			            url: 'basSupplierController.do?datagrid&field=id,bsName,bsContact,bsTelNo',
 			            columns: [[
@@ -103,6 +108,7 @@
 			            onSelect: function (row,data) {
 			            	$('#bsContact').val(data.bsContact);
 			            	$('#bsTelNo').val(data.bsTelNo);
+			            	$('#fromSuppId').val(data.id)
 					    },
 			             fitColumns: true
 			        " />
@@ -115,7 +121,7 @@
 				<label class="Validform_label">采购是否已完成:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bpcPoOver" name="bpcPoOver" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
+		     	 <input id="bpcPoOver" name="bpcPoOver" type="text" maxlength="32" style="width: 60%" class="inputxt"  ignore="ignore" />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">采购是否已完成</label>
 			</td>
@@ -123,7 +129,7 @@
 				<label class="Validform_label">供应商联系人:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bsContact" name="bsContact" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"/>
+		     	 <input id="bsContact" name="bsContact" disabled="disabled" type="text" maxlength="32" style="width: 60%" class="inputxt"  ignore="ignore"/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">供应商联系人</label>
 			</td>
@@ -133,7 +139,7 @@
 				<label class="Validform_label">收货人:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bpcRecPeople" name="bpcRecPeople" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
+		     	 <input id="bpcRecPeople" name="bpcRecPeople" type="text" maxlength="32" style="width: 60%" class="inputxt"  ignore="ignore" />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">收货人</label>
 			</td>
@@ -141,7 +147,7 @@
 				<label class="Validform_label">供应商联系人电话:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bsTelNo" name="bsTelNo" type="text" maxlength="32" style="width: 150px" class="inputxt"  datatype="m" ignore="ignore" />
+		     	 <input id="bsTelNo" name="bsTelNo" disabled="disabled" type="text" maxlength="32" style="width: 60%" class="inputxt"  datatype="m" ignore="ignore" />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">供应商联系人电话</label>
 			</td>
@@ -151,7 +157,7 @@
 				<label class="Validform_label">收货人电话:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bpcRecTel" name="bpcRecTel" type="text" maxlength="32" style="width: 150px" class="inputxt"  datatype="m" ignore="ignore" />
+		     	 <input id="bpcRecTel" name="bpcRecTel" type="text" maxlength="32" style="width: 60%" class="inputxt"  datatype="m" ignore="ignore" />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">收货人电话</label>
 			</td>
@@ -159,7 +165,7 @@
 				<label class="Validform_label">收货地址:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bpcRecAddr" name="bpcRecAddr" type="text" maxlength="100" style="width: 150px" class="inputxt"  ignore="ignore" />
+		     	 <input id="bpcRecAddr" name="bpcRecAddr" type="text" maxlength="100" style="width: 60%" class="inputxt"  ignore="ignore" />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">收货地址</label>
 			</td>
@@ -169,7 +175,7 @@
 				<label class="Validform_label">采购员:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bpcPoPeople" name="bpcPoPeople" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
+		     	 <input id="bpcPoPeople" name="bpcPoPeople" type="text" maxlength="32" style="width: 60%" class="inputxt"  ignore="ignore" />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">采购员</label>
 			</td>
@@ -177,7 +183,7 @@
 				<label class="Validform_label">采购日期:</label>
 			</td>
 			<td class="value">
-					  <input id="bpcPoDate" name="bpcPoDate" type="text" style="width: 150px"  class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" ignore="ignore"  />
+					  <input id="bpcPoDate" name="bpcPoDate" type="text" style="width: 60%"  class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" ignore="ignore"  />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">采购日期</label>
 			</td>
@@ -186,8 +192,8 @@
 			<td align="right">
 				<label class="Validform_label">采购情况汇报:</label>
 			</td>
-			<td class="value">
-		     	 <input id="bpSitReport" name="bpSitReport" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
+			<td class="value" colspan="3">
+			<textarea  id="bpSitReport" style="height:auto;width:95%;" class="inputxt" rows="6" name="bpSitReport"  ignore="ignore" ></textarea>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">采购情况汇报</label>
 			</td>
@@ -210,6 +216,7 @@
 		<tr>
 			 <td align="center"><div style="width: 25px;" name="xh"></div></td>
 			 <td align="center"><input style="width:20px;" type="checkbox" name="ck"/></td>
+	 			<input name="vmMergeBusPoApplyDetailList[#index#].id" type="hidden"/>
 				  <td align="left">
 					  	<input name="vmMergeBusPoApplyDetailList[#index#].bpadName" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">名称</label>
@@ -287,29 +294,20 @@
 					  <label class="Validform_label" style="display: none;">单价</label>
 				  </td>
 				  <td align="left">
-					  	<input name="busPoContractDetailList[#index#].bpcdAmount" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
+					  	<input name="busPoContractDetailList[#index#].bpcdAmount"  disabled='disabled' maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">金额</label>
 				  </td>
 				  <td align="left">
 					  	<input name="busPoContractDetailList[#index#].bpcdRemark" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">备注</label>
 				  </td>
-				  <td align="left">
+<!-- 				  <td align="left">
 					  	<input name="busPoContractDetailList[#index#].fromId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">采购合同外键</label>
-				  </td>
+				  </td> -->
 			</tr>
 		 </tbody>
 		</table>
  </body>
  <script src = "webpage/com/action/actpo/vmBusPoContract.js"></script>
- <script>
- 
- function checkSubmit(){
-		var tList = arguments[0].context
-		var tName = "AX-"+new Date().getFullYear()+"KHJC"+"-000001"
-		$(tList).find("#bpcPoNo").val(tName)
-}
- 
- </script>
-	
+ <script src = "webpage/com/action/actpo/dropdown.js"></script>

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [2019-08-08 08:39:18] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgdynamgraph.dao.core.CgDynamGraphDao }
 [2019-08-08 08:39:18] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormFieldDao }
 [2019-08-08 08:39:18] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormVersionDao }
@@ -2678,3 +2679,96 @@ org.jeecgframework.core.common.exception.BusinessException: Batch update returne
 [2019-08-08 18:38:58] [INFO] [com.action.actsale.controller.BusContractController:314] -- 查询-合同明细报价附表:[BusConQuotedPriceEntity [bcqpName=1, bcqpBrand=1, bcqpModel=1, bcqpQty=1.0, bcqpPrice=1.0, bcqpAmount=1.0, busContractId=2c94b32c6c4c8b0e016c4c94a0600009], BusConQuotedPriceEntity [bcqpName=OPPO智能手机, bcqpBrand=OPPO, bcqpModel=A57, bcqpQty=1.0, bcqpPrice=200.1, bcqpAmount=200.1, busContractId=2c94b32c6c4c8b0e016c4c94a0600009]] --
 [2019-08-08 18:39:04] [INFO] [com.action.actsale.controller.BusContractController:314] -- 查询-合同明细报价附表:[] --
 [2019-08-08 18:39:13] [INFO] [com.action.actsale.controller.BusContractController:314] -- 查询-合同明细报价附表:[] --
+=======
+[2019-08-09 00:17:32] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:223]  >>>>>>>>>>>>>>>>>>>>>>>>>>  Login 用户登录成功，初始化Main首页用户信息  （Main 首页加载逻辑）  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+[2019-08-09 00:17:32] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:264] login 资源路径returnURL：null
+[2019-08-09 00:17:33] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\20170502\4afbfbedab64034f9015f1bca8c379310b551dab.jpg (系统找不到指定的路径。)
+[2019-08-09 00:17:33] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\upload\files\20180715\qq_1531625977907.jpg (系统找不到指定的路径。)
+[2019-08-09 01:00:00] [INFO] [org.jeecgframework.core.util.LogUtil:228] [org.jeecgframework.core.timer.Job:oneOClockPerDay():25] - 1h
+>>>>>>> a815ad29e092c8f186daa3aefa10af88d4e7c510
+[2019-08-09 10:24:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgdynamgraph.dao.core.CgDynamGraphDao }
+[2019-08-09 10:24:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormFieldDao }
+[2019-08-09 10:24:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormVersionDao }
+[2019-08-09 10:24:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.upload.CgFormUploadDao }
+[2019-08-09 10:24:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgreport.dao.core.CgReportDao }
+[2019-08-09 10:24:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.system.dao.DepartAuthGroupDao }
+[2019-08-09 10:24:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.system.dao.JeecgDictDao }
+[2019-08-09 10:24:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.demo.dao.JeecgMinidaoDao }
+[2019-08-09 10:24:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.mutiLang.dao.P3MutiLangDao }
+[2019-08-09 10:24:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.tag.select.dict.dao.TSTypeDao }
+[2019-08-09 10:24:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.tag.select.table.dao.CustomTableDao }
+[2019-08-09 10:24:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.dao.TSOperationDao }
+[2019-08-09 10:24:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.actInvite.dao.WxActInviteDao }
+[2019-08-09 10:24:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.auth.dao.JwSystemAuthDao }
+[2019-08-09 10:24:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderCustomDao }
+[2019-08-09 10:24:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderMainDao }
+[2019-08-09 10:24:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderProductDao }
+[2019-08-09 10:24:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.chat.dao.ChatMessageHistoryDao }
+[2019-08-09 10:24:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.chat.dao.ImDao }
+[2019-08-09 10:24:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailAttachDao }
+[2019-08-09 10:24:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailDao }
+[2019-08-09 10:24:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailReceiverDao }
+[2019-08-09 10:24:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailTSBaseUserDao }
+[2019-08-09 10:24:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailTSUserDao }
+[2019-08-09 10:24:03] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.action.actsale.dao.BusContractMiniDao }
+[2019-08-09 10:24:04] [INFO] [com.alibaba.druid.pool.DruidDataSource:928] {dataSource-1} inited
+[2019-08-09 10:24:06] [WARN] [org.hibernate.id.UUIDHexGenerator:59] HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+[2019-08-09 10:24:07] [WARN] [net.sf.ehcache.config.CacheConfiguration:698] Cache 'foreverCache' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'foreverCache' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+[2019-08-09 10:24:09] [INFO] [org.quartz.impl.StdSchedulerFactory:1208] Using default implementation for ThreadExecutor
+[2019-08-09 10:24:09] [INFO] [org.quartz.core.SchedulerSignalerImpl:61] Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2019-08-09 10:24:09] [INFO] [org.quartz.core.QuartzScheduler:229] Quartz Scheduler v.2.3.0 created.
+[2019-08-09 10:24:09] [INFO] [org.quartz.simpl.RAMJobStore:155] RAMJobStore initialized.
+[2019-08-09 10:24:09] [INFO] [org.quartz.core.QuartzScheduler:294] Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactory' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2019-08-09 10:24:09] [INFO] [org.quartz.impl.StdSchedulerFactory:1362] Quartz scheduler 'schedulerFactory' initialized from an externally provided properties instance.
+[2019-08-09 10:24:09] [INFO] [org.quartz.impl.StdSchedulerFactory:1366] Quartz scheduler version: 2.3.0
+[2019-08-09 10:24:09] [INFO] [org.quartz.core.QuartzScheduler:2287] JobFactory set to: org.jeecgframework.web.system.sms.util.JQuartzJobFactory@24d5e3b2
+[2019-08-09 10:24:10] [INFO] [org.jeecgframework.core.timer.DynamicTask:252]  register time task class num is [0] 
+[2019-08-09 10:24:12] [INFO] [org.jeecgframework.core.timer.DataBaseSchedulerFactoryBean:648] Starting Quartz Scheduler now
+[2019-08-09 10:24:12] [INFO] [org.quartz.core.QuartzScheduler:547] Scheduler schedulerFactory_$_NON_CLUSTERED started.
+[2019-08-09 10:24:13] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:180]   ------ 初始化字典组 【系统缓存】-----------typeGroupsList-----size: [51]
+[2019-08-09 10:24:13] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:181]   ------ 初始化字典 【系统缓存】-----------typesList-----size: [51]
+[2019-08-09 10:24:14] [INFO] [org.jeecgframework.web.system.service.impl.MutiLangServiceImpl:43]   ------ 初始化国际化语言【系统缓存】  ------ size: [1219] 
+[2019-08-09 10:24:14] [INFO] [org.jeecgframework.web.system.service.impl.DynamicDataSourceServiceImpl:41]   ------ 初始化动态数据源配置【系统缓存】---------size: [2] 
+[2019-08-09 10:24:24] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:223]  >>>>>>>>>>>>>>>>>>>>>>>>>>  Login 用户登录成功，初始化Main首页用户信息  （Main 首页加载逻辑）  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+[2019-08-09 10:24:24] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:264] login 资源路径returnURL：null
+[2019-08-09 10:24:25] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\20170502\4afbfbedab64034f9015f1bca8c379310b551dab.jpg (系统找不到指定的路径。)
+[2019-08-09 10:24:25] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\upload\files\20180715\qq_1531625977907.jpg (系统找不到指定的路径。)
+[2019-08-09 10:24:26] [INFO] [com.action.actsale.controller.BusContractController:147] -- 合同完成状态（0制作中，1已审核） --0
+[2019-08-09 10:24:27] [INFO] [com.action.actsale.controller.BusContractController:147] -- 合同完成状态（0制作中，1已审核） --1
+[2019-08-09 10:24:35] [INFO] [org.jeecgframework.core.util.LogUtil:228] [org.jeecgframework.core.util.FileUtils:delete():167] - 错误: G:\software\git\hzaction\hzaction-master\src\main\webapp\upload/files/20190808183708hvZn6FWu.xls不存在!
+[2019-08-09 10:24:35] [INFO] [org.jeecgframework.core.util.LogUtil:228] [org.jeecgframework.core.util.FileUtils:delete():167] - 错误: G:\software\git\hzaction\hzaction-master\src\main\webapp\upload/files/20190808183708hvZn6FWu.pdf不存在!
+[2019-08-09 10:24:35] [INFO] [org.jeecgframework.core.util.LogUtil:228] [org.jeecgframework.core.util.FileUtils:delete():167] - 错误: G:\software\git\hzaction\hzaction-master\src\main\webapp\upload/files/20190808183708hvZn6FWu.swf不存在!
+[2019-08-09 10:24:35] [INFO] [org.jeecgframework.web.cgform.controller.upload.CgUploadController:203] =======删除附件文件ID为:4028aa816c70cce5016c70cdc1c30002的数据信息=====删除成功======
+[2019-08-09 10:24:39] [INFO] [com.action.actsale.controller.BusContractController:316] -- 查询-合同明细报价附表:[BusConQuotedPriceEntity [bcqpName=1, bcqpBrand=1, bcqpModel=1, bcqpQty=1.0, bcqpPrice=1.0, bcqpAmount=1.0, busContractId=2c94b32c6c4c8b0e016c4c94a0600009], BusConQuotedPriceEntity [bcqpName=OPPO智能手机, bcqpBrand=OPPO, bcqpModel=A57, bcqpQty=1.0, bcqpPrice=200.1, bcqpAmount=200.1, busContractId=2c94b32c6c4c8b0e016c4c94a0600009]] --
+[2019-08-09 10:24:57] [INFO] [com.action.actsale.controller.BusContractController:468] -- 通过excel导入【明细报价附表】 合同管理外键:null--
+[2019-08-09 10:24:57] [INFO] [com.action.actsale.controller.BusContractController:474] -- 文件名称:明细报表测试.xls--
+[2019-08-09 10:24:57] [INFO] [com.action.actsale.controller.BusContractController:483] -- 通过excel导入附表数据:BusConQuotedPriceEntity [bcqpName=OPPO智能手机, bcqpBrand=OPPO, bcqpModel=A57, bcqpQty=1.0, bcqpPrice=200.1, bcqpAmount=200.1, busContractId=null] --
+[2019-08-09 10:24:57] [INFO] [com.action.actsale.controller.BusContractController:492] -- 数据库保存该对象:BusConQuotedPriceEntity [bcqpName=OPPO智能手机, bcqpBrand=OPPO, bcqpModel=A57, bcqpQty=1.0, bcqpPrice=200.1, bcqpAmount=200.1, busContractId=null] --
+[2019-08-09 10:24:57] [INFO] [com.action.actsale.controller.BusContractController:495] -- 文件导入成功! --
+[2019-08-09 10:25:00] [INFO] [com.action.actsale.controller.BusContractController:147] -- 合同完成状态（0制作中，1已审核） --0
+[2019-08-09 10:25:04] [INFO] [com.action.actsale.controller.BusContractController:316] -- 查询-合同明细报价附表:[BusConQuotedPriceEntity [bcqpName=1, bcqpBrand=1, bcqpModel=1, bcqpQty=1.0, bcqpPrice=1.0, bcqpAmount=1.0, busContractId=2c94b32c6c4c8b0e016c4c94a0600009], BusConQuotedPriceEntity [bcqpName=OPPO智能手机, bcqpBrand=OPPO, bcqpModel=A57, bcqpQty=1.0, bcqpPrice=200.1, bcqpAmount=200.1, busContractId=2c94b32c6c4c8b0e016c4c94a0600009], BusConQuotedPriceEntity [bcqpName=OPPO智能手机, bcqpBrand=OPPO, bcqpModel=A57, bcqpQty=1.0, bcqpPrice=200.1, bcqpAmount=200.1, busContractId=2c94b32c6c4c8b0e016c4c94a0600009]] --
+[2019-08-09 10:25:21] [INFO] [com.action.actsale.controller.BusContractController:147] -- 合同完成状态（0制作中，1已审核） --0
+[2019-08-09 10:25:39] [INFO] [com.action.actsale.controller.BusContractController:316] -- 查询-合同明细报价附表:[BusConQuotedPriceEntity [bcqpName=1, bcqpBrand=1, bcqpModel=1, bcqpQty=1.0, bcqpPrice=1.0, bcqpAmount=1.0, busContractId=2c94b32c6c4c8b0e016c4c94a0600009], BusConQuotedPriceEntity [bcqpName=OPPO智能手机, bcqpBrand=OPPO, bcqpModel=A57, bcqpQty=1.0, bcqpPrice=200.1, bcqpAmount=200.1, busContractId=2c94b32c6c4c8b0e016c4c94a0600009], BusConQuotedPriceEntity [bcqpName=OPPO智能手机, bcqpBrand=OPPO, bcqpModel=A57, bcqpQty=1.0, bcqpPrice=200.1, bcqpAmount=200.1, busContractId=2c94b32c6c4c8b0e016c4c94a0600009]] --
+[2019-08-09 10:25:43] [INFO] [com.action.actsale.controller.BusContractController:147] -- 合同完成状态（0制作中，1已审核） --0
+[2019-08-09 10:25:46] [INFO] [com.action.actsale.controller.BusContractController:316] -- 查询-合同明细报价附表:[BusConQuotedPriceEntity [bcqpName=1, bcqpBrand=1, bcqpModel=1, bcqpQty=1.0, bcqpPrice=1.0, bcqpAmount=1.0, busContractId=2c94b32c6c4c8b0e016c4c94a0600009], BusConQuotedPriceEntity [bcqpName=OPPO智能手机, bcqpBrand=OPPO, bcqpModel=A57, bcqpQty=1.0, bcqpPrice=200.1, bcqpAmount=200.1, busContractId=2c94b32c6c4c8b0e016c4c94a0600009]] --
+[2019-08-09 10:25:48] [INFO] [com.action.actsale.controller.BusContractController:147] -- 合同完成状态（0制作中，1已审核） --0
+[2019-08-09 10:26:36] [INFO] [com.action.actsale.controller.BusContractController:316] -- 查询-合同明细报价附表:[] --
+[2019-08-09 10:26:38] [INFO] [com.action.actsale.controller.BusContractController:147] -- 合同完成状态（0制作中，1已审核） --1
+[2019-08-09 10:26:45] [INFO] [com.action.actsale.controller.BusContractController:316] -- 查询-合同明细报价附表:[] --
+[2019-08-09 10:26:51] [INFO] [com.action.actsale.controller.BusContractController:147] -- 合同完成状态（0制作中，1已审核） --1
+[2019-08-09 10:26:52] [INFO] [com.action.actsale.controller.BusContractController:147] -- 合同完成状态（0制作中，1已审核） --1
+[2019-08-09 10:26:54] [INFO] [com.action.actsale.controller.BusContractController:147] -- 合同完成状态（0制作中，1已审核） --0
+[2019-08-09 10:26:54] [INFO] [com.action.actsale.controller.BusContractController:147] -- 合同完成状态（0制作中，1已审核） --0
+[2019-08-09 10:26:57] [INFO] [com.action.actsale.controller.BusContractController:147] -- 合同完成状态（0制作中，1已审核） --0
+[2019-08-09 10:26:57] [INFO] [com.action.actsale.controller.BusContractController:147] -- 合同完成状态（0制作中，1已审核） --0
+[2019-08-09 10:26:57] [INFO] [com.action.actsale.controller.BusContractController:147] -- 合同完成状态（0制作中，1已审核） --0
+[2019-08-09 10:26:58] [INFO] [com.action.actsale.controller.BusContractController:147] -- 合同完成状态（0制作中，1已审核） --0
+[2019-08-09 10:26:58] [INFO] [com.action.actsale.controller.BusContractController:147] -- 合同完成状态（0制作中，1已审核） --0
+[2019-08-09 10:26:59] [INFO] [com.action.actsale.controller.BusContractController:147] -- 合同完成状态（0制作中，1已审核） --0

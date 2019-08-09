@@ -41,7 +41,6 @@ public class BusPoContractServiceImpl extends CommonServiceImpl implements BusPo
 	        List<BusPoContractPayEntity> busPoContractPayList,List<BusPoApplyDetailConEntity> busPoApplyDetailConList,List<BusPoContractDetailEntity> busPoContractDetailList) throws Exception{
 			//保存主信息
 			this.save(busPoContract);
-		
 			/**保存-采购合同付款明细*/
 			for(BusPoContractPayEntity busPoContractPay:busPoContractPayList){
 				//外键设置
@@ -51,7 +50,8 @@ public class BusPoContractServiceImpl extends CommonServiceImpl implements BusPo
 			/**保存-采购申请明细*/
 			for(BusPoApplyDetailConEntity busPoApplyDetailCon:busPoApplyDetailConList){
 				//外键设置
-				busPoApplyDetailCon.setFromPoApplyDetId(busPoContract.getId());
+				busPoApplyDetailCon.setFromId(busPoContract.getId());		// 采购合同
+
 				this.save(busPoApplyDetailCon);
 			}
 			/**保存-采购合同明细*/
@@ -209,7 +209,7 @@ public class BusPoContractServiceImpl extends CommonServiceImpl implements BusPo
 		this.deleteAllEntitie(busPoContractPayOldList);
 		//===================================================================================
 		//删除-采购申请明细
-	    String hql1 = "from BusPoApplyDetailConEntity where 1 = 1 AND fromPoApplyDetId = ? ";
+	    String hql1 = "from BusPoApplyDetailConEntity where 1 = 1 AND fromId = ? ";
 	    List<BusPoApplyDetailConEntity> busPoApplyDetailConOldList = this.findHql(hql1,id1);
 		this.deleteAllEntitie(busPoApplyDetailConOldList);
 		//===================================================================================

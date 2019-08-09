@@ -121,7 +121,7 @@
 	    iconCls: 'icon-remove'  
 	}); 
 	$('#addVmMergeBusPoApplyDetailBtn').bind('click', function(){   
-		popupClickMerge(this,'bpad_name,bpad_brand,bpad_model,bpad_number,bpad_remark','bpadName,bpadBrand,bpadModel,bpadNumber,bpadRemark','rf_bus_po_apply_detail')
+		popupClickMerge(this,'id,bpad_name,bpad_brand,bpad_model,bpad_number,bpad_remark','id,bpadName,bpadBrand,bpadModel,bpadNumber,bpadRemark','rf_bus_po_apply_detail')
 	 	 return false;
 		
 		
@@ -143,12 +143,13 @@
     });
 // 重新popupClick 方法
 function popupClickMerge(pobj, tablefield, inputnames, pcode) {
+	
     if (inputnames == "" || pcode == "") {
         alert($.i18n.prop('popup.param.error.msg'));
         return;
     }
         $.dialog({
-            content: "url:cgReportController.do?popup&id=" + pcode,
+            content: "url:cgReportController.do?popup&id=" + pcode + "&idkey="+ window.projectId,
             zIndex: getzIndex(),
             lock: true,
             title: $.i18n.prop('common.select'),
@@ -159,13 +160,14 @@ function popupClickMerge(pobj, tablefield, inputnames, pcode) {
             ok: function () {
                 iframe = this.iframe.contentWindow;
                 var selected = iframe.getSelectRows();
+               	console.log(selected)
                 if (selected == '' || selected == null) {
                     alert($.i18n.prop('common.select.please'));
                     return false;
                 } else {
                     //对应数据库字段不为空的情况下,根据表单中字典TEXT的值来取popup的值 
                     if (tablefield != "" && tablefield != null) {
-                        var fields = inputnames.split(",");
+                        var iNames = inputnames.split(",");
                         var tableF = tablefield.split(",");
                      	for(var i = 0; i < selected.length; i++){
                      		 var tr =  $("#add_vmMergeBusPoApplyDetail_table_template tr").clone();
@@ -174,7 +176,7 @@ function popupClickMerge(pobj, tablefield, inputnames, pcode) {
                      		//busPoContractDetailList[#index#].bpcdNumber
                      		var name = $(tr).find("input").eq(2).attr("name")
                      		var inputs = name.split(".");
-                     		fields.forEach(function(item, index){
+                     		iNames.forEach(function(item, index){
                      			$("input[name='"+inputs[0]+"."+ item +"']").val(selected[i][tableF[index]])
                      		}) 
                      	}

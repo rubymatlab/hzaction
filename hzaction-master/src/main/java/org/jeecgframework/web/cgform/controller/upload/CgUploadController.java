@@ -12,12 +12,10 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.UUID;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import org.jeecgframework.web.cgform.entity.upload.CgUploadEntity;
-import org.jeecgframework.web.cgform.service.upload.CgUploadServiceI;
-import org.jeecgframework.web.system.pojo.base.TSAttachment;
-import org.jeecgframework.web.system.service.SystemService;
+
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.jeecgframework.core.common.controller.BaseController;
@@ -32,6 +30,10 @@ import org.jeecgframework.core.util.PinyinUtil;
 import org.jeecgframework.core.util.ResourceUtil;
 import org.jeecgframework.core.util.StringUtil;
 import org.jeecgframework.core.util.oConvertUtils;
+import org.jeecgframework.web.cgform.entity.upload.CgUploadEntity;
+import org.jeecgframework.web.cgform.service.upload.CgUploadServiceI;
+import org.jeecgframework.web.system.pojo.base.TSAttachment;
+import org.jeecgframework.web.system.service.SystemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.FileCopyUtils;
@@ -41,6 +43,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
+
+import com.action.actbase.entity.BasAttachFileEntity;
+import com.action.actbase.service.BasAttachFileServiceI;
+import com.action.actsale.dao.BusContractMiniDao;
+
 import net.sf.json.JSONObject;
 
 /**
@@ -64,17 +71,23 @@ public class CgUploadController extends BaseController {
 	private SystemService systemService;
 	@Autowired
 	private CgUploadServiceI cgUploadService;
-
+	@Autowired
+	private BasAttachFileServiceI basAttachFileService;
+	@Autowired
+	private BusContractMiniDao busContractMiniDao;
+	
 	/**
 	 * 保存文件
 	 * @param request
 	 * @param response
 	 * @param cgUploadEntity 智能表单文件上传实体
 	 * @return
+	 * @throws Exception
 	 */
 	@RequestMapping(params = "saveFiles", method = RequestMethod.POST)
 	@ResponseBody
-	public AjaxJson saveFiles(HttpServletRequest request, HttpServletResponse response, CgUploadEntity cgUploadEntity) {
+	public AjaxJson saveFiles(HttpServletRequest request, HttpServletResponse response, CgUploadEntity cgUploadEntity) throws Exception {
+		logger.info("-- cgUploadEntity 智能表单文件上传实体 --");
 		AjaxJson j = new AjaxJson();
 		Map<String, Object> attributes = new HashMap<String, Object>();
 		String fileKey = oConvertUtils.getString(request.getParameter("fileKey"));// 文件ID
@@ -111,6 +124,27 @@ public class CgUploadController extends BaseController {
 		j.setMsg("操作成功");
 		j.setAttributes(attributes);
 		logger.info("--cgUploadController--saveFiles--上传文件----操作成功-----");
+		
+		//ax
+		//上传文件信息保存进表bas_attach_file,【1-6】种类型
+		String bafAttachClass = request.getParameter("bafAttachClass");
+		if(bafAttachClass!=null) {
+			int attachClass = Integer.parseInt(bafAttachClass);
+			if(attachClass>=1&&attachClass<=6) {
+				BasAttachFileEntity basAttachFileEntity = new BasAttachFileEntity();
+				basAttachFileEntity.setId(cgUploadEntity.getId());
+				basAttachFileEntity.setBafAttachClass(attachClass+"");//合同资料附件
+				basAttachFileEntity.setBafBusId(id);
+				basAttachFileEntity.setBafPath(realPath);
+				basAttachFileEntity.setBafFilename(request.getParameter("fileName").toString());
+				logger.info("ID:"+basAttachFileEntity.getId()+",附件分类:"+basAttachFileEntity.getBafAttachClass()+
+						",业务外键:"+basAttachFileEntity.getBafBusId()+",文件路径:"+basAttachFileEntity.getBafPath()+",文件名称:"+basAttachFileEntity.getBafFilename());
+				basAttachFileService.save(basAttachFileEntity);
+				logger.info("----bas_attach_file--saveFiles--上传合同电子档的信息保存到数据库----操作成功----【WMT】");
+			}
+		}
+		//ax
+		
 		return j;
 	}
 	
@@ -118,20 +152,22 @@ public class CgUploadController extends BaseController {
 	 * 删除文件
 	 * @param request
 	 * @return
+	 * @throws Exception 
 	 */
 	@RequestMapping(params = "delFile")
 	@ResponseBody
-	public AjaxJson delFile( HttpServletRequest request) {
+	public AjaxJson delFile( HttpServletRequest request) throws Exception {
 		String message = null;
 		AjaxJson j = new AjaxJson();
 		String id  = request.getParameter("id");
+		String realPath = null;
 		CgUploadEntity file = systemService.getEntity(CgUploadEntity.class, id);
 
 		String sql  = "select " + file.getCgformField() + " from " + file.getCgformName() + " where id = '" + file.getCgformId() + "'";
 		List<Object> cgformFieldResult = systemService.findListbySql(sql);
 		if(cgformFieldResult != null && !cgformFieldResult.isEmpty() && cgformFieldResult.get(0) != null){
 			String path = cgformFieldResult.get(0).toString();
-			String realPath = file.getRealpath();
+			realPath = file.getRealpath();
 			realPath = realPath.replace(File.separator, "/");
 			boolean updateFlag = false;
 			if(path.equals(realPath)){
@@ -154,10 +190,18 @@ public class CgUploadController extends BaseController {
 				cgUploadService.writeBack(file.getCgformId(), file.getCgformName(), file.getCgformField(), file.getId(), "");
 			}
 		}
-
 		message = "" + file.getAttachmenttitle() + "被删除成功";
+	
+		
 		cgUploadService.deleteFile(file);
 		systemService.addLog(message, Globals.Log_Type_DEL,Globals.Log_Leavel_INFO);
+		
+		//AX
+		//在安信项目下操作删除文件
+		busContractMiniDao.delete(file.getId());
+		logger.info("=======删除附件文件ID为:"+file.getId()+"的数据信息=====删除成功======");
+		//AX
+		
 		j.setSuccess(true);
 		j.setMsg(message);
 		return j;

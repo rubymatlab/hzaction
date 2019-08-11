@@ -1560,7 +1560,7 @@ public class SystemController extends BaseController {
 	@RequestMapping("/filedeal")
     @ResponseBody
     public AjaxJson filedeal(HttpServletRequest request, HttpServletResponse response) {
-		logger.info("-- 上传文件拉 --");
+		logger.info("-- WebUploader文件上传处理/删除处理操作 --");
         AjaxJson j = new AjaxJson();
         String msg="啥都没干-没传参数吧！";
         String upFlag=request.getParameter("isup");

@@ -23,9 +23,9 @@
 				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
 						备注
 				  </td>
-				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
+<!-- 				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
 						采购合同外键
-				  </td>
+				  </td> -->
 	</tr>
 	<tbody id="add_vmMergeBusPoApplyDetail_table">
 	<c:if test="${fn:length(vmMergeBusPoApplyDetailList)  <= 0 && false }">
@@ -62,10 +62,10 @@
 					  	<input name="vmMergeBusPoApplyDetailList[0].bpadRemark" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">备注</label>
 					</td>
-				  <td align="left">
+<!-- 				  <td align="left">
 					  	<input name="vmMergeBusPoApplyDetailList[0].fromId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">采购合同外键</label>
-					</td>
+					</td> -->
    			</tr>
 	</c:if>
 	<c:if test="${fn:length(vmMergeBusPoApplyDetailList)  > 0 }">
@@ -103,10 +103,10 @@
 					  	<input name="vmMergeBusPoApplyDetailList[${stuts.index }].bpadRemark" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bpadRemark }"/>
 					  <label class="Validform_label" style="display: none;">备注</label>
 				   </td>
-				   <td align="left">
+<%-- 				   <td align="left">
 					  	<input name="vmMergeBusPoApplyDetailList[${stuts.index }].fromId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.fromId }"/>
 					  <label class="Validform_label" style="display: none;">采购合同外键</label>
-				   </td>
+				   </td> --%>
    			</tr>
 		</c:forEach>
 	</c:if>	

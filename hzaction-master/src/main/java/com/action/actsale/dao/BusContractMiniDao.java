@@ -22,4 +22,7 @@ public interface BusContractMiniDao {
 	@Arguments({"bus_contract_id"})
 	public List<BusContractPaymentEntity> getListContractPayment(String bus_contract_id);
 	
+	@Sql("delete from bas_attach_file where id = :id ")
+	@Arguments({"id"})
+	public int delete(String id);
 }

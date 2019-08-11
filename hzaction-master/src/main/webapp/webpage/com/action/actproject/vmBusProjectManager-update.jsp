@@ -48,7 +48,7 @@
 				<label class="Validform_label">项目编号:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bpmProjId" name="bpmProjId" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vmBusProjectManagerPage.bpmProjId}'/>
+		     	 <input id="bpmProjId" name="bpmProjId" type="text" maxlength="32" style="width: 60%" class="inputxt"  ignore="ignore"  value='${vmBusProjectManagerPage.bpmProjId}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">项目编号</label>
 			</td>
@@ -56,7 +56,7 @@
 				<label class="Validform_label">项目名称:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bpmProjName" name="bpmProjName" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vmBusProjectManagerPage.bpmProjName}'/>
+		     	 <input id="bpmProjName" name="bpmProjName" type="text" maxlength="32" style="width: 60%" class="inputxt"  ignore="ignore"  value='${vmBusProjectManagerPage.bpmProjName}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">项目名称</label>
 			</td>
@@ -66,7 +66,7 @@
 				<label class="Validform_label">客户名称:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bpmCustName" name="bpmCustName" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vmBusProjectManagerPage.bpmCustName}'/>
+		     	 <input id="bpmCustName" name="bpmCustName" type="text" maxlength="32" style="width: 60%" class="inputxt"  ignore="ignore"  value='${vmBusProjectManagerPage.bpmCustName}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">客户名称</label>
 			</td>

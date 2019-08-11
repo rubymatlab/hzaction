@@ -102,6 +102,8 @@ public class VmBusPoContractEntity implements java.io.Serializable {
 	private java.lang.String bcName;
 	/** 客户简称 **/
 	private java.lang.String bpmCustSName;
+	/** 附件路径 **/
+	private java.lang.String bafPath;
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  主键
@@ -644,6 +646,22 @@ public class VmBusPoContractEntity implements java.io.Serializable {
 	public void setBpmCustSName(java.lang.String bpmCustSName){
 		this.bpmCustSName = bpmCustSName;
 	}
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  客户简称
+	 */
 	
+	@Column(name ="BAF_PATH",nullable=true,length=50)
+	public java.lang.String getBafPath(){
+		return this.bafPath;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  客户简称
+	 */
+	public void setBafPath(java.lang.String bafPath){
+		this.bafPath = bafPath;
+	}
 	
 }

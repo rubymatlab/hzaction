@@ -32,7 +32,7 @@ public class BusContractServiceImpl extends CommonServiceImpl implements BusCont
 	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
 	@Autowired
 	private BusContractMiniDao busContractMiniDao;
-
+	
 	/**
 	 * 自定义按钮-[确认合同]业务处理
 	 * @param id
@@ -41,8 +41,8 @@ public class BusContractServiceImpl extends CommonServiceImpl implements BusCont
 	public void affirmButton(BusContractEntity t){
 		//-----------------sql增强 start----------------------------
 		//sql增强第1条
-		//把合同状态修改成已审核(2)
-		String sqlEnhance_1 ="update bus_contract set bc_contract_state = 2 where id = '#{id}'";
+		//把合同状态修改成已审核(1)
+		String sqlEnhance_1 ="update bus_contract set bc_contract_state = 1 where id = '#{id}'";
 		this.executeSqlEnhance(sqlEnhance_1,t);
 		logger.info("-- 合同确定成功 --");
 
@@ -77,13 +77,11 @@ public class BusContractServiceImpl extends CommonServiceImpl implements BusCont
 		//-----------------java增强 start---------------------------
 		//-----------------java增强 end-----------------------------
 	}
-
-
 	public BusProjectManagerEntity addBusProjectManager(BusContractEntity t) {
 		//String sqlInsert="insert into bus_project_manager values(:id,:bpm_name,:bpm_proj_prog,:bpm_prog_per,:bpm_status,:bpm_follow_remark,:from_proj_id,:from_cust_id)";
 		BusProjectManagerEntity projectManagerEntity = new BusProjectManagerEntity();
 		projectManagerEntity.setBpmName(t.getFromProjName());
-		projectManagerEntity.setBpmStatus("1");
+		projectManagerEntity.setBpmStatus("0");
 		projectManagerEntity.setBpmFollowRemark(t.getBcContAmount());
 		projectManagerEntity.setFromProjId(t.getFromProjId());
 		projectManagerEntity.setFromCustId(t.getFromCustId());
@@ -154,39 +152,38 @@ public class BusContractServiceImpl extends CommonServiceImpl implements BusCont
 		namedParameterJdbcTemplate.update(sql, map);
 		System.out.println("更新完毕");
 	}
-
-	public void delete(BusContractEntity entity) throws Exception{
-		super.delete(entity);
-	}
+	
+	
+ 	public void delete(BusContractEntity entity) throws Exception{
+ 		super.delete(entity);
+ 	}
 	public void addMain(BusContractEntity busContract,
-			List<BusCostBudgetingEntity> busCostBudgetingList,List<BusContractPaymentEntity> busContractPaymentList,
-			List<BusConQuotedPriceEntity> busConQuotedPriceList) throws Exception{
-		//保存主信息
-		this.save(busContract);
-
-		/**保存-1*/
-		for(BusCostBudgetingEntity busCostBudgeting:busCostBudgetingList){
-			//外键设置
-			busCostBudgeting.setBusContractId(busContract.getId());
-			this.save(busCostBudgeting);
-		}
-		/**保存-2*/
-		for(BusContractPaymentEntity busContractPayment:busContractPaymentList){
-			//外键设置
-			busContractPayment.setBusContractId(busContract.getId());
-			this.save(busContractPayment);
-		}
-		/**保存-3*/
-		for(BusConQuotedPriceEntity busConQuotedPrice:busConQuotedPriceList){
-			//外键设置
-			busConQuotedPrice.setBusContractId(busContract.getId());
-			this.save(busConQuotedPrice);
-		}
+	        List<BusConQuotedPriceEntity> busConQuotedPriceList,List<BusContractPaymentEntity> busContractPaymentList,List<BusCostBudgetingEntity> busCostBudgetingList) throws Exception{
+			//保存主信息
+			this.save(busContract);
+		
+			/**保存-合同明细报价附表*/
+			for(BusConQuotedPriceEntity busConQuotedPrice:busConQuotedPriceList){
+				//外键设置
+				busConQuotedPrice.setBusContractId(busContract.getId());
+				this.save(busConQuotedPrice);
+			}
+			/**保存-合同约定收款附表*/
+			for(BusContractPaymentEntity busContractPayment:busContractPaymentList){
+				//外键设置
+				busContractPayment.setBusContractId(busContract.getId());
+				this.save(busContractPayment);
+			}
+			/**保存-成本预算附表*/
+			for(BusCostBudgetingEntity busCostBudgeting:busCostBudgetingList){
+				//外键设置
+				busCostBudgeting.setBusContractId(busContract.getId());
+				this.save(busCostBudgeting);
+			}
 	}
 
 	public void updateMain(BusContractEntity busContract,
-			List<BusCostBudgetingEntity> busCostBudgetingList,List<BusContractPaymentEntity> busContractPaymentList,
-			List<BusConQuotedPriceEntity> busConQuotedPriceList) throws Exception {
+	        List<BusConQuotedPriceEntity> busConQuotedPriceList,List<BusContractPaymentEntity> busContractPaymentList,List<BusCostBudgetingEntity> busCostBudgetingList) throws Exception {
 		//保存主表信息
 		if(StringUtil.isNotEmpty(busContract.getId())){
 			try {
@@ -205,17 +202,17 @@ public class BusContractServiceImpl extends CommonServiceImpl implements BusCont
 		Object id1 = busContract.getId();
 		Object id2 = busContract.getId();
 		//===================================================================================
-		//1.查询出数据库的明细数据-1
-		String hql0 = "from BusCostBudgetingEntity where 1 = 1 AND busContractId = ? ";
-		List<BusCostBudgetingEntity> busCostBudgetingOldList = this.findHql(hql0,id0);
-		//2.筛选更新明细数据-1
-		if(busCostBudgetingList!=null&&busCostBudgetingList.size()>0){
-			for(BusCostBudgetingEntity oldE:busCostBudgetingOldList){
-				boolean isUpdate = false;
-				for(BusCostBudgetingEntity sendE:busCostBudgetingList){
-					//需要更新的明细数据-1
+		//1.查询出数据库的明细数据-合同明细报价附表
+	    String hql0 = "from BusConQuotedPriceEntity where 1 = 1 AND busContractId = ? ";
+	    List<BusConQuotedPriceEntity> busConQuotedPriceOldList = this.findHql(hql0,id0);
+		//2.筛选更新明细数据-合同明细报价附表
+		if(busConQuotedPriceList!=null&&busConQuotedPriceList.size()>0){
+		for(BusConQuotedPriceEntity oldE:busConQuotedPriceOldList){
+			boolean isUpdate = false;
+				for(BusConQuotedPriceEntity sendE:busConQuotedPriceList){
+					//需要更新的明细数据-合同明细报价附表
 					if(oldE.getId().equals(sendE.getId())){
-						try {
+		    			try {
 							MyBeanUtils.copyBeanNotNull2Bean(sendE,oldE);
 							this.saveOrUpdate(oldE);
 						} catch (Exception e) {
@@ -223,36 +220,36 @@ public class BusContractServiceImpl extends CommonServiceImpl implements BusCont
 							throw new BusinessException(e.getMessage());
 						}
 						isUpdate= true;
-						break;
-					}
-				}
-				if(!isUpdate){
-					//如果数据库存在的明细，前台没有传递过来则是删除-1
-					super.delete(oldE);
-				}
-
+		    			break;
+		    		}
+		    	}
+	    		if(!isUpdate){
+		    		//如果数据库存在的明细，前台没有传递过来则是删除-合同明细报价附表
+		    		super.delete(oldE);
+	    		}
+	    		
 			}
-			//3.持久化新增的数据-1
-			for(BusCostBudgetingEntity busCostBudgeting:busCostBudgetingList){
-				if(oConvertUtils.isEmpty(busCostBudgeting.getId())){
+			//3.持久化新增的数据-合同明细报价附表
+			for(BusConQuotedPriceEntity busConQuotedPrice:busConQuotedPriceList){
+				if(oConvertUtils.isEmpty(busConQuotedPrice.getId())){
 					//外键设置
-					busCostBudgeting.setBusContractId(busContract.getId());
-					this.save(busCostBudgeting);
+					busConQuotedPrice.setBusContractId(busContract.getId());
+					this.save(busConQuotedPrice);
 				}
 			}
 		}
 		//===================================================================================
-		//1.查询出数据库的明细数据-2
-		String hql1 = "from BusContractPaymentEntity where 1 = 1 AND busContractId = ? ";
-		List<BusContractPaymentEntity> busContractPaymentOldList = this.findHql(hql1,id1);
-		//2.筛选更新明细数据-2
+		//1.查询出数据库的明细数据-合同约定收款附表
+	    String hql1 = "from BusContractPaymentEntity where 1 = 1 AND busContractId = ? ";
+	    List<BusContractPaymentEntity> busContractPaymentOldList = this.findHql(hql1,id1);
+		//2.筛选更新明细数据-合同约定收款附表
 		if(busContractPaymentList!=null&&busContractPaymentList.size()>0){
-			for(BusContractPaymentEntity oldE:busContractPaymentOldList){
-				boolean isUpdate = false;
+		for(BusContractPaymentEntity oldE:busContractPaymentOldList){
+			boolean isUpdate = false;
 				for(BusContractPaymentEntity sendE:busContractPaymentList){
-					//需要更新的明细数据-2
+					//需要更新的明细数据-合同约定收款附表
 					if(oldE.getId().equals(sendE.getId())){
-						try {
+		    			try {
 							MyBeanUtils.copyBeanNotNull2Bean(sendE,oldE);
 							this.saveOrUpdate(oldE);
 						} catch (Exception e) {
@@ -260,16 +257,16 @@ public class BusContractServiceImpl extends CommonServiceImpl implements BusCont
 							throw new BusinessException(e.getMessage());
 						}
 						isUpdate= true;
-						break;
-					}
-				}
-				if(!isUpdate){
-					//如果数据库存在的明细，前台没有传递过来则是删除-2
-					super.delete(oldE);
-				}
-
+		    			break;
+		    		}
+		    	}
+	    		if(!isUpdate){
+		    		//如果数据库存在的明细，前台没有传递过来则是删除-合同约定收款附表
+		    		super.delete(oldE);
+	    		}
+	    		
 			}
-			//3.持久化新增的数据-2
+			//3.持久化新增的数据-合同约定收款附表
 			for(BusContractPaymentEntity busContractPayment:busContractPaymentList){
 				if(oConvertUtils.isEmpty(busContractPayment.getId())){
 					//外键设置
@@ -279,17 +276,17 @@ public class BusContractServiceImpl extends CommonServiceImpl implements BusCont
 			}
 		}
 		//===================================================================================
-		//1.查询出数据库的明细数据-合同明细报价附表-3
-		String hql2 = "from BusConQuotedPriceEntity where 1 = 1 AND busContractId = ? ";
-		List<BusConQuotedPriceEntity> busConQuotedPriceOldList = this.findHql(hql2,id2);
-		//2.筛选更新明细数据-合同明细报价附表-3
-		if(busConQuotedPriceList!=null&&busConQuotedPriceList.size()>0){
-			for(BusConQuotedPriceEntity oldE:busConQuotedPriceOldList){
-				boolean isUpdate = false;
-				for(BusConQuotedPriceEntity sendE:busConQuotedPriceList){
-					//需要更新的明细数据-合同明细报价附表-3
+		//1.查询出数据库的明细数据-成本预算附表
+	    String hql2 = "from BusCostBudgetingEntity where 1 = 1 AND busContractId = ? ";
+	    List<BusCostBudgetingEntity> busCostBudgetingOldList = this.findHql(hql2,id2);
+		//2.筛选更新明细数据-成本预算附表
+		if(busCostBudgetingList!=null&&busCostBudgetingList.size()>0){
+		for(BusCostBudgetingEntity oldE:busCostBudgetingOldList){
+			boolean isUpdate = false;
+				for(BusCostBudgetingEntity sendE:busCostBudgetingList){
+					//需要更新的明细数据-成本预算附表
 					if(oldE.getId().equals(sendE.getId())){
-						try {
+		    			try {
 							MyBeanUtils.copyBeanNotNull2Bean(sendE,oldE);
 							this.saveOrUpdate(oldE);
 						} catch (Exception e) {
@@ -297,20 +294,21 @@ public class BusContractServiceImpl extends CommonServiceImpl implements BusCont
 							throw new BusinessException(e.getMessage());
 						}
 						isUpdate= true;
-						break;
-					}
-				}
-				if(!isUpdate){
-					//如果数据库存在的明细，前台没有传递过来则是删除-合同明细报价附表-3
-					super.delete(oldE);
-				}
+		    			break;
+		    		}
+		    	}
+	    		if(!isUpdate){
+		    		//如果数据库存在的明细，前台没有传递过来则是删除-成本预算附表
+		    		super.delete(oldE);
+	    		}
+	    		
 			}
-			//3.持久化新增的数据-合同明细报价附表-3
-			for(BusConQuotedPriceEntity busConQuotedPrice:busConQuotedPriceList){
-				if(oConvertUtils.isEmpty(busConQuotedPrice.getId())){
-					//外键设置-3
-					busConQuotedPrice.setBusContractId(busContract.getId());
-					this.save(busConQuotedPrice);
+			//3.持久化新增的数据-成本预算附表
+			for(BusCostBudgetingEntity busCostBudgeting:busCostBudgetingList){
+				if(oConvertUtils.isEmpty(busCostBudgeting.getId())){
+					//外键设置
+					busCostBudgeting.setBusContractId(busContract.getId());
+					this.save(busCostBudgeting);
 				}
 			}
 		}
@@ -325,20 +323,21 @@ public class BusContractServiceImpl extends CommonServiceImpl implements BusCont
 		Object id1 = busContract.getId();
 		Object id2 = busContract.getId();
 		//===================================================================================
-		//删除-1
-		String hql0 = "from BusCostBudgetingEntity where 1 = 1 AND busContractId = ? ";
-		List<BusCostBudgetingEntity> busCostBudgetingOldList = this.findHql(hql0,id0);
-		this.deleteAllEntitie(busCostBudgetingOldList);
+		//删除-合同明细报价附表
+	    String hql0 = "from BusConQuotedPriceEntity where 1 = 1 AND busContractId = ? ";
+	    List<BusConQuotedPriceEntity> busConQuotedPriceOldList = this.findHql(hql0,id0);
+		this.deleteAllEntitie(busConQuotedPriceOldList);
 		//===================================================================================
-		//删除-2
-		String hql1 = "from BusContractPaymentEntity where 1 = 1 AND busContractId = ? ";
-		List<BusContractPaymentEntity> busContractPaymentOldList = this.findHql(hql1,id1);
+		//删除-合同约定收款附表
+	    String hql1 = "from BusContractPaymentEntity where 1 = 1 AND busContractId = ? ";
+	    List<BusContractPaymentEntity> busContractPaymentOldList = this.findHql(hql1,id1);
 		this.deleteAllEntitie(busContractPaymentOldList);
 		//===================================================================================
-		//删除-3合同明细报价附表
-		String hql2 = "from BusConQuotedPriceEntity where 1 = 1 AND busContractId = ? ";
-		List<BusConQuotedPriceEntity> busConQuotedPriceOldList = this.findHql(hql2,id2);
-		this.deleteAllEntitie(busConQuotedPriceOldList);
-
+		//删除-成本预算附表
+	    String hql2 = "from BusCostBudgetingEntity where 1 = 1 AND busContractId = ? ";
+	    List<BusCostBudgetingEntity> busCostBudgetingOldList = this.findHql(hql2,id2);
+		this.deleteAllEntitie(busCostBudgetingOldList);
+		
 	}
+ 	
 }

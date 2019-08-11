@@ -21,7 +21,7 @@ import org.jeecgframework.poi.excel.annotation.Excel;
  * @Title: Entity
  * @Description: 成本预算附表
  * @author onlineGenerator
- * @date 2019-07-18 19:54:51
+ * @date 2019-08-07 14:26:12
  * @version V1.0   
  *
  */
@@ -32,22 +32,31 @@ public class BusCostBudgetingEntity implements java.io.Serializable {
 	/**主键*/
 	private java.lang.String id;
 	/**流程状态*/
+	@Excel(name="流程状态",width=15)
 	private java.lang.String bpmStatus;
 	/**创建人名称*/
+	@Excel(name="创建人名称",width=15)
 	private java.lang.String createName;
 	/**创建人登录名称*/
+	@Excel(name="创建人登录名称",width=15)
 	private java.lang.String createBy;
 	/**更新人名称*/
+	@Excel(name="更新人名称",width=15)
 	private java.lang.String updateName;
 	/**更新人登录名称*/
+	@Excel(name="更新人登录名称",width=15)
 	private java.lang.String updateBy;
 	/**所属部门*/
+	@Excel(name="所属部门",width=15)
 	private java.lang.String sysOrgCode;
 	/**所属公司*/
+	@Excel(name="所属公司",width=15)
 	private java.lang.String sysCompanyCode;
 	/**创建日期*/
+	@Excel(name="创建日期",width=15,format = "yyyy-MM-dd")
 	private java.util.Date createDate;
 	/**更新日期*/
+	@Excel(name="更新日期",width=15,format = "yyyy-MM-dd")
 	private java.util.Date updateDate;
 	/**费用类型*/
 	@Excel(name="费用类型",width=15,dicCode="cost_type")
@@ -59,18 +68,9 @@ public class BusCostBudgetingEntity implements java.io.Serializable {
 	@Excel(name="备注",width=15)
 	private java.lang.String bcbRemark;
 	/**合同管理主表外键*/
+	@Excel(name="合同管理主表外键",width=15)
 	private java.lang.String busContractId;
 	
-	
-	@Override
-	public String toString() {
-		return "BusCostBudgetingEntity [id=" + id + ", bpmStatus=" + bpmStatus + ", createName=" + createName
-				+ ", createBy=" + createBy + ", updateName=" + updateName + ", updateBy=" + updateBy + ", sysOrgCode="
-				+ sysOrgCode + ", sysCompanyCode=" + sysCompanyCode + ", createDate=" + createDate + ", updateDate="
-				+ updateDate + ", bcbCostType=" + bcbCostType + ", bcbBudget=" + bcbBudget + ", bcbRemark=" + bcbRemark
-				+ ", busContractId=" + busContractId + "]";
-	}
-
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  主键
@@ -223,7 +223,7 @@ public class BusCostBudgetingEntity implements java.io.Serializable {
 	 *@return: java.util.Date  创建日期
 	 */
 	
-	@Column(name ="CREATE_DATE",nullable=true,length=20)
+	@Column(name ="CREATE_DATE",nullable=true)
 	public java.util.Date getCreateDate(){
 		return this.createDate;
 	}
@@ -241,7 +241,7 @@ public class BusCostBudgetingEntity implements java.io.Serializable {
 	 *@return: java.util.Date  更新日期
 	 */
 	
-	@Column(name ="UPDATE_DATE",nullable=true,length=20)
+	@Column(name ="UPDATE_DATE",nullable=true)
 	public java.util.Date getUpdateDate(){
 		return this.updateDate;
 	}

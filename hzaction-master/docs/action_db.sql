@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50527
 File Encoding         : 65001
 
-Date: 2019-08-03 14:15:30
+Date: 2019-08-12 02:22:17
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -43,6 +43,11 @@ CREATE TABLE `bas_attach_file` (
 -- ----------------------------
 INSERT INTO `bas_attach_file` VALUES ('2c94b3e06c4142a4016c414532a70002', '管理员', 'admin', '2019-07-30 13:05:49', '管理员', 'admin', '2019-08-01 17:04:04', 'A03', 'A03', '1', '4', '2c94b3e06c4142a4016c4142a42a0000', '1', 'upload/files/20190801140822F1nJgtZv.txt', '标书101');
 INSERT INTO `bas_attach_file` VALUES ('2c94b3e06c4c6923016c4c6923be0000', '管理员', 'admin', '2019-08-01 17:00:54', null, null, null, 'A03', 'A03', '1', '3', '2c94b3e06c4142a4016c4143e5730001', '2', 'upload/files/20190801170054HWe4USXB.txt', '标书333');
+INSERT INTO `bas_attach_file` VALUES ('4028803b6c81041d016c81dc739b0020', '管理员', 'admin', '2019-08-12 02:06:44', null, null, null, 'A03', 'A03', '1', '4', '4028803b6c81041d016c81dc7366001d', null, 'upload/files/20190812020644MgPawLJf.xls', '客户资料.xls');
+INSERT INTO `bas_attach_file` VALUES ('4028ab756c7bc4e9016c7eb8debd001a', '管理员', 'admin', '2019-08-11 11:29:00', null, null, null, 'A03', 'A03', '1', '1', '2c94b32c6c4c8b0e016c4c94a0600009', null, 'upload/files/20190811112900Pk3PqP5R.xls', '客户资料.xls');
+INSERT INTO `bas_attach_file` VALUES ('4028ab756c7ffe0a016c7fff4d4f0008', '管理员', 'admin', '2019-08-11 17:25:33', null, null, null, 'A03', 'A03', '1', '4', '4028ab756c7ffe0a016c7fff4c2c0006', null, 'upload/files/201908111734038WK3h2D0.xls', '客户资料.xls');
+INSERT INTO `bas_attach_file` VALUES ('4028ab756c7ffe0a016c800714f7000b', '管理员', 'admin', '2019-08-11 17:34:03', null, null, null, 'A03', 'A03', '1', '4', '4028ab756c7ffe0a016c7fff4c2c0006', null, 'upload/files/201908111734038WK3h2D0.xls', '采购合同明细_bus_po_contract_detail-v14.xls');
+INSERT INTO `bas_attach_file` VALUES ('ff8080816c7fc4fe016c7fc8fdd80003', '管理员', 'admin', '2019-08-11 16:26:14', null, null, null, 'A03', 'A03', '1', '4', 'ff8080816c7fc4fe016c7fc8fd3b0001', null, 'upload/files/201908111626148UtGcgIi.xls', '客户资料.xls');
 
 -- ----------------------------
 -- Table structure for bas_bank_account_info
@@ -102,17 +107,13 @@ CREATE TABLE `bas_customer` (
 -- ----------------------------
 -- Records of bas_customer
 -- ----------------------------
-INSERT INTO `bas_customer` VALUES ('2c94b3236c4bed06016c4c29900a0004', '管理员', 'admin', '2019-08-01 15:51:28', null, null, null, 'A03', 'A03', '1', 'ANS_G', '林氏集团', 'ANS_G', '', '', '', '', null);
-INSERT INTO `bas_customer` VALUES ('2c94b3236c4bed06016c4c29d6c40007', '管理员', 'admin', '2019-08-01 15:51:46', null, null, null, 'A03', 'A03', '1', 'ANS_G1', '陈氏集团', 'ANS_G1', '', '', '', '', null);
-INSERT INTO `bas_customer` VALUES ('2c94b3236c4bed06016c4c2a26e2000a', '管理员', 'admin', '2019-08-01 15:52:07', null, null, null, 'A03', 'A03', '1', 'ANS2', '李氏集团', 'ANS2', '', '', '', '', null);
-INSERT INTO `bas_customer` VALUES ('2c94b3236c4bed06016c4c2b9090000d', '管理员', 'admin', '2019-08-01 15:53:39', null, null, null, 'A03', 'A03', '1', 'ANS3', 'ANS3', 'ANS3', '', '', '', '', null);
-INSERT INTO `bas_customer` VALUES ('2c94b3236c4bed06016c4c2bb00d0010', '管理员', 'admin', '2019-08-01 15:53:47', null, null, null, 'A03', 'A03', '1', 'ANS5', 'ANS5', 'ANS5', '', '', '', '', null);
-INSERT INTO `bas_customer` VALUES ('2c94b3236c4bed06016c4c2bc9110013', '管理员', 'admin', '2019-08-01 15:53:54', null, null, null, 'A03', 'A03', '1', 'ANS4', 'ANS4', 'ANS4', '', '', '', '', null);
-INSERT INTO `bas_customer` VALUES ('2c94b3236c4bed06016c4c2be5420016', '管理员', 'admin', '2019-08-01 15:54:01', null, null, null, 'A03', 'A03', '1', 'ANS6', 'ANS6', 'ANS6', '', '', '', '', null);
+INSERT INTO `bas_customer` VALUES ('2c94b3236c4bed06016c4c29900a0004', '管理员', 'admin', '2019-08-01 15:51:28', '管理员', 'admin', '2019-08-06 15:22:14', 'A03', 'A03', '1', 'ANS_G', '林氏集团', 'LIN', '', '', '', '', null);
+INSERT INTO `bas_customer` VALUES ('2c94b3236c4bed06016c4c29d6c40007', '管理员', 'admin', '2019-08-01 15:51:46', '管理员', 'admin', '2019-08-06 15:22:05', 'A03', 'A03', '1', 'ANS_G1', '陈氏集团', 'CHEN', '', '', '', '', null);
+INSERT INTO `bas_customer` VALUES ('2c94b3236c4bed06016c4c2a26e2000a', '管理员', 'admin', '2019-08-01 15:52:07', '管理员', 'admin', '2019-08-06 15:21:58', 'A03', 'A03', '1', 'ANS2', '李氏集团', 'LI', '', '', '', '', null);
 INSERT INTO `bas_customer` VALUES ('2c94b3296c188871016c19bd667b0001', '管理员', 'admin', '2019-07-22 20:52:18', '管理员', 'admin', '2019-07-25 20:47:21', 'A03', 'A03', '1', 'AN', '安信', 'AN', '阿萨德', '1231313123', '131231231', null, null);
 INSERT INTO `bas_customer` VALUES ('2c94b3296c1d0287016c1d245ef30001', '管理员', 'admin', '2019-07-23 12:43:38', '管理员', 'admin', '2019-07-24 09:58:26', 'A03', 'A03', '1', 'XR', '旭日', 'XR', '暂无', '12313131', '12313', '123', null);
 INSERT INTO `bas_customer` VALUES ('2c94b3296c220ff7016c224c8ad0000c', '管理员', 'admin', '2019-07-24 12:45:37', null, null, null, 'A03', 'A03', '1', 'JWS-007', '真维斯', 'JWS', '无', '123131', '12313', null, null);
-INSERT INTO `bas_customer` VALUES ('2c94b3296c2cea84016c2cea84ed0000', '管理员', 'admin', '2019-07-26 14:14:22', null, null, null, 'A03', 'A03', '1', 'HD-2019-001', '恒大', 'client', '无', '12313121313', '1231321311', null, null);
+INSERT INTO `bas_customer` VALUES ('2c94b3296c2cea84016c2cea84ed0000', '管理员', 'admin', '2019-07-26 14:14:22', '管理员', 'admin', '2019-08-06 15:21:26', 'A03', 'A03', '1', 'HD-2019-001', '恒大', 'HD', '无', '12313121313', '1231321311', '', null);
 
 -- ----------------------------
 -- Table structure for bas_customer_contacts
@@ -144,14 +145,10 @@ CREATE TABLE `bas_customer_contacts` (
 INSERT INTO `bas_customer_contacts` VALUES ('2c94b3236c4bed06016c4c29900a0005', '管理员', 'admin', '2019-08-01 15:51:28', '', '', null, 'A03', 'A03', '1', '', '', '', '', '', '2c94b3236c4bed06016c4c29900a0004');
 INSERT INTO `bas_customer_contacts` VALUES ('2c94b3236c4bed06016c4c29d6c40008', '管理员', 'admin', '2019-08-01 15:51:46', '', '', null, 'A03', 'A03', '1', '', '', '', '', '', '2c94b3236c4bed06016c4c29d6c40007');
 INSERT INTO `bas_customer_contacts` VALUES ('2c94b3236c4bed06016c4c2a26e2000b', '管理员', 'admin', '2019-08-01 15:52:07', '', '', null, 'A03', 'A03', '1', '', '', '', '', '', '2c94b3236c4bed06016c4c2a26e2000a');
-INSERT INTO `bas_customer_contacts` VALUES ('2c94b3236c4bed06016c4c2b9090000e', '管理员', 'admin', '2019-08-01 15:53:39', '', '', null, 'A03', 'A03', '1', '', '', '', '', '', '2c94b3236c4bed06016c4c2b9090000d');
-INSERT INTO `bas_customer_contacts` VALUES ('2c94b3236c4bed06016c4c2bb00d0011', '管理员', 'admin', '2019-08-01 15:53:47', '', '', null, 'A03', 'A03', '1', '', '', '', '', '', '2c94b3236c4bed06016c4c2bb00d0010');
-INSERT INTO `bas_customer_contacts` VALUES ('2c94b3236c4bed06016c4c2bc9110014', '管理员', 'admin', '2019-08-01 15:53:54', '', '', null, 'A03', 'A03', '1', '', '', '', '', '', '2c94b3236c4bed06016c4c2bc9110013');
-INSERT INTO `bas_customer_contacts` VALUES ('2c94b3236c4bed06016c4c2be5420017', '管理员', 'admin', '2019-08-01 15:54:01', '', '', null, 'A03', 'A03', '1', '', '', '', '', '', '2c94b3236c4bed06016c4c2be5420016');
 INSERT INTO `bas_customer_contacts` VALUES ('2c94b3296c188871016c19bd66ba0003', '管理员', 'admin', '2019-07-22 20:52:18', '管理员', 'admin', '2019-07-25 20:47:21', 'A03', 'A03', '1', null, null, null, null, null, '2c94b3296c188871016c19bd667b0001');
 INSERT INTO `bas_customer_contacts` VALUES ('2c94b3296c1d0287016c1d245f220003', '管理员', 'admin', '2019-07-23 12:43:38', '管理员', 'admin', '2019-07-24 09:58:26', 'A03', 'A03', '1', null, null, null, null, null, '2c94b3296c1d0287016c1d245ef30001');
 INSERT INTO `bas_customer_contacts` VALUES ('2c94b3296c220ff7016c224c8b1c000e', '管理员', 'admin', '2019-07-24 12:45:37', null, null, null, 'A03', 'A03', '1', null, null, null, null, null, '2c94b3296c220ff7016c224c8ad0000c');
-INSERT INTO `bas_customer_contacts` VALUES ('2c94b3296c2cea84016c2cea86930003', '管理员', 'admin', '2019-07-26 14:14:23', null, null, null, 'A03', 'A03', '1', null, null, null, null, null, '2c94b3296c2cea84016c2cea84ed0000');
+INSERT INTO `bas_customer_contacts` VALUES ('2c94b3296c2cea84016c2cea86930003', '管理员', 'admin', '2019-07-26 14:14:23', '管理员', 'admin', '2019-08-06 15:21:26', 'A03', 'A03', '1', '', '', '', '', '', '2c94b3296c2cea84016c2cea84ed0000');
 
 -- ----------------------------
 -- Table structure for bas_supplier
@@ -183,7 +180,7 @@ CREATE TABLE `bas_supplier` (
 -- ----------------------------
 -- Records of bas_supplier
 -- ----------------------------
-INSERT INTO `bas_supplier` VALUES ('402862816c3c7865016c3c842a250001', '1', '管理员', 'admin', '2019-07-29 14:56:30', null, null, null, 'A03', 'A03', '1', null, null, null, null, null, null, null, null);
+INSERT INTO `bas_supplier` VALUES ('4028803b6c6bf92f016c6bfd5c8a0002', '12580', '管理员', 'admin', '2019-08-07 20:11:02', null, null, null, 'A03', 'A03', '1', '工商银行', '广东汕头', '111111111111', '13021234567', '赵柳', 'ZHENG', '郑氏有限公司', '这是供应商信息');
 INSERT INTO `bas_supplier` VALUES ('4028cb816c40a12d016c40a12d9f0000', 'test1', '管理员', 'admin', '2019-07-30 10:06:40', '管理员', 'admin', '2019-07-30 10:45:09', 'A03', 'A03', '1', 'bank_name', 'test_addr', 'bank_acc_no', '18012345678', 'contractaaaaaa', 'test_sname', 'test1_name', 'remarkaaaaaaaaaaaaa');
 
 -- ----------------------------
@@ -447,17 +444,18 @@ CREATE TABLE `bus_contract` (
   `bc_win_bidder` varchar(32) DEFAULT NULL COMMENT '中标方',
   `bc_win_sfee` decimal(32,0) DEFAULT NULL COMMENT '中标服务费',
   `bc_action_amount` decimal(32,0) DEFAULT NULL COMMENT '安信金额',
+  `bc_contract_file` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of bus_contract
 -- ----------------------------
-INSERT INTO `bus_contract` VALUES ('2c94b32c6c2cf243016c2cf243ef0000', '管理员', 'admin', '2019-07-26 14:22:50', '管理员', 'admin', '2019-07-26 19:44:54', 'A03', 'A03', '1', 'wwe', 'aaa', 'AX-2019HD-001', 'aaa', '2019-07-17 00:00:00', '2019-07-25 00:00:00', '2019-07-08 00:00:00', '2', 'aaa', '1000', '2c94b3296c2cea84016c2cea85870001', 'aaa', '2c94b3266c3ca762016c3ca86ae20001', 'aaa', '2', 'w中标方', '2000', '200');
-INSERT INTO `bus_contract` VALUES ('2c94b32c6c2cf243016c2cf3a3bc0001', '管理员', 'admin', '2019-07-26 14:24:20', '管理员', 'admin', '2019-07-26 19:43:29', 'A03', 'A03', '1', 'wwf', 'bb', 'AX-2019AQ-001', '安全管理系统', '2019-07-12 00:00:00', '2019-07-18 00:00:00', '2019-07-29 00:00:00', '2', 'bbb', '2000', '2c94b3296c2cea84016c2cea85fd0002', 'bbb', '2c94b3266c3ca762016c3ca86ae20001', '安全管理系统', '6', '中标方b', '100', '100');
-INSERT INTO `bus_contract` VALUES ('2c94b32c6c4c8b0e016c4c94a0600009', '管理员', 'admin', '2019-08-01 17:48:25', null, null, null, 'A03', 'A03', '1', '117', '测试客户名称', '测试项目编号', '测试合同名称', '2019-07-22 00:00:00', '2019-07-19 00:00:00', '2015-09-10 00:00:00', '1', '测试我方签约人', '测试合同金额', '2c94b3296c220ff7016c224c8b10000d', '测试客户签约人', '402862816c3c7865016c3c842a250001', '测试项目名称', '1', '测试中标方', '1000', '5000');
-INSERT INTO `bus_contract` VALUES ('4028aa816c08edd3016c0949b1bf0054', '管理员', 'admin', '2019-07-19 16:12:00', '管理员', 'admin', '2019-07-19 16:18:04', 'A03', 'A03', '1', '110', '孙悟空', '1', '保镖', null, '2019-07-19 00:00:00', '2019-07-31 00:00:00', '1', '吴美廷', '1000', '2c94b3296c188871016c19bd66a50002', '孙悟空', '402862816c3c7865016c3c842a250001', '保护唐僧西天取经', null, null, null, null);
-INSERT INTO `bus_contract` VALUES ('4028aa816c08edd3016c094ca85b005c', '管理员', 'admin', '2019-07-19 16:15:15', '管理员', 'admin', '2019-07-19 17:13:31', 'A03', 'A03', '2', '119', '唐僧', '2', '西天取得真经', '2019-07-19 00:00:00', '2019-07-20 00:00:00', '2019-07-31 00:00:00', '2', '郑伟阳', '2000', '2c94b3296c1d0287016c1d245f0e0002', '唐僧', '402862816c3c7865016c3c842a250001', '取经', null, null, null, null);
+INSERT INTO `bus_contract` VALUES ('2c94b32c6c2cf243016c2cf243ef0000', '管理员', 'admin', '2019-07-26 14:22:50', '管理员', 'admin', '2019-07-26 19:44:54', 'A03', 'A03', '1', 'wwe', 'aaa', 'AX-2019HD-001', 'aaa', '2019-07-17 00:00:00', '2019-07-25 00:00:00', '2019-07-08 00:00:00', '2', 'aaa', '1000', '2c94b3296c2cea84016c2cea85870001', 'aaa', '2c94b3266c3ca762016c3ca86ae20001', 'aaa', '2', 'w中标方', '2000', '200', null);
+INSERT INTO `bus_contract` VALUES ('2c94b32c6c2cf243016c2cf3a3bc0001', '管理员', 'admin', '2019-07-26 14:24:20', '管理员', 'admin', '2019-07-26 19:43:29', 'A03', 'A03', '1', 'wwf', 'bb', 'AX-2019AQ-001', '安全管理系统', '2019-07-12 00:00:00', '2019-07-18 00:00:00', '2019-07-29 00:00:00', '2', 'bbb', '2000', '2c94b3296c2cea84016c2cea85fd0002', 'bbb', '2c94b3266c3ca762016c3ca86ae20001', '安全管理系统', '6', '中标方b', '100', '100', null);
+INSERT INTO `bus_contract` VALUES ('2c94b32c6c4c8b0e016c4c94a0600009', '管理员', 'admin', '2019-08-01 00:00:00', '管理员', 'admin', '2019-08-11 11:29:00', 'A03', 'A03', '1', '117', '测试客户名称', '测试项目编号', '测试合同名称', '2019-07-22 00:00:00', '2019-07-19 00:00:00', '2015-09-10 00:00:00', '1', '测试我方签约人', '测试合同金额', '2c94b3296c220ff7016c224c8b10000d', '测试客户签约人', '402862816c3c7865016c3c842a250001', '测试项目名称', '1', '测试中标方', '1000', '5000', 'upload/files/20190811112900Pk3PqP5R.xls');
+INSERT INTO `bus_contract` VALUES ('4028aa816c08edd3016c0949b1bf0054', '管理员', 'admin', '2019-07-19 16:12:00', '管理员', 'admin', '2019-07-19 16:18:04', 'A03', 'A03', '1', '110', '孙悟空', '1', '保镖', null, '2019-07-19 00:00:00', '2019-07-31 00:00:00', '1', '吴美廷', '1000', '2c94b3296c188871016c19bd66a50002', '孙悟空', '402862816c3c7865016c3c842a250001', '保护唐僧西天取经', null, null, null, null, null);
+INSERT INTO `bus_contract` VALUES ('4028aa816c08edd3016c094ca85b005c', '管理员', 'admin', '2019-07-19 16:15:15', '管理员', 'admin', '2019-07-19 17:13:31', 'A03', 'A03', '2', '119', '唐僧', '2', '西天取得真经', '2019-07-19 00:00:00', '2019-07-20 00:00:00', '2019-07-31 00:00:00', '2', '郑伟阳', '2000', '2c94b3296c1d0287016c1d245f0e0002', '唐僧', '402862816c3c7865016c3c842a250001', '取经', null, null, null, null, null);
 
 -- ----------------------------
 -- Table structure for bus_contract_payment
@@ -488,8 +486,8 @@ CREATE TABLE `bus_contract_payment` (
 INSERT INTO `bus_contract_payment` VALUES ('2c94b32c6c2cd3f7016c2d4efb5100a8', '管理员', 'admin', '2019-07-26 16:04:07', '', '', null, 'A03', 'A03', '1', null, '10000', '现金', '2c94b32c6c2cf243016c2cf3a3bc0001', '1');
 INSERT INTO `bus_contract_payment` VALUES ('2c94b32c6c2d7b28016c2d85f6f90002', '管理员', 'admin', '2019-07-26 17:04:10', '管理员', 'admin', '2019-07-26 19:45:22', 'A03', 'A03', '1', null, '2', '2', '2c94b32c6c2cf243016c2cf243ef0000', '2');
 INSERT INTO `bus_contract_payment` VALUES ('2c94b32c6c2e0f7e016c2e1967f8000b', '管理员', 'admin', '2019-07-26 19:45:13', '管理员', 'admin', '2019-07-26 19:45:22', 'A03', 'A03', '1', null, '1', '1', '2c94b32c6c2cf243016c2cf243ef0000', '1');
-INSERT INTO `bus_contract_payment` VALUES ('2c94b32c6c4c8b0e016c4c94a061000c', '管理员', 'admin', '2019-08-01 17:48:25', '管理员', 'admin', '2019-08-02 10:11:18', 'A03', 'A03', '1', null, '10000', '现金', '2c94b32c6c4c8b0e016c4c94a0600009', '1');
-INSERT INTO `bus_contract_payment` VALUES ('2c94b32c6c4c8b0e016c4c94a061000d', '管理员', 'admin', '2019-08-01 17:48:25', '管理员', 'admin', '2019-08-02 10:11:18', 'A03', 'A03', '1', null, '50000', '支付宝', '2c94b32c6c4c8b0e016c4c94a0600009', '2');
+INSERT INTO `bus_contract_payment` VALUES ('2c94b32c6c4c8b0e016c4c94a061000c', '管理员', 'admin', '2019-08-01 00:00:00', '管理员', 'admin', '2019-08-11 11:29:00', 'A03', 'A03', '1', '', '10000', '现金', '2c94b32c6c4c8b0e016c4c94a0600009', '1');
+INSERT INTO `bus_contract_payment` VALUES ('2c94b32c6c4c8b0e016c4c94a061000d', '管理员', 'admin', '2019-08-01 00:00:00', '管理员', 'admin', '2019-08-11 11:29:00', 'A03', 'A03', '1', '', '50000', '支付宝', '2c94b32c6c4c8b0e016c4c94a0600009', '2');
 
 -- ----------------------------
 -- Table structure for bus_con_quoted_price
@@ -523,6 +521,10 @@ INSERT INTO `bus_con_quoted_price` VALUES ('2c94b32c6c2e0f7e016c2e102ca20001', '
 INSERT INTO `bus_con_quoted_price` VALUES ('2c94b32c6c2e0f7e016c2e113d870005', '管理员', 'admin', '2019-07-26 19:36:18', '管理员', 'admin', '2019-07-26 19:46:57', 'A03', 'A03', '1', 'w', 'w', 'w', '1', '1', '1', '2c94b32c6c2cf243016c2cf3a3bc0001');
 INSERT INTO `bus_con_quoted_price` VALUES ('2c94b32c6c4c8b0e016c4c94a061000e', '管理员', 'admin', '2019-08-01 17:48:25', '管理员', 'admin', '2019-08-01 21:07:17', 'A03', 'A03', '1', '名称测试', '型号测试', '型号测试', '1', '100', '100', '2c94b32c6c4c8b0e016c4c94a0600009');
 INSERT INTO `bus_con_quoted_price` VALUES ('2c94b32c6c50474a016c504d6e760005', '管理员', 'admin', '2019-08-02 11:09:08', null, null, null, 'A03', 'A03', '1', 'OPPO智能手机', 'OPPO', 'A57', '1', '200', '200', '2c94b32c6c4c8b0e016c4c94a0600009');
+INSERT INTO `bus_con_quoted_price` VALUES ('4028803b6c6fb7a3016c6fb998360001', '管理员', 'admin', '2019-08-08 13:35:29', null, null, null, 'A03', 'A03', '1', '笔记本', '联想', 'Y7000', '1', '6000', '6000', null);
+INSERT INTO `bus_con_quoted_price` VALUES ('4028803b6c6fb7a3016c6fb9983d0002', '管理员', 'admin', '2019-08-08 13:35:29', null, null, null, 'A03', 'A03', '1', '笔记本1', '联想', 'Y7000', '1', '6000', '6000', null);
+INSERT INTO `bus_con_quoted_price` VALUES ('4028803b6c6fb7a3016c6fb998400003', '管理员', 'admin', '2019-08-08 13:35:29', null, null, null, 'A03', 'A03', '1', '笔记本2', '联想', 'Y7000', '1', '6000', '6000', null);
+INSERT INTO `bus_con_quoted_price` VALUES ('4028803b6c6fb7a3016c6fb998440004', '管理员', 'admin', '2019-08-08 13:35:29', null, null, null, 'A03', 'A03', '1', '笔记本3', '联想', 'Y7000', '1', '6000', '6000', null);
 
 -- ----------------------------
 -- Table structure for bus_cost_budgeting
@@ -586,6 +588,10 @@ CREATE TABLE `bus_pay_info` (
 -- ----------------------------
 -- Records of bus_pay_info
 -- ----------------------------
+INSERT INTO `bus_pay_info` VALUES ('4028803b6c61e742016c61e742950000', '管理员', 'admin', '2019-08-05 21:10:41', null, null, null, 'A03', 'A03', '1', null, null, null, null, '请选择', null, null, null, null, '2c94b31e6c4b90ce016c4b940a0e0001', null);
+INSERT INTO `bus_pay_info` VALUES ('4028803b6c61e742016c61e76e270001', '管理员', 'admin', '2019-08-05 21:10:52', null, null, null, 'A03', 'A03', '1', null, null, null, null, '请选择', null, null, null, null, '2c94b31e6c4b89d6016c4b89d6760000', null);
+INSERT INTO `bus_pay_info` VALUES ('4028803b6c61e742016c61e7a07c0002', '管理员', 'admin', '2019-08-05 21:11:05', null, null, null, 'A03', 'A03', '1', null, null, null, null, '请选择', null, null, null, null, '2c94b31e6c4b3837016c4b3837a70000', null);
+INSERT INTO `bus_pay_info` VALUES ('4028803b6c61e742016c61e7c40c0003', '管理员', 'admin', '2019-08-05 21:11:14', null, null, null, 'A03', 'A03', '1', null, null, null, null, '请选择', null, null, null, null, '2c94b31e6c47ee2e016c4814172d0003', null);
 
 -- ----------------------------
 -- Table structure for bus_po_apply
@@ -617,7 +623,7 @@ CREATE TABLE `bus_po_apply` (
 -- Records of bus_po_apply
 -- ----------------------------
 INSERT INTO `bus_po_apply` VALUES ('2c94b3e36c418565016c418c1b110002', '管理员', 'admin', '2019-07-30 14:23:16', null, null, null, 'A03', 'A03', '1', 'AX-2019-KH01-001', '2019-07-24 00:00:00', '张三', '13531704242', '反倒是的', '张三中', '0', '8abdc0b66c0ac2c2016c0ac2c2420000');
-INSERT INTO `bus_po_apply` VALUES ('2c94b3e36c41f86c016c41f86c5c0000', '管理员', 'admin', '2019-07-30 16:21:35', null, null, null, 'A03', 'A03', '1', null, '2019-07-03 00:00:00', '张三', '13531704242', '反倒是的', '张三中', '0', '2c94b32c6c2cd3f7016c2cf595490050');
+INSERT INTO `bus_po_apply` VALUES ('2c94b3e36c41f86c016c41f86c5c0000', '管理员', 'admin', '2019-07-30 16:21:35', null, null, null, 'A03', 'A03', '1', null, '2019-07-03 00:00:00', '李四', '13531704242', '测试店址', '欧妮友', '0', '2c94b32c6c2cd3f7016c2cf595490050');
 
 -- ----------------------------
 -- Table structure for bus_po_apply_detail
@@ -646,9 +652,9 @@ CREATE TABLE `bus_po_apply_detail` (
 -- ----------------------------
 -- Records of bus_po_apply_detail
 -- ----------------------------
-INSERT INTO `bus_po_apply_detail` VALUES ('2c94b3296c46cf63016c46cf63110000', '管理员', 'admin', '2019-07-31 14:54:52', null, null, null, 'A03', 'A03', '1', '鼠标', 'TCL', '1.8', '2', null, null);
-INSERT INTO `bus_po_apply_detail` VALUES ('2c94b3e36c2db751016c2db752030001', '管理员', 'admin', '2019-07-26 17:58:04', null, null, null, 'A03', 'A03', '1', '电脑', 'TCL', 'T１３３', '13', 'fdfsd', '2c94b3e36c41f86c016c41f86c5c0000');
-INSERT INTO `bus_po_apply_detail` VALUES ('2c94b3e36c418565016c418566940001', '管理员', 'admin', '2019-07-30 14:15:57', null, null, null, 'A03', 'A03', '1', '电脑', 'TCL', 'T１３３', '13', 'fdfsd', '2c94b3e36c41f86c016c41f86c5c0000');
+INSERT INTO `bus_po_apply_detail` VALUES ('2c94b3296c46cf63016c46cf63110000', '管理员', 'admin', '2019-07-31 14:54:52', null, null, null, 'A03', 'A03', '1', '鼠标', 'TCL', 'XXX', '2', '双飞燕', '2c94b3e36c41f86c016c41f86c5c0000');
+INSERT INTO `bus_po_apply_detail` VALUES ('2c94b3e36c2db751016c2db752030001', '管理员', 'admin', '2019-07-26 17:58:04', null, null, null, 'A03', 'A03', '1', '电脑', 'TCL', 'T１３３', '13', '惠普', '2c94b3e36c41f86c016c41f86c5c0000');
+INSERT INTO `bus_po_apply_detail` VALUES ('2c94b3e36c418565016c418566940001', '管理员', 'admin', '2019-07-30 14:15:57', null, null, null, 'A03', 'A03', '1', '笔记本', 'TCL', 'Y7000', '5', '联想拯救者', '2c94b3e36c418565016c418c1b110002');
 
 -- ----------------------------
 -- Table structure for bus_po_apply_detail_con
@@ -673,9 +679,6 @@ CREATE TABLE `bus_po_apply_detail_con` (
 -- ----------------------------
 -- Records of bus_po_apply_detail_con
 -- ----------------------------
-INSERT INTO `bus_po_apply_detail_con` VALUES ('2c94b3296c50579c016c50579dfc0003', '管理员', 'admin', '2019-08-02 11:20:15', null, null, null, 'A03', 'A03', '1', null, '2c94b3296c50579c016c50579c4f0000');
-INSERT INTO `bus_po_apply_detail_con` VALUES ('2c94b3296c50579c016c505875c80007', '管理员', 'admin', '2019-08-02 11:21:10', null, null, null, 'A03', 'A03', '1', null, '2c94b3296c50579c016c505874820004');
-INSERT INTO `bus_po_apply_detail_con` VALUES ('2c94b3296c50579c016c5058b675000b', '管理员', 'admin', '2019-08-02 11:21:26', null, null, null, 'A03', 'A03', '1', null, '2c94b3296c50579c016c5058b51d0008');
 
 -- ----------------------------
 -- Table structure for bus_po_contract
@@ -709,9 +712,13 @@ CREATE TABLE `bus_po_contract` (
 -- ----------------------------
 -- Records of bus_po_contract
 -- ----------------------------
-INSERT INTO `bus_po_contract` VALUES ('2c94b3296c50579c016c50579c4f0000', '管理员', 'admin', '2019-08-02 11:20:14', null, null, null, 'A03', 'A03', '1', null, '张飒', null, null, null, '老王家', null, null, null, '2c94b32c6c2cd3f7016c2cf595490050', null);
-INSERT INTO `bus_po_contract` VALUES ('2c94b3296c50579c016c505874820004', '管理员', 'admin', '2019-08-02 11:21:10', null, null, null, 'A03', 'A03', '1', null, '小米糕', null, null, null, '庄', null, null, null, null, null);
-INSERT INTO `bus_po_contract` VALUES ('2c94b3296c50579c016c5058b51d0008', '管理员', 'admin', '2019-08-02 11:21:26', null, null, null, 'A03', 'A03', '1', null, 'admin', null, null, null, 'admin', null, null, null, null, null);
+INSERT INTO `bus_po_contract` VALUES ('4028803b6c6a83e5016c6a84afe30004', '管理员', 'admin', '2019-08-07 13:19:36', null, null, null, 'A03', 'A03', '1', '测试项目编号-CG-001', '', null, null, '', '', '', '', '', '2c94b32c6c50474a016c50484d910001', '4028cb816c40a12d016c40a12d9f0000');
+INSERT INTO `bus_po_contract` VALUES ('4028803b6c6a83e5016c6a84eae20006', '管理员', 'admin', '2019-08-07 13:19:51', null, null, null, 'A03', 'A03', '1', '-CG-001', '', null, null, '', '', '', '', '', '2c94b32c6c2cd3f7016c2cf595490050', '4028cb816c40a12d016c40a12d9f0000');
+INSERT INTO `bus_po_contract` VALUES ('4028803b6c6a8ab7016c6a8ca3f90001', '管理员', 'admin', '2019-08-07 13:28:17', null, null, null, 'A03', 'A03', '1', '测试项目编号-CG-002', '', null, null, '', '', '', '', '', '2c94b32c6c50474a016c50484d910001', '402862816c3c7865016c3c842a250001');
+INSERT INTO `bus_po_contract` VALUES ('4028803b6c6c156a016c6c16da2b0001', '管理员', 'admin', '2019-08-07 20:38:52', '管理员', 'admin', '2019-08-08 21:30:54', 'A03', 'A03', '1', '测试项目编号-CG-003', '', null, null, '', '', '', '', '这是测试', '2c94b32c6c50474a016c50484d910001', '4028803b6c6bf92f016c6bfd5c8a0002');
+INSERT INTO `bus_po_contract` VALUES ('4028803b6c81041d016c810720740001', '管理员', 'admin', '2019-08-11 22:13:43', null, null, null, 'A03', 'A03', '1', '测试项目编号-CG-005', '', null, null, '', '', '', '', '', '2c94b32c6c50474a016c50484d910001', '4028803b6c6bf92f016c6bfd5c8a0002');
+INSERT INTO `bus_po_contract` VALUES ('4028803b6c81041d016c810896a00005', '管理员', 'admin', '2019-08-11 22:15:19', null, null, null, 'A03', 'A03', '1', '测试项目编号-CG-006', '', null, null, '', '', '', '', '', '2c94b32c6c50474a016c50484d910001', '4028803b6c6bf92f016c6bfd5c8a0002');
+INSERT INTO `bus_po_contract` VALUES ('4028ab756c7ffe0a016c7fff4c2c0006', '管理员', 'admin', '2019-08-11 17:25:33', null, null, null, 'A03', 'A03', '1', '测试项目编号-CG-004', '', null, null, '', '', '', '', '', '2c94b32c6c50474a016c50484d910001', '4028803b6c6bf92f016c6bfd5c8a0002');
 
 -- ----------------------------
 -- Table structure for bus_po_contract_detail
@@ -743,12 +750,10 @@ CREATE TABLE `bus_po_contract_detail` (
 -- ----------------------------
 -- Records of bus_po_contract_detail
 -- ----------------------------
-INSERT INTO `bus_po_contract_detail` VALUES ('2c94b3296c4feb56016c50327ec30005', '管理员', 'admin', '2019-08-02 10:39:42', '', '', null, 'A03', 'A03', '1', '', '', '', '', '', '', '', '', '2c94b3296c4feb56016c50327ebe0002');
-INSERT INTO `bus_po_contract_detail` VALUES ('2c94b3296c4feb56016c50327ec30006', '管理员', 'admin', '2019-08-02 10:39:42', null, null, null, 'A03', 'A03', '1', '', '电脑', 'TCL', 'T１３３', '13.0', '', '', '', '2c94b3296c4feb56016c50327ebe0002');
-INSERT INTO `bus_po_contract_detail` VALUES ('2c94b3296c4feb56016c50327ec30007', '管理员', 'admin', '2019-08-02 10:39:42', null, null, null, 'A03', 'A03', '1', '', '电脑', 'TCL', 'T１３３', '13.0', '', '', '', '2c94b3296c4feb56016c50327ebe0002');
-INSERT INTO `bus_po_contract_detail` VALUES ('2c94b3296c50579c016c50579d8c0002', '管理员', 'admin', '2019-08-02 11:20:14', null, null, null, 'A03', 'A03', '1', '请选择', null, null, null, null, null, null, null, '2c94b3296c50579c016c50579c4f0000');
-INSERT INTO `bus_po_contract_detail` VALUES ('2c94b3296c50579c016c505875720006', '管理员', 'admin', '2019-08-02 11:21:10', null, null, null, 'A03', 'A03', '1', '请选择', null, null, null, null, null, null, null, '2c94b3296c50579c016c505874820004');
-INSERT INTO `bus_po_contract_detail` VALUES ('2c94b3296c50579c016c5058b609000a', '管理员', 'admin', '2019-08-02 11:21:26', null, null, null, 'A03', 'A03', '1', '请选择', null, null, null, null, null, null, null, '2c94b3296c50579c016c5058b51d0008');
+INSERT INTO `bus_po_contract_detail` VALUES ('4028803b6c6c156a016c6c16da2c0003', '管理员', 'admin', '2019-08-07 20:38:52', null, null, null, 'A03', 'A03', '1', '', '笔记本', '联想', 'Y7000', '1.0', '6000.0', null, '', '4028803b6c6c156a016c6c16da2b0001');
+INSERT INTO `bus_po_contract_detail` VALUES ('4028803b6c6c156a016c6c16da2c0004', '管理员', 'admin', '2019-08-07 20:38:52', null, null, null, 'A03', 'A03', '1', '', '笔记本1', '联想', 'Y7000', '1.0', '6000.0', null, '', '4028803b6c6c156a016c6c16da2b0001');
+INSERT INTO `bus_po_contract_detail` VALUES ('4028803b6c6c156a016c6c16da2c0005', '管理员', 'admin', '2019-08-07 20:38:52', null, null, null, 'A03', 'A03', '1', '', '笔记本2', '联想', 'Y7000', '1.0', '6000.0', null, '', '4028803b6c6c156a016c6c16da2b0001');
+INSERT INTO `bus_po_contract_detail` VALUES ('4028803b6c6c156a016c6c16da2c0006', '管理员', 'admin', '2019-08-07 20:38:52', null, null, null, 'A03', 'A03', '1', '', '笔记本3', '联想', 'Y7000', '1.0', '6000.0', null, '', '4028803b6c6c156a016c6c16da2b0001');
 
 -- ----------------------------
 -- Table structure for bus_po_contract_pay
@@ -775,9 +780,7 @@ CREATE TABLE `bus_po_contract_pay` (
 -- ----------------------------
 -- Records of bus_po_contract_pay
 -- ----------------------------
-INSERT INTO `bus_po_contract_pay` VALUES ('2c94b3296c50579c016c50579d2d0001', '管理员', 'admin', '2019-08-02 11:20:14', null, null, null, 'A03', 'A03', '1', '1', null, null, '2c94b3296c50579c016c50579c4f0000');
-INSERT INTO `bus_po_contract_pay` VALUES ('2c94b3296c50579c016c505875210005', '管理员', 'admin', '2019-08-02 11:21:10', null, null, null, 'A03', 'A03', '1', '1', null, null, '2c94b3296c50579c016c505874820004');
-INSERT INTO `bus_po_contract_pay` VALUES ('2c94b3296c50579c016c5058b5bd0009', '管理员', 'admin', '2019-08-02 11:21:26', null, null, null, 'A03', 'A03', '1', '1', null, null, '2c94b3296c50579c016c5058b51d0008');
+INSERT INTO `bus_po_contract_pay` VALUES ('4028803b6c6c156a016c6c16da2b0002', '管理员', 'admin', '2019-08-07 20:38:52', '', '', null, 'A03', 'A03', '1', '', '', null, '4028803b6c6c156a016c6c16da2b0001');
 
 -- ----------------------------
 -- Table structure for bus_po_pay
@@ -870,13 +873,13 @@ CREATE TABLE `bus_po_pay_detail` (
 -- ----------------------------
 -- Records of bus_po_pay_detail
 -- ----------------------------
-INSERT INTO `bus_po_pay_detail` VALUES ('2c94b31e6c4af144016c4af144f40002', '3', '3', '2c94b31e6c4af144016c4af144280000', null, '管理员', 'admin', '2019-08-01 10:10:21', null, null, null, 'A03', 'A03', '1');
-INSERT INTO `bus_po_pay_detail` VALUES ('2c94b31e6c4b2542016c4b2542eb0002', '4', '4', '2c94b31e6c4b2542016c4b2542080000', null, '管理员', 'admin', '2019-08-01 11:07:08', null, null, null, 'A03', 'A03', '1');
-INSERT INTO `bus_po_pay_detail` VALUES ('2c94b31e6c4b3837016c4b3839060002', '2', '2', '2c94b31e6c4b3837016c4b3837a70000', null, '管理员', 'admin', '2019-08-01 11:27:51', null, null, null, 'A03', 'A03', '1');
-INSERT INTO `bus_po_pay_detail` VALUES ('2c94b31e6c4b8277016c4b8279030002', '6', '6', '2c94b31e6c4b8277016c4b8277c50000', null, '管理员', 'admin', '2019-08-01 12:48:57', null, null, null, 'A03', 'A03', '1');
-INSERT INTO `bus_po_pay_detail` VALUES ('2c94b31e6c4b89d6016c4b89d7aa0002', '8', '8', '2c94b31e6c4b89d6016c4b89d6760000', null, '管理员', 'admin', '2019-08-01 12:57:00', null, null, null, 'A03', 'A03', '1');
-INSERT INTO `bus_po_pay_detail` VALUES ('2c94b31e6c4b90ce016c4b940a0f0002', '6', '6', '2c94b31e6c4b90ce016c4b940a0e0001', '', '管理员', 'admin', '2019-07-23 15:09:09', '管理员', 'admin', '2019-07-23 16:18:17', 'A03', 'A03', '1');
-INSERT INTO `bus_po_pay_detail` VALUES ('2c94b31e6c4d2fe1016c4d3c1d530009', '', '', '2c94b31e6c47ee2e016c4814172d0003', '', '管理员', 'admin', '2019-08-01 20:51:21', '', '', null, 'A03', 'A03', '1');
+INSERT INTO `bus_po_pay_detail` VALUES ('2c94b31e6c4af144016c4af144f40002', '3734', '3', '2c94b31e6c4af144016c4af144280000', '2c94b3296c50579c016c50579d2d0001', '管理员', 'admin', '2019-08-01 10:10:21', null, null, null, 'A03', 'A03', '1');
+INSERT INTO `bus_po_pay_detail` VALUES ('2c94b31e6c4b2542016c4b2542eb0002', '22', '4', '2c94b31e6c4b2542016c4b2542080000', '2c94b3296c50579c016c50579d2d0001', '管理员', 'admin', '2019-08-01 11:07:08', null, null, null, 'A03', 'A03', '1');
+INSERT INTO `bus_po_pay_detail` VALUES ('2c94b31e6c4b3837016c4b3839060002', '11111', '2', '2c94b31e6c4b3837016c4b3837a70000', '2c94b3296c50579c016c5058b5bd0009', '管理员', 'admin', '2019-08-01 11:27:51', '管理员', 'admin', '2019-08-05 21:11:05', 'A03', 'A03', '1');
+INSERT INTO `bus_po_pay_detail` VALUES ('2c94b31e6c4b8277016c4b8279030002', '2112', '6', '2c94b31e6c4b8277016c4b8277c50000', '2c94b3296c50579c016c50579d2d0001', '管理员', 'admin', '2019-08-01 12:48:57', null, null, null, 'A03', 'A03', '1');
+INSERT INTO `bus_po_pay_detail` VALUES ('2c94b31e6c4b89d6016c4b89d7aa0002', '83', '8', '2c94b31e6c4b89d6016c4b89d6760000', '2c94b3296c50579c016c505875210005', '管理员', 'admin', '2019-08-01 12:57:00', '管理员', 'admin', '2019-08-05 21:10:52', 'A03', 'A03', '1');
+INSERT INTO `bus_po_pay_detail` VALUES ('2c94b31e6c4b90ce016c4b940a0f0002', '61', '6', '2c94b31e6c4b90ce016c4b940a0e0001', '2c94b3296c50579c016c505875210005', '管理员', 'admin', '2019-07-23 15:09:09', '管理员', 'admin', '2019-08-05 21:10:41', 'A03', 'A03', '1');
+INSERT INTO `bus_po_pay_detail` VALUES ('2c94b31e6c4d2fe1016c4d3c1d530009', '12311', '1', '2c94b31e6c47ee2e016c4814172d0003', '2c94b3296c50579c016c5058b5bd0009', '管理员', 'admin', '2019-08-01 20:51:21', '管理员', 'admin', '2019-08-05 21:11:14', 'A03', 'A03', '1');
 INSERT INTO `bus_po_pay_detail` VALUES ('402862816c1d5b10016c1da996130007', '', '', '', '', '管理员', 'admin', '2019-07-23 15:09:09', '管理员', 'admin', '2019-07-23 16:18:17', 'A03', 'A03', '1');
 INSERT INTO `bus_po_pay_detail` VALUES ('402862816c22e4e6016c22e4e7680001', null, null, null, '402862816c22e4e6016c22e4e6b80000', '管理员', 'admin', '2019-07-24 15:32:02', '管理员', 'admin', '2019-07-24 15:32:20', 'A03', 'A03', '1');
 INSERT INTO `bus_po_pay_detail` VALUES ('402862816c3c7865016c3c858dca0004', '1', '1', '', '402862816c3c7865016c3c858dca0003', '管理员', 'admin', '2019-07-23 15:09:09', '管理员', 'admin', '2019-07-23 16:18:17', 'A03', 'A03', '1');
@@ -958,11 +961,11 @@ INSERT INTO `bus_project_detail` VALUES ('402880e76c26529a016c2653bfc90003', '2'
 -- ----------------------------
 DROP TABLE IF EXISTS `bus_project_disfollow`;
 CREATE TABLE `bus_project_disfollow` (
-  `id` varchar(36) NOT NULL,
-  `bpd_dis_no` int(11) DEFAULT NULL COMMENT '跟进次数',
+  `id` varchar(36) NOT NULL COMMENT '主键',
+  `bpd_dis_no` text COMMENT '跟进次数',
   `bpd_follow_date` datetime DEFAULT NULL COMMENT '跟进日期',
   `bpd_stage` varchar(32) DEFAULT NULL COMMENT '项目阶段',
-  `bpd_feedback_into` longtext COMMENT '反馈信息',
+  `bpd_feedback_into` varchar(400) DEFAULT NULL COMMENT '反馈信息',
   `from_id` varchar(36) DEFAULT NULL COMMENT '项目立项外键',
   `create_name` varchar(50) DEFAULT NULL COMMENT '创建人名称',
   `create_by` varchar(50) DEFAULT NULL COMMENT '创建人登录名称',
@@ -979,6 +982,8 @@ CREATE TABLE `bus_project_disfollow` (
 -- ----------------------------
 -- Records of bus_project_disfollow
 -- ----------------------------
+INSERT INTO `bus_project_disfollow` VALUES ('4028803b6c7f96b9016c7f98663b0002', null, null, null, null, null, '管理员', 'admin', '2019-08-11 15:33:09', null, null, null, 'A03', 'A03', '1');
+INSERT INTO `bus_project_disfollow` VALUES ('4028803b6c7f96b9016c7f995bdb0003', '', null, null, null, null, '管理员', 'admin', '2019-08-11 15:34:12', '管理员', 'admin', '2019-08-11 20:16:11', 'A03', 'A03', '1');
 
 -- ----------------------------
 -- Table structure for bus_project_fee_detail
@@ -1082,7 +1087,7 @@ CREATE TABLE `bus_project_manager` (
 -- Records of bus_project_manager
 -- ----------------------------
 INSERT INTO `bus_project_manager` VALUES ('2c94b3296c29220d016c292681f40001', '管理员', 'admin', '2019-07-25 20:41:25', '管理员', 'admin', '2019-07-27 14:05:32', 'A03', 'A03', '0', null, '物联网', '2', '1', null, '2c94b3296c29220d016c292bf22b0004', '2c94b3296c188871016c19bd667b0001', null);
-INSERT INTO `bus_project_manager` VALUES ('2c94b32c6c2cd3f7016c2cf595490050', null, null, null, '管理员', 'admin', '2019-07-27 13:01:10', null, null, '0', null, 'aaa', '', '', '1000', '2c94b3296c2cea84016c2cea85870001', '2c94b3296c2cea84016c2cea84ed0000', null);
+INSERT INTO `bus_project_manager` VALUES ('2c94b32c6c2cd3f7016c2cf595490050', null, null, null, '管理员', 'admin', '2019-08-08 13:37:17', null, null, '0', '', 'aaa', '1', '3', '1000', '2c94b3296c2cea84016c2cea85870001', '2c94b3296c2cea84016c2cea84ed0000', null);
 INSERT INTO `bus_project_manager` VALUES ('2c94b32c6c2cd3f7016c2d4f71d200ac', null, null, null, '管理员', 'admin', '2019-07-27 10:40:29', null, null, '0', null, '安全管理系统', '2', '1', '2000', '2c94b3296c2cea84016c2cea85fd0002', '2c94b3296c2cea84016c2cea84ed0000', null);
 INSERT INTO `bus_project_manager` VALUES ('2c94b32c6c4b2946016c4b3055c7000d', null, null, null, null, null, null, null, null, '1', null, '取经', null, null, '2000', '2c94b3296c1d0287016c1d245f0e0002', '402862816c3c7865016c3c842a250001', null);
 INSERT INTO `bus_project_manager` VALUES ('2c94b32c6c50474a016c50484d910001', null, null, null, null, null, null, null, null, '1', '测试项目编号', '测试项目名称', null, null, '测试合同金额', '2c94b3296c220ff7016c224c8b10000d', '402862816c3c7865016c3c842a250001', '2c94b32c6c4c8b0e016c4c94a0600009');
@@ -1518,7 +1523,7 @@ INSERT INTO `cgform_field` VALUES ('2c94b3236c4bed06016c4c7809af0035', '更新�
 INSERT INTO `cgform_field` VALUES ('2c94b3236c4bed06016c4c7809bf0036', '所属部门', 'admin', '2019-08-01 17:17:11', '管理员', '', '', '', '', '', '120', 'sys_org_code', '', 'N', 'N', 'Y', 'N', 'N', 'N', '50', '', '', 'sys_org_code', '13', '0', 'single', 'text', 'string', 'admin', '2019-08-01 17:18:12', '管理员', '2c94b3236c4bed06016c4c7809af002e', '', '');
 INSERT INTO `cgform_field` VALUES ('2c94b3236c4bed06016c4c7809bf0037', '所属公司', 'admin', '2019-08-01 17:17:11', '管理员', '', '', '', '', '', '120', 'sys_company_code', '', 'N', 'N', 'Y', 'N', 'N', 'N', '50', '', '', 'sys_company_code', '14', '0', 'single', 'text', 'string', 'admin', '2019-08-01 17:18:12', '管理员', '2c94b3236c4bed06016c4c7809af002e', '', '');
 INSERT INTO `cgform_field` VALUES ('2c94b3236c4bed06016c4c7809bf0038', '流程状态', 'admin', '2019-08-01 17:17:11', '管理员', 'bpm_status', '', '', '1', '', '120', 'bpm_status', '', 'N', 'N', 'Y', 'N', 'N', 'Y', '32', '', '', 'bpm_status', '15', '0', 'single', 'text', 'string', 'admin', '2019-08-01 17:18:12', '管理员', '2c94b3236c4bed06016c4c7809af002e', '', '');
-INSERT INTO `cgform_field` VALUES ('2c94b3236c4bed06016c4c7809bf0039', '跟进次数', 'admin', '2019-08-01 17:17:11', '管理员', '', '', '', '', '', '120', 'bpd_dis_no', '', 'N', 'N', 'Y', 'Y', 'Y', 'Y', '32', '', '', 'bpd_dis_no', '2', '0', 'single', 'text', 'int', 'admin', '2019-08-02 13:57:00', '管理员', '2c94b3236c4bed06016c4c7809af002e', '', '');
+INSERT INTO `cgform_field` VALUES ('2c94b3236c4bed06016c4c7809bf0039', '跟进次数', 'admin', '2019-08-01 17:17:11', '管理员', '', '', '', '', '', '120', 'bpd_dis_no', '', 'N', 'N', 'Y', 'Y', 'Y', 'Y', '32', '', '', 'bpd_dis_no', '2', '0', 'single', 'file', 'Text', 'admin', '2019-08-11 15:34:00', '管理员', '2c94b3236c4bed06016c4c7809af002e', '', '');
 INSERT INTO `cgform_field` VALUES ('2c94b3236c4bed06016c4c7809bf003a', '跟进日期', 'admin', '2019-08-01 17:17:11', '管理员', '', '', '', '', '', '120', 'bpd_follow_date', '', 'N', 'N', 'Y', 'Y', 'Y', 'Y', '32', '', '', 'bpd_follow_date', '3', '0', 'single', 'datetime', 'Date', 'admin', '2019-08-02 13:57:00', '管理员', '2c94b3236c4bed06016c4c7809af002e', '', '');
 INSERT INTO `cgform_field` VALUES ('2c94b3236c4bed06016c4c7809bf003b', '项目阶段', 'admin', '2019-08-01 17:17:11', '管理员', '', '', '', '', '', '120', 'bpd_stage', '', 'N', 'N', 'Y', 'Y', 'Y', 'Y', '32', '', '', 'bpd_stage', '4', '0', 'single', 'text', 'string', 'admin', '2019-08-02 13:57:00', '管理员', '2c94b3236c4bed06016c4c7809af002e', '', '');
 INSERT INTO `cgform_field` VALUES ('2c94b3236c4bed06016c4c7809bf003c', '反馈信息', 'admin', '2019-08-01 17:17:11', '管理员', '', '', '', '', '', '120', 'bpd_feedback_into', '', 'N', 'N', 'Y', 'N', 'Y', 'Y', '400', '', '', 'bpd_feedback_into', '5', '0', 'single', 'text', 'string', 'admin', '2019-08-01 17:19:04', '管理员', '2c94b3236c4bed06016c4c7809af002e', '', '');
@@ -1629,14 +1634,14 @@ INSERT INTO `cgform_field` VALUES ('2c94b3296c40873b016c409025f9007a', '所属�
 INSERT INTO `cgform_field` VALUES ('2c94b3296c40873b016c409025f9007b', '所属公司', 'admin', '2019-07-30 09:48:04', '管理员', '', '', '', '', '', '120', 'sys_company_code', '', 'N', 'N', 'Y', 'N', 'N', 'N', '50', '', '', 'sys_company_code', '9', '0', 'group', 'text', 'string', 'admin', '2019-07-30 10:25:11', '管理员', '2c94b3296c40873b016c409025f80072', '', '');
 INSERT INTO `cgform_field` VALUES ('2c94b3296c40873b016c409025f9007c', '流程状态', 'admin', '2019-07-30 09:48:04', '管理员', '', '', '', '', '', '120', 'bpm_status', '', 'N', 'N', 'Y', 'N', 'N', 'N', '32', '', '', 'bpm_status', '10', '0', 'group', 'text', 'string', 'admin', '2019-07-30 10:25:11', '管理员', '2c94b3296c40873b016c409025f80072', '', '');
 INSERT INTO `cgform_field` VALUES ('2c94b3296c40873b016c409025f9007d', '费用类型', 'admin', '2019-07-30 09:48:04', '管理员', 'cost_type', '', '', '', '', '120', 'bpcd_pay_type', '', 'N', 'N', 'Y', 'N', 'Y', 'Y', '32', '', '', 'bpcd_pay_type', '11', '0', 'group', 'list', 'string', 'admin', '2019-07-30 10:33:32', '管理员', '2c94b3296c40873b016c409025f80072', '', '');
-INSERT INTO `cgform_field` VALUES ('2c94b3296c40873b016c409025f9007e', '名称', 'admin', '2019-07-30 09:48:04', '管理员', 'bpcd_name,bpcd_brand,bpcd_model,bpcd_number', 'rf_bus_po_apply_detail', 'bpad_name,bpad_brand,bpad_model,bpad_number', '', '', '120', 'bpcd_name', '', 'N', 'N', 'Y', 'N', 'Y', 'Y', '32', '', '', 'bpcd_name', '12', '0', 'group', 'popup', 'string', 'admin', '2019-08-01 09:45:33', '管理员', '2c94b3296c40873b016c409025f80072', '', '');
+INSERT INTO `cgform_field` VALUES ('2c94b3296c40873b016c409025f9007e', '名称', 'admin', '2019-07-30 09:48:04', '管理员', 'bpcdname,bpcdbrand,bpcdmodel,bpcdnumber', 'rf_bus_po_apply_detail', 'bpad_name,bpad_brand,bpad_model,bpad_number', '', '', '120', 'bpcd_name', '', 'N', 'N', 'Y', 'N', 'Y', 'Y', '32', '', '', 'bpcd_name', '12', '0', 'group', 'popup', 'string', 'admin', '2019-08-03 21:48:11', '管理员', '2c94b3296c40873b016c409025f80072', '', '');
 INSERT INTO `cgform_field` VALUES ('2c94b3296c40873b016c409025fa007f', '品牌', 'admin', '2019-07-30 09:48:04', '管理员', '', '', '', '', '', '120', 'bpcd_brand', '', 'N', 'N', 'Y', 'N', 'Y', 'Y', '32', '', '', 'bpcd_brand', '13', '0', 'group', 'text', 'string', 'admin', '2019-07-30 09:53:15', '管理员', '2c94b3296c40873b016c409025f80072', '', '');
 INSERT INTO `cgform_field` VALUES ('2c94b3296c40873b016c409025fa0080', '型号', 'admin', '2019-07-30 09:48:04', '管理员', '', '', '', '', '', '120', 'bpcd_model', '', 'N', 'N', 'Y', 'N', 'Y', 'Y', '32', '', '', 'bpcd_model', '14', '0', 'group', 'text', 'string', 'admin', '2019-07-30 09:53:15', '管理员', '2c94b3296c40873b016c409025f80072', '', '');
 INSERT INTO `cgform_field` VALUES ('2c94b3296c40873b016c409025fa0081', '数量', 'admin', '2019-07-30 09:48:04', '管理员', '', '', '', '', '', '120', 'bpcd_number', '', 'N', 'N', 'Y', 'N', 'Y', 'Y', '32', '', '', 'bpcd_number', '15', '0', 'group', 'text', 'string', 'admin', '2019-07-30 09:53:15', '管理员', '2c94b3296c40873b016c409025f80072', '', '');
 INSERT INTO `cgform_field` VALUES ('2c94b3296c40873b016c409025fa0082', '单价', 'admin', '2019-07-30 09:48:04', '管理员', '', '', '', '', '', '120', 'bpcd_price', '', 'N', 'N', 'Y', 'N', 'Y', 'Y', '32', '', '', 'bpcd_price', '16', '0', 'group', 'text', 'string', 'admin', '2019-07-30 09:53:15', '管理员', '2c94b3296c40873b016c409025f80072', '', '');
 INSERT INTO `cgform_field` VALUES ('2c94b3296c40873b016c409025fb0083', '金额', 'admin', '2019-07-30 09:48:04', '管理员', '', '', '', '', '', '120', 'bpcd_amount', '', 'N', 'N', 'Y', 'N', 'Y', 'Y', '32', '', '', 'bpcd_amount', '17', '0', 'group', 'text', 'string', 'admin', '2019-07-30 09:53:15', '管理员', '2c94b3296c40873b016c409025f80072', '', '');
 INSERT INTO `cgform_field` VALUES ('2c94b3296c40873b016c409025fb0084', '备注', 'admin', '2019-07-30 09:48:04', '管理员', '', '', '', '', '', '120', 'bpcd_remark', '', 'N', 'N', 'Y', 'N', 'Y', 'Y', '32', '', '', 'bpcd_remark', '18', '0', 'group', 'text', 'string', 'admin', '2019-07-30 09:53:15', '管理员', '2c94b3296c40873b016c409025f80072', '', '');
-INSERT INTO `cgform_field` VALUES ('2c94b3296c40873b016c409025fb0085', '采购合同外键', 'admin', '2019-07-30 09:48:04', '管理员', '', '', '', '', '', '120', 'from_id', '', 'N', 'N', 'Y', 'N', 'Y', 'Y', '32', 'id', 'bus_po_contract', 'from_id', '19', '0', 'group', 'text', 'string', 'admin', '2019-07-31 14:49:25', '管理员', '2c94b3296c40873b016c409025f80072', '', '');
+INSERT INTO `cgform_field` VALUES ('2c94b3296c40873b016c409025fb0085', '采购合同外键', 'admin', '2019-07-30 09:48:04', '管理员', '', '', '', '', '', '120', 'from_id', '', 'N', 'N', 'Y', 'N', 'Y', 'Y', '32', '', '', 'from_id', '19', '0', 'group', 'text', 'string', 'admin', '2019-08-03 21:50:37', '管理员', '2c94b3296c40873b016c409025f80072', '', '');
 INSERT INTO `cgform_field` VALUES ('2c94b3296c40873b016c409aa17e009c', '主键', 'admin', '2019-07-30 09:59:31', '管理员', '', '', '', '', '', '120', 'id', '', 'N', 'Y', 'N', 'N', 'N', 'N', '36', '', '', 'id', '1', '0', 'group', 'text', 'string', 'admin', '2019-07-30 10:00:07', '管理员', '2c94b3296c40873b016c409aa17e009b', '', '');
 INSERT INTO `cgform_field` VALUES ('2c94b3296c40873b016c409aa17f009d', '创建人名称', 'admin', '2019-07-30 09:59:31', '管理员', '', '', '', '', '', '120', 'create_name', '', 'N', 'N', 'Y', 'N', 'N', 'N', '50', '', '', 'create_name', '2', '0', 'group', 'text', 'string', 'admin', '2019-07-30 10:24:28', '管理员', '2c94b3296c40873b016c409aa17e009b', '', '');
 INSERT INTO `cgform_field` VALUES ('2c94b3296c40873b016c409aa17f009e', '创建人登录名称', 'admin', '2019-07-30 09:59:31', '管理员', '', '', '', '', '', '120', 'create_by', '', 'N', 'N', 'Y', 'N', 'N', 'N', '50', '', '', 'create_by', '3', '0', 'group', 'text', 'string', 'admin', '2019-07-30 10:24:28', '管理员', '2c94b3296c40873b016c409aa17e009b', '', '');
@@ -2604,14 +2609,14 @@ INSERT INTO `cgform_head` VALUES ('2c94b31f6c46b836016c46cb057d0023', '费用报
 INSERT INTO `cgform_head` VALUES ('2c94b31f6c46b836016c46e177cd0042', '费用报销明细', 'admin', '2019-07-31 07:14:37', '管理员', 'N', 'Y', 'Y', 'N', '', 'UUID', '3', '9', 'single', '0', null, '1', 'bus_submit_detail', 'admin', '2019-07-31 08:38:56', '管理员', null, 'id', null, 'bdfl_include', '', '', '', null, null);
 INSERT INTO `cgform_head` VALUES ('2c94b31f6c46ef52016c471cb3680005', '财务支付信息', 'admin', '2019-07-31 08:19:19', '管理员', 'Y', 'Y', 'Y', 'N', '', 'UUID', '3', '35', 'group', '1', null, '2', 'bus_pay_info', 'admin', '2019-08-02 07:53:22', '管理员', null, 'id', null, 'bdfl_include', '', '', '', null, null);
 INSERT INTO `cgform_head` VALUES ('2c94b3236c4bed06016c4c75de23001a', '立项合作伙伴资料', 'admin', '2019-08-01 17:14:49', '管理员', 'Y', 'Y', 'Y', 'N', '', 'UUID', '1', '3', 'group', '0', null, null, 'bus_proj_partner', 'admin', '2019-08-02 13:58:36', '管理员', null, 'id', null, 'bdfl_ptbd', '', '', '', null, null);
-INSERT INTO `cgform_head` VALUES ('2c94b3236c4bed06016c4c7809af002e', '分配跟进明细', 'admin', '2019-08-01 17:17:11', '管理员', 'Y', 'Y', 'Y', 'N', '', 'UUID', '1', '6', 'group', '0', null, null, 'bus_project_disfollow', 'admin', '2019-08-02 13:58:04', '管理员', null, 'id', null, 'bdfl_ptbd', '', '', '', null, null);
+INSERT INTO `cgform_head` VALUES ('2c94b3236c4bed06016c4c7809af002e', '分配跟进明细', 'admin', '2019-08-01 17:17:11', '管理员', 'Y', 'Y', 'Y', 'N', '', 'UUID', '1', '10', 'group', '0', null, null, 'bus_project_disfollow', 'admin', '2019-08-11 15:34:02', '管理员', null, 'id', null, 'bdfl_ptbd', '', '', '', null, null);
 INSERT INTO `cgform_head` VALUES ('2c94b3236c4bed06016c4c7cf0e30042', '项目立项费用明细', 'admin', '2019-08-01 17:22:32', '管理员', 'Y', 'Y', 'Y', 'N', '', 'UUID', '1', '2', 'group', '0', null, null, 'bus_project_fee_detail', 'admin', '2019-08-02 13:57:38', '管理员', null, 'id', null, 'bdfl_ptbd', '', '', '', null, null);
 INSERT INTO `cgform_head` VALUES ('2c94b3296c40873b016c40880fdb0001', '采购申请明细', 'admin', '2019-07-30 09:39:15', '管理员', 'Y', 'Y', 'Y', 'N', '', 'UUID', '1', '10', 'group', '0', null, null, 'bus_po_apply_detail', 'admin', '2019-07-31 14:53:23', '管理员', null, 'id', null, 'bdfl_include', '', '', '', null, null);
 INSERT INTO `cgform_head` VALUES ('2c94b3296c40873b016c408810d20012', '采购合同申请明细', 'admin', '2019-07-30 09:39:15', '管理员', 'Y', 'Y', 'Y', 'N', '', 'UUID', '3', '3', 'group', '0', null, null, 'bus_po_apply_detail_con', 'admin', '2019-07-31 14:49:56', '管理员', null, 'id', null, 'bdfl_include', '', '', '', null, null);
-INSERT INTO `cgform_head` VALUES ('2c94b3296c40873b016c40881186001f', '采购合同', 'admin', '2019-07-30 09:39:15', '管理员', 'Y', 'Y', 'Y', 'N', '', 'UUID', '2', '19', 'group', '0', 'bus_po_contract_pay,bus_po_apply_detail_con,bus_po_contract_detail', null, 'bus_po_contract', 'admin', '2019-08-01 09:45:33', '管理员', null, 'id', null, 'bdfl_include', '', '', '', null, null);
+INSERT INTO `cgform_head` VALUES ('2c94b3296c40873b016c40881186001f', '采购合同', 'admin', '2019-07-30 09:39:15', '管理员', 'Y', 'Y', 'Y', 'N', '', 'UUID', '2', '21', 'group', '0', 'bus_po_contract_pay,bus_po_apply_detail_con', null, 'bus_po_contract', 'admin', '2019-08-03 21:50:37', '管理员', null, 'id', null, 'bdfl_include', '', '', '', null, null);
 INSERT INTO `cgform_head` VALUES ('2c94b3296c40873b016c4088126a0035', '采购付款单', 'admin', '2019-07-30 09:39:15', '管理员', 'Y', 'Y', 'Y', 'N', '', 'UUID', '2', '26', 'group', '0', '', null, 'bus_po_pay', 'admin', '2019-08-01 12:55:41', '管理员', null, 'id', null, 'bdfl_include', '', '', '', null, null);
 INSERT INTO `cgform_head` VALUES ('2c94b3296c40873b016c4090252f0063', '采购合同付款明细', 'admin', '2019-07-30 09:48:04', '管理员', 'Y', 'Y', 'Y', 'N', '', 'UUID', '3', '10', 'group', '0', '', null, 'bus_po_contract_pay', 'admin', '2019-08-01 09:54:36', '管理员', null, 'id', null, 'bdfl_include', '', '', '', null, null);
-INSERT INTO `cgform_head` VALUES ('2c94b3296c40873b016c409025f80072', '采购合同明细', 'admin', '2019-07-30 09:48:04', '管理员', 'Y', 'Y', 'Y', 'N', '', 'UUID', '3', '10', 'group', '0', null, null, 'bus_po_contract_detail', 'admin', '2019-08-01 09:45:33', '管理员', null, 'id', null, 'bdfl_include', '', '', '', null, null);
+INSERT INTO `cgform_head` VALUES ('2c94b3296c40873b016c409025f80072', '采购合同明细', 'admin', '2019-07-30 09:48:04', '管理员', 'Y', 'Y', 'Y', 'N', '', 'UUID', '1', '14', 'group', '0', null, null, 'bus_po_contract_detail', 'admin', '2019-08-03 21:52:15', '管理员', null, 'id', null, 'bdfl_include', '', '', '', null, null);
 INSERT INTO `cgform_head` VALUES ('2c94b3296c40873b016c409aa17e009b', '采购申请明细视图', 'admin', '2019-07-30 09:59:31', '管理员', 'Y', 'Y', 'Y', 'N', '', 'UUID', '3', '6', 'group', '0', null, null, 'vm_merge_bus_po_apply_detail', 'admin', '2019-07-30 10:24:28', '管理员', null, 'id', null, 'bdfl_include', '', '', '', null, null);
 INSERT INTO `cgform_head` VALUES ('2c94b3296c40873b016c409e3b2e00ae', '采购合同视图', 'admin', '2019-07-30 10:03:27', '管理员', 'Y', 'Y', 'Y', 'N', '', 'UUID', '2', '39', 'group', '0', 'vm_merge_bus_po_apply_detail', null, 'vm_bus_po_contract', 'admin', '2019-07-31 14:49:25', '管理员', null, 'id', null, 'bdfl_include', '', '', '', null, null);
 INSERT INTO `cgform_head` VALUES ('2c94b3296c46777e016c470bab730018', '项目整体周期汇总表', 'admin', '2019-07-31 16:00:43', '管理员', 'N', 'Y', 'Y', 'N', '', 'UUID', '1', '1', 'single', '0', null, null, 'vw_rp_project_period_total', 'admin', '2019-07-31 16:01:34', '管理员', null, 'id', null, 'bdfl_include', '', '', '', null, null);
@@ -2777,6 +2782,8 @@ INSERT INTO `cgform_uploadfiles` VALUES ('402831816441c7ec016441db8d200004', 'to
 INSERT INTO `cgform_uploadfiles` VALUES ('402831816441c7ec016441dba5020005', 'tou_pic', '4028318162538a60016253a1ead7000c', 'test_person');
 INSERT INTO `cgform_uploadfiles` VALUES ('402831816441c7ec016441dc24c40006', 'fiel_jls', '4028318162538a60016253a1ead7000c', 'test_person');
 INSERT INTO `cgform_uploadfiles` VALUES ('402831816441c7ec016441dc3ca00007', 'fiel_jls', '4028318162538a60016253a1ead7000c', 'test_person');
+INSERT INTO `cgform_uploadfiles` VALUES ('4028803b6c81041d016c810721850003', 'BAF_PATH', '4028803b6c81041d016c810720740001', 'vm_bus_po_contract');
+INSERT INTO `cgform_uploadfiles` VALUES ('4028803b6c81041d016c81dc739b0020', 'BAF_PATH', '4028803b6c81041d016c81dc7366001d', 'bas_attach_file');
 INSERT INTO `cgform_uploadfiles` VALUES ('402880ec5c5de93b015c5e0286cd0012', 'FIEL_JLS', '402880ec5c5d87c3015c5d893b3d0002', 'test_person');
 INSERT INTO `cgform_uploadfiles` VALUES ('402880ec5c5de93b015c5e0286d50013', 'TOU_PIC', '402880ec5c5d87c3015c5d893b3d0002', 'test_person');
 INSERT INTO `cgform_uploadfiles` VALUES ('402880ec5c5de93b015c5e0365c50017', 'FIEL_JLS', '402880ec5c5de93b015c5e0365770015', 'test_person');
@@ -2821,11 +2828,19 @@ INSERT INTO `cgform_uploadfiles` VALUES ('402881f364685ff101646861cd180007', 'CT
 INSERT INTO `cgform_uploadfiles` VALUES ('402881f364685ff1016468633ea8000e', 'CTYPE', '402881f364685ff1016468633e5d0008', 'jform_order_main');
 INSERT INTO `cgform_uploadfiles` VALUES ('402881f3646e7a2701646e7fcb8b0004', 'ctype', '402881f3646e7f5401646e7f54890000', 'jform_order_main');
 INSERT INTO `cgform_uploadfiles` VALUES ('4028838f62537ff101625382a3ff0005', 'FIEL_JLS', '402881e461ff90b50161ff936251001c', 'test_person');
+INSERT INTO `cgform_uploadfiles` VALUES ('4028ab756c7bc4e9016c7eb8debd001a', 'BC_CONTRACT_FILE', '2c94b32c6c4c8b0e016c4c94a0600009', 'bus_contract');
+INSERT INTO `cgform_uploadfiles` VALUES ('4028ab756c7bc4e9016c7f9866780025', 'bpd_dis_no', '4028803b6c7f96b9016c7f98663b0002', 'bus_project_disfollow');
+INSERT INTO `cgform_uploadfiles` VALUES ('4028ab756c7ffe0a016c7fff4d4f0008', 'BAF_PATH', '4028ab756c7ffe0a016c7fff4c2c0006', 'vm_bus_po_contract');
+INSERT INTO `cgform_uploadfiles` VALUES ('4028ab756c7ffe0a016c800714f7000b', 'BAF_PATH', '4028ab756c7ffe0a016c7fff4c2c0006', 'vm_bus_po_contract');
+INSERT INTO `cgform_uploadfiles` VALUES ('4028ab756c7ffe0a016c809b84480017', 'bpd_dis_no', '4028803b6c7f96b9016c7f995bdb0003', 'bus_project_disfollow');
 INSERT INTO `cgform_uploadfiles` VALUES ('4028ab775c7b27bd015c7b29eef00003', 'tou_pic', '4028ab775c7b29ee015c7b29ee490000', 'test_person');
 INSERT INTO `cgform_uploadfiles` VALUES ('4028ab775c7b27bd015c7b29eef90004', 'fiel_jls', '4028ab775c7b29ee015c7b29ee490000', 'test_person');
 INSERT INTO `cgform_uploadfiles` VALUES ('4028ef8153cf9d710153cfa38ea10010', 'name', '4028ef815382d0af015382d780440002', 'test_student');
 INSERT INTO `cgform_uploadfiles` VALUES ('4028ef8153cf9d710153cfa4a5cc0013', 'name', '4028ef8153cf9d710153cfa4a4fd0011', 'test_student');
 INSERT INTO `cgform_uploadfiles` VALUES ('4028ef815509d842015509e143280004', 'filename2', '4028ef815509d9db015509e142860001', 'test_file');
+INSERT INTO `cgform_uploadfiles` VALUES ('ff8080816c7fc4fe016c7fc8fdd80003', 'BPM_CUST_S_NAME', 'ff8080816c7fc4fe016c7fc8fd3b0001', 'vm_bus_po_contract');
+INSERT INTO `cgform_uploadfiles` VALUES ('ff8080816c7fc4fe016c7fdf9d53000b', 'BPM_CUST_S_NAME', 'ff8080816c7fc4fe016c7fdf9d2f0009', 'vm_bus_po_contract');
+INSERT INTO `cgform_uploadfiles` VALUES ('ff8080816c7fc4fe016c7fe0eaac0010', 'BPM_CUST_S_NAME', 'ff8080816c7fc4fe016c7fe0ea96000e', 'vm_bus_po_contract');
 
 -- ----------------------------
 -- Table structure for eeee
@@ -3299,18 +3314,18 @@ CREATE TABLE `jform_cgreport_head` (
 -- Records of jform_cgreport_head
 -- ----------------------------
 INSERT INTO `jform_cgreport_head` VALUES ('2c94b3266c47f275016c47f409130001', '\r\nSELECT\r\n  b.bp_proj_id,a.bpm_name,b.bp_manager,  \r\n	f.bc_name, \r\n	c.bc_cont_amount,	\r\n	d.brp_back_amount_d, 	\r\n  a.bpm_prog_per, \r\n  e.bpf_check_result, \r\n  e.bpf_check_date, \r\n  e.bpf_questions, \r\n  e.bpf_next_plan \r\n FROM bus_project_manager AS a\r\n left join bus_project AS b on a.from_proj_id=b.id \r\n left join bus_contract AS c on c.from_proj_id=b.id\r\n left join vm_bus_collection AS d on d.from_projm_id=a.id\r\n left join vm_bus_project_follow1 AS e on e.from_id=a.id\r\n left join bas_customer as f on a.from_cust_id=f.id ', 'msg', '', 'ss', null, null, null, '管理员', '2019-07-31 20:14:31', 'admin', '', '', '', '1');
-INSERT INTO `jform_cgreport_head` VALUES ('2c94b3296c4abd4d016c4acde79c0001', 'SELECT\r\n	bpad.bpad_brand,\r\n	bpad.bpad_model,\r\n	bpad.bpad_name,\r\n	bpad.bpad_number,\r\n	bpad.bpad_remark,\r\n	bpc.from_projm_id as id\r\nFROM\r\n	bus_po_contract AS bpc,\r\n	bus_po_apply AS bpa,\r\n	bus_po_apply_detail AS bpad\r\nWHERE\r\nbpc.from_projm_id = bpa.from_projm_id\r\nAND bpad.from_id=bpa.id', 'rf_bus_po_apply_detail', '', '采购申请明细', '管理员', '2019-08-02 23:37:41', 'admin', null, null, null, '', '', '', '2');
+INSERT INTO `jform_cgreport_head` VALUES ('2c94b3296c4abd4d016c4acde79c0001', 'SELECT\r\n  bpad.id,\r\n	bpad.bpad_brand,\r\n	bpad.bpad_model,\r\n	bpad.bpad_name,\r\n	bpad.bpad_number,\r\n	bpad.bpad_remark\r\nFROM\r\n	bus_po_apply AS bpa,\r\n	bus_po_apply_detail AS bpad\r\nWHERE\r\n	bpa.from_projm_id = ${idkey}\r\nAND bpad.from_id=bpa.id\r\n', 'rf_bus_po_apply_detail', '', '采购申请明细', '管理员', '2019-08-06 15:17:11', 'admin', null, null, null, '', '', '', '2');
 INSERT INTO `jform_cgreport_head` VALUES ('2c94b32c6c4b2946016c4b2faa8b000a', 'select bc_name from bas_customer', 'bas_customer', '客户资料报表', '客户资料报表', '管理员', '2019-08-02 15:11:33', 'admin', null, null, null, '', '', '', '1');
 INSERT INTO `jform_cgreport_head` VALUES ('2c94b3e36c41069c016c417d75420029', 'select a.id,a.bpm_name, b.bp_proj_id from bus_project_manager as a  left join bus_project as b on  a.from_proj_id=b.id', 'bpm_name_msg', '', '项目名称', '管理员', '2019-07-30 16:23:47', 'admin', null, null, null, '', '', '', '1');
 INSERT INTO `jform_cgreport_head` VALUES ('402880e64e1ef94d014e1efefc2a0001', 'select * from weixin_account', 'weixin_account', '测试多数据源功能', '跨数据库报表演示', '管理员', '2018-06-06 22:41:40', 'admin', null, null, null, 'jeewx-yunying', '', '', '1');
-INSERT INTO `jform_cgreport_head` VALUES ('402880e64eb9a22c014eb9a4d5890001', 'select * from t_s_base_user where username like   \'${usekey}\'||\'%\' ', 'ddt_s_base_user', '全表查询', '用户全部查询报表', '管理员', '2018-06-20 14:54:34', 'admin', null, null, null, '', '', '', '2');
+INSERT INTO `jform_cgreport_head` VALUES ('402880e64eb9a22c014eb9a4d5890001', 'select * from t_s_base_user where username like   \'${usekey}\'||\'%\' ', 'ddt_s_base_user', '全表查询', '用户全部查询报表', '管理员', '2019-08-03 14:58:05', 'admin', null, null, null, '', '', '', '2');
 INSERT INTO `jform_cgreport_head` VALUES ('402880e74d76e784014d76f9e783001e', 'select username account , realname from t_s_base_user', 'user_msg', '用户POPUP，弹出页面', '用户选择列表', '管理员', '2018-06-06 18:40:13', 'admin', null, null, null, '', 'account', 'realname', '2');
 INSERT INTO `jform_cgreport_head` VALUES ('402880ec5d872157015d87f2dd940010', 'select * from jeecg_demo', 'jeecg_demo', '', 'jeecg_demo', '管理员', '2018-05-29 14:00:10', 'admin', null, null, null, '', '', '', '1');
 INSERT INTO `jform_cgreport_head` VALUES ('402881f363aa9a380163aa9ebe480001', 'select * from jeecg_p3demo', 'jeecg_p3demo', '', 'jeecg_p3demo', '管理员', '2018-05-29 14:41:07', 'admin', null, null, null, '', '', '', '1');
-INSERT INTO `jform_cgreport_head` VALUES ('8abdc0b66c551fc3016c552c8da60001', 'select * from vw_rp_po_pay_plan_total', 'vw_rp_po_pay_plan', '', '采购付款计划表', '管理员', '2019-08-03 10:19:08', 'admin', null, null, null, '', '', '', '1');
-INSERT INTO `jform_cgreport_head` VALUES ('8abdc0b66c551fc3016c5530f25c000e', 'select * from vw_rp_po_total\r\n', 'vw_rp_po_total', '', '采购总表', '管理员', '2019-08-03 10:05:46', 'admin', null, null, null, '', '', '', '1');
-INSERT INTO `jform_cgreport_head` VALUES ('8abdc0b66c551fc3016c554e3df60027', 'select * from vw_rp_po_pay_plan_total', 'vw_rp_po_pay_plan_total', '', '采购付款计划总表', '管理员', '2019-08-03 10:31:25', 'admin', null, null, null, '', '', '', '1');
-INSERT INTO `jform_cgreport_head` VALUES ('8abdc0b66c551fc3016c55551d21003a', 'select * from vw_rp_po_manager_pay_total', 'vw_rp_po_manager_pay_total', '', '采购项目经理总表', null, null, null, '管理员', '2019-08-03 10:35:37', 'admin', '', '', '', '1');
+INSERT INTO `jform_cgreport_head` VALUES ('8abdc0b66c551fc3016c552c8da60001', 'select * from vw_rp_po_pay_plan_total', 'vw_rp_po_pay_plan', '', '采购付款计划表', '管理员', '2019-08-08 20:49:07', 'admin', null, null, null, '', '', '', '1');
+INSERT INTO `jform_cgreport_head` VALUES ('8abdc0b66c551fc3016c5530f25c000e', 'select * from vw_rp_po_total\r\n', 'vw_rp_po_total', '', '采购总表', '管理员', '2019-08-08 20:46:56', 'admin', null, null, null, '', '', '', '1');
+INSERT INTO `jform_cgreport_head` VALUES ('8abdc0b66c551fc3016c554e3df60027', 'select * from vw_rp_po_pay_plan_total', 'vw_rp_po_pay_plan_total', '', '采购付款计划总表', '管理员', '2019-08-08 20:48:40', 'admin', null, null, null, '', '', '', '1');
+INSERT INTO `jform_cgreport_head` VALUES ('8abdc0b66c551fc3016c55551d21003a', 'select * from vw_rp_po_manager_pay_total', 'vw_rp_po_manager_pay_total', '', '采购项目经理总表', '管理员', '2019-08-08 20:47:08', 'admin', null, null, null, '', '', '', '1');
 
 -- ----------------------------
 -- Table structure for jform_cgreport_item
@@ -3349,15 +3364,16 @@ INSERT INTO `jform_cgreport_item` VALUES ('2c94b3266c47f275016c47f409140009', ''
 INSERT INTO `jform_cgreport_item` VALUES ('2c94b3266c47f275016c47f40915000a', '', '', '2c94b3266c47f275016c47f409130001', '', '', 'bpf_check_date', 'bpf_check_date', 'String', 'Y', '8', '');
 INSERT INTO `jform_cgreport_item` VALUES ('2c94b3266c47f275016c47f40915000b', '', '', '2c94b3266c47f275016c47f409130001', '', '', 'bpf_questions', 'bpf_questions', 'String', 'Y', '9', '');
 INSERT INTO `jform_cgreport_item` VALUES ('2c94b3266c47f275016c47f40915000c', '', '', '2c94b3266c47f275016c47f409130001', '', '', 'bpf_next_plan', 'bpf_next_plan', 'String', 'Y', '10', '');
-INSERT INTO `jform_cgreport_item` VALUES ('2c94b3296c4abd4d016c4acde79c0002', '', '', '2c94b3296c4abd4d016c4acde79c0001', '', '', 'bpad_name', 'bpad_name', 'String', 'Y', '1', '');
-INSERT INTO `jform_cgreport_item` VALUES ('2c94b3296c4abd4d016c4acde79c0003', '', '', '2c94b3296c4abd4d016c4acde79c0001', '', '', 'bpad_brand', 'bpad_brand', 'String', 'Y', '2', '');
-INSERT INTO `jform_cgreport_item` VALUES ('2c94b3296c4abd4d016c4acde79c0004', '', '', '2c94b3296c4abd4d016c4acde79c0001', '', '', 'bpad_model', 'bpad_model', 'String', 'Y', '3', '');
-INSERT INTO `jform_cgreport_item` VALUES ('2c94b3296c4abd4d016c4acde79c0005', '', '', '2c94b3296c4abd4d016c4acde79c0001', '', '', 'bpad_number', 'bapd_number', 'String', 'Y', '4', '');
-INSERT INTO `jform_cgreport_item` VALUES ('2c94b3296c4abd4d016c4acde79c0006', '', '', '2c94b3296c4abd4d016c4acde79c0001', '', '', 'bpad_remark', 'bpad_remark', 'String', 'Y', '5', '');
+INSERT INTO `jform_cgreport_item` VALUES ('2c94b3296c4abd4d016c4acde79c0002', '', '', '2c94b3296c4abd4d016c4acde79c0001', '', '', 'bpad_name', '名称', 'String', 'Y', '1', '');
+INSERT INTO `jform_cgreport_item` VALUES ('2c94b3296c4abd4d016c4acde79c0003', '', '', '2c94b3296c4abd4d016c4acde79c0001', '', '', 'bpad_brand', '品牌', 'String', 'Y', '2', '');
+INSERT INTO `jform_cgreport_item` VALUES ('2c94b3296c4abd4d016c4acde79c0004', '', '', '2c94b3296c4abd4d016c4acde79c0001', '', '', 'bpad_model', '类型', 'String', 'Y', '3', '');
+INSERT INTO `jform_cgreport_item` VALUES ('2c94b3296c4abd4d016c4acde79c0005', '', '', '2c94b3296c4abd4d016c4acde79c0001', '', '', 'bpad_number', '数量', 'String', 'Y', '4', '');
+INSERT INTO `jform_cgreport_item` VALUES ('2c94b3296c4abd4d016c4acde79c0006', '', '', '2c94b3296c4abd4d016c4acde79c0001', '', '', 'bpad_remark', '备注', 'String', 'Y', '5', '');
 INSERT INTO `jform_cgreport_item` VALUES ('2c94b32c6c4b2946016c4b2faa8b000b', 'Y', 'single', '2c94b32c6c4b2946016c4b2faa8b000a', '', '', 'bc_name', '客户名称', 'String', 'Y', '0', '');
 INSERT INTO `jform_cgreport_item` VALUES ('2c94b3e36c41069c016c417d7543002a', 'Y', 'single', '2c94b3e36c41069c016c417d75420029', '', '', 'id', '项目ID', 'String', 'N', null, '');
 INSERT INTO `jform_cgreport_item` VALUES ('2c94b3e36c41069c016c417d7543002b', 'Y', 'single', '2c94b3e36c41069c016c417d75420029', '', '', 'bpm_name', '项目名称', 'String', 'Y', null, '');
 INSERT INTO `jform_cgreport_item` VALUES ('2c94b3e36c41069c016c417d7543002c', 'Y', 'single', '2c94b3e36c41069c016c417d75420029', '', '', 'bp_proj_id', '项目编号', 'String', 'Y', null, '');
+INSERT INTO `jform_cgreport_item` VALUES ('4028803b6c648a04016c64a3fa370001', '', '', '2c94b3296c4abd4d016c4acde79c0001', '', '', 'id', 'id', 'String', 'N', '6', '');
 INSERT INTO `jform_cgreport_item` VALUES ('402880e64e1ef94d014e1efefc2f0002', 'N', '', '402880e64e1ef94d014e1efefc2a0001', '', '', 'id', 'id', 'String', 'Y', '0', '');
 INSERT INTO `jform_cgreport_item` VALUES ('402880e64e1ef94d014e1efefc340003', 'Y', 'single', '402880e64e1ef94d014e1efefc2a0001', '', '', 'accountname', 'accountname', 'String', 'Y', '1', '');
 INSERT INTO `jform_cgreport_item` VALUES ('402880e64e1ef94d014e1efefc360004', 'Y', 'single', '402880e64e1ef94d014e1efefc2a0001', '', '', 'accounttoken', 'accounttoken', 'String', 'Y', '2', '');
@@ -3405,37 +3421,36 @@ INSERT INTO `jform_cgreport_item` VALUES ('402881f36402f3de016403035d31000e', ''
 INSERT INTO `jform_cgreport_item` VALUES ('402881f36402f3de016403035d32000f', '', '', '402880e64eb9a22c014eb9a4d5890001', '', '', 'delete_flag', 'delete_flag', 'String', 'Y', '11', '');
 INSERT INTO `jform_cgreport_item` VALUES ('402894815165f4d60151660145e40002', 'Y', 'single', '402880e74d76e784014d76f9e783001e', '', '', 'account', '用户账号', 'String', 'Y', '0', '');
 INSERT INTO `jform_cgreport_item` VALUES ('402894815165f4d60151660145ea0003', 'Y', 'single', '402880e74d76e784014d76f9e783001e', '', '', 'realname', '用户名字', 'String', 'Y', '1', '');
-INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c52a89b016c52fac2c50002', 'Y', 'single', '2c94b3296c4abd4d016c4acde79c0001', '', '', 'id', 'id', 'String', 'Y', '6', '');
-INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c552c8da70002', '', '', '8abdc0b66c551fc3016c552c8da60001', '', '', 'bp_proj_id', '项目编号', 'String', 'Y', '1', '');
-INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c552c8da70003', '', '', '8abdc0b66c551fc3016c552c8da60001', '', '', 'bpm_name', '项目名称', 'String', 'Y', '2', '');
-INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c552c8da70004', '', '', '8abdc0b66c551fc3016c552c8da60001', '', '', 'bp_manager', '项目经理', 'String', 'Y', '3', '');
-INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c552c8da70005', '', '', '8abdc0b66c551fc3016c552c8da60001', '', '', 'bs_name', '供应商', 'String', 'Y', '4', '');
-INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c552c8da70006', '', '', '8abdc0b66c551fc3016c552c8da60001', '', '', 'bc_conclude_time', '合同签订日期', 'String', 'Y', '5', '');
+INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c552c8da70002', 'Y', 'single', '8abdc0b66c551fc3016c552c8da60001', '', '', 'bp_proj_id', '项目编号', 'String', 'Y', '1', '');
+INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c552c8da70003', 'Y', 'single', '8abdc0b66c551fc3016c552c8da60001', '', '', 'bpm_name', '项目名称', 'String', 'Y', '2', '');
+INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c552c8da70004', 'Y', 'single', '8abdc0b66c551fc3016c552c8da60001', '', '', 'bp_manager', '项目经理', 'String', 'Y', '3', '');
+INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c552c8da70005', 'Y', 'single', '8abdc0b66c551fc3016c552c8da60001', '', '', 'bs_name', '供应商', 'String', 'Y', '4', '');
+INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c552c8da70006', 'Y', 'group', '8abdc0b66c551fc3016c552c8da60001', '', '', 'bc_conclude_time', '合同签订日期', 'Date', 'Y', '5', '');
 INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c552c8da70007', '', '', '8abdc0b66c551fc3016c552c8da60001', '', '', 'bpcp_progre', '费用分期', 'String', 'Y', '6', '');
 INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c552c8da70008', '', '', '8abdc0b66c551fc3016c552c8da60001', '', '', 'bpcp_date', '计划付款日期', 'String', 'Y', '7', '');
 INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c552c8da80009', '', '', '8abdc0b66c551fc3016c552c8da60001', '', '', 'bpcp_pay_amount', '计划付款金额', 'String', 'Y', '8', '');
 INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c552c8da8000a', '', '', '8abdc0b66c551fc3016c552c8da60001', '', '', 'bppd_pay_amount', '付款金额', 'String', 'Y', '9', '');
 INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c552c8da8000b', '', '', '8abdc0b66c551fc3016c552c8da60001', '', '', 'not_pay_amount', '未付款金额', 'String', 'Y', '10', '');
-INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c5530f25c000f', '', '', '8abdc0b66c551fc3016c5530f25c000e', '', '', 'bp_proj_id', '项目编号', 'String', 'Y', '1', '');
-INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c5530f25c0010', '', '', '8abdc0b66c551fc3016c5530f25c000e', '', '', 'bpm_name', '项目名称', 'String', 'Y', '2', '');
-INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c5530f25d0011', '', '', '8abdc0b66c551fc3016c5530f25c000e', '', '', 'bp_manager', '项目经理', 'String', 'Y', '3', '');
-INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c5530f25d0012', '', '', '8abdc0b66c551fc3016c5530f25c000e', '', '', 'bs_name', '供应商', 'String', 'Y', '4', '');
+INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c5530f25c000f', 'Y', 'single', '8abdc0b66c551fc3016c5530f25c000e', '', '', 'bp_proj_id', '项目编号', 'String', 'Y', '1', '');
+INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c5530f25c0010', 'Y', 'single', '8abdc0b66c551fc3016c5530f25c000e', '', '', 'bpm_name', '项目名称', 'String', 'Y', '2', '');
+INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c5530f25d0011', 'Y', 'single', '8abdc0b66c551fc3016c5530f25c000e', '', '', 'bp_manager', '项目经理', 'String', 'Y', '3', '');
+INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c5530f25d0012', 'Y', 'single', '8abdc0b66c551fc3016c5530f25c000e', '', '', 'bs_name', '供应商', 'String', 'Y', '4', '');
 INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c5530f25d0013', '', '', '8abdc0b66c551fc3016c5530f25c000e', '', '', 'proj_year', '项目年份', 'String', 'Y', '5', '');
 INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c5530f25d0014', '', '', '8abdc0b66c551fc3016c5530f25c000e', '', '', 'po_amount', '采购金额', 'String', 'Y', '6', '');
 INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c5530f25d0015', '', '', '8abdc0b66c551fc3016c5530f25c000e', '', '', 'pay_amount', '付款金额', 'String', 'Y', '7', '');
 INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c5530f25d0016', '', '', '8abdc0b66c551fc3016c5530f25c000e', '', '', 'not_pay_amount', '未付款金额', 'String', 'Y', '8', '');
 INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c5530f25d0017', '', '', '8abdc0b66c551fc3016c5530f25c000e', '', '', 'inv_amount', '发票金额', 'String', 'Y', '9', '');
 INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c5530f25d0018', '', '', '8abdc0b66c551fc3016c5530f25c000e', '', '', 'not_inv_amount', '未开发票金额', 'String', 'Y', '10', '');
-INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c554e3df70028', '', '', '8abdc0b66c551fc3016c554e3df60027', '', '', 'bp_proj_id', '项目编号', 'String', 'Y', '1', '');
-INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c554e3df70029', '', '', '8abdc0b66c551fc3016c554e3df60027', '', '', 'bpm_name', '项目名称', 'String', 'Y', '2', '');
-INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c554e3df7002a', '', '', '8abdc0b66c551fc3016c554e3df60027', '', '', 'bp_manager', '项目经理', 'String', 'Y', '3', '');
+INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c554e3df70028', 'Y', 'single', '8abdc0b66c551fc3016c554e3df60027', '', '', 'bp_proj_id', '项目编号', 'String', 'Y', '1', '');
+INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c554e3df70029', 'Y', 'single', '8abdc0b66c551fc3016c554e3df60027', '', '', 'bpm_name', '项目名称', 'String', 'Y', '2', '');
+INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c554e3df7002a', 'Y', 'single', '8abdc0b66c551fc3016c554e3df60027', '', '', 'bp_manager', '项目经理', 'String', 'Y', '3', '');
 INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c554e3df7002c', '', '', '8abdc0b66c551fc3016c554e3df60027', '', '', 'bc_conclude_time', '合同签订日期', 'String', 'Y', '5', '');
 INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c554e3df7002d', '', '', '8abdc0b66c551fc3016c554e3df60027', '', '', 'bpcp_progre', '费用分期', 'String', 'Y', '6', '');
 INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c554e3df7002e', '', '', '8abdc0b66c551fc3016c554e3df60027', '', '', 'bpcp_date', '计划付款日期', 'String', 'Y', '7', '');
 INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c554e3df7002f', '', '', '8abdc0b66c551fc3016c554e3df60027', '', '', 'bpcp_pay_amount', '计划付款金额', 'String', 'Y', '8', '');
 INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c554e3df70030', '', '', '8abdc0b66c551fc3016c554e3df60027', '', '', 'bppd_pay_amount', '付款金额', 'String', 'Y', '9', '');
 INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c554e3df70031', '', '', '8abdc0b66c551fc3016c554e3df60027', '', '', 'not_pay_amount', '未付款金额', 'String', 'Y', '10', '');
-INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c55551d22003b', '', '', '8abdc0b66c551fc3016c55551d21003a', '', '', 'bp_manager', '项目经理', 'String', 'Y', '1', '');
+INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c55551d22003b', 'Y', 'single', '8abdc0b66c551fc3016c55551d21003a', '', '', 'bp_manager', '项目经理', 'String', 'Y', '1', '');
 INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c55551d22003c', '', '', '8abdc0b66c551fc3016c55551d21003a', '', '', 'plan_pay_amount', '计划付款金额', 'String', 'Y', '2', '');
 INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c55551d22003d', '', '', '8abdc0b66c551fc3016c55551d21003a', '', '', 'pay_amount', '付款金额', 'String', 'Y', '3', '');
 INSERT INTO `jform_cgreport_item` VALUES ('8abdc0b66c551fc3016c55551d22003e', '', '', '8abdc0b66c551fc3016c55551d21003a', '', '', 'not_pay_amount', '未付款金额', 'String', 'Y', '4', '');
@@ -3467,6 +3482,7 @@ CREATE TABLE `jform_cgreport_param` (
 -- Records of jform_cgreport_param
 -- ----------------------------
 INSERT INTO `jform_cgreport_param` VALUES ('402881f36402f3de016403035d350010', '管理员', 'admin', '2018-06-15 18:35:09', null, null, null, 'A03', 'A03', 'usekey', 'usekey', '', '0', '402880e64eb9a22c014eb9a4d5890001');
+INSERT INTO `jform_cgreport_param` VALUES ('8abdc0b66c55b5b8016c56cf3acc000c', '管理员', 'admin', '2019-08-03 17:28:37', '管理员', 'admin', '2019-08-03 17:30:41', 'A03', 'A03', 'idkey', 'idkey', '', null, '2c94b3296c4abd4d016c4acde79c0001');
 
 -- ----------------------------
 -- Table structure for jform_contact
@@ -5069,6 +5085,26 @@ INSERT INTO `t_s_attachment` VALUES ('402831816441c7ec016441db8d200004', null, '
 INSERT INTO `t_s_attachment` VALUES ('402831816441c7ec016441dba5020005', null, 'd52a2834349b033b6d20d5cc16ce36d3d539bd7f', null, null, 'jpg', null, 'upload/files/20180627232751pWcJCqqL.jpg', null, 'upload/files/20180627232751pWcJCqqL.swf', null, null, null);
 INSERT INTO `t_s_attachment` VALUES ('402831816441c7ec016441dc24c40006', null, '1457926300690', null, null, 'png', null, 'upload/files/20180627232823zQyDVNPs.png', null, 'upload/files/20180627232823zQyDVNPs.swf', null, null, null);
 INSERT INTO `t_s_attachment` VALUES ('402831816441c7ec016441dc3ca00007', null, 'd52a2834349b033b6d20d5cc16ce36d3d539bd7f', null, null, 'jpg', null, 'upload/files/20180627232829c1sbDvDq.jpg', null, 'upload/files/20180627232829c1sbDvDq.swf', null, null, null);
+INSERT INTO `t_s_attachment` VALUES ('4028803b6c6a93c5016c6aa8091e0001', null, '采购合同明细_bus_po_contract_detail-v14', null, '2019-08-07 13:58:12', 'xls', null, 'upload/20190807/20190807135812Bw6jhOXH.xls', null, 'upload/20190807/20190807135812Bw6jhOXH.swf', null, null, null);
+INSERT INTO `t_s_attachment` VALUES ('4028803b6c6a93c5016c6aa869210002', null, '客户资料', null, '2019-08-07 13:58:37', 'xls', null, 'upload/20190807/20190807135837mi3dfOGk.xls', null, 'upload/20190807/20190807135837mi3dfOGk.swf', null, null, null);
+INSERT INTO `t_s_attachment` VALUES ('4028803b6c6a93c5016c6aa896d40003', null, '20190807135837mi3dfOGk', null, '2019-08-07 13:58:49', 'xls', null, 'upload/20190807/20190807135837mi3dfOGk.xls', 'com.jeecg.demo.entity.TSDocument', 'upload/20190807/20190807135837mi3dfOGk.swf', null, null, null);
+INSERT INTO `t_s_attachment` VALUES ('4028803b6c6a93c5016c6b12c1e20008', null, '客户资料', null, '2019-08-07 15:54:47', 'xls', null, 'upload/files/20190807155447Mp07xdrp.xls', 'com.jeecg.demo.entity.TSDocument', 'upload/files/20190807155447Mp07xdrp.swf', null, null, null);
+INSERT INTO `t_s_attachment` VALUES ('4028803b6c6a93c5016c6b12c2180009', null, '采购合同明细_bus_po_contract_detail-v14', null, '2019-08-07 15:54:47', 'xls', null, 'upload/files/20190807155447ECfjmuyk.xls', 'com.jeecg.demo.entity.TSDocument', 'upload/files/20190807155447ECfjmuyk.swf', null, null, null);
+INSERT INTO `t_s_attachment` VALUES ('4028803b6c6a93c5016c6b12f992000a', null, '客户资料', null, '2019-08-07 15:55:01', 'xls', null, 'upload/20190807/20190807155501KcWhVLqD.xls', null, 'upload/20190807/20190807155501KcWhVLqD.swf', null, null, null);
+INSERT INTO `t_s_attachment` VALUES ('4028803b6c6fe37e016c70abf30d0004', null, '客户资料', null, '2019-08-08 18:00:12', 'xls', null, 'upload/files/20190808180012WBaTmQCv.xls', 'com.jeecg.demo.entity.TSDocument', 'upload/files/20190808180012WBaTmQCv.swf', null, null, null);
+INSERT INTO `t_s_attachment` VALUES ('4028803b6c6fe37e016c70abf37a0005', null, '采购合同明细_bus_po_contract_detail-v14', null, '2019-08-08 18:00:12', 'xls', null, 'upload/files/20190808180012vvPimCvC.xls', 'com.jeecg.demo.entity.TSDocument', 'upload/files/20190808180012vvPimCvC.swf', null, null, null);
+INSERT INTO `t_s_attachment` VALUES ('4028803b6c7fe2a1016c7fe327f40003', null, '客户资料', null, null, 'xls', null, 'upload/files/20190811165449u0t2m4mn.xls', null, 'upload/files/20190811165449u0t2m4mn.swf', null, null, null);
+INSERT INTO `t_s_attachment` VALUES ('4028803b6c7fe2a1016c7ff7b1ee0010', null, '客户资料', null, null, 'xls', null, 'upload/files/201908111717158Maz6bmt.xls', null, 'upload/files/201908111717158Maz6bmt.swf', null, null, null);
+INSERT INTO `t_s_attachment` VALUES ('4028803b6c7fe2a1016c7ff7e5820015', null, '客户资料', null, null, 'xls', null, 'upload/files/201908111717289KzUis9T.xls', null, 'upload/files/201908111717289KzUis9T.swf', null, null, null);
+INSERT INTO `t_s_attachment` VALUES ('4028803b6c7fe2a1016c7ff81ab4001a', null, '客户资料', null, null, 'xls', null, 'upload/files/20190811171741FEWW0SdR.xls', null, 'upload/files/20190811171741FEWW0SdR.swf', null, null, null);
+INSERT INTO `t_s_attachment` VALUES ('4028803b6c7fe2a1016c7ff849d1001f', null, '客户资料', null, null, 'xls', null, 'upload/files/2019081117175495a7J7mS.xls', null, 'upload/files/2019081117175495a7J7mS.swf', null, null, null);
+INSERT INTO `t_s_attachment` VALUES ('4028803b6c7fe2a1016c7ff87bfd0024', null, '客户资料', null, null, 'xls', null, 'upload/files/20190811171806znFLV8eg.xls', null, 'upload/files/20190811171806znFLV8eg.swf', null, null, null);
+INSERT INTO `t_s_attachment` VALUES ('4028803b6c7fe2a1016c7ff90ebe0028', null, '客户资料', null, null, 'xls', null, 'upload/files/20190811171844RCFmcKYW.xls', null, 'upload/files/20190811171844RCFmcKYW.swf', null, null, null);
+INSERT INTO `t_s_attachment` VALUES ('4028803b6c7fe2a1016c7ff948f6002c', null, '客户资料', null, null, 'xls', null, 'upload/files/20190811171859ZWPu5SiF.xls', null, 'upload/files/20190811171859ZWPu5SiF.swf', null, null, null);
+INSERT INTO `t_s_attachment` VALUES ('4028803b6c7fe2a1016c7ff975b10030', null, '客户资料', null, null, 'xls', null, 'upload/files/201908111719108TDOGaXa.xls', null, 'upload/files/201908111719108TDOGaXa.swf', null, null, null);
+INSERT INTO `t_s_attachment` VALUES ('4028803b6c7fe2a1016c7ff9a8e30034', null, '客户资料', null, null, 'xls', null, 'upload/files/20190811171923qhvzcFbc.xls', null, 'upload/files/20190811171923qhvzcFbc.swf', null, null, null);
+INSERT INTO `t_s_attachment` VALUES ('4028803b6c81041d016c810721850003', null, '客户资料', null, null, 'xls', null, 'upload/files/201908112213436fKMhf9R.xls', null, 'upload/files/201908112213436fKMhf9R.swf', null, null, null);
+INSERT INTO `t_s_attachment` VALUES ('4028803b6c81041d016c81dc739b0020', null, '客户资料', null, null, 'xls', null, 'upload/files/20190812020644MgPawLJf.xls', null, 'upload/files/20190812020644MgPawLJf.swf', null, null, null);
 INSERT INTO `t_s_attachment` VALUES ('402880e65c8bf603015c8bf71dc10003', null, 'e1fe9925bc315c60addea1b98eb1cb1349547719.jpg', null, '2017-06-09 16:27:27', 'jpg', null, 'upload/20170609/20170609162727TbY7hOtR.jpg', null, 'e1fe9925bc315c60addea1b98eb1cb1349547719', null, null, null);
 INSERT INTO `t_s_attachment` VALUES ('402880e65c8bf603015c8bf86317000a', null, '微信小程序.jpg', null, '2017-06-09 16:28:50', 'jpg', null, 'upload/20170609/20170609162850HcvdceQT.jpg', null, 'wxxcx', null, null, null);
 INSERT INTO `t_s_attachment` VALUES ('402880ec5c5de93b015c5e0286cd0012', null, '【活动】分销商城问题', null, null, 'pdf', null, 'upload/files/20170531181722zA4MV46Y.pdf', null, 'upload/files/20170531181722zA4MV46Y.swf', null, null, null);
@@ -5191,10 +5227,18 @@ INSERT INTO `t_s_attachment` VALUES ('4028838d5fb59732015fb59df39f0004', null, '
 INSERT INTO `t_s_attachment` VALUES ('4028838d5fb59f24015fb5a566540003', null, '4afbfbedab64034f9015f1bca8c379310b551dab.jpg', null, '2017-11-13 21:50:36', 'jpg', null, 'upload/20171113/2017111321503615yk6St8.jpg', null, 'upload/20171113/2017111321503615yk6St8.swf', null, null, null);
 INSERT INTO `t_s_attachment` VALUES ('4028838d5fdeeaea015fdeedb7280001', null, 'jeecg-3.7.2-mysql.sql', null, '2017-11-21 22:14:01', 'sql', null, 'upload/20171121/20171121221401OIgPJvif.sql', null, 'upload/20171121/20171121221401OIgPJvif.swf', null, null, null);
 INSERT INTO `t_s_attachment` VALUES ('4028838f62537ff101625382a3ff0005', null, '1457926300690', null, null, 'png', null, 'upload/files/20180323233813NjfYv3Sw.png', null, 'upload/files/20180323233813NjfYv3Sw.swf', null, null, null);
+INSERT INTO `t_s_attachment` VALUES ('4028ab756c7bc4e9016c7eb8debd001a', null, '客户资料', null, null, 'xls', null, 'upload/files/20190811112900Pk3PqP5R.xls', null, 'upload/files/20190811112900Pk3PqP5R.swf', null, null, null);
+INSERT INTO `t_s_attachment` VALUES ('4028ab756c7bc4e9016c7f9866780025', null, '客户资料', null, null, 'xls', null, 'upload/files/20190811153309rUy5Yzvf.xls', null, 'upload/files/20190811153309rUy5Yzvf.swf', null, null, null);
+INSERT INTO `t_s_attachment` VALUES ('4028ab756c7ffe0a016c7fff4d4f0008', null, '客户资料', null, null, 'xls', null, 'upload/files/20190811172533MszejCJL.xls', null, 'upload/files/20190811172533MszejCJL.swf', null, null, null);
+INSERT INTO `t_s_attachment` VALUES ('4028ab756c7ffe0a016c800714f7000b', null, '采购合同明细_bus_po_contract_detail-v14', null, null, 'xls', null, 'upload/files/201908111734038WK3h2D0.xls', null, 'upload/files/201908111734038WK3h2D0.swf', null, null, null);
+INSERT INTO `t_s_attachment` VALUES ('4028ab756c7ffe0a016c809b84480017', null, '采购合同明细_bus_po_contract_detail-v14', null, null, 'xls', null, 'upload/files/20190811201611W9aa9CuM.xls', null, 'upload/files/20190811201611W9aa9CuM.swf', null, null, null);
 INSERT INTO `t_s_attachment` VALUES ('4028ab775c7b27bd015c7b29eef00003', null, 'd50735fae6cd7b897e6ff01d0a2442a7d9330e29', null, null, 'jpg', null, 'upload/files/20170606100924P6SODqmp.jpg', null, 'upload/files/20170606100924P6SODqmp.swf', null, null, null);
 INSERT INTO `t_s_attachment` VALUES ('4028ab775c7b27bd015c7b29eef90004', null, '(手册)jeecgLicense配置', null, null, 'pdf', null, 'upload/files/20170606100924qg7QLVqu.pdf', null, 'upload/files/20170606100924qg7QLVqu.swf', null, null, null);
 INSERT INTO `t_s_attachment` VALUES ('4028ef8153a650060153a65327350012', null, '联通问题20160126', null, null, 'txt', null, 'upload/files/20160324095300cGLn1DMs.txt', null, 'upload/files/20160324095300cGLn1DMs.swf', null, null, null);
 INSERT INTO `t_s_attachment` VALUES ('4028ef815509d842015509e143280004', null, '20160504-联通升级', null, null, 'txt', null, 'upload/files/20160601105325pLV33L00.txt', null, 'upload/files/20160601105325pLV33L00.swf', null, null, null);
+INSERT INTO `t_s_attachment` VALUES ('ff8080816c7fc4fe016c7fc8fdd80003', null, '客户资料', null, null, 'xls', null, 'upload/files/201908111626148UtGcgIi.xls', null, 'upload/files/201908111626148UtGcgIi.swf', null, null, null);
+INSERT INTO `t_s_attachment` VALUES ('ff8080816c7fc4fe016c7fdf9d53000b', null, '采购合同明细_bus_po_contract_detail-v14', null, null, 'xls', null, 'upload/files/20190811165056TB79WnkM.xls', null, 'upload/files/20190811165056TB79WnkM.swf', null, null, null);
+INSERT INTO `t_s_attachment` VALUES ('ff8080816c7fc4fe016c7fe0eaac0010', null, '客户资料', null, null, 'xls', null, 'upload/files/20190811165222kJ9epIOX.xls', null, 'upload/files/20190811165222kJ9epIOX.swf', null, null, null);
 
 -- ----------------------------
 -- Table structure for t_s_base_user
@@ -5702,6 +5746,11 @@ CREATE TABLE `t_s_document` (
 -- ----------------------------
 -- Records of t_s_document
 -- ----------------------------
+INSERT INTO `t_s_document` VALUES ('4028803b6c6a93c5016c6aa896d40003', '8a8ab0b246dc81120146dc8181fa0062', null, '1211', null, null);
+INSERT INTO `t_s_document` VALUES ('4028803b6c6a93c5016c6b12c1e20008', '8a8ab0b246dc81120146dc8181fa0062', null, '文件去', null, null);
+INSERT INTO `t_s_document` VALUES ('4028803b6c6a93c5016c6b12c2180009', '8a8ab0b246dc81120146dc8181fa0062', null, '文件去', null, null);
+INSERT INTO `t_s_document` VALUES ('4028803b6c6fe37e016c70abf30d0004', '8a8ab0b246dc81120146dc8181fa0062', null, '测试upload', null, null);
+INSERT INTO `t_s_document` VALUES ('4028803b6c6fe37e016c70abf37a0005', '8a8ab0b246dc81120146dc8181fa0062', null, '测试upload', null, null);
 INSERT INTO `t_s_document` VALUES ('402881f364161a320164161b6d970001', '8a8ab0b246dc81120146dc8181fa0062', null, '3333', null, null);
 INSERT INTO `t_s_document` VALUES ('402881f364161a320164161c8dc50007', '8a8ab0b246dc81120146dc8181fa0062', null, '2222', null, null);
 INSERT INTO `t_s_document` VALUES ('402881f3641622190164162519950008', '8a8ab0b246dc81120146dc8181fa0062', null, '4443', null, null);
@@ -5793,8 +5842,7 @@ INSERT INTO `t_s_function` VALUES ('2c94b3296c40873b016c414fec950106', null, '0'
 INSERT INTO `t_s_function` VALUES ('2c94b3296c40873b016c415085580109', null, '1', '采购合同', '1', 'vmBusPoContractController.do?list', '2c94b3296c40873b016c414fec950106', '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', '', 'admin', '管理员', null, null, '2019-07-30 13:18:12', null);
 INSERT INTO `t_s_function` VALUES ('2c94b3296c46777e016c470f133c0026', null, '1', '项目整体周期汇总', '2', 'vwRpProjectPeriodTotalController.do?list', '2c94b3296c3ddb65016c3ddd28d20001', '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', '', 'admin', '管理员', null, null, '2019-07-31 16:04:26', null);
 INSERT INTO `t_s_function` VALUES ('2c94b3296c4abd4d016c4b30f2ec0085', null, '1', '施工进度报表', '1', 'vwRpBusProgressInfoController.do?list', '2c94b3296c3ddb65016c3ddd28d20001', '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', '', 'admin', '管理员', null, null, '2019-08-01 11:19:55', null);
-INSERT INTO `t_s_function` VALUES ('2c94b32c6c4b1315016c4b1516a80001', null, '0', '合同管理模块', '0', '0', null, '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', '', 'admin', '管理员', null, null, '2019-08-01 10:49:29', null);
-INSERT INTO `t_s_function` VALUES ('2c94b32c6c4b1315016c4b15cb5f0003', null, '1', '合同管理', '0', 'busContractController.do?list', '2c94b32c6c4b1315016c4b1516a80001', '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', '', 'admin', '管理员', null, null, '2019-08-01 10:50:15', null);
+INSERT INTO `t_s_function` VALUES ('2c94b32c6c4b1315016c4b15cb5f0003', null, '1', '合同管理', '0', 'busContractController.do?list', '402880e76c05c1d7016c05d1e8ea000a', '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', '', 'admin', '管理员', 'admin', '2019-08-08 22:25:21', '2019-08-01 10:50:15', '管理员');
 INSERT INTO `t_s_function` VALUES ('2c94b3e06c4230a3016c423c13430011', null, '1', '报价/投标审核', '2', 'vwBusBidController.do?list', '402880e76c05c1d7016c05d1e8ea000a', '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', '', 'admin', '管理员', 'admin', '2019-07-30 17:37:54', '2019-07-30 17:35:29', '管理员');
 INSERT INTO `t_s_function` VALUES ('2c94b3e06c4230a3016c423dc4e00016', null, '1', '项目立项', '1', 'vwBusProjectController.do?list', '402880e76c05c1d7016c05d1e8ea000a', '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', '', 'admin', '管理员', null, null, '2019-07-30 17:37:20', null);
 INSERT INTO `t_s_function` VALUES ('2c94b3e36c41ac17016c41b0bac20004', null, '1', '采购申请', '0', 'vwBusPoApplyController.do?startPage', '2c94b3296c40873b016c414fec950106', '8a8ab0b246dc81120146dc8180460000', '8a8ab0b246dc81120146dc8180dd001e', '0', '', 'admin', '管理员', 'admin', '2019-07-31 10:39:01', '2019-07-30 15:03:17', '管理员');
@@ -9300,6 +9348,510 @@ INSERT INTO `t_s_log` VALUES ('8abdc0b66c551fc3016c555748d20048', 'Firefox', 'ad
 INSERT INTO `t_s_log` VALUES ('8abdc0b66c551fc3016c555755220049', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '10.61.64.54', '2019-08-03 10:38:02', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
 INSERT INTO `t_s_log` VALUES ('8abdc0b66c551fc3016c558d7bb7004a', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '10.61.64.54', '2019-08-03 11:37:11', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
 INSERT INTO `t_s_log` VALUES ('8abdc0b66c55b5b8016c55b6274e0000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '10.61.64.54', '2019-08-03 12:21:36', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('8abdc0b66c55b5b8016c56408fa60001', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '10.61.64.54', '2019-08-03 14:52:47', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('8abdc0b66c55b5b8016c56456a330002', 'Firefox', '更新成功', '1', '本地', '2019-08-03 14:58:05', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('8abdc0b66c55b5b8016c5699062b0003', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '10.61.64.54', '2019-08-03 16:29:24', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('8abdc0b66c55b5b8016c56b95a560004', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '10.61.64.54', '2019-08-03 17:04:43', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('8abdc0b66c55b5b8016c56ca11900005', 'Firefox', '更新成功', '1', '本地', '2019-08-03 17:22:59', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('8abdc0b66c55b5b8016c56ca91460006', 'Firefox', '更新成功', '1', '本地', '2019-08-03 17:23:31', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('8abdc0b66c55b5b8016c56cbe9780007', 'Firefox', '更新成功', '1', '本地', '2019-08-03 17:24:59', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('8abdc0b66c55b5b8016c56ccc8920008', 'Firefox', '更新成功', '1', '本地', '2019-08-03 17:25:57', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('8abdc0b66c55b5b8016c56ccd0b60009', 'Firefox', 'admin', '1', '本地', '2019-08-03 17:25:59', '2', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('8abdc0b66c55b5b8016c56cce3c8000a', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '10.61.64.54', '2019-08-03 17:26:03', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('8abdc0b66c55b5b8016c56cddc0e000b', 'Firefox', '更新成功', '1', '本地', '2019-08-03 17:27:07', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('8abdc0b66c55b5b8016c56cf3ad4000d', 'Firefox', '更新成功', '1', '本地', '2019-08-03 17:28:37', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('8abdc0b66c55b5b8016c56d12089000e', 'Firefox', '更新成功', '1', '本地', '2019-08-03 17:30:41', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('8abdc0b66c55b5b8016c56d4a8a9000f', 'Firefox', '更新成功', '1', '本地', '2019-08-03 17:34:33', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('8abdc0b66c55b5b8016c56d6092e0010', 'Firefox', '更新成功', '1', '本地', '2019-08-03 17:36:03', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('8abdc0b66c55b5b8016c57b7fc600011', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '10.61.64.54', '2019-08-03 21:42:51', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('8abdc0b66c55b5b8016c57bb72130012', 'Firefox', '修改成功', '1', '本地', '2019-08-03 21:46:37', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('8abdc0b66c55b5b8016c57bbd56c0013', 'Firefox', '错误异常: RuntimeException,错误描述：null', '6', '本地', '2019-08-03 21:47:03', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('8abdc0b66c55b5b8016c57bcdea40014', 'Firefox', '错误异常: RuntimeException,错误描述：null', '6', '本地', '2019-08-03 21:48:11', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('8abdc0b66c55b5b8016c57bd3f610015', 'Firefox', '错误异常: RuntimeException,错误描述：null', '6', '本地', '2019-08-03 21:48:36', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('8abdc0b66c57bdbf016c57be54f00000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '10.61.64.54', '2019-08-03 21:49:47', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('8abdc0b66c57bdbf016c57be83d30001', 'Firefox', '错误异常: RuntimeException,错误描述：null', '6', '本地', '2019-08-03 21:49:59', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('8abdc0b66c57bdbf016c57bf18230002', 'Firefox', '修改成功', '1', '本地', '2019-08-03 21:50:37', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('8abdc0b66c57bdbf016c57bf2d860003', 'Firefox', '修改成功', '1', '本地', '2019-08-03 21:50:42', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('8abdc0b66c57bdbf016c57bf4bd40004', 'Firefox', '错误异常: RuntimeException,错误描述：null', '6', '本地', '2019-08-03 21:50:50', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('8abdc0b66c57bdbf016c57bfc8fb0005', 'Firefox', '删除成功', '1', '本地', '2019-08-03 21:51:22', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('8abdc0b66c57bdbf016c57c060cb0006', 'Firefox', '错误异常: RuntimeException,错误描述：null', '6', '本地', '2019-08-03 21:52:01', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('8abdc0b66c57bdbf016c57c097720007', 'Firefox', '修改成功', '1', '本地', '2019-08-03 21:52:15', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('8abdc0b66c57c7ee016c57c9931b0000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '10.61.64.54', '2019-08-03 22:02:03', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('8abdc0b66c57c7ee016c5804559f0001', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '10.61.64.54', '2019-08-03 23:06:14', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('8abdc0b66c57c7ee016c582bfaef0002', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '10.61.64.54', '2019-08-03 23:49:33', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('ff8080816c5cf565016c5cf6b5db0000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-04 22:09:28', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c5d0264016c5d02d7dc0000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-04 22:22:43', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c5d201c016c5d21fcdb0000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-04 22:56:44', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c5d234a016c5d238a200000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-04 22:58:25', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c5d272f016c5d27b4c30000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-04 23:02:59', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c5d28d8016c5d2913bc0000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-04 23:04:28', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c5d45a1016c5d45fa8a0000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-04 23:36:02', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c5d47aa016c5d47fb230000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-04 23:38:14', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c5d53b3016c5d5409890000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-04 23:51:24', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c5f5151016c5f5199920000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-05 09:07:58', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c5f5151016c5f56a7070001', 'Firefox', 'admin', '1', '本地', '2019-08-05 09:13:30', '2', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c5f5151016c5f56c07b0002', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-05 09:13:36', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c5f5151016c5f584ecf0003', 'Firefox', 'admin', '1', '本地', '2019-08-05 09:15:18', '2', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c5f5151016c5f5868850004', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-05 09:15:25', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c5f5151016c5f5957b40005', 'Chrome', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-05 09:16:26', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c5f68a0016c5f6a6f630000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-05 09:35:06', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c5f68a0016c5f7a85470001', 'Firefox', 'admin', '1', '本地', '2019-08-05 09:52:40', '2', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c5f68a0016c5f7a95b40002', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-05 09:52:44', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c5f7e7a016c5f7f228c0000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-05 09:57:43', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c5f95e6016c5f963a490000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-05 10:22:56', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c5f95e6016c5fa3eea60001', 'Firefox', 'admin', '1', '本地', '2019-08-05 10:37:54', '2', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c5f95e6016c5fa40fae0002', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-05 10:38:03', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c600355016c6003ad0d0000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-05 12:22:29', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c600d8e016c600ddf860000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-05 12:33:37', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6017cb016c601818620000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-05 12:44:47', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c601b97016c601bc86d0000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-05 12:48:49', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c602fdf016c60304bf60000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-05 13:11:13', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6039f9016c603a47d90000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-05 13:22:07', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6039f9016c60470e100001', 'Firefox', 'admin', '1', '本地', '2019-08-05 13:36:05', '2', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6039f9016c60471f4a0002', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-05 13:36:09', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6060bb016c60610a3f0000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-05 14:04:28', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c60622f016c606279b90000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-05 14:06:02', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6068ba016c606902530000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-05 14:13:10', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c606c08016c606c53070000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-05 14:16:47', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c606c08016c606c838f0001', 'Firefox', '错误异常: JSONException,错误描述：null object', '6', '本地', '2019-08-05 14:17:00', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c606c08016c606cdb030002', 'Firefox', '错误异常: JSONException,错误描述：null object', '6', '本地', '2019-08-05 14:17:22', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c606c08016c606d92900003', 'Firefox', '错误异常: JSONException,错误描述：null object', '6', '本地', '2019-08-05 14:18:09', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c606fb6016c607012170000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-05 14:20:53', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c607202016c60726af10000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-05 14:23:26', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c607c9f016c607cf3c60000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-05 14:34:57', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c60812e016c60818b060000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-05 14:39:58', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6091a9016c609258310000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-05 14:58:19', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6091a9016c60931a1e0017', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-05 14:59:08', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c60a260016c60a30bdc0000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-05 15:16:33', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c60a260016c610c64900001', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-05 17:11:37', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('ff8080816c611044016c6110c0eb0000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '127.0.0.1', '2019-08-05 17:16:23', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c611864016c6118a4cc0000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-05 17:25:00', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c611994016c6119c22a0000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-05 17:26:13', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c611f4f016c611fc3390000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-05 17:32:47', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c611f4f016c6154df850001', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-05 18:30:47', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c611f4f016c615759210002', 'Firefox', 'admin', '1', '本地', '2019-08-05 18:33:30', '2', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c611f4f016c615767930003', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-05 18:33:33', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c618543016c61870d640000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-05 19:25:36', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c618543016c61bb4a3f0001', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-05 20:22:39', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c618543016c61bf63ee0005', 'Firefox', '添加成功', '1', '本地', '2019-08-05 20:27:08', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c618543016c61c10e4d0006', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-05 20:28:57', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c618543016c61c10e5a0007', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-05 20:28:57', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c618543016c61c10e700008', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-05 20:28:57', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c618543016c61c16481000a', 'Firefox', '添加成功', '1', '本地', '2019-08-05 20:29:19', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c618543016c61c4de6d000b', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-05 20:33:07', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c618543016c61c501ed000d', 'Firefox', '添加成功', '1', '本地', '2019-08-05 20:33:16', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c618543016c61c6820e000e', 'Firefox', '更新成功', '1', '本地', '2019-08-05 20:34:55', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c618543016c62c083cc000f', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 01:07:59', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c618543016c62c358b80018', 'Firefox', '错误异常: BusinessException,错误描述：JDBC exception on Hibernate data access: SQLException for SQL [n/a]; SQL state [HY000]; error code [1471]; The target table vm_bus_po_contract of the INSERT is not insertable-into; nested exception is org.hibernate.exception.GenericJDBCException: The target table vm_bus_po_contract of the INSERT is not insertable-into', '6', '本地', '2019-08-06 01:11:05', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c62c429016c62c46cd30000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 01:12:15', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c62c429016c62c559b30002', 'Firefox', '添加成功', '1', '本地', '2019-08-06 01:13:16', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c62c429016c62cc1ee10003', 'Firefox', '错误异常: BusinessException,错误描述：JDBC exception on Hibernate data access: SQLException for SQL [n/a]; SQL state [HY000]; error code [1395]; Can not delete from join view \'action_db.vm_bus_po_contract\'; nested exception is org.hibernate.exception.GenericJDBCException: Can not delete from join view \'action_db.vm_bus_po_contract\'', '6', '本地', '2019-08-06 01:20:40', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c62c429016c62cc55be0005', 'Firefox', '添加成功', '1', '本地', '2019-08-06 01:20:54', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c62c429016c62d2a4cb0007', 'Firefox', '添加成功', '1', '本地', '2019-08-06 01:27:47', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c62d482016c62d4c66f0000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 01:30:07', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c62d482016c62d4ead00002', 'Firefox', '添加成功', '1', '本地', '2019-08-06 01:30:16', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c62d482016c62d662e50004', 'Firefox', '添加成功', '1', '本地', '2019-08-06 01:31:52', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c62d482016c62d854d4000b', 'Firefox', '添加成功', '1', '本地', '2019-08-06 01:34:00', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c62e252016c62e294420000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 01:45:12', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c62e252016c62e4c5380004', 'Firefox', '添加成功', '1', '本地', '2019-08-06 01:47:35', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c62e763016c62e7b42e0000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 01:50:47', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c62e763016c62e82b090004', 'Firefox', '添加成功', '1', '本地', '2019-08-06 01:51:18', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c62eb21016c62eb54070000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 01:54:45', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c62eb21016c62ebb56e0004', 'Firefox', '添加成功', '1', '本地', '2019-08-06 01:55:10', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c648a04016c648d8ca30000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 09:31:33', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c648a04016c64a3fa480002', 'Firefox', '更新成功', '1', '本地', '2019-08-06 09:56:03', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c648a04016c64d67e0a0003', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 10:51:14', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c648a04016c64de2d860006', 'Firefox', '添加成功', '1', '本地', '2019-08-06 10:59:37', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c648a04016c64f2cd650007', 'Firefox', '更新成功', '1', '本地', '2019-08-06 11:22:09', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c64f38f016c64f3f7290000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 11:23:25', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c64f38f016c64f477720004', 'Firefox', '添加成功', '1', '本地', '2019-08-06 11:23:58', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c64fddb016c6502b3700000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 11:39:31', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c64fddb016c6505e3e40003', 'Firefox', '添加成功', '1', '本地', '2019-08-06 11:43:00', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c650c48016c650d07130000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 11:50:48', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c650c48016c650d7e620004', 'Firefox', '添加成功', '1', '本地', '2019-08-06 11:51:18', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6524d8016c65266fe40000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 12:18:33', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6524d8016c6526ab050003', 'Firefox', '添加成功', '1', '本地', '2019-08-06 12:18:48', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('ff8080816c65293c016c652a72d70000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 12:22:56', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('ff8080816c65293c016c652ac2d10004', 'Firefox', '添加成功', '1', '本地', '2019-08-06 12:23:16', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65310e016c653143830000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 12:30:23', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65310e016c6531884a0003', 'Firefox', '添加成功', '1', '本地', '2019-08-06 12:30:40', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c653614016c6536cb520000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 12:36:25', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c653cbf016c653cf7520000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 12:43:10', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c654635016c654738b30000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 12:54:22', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c654635016c6547c3340004', 'Firefox', '添加成功', '1', '本地', '2019-08-06 12:54:57', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6572fe016c657382fc0000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 13:42:44', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6572fe016c6574b6fe0004', 'Firefox', '添加成功', '1', '本地', '2019-08-06 13:44:03', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6581d9016c65825bb60000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 13:58:57', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6581d9016c6583b15a0001', 'Firefox', '错误异常: BusinessException,错误描述：JDBC exception on Hibernate data access: SQLException for SQL [n/a]; SQL state [HY000]; error code [1395]; Can not delete from join view \'action_db.vm_bus_po_contract\'; nested exception is org.hibernate.exception.GenericJDBCException: Can not delete from join view \'action_db.vm_bus_po_contract\'', '6', '本地', '2019-08-06 14:00:25', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6584dd016c658549390000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 14:02:09', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6584dd016c658580b60001', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 14:02:23', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6584dd016c658628030002', 'Firefox', '错误异常: BusinessException,错误描述：JDBC exception on Hibernate data access: SQLException for SQL [n/a]; SQL state [HY000]; error code [1395]; Can not delete from join view \'action_db.vm_bus_po_contract\'; nested exception is org.hibernate.exception.GenericJDBCException: Can not delete from join view \'action_db.vm_bus_po_contract\'', '6', '本地', '2019-08-06 14:03:06', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c658bfa016c658c37d30000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 14:09:43', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c658bfa016c658c65300001', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 14:09:55', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c658bfa016c658c653e0002', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 14:09:55', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c658bfa016c658c65510003', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 14:09:55', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c658bfa016c658c655f0004', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 14:09:55', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c658bfa016c658c656d0005', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 14:09:55', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c658bfa016c658c657a0006', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 14:09:55', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c658bfa016c658c65860007', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 14:09:55', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c658bfa016c658c65930008', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 14:09:55', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c658bfa016c658c659c0009', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 14:09:55', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c658bfa016c658c65a5000a', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 14:09:55', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c658bfa016c658c89b5000b', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 14:10:04', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c658bfa016c658c89c1000c', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 14:10:04', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c658bfa016c658c89cb000d', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 14:10:04', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c658bfa016c658c89d5000e', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 14:10:04', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c658bfa016c658c89df000f', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 14:10:04', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c658bfa016c658c89ee0010', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 14:10:04', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c658bfa016c658c89f90011', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 14:10:04', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c658bfa016c658c8a040012', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 14:10:04', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c658bfa016c658c8a0e0013', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 14:10:04', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c658bfa016c658c8a160014', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 14:10:04', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c658bfa016c65a0bc480015', 'Firefox', '更新成功', '1', '本地', '2019-08-06 14:32:08', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c658bfa016c65a17439001e', 'Firefox', '添加成功', '1', '本地', '2019-08-06 14:32:55', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65c085016c65c0d9b60000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 15:07:13', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65c085016c65c103290001', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 15:07:23', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65c085016c65c86ffb0002', 'Firefox', '更新成功', '1', '本地', '2019-08-06 15:15:30', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65c085016c65c9fc5d0003', 'Firefox', '更新成功', '1', '本地', '2019-08-06 15:17:11', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65c085016c65cd036d0004', 'Firefox', '客户资料删除成功', '1', '本地', '2019-08-06 15:20:30', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65c085016c65cd03790005', 'Firefox', '客户资料删除成功', '1', '本地', '2019-08-06 15:20:30', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65c085016c65cd03830006', 'Firefox', '客户资料删除成功', '1', '本地', '2019-08-06 15:20:30', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65c085016c65cd038d0007', 'Firefox', '客户资料删除成功', '1', '本地', '2019-08-06 15:20:30', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65c085016c65cd03960008', 'Firefox', '客户资料删除成功', '1', '本地', '2019-08-06 15:20:30', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65c085016c65cd03a10009', 'Firefox', '客户资料删除成功', '1', '本地', '2019-08-06 15:20:30', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65c085016c65cd03aa000a', 'Firefox', '客户资料删除成功', '1', '本地', '2019-08-06 15:20:30', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65c085016c65cd03b3000b', 'Firefox', '客户资料删除成功', '1', '本地', '2019-08-06 15:20:30', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65c085016c65cd03bd000c', 'Firefox', '客户资料删除成功', '1', '本地', '2019-08-06 15:20:30', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65c085016c65cd03c5000d', 'Firefox', '客户资料删除成功', '1', '本地', '2019-08-06 15:20:30', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65c085016c65cd3627000e', 'Firefox', '客户资料删除成功', '1', '本地', '2019-08-06 15:20:43', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65c085016c65cd362e000f', 'Firefox', '客户资料删除成功', '1', '本地', '2019-08-06 15:20:43', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65c085016c65cd36360010', 'Firefox', '客户资料删除成功', '1', '本地', '2019-08-06 15:20:43', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65c085016c65cd363e0011', 'Firefox', '客户资料删除成功', '1', '本地', '2019-08-06 15:20:43', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65c085016c65cd36470012', 'Firefox', '客户资料删除成功', '1', '本地', '2019-08-06 15:20:43', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65c085016c65cd36520013', 'Firefox', '客户资料删除成功', '1', '本地', '2019-08-06 15:20:43', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65c085016c65cd365a0014', 'Firefox', '客户资料删除成功', '1', '本地', '2019-08-06 15:20:43', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65c085016c65cd36620015', 'Firefox', '客户资料删除成功', '1', '本地', '2019-08-06 15:20:43', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65c085016c65cd366a0016', 'Firefox', '客户资料删除成功', '1', '本地', '2019-08-06 15:20:43', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65c085016c65cd36720017', 'Firefox', '客户资料删除成功', '1', '本地', '2019-08-06 15:20:43', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65c085016c65cd60cf0018', 'Firefox', '客户资料删除成功', '1', '本地', '2019-08-06 15:20:54', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65c085016c65cd60d60019', 'Firefox', '客户资料删除成功', '1', '本地', '2019-08-06 15:20:54', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65c085016c65cddf92001a', 'Firefox', '更新成功', '1', '本地', '2019-08-06 15:21:26', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65c085016c65ce1127001b', 'Firefox', '客户资料删除成功', '1', '本地', '2019-08-06 15:21:39', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65c085016c65ce112f001c', 'Firefox', '客户资料删除成功', '1', '本地', '2019-08-06 15:21:39', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65c085016c65ce1136001d', 'Firefox', '客户资料删除成功', '1', '本地', '2019-08-06 15:21:39', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65c085016c65ce113e001e', 'Firefox', '客户资料删除成功', '1', '本地', '2019-08-06 15:21:39', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65c085016c65ce5b7b001f', 'Firefox', '更新成功', '1', '本地', '2019-08-06 15:21:58', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65c085016c65ce765d0020', 'Firefox', '更新成功', '1', '本地', '2019-08-06 15:22:05', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65c085016c65ce99d20021', 'Firefox', '更新成功', '1', '本地', '2019-08-06 15:22:14', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65db0d016c65dc4ab20000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 15:37:11', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65e066016c65e09c0c0000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 15:41:54', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65f4a1016c65f4dd990000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 16:04:02', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65f4a1016c65f5d4990009', 'Firefox', '添加成功', '1', '本地', '2019-08-06 16:05:05', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65fcee016c65fd21650000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 16:13:03', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65fcee016c65fd55790002', 'Firefox', '添加成功', '1', '本地', '2019-08-06 16:13:17', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65fcee016c65fd861b0004', 'Firefox', '添加成功', '1', '本地', '2019-08-06 16:13:29', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65fcee016c65fda52c0006', 'Firefox', '添加成功', '1', '本地', '2019-08-06 16:13:37', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65fcee016c65fdbf4d0008', 'Firefox', '添加成功', '1', '本地', '2019-08-06 16:13:44', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65fcee016c65fec5ff0009', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 16:14:51', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65fcee016c65fec60b000a', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 16:14:51', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65fcee016c65fec619000b', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 16:14:51', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65fcee016c65fec623000c', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 16:14:51', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c65fcee016c65fec630000d', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 16:14:51', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c660646016c66069bd50000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 16:23:24', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c660646016c6606be250002', 'Firefox', '添加成功', '1', '本地', '2019-08-06 16:23:33', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c660646016c6606f3790004', 'Firefox', '添加成功', '1', '本地', '2019-08-06 16:23:47', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6611af016c6611e4730000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 16:35:44', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6611af016c661200c50001', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 16:35:51', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6611af016c661200f90002', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 16:35:51', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6611af016c66121baa0004', 'Firefox', '添加成功', '1', '本地', '2019-08-06 16:35:58', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6611af016c66123d920006', 'Firefox', '添加成功', '1', '本地', '2019-08-06 16:36:07', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6611af016c661291cb0008', 'Firefox', '添加成功', '1', '本地', '2019-08-06 16:36:28', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6613e7016c661473d20000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 16:38:32', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6613e7016c6614931e0001', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 16:38:40', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6613e7016c6614932a0002', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 16:38:40', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6613e7016c661493380003', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 16:38:40', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6613e7016c6614ada40005', 'Firefox', '添加成功', '1', '本地', '2019-08-06 16:38:46', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6613e7016c6614cfdf0007', 'Firefox', '添加成功', '1', '本地', '2019-08-06 16:38:55', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c66162d016c661696b20000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 16:40:52', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c66162d016c6616bdab0002', 'Firefox', '添加成功', '1', '本地', '2019-08-06 16:41:02', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c66162d016c6616fbb30003', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 16:41:18', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c66162d016c6616fbc30004', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 16:41:18', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c66162d016c6616fcea0005', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 16:41:18', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c66162d016c6617125d0007', 'Firefox', '添加成功', '1', '本地', '2019-08-06 16:41:23', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c66162d016c66172af70009', 'Firefox', '添加成功', '1', '本地', '2019-08-06 16:41:30', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c663437016c663467680000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 17:13:26', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c663437016c663495560001', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 17:13:37', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c663437016c663495630002', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 17:13:37', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c663437016c6634b1d70004', 'Firefox', '添加成功', '1', '本地', '2019-08-06 17:13:45', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c663437016c6634d9cc0006', 'Firefox', '添加成功', '1', '本地', '2019-08-06 17:13:55', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c66358b016c6635eda10000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 17:15:06', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c66358b016c663608ea0001', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 17:15:13', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c66358b016c663608f50002', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 17:15:13', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c66358b016c66361fba0004', 'Firefox', '添加成功', '1', '本地', '2019-08-06 17:15:18', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c66358b016c663641810006', 'Firefox', '添加成功', '1', '本地', '2019-08-06 17:15:27', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c66358b016c6636d08b0008', 'Firefox', '添加成功', '1', '本地', '2019-08-06 17:16:04', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c66358b016c663757f8000a', 'Firefox', '添加成功', '1', '本地', '2019-08-06 17:16:38', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c663832016c6638831d0000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 17:17:55', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c663832016c66389cdd0001', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 17:18:01', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c663832016c66389cef0002', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 17:18:01', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c663832016c66389d060003', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 17:18:01', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c663832016c66389d180004', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-06 17:18:02', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c663832016c6638b4e00006', 'Firefox', '添加成功', '1', '本地', '2019-08-06 17:18:08', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c663832016c6638d1120008', 'Firefox', '添加成功', '1', '本地', '2019-08-06 17:18:15', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c663832016c6638ef95000a', 'Firefox', '添加成功', '1', '本地', '2019-08-06 17:18:23', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c663832016c66802c0c000b', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 18:36:11', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c663832016c673bd256000c', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-06 22:01:09', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c663832016c67c93716000d', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-07 00:35:35', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c663832016c69d673c7000e', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-07 10:09:17', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c69d911016c69d9de2b0000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-07 10:13:01', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c69d911016c6a2711280001', 'Firefox', 'admin', '1', '本地', '2019-08-07 11:37:20', '2', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c69d911016c6a2720200002', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-07 11:37:24', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c69d911016c6a6bb43a0003', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-07 12:52:19', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6a83e5016c6a8436aa0000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-07 13:19:05', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6a83e5016c6a848d7d0001', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-07 13:19:27', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6a83e5016c6a848d8d0002', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-07 13:19:27', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6a83e5016c6a848da30003', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-07 13:19:27', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6a83e5016c6a84afeb0005', 'Firefox', '添加成功', '1', '本地', '2019-08-07 13:19:36', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6a83e5016c6a84eaf10007', 'Firefox', '添加成功', '1', '本地', '2019-08-07 13:19:51', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6a83e5016c6a850a4a0008', 'Firefox', '错误异常: BusinessException,错误描述：5', '6', '本地', '2019-08-07 13:19:59', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6a83e5016c6a8743670009', 'Firefox', '错误异常: BusinessException,错误描述：5', '6', '本地', '2019-08-07 13:22:25', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6a8ab7016c6a8c863a0000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-07 13:28:10', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6a8ab7016c6a8ca3ff0002', 'Firefox', '添加成功', '1', '本地', '2019-08-07 13:28:17', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6a93c5016c6a9444ba0000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-07 13:36:37', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6a93c5016c6aa8f3980004', 'Firefox', '错误异常: NullPointerException,错误描述：null', '6', '本地', '2019-08-07 13:59:13', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6a93c5016c6aa90d9e0005', 'Firefox', '错误异常: NullPointerException,错误描述：null', '6', '本地', '2019-08-07 13:59:19', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6a93c5016c6aa925000006', 'Firefox', '错误异常: NullPointerException,错误描述：null', '6', '本地', '2019-08-07 13:59:25', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6a93c5016c6af048e60007', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-07 15:17:07', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6a93c5016c6bf4aab9000b', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-07 20:01:32', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6bf92f016c6bf95a830000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-07 20:06:39', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6bf92f016c6bfac8a80001', 'Firefox', '供应商资料删除成功', '1', '本地', '2019-08-07 20:08:13', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6bf92f016c6bfd5c920003', 'Firefox', '供应商资料添加成功', '1', '本地', '2019-08-07 20:11:02', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6c156a016c6c15a19f0000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-07 20:37:32', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6c156a016c6c16da3e0007', 'Firefox', '添加成功', '1', '127.0.0.1', '2019-08-07 20:38:52', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6fb7a3016c6fb8796e0000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-08 13:34:16', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6fb7a3016c6fbb3ea40005', 'Firefox', '更新成功', '1', '本地', '2019-08-08 13:37:17', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6fe37e016c6fe56cc50000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-08 14:23:22', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6fe37e016c701c18400001', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-08 15:23:05', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6fe37e016c70745ce40002', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-08 16:59:29', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6fe37e016c70aa11940003', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-08 17:58:09', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6fe37e016c713a05fc0006', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-08 20:35:23', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6fe37e016c7142e4400007', 'Firefox', '更新成功', '1', '本地', '2019-08-08 20:45:04', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6fe37e016c71432b700008', 'Firefox', '更新成功', '1', '本地', '2019-08-08 20:45:23', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6fe37e016c71435cc40009', 'Firefox', '更新成功', '1', '本地', '2019-08-08 20:45:35', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6fe37e016c71439a6a000a', 'Firefox', '更新成功', '1', '本地', '2019-08-08 20:45:51', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6fe37e016c71446340000b', 'Firefox', '更新成功', '1', '本地', '2019-08-08 20:46:43', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6fe37e016c7144991f000c', 'Firefox', '更新成功', '1', '本地', '2019-08-08 20:46:56', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6fe37e016c7144b127000d', 'Firefox', '更新成功', '1', '本地', '2019-08-08 20:47:02', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6fe37e016c7144c88f000e', 'Firefox', '更新成功', '1', '本地', '2019-08-08 20:47:08', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6fe37e016c71462c47000f', 'Firefox', '更新成功', '1', '本地', '2019-08-08 20:48:40', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6fe37e016c714697000010', 'Firefox', '更新成功', '1', '本地', '2019-08-08 20:49:07', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6fe37e016c714d887c0011', 'Firefox', '错误异常: NullPointerException,错误描述：null', '6', '本地', '2019-08-08 20:56:42', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6fe37e016c71664c850013', 'Firefox', '更新成功', '1', '本地', '2019-08-08 21:23:45', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6fe37e016c71666d780015', 'Firefox', '更新成功', '1', '本地', '2019-08-08 21:23:53', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6fe37e016c7166939b0016', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-08 21:24:03', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6fe37e016c71669d0b0017', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-08 21:24:06', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c6fe37e016c7166be070019', 'Firefox', '更新成功', '1', '本地', '2019-08-08 21:24:14', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c716862016c716c6e940000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '127.0.0.1', '2019-08-08 21:30:27', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c716862016c716c8ea00001', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-08 21:30:35', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c716862016c716cd89d0002', 'Firefox', '更新成功', '1', '本地', '2019-08-08 21:30:54', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c716862016c719eb27c0003', 'Firefox', '菜单 更新成功', '1', '本地', '2019-08-08 22:25:21', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c716862016c719ee5700004', 'Firefox', '操作成功', '1', '本地', '2019-08-08 22:25:34', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c716862016c719eed7c0005', 'Firefox', 'admin', '1', '本地', '2019-08-08 22:25:36', '2', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c716862016c719f05940006', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-08 22:25:42', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c716862016c720568890007', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-09 00:17:32', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c74780c016c747855910000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-09 11:42:19', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c74780c016c747878610001', 'Firefox', '错误异常: NullPointerException,错误描述：null', '6', '本地', '2019-08-09 11:42:27', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c74780c016c748448cb0003', 'Firefox', '添加成功', '1', '本地', '2019-08-09 11:55:22', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c74780c016c7484a9900004', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-09 11:55:46', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c74780c016c7488c3350006', 'Firefox', '添加成功', '1', '本地', '2019-08-09 12:00:15', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c74780c016c748968aa0007', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-09 12:00:58', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c74780c016c74a006540009', 'Firefox', '添加成功', '1', '本地', '2019-08-09 12:25:40', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c74780c016c74a0486f000b', 'Firefox', '添加成功', '1', '本地', '2019-08-09 12:25:57', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c74780c016c74a06aeb000c', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-09 12:26:05', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c74780c016c74a07906000d', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-09 12:26:09', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c74780c016c74a0c5a5000f', 'Firefox', '添加成功', '1', '本地', '2019-08-09 12:26:29', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c74780c016c74a7de1f0011', 'Firefox', '添加成功', '1', '本地', '2019-08-09 12:34:14', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c74780c016c74a7f7d90012', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-09 12:34:20', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c74780c016c74a805460013', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-09 12:34:24', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c74780c016c74a84e2e0015', 'Firefox', '添加成功', '1', '本地', '2019-08-09 12:34:42', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c74780c016c74a8b6e40017', 'Firefox', '添加成功', '1', '本地', '2019-08-09 12:35:09', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c74780c016c74a8dddb0018', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-09 12:35:19', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c74780c016c74a8f730001a', 'Firefox', '添加成功', '1', '本地', '2019-08-09 12:35:26', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c74780c016c74ab0a55001c', 'Firefox', '添加成功', '1', '本地', '2019-08-09 12:37:42', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c74780c016c74ab2923001d', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-09 12:37:49', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c74780c016c74ab3327001e', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-09 12:37:52', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c74780c016c74ab3b13001f', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-09 12:37:54', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c74780c016c74f465a70020', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-09 13:57:49', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7a4784016c7a86709e0000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.43.245', '2019-08-10 15:55:26', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7a9332016c7a93816d0000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.43.245', '2019-08-10 16:09:43', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7a9332016c7a9414340001', 'Firefox', '错误异常: MySQLSyntaxErrorException,错误描述：Unknown column \'this_.BC_CONTRACT_FILE\' in \'field list\'', '6', '本地', '2019-08-10 16:10:20', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7a9332016c7a94144b0002', 'Firefox', '错误异常: MySQLSyntaxErrorException,错误描述：Unknown column \'this_.BC_CONTRACT_FILE\' in \'field list\'', '6', '本地', '2019-08-10 16:10:20', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7a9332016c7a94c4470003', 'Firefox', '错误异常: MySQLSyntaxErrorException,错误描述：Unknown column \'this_.BC_CONTRACT_FILE\' in \'field list\'', '6', '本地', '2019-08-10 16:11:05', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7a9332016c7a94c4590004', 'Firefox', '错误异常: MySQLSyntaxErrorException,错误描述：Unknown column \'this_.BC_CONTRACT_FILE\' in \'field list\'', '6', '本地', '2019-08-10 16:11:05', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7a9332016c7abb11b80005', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.43.245', '2019-08-10 16:52:55', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ad0a9016c7ad0ef3f0000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.43.245', '2019-08-10 17:16:48', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ad0a9016c7aded2150001', 'Firefox', '错误异常: MySQLSyntaxErrorException,错误描述：Unknown column \'this_.BC_CONTRACT_FILE\' in \'field list\'', '6', '本地', '2019-08-10 17:31:58', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ad0a9016c7aded26f0002', 'Firefox', '错误异常: MySQLSyntaxErrorException,错误描述：Unknown column \'this_.BC_CONTRACT_FILE\' in \'field list\'', '6', '本地', '2019-08-10 17:31:58', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ad0a9016c7adf81c00004', 'Firefox', '添加成功', '1', '本地', '2019-08-10 17:32:43', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ad0a9016c7ae060bd0006', 'Firefox', '添加成功', '1', '本地', '2019-08-10 17:33:40', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ae25e016c7ae28ed50000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.43.245', '2019-08-10 17:36:03', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ae25e016c7ae2b8120002', 'Firefox', '添加成功', '1', '本地', '2019-08-10 17:36:14', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ae25e016c7ae402550004', 'Firefox', '添加成功', '1', '本地', '2019-08-10 17:37:38', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ae25e016c7ae55c640006', 'Firefox', '添加成功', '1', '本地', '2019-08-10 17:39:07', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ae25e016c7ae5ac7d0007', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-10 17:39:27', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ae25e016c7ae5c1a10008', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-10 17:39:33', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ae25e016c7ae5cc240009', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-10 17:39:36', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ae25e016c7ae5fdab000a', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-10 17:39:48', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ae25e016c7ae607a0000b', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-10 17:39:51', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ae25e016c7ae62b5d000d', 'Firefox', '添加成功', '1', '本地', '2019-08-10 17:40:00', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ae25e016c7ae680f1000f', 'Firefox', '添加成功', '1', '本地', '2019-08-10 17:40:22', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ae25e016c7af0c15b0011', 'Firefox', '添加成功', '1', '本地', '2019-08-10 17:51:34', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ae25e016c7b20101e0012', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '127.0.0.1', '2019-08-10 18:43:14', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ae25e016c7b204ec40013', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-10 18:43:30', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ae25e016c7b22e67e0015', 'Firefox', '添加成功', '1', '本地', '2019-08-10 18:46:20', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ae25e016c7b28c43f0017', 'Firefox', '添加成功', '1', '本地', '2019-08-10 18:52:44', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ae25e016c7b2b250a0018', 'Firefox', '修改成功', '1', '本地', '2019-08-10 18:55:20', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ae25e016c7b38bd7a001a', 'Firefox', '添加成功', '1', '本地', '2019-08-10 19:10:11', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ae25e016c7b617092001b', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-10 19:54:39', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ae25e016c7b617e4b001c', 'Firefox', '错误异常: MySQLSyntaxErrorException,错误描述：Unknown column \'this_.BC_CONTRACT_FILE\' in \'field list\'', '6', '本地', '2019-08-10 19:54:42', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ae25e016c7b617ea2001d', 'Firefox', '错误异常: MySQLSyntaxErrorException,错误描述：Unknown column \'this_.BC_CONTRACT_FILE\' in \'field list\'', '6', '本地', '2019-08-10 19:54:42', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ae25e016c7b77c9cb001f', 'Firefox', '添加成功', '1', '本地', '2019-08-10 20:19:03', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7b7de6016c7b7eeec00000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.43.245', '2019-08-10 20:26:51', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7b7de6016c7b7f1a460001', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-10 20:27:03', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7b7de6016c7b7f23c10002', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-10 20:27:05', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7b7de6016c7b7f4aa70003', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-10 20:27:15', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7b7de6016c7b7f55780004', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-10 20:27:18', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7b7de6016c7b7f76180006', 'Firefox', '添加成功', '1', '本地', '2019-08-10 20:27:26', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7b7de6016c7b8c568a0008', 'Firefox', '添加成功', '1', '本地', '2019-08-10 20:41:30', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7b7de6016c7b8c57b8000a', 'Firefox', '错误异常: MySQLIntegrityConstraintViolationException,错误描述：Column \'CGFORM_FIELD\' cannot be null', '6', '本地', '2019-08-10 20:41:30', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7b7de6016c7ba84142000c', 'Firefox', '添加成功', '1', '本地', '2019-08-10 21:12:00', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7b7de6016c7ba84197000e', 'Firefox', '错误异常: MySQLIntegrityConstraintViolationException,错误描述：Column \'CGFORM_FIELD\' cannot be null', '6', '本地', '2019-08-10 21:12:00', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bb126016c7bb16e9f0000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.43.245', '2019-08-10 21:22:01', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bb126016c7bb1a2780002', 'Firefox', '添加成功', '1', '本地', '2019-08-10 21:22:14', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bb126016c7bb1a3640004', 'Firefox', '错误异常: MySQLIntegrityConstraintViolationException,错误描述：Column \'CGFORM_FIELD\' cannot be null', '6', '本地', '2019-08-10 21:22:15', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bb126016c7bc0d31c0006', 'Firefox', '添加成功', '1', '本地', '2019-08-10 21:38:50', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bb126016c7bc0d36e0008', 'Firefox', '错误异常: MySQLIntegrityConstraintViolationException,错误描述：Column \'CGFORM_FIELD\' cannot be null', '6', '本地', '2019-08-10 21:38:50', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bc4e9016c7bc5507b0000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.43.245', '2019-08-10 21:43:44', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bc4e9016c7bc59de40002', 'Firefox', '添加成功', '1', '本地', '2019-08-10 21:44:04', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bc4e9016c7bc59edc0004', 'Firefox', '错误异常: MySQLIntegrityConstraintViolationException,错误描述：Column \'CGFORM_FIELD\' cannot be null', '6', '本地', '2019-08-10 21:44:04', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bc4e9016c7e5516600005', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-11 09:40:01', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bc4e9016c7e5547c20007', 'Firefox', '添加成功', '1', '本地', '2019-08-11 09:40:13', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bc4e9016c7e55482c0009', 'Firefox', '错误异常: MySQLIntegrityConstraintViolationException,错误描述：Column \'CGFORM_FIELD\' cannot be null', '6', '本地', '2019-08-11 09:40:13', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bc4e9016c7e8885ad000a', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.43.245', '2019-08-11 10:36:12', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bc4e9016c7e8899d3000b', 'Firefox', '错误异常: MySQLSyntaxErrorException,错误描述：Unknown column \'this_.BC_CONTRACT_FILE\' in \'field list\'', '6', '本地', '2019-08-11 10:36:17', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bc4e9016c7e889a36000c', 'Firefox', '错误异常: MySQLSyntaxErrorException,错误描述：Unknown column \'this_.BC_CONTRACT_FILE\' in \'field list\'', '6', '本地', '2019-08-11 10:36:17', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bc4e9016c7e8a330e000d', 'Firefox', '更新成功', '1', '本地', '2019-08-11 10:38:01', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bc4e9016c7e8b0ae70010', 'Firefox', '添加成功', '1', '本地', '2019-08-11 10:38:57', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bc4e9016c7e8b0b180012', 'Firefox', '错误异常: MySQLIntegrityConstraintViolationException,错误描述：Column \'CGFORM_FIELD\' cannot be null', '6', '本地', '2019-08-11 10:38:57', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bc4e9016c7ea2e3ea0013', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-11 11:05:00', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bc4e9016c7ea2ed980014', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-11 11:05:02', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bc4e9016c7ea2f85f0015', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-11 11:05:05', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bc4e9016c7ea302290016', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-11 11:05:07', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bc4e9016c7ea311f80017', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-11 11:05:11', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bc4e9016c7eb8a5530018', 'Firefox', '客户资料被删除成功', '1', '本地', '2019-08-11 11:28:45', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bc4e9016c7eb8de960019', 'Firefox', '更新成功', '1', '本地', '2019-08-11 11:29:00', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bc4e9016c7f03a68d001b', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.43.245', '2019-08-11 12:50:41', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bc4e9016c7f963aab001c', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-11 15:30:47', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bc4e9016c7f96ba80001e', 'Firefox', '错误异常: RuntimeException,错误描述：文件上传失败：Incorrect integer value: \'upload/files/20190811153120zkCv1cMd.xls\' for column \'bpd_dis_no\' at row 1', '6', '本地', '2019-08-11 15:31:20', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bc4e9016c7f97697d001f', 'Firefox', '修改成功', '1', '本地', '2019-08-11 15:32:05', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bc4e9016c7f97a4940020', 'Firefox', '删除成功', '1', '本地', '2019-08-11 15:32:20', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bc4e9016c7f97c7620022', 'Firefox', '错误异常: RuntimeException,错误描述：文件上传失败：Incorrect decimal value: \'upload/files/20190811153229X1Zw2w3g.xls\' for column \'bpd_dis_no\' at row 1', '6', '本地', '2019-08-11 15:32:29', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bc4e9016c7f982d0f0023', 'Firefox', '修改成功', '1', '本地', '2019-08-11 15:32:55', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bc4e9016c7f9849930024', 'Firefox', '删除成功', '1', '本地', '2019-08-11 15:33:02', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bc4e9016c7f9866c70026', 'Firefox', '错误异常: RuntimeException,错误描述：文件上传失败：Data truncation: Data too long for column \'bpd_dis_no\' at row 1', '6', '本地', '2019-08-11 15:33:09', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bc4e9016c7f992b720027', 'Firefox', '修改成功', '1', '本地', '2019-08-11 15:34:00', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bc4e9016c7fa5bafe002a', 'Firefox', '添加成功', '1', '本地', '2019-08-11 15:47:43', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7bc4e9016c7fa5bb45002c', 'Firefox', '错误异常: MySQLIntegrityConstraintViolationException,错误描述：Column \'CGFORM_FIELD\' cannot be null', '6', '本地', '2019-08-11 15:47:43', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('ff8080816c7fc4fe016c7fc8caa90000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-11 16:26:01', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('ff8080816c7fc4fe016c7fc8fd400002', 'Firefox', '添加成功', '1', '本地', '2019-08-11 16:26:14', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('ff8080816c7fc4fe016c7fce416a0004', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-11 16:31:59', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('ff8080816c7fc4fe016c7fce4aa70005', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-11 16:32:01', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('ff8080816c7fc4fe016c7fd23b200007', 'Firefox', '添加成功', '1', '本地', '2019-08-11 16:36:19', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('ff8080816c7fc4fe016c7fdd22bf0008', 'Firefox', '更新成功', '1', '本地', '2019-08-11 16:48:14', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('ff8080816c7fc4fe016c7fdf9d3d000a', 'Firefox', '添加成功', '1', '本地', '2019-08-11 16:50:56', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('ff8080816c7fc4fe016c7fdf9dc9000c', 'Firefox', '错误异常: RuntimeException,错误描述：文件上传失败：Data truncation: Data too long for column \'bc_sname\' at row 1', '6', '本地', '2019-08-11 16:50:57', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('ff8080816c7fc4fe016c7fe0b601000d', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-11 16:52:08', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('ff8080816c7fc4fe016c7fe0ea99000f', 'Firefox', '添加成功', '1', '本地', '2019-08-11 16:52:22', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('ff8080816c7fc4fe016c7fe0eaff0011', 'Firefox', '错误异常: RuntimeException,错误描述：文件上传失败：Data truncation: Data too long for column \'bc_sname\' at row 1', '6', '本地', '2019-08-11 16:52:22', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c7fe2a1016c7fe2da960000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-11 16:54:29', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c7fe2a1016c7fe326e30002', 'Firefox', '添加成功', '1', '本地', '2019-08-11 16:54:48', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c7fe2a1016c7fe328a80004', 'Firefox', '错误异常: RuntimeException,错误描述：文件上传失败：Data truncation: Data too long for column \'bc_sname\' at row 1', '6', '本地', '2019-08-11 16:54:49', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c7fe2a1016c7ff60bcc0005', 'Firefox', '更新成功', '1', '本地', '2019-08-11 17:15:27', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c7fe2a1016c7ff74c960006', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-11 17:16:49', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c7fe2a1016c7ff752eb0007', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-11 17:16:50', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c7fe2a1016c7ff759cd0008', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-11 17:16:52', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c7fe2a1016c7ff761330009', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-11 17:16:54', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c7fe2a1016c7ff767c5000a', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-11 17:16:56', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c7fe2a1016c7ff770b8000b', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-11 17:16:58', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c7fe2a1016c7ff77e63000c', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-11 17:17:01', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c7fe2a1016c7ff78961000d', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-11 17:17:04', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c7fe2a1016c7ff7b1d9000f', 'Firefox', '添加成功', '1', '本地', '2019-08-11 17:17:15', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c7fe2a1016c7ff7b2460011', 'Firefox', '错误异常: RuntimeException,错误描述：文件上传失败：Data truncation: Data too long for column \'bc_sname\' at row 1', '6', '本地', '2019-08-11 17:17:15', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c7fe2a1016c7ff7bfa90012', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-11 17:17:18', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c7fe2a1016c7ff7e5700014', 'Firefox', '添加成功', '1', '本地', '2019-08-11 17:17:28', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c7fe2a1016c7ff7e5d50016', 'Firefox', '错误异常: RuntimeException,错误描述：文件上传失败：Data truncation: Data too long for column \'bc_sname\' at row 1', '6', '本地', '2019-08-11 17:17:28', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c7fe2a1016c7ff7f6500017', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-11 17:17:32', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c7fe2a1016c7ff81aa10019', 'Firefox', '添加成功', '1', '本地', '2019-08-11 17:17:41', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c7fe2a1016c7ff81b09001b', 'Firefox', '错误异常: RuntimeException,错误描述：文件上传失败：Data truncation: Data too long for column \'bc_sname\' at row 1', '6', '本地', '2019-08-11 17:17:42', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c7fe2a1016c7ff826da001c', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-11 17:17:45', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c7fe2a1016c7ff849bf001e', 'Firefox', '添加成功', '1', '本地', '2019-08-11 17:17:53', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c7fe2a1016c7ff84a1d0020', 'Firefox', '错误异常: RuntimeException,错误描述：文件上传失败：Data truncation: Data too long for column \'bc_sname\' at row 1', '6', '本地', '2019-08-11 17:17:54', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c7fe2a1016c7ff8553e0021', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-11 17:17:56', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c7fe2a1016c7ff87bea0023', 'Firefox', '添加成功', '1', '本地', '2019-08-11 17:18:06', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c7fe2a1016c7ff87c4a0025', 'Firefox', '错误异常: RuntimeException,错误描述：文件上传失败：Data truncation: Data too long for column \'bc_sname\' at row 1', '6', '本地', '2019-08-11 17:18:06', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c7fe2a1016c7ff90ea90027', 'Firefox', '添加成功', '1', '本地', '2019-08-11 17:18:44', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c7fe2a1016c7ff90f0b0029', 'Firefox', '错误异常: RuntimeException,错误描述：文件上传失败：Data truncation: Data too long for column \'bc_sname\' at row 1', '6', '本地', '2019-08-11 17:18:44', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c7fe2a1016c7ff948dc002b', 'Firefox', '添加成功', '1', '本地', '2019-08-11 17:18:59', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c7fe2a1016c7ff94940002d', 'Firefox', '错误异常: RuntimeException,错误描述：文件上传失败：Data truncation: Data too long for column \'bc_sname\' at row 1', '6', '本地', '2019-08-11 17:18:59', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c7fe2a1016c7ff9759f002f', 'Firefox', '添加成功', '1', '本地', '2019-08-11 17:19:10', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c7fe2a1016c7ff975f50031', 'Firefox', '错误异常: RuntimeException,错误描述：文件上传失败：Data truncation: Data too long for column \'bc_sname\' at row 1', '6', '本地', '2019-08-11 17:19:10', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c7fe2a1016c7ff9a8d20033', 'Firefox', '添加成功', '1', '本地', '2019-08-11 17:19:23', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c7fe2a1016c7ff9a92b0035', 'Firefox', '错误异常: RuntimeException,错误描述：文件上传失败：Data truncation: Data too long for column \'bc_sname\' at row 1', '6', '本地', '2019-08-11 17:19:23', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ffe0a016c7ffe41b40000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.43.245', '2019-08-11 17:24:25', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ffe0a016c7ffefb590001', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-11 17:25:12', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ffe0a016c7fff04920002', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-11 17:25:15', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ffe0a016c7fff0bd60003', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-11 17:25:16', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ffe0a016c7fff14940004', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-11 17:25:19', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ffe0a016c7fff1c620005', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-11 17:25:21', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ffe0a016c7fff4c3c0007', 'Firefox', '添加成功', '1', '本地', '2019-08-11 17:25:33', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ffe0a016c8005c3d50009', 'Firefox', '更新成功', '1', '本地', '2019-08-11 17:32:37', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ffe0a016c800714e3000a', 'Firefox', '更新成功', '1', '本地', '2019-08-11 17:34:03', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ffe0a016c8007f5b9000c', 'Firefox', '错误异常: HibernateException,错误描述：More than one row with the given identifier was found: 4028ab756c7ffe0a016c7fff4c2c0006, for class: com.action.actpo.entity.VmBusPoContractEntity', '6', '本地', '2019-08-11 17:35:01', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ffe0a016c80082d82000d', 'Firefox', '错误异常: HibernateException,错误描述：More than one row with the given identifier was found: 4028ab756c7ffe0a016c7fff4c2c0006, for class: com.action.actpo.entity.VmBusPoContractEntity', '6', '本地', '2019-08-11 17:35:15', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ffe0a016c800858d2000e', 'Firefox', '错误异常: HibernateException,错误描述：More than one row with the given identifier was found: 4028ab756c7ffe0a016c7fff4c2c0006, for class: com.action.actpo.entity.VmBusPoContractEntity', '6', '本地', '2019-08-11 17:35:26', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ffe0a016c800882ff000f', 'Firefox', '错误异常: HibernateException,错误描述：More than one row with the given identifier was found: 4028ab756c7ffe0a016c7fff4c2c0006, for class: com.action.actpo.entity.VmBusPoContractEntity', '6', '本地', '2019-08-11 17:35:37', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ffe0a016c800904150010', 'Firefox', '错误异常: HibernateException,错误描述：More than one row with the given identifier was found: 4028ab756c7ffe0a016c7fff4c2c0006, for class: com.action.actpo.entity.VmBusPoContractEntity', '6', '本地', '2019-08-11 17:36:10', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ffe0a016c80090ff50011', 'Firefox', '错误异常: HibernateException,错误描述：More than one row with the given identifier was found: 4028ab756c7ffe0a016c7fff4c2c0006, for class: com.action.actpo.entity.VmBusPoContractEntity', '6', '本地', '2019-08-11 17:36:13', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ffe0a016c800930dd0012', 'Firefox', '错误异常: HibernateException,错误描述：More than one row with the given identifier was found: 4028ab756c7ffe0a016c7fff4c2c0006, for class: com.action.actpo.entity.VmBusPoContractEntity', '6', '本地', '2019-08-11 17:36:21', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ffe0a016c800f5d570013', 'Firefox', '错误异常: RuntimeException,错误描述：文件上传失败：The target table vm_bus_po_contract of the UPDATE is not updatable', '6', '本地', '2019-08-11 17:43:06', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ffe0a016c803275e00014', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-11 18:21:26', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ffe0a016c8032a0a70015', 'Firefox', '错误异常: RuntimeException,错误描述：文件上传失败：The target table vm_bus_po_contract of the UPDATE is not updatable', '6', '本地', '2019-08-11 18:21:37', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ffe0a016c809b4f440016', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-11 20:15:57', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ffe0a016c809bb5360018', 'Firefox', '客户资料被删除成功', '1', '本地', '2019-08-11 20:16:23', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ffe0a016c80d39ae90019', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-11 21:17:27', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ffe0a016c80d3c1f4001a', 'Firefox', '错误异常: RuntimeException,错误描述：文件上传失败：The target table vm_bus_po_contract of the UPDATE is not updatable', '6', '本地', '2019-08-11 21:17:37', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028ab756c7ffe0a016c80e78192001b', 'Firefox', '错误异常: RuntimeException,错误描述：文件上传失败：The target table vm_bus_po_contract of the UPDATE is not updatable', '6', '本地', '2019-08-11 21:39:11', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c81041d016c8106db280000', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.0.187', '2019-08-11 22:13:25', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c81041d016c810720860002', 'Firefox', '添加成功', '1', '本地', '2019-08-11 22:13:43', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c81041d016c8107223c0004', 'Firefox', '错误异常: RuntimeException,错误描述：文件上传失败：The target table vm_bus_po_contract of the UPDATE is not updatable', '6', '本地', '2019-08-11 22:13:44', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c81041d016c810896a40006', 'Firefox', '添加成功', '1', '本地', '2019-08-11 22:15:19', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c81041d016c8108d0030008', 'Firefox', '客户资料被删除成功', '1', '本地', '2019-08-11 22:15:34', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c81041d016c810940e30009', 'Firefox', '更新成功', '1', '本地', '2019-08-11 22:16:03', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c81041d016c81096881000c', 'Firefox', '客户资料被删除成功', '1', '本地', '2019-08-11 22:16:13', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c81041d016c8109817f000d', 'Firefox', '更新成功', '1', '本地', '2019-08-11 22:16:19', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c81041d016c81099539000f', 'Firefox', '客户资料被删除成功', '1', '本地', '2019-08-11 22:16:24', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c81041d016c810b6b960010', 'Firefox', '错误异常: NullPointerException,错误描述：null', '6', '本地', '2019-08-11 22:18:25', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c81041d016c810bc8980011', 'Firefox', '采购合同明细_bus_po_contract_detail-v14被删除成功', '1', '本地', '2019-08-11 22:18:48', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c81041d016c811ff7c40012', 'Firefox', '更新成功', '1', '本地', '2019-08-11 22:40:51', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c81041d016c81201a590015', 'Firefox', '采购合同明细_bus_po_contract_detail-v14被删除成功', '1', '本地', '2019-08-11 22:41:00', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c81041d016c812510f90016', 'Firefox', '更新成功', '1', '本地', '2019-08-11 22:46:25', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c81041d016c812541380018', 'Firefox', '采购合同明细_bus_po_contract_detail-v14被删除成功', '1', '本地', '2019-08-11 22:46:38', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c81041d016c81d9d2210019', 'Firefox', '用户: admin[JEECG开源社区]common.login.success', '1', '192.168.43.245', '2019-08-12 02:03:51', '1', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c81041d016c81db16da001a', 'Firefox', '更新成功', '1', '本地', '2019-08-12 02:05:14', '5', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c81041d016c81db3a07001c', 'Firefox', '采购合同明细_bus_po_contract_detail-v14被删除成功', '1', '本地', '2019-08-12 02:05:23', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c81041d016c81dc736e001f', 'Firefox', '添加成功', '1', '本地', '2019-08-12 02:06:44', '3', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c81041d016c81ea09330021', 'Firefox', '采购合同视图删除成功', '1', '本地', '2019-08-12 02:21:34', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
+INSERT INTO `t_s_log` VALUES ('4028803b6c81041d016c81ea1fff0022', 'Firefox', '客户资料被删除成功', '1', '本地', '2019-08-12 02:21:40', '4', '8a8ab0b246dc81120146dc8181950052', 'admin', '管理员');
 
 -- ----------------------------
 -- Table structure for t_s_muti_lang
@@ -14327,7 +14879,6 @@ INSERT INTO `t_s_role_function` VALUES ('2c94b3296c40873b016c4150a67f010c', null
 INSERT INTO `t_s_role_function` VALUES ('2c94b3296c46777e016c470f3a340028', null, '2c94b3296c46777e016c470f133c0026', '8a8ab0b246dc81120146dc8181870050', null);
 INSERT INTO `t_s_role_function` VALUES ('2c94b3296c4abd4d016c4b311ef20087', null, '2c94b3296c4abd4d016c4b30f2ec0085', '8a8ab0b246dc81120146dc8181870050', null);
 INSERT INTO `t_s_role_function` VALUES ('2c94b32c6c4b1315016c4b15e5970005', null, '2c94b32c6c4b1315016c4b15cb5f0003', '8a8ab0b246dc81120146dc8181870050', null);
-INSERT INTO `t_s_role_function` VALUES ('2c94b32c6c4b1315016c4b15e59f0006', null, '2c94b32c6c4b1315016c4b1516a80001', '8a8ab0b246dc81120146dc8181870050', null);
 INSERT INTO `t_s_role_function` VALUES ('2c94b3e06c4230a3016c42412d64001d', null, '2c94b3e06c4230a3016c423c13430011', '8a8ab0b246dc81120146dc8181870050', null);
 INSERT INTO `t_s_role_function` VALUES ('2c94b3e06c4230a3016c42412d6c001e', null, '2c94b3e06c4230a3016c423dc4e00016', '8a8ab0b246dc81120146dc8181870050', null);
 INSERT INTO `t_s_role_function` VALUES ('2c94b3e36c41ac17016c41b1dc820008', null, '2c94b3e36c41ac17016c41b0bac20004', '8a8ab0b246dc81120146dc8181870050', null);
@@ -15055,80 +15606,6 @@ CREATE TABLE `t_s_user_position_rel` (
 -- ----------------------------
 
 -- ----------------------------
--- Table structure for vm_bus_po_contract
--- ----------------------------
-DROP TABLE IF EXISTS `vm_bus_po_contract`;
-CREATE TABLE `vm_bus_po_contract` (
-  `id` varchar(36) NOT NULL COMMENT '主键',
-  `create_name` varchar(50) DEFAULT NULL COMMENT '创建人名称',
-  `create_by` varchar(50) DEFAULT NULL COMMENT '创建人登录名称',
-  `create_date` datetime DEFAULT NULL COMMENT '创建日期',
-  `update_name` varchar(50) DEFAULT NULL COMMENT '更新人名称',
-  `update_by` varchar(50) DEFAULT NULL COMMENT '更新人登录名称',
-  `update_date` datetime DEFAULT NULL COMMENT '更新日期',
-  `sys_org_code` varchar(50) DEFAULT NULL COMMENT '所属部门',
-  `sys_company_code` varchar(50) DEFAULT NULL COMMENT '所属公司',
-  `bpm_status` varchar(32) DEFAULT NULL COMMENT '流程状态',
-  `bpm_proj_id` varchar(32) DEFAULT NULL COMMENT '项目编号',
-  `bpm_proj_name` varchar(50) DEFAULT NULL COMMENT '项目名称',
-  `bpc_po_no` varchar(32) DEFAULT NULL COMMENT '采购合同编号',
-  `bpc_po_date` datetime DEFAULT NULL COMMENT '采购日期',
-  `bpc_rec_people` varchar(32) DEFAULT NULL COMMENT '收货人',
-  `bpc_rec_tel` varchar(32) DEFAULT NULL COMMENT '收货人电话',
-  `bpc_rec_addr` varchar(100) DEFAULT NULL COMMENT '收货地址',
-  `from_projm_id` varchar(32) DEFAULT NULL COMMENT '项目管理外键',
-  `from_supp_id` varchar(32) DEFAULT NULL COMMENT '供应商资料外键',
-  `bs_contact` varchar(32) DEFAULT NULL COMMENT '供应商联系人',
-  `bs_name` varchar(100) DEFAULT NULL COMMENT '供应商',
-  `all_amount` varchar(32) DEFAULT NULL COMMENT '总金额',
-  `bp_exp_pay_date` datetime DEFAULT NULL COMMENT '预计付款日期',
-  `bp_sit_report` varchar(32) DEFAULT NULL COMMENT '采购情况汇报',
-  `bpc_po_people` varchar(32) DEFAULT NULL COMMENT '采购员',
-  `bpc_po_over` varchar(32) DEFAULT NULL COMMENT '采购是否已完成',
-  `bs_tel_no` varchar(32) DEFAULT NULL COMMENT '供应商联系人电话',
-  `bc_name` varchar(50) DEFAULT NULL COMMENT '客户名称',
-  `bp_manager` varchar(32) DEFAULT NULL COMMENT '项目经理',
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
-
--- ----------------------------
--- Records of vm_bus_po_contract
--- ----------------------------
-INSERT INTO `vm_bus_po_contract` VALUES ('2c94b3296c47ad1c016c47ea90c40031', '管理员', 'admin', '2019-07-31 20:04:11', null, null, null, 'A03', 'A03', '1', 'AX-2019-TCL-001', '网络安全', 'AX-2019KHJC-000001', null, '', '', '', null, null, 'contractaaaaaa', 'test1_name', null, null, '', '', '', '18012345678', null, null);
-INSERT INTO `vm_bus_po_contract` VALUES ('2c94b3296c4feb56016c50327ebe0002', '管理员', 'admin', '2019-08-02 10:39:42', null, null, null, 'A03', 'A03', '1', 'AX-2018-JWC-003', '2c94b3296c29220d016c292681f40001', 'AX-2019KHJC-000001', null, '', '', '', null, null, 'contractaaaaaa', '4028cb816c40a12d016c40a12d9f0000', null, null, '', '', '', '18012345678', null, null);
-
--- ----------------------------
--- Table structure for vm_merge_bus_po_apply_detail
--- ----------------------------
-DROP TABLE IF EXISTS `vm_merge_bus_po_apply_detail`;
-CREATE TABLE `vm_merge_bus_po_apply_detail` (
-  `id` varchar(36) NOT NULL COMMENT '主键',
-  `create_name` varchar(50) DEFAULT NULL COMMENT '创建人名称',
-  `create_by` varchar(50) DEFAULT NULL COMMENT '创建人登录名称',
-  `create_date` datetime DEFAULT NULL COMMENT '创建日期',
-  `update_name` varchar(50) DEFAULT NULL COMMENT '更新人名称',
-  `update_by` varchar(50) DEFAULT NULL COMMENT '更新人登录名称',
-  `update_date` datetime DEFAULT NULL COMMENT '更新日期',
-  `sys_org_code` varchar(50) DEFAULT NULL COMMENT '所属部门',
-  `sys_company_code` varchar(50) DEFAULT NULL COMMENT '所属公司',
-  `bpm_status` varchar(32) DEFAULT NULL COMMENT '流程状态',
-  `bpad_name` varchar(32) DEFAULT NULL COMMENT '名称',
-  `bpad_brand` varchar(32) DEFAULT NULL COMMENT '品牌',
-  `bpad_model` varchar(32) DEFAULT NULL COMMENT '型号',
-  `bpad_number` varchar(32) DEFAULT NULL COMMENT '数量',
-  `bpad_remark` varchar(32) DEFAULT NULL COMMENT '备注',
-  `from_id` varchar(32) DEFAULT NULL COMMENT '采购合同外键',
-  PRIMARY KEY (`id`) USING BTREE
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ROW_FORMAT=COMPACT;
-
--- ----------------------------
--- Records of vm_merge_bus_po_apply_detail
--- ----------------------------
-INSERT INTO `vm_merge_bus_po_apply_detail` VALUES ('2c94b3296c47ad1c016c47ea90c40032', '管理员', 'admin', '2019-07-31 20:04:11', '', '', null, 'A03', 'A03', '1', '', '', '', '', '', '2c94b3296c47ad1c016c47ea90c40031');
-INSERT INTO `vm_merge_bus_po_apply_detail` VALUES ('2c94b3296c4feb56016c50327ec20003', '管理员', 'admin', '2019-08-02 10:39:42', '', '', null, 'A03', 'A03', '1', '', '', '', '', '', '2c94b3296c4feb56016c50327ebe0002');
-INSERT INTO `vm_merge_bus_po_apply_detail` VALUES ('2c94b3296c4feb56016c50327ec20004', '管理员', 'admin', '2019-08-02 10:39:42', null, null, null, 'A03', 'A03', '1', '电脑', 'TCL', 'T１３３', '13.0', '', '2c94b3296c4feb56016c50327ebe0002');
-
--- ----------------------------
 -- Table structure for vw_bus_po_pay
 -- ----------------------------
 DROP TABLE IF EXISTS `vw_bus_po_pay`;
@@ -15161,10 +15638,10 @@ CREATE TABLE `vw_bus_po_pay` (
 -- ----------------------------
 -- Records of vw_bus_po_pay
 -- ----------------------------
-INSERT INTO `vw_bus_po_pay` VALUES ('2c94b31e6c47ee2e016c4814172d0003', '1', '1', '1', '1', '1', '1', '1', '10', '2019-07-11 00:00:00', '1', '', '', '1', '管理员', 'admin', '管理员', 'admin', 'A03', 'A03', '2019-07-31 20:49:31', '2019-08-01 20:51:21');
-INSERT INTO `vw_bus_po_pay` VALUES ('2c94b31e6c4b3837016c4b3837a70000', '2', '2', '2', '2', '2', '2', '2', '30', '2019-08-01 00:00:00', '2', null, null, '1', '管理员', 'admin', null, null, 'A03', 'A03', '2019-08-01 11:27:51', null);
-INSERT INTO `vw_bus_po_pay` VALUES ('2c94b31e6c4b89d6016c4b89d6760000', '88', '8', '8', '8', '8', '8', '8', '60', '2019-08-01 00:00:00', '1', null, null, '1', '管理员', 'admin', null, null, 'A03', 'A03', '2019-08-01 12:57:00', null);
-INSERT INTO `vw_bus_po_pay` VALUES ('2c94b31e6c4b90ce016c4b940a0e0001', '66', '', '', '', '', '6', '6', '20', '2019-08-01 00:00:00', '2', '', '', '2', '管理员', 'admin', null, null, 'A03', 'A03', '2019-08-01 13:08:09', null);
+INSERT INTO `vw_bus_po_pay` VALUES ('2c94b31e6c47ee2e016c4814172d0003', '1', '1', '1', '1', '1', '1', '1', '10', '2019-07-11 00:00:00', '1', null, null, '1', '管理员', 'admin', '管理员', 'admin', 'A03', 'A03', '2019-07-31 20:49:31', '2019-08-05 21:11:14');
+INSERT INTO `vw_bus_po_pay` VALUES ('2c94b31e6c4b3837016c4b3837a70000', '2', '2', '2', '2', '2', '2', '2', '30', '2019-08-01 00:00:00', '2', null, null, '1', '管理员', 'admin', '管理员', 'admin', 'A03', 'A03', '2019-08-01 11:27:51', '2019-08-05 21:11:05');
+INSERT INTO `vw_bus_po_pay` VALUES ('2c94b31e6c4b89d6016c4b89d6760000', '88', '8', '8', '8', '8', '8', '8', '60', '2019-08-01 00:00:00', '1', null, null, '1', '管理员', 'admin', '管理员', 'admin', 'A03', 'A03', '2019-08-01 12:57:00', '2019-08-05 21:10:52');
+INSERT INTO `vw_bus_po_pay` VALUES ('2c94b31e6c4b90ce016c4b940a0e0001', '66', null, null, null, null, '6', '6', '20', '2019-08-01 00:00:00', '2', null, null, '2', '管理员', 'admin', '管理员', 'admin', 'A03', 'A03', '2019-08-01 13:08:09', '2019-08-05 21:10:41');
 
 -- ----------------------------
 -- Table structure for vw_bus_po_pay_copy
@@ -15208,7 +15685,7 @@ INSERT INTO `vw_bus_po_pay_copy` VALUES ('2c94b31e6c4b90ce016c4b940a0e0001', '66
 -- View structure for vm_bas_customer
 -- ----------------------------
 DROP VIEW IF EXISTS `vm_bas_customer`;
-CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`%` SQL SECURITY DEFINER  VIEW `vm_bas_customer` AS select bc.id, bc.bc_name from bas_customer as bc, bus_project as bp where bc.id=bp.from_cust_id GROUP by bc.id ; ;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`%` SQL SECURITY DEFINER  VIEW `vm_bas_customer` AS select bc.id, bc.bc_name, bc_sname from bas_customer as bc, bus_project as bp where bc.id=bp.from_cust_id GROUP by bc.id ;
 
 -- ----------------------------
 -- View structure for vm_bus_collection
@@ -15277,6 +15754,31 @@ AND bc.from_projm_id = bcp.from_id -- 收款单查询结果
 */ ; ;
 
 -- ----------------------------
+-- View structure for vm_bus_po_contract
+-- ----------------------------
+DROP VIEW IF EXISTS `vm_bus_po_contract`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost` SQL SECURITY DEFINER  VIEW `vm_bus_po_contract` AS select 
+	bpc.*,
+	bpm.bpm_name as bpm_proj_name, -- 项目名称
+	bpm.bpm_proj_id, -- 项目编号
+	bp.bp_manager, -- 项目经理
+	bc.bc_name, -- 客户名称
+	bc.bc_sname as bpm_cust_s_name,-- 客户简称
+	bs.bs_tel_no, -- 供应商电话
+	bs.bs_name, -- 供应商
+	bs.bs_contact, -- 供应商联系人
+	vbpcpt.total as all_amount,-- 总金额
+	baf_path -- 附件地址
+from 
+	bus_po_contract as bpc	-- 采购合同
+	left join bas_supplier as bs on bpc.from_supp_id = bs.id  -- 供应商
+	left join bus_project_manager as bpm on bpc.from_projm_id = bpm.id -- 项目管理
+	left join bus_project as bp on bpm.from_proj_id = bp.id -- 项目立项
+	left join bas_customer as bc on bc.id = bp.from_cust_id -- 客户
+	left join vw_bus_po_contract_pay_total as vbpcpt on bpc.id = vbpcpt.from_id 
+	left join bas_attach_file as baf on baf.baf_bus_id=bpc.id GROUP BY bpc.id ;
+
+-- ----------------------------
 -- View structure for vm_bus_project_follow1
 -- ----------------------------
 DROP VIEW IF EXISTS `vm_bus_project_follow1`;
@@ -15294,6 +15796,7 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`%` SQL SECURITY DEFINER  VIEW `vm_bus
 	bp.bp_date as bpm_cre_date,
  	bp.bp_manager as bpm_manager,
 	bc_name as bpm_cust_name,
+	bc_sname as bpm_cust_s_name,
  	bcp.brp_back_amount as bpm_rece_all_amou,
  	bc.brp_back_amount_d as bpm_rece_all_amou_d,
 	bpf.bpf_check_result as bpm_check_res, 
@@ -15313,6 +15816,33 @@ from
 -- ----------------------------
 DROP VIEW IF EXISTS `vm_max_bus_project_follow`;
 CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`%` SQL SECURITY DEFINER  VIEW `vm_max_bus_project_follow` AS select from_id,max(create_date) as max_create_date from bus_project_follow group by from_id ;
+
+-- ----------------------------
+-- View structure for vm_merge_bus_po_apply_detail
+-- ----------------------------
+DROP VIEW IF EXISTS `vm_merge_bus_po_apply_detail`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost`  VIEW `vm_merge_bus_po_apply_detail` AS select
+	bpad.id,
+	bpad.create_name,
+	bpad.create_by,
+	bpad.create_date,
+	bpad.update_name,
+	bpad.update_by,
+	bpad.update_date,
+	bpad.sys_org_code,
+	bpad.sys_company_code,
+	bpad.bpm_status,
+	bpad.bpad_name,
+	bpad.bpad_brand,
+	bpad.bpad_model,
+	bpad.bpad_number,
+	bpad.bpad_remark,
+	bpadc.from_id   -- 采购合同外键
+from 
+	bus_po_apply_detail as bpad,	-- 采购申请明细
+	bus_po_apply_detail_con as bpadc	-- 采购合同申请明细
+where 
+	bpad.id = bpadc.from_po_apply_det_id ;
 
 -- ----------------------------
 -- View structure for vm_sum_bus_collect_plan
@@ -15381,6 +15911,12 @@ FROM
     vw_from_po_apply_det_id ON bus_po_apply_detail.id = vw_from_po_apply_det_id.from_po_apply_det_id ;
 
 -- ----------------------------
+-- View structure for vw_bus_po_contract_pay_total
+-- ----------------------------
+DROP VIEW IF EXISTS `vw_bus_po_contract_pay_total`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost`  VIEW `vw_bus_po_contract_pay_total` AS select sum(a.total) as total , a.from_id from vw_bus_po_pay_detail_total as a GROUP BY a.from_id ;
+
+-- ----------------------------
 -- View structure for vw_bus_po_pay_amount
 -- ----------------------------
 DROP VIEW IF EXISTS `vw_bus_po_pay_amount`;
@@ -15388,6 +15924,19 @@ CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`%`  VIEW `vw_bus_po_pay_amount` AS se
  from bus_po_pay a,bus_po_pay_detail b
  where a.id=b.from_id
  group by a.from_projm_id ;
+
+-- ----------------------------
+-- View structure for vw_bus_po_pay_detail_total
+-- ----------------------------
+DROP VIEW IF EXISTS `vw_bus_po_pay_detail_total`;
+CREATE ALGORITHM=UNDEFINED DEFINER=`root`@`localhost`  VIEW `vw_bus_po_pay_detail_total` AS select bpcp.id, bpcp.from_id, sum(bppd.bppd_pay_amount) as total
+from
+	bus_po_contract_pay as bpcp,
+	bus_po_pay_detail as bppd
+where
+	bpcp.id = bppd.from_po_contpay_id
+GROUP BY
+	bpcp.id ;
 
 -- ----------------------------
 -- View structure for vw_bus_po_pay_total

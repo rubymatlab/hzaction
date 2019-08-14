@@ -1,7 +1,7 @@
 package com.action.actsale.service.impl;
-import com.action.actsale.service.BusProjectServiceI;
+import com.action.actsale.service.VwBusProjectServiceI;
 import org.jeecgframework.core.common.service.impl.CommonServiceImpl;
-import com.action.actsale.entity.BusProjectEntity;
+import com.action.actsale.entity.VwBusProjectEntity;
 import com.action.actsale.entity.BusProjectFeeDetailEntity;
 import com.action.actsale.entity.BusProjectDisfollowEntity;
 import com.action.actsale.entity.BusProjPartnerEntity;
@@ -28,59 +28,59 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.jeecgframework.core.util.ResourceUtil;
 
-@Service("busProjectService")
+@Service("vwBusProjectService")
 @Transactional
-public class BusProjectServiceImpl extends CommonServiceImpl implements BusProjectServiceI {
+public class VwBusProjectServiceImpl extends CommonServiceImpl implements VwBusProjectServiceI {
 
 	@Autowired
 	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
- 	public void delete(BusProjectEntity entity) throws Exception{
+ 	public void delete(VwBusProjectEntity entity) throws Exception{
  		super.delete(entity);
  	}
-	public void addMain(BusProjectEntity busProject,
+	public void addMain(VwBusProjectEntity vwBusProject,
 	        List<BusProjectFeeDetailEntity> busProjectFeeDetailList,List<BusProjectDisfollowEntity> busProjectDisfollowList,List<BusProjPartnerEntity> busProjPartnerList) throws Exception{
 			//保存主信息
-			this.save(busProject);
+			this.save(vwBusProject);
 		
 			/**保存-项目立项费用明细*/
 			for(BusProjectFeeDetailEntity busProjectFeeDetail:busProjectFeeDetailList){
 				//外键设置
-				busProjectFeeDetail.setFromId(busProject.getId());
+				busProjectFeeDetail.setFromId(vwBusProject.getId());
 				this.save(busProjectFeeDetail);
 			}
 			/**保存-分配跟进明细*/
 			for(BusProjectDisfollowEntity busProjectDisfollow:busProjectDisfollowList){
 				//外键设置
-				busProjectDisfollow.setFromId(busProject.getId());
+				busProjectDisfollow.setFromId(vwBusProject.getId());
 				this.save(busProjectDisfollow);
 			}
 			/**保存-立项合作伙伴资料*/
 			for(BusProjPartnerEntity busProjPartner:busProjPartnerList){
 				//外键设置
-				busProjPartner.setFromId(busProject.getId());
+				busProjPartner.setFromId(vwBusProject.getId());
 				this.save(busProjPartner);
 			}
 	}
 
-	public void updateMain(BusProjectEntity busProject,
+	public void updateMain(VwBusProjectEntity vwBusProject,
 	        List<BusProjectFeeDetailEntity> busProjectFeeDetailList,List<BusProjectDisfollowEntity> busProjectDisfollowList,List<BusProjPartnerEntity> busProjPartnerList) throws Exception {
 		//保存主表信息
-		if(StringUtil.isNotEmpty(busProject.getId())){
+		if(StringUtil.isNotEmpty(vwBusProject.getId())){
 			try {
-				BusProjectEntity temp = findUniqueByProperty(BusProjectEntity.class, "id", busProject.getId());
-				MyBeanUtils.copyBeanNotNull2Bean(busProject, temp);
+				VwBusProjectEntity temp = findUniqueByProperty(VwBusProjectEntity.class, "id", vwBusProject.getId());
+				MyBeanUtils.copyBeanNotNull2Bean(vwBusProject, temp);
 				this.saveOrUpdate(temp);
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		}else{
-			this.saveOrUpdate(busProject);
+			this.saveOrUpdate(vwBusProject);
 		}
 		//===================================================================================
 		//获取参数
-		Object id0 = busProject.getId();
-		Object id1 = busProject.getId();
-		Object id2 = busProject.getId();
+		Object id0 = vwBusProject.getId();
+		Object id1 = vwBusProject.getId();
+		Object id2 = vwBusProject.getId();
 		//===================================================================================
 		//1.查询出数据库的明细数据-项目立项费用明细
 	    String hql0 = "from BusProjectFeeDetailEntity where 1 = 1 AND fromId = ? ";
@@ -113,7 +113,7 @@ public class BusProjectServiceImpl extends CommonServiceImpl implements BusProje
 			for(BusProjectFeeDetailEntity busProjectFeeDetail:busProjectFeeDetailList){
 				if(oConvertUtils.isEmpty(busProjectFeeDetail.getId())){
 					//外键设置
-					busProjectFeeDetail.setFromId(busProject.getId());
+					busProjectFeeDetail.setFromId(vwBusProject.getId());
 					this.save(busProjectFeeDetail);
 				}
 			}
@@ -150,7 +150,7 @@ public class BusProjectServiceImpl extends CommonServiceImpl implements BusProje
 			for(BusProjectDisfollowEntity busProjectDisfollow:busProjectDisfollowList){
 				if(oConvertUtils.isEmpty(busProjectDisfollow.getId())){
 					//外键设置
-					busProjectDisfollow.setFromId(busProject.getId());
+					busProjectDisfollow.setFromId(vwBusProject.getId());
 					this.save(busProjectDisfollow);
 				}
 			}
@@ -187,21 +187,21 @@ public class BusProjectServiceImpl extends CommonServiceImpl implements BusProje
 			for(BusProjPartnerEntity busProjPartner:busProjPartnerList){
 				if(oConvertUtils.isEmpty(busProjPartner.getId())){
 					//外键设置
-					busProjPartner.setFromId(busProject.getId());
+					busProjPartner.setFromId(vwBusProject.getId());
 					this.save(busProjPartner);
 				}
 			}
 		}
 	}
 
-	public void delMain(BusProjectEntity busProject) throws Exception{
+	public void delMain(VwBusProjectEntity vwBusProject) throws Exception{
 		//删除主表信息
-		this.delete(busProject);
+		this.delete(vwBusProject);
 		//===================================================================================
 		//获取参数
-		Object id0 = busProject.getId();
-		Object id1 = busProject.getId();
-		Object id2 = busProject.getId();
+		Object id0 = vwBusProject.getId();
+		Object id1 = vwBusProject.getId();
+		Object id2 = vwBusProject.getId();
 		//===================================================================================
 		//删除-项目立项费用明细
 	    String hql0 = "from BusProjectFeeDetailEntity where 1 = 1 AND fromId = ? ";
@@ -224,7 +224,7 @@ public class BusProjectServiceImpl extends CommonServiceImpl implements BusProje
 	 * @param id
 	 * @return
 	 */
-	 public void doDoBidBus(BusProjectEntity t) throws Exception{
+	 public void doBidBus(VwBusProjectEntity t) throws Exception{
 	 	//-----------------sql增强 start----------------------------
 	 	//-----------------sql增强 end------------------------------
 	 	
@@ -236,7 +236,7 @@ public class BusProjectServiceImpl extends CommonServiceImpl implements BusProje
 	 * @param id
 	 * @return
 	 */
-	 public void doDoContractBus(BusProjectEntity t) throws Exception{
+	 public void doContractBus(VwBusProjectEntity t) throws Exception{
 	 	//-----------------sql增强 start----------------------------
 	 	//-----------------sql增强 end------------------------------
 	 	

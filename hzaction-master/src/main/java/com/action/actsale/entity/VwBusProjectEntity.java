@@ -21,14 +21,14 @@ import org.jeecgframework.poi.excel.annotation.Excel;
  * @Title: Entity
  * @Description: 项目立项
  * @author onlineGenerator
- * @date 2019-08-14 21:55:23
+ * @date 2019-08-14 22:03:22
  * @version V1.0   
  *
  */
 @Entity
-@Table(name = "bus_project", schema = "")
+@Table(name = "vw_bus_project", schema = "")
 @SuppressWarnings("serial")
-public class BusProjectEntity implements java.io.Serializable {
+public class VwBusProjectEntity implements java.io.Serializable {
 	/**主键*/
 	private java.lang.String id;
 	/**项目编号*/
@@ -46,12 +46,12 @@ public class BusProjectEntity implements java.io.Serializable {
 	/**项目简介*/
 	@Excel(name="项目简介",width=15)
 	private java.lang.String bpIntroduction;
-	/**产品解决方案*/
-	@Excel(name="产品解决方案",width=15)
-	private java.lang.String bpProSolutions;
 	/**问题or协助*/
 	@Excel(name="问题or协助",width=15)
 	private java.lang.String bpQuestions;
+	/**产品解决方案*/
+	@Excel(name="产品解决方案",width=15)
+	private java.lang.String bpProSolutions;
 	/**竞争情况*/
 	@Excel(name="竞争情况",width=15)
 	private java.lang.String bpCompetition;
@@ -76,24 +76,30 @@ public class BusProjectEntity implements java.io.Serializable {
 	/**客户资料外键*/
 	@Excel(name="客户资料外键",width=15)
 	private java.lang.String fromCustId;
+	/**客户编号*/
+	@Excel(name="客户编号",width=15)
+	private java.lang.String bcId;
+	/**客户名称*/
+	@Excel(name="客户名称",width=15)
+	private java.lang.String bcName;
+	/**流程状态*/
+	private java.lang.String bpmStatus;
 	/**创建人名称*/
 	private java.lang.String createName;
 	/**创建人登录名称*/
 	private java.lang.String createBy;
-	/**创建日期*/
-	private java.util.Date createDate;
 	/**更新人名称*/
 	private java.lang.String updateName;
 	/**更新人登录名称*/
 	private java.lang.String updateBy;
-	/**更新日期*/
-	private java.util.Date updateDate;
 	/**所属部门*/
 	private java.lang.String sysOrgCode;
 	/**所属公司*/
 	private java.lang.String sysCompanyCode;
-	/**流程状态*/
-	private java.lang.String bpmStatus;
+	/**创建日期*/
+	private java.util.Date createDate;
+	/**更新日期*/
+	private java.util.Date updateDate;
 	
 	/**
 	 *方法: 取得java.lang.String
@@ -157,7 +163,7 @@ public class BusProjectEntity implements java.io.Serializable {
 	 *@return: java.util.Date  立项时间
 	 */
 	
-	@Column(name ="BP_DATE",nullable=true,length=500)
+	@Column(name ="BP_DATE",nullable=true)
 	public java.util.Date getBpDate(){
 		return this.bpDate;
 	}
@@ -208,24 +214,6 @@ public class BusProjectEntity implements java.io.Serializable {
 	
 	/**
 	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  产品解决方案
-	 */
-	
-	@Column(name ="BP_PRO_SOLUTIONS",nullable=true,length=500)
-	public java.lang.String getBpProSolutions(){
-		return this.bpProSolutions;
-	}
-
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  产品解决方案
-	 */
-	public void setBpProSolutions(java.lang.String bpProSolutions){
-		this.bpProSolutions = bpProSolutions;
-	}
-	
-	/**
-	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  问题or协助
 	 */
 	
@@ -240,6 +228,24 @@ public class BusProjectEntity implements java.io.Serializable {
 	 */
 	public void setBpQuestions(java.lang.String bpQuestions){
 		this.bpQuestions = bpQuestions;
+	}
+	
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  产品解决方案
+	 */
+	
+	@Column(name ="BP_PRO_SOLUTIONS",nullable=true,length=500)
+	public java.lang.String getBpProSolutions(){
+		return this.bpProSolutions;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  产品解决方案
+	 */
+	public void setBpProSolutions(java.lang.String bpProSolutions){
+		this.bpProSolutions = bpProSolutions;
 	}
 	
 	/**
@@ -301,7 +307,7 @@ public class BusProjectEntity implements java.io.Serializable {
 	 *@return: java.util.Date  方案输出时间
 	 */
 	
-	@Column(name ="BP_OUT_TIME",nullable=true,length=32)
+	@Column(name ="BP_OUT_TIME",nullable=true)
 	public java.util.Date getBpOutTime(){
 		return this.bpOutTime;
 	}
@@ -319,7 +325,7 @@ public class BusProjectEntity implements java.io.Serializable {
 	 *@return: java.util.Date  方案定稿时间
 	 */
 	
-	@Column(name ="BP_FINISH_TIME",nullable=true,length=32)
+	@Column(name ="BP_FINISH_TIME",nullable=true)
 	public java.util.Date getBpFinishTime(){
 		return this.bpFinishTime;
 	}
@@ -337,7 +343,7 @@ public class BusProjectEntity implements java.io.Serializable {
 	 *@return: java.util.Date  正式挂网时间
 	 */
 	
-	@Column(name ="BP_ONLINE_TIME",nullable=true,length=32)
+	@Column(name ="BP_ONLINE_TIME",nullable=true)
 	public java.util.Date getBpOnlineTime(){
 		return this.bpOnlineTime;
 	}
@@ -373,7 +379,7 @@ public class BusProjectEntity implements java.io.Serializable {
 	 *@return: java.lang.String  客户资料外键
 	 */
 	
-	@Column(name ="FROM_CUST_ID",nullable=true,length=32)
+	@Column(name ="FROM_CUST_ID",nullable=true,length=36)
 	public java.lang.String getFromCustId(){
 		return this.fromCustId;
 	}
@@ -384,6 +390,60 @@ public class BusProjectEntity implements java.io.Serializable {
 	 */
 	public void setFromCustId(java.lang.String fromCustId){
 		this.fromCustId = fromCustId;
+	}
+	
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  客户编号
+	 */
+	
+	@Column(name ="BC_ID",nullable=true,length=20)
+	public java.lang.String getBcId(){
+		return this.bcId;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  客户编号
+	 */
+	public void setBcId(java.lang.String bcId){
+		this.bcId = bcId;
+	}
+	
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  客户名称
+	 */
+	
+	@Column(name ="BC_NAME",nullable=true,length=100)
+	public java.lang.String getBcName(){
+		return this.bcName;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  客户名称
+	 */
+	public void setBcName(java.lang.String bcName){
+		this.bcName = bcName;
+	}
+	
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  流程状态
+	 */
+	
+	@Column(name ="BPM_STATUS",nullable=true,length=32)
+	public java.lang.String getBpmStatus(){
+		return this.bpmStatus;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  流程状态
+	 */
+	public void setBpmStatus(java.lang.String bpmStatus){
+		this.bpmStatus = bpmStatus;
 	}
 	
 	/**
@@ -423,24 +483,6 @@ public class BusProjectEntity implements java.io.Serializable {
 	}
 	
 	/**
-	 *方法: 取得java.util.Date
-	 *@return: java.util.Date  创建日期
-	 */
-	
-	@Column(name ="CREATE_DATE",nullable=true,length=20)
-	public java.util.Date getCreateDate(){
-		return this.createDate;
-	}
-
-	/**
-	 *方法: 设置java.util.Date
-	 *@param: java.util.Date  创建日期
-	 */
-	public void setCreateDate(java.util.Date createDate){
-		this.createDate = createDate;
-	}
-	
-	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  更新人名称
 	 */
@@ -474,24 +516,6 @@ public class BusProjectEntity implements java.io.Serializable {
 	 */
 	public void setUpdateBy(java.lang.String updateBy){
 		this.updateBy = updateBy;
-	}
-	
-	/**
-	 *方法: 取得java.util.Date
-	 *@return: java.util.Date  更新日期
-	 */
-	
-	@Column(name ="UPDATE_DATE",nullable=true,length=20)
-	public java.util.Date getUpdateDate(){
-		return this.updateDate;
-	}
-
-	/**
-	 *方法: 设置java.util.Date
-	 *@param: java.util.Date  更新日期
-	 */
-	public void setUpdateDate(java.util.Date updateDate){
-		this.updateDate = updateDate;
 	}
 	
 	/**
@@ -531,21 +555,39 @@ public class BusProjectEntity implements java.io.Serializable {
 	}
 	
 	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  流程状态
+	 *方法: 取得java.util.Date
+	 *@return: java.util.Date  创建日期
 	 */
 	
-	@Column(name ="BPM_STATUS",nullable=true,length=32)
-	public java.lang.String getBpmStatus(){
-		return this.bpmStatus;
+	@Column(name ="CREATE_DATE",nullable=true)
+	public java.util.Date getCreateDate(){
+		return this.createDate;
 	}
 
 	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  流程状态
+	 *方法: 设置java.util.Date
+	 *@param: java.util.Date  创建日期
 	 */
-	public void setBpmStatus(java.lang.String bpmStatus){
-		this.bpmStatus = bpmStatus;
+	public void setCreateDate(java.util.Date createDate){
+		this.createDate = createDate;
+	}
+	
+	/**
+	 *方法: 取得java.util.Date
+	 *@return: java.util.Date  更新日期
+	 */
+	
+	@Column(name ="UPDATE_DATE",nullable=true)
+	public java.util.Date getUpdateDate(){
+		return this.updateDate;
+	}
+
+	/**
+	 *方法: 设置java.util.Date
+	 *@param: java.util.Date  更新日期
+	 */
+	public void setUpdateDate(java.util.Date updateDate){
+		this.updateDate = updateDate;
 	}
 	
 }

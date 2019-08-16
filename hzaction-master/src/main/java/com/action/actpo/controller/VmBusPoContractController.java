@@ -266,7 +266,6 @@ public class VmBusPoContractController extends BaseController {
 					snameNo = "0"+snameNo;
 				}
 			}
-			
 			int year =Calendar.getInstance().get(Calendar.YEAR);
 
 			String pipeNum = proj_id +"-CG-"+ snameNo;
@@ -542,7 +541,6 @@ public class VmBusPoContractController extends BaseController {
 			try {
 				List<BusPoContractDetailEntity> listBusPoContractDetailEntitys = ExcelImportUtil.importExcel(file.getInputStream(),BusPoContractDetailEntity.class,params);
 				j.setMsg("文件导入成功！");
-				System.out.println(listBusPoContractDetailEntitys.get(0).getClass());
 				j.setObj(listBusPoContractDetailEntitys);		
 			} catch (Exception e) {
 				j.setMsg("文件导入失败！");

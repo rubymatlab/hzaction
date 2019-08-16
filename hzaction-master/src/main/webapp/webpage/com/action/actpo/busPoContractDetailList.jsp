@@ -248,9 +248,17 @@
 	                 		var name = $(tr).find("input").eq(2).attr("name")
 	                 		var inputs = name.split(".");
 	                 		for(var key in data[i]){
-	                 			$("input[name='"+inputs[0]+"."+ key +"']")
-	                 			&& 
-	                 			$("input[name='"+inputs[0]+"."+ key +"']").val(data[i][key])
+	                 			var tInp = $("input[name='"+inputs[0]+"."+ key +"']");
+	                 			tInp.length != 0 && tInp.val(data[i][key]);
+	                 			if(tInp.length == 0){
+	                 				var tSel = $("select[name='"+inputs[0]+"."+ key +"']");
+	                 				tSel.length != 0 
+	                 				&& 
+	                 				tSel.find("option").each(function(index,item){
+	                 					$(item).attr("value") == data[i][key] && $(item).attr("selected", "selected");
+	                 				})
+	                 			}
+	                 			// 添加select标签的选择
 	                 		}
     	            	}
     	            	firstCompute();

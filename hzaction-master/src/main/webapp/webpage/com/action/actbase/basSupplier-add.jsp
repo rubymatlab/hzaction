@@ -32,7 +32,7 @@
 						</label>
 					</td>
 					<td class="value">
-					     	 <input id="bsName" name="bsName" type="text" maxlength="100" style="width: 150px" class="inputxt"  ignore="ignore" />
+					     	 <input id="bsName" name="bsName" type="text" maxlength="100" style="width: 300px" class="inputxt"  ignore="ignore" />
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">供应商名称</label>
 						</td>
@@ -44,7 +44,7 @@
 						</label>
 					</td>
 					<td class="value">
-					     	 <input id="bsSname" name="bsSname" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
+					     	 <input id="bsSname" name="bsSname" type="text" maxlength="32" style="width: 300px" class="inputxt"  ignore="ignore" />
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">供应商简称</label>
 						</td>
@@ -56,7 +56,7 @@
 						</label>
 					</td>
 					<td class="value">
-					     	 <input id="bsAddress" name="bsAddress" type="text" maxlength="100" style="width: 150px" class="inputxt"  ignore="ignore" />
+					     	 <input id="bsAddress" name="bsAddress" type="text" maxlength="100" style="width: 300px" class="inputxt"  ignore="ignore" />
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">供应商地址</label>
 						</td>
@@ -68,7 +68,7 @@
 						</label>
 					</td>
 					<td class="value">
-					     	 <input id="bsBankId" name="bsBankId" type="text" maxlength="50" style="width: 150px" class="inputxt"  ignore="ignore" />
+					     	 <input id="bsBankId" name="bsBankId" type="text" maxlength="50" style="width: 300px" class="inputxt"  ignore="ignore" />
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">开户行</label>
 						</td>
@@ -80,7 +80,7 @@
 						</label>
 					</td>
 					<td class="value">
-					     	 <input id="bsBankAcc" name="bsBankAcc" type="text" maxlength="50" style="width: 150px" class="inputxt"  ignore="ignore" />
+					     	 <input id="bsBankAcc" name="bsBankAcc" type="text" maxlength="50" style="width: 300px" class="inputxt"  ignore="ignore" />
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">开户帐号</label>
 						</td>
@@ -92,7 +92,7 @@
 						</label>
 					</td>
 					<td class="value">
-					     	 <input id="bsContact" name="bsContact" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
+					     	 <input id="bsContact" name="bsContact" type="text" maxlength="32" style="width: 300px" class="inputxt"  ignore="ignore" />
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">供应商联系人</label>
 						</td>
@@ -104,7 +104,7 @@
 						</label>
 					</td>
 					<td class="value">
-					     	 <input id="bsTelNo" name="bsTelNo" type="text" maxlength="40" style="width: 150px" class="inputxt"  ignore="ignore" />
+					     	 <input id="bsTelNo" name="bsTelNo" type="text" maxlength="40" style="width: 300px" class="inputxt"  ignore="ignore" />
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">供应商联系人电话</label>
 						</td>

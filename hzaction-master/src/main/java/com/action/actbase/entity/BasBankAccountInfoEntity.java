@@ -20,45 +20,18 @@ import org.jeecgframework.poi.excel.annotation.Excel;
 
 /**   
  * @Title: Entity
- * @Description: 供应商资料
+ * @Description: 银行账号信息
  * @author onlineGenerator
- * @date 2019-08-02 18:09:04
+ * @date 2019-08-02 18:09:20
  * @version V1.0   
  *
  */
 @Entity
-@Table(name = "bas_supplier", schema = "")
+@Table(name = "bas_bank_account_info", schema = "")
 @SuppressWarnings("serial")
-public class BasSupplierEntity implements java.io.Serializable {
+public class BasBankAccountInfoEntity implements java.io.Serializable {
 	/**主键*/
 	private java.lang.String id;
-	/**供应商编号*/
-	@Excel(name="供应商编号",width=15)
-	private java.lang.String bsId;
-	/**供应商名称*/
-	@Excel(name="供应商名称",width=15)
-	private java.lang.String bsName;
-	/**供应商简称*/
-	@Excel(name="供应商简称",width=15)
-	private java.lang.String bsSname;
-	/**供应商地址*/
-	@Excel(name="供应商地址",width=15)
-	private java.lang.String bsAddress;
-	/**开户行*/
-	@Excel(name="开户行",width=15)
-	private java.lang.String bsBankId;
-	/**开户帐号*/
-	@Excel(name="开户帐号",width=15)
-	private java.lang.String bsBankAcc;
-	/**供应商联系人*/
-	@Excel(name="供应商联系人",width=15)
-	private java.lang.String bsContact;
-	/**供应商联系人电话*/
-	@Excel(name="供应商联系人电话",width=15)
-	private java.lang.String bsTelNo;
-	/**备注*/
-	@Excel(name="备注",width=15)
-	private java.lang.String bsRemark;
 	/**创建人名称*/
 	private java.lang.String createName;
 	/**创建人登录名称*/
@@ -77,6 +50,24 @@ public class BasSupplierEntity implements java.io.Serializable {
 	private java.lang.String sysCompanyCode;
 	/**流程状态*/
 	private java.lang.String bpmStatus;
+	/**账号简称*/
+	@Excel(name="账号简称",width=15)
+	private java.lang.String bbaiSname;
+	/**户名*/
+	@Excel(name="户名",width=15)
+	private java.lang.String bbaiName;
+	/**开户行名称*/
+	@Excel(name="开户行名称",width=15)
+	private java.lang.String bbaiBankName;
+	/**账号*/
+	@Excel(name="账号",width=15)
+	private java.lang.String bbaiAccountNo;
+	/**开户网点*/
+	@Excel(name="开户网点",width=15)
+	private java.lang.String bbaiBankAddr;
+	/**期初余额*/
+	@Excel(name="期初余额",width=15)
+	private java.lang.Double bbaiIniBalance;
 	
 	/**
 	 *方法: 取得java.lang.String
@@ -97,159 +88,6 @@ public class BasSupplierEntity implements java.io.Serializable {
 	 */
 	public void setId(java.lang.String id){
 		this.id = id;
-	}
-	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  供应商编号
-	 */
-
-	@Column(name ="BS_ID",nullable=true,length=20)
-	public java.lang.String getBsId(){
-		return this.bsId;
-	}
-
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  供应商编号
-	 */
-	public void setBsId(java.lang.String bsId){
-		this.bsId = bsId;
-	}
-	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  供应商名称
-	 */
-
-	@Column(name ="BS_NAME",nullable=true,length=100)
-	public java.lang.String getBsName(){
-		return this.bsName;
-	}
-
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  供应商名称
-	 */
-	public void setBsName(java.lang.String bsName){
-		this.bsName = bsName;
-	}
-	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  供应商简称
-	 */
-
-	@Column(name ="BS_SNAME",nullable=true,length=32)
-	public java.lang.String getBsSname(){
-		return this.bsSname;
-	}
-
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  供应商简称
-	 */
-	public void setBsSname(java.lang.String bsSname){
-		this.bsSname = bsSname;
-	}
-	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  供应商地址
-	 */
-
-	@Column(name ="BS_ADDRESS",nullable=true,length=100)
-	public java.lang.String getBsAddress(){
-		return this.bsAddress;
-	}
-
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  供应商地址
-	 */
-	public void setBsAddress(java.lang.String bsAddress){
-		this.bsAddress = bsAddress;
-	}
-	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  开户行
-	 */
-
-	@Column(name ="BS_BANK_ID",nullable=true,length=50)
-	public java.lang.String getBsBankId(){
-		return this.bsBankId;
-	}
-
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  开户行
-	 */
-	public void setBsBankId(java.lang.String bsBankId){
-		this.bsBankId = bsBankId;
-	}
-	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  开户帐号
-	 */
-
-	@Column(name ="BS_BANK_ACC",nullable=true,length=50)
-	public java.lang.String getBsBankAcc(){
-		return this.bsBankAcc;
-	}
-
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  开户帐号
-	 */
-	public void setBsBankAcc(java.lang.String bsBankAcc){
-		this.bsBankAcc = bsBankAcc;
-	}
-	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  供应商联系人
-	 */
-
-	@Column(name ="BS_CONTACT",nullable=true,length=32)
-	public java.lang.String getBsContact(){
-		return this.bsContact;
-	}
-
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  供应商联系人
-	 */
-	public void setBsContact(java.lang.String bsContact){
-		this.bsContact = bsContact;
-	}
-	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  供应商联系人电话
-	 */
-
-	@Column(name ="BS_TEL_NO",nullable=true,length=40)
-	public java.lang.String getBsTelNo(){
-		return this.bsTelNo;
-	}
-
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  供应商联系人电话
-	 */
-	public void setBsTelNo(java.lang.String bsTelNo){
-		this.bsTelNo = bsTelNo;
-	}
-	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  备注
-	 */
-
-	@Column(name ="BS_REMARK",nullable=true,length=500)
-	public java.lang.String getBsRemark(){
-		return this.bsRemark;
-	}
-
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  备注
-	 */
-	public void setBsRemark(java.lang.String bsRemark){
-		this.bsRemark = bsRemark;
 	}
 	/**
 	 *方法: 取得java.lang.String
@@ -403,5 +241,107 @@ public class BasSupplierEntity implements java.io.Serializable {
 	 */
 	public void setBpmStatus(java.lang.String bpmStatus){
 		this.bpmStatus = bpmStatus;
+	}
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  账号简称
+	 */
+
+	@Column(name ="BBAI_SNAME",nullable=true,length=32)
+	public java.lang.String getBbaiSname(){
+		return this.bbaiSname;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  账号简称
+	 */
+	public void setBbaiSname(java.lang.String bbaiSname){
+		this.bbaiSname = bbaiSname;
+	}
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  户名
+	 */
+
+	@Column(name ="BBAI_NAME",nullable=true,length=40)
+	public java.lang.String getBbaiName(){
+		return this.bbaiName;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  户名
+	 */
+	public void setBbaiName(java.lang.String bbaiName){
+		this.bbaiName = bbaiName;
+	}
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  开户行名称
+	 */
+
+	@Column(name ="BBAI_BANK_NAME",nullable=true,length=40)
+	public java.lang.String getBbaiBankName(){
+		return this.bbaiBankName;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  开户行名称
+	 */
+	public void setBbaiBankName(java.lang.String bbaiBankName){
+		this.bbaiBankName = bbaiBankName;
+	}
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  账号
+	 */
+
+	@Column(name ="BBAI_ACCOUNT_NO",nullable=true,length=40)
+	public java.lang.String getBbaiAccountNo(){
+		return this.bbaiAccountNo;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  账号
+	 */
+	public void setBbaiAccountNo(java.lang.String bbaiAccountNo){
+		this.bbaiAccountNo = bbaiAccountNo;
+	}
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  开户网点
+	 */
+
+	@Column(name ="BBAI_BANK_ADDR",nullable=true,length=100)
+	public java.lang.String getBbaiBankAddr(){
+		return this.bbaiBankAddr;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  开户网点
+	 */
+	public void setBbaiBankAddr(java.lang.String bbaiBankAddr){
+		this.bbaiBankAddr = bbaiBankAddr;
+	}
+	/**
+	 *方法: 取得java.lang.Double
+	 *@return: java.lang.Double  期初余额
+	 */
+
+	@Column(name ="BBAI_INI_BALANCE",nullable=true,scale=2,length=12)
+	public java.lang.Double getBbaiIniBalance(){
+		return this.bbaiIniBalance;
+	}
+
+	/**
+	 *方法: 设置java.lang.Double
+	 *@param: java.lang.Double  期初余额
+	 */
+	public void setBbaiIniBalance(java.lang.Double bbaiIniBalance){
+		this.bbaiIniBalance = bbaiIniBalance;
 	}
 }

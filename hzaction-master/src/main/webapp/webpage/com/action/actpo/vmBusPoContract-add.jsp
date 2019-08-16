@@ -337,7 +337,6 @@
  <script src = "webpage/com/action/actpo/dropdown.js"></script>
  <script type="text/javascript">
 	  		function jeecgFormFileCallBack(data){
-	  			console.log(data,"test")
 	  			if (data.success == true) {
 					uploadFile(data);
 				} else {

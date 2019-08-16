@@ -648,7 +648,7 @@ public class VmBusPoContractEntity implements java.io.Serializable {
 	}
 	/**
 	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  客户简称
+	 *@return: java.lang.String  文件目录
 	 */
 	
 	@Column(name ="BAF_PATH",nullable=true,length=50)
@@ -658,7 +658,7 @@ public class VmBusPoContractEntity implements java.io.Serializable {
 
 	/**
 	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  客户简称
+	 *@param: java.lang.String  文件目录
 	 */
 	public void setBafPath(java.lang.String bafPath){
 		this.bafPath = bafPath;

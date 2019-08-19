@@ -182,7 +182,21 @@
 				<label class="Validform_label">客户名称:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bcName" name="bcName" type="text" maxlength="100" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusProjectPage.bcName}'/>
+		     	 <input id="bcName" name="bcName" type="text" maxlength="100" style="width: 150px" class="easyui-combogrid"  ignore="ignore" 
+		     	 data-options="panelWidth: 500,
+		     	 idField: 'bcName',
+		     	 textField: 'bcName',
+		     	 url: 'basCustomerController.do?datagrid&field=id,bcId,bcName',
+		     	 columns: [[ 
+		     	 	{field:'id',title:'客户ID',width:80}, 
+	                {field:'bcId',title:'客户编号',width:80}, 
+	                {field:'bcName',title:'客户名称',width:120} 
+                ]],
+                onSelect: function (row,data) {
+                	$('#fromCustId').val(data.id);
+                	$('#bcId').val(data.bcId);
+				},
+                fitColumns: true"  value='${vwBusProjectPage.bcName}' />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">客户名称</label>
 			</td>

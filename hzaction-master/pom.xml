@@ -625,8 +625,8 @@
 	</dependencies>
 
 	<organization>
-		<name>JEECG 微云快速开发平台</name>
-		<url>www.jeecg.org</url>
+		<name>安信项目管理系统</name>
+		<url>www.hzcollege.com</url>
 	</organization>
 	<build>
 		<finalName>${project.artifactId}</finalName>

@@ -83,6 +83,16 @@ public class VwBusSpecialPayController extends BaseController {
 	public ModelAndView list(HttpServletRequest request) {
 		return new ModelAndView("com/action/actaccount/vwBusSpecialPayList");
 	}
+	
+	@RequestMapping(params = "listYes")
+	public ModelAndView listYes(HttpServletRequest request) {
+		return new ModelAndView("com/action/actaccount/vwBusSpecialPayListYes");
+	}
+	
+	@RequestMapping(params = "index")
+	public ModelAndView index(String bpmStatus, HttpServletRequest request) {
+		return new ModelAndView("com/action/actaccount/vwBusSpecialPayIndex");
+	}
 
 	/**
 	 * easyui AJAX请求数据

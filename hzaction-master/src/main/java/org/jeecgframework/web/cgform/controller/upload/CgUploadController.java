@@ -140,7 +140,7 @@ public class CgUploadController extends BaseController {
 				logger.info("ID:"+basAttachFileEntity.getId()+",附件分类:"+basAttachFileEntity.getBafAttachClass()+
 						",业务外键:"+basAttachFileEntity.getBafBusId()+",文件路径:"+basAttachFileEntity.getBafPath()+",文件名称:"+basAttachFileEntity.getBafFilename());
 				basAttachFileService.save(basAttachFileEntity);
-				logger.info("----bas_attach_file--saveFiles--上传合同电子档的信息保存到数据库----操作成功----【WMT】");
+				logger.info("----bas_attach_file--saveFiles--上传合同电子档的信息保存到数据库----操作成功----【AX】");
 			}
 		}
 		//ax

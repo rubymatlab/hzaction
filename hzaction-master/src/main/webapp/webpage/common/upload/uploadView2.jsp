@@ -15,6 +15,6 @@
 </script>
 </head>
  <body style="overflow-x:hidden">
-  <t:webUploader auto="true" name="onetomany" outJs="false" fileNumLimit="1"></t:webUploader>
+  <t:webUploader auto="false" name="onetomany" outJs="false" fileNumLimit="1"></t:webUploader>
  </body>
  </html>

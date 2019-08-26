@@ -1,0 +1,115 @@
+[2019-08-22 22:22:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgdynamgraph.dao.core.CgDynamGraphDao }
+[2019-08-22 22:22:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormFieldDao }
+[2019-08-22 22:22:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormVersionDao }
+[2019-08-22 22:22:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.upload.CgFormUploadDao }
+[2019-08-22 22:22:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgreport.dao.core.CgReportDao }
+[2019-08-22 22:22:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.system.dao.DepartAuthGroupDao }
+[2019-08-22 22:22:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.system.dao.JeecgDictDao }
+[2019-08-22 22:22:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.demo.dao.JeecgMinidaoDao }
+[2019-08-22 22:22:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.mutiLang.dao.P3MutiLangDao }
+[2019-08-22 22:22:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.tag.select.dict.dao.TSTypeDao }
+[2019-08-22 22:22:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.tag.select.table.dao.CustomTableDao }
+[2019-08-22 22:22:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.dao.TSOperationDao }
+[2019-08-22 22:22:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.actInvite.dao.WxActInviteDao }
+[2019-08-22 22:22:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.auth.dao.JwSystemAuthDao }
+[2019-08-22 22:22:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderCustomDao }
+[2019-08-22 22:22:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderMainDao }
+[2019-08-22 22:22:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderProductDao }
+[2019-08-22 22:22:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.chat.dao.ChatMessageHistoryDao }
+[2019-08-22 22:22:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.chat.dao.ImDao }
+[2019-08-22 22:22:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailAttachDao }
+[2019-08-22 22:22:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailDao }
+[2019-08-22 22:22:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailReceiverDao }
+[2019-08-22 22:22:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailTSBaseUserDao }
+[2019-08-22 22:22:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailTSUserDao }
+[2019-08-22 22:22:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.action.actaccount.dao.ActaccountDao }
+[2019-08-22 22:22:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.action.actsale.dao.BusContractMiniDao }
+[2019-08-22 22:22:28] [INFO] [com.alibaba.druid.pool.DruidDataSource:928] {dataSource-1} inited
+[2019-08-22 22:22:31] [WARN] [org.hibernate.id.UUIDHexGenerator:59] HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+[2019-08-22 22:22:32] [WARN] [net.sf.ehcache.config.CacheConfiguration:698] Cache 'foreverCache' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'foreverCache' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+[2019-08-22 22:22:36] [INFO] [org.quartz.impl.StdSchedulerFactory:1208] Using default implementation for ThreadExecutor
+[2019-08-22 22:22:36] [INFO] [org.quartz.core.SchedulerSignalerImpl:61] Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2019-08-22 22:22:36] [INFO] [org.quartz.core.QuartzScheduler:229] Quartz Scheduler v.2.3.0 created.
+[2019-08-22 22:22:36] [INFO] [org.quartz.simpl.RAMJobStore:155] RAMJobStore initialized.
+[2019-08-22 22:22:36] [INFO] [org.quartz.core.QuartzScheduler:294] Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactory' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2019-08-22 22:22:36] [INFO] [org.quartz.impl.StdSchedulerFactory:1362] Quartz scheduler 'schedulerFactory' initialized from an externally provided properties instance.
+[2019-08-22 22:22:36] [INFO] [org.quartz.impl.StdSchedulerFactory:1366] Quartz scheduler version: 2.3.0
+[2019-08-22 22:22:36] [INFO] [org.quartz.core.QuartzScheduler:2287] JobFactory set to: org.jeecgframework.web.system.sms.util.JQuartzJobFactory@35e67c1
+[2019-08-22 22:22:37] [INFO] [org.jeecgframework.core.timer.DynamicTask:252]  register time task class num is [0] 
+[2019-08-22 22:22:41] [INFO] [org.jeecgframework.core.timer.DataBaseSchedulerFactoryBean:648] Starting Quartz Scheduler now
+[2019-08-22 22:22:41] [INFO] [org.quartz.core.QuartzScheduler:547] Scheduler schedulerFactory_$_NON_CLUSTERED started.
+[2019-08-22 22:22:42] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:180]   ------ 初始化字典组 【系统缓存】-----------typeGroupsList-----size: [52]
+[2019-08-22 22:22:42] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:181]   ------ 初始化字典 【系统缓存】-----------typesList-----size: [52]
+[2019-08-22 22:22:42] [INFO] [org.jeecgframework.web.system.service.impl.MutiLangServiceImpl:43]   ------ 初始化国际化语言【系统缓存】  ------ size: [1219] 
+[2019-08-22 22:22:42] [INFO] [org.jeecgframework.web.system.service.impl.DynamicDataSourceServiceImpl:41]   ------ 初始化动态数据源配置【系统缓存】---------size: [2] 
+[2019-08-22 22:23:41] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:223]  >>>>>>>>>>>>>>>>>>>>>>>>>>  Login 用户登录成功，初始化Main首页用户信息  （Main 首页加载逻辑）  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+[2019-08-22 22:23:41] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:264] login 资源路径returnURL：null
+[2019-08-22 22:23:43] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\upload\files\20180715\qq_1531625977907.jpg (系统找不到指定的路径。)
+[2019-08-22 22:23:43] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\20170502\4afbfbedab64034f9015f1bca8c379310b551dab.jpg (系统找不到指定的路径。)
+[2019-08-22 22:23:45] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-22 22:29:49] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-22 22:32:05] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:223] -- 更新采购付款单视图_wmt --
+[2019-08-22 22:32:05] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:303] -- 【bus_po_pay】实体主表更新操作增强业务：BusPoPayWmtEntity [id=4028aa816ca48344016ca48545720002, bppPayId=AX-2019-客户简称-项目编号-FK-002, bppInvType=, bppInvAmount=null, bppTaxRate=, bppPayDate=null, bppState=0, bppMoney=null, fromProjmId=4028aa816c6a78d4016c6a7fb3e60005, fromSuppId=402862816c3c7865016c3c842a250001, bppAccessory=null, createName=null, createBy=null, createDate=null, updateName=null, updateBy=null, updateDate=null, sysOrgCode=null, sysCompanyCode=null, bpmStatus=null] --
+[2019-08-22 22:32:05] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:318] -- 【bus_po_contract_pay】实体附表更新操作增强业务：[] --
+[2019-08-22 22:32:05] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-22 22:37:20] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-22 22:43:02] [INFO] [org.jeecgframework.web.system.controller.core.SystemController:1563] -- WebUploader文件上传处理/删除处理操作 --
+[2019-08-22 22:43:15] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:223] -- 更新采购付款单视图_wmt --
+[2019-08-22 22:43:15] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:303] -- 【bus_po_pay】实体主表更新操作增强业务：BusPoPayWmtEntity [id=4028aa816cacbd68016cacbdfe430002, bppPayId=AX-2019-客户简称-项目编号-FK-003, bppInvType=, bppInvAmount=null, bppTaxRate=, bppPayDate=null, bppState=0, bppMoney=null, fromProjmId=2c94b32c6c2cd3f7016c2d4f71d200ac, fromSuppId=402862816c3c7865016c3c842a250001, bppAccessory=null, createName=null, createBy=null, createDate=null, updateName=null, updateBy=null, updateDate=null, sysOrgCode=null, sysCompanyCode=null, bpmStatus=null] --
+[2019-08-22 22:43:15] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:318] -- 【bus_po_contract_pay】实体附表更新操作增强业务：[] --
+[2019-08-22 22:43:15] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-22 22:50:07] [INFO] [org.jeecgframework.web.system.controller.core.CommonController:69] --通用页面跳转--listTurn-------system/document/filesList
+[2019-08-22 22:52:26] [INFO] [org.jeecgframework.web.cgform.controller.upload.CgUploadController:90] -- cgUploadEntity 智能表单文件上传实体 --
+[2019-08-22 22:52:26] [INFO] [org.jeecgframework.web.cgform.controller.upload.CgUploadController:97] --cgUploadController--saveFiles--上传文件-----{id:4028aa816cb9b522016cb9d085290003}  {tableName：jeecg_multi_upload}  {cgField:TEST_FILE_1}
+[2019-08-22 22:52:26] [INFO] [org.jeecgframework.core.extend.swftools.OpenOfficePDFConverter:64] office转换服务启动失败!详细信息:java.lang.IllegalArgumentException: officeHome must exist and be a directory
+[2019-08-22 22:52:26] [INFO] [org.jeecgframework.core.extend.swftools.OpenOfficePDFConverter:29] 进行文档转换转换:G:\software\git\hzaction\hzaction-master\src\main\webapp\/upload/files/20190822225226KK3Ecj9n.xls --> G:\software\git\hzaction\hzaction-master\src\main\webapp\/upload/files/20190822225226KK3Ecj9n.pdf
+[2019-08-22 22:52:26] [INFO] [org.jeecgframework.core.extend.swftools.OpenOfficePDFConverter:35] 
+[2019-08-22 22:52:26] [INFO] [org.jeecgframework.core.extend.swftools.OpenOfficePDFConverter:69] 关闭office转换服务....
+[2019-08-22 22:52:26] [INFO] [org.jeecgframework.core.extend.swftools.OpenOfficePDFConverter:73] 关闭office转换成功!
+[2019-08-22 22:52:26] [INFO] [org.jeecgframework.core.extend.swftools.OpenOfficePDFConverter:39] 进行文档转换转换---- 结束----
+[2019-08-22 22:52:26] [INFO] [org.jeecgframework.core.util.LogUtil:228] [org.jeecgframework.core.extend.swftools.SWFToolsSWFConverter:convert2SWF():29] - PDF文件不存在！
+[2019-08-22 22:52:26] [INFO] [org.jeecgframework.web.cgform.controller.upload.CgUploadController:112] --cgUploadController--saveFiles--上传文件----数据库保存转换成功-----
+[2019-08-22 22:52:26] [INFO] [org.jeecgframework.web.cgform.controller.upload.CgUploadController:117] --cgUploadController--saveFiles--上传文件----回写业务数据表字段文件路径-----
+[2019-08-22 22:52:26] [INFO] [org.jeecgframework.web.cgform.controller.upload.CgUploadController:126] --cgUploadController--saveFiles--上传文件----操作成功-----
+[2019-08-22 22:55:51] [INFO] [org.jeecgframework.core.util.LogUtil:228] [org.jeecgframework.core.util.FileUtils:delete():171] - --------成功删除文件---------G:\software\git\hzaction\hzaction-master\src\main\webapp\upload/files/20190822225226KK3Ecj9n.xls
+[2019-08-22 22:55:51] [INFO] [org.jeecgframework.core.util.LogUtil:228] [org.jeecgframework.core.util.FileUtils:delete():167] - 错误: G:\software\git\hzaction\hzaction-master\src\main\webapp\upload/files/20190822225226KK3Ecj9n.pdf不存在!
+[2019-08-22 22:55:51] [INFO] [org.jeecgframework.core.util.LogUtil:228] [org.jeecgframework.core.util.FileUtils:delete():167] - 错误: G:\software\git\hzaction\hzaction-master\src\main\webapp\upload/files/20190822225226KK3Ecj9n.swf不存在!
+[2019-08-22 22:55:51] [INFO] [org.jeecgframework.web.cgform.controller.upload.CgUploadController:202] =======删除附件文件ID为:4028aa816cb9b522016cb9d086b60005的数据信息=====删除成功======
+[2019-08-22 22:59:59] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:223]  >>>>>>>>>>>>>>>>>>>>>>>>>>  Login 用户登录成功，初始化Main首页用户信息  （Main 首页加载逻辑）  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+[2019-08-22 22:59:59] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:264] login 资源路径returnURL：null
+[2019-08-22 23:00:01] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\upload\files\20180715\qq_1531625977907.jpg (系统找不到指定的路径。)
+[2019-08-22 23:00:01] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\20170502\4afbfbedab64034f9015f1bca8c379310b551dab.jpg (系统找不到指定的路径。)
+[2019-08-22 23:00:05] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-22 23:00:26] [INFO] [org.jeecgframework.web.system.controller.core.SystemController:1563] -- WebUploader文件上传处理/删除处理操作 --
+[2019-08-22 23:00:28] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:223] -- 更新采购付款单视图_wmt --
+[2019-08-22 23:00:28] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:303] -- 【bus_po_pay】实体主表更新操作增强业务：BusPoPayWmtEntity [id=4028aa816cacbd68016cacbdfe430002, bppPayId=AX-2019-客户简称-项目编号-FK-003, bppInvType=, bppInvAmount=null, bppTaxRate=, bppPayDate=null, bppState=0, bppMoney=null, fromProjmId=2c94b32c6c2cd3f7016c2d4f71d200ac, fromSuppId=402862816c3c7865016c3c842a250001, bppAccessory=null, createName=null, createBy=null, createDate=null, updateName=null, updateBy=null, updateDate=null, sysOrgCode=null, sysCompanyCode=null, bpmStatus=null] --
+[2019-08-22 23:00:28] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:318] -- 【bus_po_contract_pay】实体附表更新操作增强业务：[] --
+[2019-08-22 23:00:28] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-22 23:05:09] [INFO] [org.jeecgframework.web.system.controller.core.SystemController:1563] -- WebUploader文件上传处理/删除处理操作 --
+[2019-08-22 23:05:11] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:223] -- 更新采购付款单视图_wmt --
+[2019-08-22 23:05:11] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:303] -- 【bus_po_pay】实体主表更新操作增强业务：BusPoPayWmtEntity [id=4028aa816cacbd68016cacbdfe430002, bppPayId=AX-2019-客户简称-项目编号-FK-003, bppInvType=, bppInvAmount=null, bppTaxRate=, bppPayDate=null, bppState=0, bppMoney=null, fromProjmId=2c94b32c6c2cd3f7016c2d4f71d200ac, fromSuppId=402862816c3c7865016c3c842a250001, bppAccessory=null, createName=null, createBy=null, createDate=null, updateName=null, updateBy=null, updateDate=null, sysOrgCode=null, sysCompanyCode=null, bpmStatus=null] --
+[2019-08-22 23:05:11] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:318] -- 【bus_po_contract_pay】实体附表更新操作增强业务：[] --
+[2019-08-22 23:05:11] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-22 23:28:41] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:223] -- 更新采购付款单视图_wmt --
+[2019-08-22 23:28:41] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:303] -- 【bus_po_pay】实体主表更新操作增强业务：BusPoPayWmtEntity [id=4028aa816cacbd68016cacbdfe430002, bppPayId=AX-2019-客户简称-项目编号-FK-003, bppInvType=, bppInvAmount=null, bppTaxRate=, bppPayDate=null, bppState=0, bppMoney=null, fromProjmId=2c94b32c6c2cd3f7016c2d4f71d200ac, fromSuppId=402862816c3c7865016c3c842a250001, bppAccessory=null, createName=null, createBy=null, createDate=null, updateName=null, updateBy=null, updateDate=null, sysOrgCode=null, sysCompanyCode=null, bpmStatus=null] --
+[2019-08-22 23:28:42] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:318] -- 【bus_po_contract_pay】实体附表更新操作增强业务：[] --
+[2019-08-22 23:28:51] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:223] -- 更新采购付款单视图_wmt --
+[2019-08-22 23:28:51] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:303] -- 【bus_po_pay】实体主表更新操作增强业务：BusPoPayWmtEntity [id=4028aa816cacbd68016cacbdfe430002, bppPayId=AX-2019-客户简称-项目编号-FK-003, bppInvType=, bppInvAmount=null, bppTaxRate=, bppPayDate=null, bppState=0, bppMoney=null, fromProjmId=2c94b32c6c2cd3f7016c2d4f71d200ac, fromSuppId=402862816c3c7865016c3c842a250001, bppAccessory=null, createName=null, createBy=null, createDate=null, updateName=null, updateBy=null, updateDate=null, sysOrgCode=null, sysCompanyCode=null, bpmStatus=null] --
+[2019-08-22 23:28:51] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:318] -- 【bus_po_contract_pay】实体附表更新操作增强业务：[] --
+[2019-08-22 23:28:51] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-22 23:49:27] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-22 23:53:48] [INFO] [org.jeecgframework.web.system.controller.core.SystemController:1563] -- WebUploader文件上传处理/删除处理操作 --
+[2019-08-22 23:53:54] [INFO] [org.jeecgframework.web.system.controller.core.SystemController:1563] -- WebUploader文件上传处理/删除处理操作 --
+[2019-08-22 23:53:54] [INFO] [org.jeecgframework.web.system.controller.core.SystemController:1629] --------成功删除文件---------D://upFiles\upload/files/20190822/合同管理_1566489228537.xls
+[2019-08-22 23:55:28] [INFO] [org.jeecgframework.web.system.controller.core.SystemController:1563] -- WebUploader文件上传处理/删除处理操作 --
+[2019-08-22 23:55:51] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:223] -- 更新采购付款单视图_wmt --
+[2019-08-22 23:55:51] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:303] -- 【bus_po_pay】实体主表更新操作增强业务：BusPoPayWmtEntity [id=4028aa816cacbd68016cacbdfe430002, bppPayId=AX-2019-客户简称-项目编号-FK-003, bppInvType=, bppInvAmount=null, bppTaxRate=, bppPayDate=null, bppState=0, bppMoney=null, fromProjmId=2c94b32c6c2cd3f7016c2d4f71d200ac, fromSuppId=402862816c3c7865016c3c842a250001, bppAccessory=null, createName=null, createBy=null, createDate=null, updateName=null, updateBy=null, updateDate=null, sysOrgCode=null, sysCompanyCode=null, bpmStatus=null] --
+[2019-08-22 23:55:51] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:318] -- 【bus_po_contract_pay】实体附表更新操作增强业务：[] --
+[2019-08-22 23:55:51] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --

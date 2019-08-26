@@ -38,6 +38,7 @@
 	});
 	$(".tabs-wrap").css('width','100%');
   });
+  
  </script>
  </head>
  <body style="overflow-x: hidden;">
@@ -599,7 +600,6 @@
 		  					//wmt
 		  					var tbody = document.getElementById("bc_contract_file_fileTable").firstChild;
 		  			  		var delDom = obj.parentNode.parentNode;
-		  			  		console.log(delDom)
 		  			  		tbody.removeChild(delDom)
 		  					//wmt
 		  				} else {
@@ -664,4 +664,6 @@
 				}
 			}
 		}
+		
   	</script>
+  	

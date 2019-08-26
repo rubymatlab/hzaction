@@ -45,7 +45,7 @@
         }
         if (options.mode == "remote") {
             grid.datagrid("clearSelections");
-            grid.datagrid("load", $.extend({}, options.queryParams, { q: q }));
+            grid.datagrid("load", $.extend({}, options.queryParams, { [options.textField]: '*'+q+'*' }));
         } else {
             if (!q) {
                 return;
@@ -74,7 +74,7 @@
             textField: null,//ID字段名称
             //定义在文本改变的时候如何读取数据网格数据。设置为'remote'，
             //数据表格将从远程服务器加载数据。当设置为'remote'模式的时候，用户输入将会发送到名为'q'的http请求参数，向服务器检索新的数据。
-            mode: "local",
+            mode: "remote",
 
             keyHandler: {
             up: function () {
@@ -109,26 +109,17 @@
 				<div class="docs-methods" style="height:400px">
 					<input id="cc" class="easyui-combogrid" style="width:250px" data-options="
 			            panelWidth: 500,
-			            idField: 'name',
-			            textField: 'name',
-			            url: 'jeecgListDemoController.do?datagrid&field=id,name,age,birthday,depId,extField,sex,phone,salary,createDate,email,status,content,touxiang,createBy,createName,updateBy,updateDate,updateName,',
+			            idField: 'id',
+			            textField: 'bcName',
+			            url: 'basCustomerController.do?datagrid&field=id,bcId,bcName,bcSname',
 			            columns: [[
-			                {field:'name',title:'姓名',width:80},
-			                {field:'age',title:'年龄',width:120},
-			                {field: 'sex',title: '性别',width: 120,
-							formatter: function(value, rec, index) {
-								if (value == '0') {
-			                        return '男';
-			                    }
-			                    if (value == '1') {
-			                        return '女';
-			                    } else {
-			                        return value;
-			                    }
-							}
-			            },
-						{field:'salary',title: '工资', sortable: true,width:120},
+			                {field:'bcId',title:'姓名',width:80},
+			                {field:'bcName',title:'年龄',width:120},
+			                {field: 'bcAddress',title: '性别',width: 120}
 			            ]],
+			            onSelect: function (row,data) {
+			            	//console.log(data);
+					    },
 			             fitColumns: true
 			        ">
 			</div>

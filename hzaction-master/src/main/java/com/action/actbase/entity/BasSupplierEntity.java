@@ -22,7 +22,7 @@ import org.jeecgframework.poi.excel.annotation.Excel;
  * @Title: Entity
  * @Description: 供应商资料
  * @author onlineGenerator
- * @date 2019-08-01 17:28:33
+ * @date 2019-08-02 18:09:04
  * @version V1.0   
  *
  */

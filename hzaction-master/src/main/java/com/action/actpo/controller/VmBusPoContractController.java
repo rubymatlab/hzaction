@@ -11,6 +11,7 @@ import com.action.actpo.entity.BusPoContractEntity;
 
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
 import java.util.List;
 import java.text.SimpleDateFormat;
 import javax.servlet.http.HttpServletRequest;
@@ -35,6 +36,8 @@ import org.jeecgframework.core.util.ExceptionUtil;
 import org.jeecgframework.core.util.ResourceUtil;
 import org.jeecgframework.core.util.StringUtil;
 import org.jeecgframework.tag.core.easyui.TagUtil;
+import org.jeecgframework.web.cgform.entity.upload.CgUploadEntity;
+import org.jeecgframework.web.cgform.service.config.CgFormFieldServiceI;
 import org.jeecgframework.web.system.pojo.base.TSDepart;
 import org.jeecgframework.web.system.service.SystemService;
 import org.jeecgframework.core.util.MyBeanUtils;
@@ -97,6 +100,8 @@ public class VmBusPoContractController extends BaseController {
 	private BusPoContractServiceI busPoContractService;
 	@Autowired
 	private SystemService systemService;
+	@Autowired
+	private CgFormFieldServiceI cgFormFieldService;
 	@Autowired
 	private Validator validator;
 
@@ -261,7 +266,6 @@ public class VmBusPoContractController extends BaseController {
 					snameNo = "0"+snameNo;
 				}
 			}
-			
 			int year =Calendar.getInstance().get(Calendar.YEAR);
 
 			String pipeNum = proj_id +"-CG-"+ snameNo;
@@ -278,7 +282,7 @@ public class VmBusPoContractController extends BaseController {
 			}
 			
 			busPoContractService.addMain(busPoContract, busPoContractPayList,busPoApplyDetailConList,busPoContractDetailList);
-			
+			vmBusPoContract.setId(busPoContract.getId());
 			//vmBusPoContractService.addMain(vmBusPoContract, vmMergeBusPoApplyDetailList,busPoContractPayList,busPoContractDetailList);
 			
 			systemService.addLog(message, Globals.Log_Type_INSERT, Globals.Log_Leavel_INFO);
@@ -288,8 +292,38 @@ public class VmBusPoContractController extends BaseController {
 			throw new BusinessException(e.getMessage());
 		}
 		j.setMsg(message);
+		j.setObj(vmBusPoContract);
 		return j;
 	}
+	
+	
+	/**
+	 * 获取文件附件信息
+	 * 
+	 * @param id busProjectDisfollow主键id
+	 */
+	@RequestMapping(params = "getFiles")
+	@ResponseBody
+	public AjaxJson getFiles(String id){
+		List<CgUploadEntity> uploadBeans = cgFormFieldService.findByProperty(CgUploadEntity.class, "cgformId", id);
+		List<Map<String,Object>> files = new ArrayList<Map<String,Object>>(0);
+		for(CgUploadEntity b:uploadBeans){
+			String title = b.getAttachmenttitle();//附件名
+			String fileKey = b.getId();//附件主键
+			String path = b.getRealpath();//附件路径
+			String field = b.getCgformField();//表单中作为附件控件的字段
+			Map<String, Object> file = new HashMap<String, Object>();
+			file.put("title", title);
+			file.put("fileKey", fileKey);
+			file.put("path", path);
+			file.put("field", field==null?"":field);
+			files.add(file);
+		}
+		AjaxJson j = new AjaxJson();
+		j.setObj(files);
+		return j;
+	}
+	
 	/**
 	 * 更新采购合同视图
 	 * 
@@ -507,7 +541,6 @@ public class VmBusPoContractController extends BaseController {
 			try {
 				List<BusPoContractDetailEntity> listBusPoContractDetailEntitys = ExcelImportUtil.importExcel(file.getInputStream(),BusPoContractDetailEntity.class,params);
 				j.setMsg("文件导入成功！");
-				System.out.println(listBusPoContractDetailEntitys.get(0).getClass());
 				j.setObj(listBusPoContractDetailEntitys);		
 			} catch (Exception e) {
 				j.setMsg("文件导入失败！");

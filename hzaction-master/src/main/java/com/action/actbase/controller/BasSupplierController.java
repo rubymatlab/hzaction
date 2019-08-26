@@ -79,7 +79,7 @@ import io.swagger.annotations.ApiParam;
  * @Title: Controller  
  * @Description: 供应商资料
  * @author onlineGenerator
- * @date 2019-08-01 17:28:33
+ * @date 2019-08-02 18:09:04
  * @version V1.0   
  *
  */
@@ -119,6 +119,13 @@ public class BasSupplierController extends BaseController {
 
 	@RequestMapping(params = "datagrid")
 	public void datagrid(BasSupplierEntity basSupplier,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
+		//实现"名称"的模糊查询
+		  if(basSupplier!=null&&basSupplier.getBsName()!=null){
+			  basSupplier.setBsName("*"+basSupplier.getBsName()+"*");
+		  }
+		  if(basSupplier!=null&&basSupplier.getBsId()!=null){
+			  basSupplier.setBsId("*"+basSupplier.getBsId()+"*");
+		  }		
 		CriteriaQuery cq = new CriteriaQuery(BasSupplierEntity.class, dataGrid);
 		//查询条件组装器
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, basSupplier, request.getParameterMap());

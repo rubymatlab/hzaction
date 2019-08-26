@@ -1,5 +1,4 @@
 package com.action.actsale.entity;
-
 import java.math.BigDecimal;
 import java.util.Date;
 import java.lang.String;
@@ -22,7 +21,7 @@ import org.jeecgframework.poi.excel.annotation.Excel;
  * @Title: Entity
  * @Description: 项目立项费用明细
  * @author onlineGenerator
- * @date 2019-08-02 14:00:16
+ * @date 2019-08-14 22:03:22
  * @version V1.0   
  *
  */
@@ -70,7 +69,7 @@ public class BusProjectFeeDetailEntity implements java.io.Serializable {
 	@Id
 	@GeneratedValue(generator = "paymentableGenerator")
 	@GenericGenerator(name = "paymentableGenerator", strategy = "uuid")
-
+	
 	@Column(name ="ID",nullable=false,length=36)
 	public java.lang.String getId(){
 		return this.id;
@@ -83,11 +82,12 @@ public class BusProjectFeeDetailEntity implements java.io.Serializable {
 	public void setId(java.lang.String id){
 		this.id = id;
 	}
+	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  费用类型
 	 */
-
+	
 	@Column(name ="BPF_FEE_TYPE",nullable=true,length=32)
 	public java.lang.String getBpfFeeType(){
 		return this.bpfFeeType;
@@ -100,11 +100,12 @@ public class BusProjectFeeDetailEntity implements java.io.Serializable {
 	public void setBpfFeeType(java.lang.String bpfFeeType){
 		this.bpfFeeType = bpfFeeType;
 	}
+	
 	/**
 	 *方法: 取得java.lang.Double
 	 *@return: java.lang.Double  金额
 	 */
-
+	
 	@Column(name ="BPF_AMOUNT",nullable=true,length=32)
 	public java.lang.Double getBpfAmount(){
 		return this.bpfAmount;
@@ -117,11 +118,12 @@ public class BusProjectFeeDetailEntity implements java.io.Serializable {
 	public void setBpfAmount(java.lang.Double bpfAmount){
 		this.bpfAmount = bpfAmount;
 	}
+	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  详细描述
 	 */
-
+	
 	@Column(name ="BPF_DESC",nullable=true,length=32)
 	public java.lang.String getBpfDesc(){
 		return this.bpfDesc;
@@ -134,11 +136,12 @@ public class BusProjectFeeDetailEntity implements java.io.Serializable {
 	public void setBpfDesc(java.lang.String bpfDesc){
 		this.bpfDesc = bpfDesc;
 	}
+	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  项目立项外键
 	 */
-
+	
 	@Column(name ="FROM_ID",nullable=true,length=36)
 	public java.lang.String getFromId(){
 		return this.fromId;
@@ -151,11 +154,12 @@ public class BusProjectFeeDetailEntity implements java.io.Serializable {
 	public void setFromId(java.lang.String fromId){
 		this.fromId = fromId;
 	}
+	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  创建人名称
 	 */
-
+	
 	@Column(name ="CREATE_NAME",nullable=true,length=50)
 	public java.lang.String getCreateName(){
 		return this.createName;
@@ -168,11 +172,12 @@ public class BusProjectFeeDetailEntity implements java.io.Serializable {
 	public void setCreateName(java.lang.String createName){
 		this.createName = createName;
 	}
+	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  创建人登录名称
 	 */
-
+	
 	@Column(name ="CREATE_BY",nullable=true,length=50)
 	public java.lang.String getCreateBy(){
 		return this.createBy;
@@ -185,11 +190,12 @@ public class BusProjectFeeDetailEntity implements java.io.Serializable {
 	public void setCreateBy(java.lang.String createBy){
 		this.createBy = createBy;
 	}
+	
 	/**
 	 *方法: 取得java.util.Date
 	 *@return: java.util.Date  创建日期
 	 */
-
+	
 	@Column(name ="CREATE_DATE",nullable=true,length=20)
 	public java.util.Date getCreateDate(){
 		return this.createDate;
@@ -202,11 +208,12 @@ public class BusProjectFeeDetailEntity implements java.io.Serializable {
 	public void setCreateDate(java.util.Date createDate){
 		this.createDate = createDate;
 	}
+	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  更新人名称
 	 */
-
+	
 	@Column(name ="UPDATE_NAME",nullable=true,length=50)
 	public java.lang.String getUpdateName(){
 		return this.updateName;
@@ -219,11 +226,12 @@ public class BusProjectFeeDetailEntity implements java.io.Serializable {
 	public void setUpdateName(java.lang.String updateName){
 		this.updateName = updateName;
 	}
+	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  更新人登录名称
 	 */
-
+	
 	@Column(name ="UPDATE_BY",nullable=true,length=50)
 	public java.lang.String getUpdateBy(){
 		return this.updateBy;
@@ -236,11 +244,12 @@ public class BusProjectFeeDetailEntity implements java.io.Serializable {
 	public void setUpdateBy(java.lang.String updateBy){
 		this.updateBy = updateBy;
 	}
+	
 	/**
 	 *方法: 取得java.util.Date
 	 *@return: java.util.Date  更新日期
 	 */
-
+	
 	@Column(name ="UPDATE_DATE",nullable=true,length=20)
 	public java.util.Date getUpdateDate(){
 		return this.updateDate;
@@ -253,11 +262,12 @@ public class BusProjectFeeDetailEntity implements java.io.Serializable {
 	public void setUpdateDate(java.util.Date updateDate){
 		this.updateDate = updateDate;
 	}
+	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  所属部门
 	 */
-
+	
 	@Column(name ="SYS_ORG_CODE",nullable=true,length=50)
 	public java.lang.String getSysOrgCode(){
 		return this.sysOrgCode;
@@ -270,11 +280,12 @@ public class BusProjectFeeDetailEntity implements java.io.Serializable {
 	public void setSysOrgCode(java.lang.String sysOrgCode){
 		this.sysOrgCode = sysOrgCode;
 	}
+	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  所属公司
 	 */
-
+	
 	@Column(name ="SYS_COMPANY_CODE",nullable=true,length=50)
 	public java.lang.String getSysCompanyCode(){
 		return this.sysCompanyCode;
@@ -287,11 +298,12 @@ public class BusProjectFeeDetailEntity implements java.io.Serializable {
 	public void setSysCompanyCode(java.lang.String sysCompanyCode){
 		this.sysCompanyCode = sysCompanyCode;
 	}
+	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  流程状态
 	 */
-
+	
 	@Column(name ="BPM_STATUS",nullable=true,length=32)
 	public java.lang.String getBpmStatus(){
 		return this.bpmStatus;
@@ -304,4 +316,5 @@ public class BusProjectFeeDetailEntity implements java.io.Serializable {
 	public void setBpmStatus(java.lang.String bpmStatus){
 		this.bpmStatus = bpmStatus;
 	}
+	
 }

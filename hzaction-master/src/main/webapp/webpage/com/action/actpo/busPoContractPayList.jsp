@@ -7,9 +7,6 @@
 	$('#delBusPoContractPayBtn').linkbutton({   
 	    iconCls: 'icon-remove'  
 	}); 
-	$('#uploadBtn').linkbutton({   
-	    iconCls: 'icon-remove'  
-	}); 
 	$('#addBusPoContractPayBtn').bind('click', function(){   
  		 var tr =  $("#add_busPoContractPay_table_template tr").clone();
 	 	 $("#add_busPoContractPay_table").append(tr);
@@ -34,7 +31,6 @@
 <div style="padding: 3px; height: 25px;width:auto;" class="datagrid-toolbar">
 	<a id="addBusPoContractPayBtn" href="#">添加</a> 
 	<a id="delBusPoContractPayBtn" href="#">删除</a>
- 	<a id="uploadBtn" href="#">附件</a>
 </div>
 <table border="0" cellpadding="2" cellspacing="0" id="busPoContractPay_table">
 	<tr bgcolor="#E6E6E6">
@@ -122,12 +118,3 @@
 	</c:if>	
 	</tbody>
 </table>
-<script>
-	$('#uploadBtn').linkbutton({   
-	    iconCls: 'icon-undo'  
-	}); 
-	// 绑定采购请款汇报
-	$('#uploadBtn').bind("click",function(e){
-		 add("文件录入", "jeecgFormDemoController.do?addFiles","fList")
-	})
-</script>

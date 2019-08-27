@@ -121,7 +121,7 @@ public class VmBusPoContractController extends BaseController {
 	 * @param request
 	 * @param response
 	 * @param dataGrid
-	 * @param user
+	 * @param users
 	 */
 
 	@RequestMapping(params = "datagrid")
@@ -250,29 +250,10 @@ public class VmBusPoContractController extends BaseController {
 		AjaxJson j = new AjaxJson();
 		String message = "添加成功";
 		try{
-			// 添加流水号	-->   AX-年份-客户简称-三位序列号-CG-001 --> 项目编号+ -CG-001 
-			String proj_id = vmBusPoContract.getBpmProjId();// 项目编号
-			String sql = "select bpc_po_no, bpm_proj_id from vm_bus_po_contract where bpm_proj_id='"+ proj_id +"' ORDER BY create_date desc limit 1";
-			List<Map<String,Object>> data = this.systemService.findForJdbc(sql);
-			String snameNo = "001";
-			if(data.size() != 0) {
-				String[] tempArr = data.get(0).get("bpc_po_no").toString().split("-");
-				int cur = Integer.parseInt(tempArr[tempArr.length-1]);
-				snameNo = ++cur + "";
-				if(snameNo.length() == 1) {
-					snameNo = "00"+snameNo;
-				}
-				if(snameNo.length() == 2){
-					snameNo = "0"+snameNo;
-				}
-			}
-			int year =Calendar.getInstance().get(Calendar.YEAR);
-
-			String pipeNum = proj_id +"-CG-"+ snameNo;
 			
+		
 			BusPoContractEntity busPoContract = new BusPoContractEntity();
 			MyBeanUtils.copyBeanNotNull2Bean(vmBusPoContract,busPoContract);
-			busPoContract.setBpcPoNo(pipeNum);
 			List<BusPoApplyDetailConEntity> busPoApplyDetailConList = new ArrayList<BusPoApplyDetailConEntity>();
 			BusPoApplyDetailConEntity busPoApplyDetailConEntity = null;
 			for(VmMergeBusPoApplyDetailEntity entity : vmMergeBusPoApplyDetailList) {

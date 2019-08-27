@@ -82,6 +82,7 @@
 			            	$('#fromProjmId').val(data.id);
 			            	// $('#bpmCustSName').val(data.bpmCustSName);
 			            	window.projectId = data.id;
+			            	createBCollectId(data.bpmProjId,data.id)
 					    },
 			             fitColumns: true
 			        " />
@@ -336,6 +337,22 @@
  <script src = "webpage/com/action/actpo/vmBusPoContract.js"></script>
  <script src = "webpage/com/action/actpo/dropdown.js"></script>
  <script type="text/javascript">
+		 var bpmProjIdList = []
+			$.get("vmBusPoContractController.do?datagrid&field=bpmProjId,fromProjmId",function(row){
+				bpmProjIdList = row.rows;
+			})
+			function createBCollectId(projID,fromId){
+				var num = 1;
+				bpmProjIdList.forEach(function(item){
+					console.log(item.fromProjmId,fromId)
+					if(item.fromProjmId == fromId){
+						num++
+					}
+				})
+				$("#bpcPoNo").val(projID+"-CG-"+("00"+num).slice(-3))
+			}
+ 	
+ 
 	  		function jeecgFormFileCallBack(data){
 	  			if (data.success == true) {
 					uploadFile(data);

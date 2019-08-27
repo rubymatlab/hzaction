@@ -132,7 +132,7 @@ $(document).ready(function(){
 									</label>
 					</td>
 				  <td class="value">
-					  	<input name="busPayInfoList[0].bpiVoucherno" maxlength="20" type="text" class="inputxt"  ignore="ignore" />
+					  	<input name="busPayInfoList[0].bpiVoucherno" placeholder="自动产生" maxlength="20" type="text" class="inputxt"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">凭证号</label>
 					</td>
 				  <td align="right">
@@ -278,7 +278,7 @@ $(document).ready(function(){
 									</label>
 					</td>
 				  <td class="value">
-					  	<input name="busPayInfoList[0].bpiVoucherno" maxlength="20" type="text" class="inputxt"  ignore="ignore"  value="${poVal.bpiVoucherno }"/>
+					  	<input name="busPayInfoList[0].bpiVoucherno" placeholder="自动产生" maxlength="20" type="text" class="inputxt"  ignore="ignore"  value="${poVal.bpiVoucherno }"/>
 					  <label class="Validform_label" style="display: none;">凭证号</label>
 					</td>
 					

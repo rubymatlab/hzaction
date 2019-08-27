@@ -49,7 +49,7 @@
 				<label class="Validform_label">付款单号:</label>
 			</td>
 			<td class="value" colspan="7">
-		     	 <input id="bppPayId" name="bppPayId" type="text" maxlength="32" style="width: 80%" class="inputxt"  ignore="ignore" />
+		     	 <input id="bppPayId" name="bppPayId" placeholder="自动生成" type="text" maxlength="32" style="width: 80%" class="inputxt"  ignore="ignore" />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">付款单号</label>
 			</td>
@@ -223,7 +223,7 @@
 				<div style="width:800px;height:1px;"></div>
 				<t:tabs id="tt" iframe="false" tabPosition="top" fit="false">
 				 <t:tab href="vmBusPoPayWmtController.do?vmBusPoContractPayWmtList&id=${vmBusPoPayWmtPage.id}" icon="icon-search" title="采购付款单附表视图_wmt" id="vmBusPoContractPayWmt"></t:tab>
-				 <!--<t:tab href="vmBusPoPayWmtController.do?busPayInfoList&id=${vmBusPoPayWmtPage.id}" icon="icon-search" title="财务支付信息实体22" id="busPayInfo"></t:tab>-->
+				 <t:tab href="vmBusPoPayWmtController.do?busPayInfoList&id=${vmBusPoPayWmtPage.id}" icon="icon-search" title="财务支付信息实体" id="busPayInfo"></t:tab>
 				</t:tabs>
 			</div>
 			</t:formvalid>

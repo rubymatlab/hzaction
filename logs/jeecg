@@ -1,73 +1,37 @@
-<<<<<<< HEAD
-[2019-08-26 22:09:25] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgdynamgraph.dao.core.CgDynamGraphDao }
-[2019-08-26 22:09:25] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormFieldDao }
-[2019-08-26 22:09:25] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormVersionDao }
-[2019-08-26 22:09:25] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.upload.CgFormUploadDao }
-[2019-08-26 22:09:25] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgreport.dao.core.CgReportDao }
-[2019-08-26 22:09:25] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.system.dao.DepartAuthGroupDao }
-[2019-08-26 22:09:25] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.system.dao.JeecgDictDao }
-[2019-08-26 22:09:25] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.demo.dao.JeecgMinidaoDao }
-[2019-08-26 22:09:25] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.mutiLang.dao.P3MutiLangDao }
-[2019-08-26 22:09:25] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.tag.select.dict.dao.TSTypeDao }
-[2019-08-26 22:09:25] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.tag.select.table.dao.CustomTableDao }
-[2019-08-26 22:09:25] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.dao.TSOperationDao }
-[2019-08-26 22:09:25] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.actInvite.dao.WxActInviteDao }
-[2019-08-26 22:09:25] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.auth.dao.JwSystemAuthDao }
-[2019-08-26 22:09:25] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderCustomDao }
-[2019-08-26 22:09:25] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderMainDao }
-[2019-08-26 22:09:25] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderProductDao }
-[2019-08-26 22:09:25] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.chat.dao.ChatMessageHistoryDao }
-[2019-08-26 22:09:25] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.chat.dao.ImDao }
-[2019-08-26 22:09:25] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailAttachDao }
-[2019-08-26 22:09:25] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailDao }
-[2019-08-26 22:09:25] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailReceiverDao }
-[2019-08-26 22:09:25] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailTSBaseUserDao }
-[2019-08-26 22:09:25] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailTSUserDao }
-[2019-08-26 22:09:25] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.action.actaccount.dao.ActaccountDao }
-[2019-08-26 22:09:25] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.action.actsale.dao.BusContractMiniDao }
-[2019-08-26 22:09:26] [INFO] [com.alibaba.druid.pool.DruidDataSource:928] {dataSource-1} inited
-[2019-08-26 22:09:29] [WARN] [org.hibernate.id.UUIDHexGenerator:59] HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
-[2019-08-26 22:09:31] [WARN] [net.sf.ehcache.config.CacheConfiguration:698] Cache 'foreverCache' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'foreverCache' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
-[2019-08-26 22:09:34] [INFO] [org.quartz.impl.StdSchedulerFactory:1208] Using default implementation for ThreadExecutor
-[2019-08-26 22:09:34] [INFO] [org.quartz.core.SchedulerSignalerImpl:61] Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-[2019-08-26 22:09:34] [INFO] [org.quartz.core.QuartzScheduler:229] Quartz Scheduler v.2.3.0 created.
-[2019-08-26 22:09:34] [INFO] [org.quartz.simpl.RAMJobStore:155] RAMJobStore initialized.
-[2019-08-26 22:09:34] [INFO] [org.quartz.core.QuartzScheduler:294] Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactory' with instanceId 'NON_CLUSTERED'
-=======
-[2019-08-16 12:00:19] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgdynamgraph.dao.core.CgDynamGraphDao }
-[2019-08-16 12:00:19] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormFieldDao }
-[2019-08-16 12:00:19] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormVersionDao }
-[2019-08-16 12:00:19] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.upload.CgFormUploadDao }
-[2019-08-16 12:00:19] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgreport.dao.core.CgReportDao }
-[2019-08-16 12:00:19] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.system.dao.DepartAuthGroupDao }
-[2019-08-16 12:00:19] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.system.dao.JeecgDictDao }
-[2019-08-16 12:00:19] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.demo.dao.JeecgMinidaoDao }
-[2019-08-16 12:00:19] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.mutiLang.dao.P3MutiLangDao }
-[2019-08-16 12:00:19] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.tag.select.dict.dao.TSTypeDao }
-[2019-08-16 12:00:19] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.tag.select.table.dao.CustomTableDao }
-[2019-08-16 12:00:19] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.dao.TSOperationDao }
-[2019-08-16 12:00:19] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.actInvite.dao.WxActInviteDao }
-[2019-08-16 12:00:19] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.auth.dao.JwSystemAuthDao }
-[2019-08-16 12:00:19] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderCustomDao }
-[2019-08-16 12:00:19] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderMainDao }
-[2019-08-16 12:00:19] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderProductDao }
-[2019-08-16 12:00:19] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.chat.dao.ChatMessageHistoryDao }
-[2019-08-16 12:00:19] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.chat.dao.ImDao }
-[2019-08-16 12:00:19] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailAttachDao }
-[2019-08-16 12:00:19] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailDao }
-[2019-08-16 12:00:19] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailReceiverDao }
-[2019-08-16 12:00:19] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailTSBaseUserDao }
-[2019-08-16 12:00:19] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailTSUserDao }
-[2019-08-16 12:00:19] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.action.actsale.dao.BusContractMiniDao }
-[2019-08-16 12:00:19] [INFO] [com.alibaba.druid.pool.DruidDataSource:928] {dataSource-1} inited
-[2019-08-16 12:00:20] [WARN] [org.hibernate.id.UUIDHexGenerator:59] HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
-[2019-08-16 12:00:21] [WARN] [net.sf.ehcache.config.CacheConfiguration:698] Cache 'foreverCache' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'foreverCache' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
-[2019-08-16 12:00:22] [INFO] [org.quartz.impl.StdSchedulerFactory:1208] Using default implementation for ThreadExecutor
-[2019-08-16 12:00:22] [INFO] [org.quartz.core.SchedulerSignalerImpl:61] Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
-[2019-08-16 12:00:22] [INFO] [org.quartz.core.QuartzScheduler:229] Quartz Scheduler v.2.3.0 created.
-[2019-08-16 12:00:22] [INFO] [org.quartz.simpl.RAMJobStore:155] RAMJobStore initialized.
-[2019-08-16 12:00:22] [INFO] [org.quartz.core.QuartzScheduler:294] Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactory' with instanceId 'NON_CLUSTERED'
->>>>>>> eb8f9eb3d08dd4f9bff62d98a8d7fa3dbd278902
+[2019-08-27 09:49:29] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgdynamgraph.dao.core.CgDynamGraphDao }
+[2019-08-27 09:49:29] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormFieldDao }
+[2019-08-27 09:49:29] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormVersionDao }
+[2019-08-27 09:49:29] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.upload.CgFormUploadDao }
+[2019-08-27 09:49:29] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgreport.dao.core.CgReportDao }
+[2019-08-27 09:49:29] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.system.dao.DepartAuthGroupDao }
+[2019-08-27 09:49:29] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.system.dao.JeecgDictDao }
+[2019-08-27 09:49:29] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.demo.dao.JeecgMinidaoDao }
+[2019-08-27 09:49:29] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.mutiLang.dao.P3MutiLangDao }
+[2019-08-27 09:49:29] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.tag.select.dict.dao.TSTypeDao }
+[2019-08-27 09:49:29] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.tag.select.table.dao.CustomTableDao }
+[2019-08-27 09:49:29] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.dao.TSOperationDao }
+[2019-08-27 09:49:29] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.actInvite.dao.WxActInviteDao }
+[2019-08-27 09:49:29] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.auth.dao.JwSystemAuthDao }
+[2019-08-27 09:49:29] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderCustomDao }
+[2019-08-27 09:49:29] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderMainDao }
+[2019-08-27 09:49:29] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderProductDao }
+[2019-08-27 09:49:29] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.chat.dao.ChatMessageHistoryDao }
+[2019-08-27 09:49:29] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.chat.dao.ImDao }
+[2019-08-27 09:49:29] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailAttachDao }
+[2019-08-27 09:49:29] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailDao }
+[2019-08-27 09:49:29] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailReceiverDao }
+[2019-08-27 09:49:29] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailTSBaseUserDao }
+[2019-08-27 09:49:29] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailTSUserDao }
+[2019-08-27 09:49:29] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.action.actaccount.dao.ActaccountDao }
+[2019-08-27 09:49:29] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.action.actsale.dao.BusContractMiniDao }
+[2019-08-27 09:49:30] [INFO] [com.alibaba.druid.pool.DruidDataSource:928] {dataSource-1} inited
+[2019-08-27 09:49:33] [WARN] [org.hibernate.id.UUIDHexGenerator:59] HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+[2019-08-27 09:49:34] [WARN] [net.sf.ehcache.config.CacheConfiguration:698] Cache 'foreverCache' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'foreverCache' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+[2019-08-27 09:49:38] [INFO] [org.quartz.impl.StdSchedulerFactory:1208] Using default implementation for ThreadExecutor
+[2019-08-27 09:49:38] [INFO] [org.quartz.core.SchedulerSignalerImpl:61] Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2019-08-27 09:49:38] [INFO] [org.quartz.core.QuartzScheduler:229] Quartz Scheduler v.2.3.0 created.
+[2019-08-27 09:49:38] [INFO] [org.quartz.simpl.RAMJobStore:155] RAMJobStore initialized.
+[2019-08-27 09:49:38] [INFO] [org.quartz.core.QuartzScheduler:294] Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactory' with instanceId 'NON_CLUSTERED'
   Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
   NOT STARTED.
   Currently in standby mode.
@@ -75,51 +39,671 @@
   Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
   Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
 
-<<<<<<< HEAD
-[2019-08-26 22:09:34] [INFO] [org.quartz.impl.StdSchedulerFactory:1362] Quartz scheduler 'schedulerFactory' initialized from an externally provided properties instance.
-[2019-08-26 22:09:34] [INFO] [org.quartz.impl.StdSchedulerFactory:1366] Quartz scheduler version: 2.3.0
-[2019-08-26 22:09:34] [INFO] [org.quartz.core.QuartzScheduler:2287] JobFactory set to: org.jeecgframework.web.system.sms.util.JQuartzJobFactory@7a34a95
-[2019-08-26 22:09:35] [INFO] [org.jeecgframework.core.timer.DynamicTask:252]  register time task class num is [0] 
-[2019-08-26 22:09:39] [INFO] [org.jeecgframework.core.timer.DataBaseSchedulerFactoryBean:648] Starting Quartz Scheduler now
-[2019-08-26 22:09:39] [INFO] [org.quartz.core.QuartzScheduler:547] Scheduler schedulerFactory_$_NON_CLUSTERED started.
-[2019-08-26 22:09:39] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:180]   ------ 初始化字典组 【系统缓存】-----------typeGroupsList-----size: [52]
-[2019-08-26 22:09:39] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:181]   ------ 初始化字典 【系统缓存】-----------typesList-----size: [52]
-[2019-08-26 22:09:40] [INFO] [org.jeecgframework.web.system.service.impl.MutiLangServiceImpl:43]   ------ 初始化国际化语言【系统缓存】  ------ size: [1219] 
-[2019-08-26 22:09:40] [INFO] [org.jeecgframework.web.system.service.impl.DynamicDataSourceServiceImpl:41]   ------ 初始化动态数据源配置【系统缓存】---------size: [2] 
-[2019-08-26 22:10:06] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:223]  >>>>>>>>>>>>>>>>>>>>>>>>>>  Login 用户登录成功，初始化Main首页用户信息  （Main 首页加载逻辑）  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
-[2019-08-26 22:10:06] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:264] login 资源路径returnURL：null
-[2019-08-26 22:10:08] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\20170502\4afbfbedab64034f9015f1bca8c379310b551dab.jpg (系统找不到指定的路径。)
-[2019-08-26 22:10:08] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\upload\files\20180715\qq_1531625977907.jpg (系统找不到指定的路径。)
-[2019-08-26 22:10:11] [WARN] [org.springframework.web.servlet.PageNotFound:1114] No mapping found for HTTP request with URI [/hzaction/vwBusPoApplyController.do] in DispatcherServlet with name 'springMvc'
-[2019-08-26 22:10:13] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
-[2019-08-26 22:12:07] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:2 --
-[2019-08-26 22:12:08] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:3 --
-[2019-08-26 22:12:09] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
-[2019-08-26 22:12:17] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:2 --
-[2019-08-26 22:12:19] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
-[2019-08-26 22:12:47] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:196] -- 添加采购付款单视图_wmt --
-[2019-08-26 22:12:47] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:100] 自动生成付款单号：
-[2019-08-26 22:12:47] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:103] -- 当前最新付款单号:AX-2019-客户简称-项目编号-FK-003 --
-[2019-08-26 22:12:47] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:105] -- 自动生成当前更新付款单号:AX-2019-客户简称-项目编号-FK-004 --
-[2019-08-26 22:12:47] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
-[2019-08-26 22:13:05] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
-=======
-[2019-08-16 12:00:22] [INFO] [org.quartz.impl.StdSchedulerFactory:1362] Quartz scheduler 'schedulerFactory' initialized from an externally provided properties instance.
-[2019-08-16 12:00:22] [INFO] [org.quartz.impl.StdSchedulerFactory:1366] Quartz scheduler version: 2.3.0
-[2019-08-16 12:00:22] [INFO] [org.quartz.core.QuartzScheduler:2287] JobFactory set to: org.jeecgframework.web.system.sms.util.JQuartzJobFactory@b2d435e
-[2019-08-16 12:00:22] [INFO] [org.jeecgframework.core.timer.DynamicTask:252]  register time task class num is [0] 
-[2019-08-16 12:00:23] [INFO] [org.jeecgframework.core.timer.DataBaseSchedulerFactoryBean:648] Starting Quartz Scheduler now
-[2019-08-16 12:00:23] [INFO] [org.quartz.core.QuartzScheduler:547] Scheduler schedulerFactory_$_NON_CLUSTERED started.
-[2019-08-16 12:00:24] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:180]   ------ 初始化字典组 【系统缓存】-----------typeGroupsList-----size: [51]
-[2019-08-16 12:00:24] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:181]   ------ 初始化字典 【系统缓存】-----------typesList-----size: [51]
-[2019-08-16 12:00:24] [INFO] [org.jeecgframework.web.system.service.impl.MutiLangServiceImpl:43]   ------ 初始化国际化语言【系统缓存】  ------ size: [1219] 
-[2019-08-16 12:00:24] [INFO] [org.jeecgframework.web.system.service.impl.DynamicDataSourceServiceImpl:41]   ------ 初始化动态数据源配置【系统缓存】---------size: [2] 
-[2019-08-16 12:01:01] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:223]  >>>>>>>>>>>>>>>>>>>>>>>>>>  Login 用户登录成功，初始化Main首页用户信息  （Main 首页加载逻辑）  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
-[2019-08-16 12:01:01] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:264] login 资源路径returnURL：null
-[2019-08-16 12:01:02] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\upload\files\20180715\qq_1531625977907.jpg (系统找不到指定的路径。)
-[2019-08-16 12:01:02] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\20170502\4afbfbedab64034f9015f1bca8c379310b551dab.jpg (系统找不到指定的路径。)
-[2019-08-16 12:05:18] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:223]  >>>>>>>>>>>>>>>>>>>>>>>>>>  Login 用户登录成功，初始化Main首页用户信息  （Main 首页加载逻辑）  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
-[2019-08-16 12:05:18] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:264] login 资源路径returnURL：null
-[2019-08-16 12:05:19] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\upload\files\20180715\qq_1531625977907.jpg (系统找不到指定的路径。)
-[2019-08-16 12:05:19] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\20170502\4afbfbedab64034f9015f1bca8c379310b551dab.jpg (系统找不到指定的路径。)
->>>>>>> eb8f9eb3d08dd4f9bff62d98a8d7fa3dbd278902
+[2019-08-27 09:49:38] [INFO] [org.quartz.impl.StdSchedulerFactory:1362] Quartz scheduler 'schedulerFactory' initialized from an externally provided properties instance.
+[2019-08-27 09:49:38] [INFO] [org.quartz.impl.StdSchedulerFactory:1366] Quartz scheduler version: 2.3.0
+[2019-08-27 09:49:38] [INFO] [org.quartz.core.QuartzScheduler:2287] JobFactory set to: org.jeecgframework.web.system.sms.util.JQuartzJobFactory@2f8c992f
+[2019-08-27 09:49:39] [INFO] [org.jeecgframework.core.timer.DynamicTask:252]  register time task class num is [0] 
+[2019-08-27 09:49:43] [INFO] [org.jeecgframework.core.timer.DataBaseSchedulerFactoryBean:648] Starting Quartz Scheduler now
+[2019-08-27 09:49:43] [INFO] [org.quartz.core.QuartzScheduler:547] Scheduler schedulerFactory_$_NON_CLUSTERED started.
+[2019-08-27 09:49:43] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:180]   ------ 初始化字典组 【系统缓存】-----------typeGroupsList-----size: [52]
+[2019-08-27 09:49:43] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:181]   ------ 初始化字典 【系统缓存】-----------typesList-----size: [52]
+[2019-08-27 09:49:44] [INFO] [org.jeecgframework.web.system.service.impl.MutiLangServiceImpl:43]   ------ 初始化国际化语言【系统缓存】  ------ size: [1219] 
+[2019-08-27 09:49:44] [INFO] [org.jeecgframework.web.system.service.impl.DynamicDataSourceServiceImpl:41]   ------ 初始化动态数据源配置【系统缓存】---------size: [2] 
+[2019-08-27 09:52:17] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:223]  >>>>>>>>>>>>>>>>>>>>>>>>>>  Login 用户登录成功，初始化Main首页用户信息  （Main 首页加载逻辑）  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+[2019-08-27 09:52:18] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:264] login 资源路径returnURL：null
+[2019-08-27 09:52:20] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\upload\files\20180715\qq_1531625977907.jpg (系统找不到指定的路径。)
+[2019-08-27 09:52:20] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\20170502\4afbfbedab64034f9015f1bca8c379310b551dab.jpg (系统找不到指定的路径。)
+[2019-08-27 09:52:43] [WARN] [org.springframework.web.servlet.PageNotFound:1114] No mapping found for HTTP request with URI [/hzaction/vwBusPoPayController.do] in DispatcherServlet with name 'springMvc'
+[2019-08-27 09:52:50] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-27 09:58:40] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:196] -- 添加采购付款单视图_wmt --
+[2019-08-27 09:58:40] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:100] 自动生成付款单号：
+[2019-08-27 09:58:40] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:103] -- 当前最新付款单号:AX-2019-客户简称-项目编号-FK-003 --
+[2019-08-27 09:58:40] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:105] -- 自动生成当前更新付款单号:AX-2019-客户简称-项目编号-FK-004 --
+[2019-08-27 09:58:40] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-27 13:00:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgdynamgraph.dao.core.CgDynamGraphDao }
+[2019-08-27 13:00:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormFieldDao }
+[2019-08-27 13:00:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormVersionDao }
+[2019-08-27 13:00:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.upload.CgFormUploadDao }
+[2019-08-27 13:00:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgreport.dao.core.CgReportDao }
+[2019-08-27 13:00:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.system.dao.DepartAuthGroupDao }
+[2019-08-27 13:00:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.system.dao.JeecgDictDao }
+[2019-08-27 13:00:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.demo.dao.JeecgMinidaoDao }
+[2019-08-27 13:00:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.mutiLang.dao.P3MutiLangDao }
+[2019-08-27 13:00:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.tag.select.dict.dao.TSTypeDao }
+[2019-08-27 13:00:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.tag.select.table.dao.CustomTableDao }
+[2019-08-27 13:00:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.dao.TSOperationDao }
+[2019-08-27 13:00:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.actInvite.dao.WxActInviteDao }
+[2019-08-27 13:00:05] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.auth.dao.JwSystemAuthDao }
+[2019-08-27 13:00:05] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderCustomDao }
+[2019-08-27 13:00:05] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderMainDao }
+[2019-08-27 13:00:05] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderProductDao }
+[2019-08-27 13:00:05] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.chat.dao.ChatMessageHistoryDao }
+[2019-08-27 13:00:05] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.chat.dao.ImDao }
+[2019-08-27 13:00:05] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailAttachDao }
+[2019-08-27 13:00:05] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailDao }
+[2019-08-27 13:00:05] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailReceiverDao }
+[2019-08-27 13:00:05] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailTSBaseUserDao }
+[2019-08-27 13:00:05] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailTSUserDao }
+[2019-08-27 13:00:05] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.action.actaccount.dao.ActaccountDao }
+[2019-08-27 13:00:05] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.action.actsale.dao.BusContractMiniDao }
+[2019-08-27 13:00:06] [INFO] [com.alibaba.druid.pool.DruidDataSource:928] {dataSource-1} inited
+[2019-08-27 13:00:09] [WARN] [org.hibernate.id.UUIDHexGenerator:59] HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+[2019-08-27 13:00:11] [WARN] [net.sf.ehcache.config.CacheConfiguration:698] Cache 'foreverCache' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'foreverCache' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+[2019-08-27 13:00:15] [INFO] [org.quartz.impl.StdSchedulerFactory:1208] Using default implementation for ThreadExecutor
+[2019-08-27 13:00:15] [INFO] [org.quartz.core.SchedulerSignalerImpl:61] Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2019-08-27 13:00:15] [INFO] [org.quartz.core.QuartzScheduler:229] Quartz Scheduler v.2.3.0 created.
+[2019-08-27 13:00:15] [INFO] [org.quartz.simpl.RAMJobStore:155] RAMJobStore initialized.
+[2019-08-27 13:00:15] [INFO] [org.quartz.core.QuartzScheduler:294] Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactory' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2019-08-27 13:00:15] [INFO] [org.quartz.impl.StdSchedulerFactory:1362] Quartz scheduler 'schedulerFactory' initialized from an externally provided properties instance.
+[2019-08-27 13:00:15] [INFO] [org.quartz.impl.StdSchedulerFactory:1366] Quartz scheduler version: 2.3.0
+[2019-08-27 13:00:15] [INFO] [org.quartz.core.QuartzScheduler:2287] JobFactory set to: org.jeecgframework.web.system.sms.util.JQuartzJobFactory@4558ed6a
+[2019-08-27 13:00:16] [INFO] [org.jeecgframework.core.timer.DynamicTask:252]  register time task class num is [0] 
+[2019-08-27 13:00:20] [INFO] [org.jeecgframework.core.timer.DataBaseSchedulerFactoryBean:648] Starting Quartz Scheduler now
+[2019-08-27 13:00:20] [INFO] [org.quartz.core.QuartzScheduler:547] Scheduler schedulerFactory_$_NON_CLUSTERED started.
+[2019-08-27 13:00:20] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:180]   ------ 初始化字典组 【系统缓存】-----------typeGroupsList-----size: [52]
+[2019-08-27 13:00:20] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:181]   ------ 初始化字典 【系统缓存】-----------typesList-----size: [52]
+[2019-08-27 13:00:21] [INFO] [org.jeecgframework.web.system.service.impl.MutiLangServiceImpl:43]   ------ 初始化国际化语言【系统缓存】  ------ size: [1219] 
+[2019-08-27 13:00:21] [INFO] [org.jeecgframework.web.system.service.impl.DynamicDataSourceServiceImpl:41]   ------ 初始化动态数据源配置【系统缓存】---------size: [2] 
+[2019-08-27 13:24:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgdynamgraph.dao.core.CgDynamGraphDao }
+[2019-08-27 13:24:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormFieldDao }
+[2019-08-27 13:24:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormVersionDao }
+[2019-08-27 13:24:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.upload.CgFormUploadDao }
+[2019-08-27 13:24:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgreport.dao.core.CgReportDao }
+[2019-08-27 13:24:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.system.dao.DepartAuthGroupDao }
+[2019-08-27 13:24:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.system.dao.JeecgDictDao }
+[2019-08-27 13:24:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.demo.dao.JeecgMinidaoDao }
+[2019-08-27 13:24:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.mutiLang.dao.P3MutiLangDao }
+[2019-08-27 13:24:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.tag.select.dict.dao.TSTypeDao }
+[2019-08-27 13:24:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.tag.select.table.dao.CustomTableDao }
+[2019-08-27 13:24:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.dao.TSOperationDao }
+[2019-08-27 13:24:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.actInvite.dao.WxActInviteDao }
+[2019-08-27 13:24:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.auth.dao.JwSystemAuthDao }
+[2019-08-27 13:24:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderCustomDao }
+[2019-08-27 13:24:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderMainDao }
+[2019-08-27 13:24:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderProductDao }
+[2019-08-27 13:24:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.chat.dao.ChatMessageHistoryDao }
+[2019-08-27 13:24:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.chat.dao.ImDao }
+[2019-08-27 13:24:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailAttachDao }
+[2019-08-27 13:24:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailDao }
+[2019-08-27 13:24:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailReceiverDao }
+[2019-08-27 13:24:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailTSBaseUserDao }
+[2019-08-27 13:24:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailTSUserDao }
+[2019-08-27 13:24:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.action.actaccount.dao.ActaccountDao }
+[2019-08-27 13:24:04] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.action.actsale.dao.BusContractMiniDao }
+[2019-08-27 13:24:05] [INFO] [com.alibaba.druid.pool.DruidDataSource:928] {dataSource-1} inited
+[2019-08-27 13:24:08] [WARN] [org.hibernate.id.UUIDHexGenerator:59] HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+[2019-08-27 13:24:10] [WARN] [net.sf.ehcache.config.CacheConfiguration:698] Cache 'foreverCache' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'foreverCache' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+[2019-08-27 13:24:13] [INFO] [org.quartz.impl.StdSchedulerFactory:1208] Using default implementation for ThreadExecutor
+[2019-08-27 13:24:13] [INFO] [org.quartz.core.SchedulerSignalerImpl:61] Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2019-08-27 13:24:13] [INFO] [org.quartz.core.QuartzScheduler:229] Quartz Scheduler v.2.3.0 created.
+[2019-08-27 13:24:13] [INFO] [org.quartz.simpl.RAMJobStore:155] RAMJobStore initialized.
+[2019-08-27 13:24:13] [INFO] [org.quartz.core.QuartzScheduler:294] Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactory' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2019-08-27 13:24:13] [INFO] [org.quartz.impl.StdSchedulerFactory:1362] Quartz scheduler 'schedulerFactory' initialized from an externally provided properties instance.
+[2019-08-27 13:24:13] [INFO] [org.quartz.impl.StdSchedulerFactory:1366] Quartz scheduler version: 2.3.0
+[2019-08-27 13:24:13] [INFO] [org.quartz.core.QuartzScheduler:2287] JobFactory set to: org.jeecgframework.web.system.sms.util.JQuartzJobFactory@1ca8de02
+[2019-08-27 13:24:14] [INFO] [org.jeecgframework.core.timer.DynamicTask:252]  register time task class num is [0] 
+[2019-08-27 13:24:19] [INFO] [org.jeecgframework.core.timer.DataBaseSchedulerFactoryBean:648] Starting Quartz Scheduler now
+[2019-08-27 13:24:19] [INFO] [org.quartz.core.QuartzScheduler:547] Scheduler schedulerFactory_$_NON_CLUSTERED started.
+[2019-08-27 13:24:19] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:180]   ------ 初始化字典组 【系统缓存】-----------typeGroupsList-----size: [52]
+[2019-08-27 13:24:19] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:181]   ------ 初始化字典 【系统缓存】-----------typesList-----size: [52]
+[2019-08-27 13:24:20] [INFO] [org.jeecgframework.web.system.service.impl.MutiLangServiceImpl:43]   ------ 初始化国际化语言【系统缓存】  ------ size: [1219] 
+[2019-08-27 13:24:20] [INFO] [org.jeecgframework.web.system.service.impl.DynamicDataSourceServiceImpl:41]   ------ 初始化动态数据源配置【系统缓存】---------size: [2] 
+[2019-08-27 13:24:37] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:223]  >>>>>>>>>>>>>>>>>>>>>>>>>>  Login 用户登录成功，初始化Main首页用户信息  （Main 首页加载逻辑）  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+[2019-08-27 13:24:38] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:264] login 资源路径returnURL：null
+[2019-08-27 13:24:40] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\20170502\4afbfbedab64034f9015f1bca8c379310b551dab.jpg (系统找不到指定的路径。)
+[2019-08-27 13:24:40] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\upload\files\20180715\qq_1531625977907.jpg (系统找不到指定的路径。)
+[2019-08-27 13:24:59] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:223] -- 更新采购付款单视图_wmt --
+[2019-08-27 13:24:59] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:220] -- 自动生成支付凭证号:201907002 --
+[2019-08-27 13:24:59] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:335] -- 【bus_po_pay】实体主表更新操作增强业务：BusPoPayWmtEntity [id=4028aa816cd0c391016cd0cbea180001, bppPayId=AX-2019-客户简称-项目编号-FK-004, bppInvType=, bppInvAmount=10000, bppTaxRate=, bppPayDate=null, bppState=0, bppMoney=10000, fromProjmId=2c94b32c6c50474a016c50484d910001, fromSuppId=4028cb816c40a12d016c40a12d9f0000, bppAccessory=null, createName=null, createBy=null, createDate=null, updateName=null, updateBy=null, updateDate=null, sysOrgCode=null, sysCompanyCode=null, bpmStatus=null] --
+[2019-08-27 13:24:59] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:350] -- 【bus_po_contract_pay】实体附表更新操作增强业务：[] --
+[2019-08-27 13:25:00] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-27 13:29:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgdynamgraph.dao.core.CgDynamGraphDao }
+[2019-08-27 13:29:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormFieldDao }
+[2019-08-27 13:29:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormVersionDao }
+[2019-08-27 13:29:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.upload.CgFormUploadDao }
+[2019-08-27 13:29:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgreport.dao.core.CgReportDao }
+[2019-08-27 13:29:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.system.dao.DepartAuthGroupDao }
+[2019-08-27 13:29:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.system.dao.JeecgDictDao }
+[2019-08-27 13:29:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.demo.dao.JeecgMinidaoDao }
+[2019-08-27 13:29:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.mutiLang.dao.P3MutiLangDao }
+[2019-08-27 13:29:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.tag.select.dict.dao.TSTypeDao }
+[2019-08-27 13:29:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.tag.select.table.dao.CustomTableDao }
+[2019-08-27 13:29:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.dao.TSOperationDao }
+[2019-08-27 13:29:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.actInvite.dao.WxActInviteDao }
+[2019-08-27 13:29:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.auth.dao.JwSystemAuthDao }
+[2019-08-27 13:29:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderCustomDao }
+[2019-08-27 13:29:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderMainDao }
+[2019-08-27 13:29:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderProductDao }
+[2019-08-27 13:29:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.chat.dao.ChatMessageHistoryDao }
+[2019-08-27 13:29:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.chat.dao.ImDao }
+[2019-08-27 13:29:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailAttachDao }
+[2019-08-27 13:29:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailDao }
+[2019-08-27 13:29:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailReceiverDao }
+[2019-08-27 13:29:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailTSBaseUserDao }
+[2019-08-27 13:29:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailTSUserDao }
+[2019-08-27 13:29:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.action.actaccount.dao.ActaccountDao }
+[2019-08-27 13:29:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.action.actsale.dao.BusContractMiniDao }
+[2019-08-27 13:29:54] [INFO] [com.alibaba.druid.pool.DruidDataSource:928] {dataSource-1} inited
+[2019-08-27 13:29:58] [WARN] [org.hibernate.id.UUIDHexGenerator:59] HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+[2019-08-27 13:29:59] [WARN] [net.sf.ehcache.config.CacheConfiguration:698] Cache 'foreverCache' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'foreverCache' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+[2019-08-27 13:30:03] [INFO] [org.quartz.impl.StdSchedulerFactory:1208] Using default implementation for ThreadExecutor
+[2019-08-27 13:30:03] [INFO] [org.quartz.core.SchedulerSignalerImpl:61] Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2019-08-27 13:30:03] [INFO] [org.quartz.core.QuartzScheduler:229] Quartz Scheduler v.2.3.0 created.
+[2019-08-27 13:30:03] [INFO] [org.quartz.simpl.RAMJobStore:155] RAMJobStore initialized.
+[2019-08-27 13:30:03] [INFO] [org.quartz.core.QuartzScheduler:294] Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactory' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2019-08-27 13:30:03] [INFO] [org.quartz.impl.StdSchedulerFactory:1362] Quartz scheduler 'schedulerFactory' initialized from an externally provided properties instance.
+[2019-08-27 13:30:03] [INFO] [org.quartz.impl.StdSchedulerFactory:1366] Quartz scheduler version: 2.3.0
+[2019-08-27 13:30:03] [INFO] [org.quartz.core.QuartzScheduler:2287] JobFactory set to: org.jeecgframework.web.system.sms.util.JQuartzJobFactory@391242fa
+[2019-08-27 13:30:04] [INFO] [org.jeecgframework.core.timer.DynamicTask:252]  register time task class num is [0] 
+[2019-08-27 13:30:09] [INFO] [org.jeecgframework.core.timer.DataBaseSchedulerFactoryBean:648] Starting Quartz Scheduler now
+[2019-08-27 13:30:09] [INFO] [org.quartz.core.QuartzScheduler:547] Scheduler schedulerFactory_$_NON_CLUSTERED started.
+[2019-08-27 13:30:09] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:180]   ------ 初始化字典组 【系统缓存】-----------typeGroupsList-----size: [52]
+[2019-08-27 13:30:09] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:181]   ------ 初始化字典 【系统缓存】-----------typesList-----size: [52]
+[2019-08-27 13:30:10] [INFO] [org.jeecgframework.web.system.service.impl.MutiLangServiceImpl:43]   ------ 初始化国际化语言【系统缓存】  ------ size: [1219] 
+[2019-08-27 13:30:10] [INFO] [org.jeecgframework.web.system.service.impl.DynamicDataSourceServiceImpl:41]   ------ 初始化动态数据源配置【系统缓存】---------size: [2] 
+[2019-08-27 13:30:24] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:122] Username:admin ,验证码: tokt 错误!
+[2019-08-27 13:30:29] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:223]  >>>>>>>>>>>>>>>>>>>>>>>>>>  Login 用户登录成功，初始化Main首页用户信息  （Main 首页加载逻辑）  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+[2019-08-27 13:30:30] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:264] login 资源路径returnURL：null
+[2019-08-27 13:30:32] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\upload\files\20180715\qq_1531625977907.jpg (系统找不到指定的路径。)
+[2019-08-27 13:30:32] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\20170502\4afbfbedab64034f9015f1bca8c379310b551dab.jpg (系统找不到指定的路径。)
+[2019-08-27 13:30:34] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-27 13:30:43] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:223] -- 更新采购付款单视图_wmt --
+[2019-08-27 13:30:43] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:336] -- 【bus_po_pay】实体主表更新操作增强业务：BusPoPayWmtEntity [id=4028aa816cd0c391016cd0cbea180001, bppPayId=AX-2019-客户简称-项目编号-FK-004, bppInvType=, bppInvAmount=10000, bppTaxRate=, bppPayDate=null, bppState=0, bppMoney=10000, fromProjmId=2c94b32c6c50474a016c50484d910001, fromSuppId=4028cb816c40a12d016c40a12d9f0000, bppAccessory=null, createName=null, createBy=null, createDate=null, updateName=null, updateBy=null, updateDate=null, sysOrgCode=null, sysCompanyCode=null, bpmStatus=null] --
+[2019-08-27 13:30:43] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:351] -- 【bus_po_contract_pay】实体附表更新操作增强业务：[] --
+[2019-08-27 13:30:43] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-27 13:31:00] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:223] -- 更新采购付款单视图_wmt --
+[2019-08-27 13:31:00] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:336] -- 【bus_po_pay】实体主表更新操作增强业务：BusPoPayWmtEntity [id=4028aa816cd0c391016cd0cbea180001, bppPayId=AX-2019-客户简称-项目编号-FK-004, bppInvType=, bppInvAmount=10000, bppTaxRate=, bppPayDate=null, bppState=0, bppMoney=10000, fromProjmId=2c94b32c6c50474a016c50484d910001, fromSuppId=4028cb816c40a12d016c40a12d9f0000, bppAccessory=null, createName=null, createBy=null, createDate=null, updateName=null, updateBy=null, updateDate=null, sysOrgCode=null, sysCompanyCode=null, bpmStatus=null] --
+[2019-08-27 13:31:00] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:351] -- 【bus_po_contract_pay】实体附表更新操作增强业务：[] --
+[2019-08-27 13:31:00] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-27 13:31:31] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:223] -- 更新采购付款单视图_wmt --
+[2019-08-27 13:31:31] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:336] -- 【bus_po_pay】实体主表更新操作增强业务：BusPoPayWmtEntity [id=4028aa816cd0c391016cd0cbea180001, bppPayId=AX-2019-客户简称-项目编号-FK-004, bppInvType=, bppInvAmount=10000, bppTaxRate=, bppPayDate=null, bppState=0, bppMoney=10000, fromProjmId=2c94b32c6c50474a016c50484d910001, fromSuppId=4028cb816c40a12d016c40a12d9f0000, bppAccessory=null, createName=null, createBy=null, createDate=null, updateName=null, updateBy=null, updateDate=null, sysOrgCode=null, sysCompanyCode=null, bpmStatus=null] --
+[2019-08-27 13:31:31] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:351] -- 【bus_po_contract_pay】实体附表更新操作增强业务：[] --
+[2019-08-27 13:31:31] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-27 13:32:14] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:223] -- 更新采购付款单视图_wmt --
+[2019-08-27 13:32:14] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:336] -- 【bus_po_pay】实体主表更新操作增强业务：BusPoPayWmtEntity [id=4028aa816cd0c391016cd0cbea180001, bppPayId=AX-2019-客户简称-项目编号-FK-004, bppInvType=, bppInvAmount=10000, bppTaxRate=, bppPayDate=null, bppState=0, bppMoney=10000, fromProjmId=2c94b32c6c50474a016c50484d910001, fromSuppId=4028cb816c40a12d016c40a12d9f0000, bppAccessory=null, createName=null, createBy=null, createDate=null, updateName=null, updateBy=null, updateDate=null, sysOrgCode=null, sysCompanyCode=null, bpmStatus=null] --
+[2019-08-27 13:32:14] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:351] -- 【bus_po_contract_pay】实体附表更新操作增强业务：[] --
+[2019-08-27 13:32:14] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-27 13:35:27] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:223] -- 更新采购付款单视图_wmt --
+[2019-08-27 13:35:27] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:336] -- 【bus_po_pay】实体主表更新操作增强业务：BusPoPayWmtEntity [id=4028aa816cd0c391016cd0cbea180001, bppPayId=AX-2019-客户简称-项目编号-FK-004, bppInvType=, bppInvAmount=10000, bppTaxRate=, bppPayDate=null, bppState=0, bppMoney=10000, fromProjmId=2c94b32c6c50474a016c50484d910001, fromSuppId=4028cb816c40a12d016c40a12d9f0000, bppAccessory=null, createName=null, createBy=null, createDate=null, updateName=null, updateBy=null, updateDate=null, sysOrgCode=null, sysCompanyCode=null, bpmStatus=null] --
+[2019-08-27 13:35:27] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:351] -- 【bus_po_contract_pay】实体附表更新操作增强业务：[] --
+[2019-08-27 13:35:28] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-27 13:35:39] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:223] -- 更新采购付款单视图_wmt --
+[2019-08-27 13:35:39] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:336] -- 【bus_po_pay】实体主表更新操作增强业务：BusPoPayWmtEntity [id=4028aa816cd0c391016cd0cbea180001, bppPayId=AX-2019-客户简称-项目编号-FK-004, bppInvType=, bppInvAmount=10000, bppTaxRate=, bppPayDate=null, bppState=0, bppMoney=10000, fromProjmId=2c94b32c6c50474a016c50484d910001, fromSuppId=4028cb816c40a12d016c40a12d9f0000, bppAccessory=null, createName=null, createBy=null, createDate=null, updateName=null, updateBy=null, updateDate=null, sysOrgCode=null, sysCompanyCode=null, bpmStatus=null] --
+[2019-08-27 13:35:39] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:351] -- 【bus_po_contract_pay】实体附表更新操作增强业务：[] --
+[2019-08-27 13:35:39] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-27 13:41:35] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgdynamgraph.dao.core.CgDynamGraphDao }
+[2019-08-27 13:41:35] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormFieldDao }
+[2019-08-27 13:41:35] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormVersionDao }
+[2019-08-27 13:41:35] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.upload.CgFormUploadDao }
+[2019-08-27 13:41:35] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgreport.dao.core.CgReportDao }
+[2019-08-27 13:41:35] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.system.dao.DepartAuthGroupDao }
+[2019-08-27 13:41:35] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.system.dao.JeecgDictDao }
+[2019-08-27 13:41:35] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.demo.dao.JeecgMinidaoDao }
+[2019-08-27 13:41:35] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.mutiLang.dao.P3MutiLangDao }
+[2019-08-27 13:41:35] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.tag.select.dict.dao.TSTypeDao }
+[2019-08-27 13:41:35] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.tag.select.table.dao.CustomTableDao }
+[2019-08-27 13:41:35] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.dao.TSOperationDao }
+[2019-08-27 13:41:35] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.actInvite.dao.WxActInviteDao }
+[2019-08-27 13:41:35] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.auth.dao.JwSystemAuthDao }
+[2019-08-27 13:41:35] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderCustomDao }
+[2019-08-27 13:41:35] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderMainDao }
+[2019-08-27 13:41:35] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderProductDao }
+[2019-08-27 13:41:35] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.chat.dao.ChatMessageHistoryDao }
+[2019-08-27 13:41:35] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.chat.dao.ImDao }
+[2019-08-27 13:41:35] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailAttachDao }
+[2019-08-27 13:41:35] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailDao }
+[2019-08-27 13:41:35] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailReceiverDao }
+[2019-08-27 13:41:35] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailTSBaseUserDao }
+[2019-08-27 13:41:35] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailTSUserDao }
+[2019-08-27 13:41:35] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.action.actaccount.dao.ActaccountDao }
+[2019-08-27 13:41:35] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.action.actsale.dao.BusContractMiniDao }
+[2019-08-27 13:41:37] [INFO] [com.alibaba.druid.pool.DruidDataSource:928] {dataSource-1} inited
+[2019-08-27 13:41:40] [WARN] [org.hibernate.id.UUIDHexGenerator:59] HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+[2019-08-27 13:41:42] [WARN] [net.sf.ehcache.config.CacheConfiguration:698] Cache 'foreverCache' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'foreverCache' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+[2019-08-27 13:41:45] [INFO] [org.quartz.impl.StdSchedulerFactory:1208] Using default implementation for ThreadExecutor
+[2019-08-27 13:41:45] [INFO] [org.quartz.core.SchedulerSignalerImpl:61] Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2019-08-27 13:41:45] [INFO] [org.quartz.core.QuartzScheduler:229] Quartz Scheduler v.2.3.0 created.
+[2019-08-27 13:41:45] [INFO] [org.quartz.simpl.RAMJobStore:155] RAMJobStore initialized.
+[2019-08-27 13:41:45] [INFO] [org.quartz.core.QuartzScheduler:294] Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactory' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2019-08-27 13:41:45] [INFO] [org.quartz.impl.StdSchedulerFactory:1362] Quartz scheduler 'schedulerFactory' initialized from an externally provided properties instance.
+[2019-08-27 13:41:45] [INFO] [org.quartz.impl.StdSchedulerFactory:1366] Quartz scheduler version: 2.3.0
+[2019-08-27 13:41:45] [INFO] [org.quartz.core.QuartzScheduler:2287] JobFactory set to: org.jeecgframework.web.system.sms.util.JQuartzJobFactory@7c8140d7
+[2019-08-27 13:41:46] [INFO] [org.jeecgframework.core.timer.DynamicTask:252]  register time task class num is [0] 
+[2019-08-27 13:41:51] [INFO] [org.jeecgframework.core.timer.DataBaseSchedulerFactoryBean:648] Starting Quartz Scheduler now
+[2019-08-27 13:41:51] [INFO] [org.quartz.core.QuartzScheduler:547] Scheduler schedulerFactory_$_NON_CLUSTERED started.
+[2019-08-27 13:41:52] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:180]   ------ 初始化字典组 【系统缓存】-----------typeGroupsList-----size: [52]
+[2019-08-27 13:41:52] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:181]   ------ 初始化字典 【系统缓存】-----------typesList-----size: [52]
+[2019-08-27 13:41:52] [INFO] [org.jeecgframework.web.system.service.impl.MutiLangServiceImpl:43]   ------ 初始化国际化语言【系统缓存】  ------ size: [1219] 
+[2019-08-27 13:41:52] [INFO] [org.jeecgframework.web.system.service.impl.DynamicDataSourceServiceImpl:41]   ------ 初始化动态数据源配置【系统缓存】---------size: [2] 
+[2019-08-27 13:43:01] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:223]  >>>>>>>>>>>>>>>>>>>>>>>>>>  Login 用户登录成功，初始化Main首页用户信息  （Main 首页加载逻辑）  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+[2019-08-27 13:43:01] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:264] login 资源路径returnURL：null
+[2019-08-27 13:43:03] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\upload\files\20180715\qq_1531625977907.jpg (系统找不到指定的路径。)
+[2019-08-27 13:43:03] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\20170502\4afbfbedab64034f9015f1bca8c379310b551dab.jpg (系统找不到指定的路径。)
+[2019-08-27 13:43:16] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:223] -- 更新采购付款单视图_wmt --
+[2019-08-27 13:43:16] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:200] -- [银行账号信息外键]和[账号简称]不能为空则凭证号生成:4028cb816c4194d2016c4194d2690000,工行 --
+[2019-08-27 13:43:16] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:204] -- 自动生成支付凭证号: --
+[2019-08-27 13:43:16] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:341] -- 【bus_po_pay】实体主表更新操作增强业务：BusPoPayWmtEntity [id=4028aa816cd0c391016cd0cbea180001, bppPayId=AX-2019-客户简称-项目编号-FK-004, bppInvType=, bppInvAmount=10000, bppTaxRate=, bppPayDate=null, bppState=0, bppMoney=10000, fromProjmId=2c94b32c6c50474a016c50484d910001, fromSuppId=4028cb816c40a12d016c40a12d9f0000, bppAccessory=null, createName=null, createBy=null, createDate=null, updateName=null, updateBy=null, updateDate=null, sysOrgCode=null, sysCompanyCode=null, bpmStatus=null] --
+[2019-08-27 13:43:16] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:356] -- 【bus_po_contract_pay】实体附表更新操作增强业务：[] --
+[2019-08-27 13:43:16] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-27 13:50:56] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgdynamgraph.dao.core.CgDynamGraphDao }
+[2019-08-27 13:50:56] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormFieldDao }
+[2019-08-27 13:50:56] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormVersionDao }
+[2019-08-27 13:50:56] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.upload.CgFormUploadDao }
+[2019-08-27 13:50:56] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgreport.dao.core.CgReportDao }
+[2019-08-27 13:50:56] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.system.dao.DepartAuthGroupDao }
+[2019-08-27 13:50:56] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.system.dao.JeecgDictDao }
+[2019-08-27 13:50:56] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.demo.dao.JeecgMinidaoDao }
+[2019-08-27 13:50:56] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.mutiLang.dao.P3MutiLangDao }
+[2019-08-27 13:50:56] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.tag.select.dict.dao.TSTypeDao }
+[2019-08-27 13:50:56] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.tag.select.table.dao.CustomTableDao }
+[2019-08-27 13:50:56] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.dao.TSOperationDao }
+[2019-08-27 13:50:56] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.actInvite.dao.WxActInviteDao }
+[2019-08-27 13:50:56] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.auth.dao.JwSystemAuthDao }
+[2019-08-27 13:50:56] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderCustomDao }
+[2019-08-27 13:50:56] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderMainDao }
+[2019-08-27 13:50:56] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderProductDao }
+[2019-08-27 13:50:56] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.chat.dao.ChatMessageHistoryDao }
+[2019-08-27 13:50:56] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.chat.dao.ImDao }
+[2019-08-27 13:50:56] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailAttachDao }
+[2019-08-27 13:50:56] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailDao }
+[2019-08-27 13:50:56] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailReceiverDao }
+[2019-08-27 13:50:56] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailTSBaseUserDao }
+[2019-08-27 13:50:56] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailTSUserDao }
+[2019-08-27 13:50:56] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.action.actaccount.dao.ActaccountDao }
+[2019-08-27 13:50:56] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.action.actsale.dao.BusContractMiniDao }
+[2019-08-27 13:50:57] [INFO] [com.alibaba.druid.pool.DruidDataSource:928] {dataSource-1} inited
+[2019-08-27 13:51:00] [WARN] [org.hibernate.id.UUIDHexGenerator:59] HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+[2019-08-27 13:51:02] [WARN] [net.sf.ehcache.config.CacheConfiguration:698] Cache 'foreverCache' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'foreverCache' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+[2019-08-27 13:51:06] [INFO] [org.quartz.impl.StdSchedulerFactory:1208] Using default implementation for ThreadExecutor
+[2019-08-27 13:51:06] [INFO] [org.quartz.core.SchedulerSignalerImpl:61] Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2019-08-27 13:51:06] [INFO] [org.quartz.core.QuartzScheduler:229] Quartz Scheduler v.2.3.0 created.
+[2019-08-27 13:51:06] [INFO] [org.quartz.simpl.RAMJobStore:155] RAMJobStore initialized.
+[2019-08-27 13:51:06] [INFO] [org.quartz.core.QuartzScheduler:294] Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactory' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2019-08-27 13:51:06] [INFO] [org.quartz.impl.StdSchedulerFactory:1362] Quartz scheduler 'schedulerFactory' initialized from an externally provided properties instance.
+[2019-08-27 13:51:06] [INFO] [org.quartz.impl.StdSchedulerFactory:1366] Quartz scheduler version: 2.3.0
+[2019-08-27 13:51:06] [INFO] [org.quartz.core.QuartzScheduler:2287] JobFactory set to: org.jeecgframework.web.system.sms.util.JQuartzJobFactory@36cd40ea
+[2019-08-27 13:51:07] [INFO] [org.jeecgframework.core.timer.DynamicTask:252]  register time task class num is [0] 
+[2019-08-27 13:51:11] [INFO] [org.jeecgframework.core.timer.DataBaseSchedulerFactoryBean:648] Starting Quartz Scheduler now
+[2019-08-27 13:51:11] [INFO] [org.quartz.core.QuartzScheduler:547] Scheduler schedulerFactory_$_NON_CLUSTERED started.
+[2019-08-27 13:51:12] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:180]   ------ 初始化字典组 【系统缓存】-----------typeGroupsList-----size: [52]
+[2019-08-27 13:51:12] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:181]   ------ 初始化字典 【系统缓存】-----------typesList-----size: [52]
+[2019-08-27 13:51:13] [INFO] [org.jeecgframework.web.system.service.impl.MutiLangServiceImpl:43]   ------ 初始化国际化语言【系统缓存】  ------ size: [1219] 
+[2019-08-27 13:51:13] [INFO] [org.jeecgframework.web.system.service.impl.DynamicDataSourceServiceImpl:41]   ------ 初始化动态数据源配置【系统缓存】---------size: [2] 
+[2019-08-27 13:51:29] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:223]  >>>>>>>>>>>>>>>>>>>>>>>>>>  Login 用户登录成功，初始化Main首页用户信息  （Main 首页加载逻辑）  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+[2019-08-27 13:51:29] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:264] login 资源路径returnURL：null
+[2019-08-27 13:51:31] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\20170502\4afbfbedab64034f9015f1bca8c379310b551dab.jpg (系统找不到指定的路径。)
+[2019-08-27 13:51:31] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\upload\files\20180715\qq_1531625977907.jpg (系统找不到指定的路径。)
+[2019-08-27 13:52:06] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:223] -- 更新采购付款单视图_wmt --
+[2019-08-27 13:52:06] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:199] -- [银行账号信息外键]和[账号简称]不能为空则凭证号生成:4028cb816c4194d2016c4194d2690000,工行 --
+[2019-08-27 13:52:06] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:204] -- 自动生成支付凭证号:201908001 --
+[2019-08-27 13:52:06] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:344] -- 【bus_po_pay】实体主表更新操作增强业务：BusPoPayWmtEntity [id=4028aa816cd0c391016cd0cbea180001, bppPayId=AX-2019-客户简称-项目编号-FK-004, bppInvType=, bppInvAmount=10000, bppTaxRate=, bppPayDate=null, bppState=0, bppMoney=10000, fromProjmId=2c94b32c6c50474a016c50484d910001, fromSuppId=4028cb816c40a12d016c40a12d9f0000, bppAccessory=null, createName=null, createBy=null, createDate=null, updateName=null, updateBy=null, updateDate=null, sysOrgCode=null, sysCompanyCode=null, bpmStatus=null] --
+[2019-08-27 13:52:06] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:359] -- 【bus_po_contract_pay】实体附表更新操作增强业务：[] --
+[2019-08-27 13:52:06] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-27 13:54:42] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgdynamgraph.dao.core.CgDynamGraphDao }
+[2019-08-27 13:54:42] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormFieldDao }
+[2019-08-27 13:54:42] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormVersionDao }
+[2019-08-27 13:54:42] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.upload.CgFormUploadDao }
+[2019-08-27 13:54:42] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgreport.dao.core.CgReportDao }
+[2019-08-27 13:54:42] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.system.dao.DepartAuthGroupDao }
+[2019-08-27 13:54:42] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.system.dao.JeecgDictDao }
+[2019-08-27 13:54:42] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.demo.dao.JeecgMinidaoDao }
+[2019-08-27 13:54:42] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.mutiLang.dao.P3MutiLangDao }
+[2019-08-27 13:54:42] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.tag.select.dict.dao.TSTypeDao }
+[2019-08-27 13:54:42] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.tag.select.table.dao.CustomTableDao }
+[2019-08-27 13:54:42] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.dao.TSOperationDao }
+[2019-08-27 13:54:42] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.actInvite.dao.WxActInviteDao }
+[2019-08-27 13:54:42] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.auth.dao.JwSystemAuthDao }
+[2019-08-27 13:54:42] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderCustomDao }
+[2019-08-27 13:54:42] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderMainDao }
+[2019-08-27 13:54:42] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderProductDao }
+[2019-08-27 13:54:42] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.chat.dao.ChatMessageHistoryDao }
+[2019-08-27 13:54:42] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.chat.dao.ImDao }
+[2019-08-27 13:54:42] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailAttachDao }
+[2019-08-27 13:54:42] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailDao }
+[2019-08-27 13:54:42] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailReceiverDao }
+[2019-08-27 13:54:42] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailTSBaseUserDao }
+[2019-08-27 13:54:42] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailTSUserDao }
+[2019-08-27 13:54:42] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.action.actaccount.dao.ActaccountDao }
+[2019-08-27 13:54:42] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.action.actsale.dao.BusContractMiniDao }
+[2019-08-27 13:54:43] [INFO] [com.alibaba.druid.pool.DruidDataSource:928] {dataSource-1} inited
+[2019-08-27 13:54:46] [WARN] [org.hibernate.id.UUIDHexGenerator:59] HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+[2019-08-27 13:54:48] [WARN] [net.sf.ehcache.config.CacheConfiguration:698] Cache 'foreverCache' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'foreverCache' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+[2019-08-27 13:54:51] [INFO] [org.quartz.impl.StdSchedulerFactory:1208] Using default implementation for ThreadExecutor
+[2019-08-27 13:54:51] [INFO] [org.quartz.core.SchedulerSignalerImpl:61] Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2019-08-27 13:54:51] [INFO] [org.quartz.core.QuartzScheduler:229] Quartz Scheduler v.2.3.0 created.
+[2019-08-27 13:54:51] [INFO] [org.quartz.simpl.RAMJobStore:155] RAMJobStore initialized.
+[2019-08-27 13:54:51] [INFO] [org.quartz.core.QuartzScheduler:294] Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactory' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2019-08-27 13:54:51] [INFO] [org.quartz.impl.StdSchedulerFactory:1362] Quartz scheduler 'schedulerFactory' initialized from an externally provided properties instance.
+[2019-08-27 13:54:51] [INFO] [org.quartz.impl.StdSchedulerFactory:1366] Quartz scheduler version: 2.3.0
+[2019-08-27 13:54:51] [INFO] [org.quartz.core.QuartzScheduler:2287] JobFactory set to: org.jeecgframework.web.system.sms.util.JQuartzJobFactory@7023ddb6
+[2019-08-27 13:54:52] [INFO] [org.jeecgframework.core.timer.DynamicTask:252]  register time task class num is [0] 
+[2019-08-27 13:54:56] [INFO] [org.jeecgframework.core.timer.DataBaseSchedulerFactoryBean:648] Starting Quartz Scheduler now
+[2019-08-27 13:54:56] [INFO] [org.quartz.core.QuartzScheduler:547] Scheduler schedulerFactory_$_NON_CLUSTERED started.
+[2019-08-27 13:54:57] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:180]   ------ 初始化字典组 【系统缓存】-----------typeGroupsList-----size: [52]
+[2019-08-27 13:54:57] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:181]   ------ 初始化字典 【系统缓存】-----------typesList-----size: [52]
+[2019-08-27 13:54:57] [INFO] [org.jeecgframework.web.system.service.impl.MutiLangServiceImpl:43]   ------ 初始化国际化语言【系统缓存】  ------ size: [1219] 
+[2019-08-27 13:54:57] [INFO] [org.jeecgframework.web.system.service.impl.DynamicDataSourceServiceImpl:41]   ------ 初始化动态数据源配置【系统缓存】---------size: [2] 
+[2019-08-27 13:55:12] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:223]  >>>>>>>>>>>>>>>>>>>>>>>>>>  Login 用户登录成功，初始化Main首页用户信息  （Main 首页加载逻辑）  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+[2019-08-27 13:55:12] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:264] login 资源路径returnURL：null
+[2019-08-27 13:55:14] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\upload\files\20180715\qq_1531625977907.jpg (系统找不到指定的路径。)
+[2019-08-27 13:55:14] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\20170502\4afbfbedab64034f9015f1bca8c379310b551dab.jpg (系统找不到指定的路径。)
+[2019-08-27 13:55:21] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:223] -- 更新采购付款单视图_wmt --
+[2019-08-27 13:55:21] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:199] -- [银行账号信息外键]和[账号简称]不能为空则凭证号生成:4028cb816c4194d2016c4194d2690000,工行 --
+[2019-08-27 13:55:21] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:204] -- 自动生成支付凭证号:201908001 --
+[2019-08-27 13:55:21] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:344] -- 【bus_po_pay】实体主表更新操作增强业务：BusPoPayWmtEntity [id=4028aa816cd0c391016cd0cbea180001, bppPayId=AX-2019-客户简称-项目编号-FK-004, bppInvType=, bppInvAmount=10000, bppTaxRate=, bppPayDate=null, bppState=0, bppMoney=10000, fromProjmId=2c94b32c6c50474a016c50484d910001, fromSuppId=4028cb816c40a12d016c40a12d9f0000, bppAccessory=null, createName=null, createBy=null, createDate=null, updateName=null, updateBy=null, updateDate=null, sysOrgCode=null, sysCompanyCode=null, bpmStatus=null] --
+[2019-08-27 13:55:22] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:359] -- 【bus_po_contract_pay】实体附表更新操作增强业务：[] --
+[2019-08-27 13:55:22] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-27 13:56:04] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:223] -- 更新采购付款单视图_wmt --
+[2019-08-27 13:56:04] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:199] -- [银行账号信息外键]和[账号简称]不能为空则凭证号生成:, --
+[2019-08-27 13:56:04] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:344] -- 【bus_po_pay】实体主表更新操作增强业务：BusPoPayWmtEntity [id=4028aa816cd0c391016cd0cbea180001, bppPayId=AX-2019-客户简称-项目编号-FK-004, bppInvType=, bppInvAmount=10000, bppTaxRate=, bppPayDate=null, bppState=0, bppMoney=10000, fromProjmId=2c94b32c6c50474a016c50484d910001, fromSuppId=4028cb816c40a12d016c40a12d9f0000, bppAccessory=null, createName=null, createBy=null, createDate=null, updateName=null, updateBy=null, updateDate=null, sysOrgCode=null, sysCompanyCode=null, bpmStatus=null] --
+[2019-08-27 13:56:04] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:359] -- 【bus_po_contract_pay】实体附表更新操作增强业务：[] --
+[2019-08-27 13:56:04] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-27 13:58:22] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgdynamgraph.dao.core.CgDynamGraphDao }
+[2019-08-27 13:58:22] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormFieldDao }
+[2019-08-27 13:58:22] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormVersionDao }
+[2019-08-27 13:58:22] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.upload.CgFormUploadDao }
+[2019-08-27 13:58:22] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgreport.dao.core.CgReportDao }
+[2019-08-27 13:58:22] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.system.dao.DepartAuthGroupDao }
+[2019-08-27 13:58:22] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.system.dao.JeecgDictDao }
+[2019-08-27 13:58:22] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.demo.dao.JeecgMinidaoDao }
+[2019-08-27 13:58:22] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.mutiLang.dao.P3MutiLangDao }
+[2019-08-27 13:58:22] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.tag.select.dict.dao.TSTypeDao }
+[2019-08-27 13:58:22] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.tag.select.table.dao.CustomTableDao }
+[2019-08-27 13:58:22] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.dao.TSOperationDao }
+[2019-08-27 13:58:22] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.actInvite.dao.WxActInviteDao }
+[2019-08-27 13:58:22] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.auth.dao.JwSystemAuthDao }
+[2019-08-27 13:58:22] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderCustomDao }
+[2019-08-27 13:58:22] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderMainDao }
+[2019-08-27 13:58:22] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderProductDao }
+[2019-08-27 13:58:22] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.chat.dao.ChatMessageHistoryDao }
+[2019-08-27 13:58:22] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.chat.dao.ImDao }
+[2019-08-27 13:58:22] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailAttachDao }
+[2019-08-27 13:58:22] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailDao }
+[2019-08-27 13:58:22] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailReceiverDao }
+[2019-08-27 13:58:22] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailTSBaseUserDao }
+[2019-08-27 13:58:22] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailTSUserDao }
+[2019-08-27 13:58:22] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.action.actaccount.dao.ActaccountDao }
+[2019-08-27 13:58:22] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.action.actsale.dao.BusContractMiniDao }
+[2019-08-27 13:58:23] [INFO] [com.alibaba.druid.pool.DruidDataSource:928] {dataSource-1} inited
+[2019-08-27 13:58:26] [WARN] [org.hibernate.id.UUIDHexGenerator:59] HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+[2019-08-27 13:58:28] [WARN] [net.sf.ehcache.config.CacheConfiguration:698] Cache 'foreverCache' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'foreverCache' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+[2019-08-27 13:58:31] [INFO] [org.quartz.impl.StdSchedulerFactory:1208] Using default implementation for ThreadExecutor
+[2019-08-27 13:58:31] [INFO] [org.quartz.core.SchedulerSignalerImpl:61] Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2019-08-27 13:58:31] [INFO] [org.quartz.core.QuartzScheduler:229] Quartz Scheduler v.2.3.0 created.
+[2019-08-27 13:58:31] [INFO] [org.quartz.simpl.RAMJobStore:155] RAMJobStore initialized.
+[2019-08-27 13:58:31] [INFO] [org.quartz.core.QuartzScheduler:294] Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactory' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2019-08-27 13:58:31] [INFO] [org.quartz.impl.StdSchedulerFactory:1362] Quartz scheduler 'schedulerFactory' initialized from an externally provided properties instance.
+[2019-08-27 13:58:31] [INFO] [org.quartz.impl.StdSchedulerFactory:1366] Quartz scheduler version: 2.3.0
+[2019-08-27 13:58:31] [INFO] [org.quartz.core.QuartzScheduler:2287] JobFactory set to: org.jeecgframework.web.system.sms.util.JQuartzJobFactory@4ce71306
+[2019-08-27 13:58:32] [INFO] [org.jeecgframework.core.timer.DynamicTask:252]  register time task class num is [0] 
+[2019-08-27 13:58:37] [INFO] [org.jeecgframework.core.timer.DataBaseSchedulerFactoryBean:648] Starting Quartz Scheduler now
+[2019-08-27 13:58:37] [INFO] [org.quartz.core.QuartzScheduler:547] Scheduler schedulerFactory_$_NON_CLUSTERED started.
+[2019-08-27 13:58:37] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:180]   ------ 初始化字典组 【系统缓存】-----------typeGroupsList-----size: [52]
+[2019-08-27 13:58:37] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:181]   ------ 初始化字典 【系统缓存】-----------typesList-----size: [52]
+[2019-08-27 13:58:38] [INFO] [org.jeecgframework.web.system.service.impl.MutiLangServiceImpl:43]   ------ 初始化国际化语言【系统缓存】  ------ size: [1219] 
+[2019-08-27 13:58:38] [INFO] [org.jeecgframework.web.system.service.impl.DynamicDataSourceServiceImpl:41]   ------ 初始化动态数据源配置【系统缓存】---------size: [2] 
+[2019-08-27 13:58:50] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:223]  >>>>>>>>>>>>>>>>>>>>>>>>>>  Login 用户登录成功，初始化Main首页用户信息  （Main 首页加载逻辑）  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+[2019-08-27 13:58:50] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:264] login 资源路径returnURL：null
+[2019-08-27 13:58:52] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\20170502\4afbfbedab64034f9015f1bca8c379310b551dab.jpg (系统找不到指定的路径。)
+[2019-08-27 13:58:52] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\upload\files\20180715\qq_1531625977907.jpg (系统找不到指定的路径。)
+[2019-08-27 13:58:58] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:223] -- 更新采购付款单视图_wmt --
+[2019-08-27 13:58:58] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:199] -- [银行账号信息外键]和[账号简称]不为空则生成凭证号:, --
+[2019-08-27 13:58:58] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:344] -- 【bus_po_pay】实体主表更新操作增强业务：BusPoPayWmtEntity [id=4028aa816cd0c391016cd0cbea180001, bppPayId=AX-2019-客户简称-项目编号-FK-004, bppInvType=, bppInvAmount=10000, bppTaxRate=, bppPayDate=null, bppState=0, bppMoney=10000, fromProjmId=2c94b32c6c50474a016c50484d910001, fromSuppId=4028cb816c40a12d016c40a12d9f0000, bppAccessory=null, createName=null, createBy=null, createDate=null, updateName=null, updateBy=null, updateDate=null, sysOrgCode=null, sysCompanyCode=null, bpmStatus=null] --
+[2019-08-27 13:58:58] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:359] -- 【bus_po_contract_pay】实体附表更新操作增强业务：[] --
+[2019-08-27 13:58:58] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-27 14:00:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgdynamgraph.dao.core.CgDynamGraphDao }
+[2019-08-27 14:00:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormFieldDao }
+[2019-08-27 14:00:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormVersionDao }
+[2019-08-27 14:00:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.upload.CgFormUploadDao }
+[2019-08-27 14:00:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgreport.dao.core.CgReportDao }
+[2019-08-27 14:00:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.system.dao.DepartAuthGroupDao }
+[2019-08-27 14:00:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.system.dao.JeecgDictDao }
+[2019-08-27 14:00:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.demo.dao.JeecgMinidaoDao }
+[2019-08-27 14:00:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.mutiLang.dao.P3MutiLangDao }
+[2019-08-27 14:00:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.tag.select.dict.dao.TSTypeDao }
+[2019-08-27 14:00:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.tag.select.table.dao.CustomTableDao }
+[2019-08-27 14:00:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.dao.TSOperationDao }
+[2019-08-27 14:00:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.actInvite.dao.WxActInviteDao }
+[2019-08-27 14:00:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.auth.dao.JwSystemAuthDao }
+[2019-08-27 14:00:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderCustomDao }
+[2019-08-27 14:00:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderMainDao }
+[2019-08-27 14:00:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderProductDao }
+[2019-08-27 14:00:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.chat.dao.ChatMessageHistoryDao }
+[2019-08-27 14:00:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.chat.dao.ImDao }
+[2019-08-27 14:00:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailAttachDao }
+[2019-08-27 14:00:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailDao }
+[2019-08-27 14:00:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailReceiverDao }
+[2019-08-27 14:00:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailTSBaseUserDao }
+[2019-08-27 14:00:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailTSUserDao }
+[2019-08-27 14:00:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.action.actaccount.dao.ActaccountDao }
+[2019-08-27 14:00:53] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.action.actsale.dao.BusContractMiniDao }
+[2019-08-27 14:00:54] [INFO] [com.alibaba.druid.pool.DruidDataSource:928] {dataSource-1} inited
+[2019-08-27 14:00:57] [WARN] [org.hibernate.id.UUIDHexGenerator:59] HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+[2019-08-27 14:00:59] [WARN] [net.sf.ehcache.config.CacheConfiguration:698] Cache 'foreverCache' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'foreverCache' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+[2019-08-27 14:01:02] [INFO] [org.quartz.impl.StdSchedulerFactory:1208] Using default implementation for ThreadExecutor
+[2019-08-27 14:01:02] [INFO] [org.quartz.core.SchedulerSignalerImpl:61] Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2019-08-27 14:01:02] [INFO] [org.quartz.core.QuartzScheduler:229] Quartz Scheduler v.2.3.0 created.
+[2019-08-27 14:01:02] [INFO] [org.quartz.simpl.RAMJobStore:155] RAMJobStore initialized.
+[2019-08-27 14:01:02] [INFO] [org.quartz.core.QuartzScheduler:294] Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactory' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2019-08-27 14:01:02] [INFO] [org.quartz.impl.StdSchedulerFactory:1362] Quartz scheduler 'schedulerFactory' initialized from an externally provided properties instance.
+[2019-08-27 14:01:02] [INFO] [org.quartz.impl.StdSchedulerFactory:1366] Quartz scheduler version: 2.3.0
+[2019-08-27 14:01:02] [INFO] [org.quartz.core.QuartzScheduler:2287] JobFactory set to: org.jeecgframework.web.system.sms.util.JQuartzJobFactory@4e28b5f8
+[2019-08-27 14:01:03] [INFO] [org.jeecgframework.core.timer.DynamicTask:252]  register time task class num is [0] 
+[2019-08-27 14:01:07] [INFO] [org.jeecgframework.core.timer.DataBaseSchedulerFactoryBean:648] Starting Quartz Scheduler now
+[2019-08-27 14:01:07] [INFO] [org.quartz.core.QuartzScheduler:547] Scheduler schedulerFactory_$_NON_CLUSTERED started.
+[2019-08-27 14:01:08] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:180]   ------ 初始化字典组 【系统缓存】-----------typeGroupsList-----size: [52]
+[2019-08-27 14:01:08] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:181]   ------ 初始化字典 【系统缓存】-----------typesList-----size: [52]
+[2019-08-27 14:01:08] [INFO] [org.jeecgframework.web.system.service.impl.MutiLangServiceImpl:43]   ------ 初始化国际化语言【系统缓存】  ------ size: [1219] 
+[2019-08-27 14:01:09] [INFO] [org.jeecgframework.web.system.service.impl.DynamicDataSourceServiceImpl:41]   ------ 初始化动态数据源配置【系统缓存】---------size: [2] 
+[2019-08-27 14:01:19] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:223]  >>>>>>>>>>>>>>>>>>>>>>>>>>  Login 用户登录成功，初始化Main首页用户信息  （Main 首页加载逻辑）  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+[2019-08-27 14:01:20] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:264] login 资源路径returnURL：null
+[2019-08-27 14:01:22] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\upload\files\20180715\qq_1531625977907.jpg (系统找不到指定的路径。)
+[2019-08-27 14:01:22] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\20170502\4afbfbedab64034f9015f1bca8c379310b551dab.jpg (系统找不到指定的路径。)
+[2019-08-27 14:01:26] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:223] -- 更新采购付款单视图_wmt --
+[2019-08-27 14:01:26] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:199] -- [银行账号信息外键]和[账号简称]不为空则生成凭证号:, --
+[2019-08-27 14:01:26] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:208] -- 自动生成支付凭证号失败! --
+[2019-08-27 14:01:26] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:346] -- 【bus_po_pay】实体主表更新操作增强业务：BusPoPayWmtEntity [id=4028aa816cd0c391016cd0cbea180001, bppPayId=AX-2019-客户简称-项目编号-FK-004, bppInvType=, bppInvAmount=10000, bppTaxRate=, bppPayDate=null, bppState=0, bppMoney=10000, fromProjmId=2c94b32c6c50474a016c50484d910001, fromSuppId=4028cb816c40a12d016c40a12d9f0000, bppAccessory=null, createName=null, createBy=null, createDate=null, updateName=null, updateBy=null, updateDate=null, sysOrgCode=null, sysCompanyCode=null, bpmStatus=null] --
+[2019-08-27 14:01:26] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:361] -- 【bus_po_contract_pay】实体附表更新操作增强业务：[] --
+[2019-08-27 14:01:26] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-27 14:02:08] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:223] -- 更新采购付款单视图_wmt --
+[2019-08-27 14:02:08] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:199] -- [银行账号信息外键]和[账号简称]不为空则生成凭证号:4028cb816c4194d2016c4194d2690000,工行 --
+[2019-08-27 14:02:08] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:206] -- 自动生成支付凭证号成功!:201908001 --
+[2019-08-27 14:02:08] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:346] -- 【bus_po_pay】实体主表更新操作增强业务：BusPoPayWmtEntity [id=4028aa816cd0c391016cd0cbea180001, bppPayId=AX-2019-客户简称-项目编号-FK-004, bppInvType=, bppInvAmount=10000, bppTaxRate=, bppPayDate=null, bppState=0, bppMoney=10000, fromProjmId=2c94b32c6c50474a016c50484d910001, fromSuppId=4028cb816c40a12d016c40a12d9f0000, bppAccessory=null, createName=null, createBy=null, createDate=null, updateName=null, updateBy=null, updateDate=null, sysOrgCode=null, sysCompanyCode=null, bpmStatus=null] --
+[2019-08-27 14:02:08] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:361] -- 【bus_po_contract_pay】实体附表更新操作增强业务：[] --
+[2019-08-27 14:02:08] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-27 14:04:21] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-27 14:06:56] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:196] -- 添加采购付款单视图_wmt --
+[2019-08-27 14:06:56] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:101] 自动生成付款单号：
+[2019-08-27 14:06:56] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:104] -- 当前最新付款单号:AX-2019-客户简称-项目编号-FK-003 --
+[2019-08-27 14:06:56] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:106] -- 更新付款单号:AX-2019-客户简称-项目编号-FK-004 --
+[2019-08-27 14:06:56] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-27 14:07:14] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:223] -- 更新采购付款单视图_wmt --
+[2019-08-27 14:07:14] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:199] -- [银行账号信息外键]和[账号简称]不为空则生成凭证号:4028cb816c4194d2016c4194d2690000,工行 --
+[2019-08-27 14:07:14] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:206] -- 自动生成支付凭证号成功!:201908001 --
+[2019-08-27 14:07:14] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:346] -- 【bus_po_pay】实体主表更新操作增强业务：BusPoPayWmtEntity [id=4028aa816cd1a9bd016cd1af363b0004, bppPayId=AX-2019-客户简称-项目编号-FK-004, bppInvType=, bppInvAmount=null, bppTaxRate=, bppPayDate=null, bppState=0, bppMoney=null, fromProjmId=2c94b32c6c50474a016c50484d910001, fromSuppId=4028cb816c40a12d016c40a12d9f0000, bppAccessory=null, createName=null, createBy=null, createDate=null, updateName=null, updateBy=null, updateDate=null, sysOrgCode=null, sysCompanyCode=null, bpmStatus=null] --
+[2019-08-27 14:07:14] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:361] -- 【bus_po_contract_pay】实体附表更新操作增强业务：[] --
+[2019-08-27 14:07:14] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-27 14:07:32] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:196] -- 添加采购付款单视图_wmt --
+[2019-08-27 14:07:32] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:101] 自动生成付款单号：
+[2019-08-27 14:07:32] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:104] -- 当前最新付款单号:AX-2019-客户简称-项目编号-FK-004 --
+[2019-08-27 14:07:32] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:106] -- 更新付款单号:AX-2019-客户简称-项目编号-FK-005 --
+[2019-08-27 14:07:32] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-27 14:08:20] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:223] -- 更新采购付款单视图_wmt --
+[2019-08-27 14:08:20] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:346] -- 【bus_po_pay】实体主表更新操作增强业务：BusPoPayWmtEntity [id=4028aa816cd1a9bd016cd1afc3db0009, bppPayId=AX-2019-客户简称-项目编号-FK-005, bppInvType=, bppInvAmount=null, bppTaxRate=, bppPayDate=null, bppState=0, bppMoney=null, fromProjmId=2c94b32c6c50474a016c50484d910001, fromSuppId=4028cb816c40a12d016c40a12d9f0000, bppAccessory=null, createName=null, createBy=null, createDate=null, updateName=null, updateBy=null, updateDate=null, sysOrgCode=null, sysCompanyCode=null, bpmStatus=null] --
+[2019-08-27 14:08:20] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:361] -- 【bus_po_contract_pay】实体附表更新操作增强业务：[VmBusPoContractPayWmtEntity [id=4028aa816cd1a9bd016cd1afc3dc000a, bpcPoNo=AX-2019-KH01-001-CG-001, bpcpProgre=1, bpcpPayAmount=10000, bpcpDate=Sat Aug 17 00:00:00 CST 2019, fromId=1, payAmount=null, bpcpRemark=, bpcpId=4028aa816c9579cd016c95908236000b, busPoPayId=4028aa816cd1a9bd016cd1afc3db0009]] --
+[2019-08-27 14:08:20] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:365] -- 【bus_po_contract_pay】实体附表更新操作增强业务成功否：1 --
+[2019-08-27 14:08:20] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-27 14:08:28] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:223] -- 更新采购付款单视图_wmt --
+[2019-08-27 14:08:28] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:346] -- 【bus_po_pay】实体主表更新操作增强业务：BusPoPayWmtEntity [id=4028aa816cd1a9bd016cd1afc3db0009, bppPayId=AX-2019-客户简称-项目编号-FK-005, bppInvType=, bppInvAmount=null, bppTaxRate=, bppPayDate=null, bppState=0, bppMoney=null, fromProjmId=2c94b32c6c50474a016c50484d910001, fromSuppId=4028cb816c40a12d016c40a12d9f0000, bppAccessory=null, createName=null, createBy=null, createDate=null, updateName=null, updateBy=null, updateDate=null, sysOrgCode=null, sysCompanyCode=null, bpmStatus=null] --
+[2019-08-27 14:08:28] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:361] -- 【bus_po_contract_pay】实体附表更新操作增强业务：[] --
+[2019-08-27 14:08:28] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-27 14:09:17] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:223] -- 更新采购付款单视图_wmt --
+[2019-08-27 14:09:17] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:199] -- [银行账号信息外键]和[账号简称]不为空则生成凭证号:4028cb816c4194d2016c4194d2690000,工行 --
+[2019-08-27 14:09:17] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:206] -- 自动生成支付凭证号成功!:201908001 --
+[2019-08-27 14:09:17] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:346] -- 【bus_po_pay】实体主表更新操作增强业务：BusPoPayWmtEntity [id=4028aa816cd1a9bd016cd1afc3db0009, bppPayId=AX-2019-客户简称-项目编号-FK-005, bppInvType=, bppInvAmount=null, bppTaxRate=, bppPayDate=null, bppState=0, bppMoney=null, fromProjmId=2c94b32c6c50474a016c50484d910001, fromSuppId=4028cb816c40a12d016c40a12d9f0000, bppAccessory=null, createName=null, createBy=null, createDate=null, updateName=null, updateBy=null, updateDate=null, sysOrgCode=null, sysCompanyCode=null, bpmStatus=null] --
+[2019-08-27 14:09:17] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:361] -- 【bus_po_contract_pay】实体附表更新操作增强业务：[] --
+[2019-08-27 14:09:17] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-27 14:14:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgdynamgraph.dao.core.CgDynamGraphDao }
+[2019-08-27 14:14:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormFieldDao }
+[2019-08-27 14:14:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.config.CgFormVersionDao }
+[2019-08-27 14:14:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgform.dao.upload.CgFormUploadDao }
+[2019-08-27 14:14:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.cgreport.dao.core.CgReportDao }
+[2019-08-27 14:14:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.system.dao.DepartAuthGroupDao }
+[2019-08-27 14:14:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { org.jeecgframework.web.system.dao.JeecgDictDao }
+[2019-08-27 14:14:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.demo.dao.JeecgMinidaoDao }
+[2019-08-27 14:14:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.mutiLang.dao.P3MutiLangDao }
+[2019-08-27 14:14:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.tag.select.dict.dao.TSTypeDao }
+[2019-08-27 14:14:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.tag.select.table.dao.CustomTableDao }
+[2019-08-27 14:14:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.core.biz.dao.TSOperationDao }
+[2019-08-27 14:14:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.actInvite.dao.WxActInviteDao }
+[2019-08-27 14:14:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.auth.dao.JwSystemAuthDao }
+[2019-08-27 14:14:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderCustomDao }
+[2019-08-27 14:14:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderMainDao }
+[2019-08-27 14:14:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.domo.order.dao.JpDemoOrderProductDao }
+[2019-08-27 14:14:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.chat.dao.ChatMessageHistoryDao }
+[2019-08-27 14:14:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.chat.dao.ImDao }
+[2019-08-27 14:14:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailAttachDao }
+[2019-08-27 14:14:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailDao }
+[2019-08-27 14:14:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailJformInnerMailReceiverDao }
+[2019-08-27 14:14:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailTSBaseUserDao }
+[2019-08-27 14:14:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.jeecg.mail.dao.P3MailTSUserDao }
+[2019-08-27 14:14:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.action.actaccount.dao.ActaccountDao }
+[2019-08-27 14:14:27] [INFO] [org.jeecgframework.minidao.factory.MiniDaoClassPathMapperScanner:48] register minidao name is { com.action.actsale.dao.BusContractMiniDao }
+[2019-08-27 14:14:28] [INFO] [com.alibaba.druid.pool.DruidDataSource:928] {dataSource-1} inited
+[2019-08-27 14:14:31] [WARN] [org.hibernate.id.UUIDHexGenerator:59] HHH000409: Using org.hibernate.id.UUIDHexGenerator which does not generate IETF RFC 4122 compliant UUID values; consider using org.hibernate.id.UUIDGenerator instead
+[2019-08-27 14:14:33] [WARN] [net.sf.ehcache.config.CacheConfiguration:698] Cache 'foreverCache' is set to eternal but also has TTI/TTL set.  To avoid this warning, clean up the config removing conflicting values of eternal, TTI and TTL. Effective configuration for Cache 'foreverCache' will be eternal='true', timeToIdleSeconds='0', timeToLiveSeconds='0'.
+[2019-08-27 14:14:36] [INFO] [org.quartz.impl.StdSchedulerFactory:1208] Using default implementation for ThreadExecutor
+[2019-08-27 14:14:36] [INFO] [org.quartz.core.SchedulerSignalerImpl:61] Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+[2019-08-27 14:14:36] [INFO] [org.quartz.core.QuartzScheduler:229] Quartz Scheduler v.2.3.0 created.
+[2019-08-27 14:14:36] [INFO] [org.quartz.simpl.RAMJobStore:155] RAMJobStore initialized.
+[2019-08-27 14:14:36] [INFO] [org.quartz.core.QuartzScheduler:294] Scheduler meta-data: Quartz Scheduler (v2.3.0) 'schedulerFactory' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+[2019-08-27 14:14:36] [INFO] [org.quartz.impl.StdSchedulerFactory:1362] Quartz scheduler 'schedulerFactory' initialized from an externally provided properties instance.
+[2019-08-27 14:14:36] [INFO] [org.quartz.impl.StdSchedulerFactory:1366] Quartz scheduler version: 2.3.0
+[2019-08-27 14:14:36] [INFO] [org.quartz.core.QuartzScheduler:2287] JobFactory set to: org.jeecgframework.web.system.sms.util.JQuartzJobFactory@4dacd1f2
+[2019-08-27 14:14:37] [INFO] [org.jeecgframework.core.timer.DynamicTask:252]  register time task class num is [0] 
+[2019-08-27 14:14:41] [INFO] [org.jeecgframework.core.timer.DataBaseSchedulerFactoryBean:648] Starting Quartz Scheduler now
+[2019-08-27 14:14:41] [INFO] [org.quartz.core.QuartzScheduler:547] Scheduler schedulerFactory_$_NON_CLUSTERED started.
+[2019-08-27 14:14:42] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:180]   ------ 初始化字典组 【系统缓存】-----------typeGroupsList-----size: [52]
+[2019-08-27 14:14:42] [INFO] [org.jeecgframework.web.system.service.impl.SystemServiceImpl:181]   ------ 初始化字典 【系统缓存】-----------typesList-----size: [52]
+[2019-08-27 14:14:43] [INFO] [org.jeecgframework.web.system.service.impl.MutiLangServiceImpl:43]   ------ 初始化国际化语言【系统缓存】  ------ size: [1219] 
+[2019-08-27 14:14:43] [INFO] [org.jeecgframework.web.system.service.impl.DynamicDataSourceServiceImpl:41]   ------ 初始化动态数据源配置【系统缓存】---------size: [2] 
+[2019-08-27 14:15:01] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:223]  >>>>>>>>>>>>>>>>>>>>>>>>>>  Login 用户登录成功，初始化Main首页用户信息  （Main 首页加载逻辑）  >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+[2019-08-27 14:15:01] [INFO] [org.jeecgframework.web.system.controller.core.LoginController:264] login 资源路径returnURL：null
+[2019-08-27 14:15:03] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\20170502\4afbfbedab64034f9015f1bca8c379310b551dab.jpg (系统找不到指定的路径。)
+[2019-08-27 14:15:03] [INFO] [com.jeecg.chat.web.ImController:318] --通过流的方式获取文件异常--D:\upFiles\upload\files\20180715\qq_1531625977907.jpg (系统找不到指定的路径。)
+[2019-08-27 14:15:09] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:223] -- 更新采购付款单视图_wmt --
+[2019-08-27 14:15:09] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:199] -- [银行账号信息外键]和[账号简称]不为空则生成凭证号:4028cb816c4194d2016c4194d2690000,工行 --
+[2019-08-27 14:15:09] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:206] -- 自动生成支付凭证号成功!:201908002 --
+[2019-08-27 14:15:09] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:346] -- 【bus_po_pay】实体主表更新操作增强业务：BusPoPayWmtEntity [id=4028aa816cd1a9bd016cd1afc3db0009, bppPayId=AX-2019-客户简称-项目编号-FK-005, bppInvType=, bppInvAmount=null, bppTaxRate=, bppPayDate=null, bppState=0, bppMoney=null, fromProjmId=2c94b32c6c50474a016c50484d910001, fromSuppId=4028cb816c40a12d016c40a12d9f0000, bppAccessory=null, createName=null, createBy=null, createDate=null, updateName=null, updateBy=null, updateDate=null, sysOrgCode=null, sysCompanyCode=null, bpmStatus=null] --
+[2019-08-27 14:15:09] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:361] -- 【bus_po_contract_pay】实体附表更新操作增强业务：[] --
+[2019-08-27 14:15:10] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-27 14:15:54] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:169] -- 批量删除采购付款单视图_wmt --
+[2019-08-27 14:15:55] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-27 14:16:30] [INFO] [com.action.actsale.controller.BusContractController:146] -- 合同完成状态（0制作中，1已审核） --0
+[2019-08-27 14:16:30] [INFO] [com.action.actsale.controller.BusContractController:146] -- 合同完成状态（0制作中，1已审核） --1
+[2019-08-27 14:16:41] [INFO] [com.action.actsale.controller.BusContractController:315] -- 查询-合同明细报价附表:[BusConQuotedPriceEntity [bcqpName=1, bcqpBrand=1, bcqpModel=1, bcqpQty=1.0, bcqpPrice=1.0, bcqpAmount=1.0, busContractId=2c94b32c6c4c8b0e016c4c94a0600009], BusConQuotedPriceEntity [bcqpName=OPPO智能手机, bcqpBrand=OPPO, bcqpModel=A57, bcqpQty=1.0, bcqpPrice=200.1, bcqpAmount=200.1, busContractId=2c94b32c6c4c8b0e016c4c94a0600009]] --
+[2019-08-27 14:16:50] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:2 --
+[2019-08-27 14:16:51] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:3 --
+[2019-08-27 14:16:52] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:2 --
+[2019-08-27 14:16:53] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:3 --
+[2019-08-27 14:16:55] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-27 14:16:58] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:2 --
+[2019-08-27 14:17:07] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:3 --
+[2019-08-27 14:17:10] [INFO] [com.action.actsale.controller.BusContractController:146] -- 合同完成状态（0制作中，1已审核） --0
+[2019-08-27 14:17:10] [INFO] [com.action.actsale.controller.BusContractController:146] -- 合同完成状态（0制作中，1已审核） --1
+[2019-08-27 14:17:47] [INFO] [com.action.actsale.controller.BusContractController:146] -- 合同完成状态（0制作中，1已审核） --0
+[2019-08-27 14:17:47] [INFO] [com.action.actsale.controller.BusContractController:146] -- 合同完成状态（0制作中，1已审核） --1
+[2019-08-27 14:17:52] [INFO] [com.action.actsale.controller.BusContractController:146] -- 合同完成状态（0制作中，1已审核） --1
+[2019-08-27 14:17:54] [INFO] [com.action.actsale.controller.BusContractController:146] -- 合同完成状态（0制作中，1已审核） --1
+[2019-08-27 14:17:55] [INFO] [com.action.actsale.controller.BusContractController:146] -- 合同完成状态（0制作中，1已审核） --1
+[2019-08-27 14:17:55] [INFO] [com.action.actsale.controller.BusContractController:146] -- 合同完成状态（0制作中，1已审核） --1
+[2019-08-27 14:18:09] [INFO] [com.action.actsale.controller.BusContractController:146] -- 合同完成状态（0制作中，1已审核） --0
+[2019-08-27 14:18:09] [INFO] [com.action.actsale.controller.BusContractController:146] -- 合同完成状态（0制作中，1已审核） --1
+[2019-08-27 14:21:17] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-27 14:21:31] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:3 --
+[2019-08-27 14:21:32] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:2 --
+[2019-08-27 14:21:33] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-27 14:21:33] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:2 --
+[2019-08-27 14:21:34] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:3 --
+[2019-08-27 14:21:35] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-27 14:21:37] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:3 --
+[2019-08-27 14:21:38] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-27 14:23:48] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:196] -- 添加采购付款单视图_wmt --
+[2019-08-27 14:23:48] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:101] 自动生成付款单号：
+[2019-08-27 14:23:48] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:104] -- 当前最新付款单号:AX-2019-客户简称-项目编号-FK-003 --
+[2019-08-27 14:23:48] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:106] -- 更新付款单号:AX-2019-客户简称-项目编号-FK-004 --
+[2019-08-27 14:23:48] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-27 14:24:24] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:223] -- 更新采购付款单视图_wmt --
+[2019-08-27 14:24:24] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:346] -- 【bus_po_pay】实体主表更新操作增强业务：BusPoPayWmtEntity [id=4028aa816cd1b628016cd1bea6c50004, bppPayId=AX-2019-客户简称-项目编号-FK-004, bppInvType=, bppInvAmount=null, bppTaxRate=, bppPayDate=null, bppState=0, bppMoney=null, fromProjmId=2c94b32c6c50474a016c50484d910001, fromSuppId=4028cb816c40a12d016c40a12d9f0000, bppAccessory=null, createName=null, createBy=null, createDate=null, updateName=null, updateBy=null, updateDate=null, sysOrgCode=null, sysCompanyCode=null, bpmStatus=null] --
+[2019-08-27 14:24:24] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:361] -- 【bus_po_contract_pay】实体附表更新操作增强业务：[VmBusPoContractPayWmtEntity [id=4028aa816cd1b628016cd1bea6c60005, bpcPoNo=AX-2019-KH01-001-CG-001, bpcpProgre=1, bpcpPayAmount=10000, bpcpDate=Sat Aug 17 00:00:00 CST 2019, fromId=1, payAmount=10000, bpcpRemark=付款了, bpcpId=4028aa816c9579cd016c95908236000b, busPoPayId=4028aa816cd1b628016cd1bea6c50004]] --
+[2019-08-27 14:24:24] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:365] -- 【bus_po_contract_pay】实体附表更新操作增强业务成功否：1 --
+[2019-08-27 14:24:24] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-27 14:25:02] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:223] -- 更新采购付款单视图_wmt --
+[2019-08-27 14:25:02] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:346] -- 【bus_po_pay】实体主表更新操作增强业务：BusPoPayWmtEntity [id=4028aa816cd1b628016cd1bea6c50004, bppPayId=AX-2019-客户简称-项目编号-FK-004, bppInvType=, bppInvAmount=null, bppTaxRate=, bppPayDate=null, bppState=0, bppMoney=null, fromProjmId=2c94b32c6c50474a016c50484d910001, fromSuppId=4028cb816c40a12d016c40a12d9f0000, bppAccessory=null, createName=null, createBy=null, createDate=null, updateName=null, updateBy=null, updateDate=null, sysOrgCode=null, sysCompanyCode=null, bpmStatus=null] --
+[2019-08-27 14:25:02] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:361] -- 【bus_po_contract_pay】实体附表更新操作增强业务：[VmBusPoContractPayWmtEntity [id=4028aa816cd1b628016cd1bea6c60005, bpcPoNo=AX-2019-KH01-001-CG-001, bpcpProgre=1, bpcpPayAmount=10000, bpcpDate=Sat Aug 17 00:00:00 CST 2019, fromId=1, payAmount=null, bpcpRemark=, bpcpId=4028aa816c9579cd016c95908236000b, busPoPayId=4028aa816cd1b628016cd1bea6c50004]] --
+[2019-08-27 14:25:02] [INFO] [com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl:365] -- 【bus_po_contract_pay】实体附表更新操作增强业务成功否：1 --
+[2019-08-27 14:25:02] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --
+[2019-08-27 14:25:21] [INFO] [com.action.actaccount.controller.VmBusPoPayWmtController:124] -- 单据状态:0 --

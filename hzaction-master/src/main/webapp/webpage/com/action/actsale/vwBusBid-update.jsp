@@ -4,215 +4,219 @@
 <html>
  <head>
   <title>报价_投标审核</title>
-  <t:base type="jquery,easyui,tools,DatePicker,uploadify"></t:base>
+  <t:base type="jquery,easyui,tools,DatePicker"></t:base>
+  <t:base type="uploadify"></t:base>
   <script type="text/javascript">
   //编写自定义JS代码
   </script>
  </head>
  <body>
-	<t:formvalid formid="formobj" dialog="true" usePlugin="password" layout="table" action="vwBusBidController.do?doUpdate" callback="jeecgFormFileCallBack@Override">
-		<input id="id" name="id" type="hidden" value="${vwBusBidPage.id }"/>
-		<%--以下隐藏域为附件信息的ID--%>
-		<input id="bafSerId" name="bafSerId" type="hidden" value="${vwBusBidPage.bafSerId }"/>
+		<t:formvalid formid="formobj" dialog="true" usePlugin="password" layout="table" action="vwBusBidController.do?doUpdate" callback="jeecgFormFileCallBack@Override">
+					<input id="id" name="id" type="hidden" value="${vwBusBidPage.id }"/>
 		<table style="width: 600px;" cellpadding="0" cellspacing="1" class="formtable">
-			<tr>
+					<tr>
+						<td align="right">
+							<label class="Validform_label">
+								项目编号:
+							</label>
+						</td>
+						<td class="value">
+						    <input id="bpProjId" name="bpProjId" type="text" maxlength="40" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bpProjId}'/>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">项目编号</label>
+						</td>
+						<td align="right">
+							<label class="Validform_label">
+								项目名称:
+							</label>
+						</td>
+						<td class="value">
+						    <input id="bpProjName" name="bpProjName" type="text" maxlength="200" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bpProjName}'/>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">项目名称</label>
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							<label class="Validform_label">
+								客户名称:
+							</label>
+						</td>
+						<td class="value">
+						    <input id="bcName" name="bcName" type="text" maxlength="100" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bcName}'/>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">客户名称</label>
+						</td>
+						<td align="right">
+							<label class="Validform_label">
+								拟中标方:
+							</label>
+						</td>
+						<td class="value">
+						    <input id="bdWinBidder" name="bdWinBidder" type="text" maxlength="40" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bdWinBidder}'/>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">拟中标方</label>
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							<label class="Validform_label">
+								项目类型:
+							</label>
+						</td>
+						<td class="value">
+						    <input id="bdProjType" name="bdProjType" type="text" maxlength="20" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bdProjType}'/>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">项目类型</label>
+						</td>
+						<td align="right">
+							<label class="Validform_label">
+								主标人员:
+							</label>
+						</td>
+						<td class="value">
+						    <input id="bdMainBidder" name="bdMainBidder" type="text" maxlength="100" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bdMainBidder}'/>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">主标人员</label>
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							<label class="Validform_label">
+								配合人员:
+							</label>
+						</td>
+						<td class="value">
+						    <input id="bdCoordinator" name="bdCoordinator" type="text" maxlength="100" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bdCoordinator}'/>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">配合人员</label>
+						</td>
+						<td align="right">
+							<label class="Validform_label">
+								商务负责人:
+							</label>
+						</td>
+						<td class="value">
+						    <input id="bdBusinessCharge" name="bdBusinessCharge" type="text" maxlength="100" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bdBusinessCharge}'/>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">商务负责人</label>
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							<label class="Validform_label">
+								辅助人员:
+							</label>
+						</td>
+						<td class="value">
+						    <input id="bdAuxiliaryStaff" name="bdAuxiliaryStaff" type="text" maxlength="100" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bdAuxiliaryStaff}'/>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">辅助人员</label>
+						</td>
+						<td align="right">
+							<label class="Validform_label">
+								投标金额:
+							</label>
+						</td>
+						<td class="value">
+						    <input id="bdBidAmout" name="bdBidAmout" type="text" maxlength="12" style="width: 150px" class="inputxt"  datatype="/^(-?\d+)(\.\d+)?$/"  ignore="ignore"  value='${vwBusBidPage.bdBidAmout}'/>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">投标金额</label>
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							<label class="Validform_label">
+								投标日期:
+							</label>
+						</td>
+						<td class="value">
+									  <input id="bdBidDate" name="bdBidDate" type="text" style="width: 150px"  class="Wdate" onClick="WdatePicker()"  ignore="ignore" value='<fmt:formatDate value='${vwBusBidPage.bdBidDate}' type="date" pattern="yyyy-MM-dd"/>'/>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">投标日期</label>
+						</td>
+						<td align="right">
+							<label class="Validform_label">
+								审核状态:
+							</label>
+						</td>
+						<td class="value">
+						    <input id="bdState" name="bdState" type="text" maxlength="20" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bdState}'/>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">审核状态</label>
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							<label class="Validform_label">
+								附件:
+							</label>
+						</td>
+						<td class="value">
+		<table id="bd_file_fileTable"></table>
+		<div class="form jeecgDetail">
+			<t:upload name="bdFile" id="bdFile" queueID="filediv_bdFile" outhtml="false" uploader="cgUploadController.do?saveFiles"  extend="office" buttonText='添加文件'  onUploadStart="bdFileOnUploadStart"> </t:upload>
+			<div class="form" id="filediv_bdFile"></div>
+			<script type="text/javascript">
+				function bdFileOnUploadStart(file){
+					var cgFormId=$("input[name='id']").val();
+					$('#bdFile').uploadify("settings", "formData", {
+						'cgFormId':cgFormId,
+						'cgFormName':'vw_bus_bid',
+						'cgFormField':'BD_FILE'
+					});
+				}
+			</script>
+		</div>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">附件</label>
+						</td>
 				<td align="right">
 					<label class="Validform_label">
-						项目编号:
 					</label>
 				</td>
 				<td class="value">
-					<input disabled="disabled" id="bpProjId" name="bpProjId" type="text" maxlength="40" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bpProjId}'/>
-					<span class="Validform_checktip"></span>
-					<label class="Validform_label" style="display: none;">项目编号</label>
 				</td>
-				<td align="right">
-					<label class="Validform_label">
-						审核状态:
-					</label>
-				</td>
-				<td class="value">
-				    <%--对于jeecg的下拉框，可使用extendJson来修改属性 --%>
-					<t:dictSelect extendJson="{disabled='disabled'}" field="bdState" type="list"  typeGroupCode="state"  defaultVal="${vwBusBidPage.bdState}" hasLabel="false"  title="审核状态" ></t:dictSelect>
-					<span class="Validform_checktip"></span>
-					<label class="Validform_label" style="display: none;">审核状态</label>
-				</td>
-			</tr>
-			<tr>
-				<td align="right">
-					<label class="Validform_label">
-						项目名称:
-					</label>
-				</td>
-				<td class="value" colspan="3" >
-					<input disabled="disabled" id="bpProjName" name="bpProjName" type="text" maxlength="200" style="width:95%" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bpProjName}'/>
-					<span class="Validform_checktip"></span>
-					<label class="Validform_label" style="display: none;">项目名称</label>
-			    </td>
-			</tr>
-			<tr>
-			    <td align="right">
-					<label class="Validform_label">
-						客户名称:
-					</label>
-				</td>
-				<td class="value" colspan="3" >
-					<input disabled="disabled" id="bcName" name="bcName" type="text" maxlength="100" style="width: 95%" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bcName}'/>
-					<span class="Validform_checktip"></span>
-					<label class="Validform_label" style="display: none;">客户名称</label>
-				</td>
-			</tr>
-			<tr>
-				<td align="right">
-					<label class="Validform_label">
-						拟中标方:
-					</label>
-				</td>
-				<td class="value">
-					<input disabled="disabled" id="bdWinBidder" name="bdWinBidder" type="text" maxlength="40" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bdWinBidder}'/>
-					<span class="Validform_checktip"></span>
-					<label class="Validform_label" style="display: none;">拟中标方</label>
-				</td>
-				<td align="right">
-					<label class="Validform_label">
-						项目类型:
-					</label>
-				</td>
-				<td class="value">
-					<input disabled="disabled" id="bdProjType" name="bdProjType" type="text" maxlength="20" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bdProjType}'/>
-					<span class="Validform_checktip"></span>
-					<label class="Validform_label" style="display: none;">项目类型</label>
-				</td>
-			</tr>
-			<tr>
-				<td align="right">
-					<label class="Validform_label">
-						投标金额:
-					</label>
-				</td>
-				<td class="value">
-					<input disabled="disabled" id="bdBidAmout" name="bdBidAmout" type="text" maxlength="12" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bdBidAmout}'/>
-					<span class="Validform_checktip"></span>
-					<label class="Validform_label" style="display: none;">投标金额</label>
-				</td>
-				<td align="right">
-					<label class="Validform_label">
-						投标日期:
-					</label>
-				</td>
-				<td class="value">
-					<input disabled="disabled" id="bdBidDate" name="bdBidDate" type="text" style="width: 150px"  class="Wdate" onClick="WdatePicker()"  ignore="ignore" value='<fmt:formatDate value='${vwBusBidPage.bdBidDate}' type="date" pattern="yyyy-MM-dd"/>'/>
-					<span class="Validform_checktip"></span>
-					<label class="Validform_label" style="display: none;">投标日期</label>
-				</td>
-			</tr>
-			<tr>
-				<td align="right">
-					<label class="Validform_label">
-						投标内容:
-					</label>
-				</td>
-				<td class="value"  colspan="3" >
-					<textarea disabled="disabled" id="bdBidContent" style="height:auto;width:95%;" class="inputxt" rows="6" name="bdBidContent"  ignore="ignore" >${vwBusBidPage.bdBidContent}</textarea>
-					<span class="Validform_checktip"></span>
-					<label class="Validform_label" style="display: none;">投标内容</label>
-				</td>
-			</tr>
-			<tr>
-				<td align="right">
-					<label class="Validform_label">
-						<sapn style="color:red;font-size:18px">*</sapn>主标人员:
-					</label>
-				</td>
-				<td class="value">
-					<input id="bdMainBidder" name="bdMainBidder" type="text" maxlength="100" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bdMainBidder}'/>
-					<span class="Validform_checktip"></span>
-					<label class="Validform_label" style="display: none;">主标人员</label>
-				</td>
-				<td align="right">
-					<label class="Validform_label">
-						 配合人员:
-					</label>
-				</td>
-				<td class="value">
-					<input id="bdCoordinator" name="bdCoordinator" type="text" maxlength="100" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bdCoordinator}'/>
-					<span class="Validform_checktip"></span>
-					<label class="Validform_label" style="display: none;">配合人员</label>
-				</td>
-			</tr>
-			<tr>
-				<td align="right">
-					<label class="Validform_label">
-						 商务负责人:
-					</label>
-				</td>
-				<td class="value">
-					<input id="bdBusinessCharge" name="bdBusinessCharge" type="text" maxlength="100" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bdBusinessCharge}'/>
-					<span class="Validform_checktip"></span>
-					<label class="Validform_label" style="display: none;">商务负责人</label>
-				</td>
-				<td align="right">
-					<label class="Validform_label">
-						 辅助人员:
-					</label>
-				</td>
-				<td class="value">
-					<input id="bdAuxiliaryStaff" name="bdAuxiliaryStaff" type="text" maxlength="100" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bdAuxiliaryStaff}'/>
-					<span class="Validform_checktip"></span>
-					<label class="Validform_label" style="display: none;">辅助人员</label>
-				</td>
-			</tr>	
-			<tr>
-				<td align="right">
-					<label class="Validform_label">
-						 投标文件：
-					</label>
-				</td>
-				<td class="value" colspan="3">
-		        	<table id="baf_path_fileTable"></table>
-		        	<div class="form jeecgDetail" style="display:none">
-						<t:upload name="bafPath" id="bafPath" queueID="filediv_bafPath" outhtml="false" uploader="cgUploadController.do?saveFiles"  extend="office" buttonText='添加文件'  onUploadStart="bafPathOnUploadStart"> </t:upload>
-						<div class="form" id="filediv_bafPath"></div>
-						<script type="text/javascript">
-							function bafPathOnUploadStart(file){
-								var cgFormId=$("input[name='bafSerId']").val();
-								$('#bafPath').uploadify("settings", "formData", {
-									'cgFormId':cgFormId,
-									'cgFormName':'bas_attach_file',
-									'cgFormField':'BAF_PATH'
-								});
-							}
-						</script>
-					</div>
-					<span class="Validform_checktip"></span>
-					<label class="Validform_label" style="display: none;">投标文件：</label>
-				</td>
-			</tr>
-			<tr>
-				<td align="right">
-					<label class="Validform_label">
-						备注:
-					</label>
-				</td>
-				<td class="value"  colspan="3" >
-					<textarea disabled="disabled" id="bdBidRemark" style="height:auto;width:95%;" class="inputxt" rows="6" name="bdBidRemark"  ignore="ignore" >${vwBusBidPage.bdBidRemark}</textarea>
-					<span class="Validform_checktip"></span>
-					<label class="Validform_label" style="display: none;">备注</label>
-				</td>
-			</tr>
-		</table>
-	</t:formvalid>
+					</tr>
+				
+					<tr>
+						<td align="right">
+							<label class="Validform_label">
+								投标内容:
+							</label>
+						</td>
+						<td class="value"  colspan="3" >
+						  	 	<textarea id="bdBidContent" style="height:auto;width:95%;" class="inputxt" rows="6" name="bdBidContent"  ignore="ignore" >${vwBusBidPage.bdBidContent}</textarea>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">投标内容</label>
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							<label class="Validform_label">
+								备注:
+							</label>
+						</td>
+						<td class="value"  colspan="3" >
+						  	 	<textarea id="bdBidRemark" style="height:auto;width:95%;" class="inputxt" rows="6" name="bdBidRemark"  ignore="ignore" >${vwBusBidPage.bdBidRemark}</textarea>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">备注</label>
+						</td>
+					</tr>
+			</table>
+		</t:formvalid>
  </body>
-	  	<script type="text/javascript">	
-		  //加载 已存在的 文件
+	  	<script type="text/javascript">
+		  	//加载 已存在的 文件
 		  	$(function(){
-	  			var cgFormId=$("input[name='bafSerId']").val();
+	  			var cgFormId=$("input[name='id']").val();
 		  		$.ajax({
 		  		   type: "post",
 		  		   url: "vwBusBidController.do?getFiles&id=" +  cgFormId,
 		  		   success: function(data){
 		  			 var arrayFileObj = jQuery.parseJSON(data).obj;
-		  			 $.each(arrayFileObj,function(n,file){
+		  			 
+		  			$.each(arrayFileObj,function(n,file){
 		  				var fieldName = file.field.toLowerCase();
 		  				var table = $("#"+fieldName+"_fileTable");
 		  				var tr = $("<tr style=\"height:34px;\"></tr>");
@@ -227,6 +231,10 @@
 		  		  		td_title.appendTo(tr);
 		  		  		td_download.appendTo(tr);
 		  		  		td_view.appendTo(tr);
+		  		  		if(location.href.indexOf("load=detail")==-1){
+			  		  		var td_del = $("<td><a style=\"margin-left:10px;\" href=\"javascript:void(0)\" class=\"jeecgDetail\" onclick=\"del('cgUploadController.do?delFile&id=" + file.fileKey + "',this)\">删除</a></td>");
+			  		  		td_del.appendTo(tr);
+		  		  		}
 		  			 });
 		  		   }
 		  		});
@@ -304,7 +312,7 @@
 				}
 	  		}
 	  		function upload() {
-					$('#bafPath').uploadify('upload', '*');	
+					$('#bdFile').uploadify('upload', '*');	
 			}
 			
 			var neibuClickFlag = false;
@@ -313,12 +321,12 @@
 				$('#btn_sub').trigger('click');
 			}
 			function cancel() {
-					$('#bafPath').uploadify('cancel', '*');	
+					$('#bdFile').uploadify('cancel', '*');	
 			}
 			function uploadFile(data){
-				if(!$("input[name='bafSerId']").val()){
+				if(!$("input[name='id']").val()){
 					if(data.obj!=null && data.obj!='undefined'){
-						$("input[name='bafSerId']").val(data.obj.id);
+						$("input[name='id']").val(data.obj.id);
 					}
 				}
 				if($(".uploadify-queue-item").length>0){

@@ -1,7 +1,7 @@
 package com.action.actsale.controller;
 import com.action.actsale.entity.BusBidEntity;
+import com.action.actsale.entity.BusProjectEntity;
 import com.action.actsale.entity.VwBusBidEntity;
-import com.action.actsale.service.BusBidServiceI;
 import com.action.actsale.service.VwBusBidServiceI;
 import java.util.ArrayList;
 import java.util.List;
@@ -41,7 +41,6 @@ import org.jeecgframework.poi.excel.entity.TemplateExportParams;
 import org.jeecgframework.poi.excel.entity.vo.NormalExcelConstants;
 import org.jeecgframework.poi.excel.entity.vo.TemplateExcelConstants;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
-import org.hibernate.criterion.Restrictions;
 import org.jeecgframework.core.util.ResourceUtil;
 import java.io.IOException;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -51,34 +50,6 @@ import java.util.Map;
 import java.util.HashMap;
 import org.jeecgframework.core.util.ExceptionUtil;
 
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.ResponseStatus;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
-import org.jeecgframework.core.beanvalidator.BeanValidators;
-import java.util.Set;
-import javax.validation.ConstraintViolation;
-import javax.validation.Validator;
-import java.net.URI;
-import org.springframework.http.MediaType;
-import org.springframework.web.util.UriComponentsBuilder;
-import org.apache.commons.lang3.StringUtils;
-import org.jeecgframework.jwt.util.GsonUtil;
-import org.jeecgframework.jwt.util.ResponseMessage;
-import org.jeecgframework.jwt.util.Result;
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
-
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiModel;
-import io.swagger.annotations.ApiOperation;
-import io.swagger.annotations.ApiParam;
 
 import org.jeecgframework.web.cgform.entity.upload.CgUploadEntity;
 import org.jeecgframework.web.cgform.service.config.CgFormFieldServiceI;
@@ -87,11 +58,10 @@ import java.util.HashMap;
  * @Title: Controller  
  * @Description: 报价_投标审核
  * @author onlineGenerator
- * @date 2019-07-30 17:19:29
+ * @date 2019-08-29 16:56:23
  * @version V1.0   
  *
  */
-@Api(value="VwBusBid",description="报价_投标审核",tags="vwBusBidController")
 @Controller
 @RequestMapping("/vwBusBidController")
 public class VwBusBidController extends BaseController {
@@ -100,11 +70,7 @@ public class VwBusBidController extends BaseController {
 	@Autowired
 	private VwBusBidServiceI vwBusBidService;
 	@Autowired
-	private BusBidServiceI busBidService;
-	@Autowired
 	private SystemService systemService;
-	@Autowired
-	private Validator validator;
 	@Autowired
 	private CgFormFieldServiceI cgFormFieldService;
 	
@@ -115,24 +81,29 @@ public class VwBusBidController extends BaseController {
 	 * 
 	 * @return
 	 */
-	//原生方法，跳转到主页
 	@RequestMapping(params = "list")
 	public ModelAndView list(HttpServletRequest request) {
-		   return new ModelAndView("com/action/actsale/vwBusBidListMain");
+		return new ModelAndView("com/action/actsale/vwBusBidList");
 	}
-	
-	//安信功能另加方法，跳转到未审核页
-	@RequestMapping(params = "noVerify")
-	public ModelAndView noVerify(HttpServletRequest request) {
-		return new ModelAndView("com/action/actsale/vwBusBidListNoVf");
+	/**
+	 * 报价_投标审核列表 页面跳转
+	 * 
+	 * @return
+	 */
+	@RequestMapping(params = "list0")
+	public ModelAndView list0(HttpServletRequest request) {
+		return new ModelAndView("com/action/actsale/vwBusBidList0");
 	}
-	
-	//安信功能另加方法，跳转到已审核页
-	@RequestMapping(params = "verified")
-	public ModelAndView verified(HttpServletRequest request) {
-		return new ModelAndView("com/action/actsale/vwBusBidListVf");
+	/**
+	 * 报价_投标审核列表 页面跳转
+	 * 
+	 * @return
+	 */
+	@RequestMapping(params = "list1")
+	public ModelAndView list1(HttpServletRequest request) {
+		return new ModelAndView("com/action/actsale/vwBusBidList1");
 	}
-	
+
 	/**
 	 * easyui AJAX请求数据
 	 * 
@@ -144,13 +115,6 @@ public class VwBusBidController extends BaseController {
 
 	@RequestMapping(params = "datagrid")
 	public void datagrid(VwBusBidEntity vwBusBid,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
-		//实现"项目名称"的模糊查询
-		if(vwBusBid!=null&&vwBusBid.getBpProjName()!=null){
-			vwBusBid.setBpProjName("*"+vwBusBid.getBpProjName()+"*");
-		}
-		if(vwBusBid!=null&&vwBusBid.getBcName()!=null){
-			vwBusBid.setBcName("*"+vwBusBid.getBcName()+"*");
-		}
 		CriteriaQuery cq = new CriteriaQuery(VwBusBidEntity.class, dataGrid);
 		//查询条件组装器
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, vwBusBid, request.getParameterMap());
@@ -174,10 +138,16 @@ public class VwBusBidController extends BaseController {
 	public AjaxJson doDel(VwBusBidEntity vwBusBid, HttpServletRequest request) {
 		String message = null;
 		AjaxJson j = new AjaxJson();
-		vwBusBid = systemService.getEntity(VwBusBidEntity.class, vwBusBid.getId());
+		//vwBusBid = systemService.getEntity(VwBusBidEntity.class, vwBusBid.getId());
 		message = "报价_投标审核删除成功";
 		try{
-			vwBusBidService.delete(vwBusBid);
+			BusBidEntity t=systemService.getEntity(BusBidEntity.class,vwBusBid.getId());
+			vwBusBidService.delete(t);
+
+			BusProjectEntity o=systemService.getEntity(BusProjectEntity.class,t.getFromProjId());
+			o.setBpmStatus("1");
+			vwBusBidService.saveOrUpdate(o);
+			//vwBusBidService.delete(vwBusBid);
 			systemService.addLog(message, Globals.Log_Type_DEL, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();
@@ -201,10 +171,18 @@ public class VwBusBidController extends BaseController {
 		message = "报价_投标审核删除成功";
 		try{
 			for(String id:ids.split(",")){
-				VwBusBidEntity vwBusBid = systemService.getEntity(VwBusBidEntity.class, 
-				id
-				);
-				vwBusBidService.delete(vwBusBid);
+				/*
+				 * VwBusBidEntity vwBusBid = systemService.getEntity(VwBusBidEntity.class, id );
+				 * vwBusBidService.delete(vwBusBid);
+				 */
+				
+				BusBidEntity t=systemService.getEntity(BusBidEntity.class,id);
+				vwBusBidService.delete(t);
+
+				BusProjectEntity o=systemService.getEntity(BusProjectEntity.class,t.getFromProjId());
+				o.setBpmStatus("1");
+				vwBusBidService.saveOrUpdate(o);
+				
 				systemService.addLog(message, Globals.Log_Type_DEL, Globals.Log_Leavel_INFO);
 			}
 		}catch(Exception e){
@@ -229,8 +207,14 @@ public class VwBusBidController extends BaseController {
 		String message = null;
 		AjaxJson j = new AjaxJson();
 		message = "报价_投标审核添加成功";
+		BusBidEntity t=new BusBidEntity();
 		try{
-			vwBusBidService.save(vwBusBid);
+			MyBeanUtils.copyBeanNotNull2Bean(vwBusBid, t);
+			vwBusBidService.save(t);
+			
+			BusProjectEntity o=systemService.getEntity(BusProjectEntity.class,t.getFromProjId());
+			o.setBpmStatus("2");
+			vwBusBidService.saveOrUpdate(o);
 			systemService.addLog(message, Globals.Log_Type_INSERT, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();
@@ -238,7 +222,7 @@ public class VwBusBidController extends BaseController {
 			throw new BusinessException(e.getMessage());
 		}
 		j.setMsg(message);
-		j.setObj(vwBusBid);
+		j.setObj(t);
 		return j;
 	}
 	
@@ -254,13 +238,10 @@ public class VwBusBidController extends BaseController {
 		String message = null;
 		AjaxJson j = new AjaxJson();
 		message = "报价_投标审核更新成功";
-		//以下方式为刷新出BusBid实体，而不是视图实体
-		BusBidEntity busBid = vwBusBidService.get(BusBidEntity.class, vwBusBid.getId());
+		VwBusBidEntity t = vwBusBidService.get(VwBusBidEntity.class, vwBusBid.getId());
 		try {
-			//复制视图实体数据到真正update的表实体
-			MyBeanUtils.copyBeanNotNull2Bean(vwBusBid, busBid);
-			//将修改update到表实体
-			vwBusBidService.saveOrUpdate(busBid);
+			MyBeanUtils.copyBeanNotNull2Bean(vwBusBid, t);
+			vwBusBidService.saveOrUpdate(t);
 			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -293,7 +274,7 @@ public class VwBusBidController extends BaseController {
 		j.setMsg(message);
 		return j;
 	}
-	
+
 	/**
 	 * 报价_投标审核新增页面跳转
 	 * 
@@ -301,9 +282,18 @@ public class VwBusBidController extends BaseController {
 	 */
 	@RequestMapping(params = "goAdd")
 	public ModelAndView goAdd(VwBusBidEntity vwBusBid, HttpServletRequest req) {
-		if (StringUtil.isNotEmpty(vwBusBid.getId())) {
-			vwBusBid = vwBusBidService.getEntity(VwBusBidEntity.class, vwBusBid.getId());
-			req.setAttribute("vwBusBidPage", vwBusBid);
+		if (StringUtil.isNotEmpty(vwBusBid.getFromProjId())) {
+			//vwBusBid = vwBusBidService.getEntity(VwBusBidEntity.class, vwBusBid.getId());
+			List<VwBusBidEntity> listVwBusBid=vwBusBidService.findByProperty(VwBusBidEntity.class, "fromProjId", vwBusBid.getFromProjId());
+			for(VwBusBidEntity o:listVwBusBid)
+			{
+				if(o.getId().equals("0"))
+				{
+					o.setBdState("0");
+					o.setId(null);
+					req.setAttribute("vwBusBidPage", o);
+				}
+			}
 		}
 		return new ModelAndView("com/action/actsale/vwBusBid-add");
 	}
@@ -319,20 +309,6 @@ public class VwBusBidController extends BaseController {
 			req.setAttribute("vwBusBidPage", vwBusBid);
 		}
 		return new ModelAndView("com/action/actsale/vwBusBid-update");
-	}
-	
-	/**
-	 * 报价_投标审核查看信息页面跳转，此为安信功能新增页面
-	 * 
-	 * @return
-	 */
-	@RequestMapping(params = "goView")
-	public ModelAndView goView(VwBusBidEntity vwBusBid, HttpServletRequest req) {
-		if (StringUtil.isNotEmpty(vwBusBid.getId())) {
-			vwBusBid = vwBusBidService.getEntity(VwBusBidEntity.class, vwBusBid.getId());
-			req.setAttribute("vwBusBidPage", vwBusBid);
-		}
-		return new ModelAndView("com/action/actsale/vwBusBid-view");
 	}
 	
 	/**
@@ -443,118 +419,4 @@ public class VwBusBidController extends BaseController {
 		return j;
 	}
 	
-	@RequestMapping(value="/list/{pageNo}/{pageSize}", method = RequestMethod.GET)
-	@ResponseBody
-	@ApiOperation(value="报价_投标审核列表信息",produces="application/json",httpMethod="GET")
-	public ResponseMessage<List<VwBusBidEntity>> list(@PathVariable("pageNo") int pageNo, @PathVariable("pageSize") int pageSize, HttpServletRequest request) {
-		if(pageSize > Globals.MAX_PAGESIZE){
-			return Result.error("每页请求不能超过" + Globals.MAX_PAGESIZE + "条");
-		}
-		CriteriaQuery query = new CriteriaQuery(VwBusBidEntity.class);
-		query.setCurPage(pageNo<=0?1:pageNo);
-		query.setPageSize(pageSize<1?1:pageSize);
-		List<VwBusBidEntity> listVwBusBids = this.vwBusBidService.getListByCriteriaQuery(query,true);
-		return Result.success(listVwBusBids);
-	}
-	
-	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
-	@ResponseBody
-	@ApiOperation(value="根据ID获取报价_投标审核信息",notes="根据ID获取报价_投标审核信息",httpMethod="GET",produces="application/json")
-	public ResponseMessage<?> get(@ApiParam(required=true,name="id",value="ID")@PathVariable("id") String id) {
-		VwBusBidEntity task = vwBusBidService.get(VwBusBidEntity.class, id);
-		if (task == null) {
-			return Result.error("根据ID获取报价_投标审核信息为空");
-		}
-		return Result.success(task);
-	}
-
-	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
-	@ResponseBody
-	@ApiOperation(value="创建报价_投标审核")
-	public ResponseMessage<?> create(@ApiParam(name="报价_投标审核对象")@RequestBody VwBusBidEntity vwBusBid, UriComponentsBuilder uriBuilder) {
-		//调用JSR303 Bean Validator进行校验，如果出错返回含400错误码及json格式的错误信息.
-		Set<ConstraintViolation<VwBusBidEntity>> failures = validator.validate(vwBusBid);
-		if (!failures.isEmpty()) {
-			return Result.error(JSONArray.toJSONString(BeanValidators.extractPropertyAndMessage(failures)));
-		}
-
-		//保存
-		try{
-			vwBusBidService.save(vwBusBid);
-		} catch (Exception e) {
-			e.printStackTrace();
-			return Result.error("报价_投标审核信息保存失败");
-		}
-		return Result.success(vwBusBid);
-	}
-
-	@RequestMapping(value = "/{id}", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
-	@ResponseBody
-	@ApiOperation(value="更新报价_投标审核",notes="更新报价_投标审核")
-	public ResponseMessage<?> update(@ApiParam(name="报价_投标审核对象")@RequestBody VwBusBidEntity vwBusBid) {
-		//调用JSR303 Bean Validator进行校验，如果出错返回含400错误码及json格式的错误信息.
-		Set<ConstraintViolation<VwBusBidEntity>> failures = validator.validate(vwBusBid);
-		if (!failures.isEmpty()) {
-			return Result.error(JSONArray.toJSONString(BeanValidators.extractPropertyAndMessage(failures)));
-		}
-
-		//保存
-		try{
-			vwBusBidService.saveOrUpdate(vwBusBid);
-		} catch (Exception e) {
-			e.printStackTrace();
-			return Result.error("更新报价_投标审核信息失败");
-		}
-
-		//按Restful约定，返回204状态码, 无内容. 也可以返回200状态码.
-		return Result.success("更新报价_投标审核信息成功");
-	}
-
-	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
-	@ResponseStatus(HttpStatus.NO_CONTENT)
-	@ApiOperation(value="删除报价_投标审核")
-	public ResponseMessage<?> delete(@ApiParam(name="id",value="ID",required=true)@PathVariable("id") String id) {
-		logger.info("delete[{}]" , id);
-		// 验证
-		if (StringUtils.isEmpty(id)) {
-			return Result.error("ID不能为空");
-		}
-		try {
-			vwBusBidService.deleteEntityById(VwBusBidEntity.class, id);
-		} catch (Exception e) {
-			e.printStackTrace();
-			return Result.error("报价_投标审核删除失败");
-		}
-
-		return Result.success();
-	}
-	
-	//以下为检索下拉框的数据过滤（项目名称），注意：此项为安信项目独立要求
-	@RequestMapping(value = "loadSuggestData")
-	@ResponseBody
-	public Object loadSuggestData(String keyword,HttpServletRequest request) {
-
-		String sql = "select bp_proj_id,bp_proj_name from bus_project where bp_proj_name like '%" +keyword+"%'";
-		JSONObject object = new JSONObject();
-		object.put("message", "");
-		try {
-			List<Map<String,Object>> data = this.systemService.findForJdbc(sql);
-			for (Map<String, Object> map : data) {
-				for (String key : map.keySet()) {
-					if(null == map.get(key)){
-						map.put(key,"");
-					}
-				}
-			}
-
-			net.sf.json.JSONArray array = net.sf.json.JSONArray.fromObject(data);
-			object.put("value", array);
-			object.put("code", 200);
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		object.put("redirect", "");
-		return object;
-	}
-
 }

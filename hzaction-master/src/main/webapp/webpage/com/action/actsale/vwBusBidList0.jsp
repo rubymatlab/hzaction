@@ -3,7 +3,7 @@
 <t:base type="jquery,easyui,tools,DatePicker"></t:base>
 <div class="easyui-layout" fit="true">
   <div region="center" style="padding:0px;border:0px">
-  <t:datagrid name="vwBusBidListVf" pagination="true" fitColumns="true" sortName="createDate" actionUrl="vwBusBidController.do?datagrid&bdState=1" idField="id" fit="true" queryMode="group">
+  <t:datagrid name="vwBusBidList" checkbox="true" pagination="true" fitColumns="true" title="报价_投标审核" sortName="createDate" actionUrl="vwBusBidController.do?datagrid&bdState=0" idField="id" fit="true" queryMode="group">
    <t:dgCol title="主键"  field="id"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="创建人名称"  field="createName"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="创建人登录名称"  field="createBy"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
@@ -14,18 +14,12 @@
    <t:dgCol title="所属部门"  field="sysOrgCode"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="所属公司"  field="sysCompanyCode"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="流程状态"  field="bpmStatus"  hidden="true"  queryMode="single"  dictionary="bpm_status"  width="120"></t:dgCol>
-   <t:dgCol title="附件文件表id"  field="bafSerId"  hidden="true"  queryMode="single"  downloadName="附件下载"  width="120"></t:dgCol>
-   <t:dgCol title="附件分类"  field="bafAttachClass"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="文件路径"  field="bafPath"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="文件名称"  field="bafFilename"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="项目立项表id"  field="bpSerId"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="项目编号"  field="bpProjId"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="项目名称"  field="bpProjName"  query="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="客户资料表id"  field="bcSerId"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="客户编号"  field="bcId"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="客户名称"  field="bcName"  query="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="客户简称"  field="bcSname"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="立项时间"  field="bpDate"  formatter="yyyy-MM-dd"  hidden="true"  query="true"  queryMode="group"  width="120"></t:dgCol>
+   <t:dgCol title="客户编号"  field="bcId"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="客户名称"  field="bcName"  query="true"  queryMode="single"  dictionary="bas_customer,bc_name,bc_name"  width="120"></t:dgCol>
+   <t:dgCol title="客户简称"  field="bcSname"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="拟中标方"  field="bdWinBidder"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="项目类型"  field="bdProjType"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="主标人员"  field="bdMainBidder"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
@@ -35,18 +29,49 @@
    <t:dgCol title="投标金额"  field="bdBidAmout"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="投标日期"  field="bdBidDate"  formatter="yyyy-MM-dd"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="投标内容"  field="bdBidContent"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="审核状态"  field="bdState"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="审核状态"  field="bdState"  hidden="true"  queryMode="single"  dictionary="state"  width="120"></t:dgCol>
    <t:dgCol title="备注"  field="bdBidRemark"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="项目立项外键"  field="fromProjId"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="客户资料外键"  field="fromCustjId"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="附件"  field="bdFile"  queryMode="single"  downloadName="附件下载"  width="120"></t:dgCol>
    <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
-   <t:dgFunOpt title="查看" funname="viewInfo(id)" urlclass="ace_button"  urlfont="fa-search" />
+   <t:dgDelOpt title="打回" url="vwBusBidController.do?doDel&id={id}" urlclass="ace_button"  urlfont="fa-trash-o"/>
+	<t:dgFunOpt funname="doVerifyBtn(id)" title="通过" urlclass="ace_button" urlfont="fa-wrench" />
+   <t:dgToolBar title="录入" icon="icon-add" url="vwBusBidController.do?goAdd" funname="add"></t:dgToolBar>
+	<t:dgToolBar title="编辑" icon="icon-edit" url="vwBusBidController.do?goUpdate" funname="update"></t:dgToolBar>
+   <t:dgToolBar title="批量删除"  icon="icon-remove" url="vwBusBidController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>
+   <t:dgToolBar title="查看" icon="icon-search" url="vwBusBidController.do?goUpdate" funname="detail"></t:dgToolBar>
+   <t:dgToolBar title="导入" icon="icon-put" funname="ImportXls"></t:dgToolBar>
+   <t:dgToolBar title="导出" icon="icon-putout" funname="ExportXls"></t:dgToolBar>
+   <t:dgToolBar title="模板下载" icon="icon-putout" funname="ExportXlsByT"></t:dgToolBar>
   </t:datagrid>
   </div>
  </div>
  <script type="text/javascript">
-     	//自定义按钮-查看
-	 	 function viewInfo(id) {
-	 		openwindow('查看信息', 'vwBusBidController.do?goView&id=' + id,'recordPage',650,400);
-	    }
-</script>
+ $(document).ready(function(){
+ });
+ 
+   
+     	//自定义按钮-审核
+	 	function doVerifyBtn(id,index){
+	 	    var url = "vwBusBidController.do?doVerifyBtn";
+			url = url+"&id="+id;
+	 		createdialog('确认 ', '确定通过审核吗 ?', url,'vwBusBidList');
+	 	}
+ 
+//导入
+function ImportXls() {
+	openuploadwin('Excel导入', 'vwBusBidController.do?upload', "vwBusBidList");
+}
+
+//导出
+function ExportXls() {
+	JeecgExcelExport("vwBusBidController.do?exportXls","vwBusBidList");
+}
+
+//模板下载
+function ExportXlsByT() {
+	JeecgExcelExport("vwBusBidController.do?exportXlsByT","vwBusBidList");
+}
+
+ </script>

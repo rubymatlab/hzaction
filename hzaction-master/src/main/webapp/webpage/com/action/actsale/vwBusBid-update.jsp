@@ -13,7 +13,7 @@
  <body>
 		<t:formvalid formid="formobj" dialog="true" usePlugin="password" layout="table" action="vwBusBidController.do?doUpdate" callback="jeecgFormFileCallBack@Override">
 					<input id="id" name="id" type="hidden" value="${vwBusBidPage.id }"/>
-		<table style="width: 600px;" cellpadding="0" cellspacing="1" class="formtable">
+		<table style="width: 800px;" cellpadding="0" cellspacing="1" class="formtable">
 					<tr>
 						<td align="right">
 							<label class="Validform_label">
@@ -21,7 +21,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="bpProjId" name="bpProjId" type="text" maxlength="40" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bpProjId}'/>
+						    <input id="bpProjId" readonly="true"  name="bpProjId" type="text" maxlength="40" style="width: 150px;background-color:#F0F0F0;" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bpProjId}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">项目编号</label>
 						</td>
@@ -31,7 +31,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="bpProjName" name="bpProjName" type="text" maxlength="200" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bpProjName}'/>
+						    <input id="bpProjName" readonly="true" name="bpProjName" type="text" maxlength="200" style="width: 150px;background-color:#F0F0F0;" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bpProjName}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">项目名称</label>
 						</td>
@@ -43,7 +43,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="bcName" name="bcName" type="text" maxlength="100" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bcName}'/>
+						    <input id="bcName" readonly="true"  name="bcName" type="text" maxlength="100" style="width: 150px;background-color:#F0F0F0;" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bcName}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">客户名称</label>
 						</td>
@@ -53,7 +53,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="bdWinBidder" name="bdWinBidder" type="text" maxlength="40" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bdWinBidder}'/>
+						    <input id="bdWinBidder" readonly="true"  name="bdWinBidder" type="text" maxlength="40" style="width: 150px;background-color:#F0F0F0;" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bdWinBidder}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">拟中标方</label>
 						</td>
@@ -65,53 +65,9 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="bdProjType" name="bdProjType" type="text" maxlength="20" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bdProjType}'/>
+						    <input id="bdProjType" readonly="true"  name="bdProjType" type="text" maxlength="20" style="width: 150px;background-color:#F0F0F0;" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bdProjType}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">项目类型</label>
-						</td>
-						<td align="right">
-							<label class="Validform_label">
-								主标人员:
-							</label>
-						</td>
-						<td class="value">
-						    <input id="bdMainBidder" name="bdMainBidder" type="text" maxlength="100" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bdMainBidder}'/>
-							<span class="Validform_checktip"></span>
-							<label class="Validform_label" style="display: none;">主标人员</label>
-						</td>
-					</tr>
-					<tr>
-						<td align="right">
-							<label class="Validform_label">
-								配合人员:
-							</label>
-						</td>
-						<td class="value">
-						    <input id="bdCoordinator" name="bdCoordinator" type="text" maxlength="100" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bdCoordinator}'/>
-							<span class="Validform_checktip"></span>
-							<label class="Validform_label" style="display: none;">配合人员</label>
-						</td>
-						<td align="right">
-							<label class="Validform_label">
-								商务负责人:
-							</label>
-						</td>
-						<td class="value">
-						    <input id="bdBusinessCharge" name="bdBusinessCharge" type="text" maxlength="100" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bdBusinessCharge}'/>
-							<span class="Validform_checktip"></span>
-							<label class="Validform_label" style="display: none;">商务负责人</label>
-						</td>
-					</tr>
-					<tr>
-						<td align="right">
-							<label class="Validform_label">
-								辅助人员:
-							</label>
-						</td>
-						<td class="value">
-						    <input id="bdAuxiliaryStaff" name="bdAuxiliaryStaff" type="text" maxlength="100" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bdAuxiliaryStaff}'/>
-							<span class="Validform_checktip"></span>
-							<label class="Validform_label" style="display: none;">辅助人员</label>
 						</td>
 						<td align="right">
 							<label class="Validform_label">
@@ -119,7 +75,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="bdBidAmout" name="bdBidAmout" type="text" maxlength="12" style="width: 150px" class="inputxt"  datatype="/^(-?\d+)(\.\d+)?$/"  ignore="ignore"  value='${vwBusBidPage.bdBidAmout}'/>
+						    <input id="bdBidAmout" readonly="true" name="bdBidAmout" type="text" maxlength="12" style="width: 150px;background-color:#F0F0F0;" class="inputxt"  datatype="/^(-?\d+)(\.\d+)?$/"  ignore="ignore"  value='${vwBusBidPage.bdBidAmout}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">投标金额</label>
 						</td>
@@ -131,7 +87,7 @@
 							</label>
 						</td>
 						<td class="value">
-									  <input id="bdBidDate" name="bdBidDate" type="text" style="width: 150px"  class="Wdate" onClick="WdatePicker()"  ignore="ignore" value='<fmt:formatDate value='${vwBusBidPage.bdBidDate}' type="date" pattern="yyyy-MM-dd"/>'/>
+									  <input id="bdBidDate" readonly="true" name="bdBidDate" type="text" style="width: 150px;background-color:#F0F0F0;"  class="Wdate" onClick="WdatePicker()"  ignore="ignore" value='<fmt:formatDate value='${vwBusBidPage.bdBidDate}' type="date" pattern="yyyy-MM-dd"/>'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">投标日期</label>
 						</td>
@@ -141,11 +97,56 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="bdState" name="bdState" type="text" maxlength="20" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bdState}'/>
+						    <input id="bdState" readonly="true" name="bdState" type="text" maxlength="20" style="width: 150px;background-color:#F0F0F0;" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bdState}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">审核状态</label>
 						</td>
 					</tr>
+					<tr>
+						<td align="right">
+							<label class="Validform_label">
+								主标人员:
+							</label>
+						</td>
+						<td class="value">
+						    <input id="bdMainBidder" name="bdMainBidder" type="text" maxlength="100" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bdMainBidder}'/>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">主标人员</label>
+						</td>
+						<td align="right">
+							<label class="Validform_label">
+								配合人员:
+							</label>
+						</td>
+						<td class="value">
+						    <input id="bdCoordinator" name="bdCoordinator" type="text" maxlength="100" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bdCoordinator}'/>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">配合人员</label>
+						</td>
+					</tr>
+					<tr>
+						<td align="right">
+							<label class="Validform_label">
+								商务负责人:
+							</label>
+						</td>
+						<td class="value">
+						    <input id="bdBusinessCharge" name="bdBusinessCharge" type="text" maxlength="100" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bdBusinessCharge}'/>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">商务负责人</label>
+						</td>
+						<td align="right">
+							<label class="Validform_label">
+								辅助人员:
+							</label>
+						</td>
+						<td class="value">
+						    <input id="bdAuxiliaryStaff" name="bdAuxiliaryStaff" type="text" maxlength="100" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bdAuxiliaryStaff}'/>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">辅助人员</label>
+						</td>
+					</tr>
+					
 					<tr>
 						<td align="right">
 							<label class="Validform_label">
@@ -186,7 +187,7 @@
 							</label>
 						</td>
 						<td class="value"  colspan="3" >
-						  	 	<textarea id="bdBidContent" style="height:auto;width:95%;" class="inputxt" rows="6" name="bdBidContent"  ignore="ignore" >${vwBusBidPage.bdBidContent}</textarea>
+						  	 	<textarea id="bdBidContent" style="height:auto;width:95%;background-color:#F0F0F0;" class="inputxt" rows="6" name="bdBidContent"  ignore="ignore" >${vwBusBidPage.bdBidContent}</textarea>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">投标内容</label>
 						</td>

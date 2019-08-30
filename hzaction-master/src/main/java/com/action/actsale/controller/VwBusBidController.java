@@ -238,10 +238,13 @@ public class VwBusBidController extends BaseController {
 		String message = null;
 		AjaxJson j = new AjaxJson();
 		message = "报价_投标审核更新成功";
-		VwBusBidEntity t = vwBusBidService.get(VwBusBidEntity.class, vwBusBid.getId());
+		//VwBusBidEntity t = vwBusBidService.get(VwBusBidEntity.class, vwBusBid.getId());
 		try {
+			BusBidEntity t=vwBusBidService.get(BusBidEntity.class, vwBusBid.getId());
 			MyBeanUtils.copyBeanNotNull2Bean(vwBusBid, t);
 			vwBusBidService.saveOrUpdate(t);
+			//MyBeanUtils.copyBeanNotNull2Bean(vwBusBid, t);
+			//vwBusBidService.saveOrUpdate(t);
 			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
 		} catch (Exception e) {
 			e.printStackTrace();

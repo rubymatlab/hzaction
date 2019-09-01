@@ -15,6 +15,7 @@ import org.jeecgframework.core.util.StringUtil;
 import org.jeecgframework.core.util.oConvertUtils;
 import org.jeecgframework.minidao.util.FreemarkerParseFactory;
 import org.jeecgframework.web.cgform.enhance.CgformEnhanceJavaInter;
+import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -102,7 +103,7 @@ public class VmBusPoPayWmtServiceImpl extends CommonServiceImpl implements VmBus
 		String nowBppPayId1 = actaccountDao.getNowByBppPayId().get("bpp_pay_id");
 		logger.info("-- 当前最新付款单号:{} --",nowBppPayId1);
 		String nowBppPayId2 = getNowBppPayId(nowBppPayId1);
-		logger.info("-- 自动生成当前更新付款单号:{} --",nowBppPayId2);
+		logger.info("-- 更新付款单号:{} --",nowBppPayId2);
 		vmBusPoPayWmt.setBppPayId(nowBppPayId2);
 
 		//保存主信息
@@ -125,7 +126,7 @@ public class VmBusPoPayWmtServiceImpl extends CommonServiceImpl implements VmBus
 	}
 
 	public void updateMain(VmBusPoPayWmtEntity vmBusPoPayWmt,
-			List<VmBusPoContractPayWmtEntity> vmBusPoContractPayWmtList,List<BusPayInfoEntity> busPayInfoList) throws Exception {
+		List<VmBusPoContractPayWmtEntity> vmBusPoContractPayWmtList,List<BusPayInfoEntity> busPayInfoList) throws Exception {
 		//保存主表信息
 		if(StringUtil.isNotEmpty(vmBusPoPayWmt.getId())){
 			try {
@@ -193,6 +194,21 @@ public class VmBusPoPayWmtServiceImpl extends CommonServiceImpl implements VmBus
 					if(oldE.getId().equals(sendE.getId())){
 						try {
 							MyBeanUtils.copyBeanNotNull2Bean(sendE,oldE);
+							
+							//wmt
+							logger.info("-- [银行账号信息外键]和[账号简称]不为空则生成凭证号:{},{} --",oldE.getFromBankAccId(),oldE.getBbaiSname());
+							//凭证号产生规则：201907001（年月流水号，自动生成）
+							if(oldE.getFromBankAccId()!=null&&oldE.getBbaiSname()!=null
+									&&oldE.getFromBankAccId().trim()!=""&&oldE.getBbaiSname().trim()!="") {
+								String createBpiVoucherno = createBpiVoucherno(actaccountDao.findByBpiVoucherno());
+								if(oldE.getBbaiSname()==null||oldE.getBpiVoucherno().trim()=="")
+									oldE.setBpiVoucherno(createBpiVoucherno);
+								logger.info("-- 自动生成支付凭证号成功!:{} --",createBpiVoucherno);
+							}else {
+								logger.info("-- 自动生成支付凭证号失败! --");
+							}
+							//wmt
+							
 							this.saveOrUpdate(oldE);
 						} catch (Exception e) {
 							e.printStackTrace();
@@ -220,6 +236,33 @@ public class VmBusPoPayWmtServiceImpl extends CommonServiceImpl implements VmBus
 		//执行更新操作增强业务
 		this.doUpdateBus(vmBusPoPayWmt,vmBusPoContractPayWmtList);
 	}
+	
+	//自动生成【bus_pay_info表】的最新凭证号
+	public String createBpiVoucherno(String voucherno) {
+		String nowYear = Calendar.getInstance().get(Calendar.YEAR)+"";
+		int intNowMonth = Integer.parseInt(Calendar.getInstance().get(Calendar.MONTH)+"")+1;
+		String nowMonth = intNowMonth<10?"0"+intNowMonth:""+intNowMonth;
+		
+		//判空，直接生成最新凭证号
+		if(voucherno==null||voucherno.replace(" ","").equals("")) return nowYear+nowMonth+"001";
+		
+		String year = voucherno.substring(0,4);
+		String month = voucherno.substring(4,6);
+		int intMark = Integer.parseInt(voucherno.substring(6));
+		
+		++intMark;
+		String mark = intMark<10?"00"+intMark:intMark<100?"0"+intMark:intMark+"";
+		if(nowYear.equals(year)&&nowMonth.equals(month)) {
+			//年月相等，年不变月不变，流水号自增
+			return year+month+mark;
+		}else if(nowYear.equals(year)&&!nowMonth.equals(month)){
+			//年等月不等，年不变月变今，流水号自增
+			return year+nowMonth+"001";
+		}
+		//年不等，年变今月变今，流水号自增
+		return nowYear+nowMonth+"001";
+	}
+	
 
 	public void delMain(VmBusPoPayWmtEntity vmBusPoPayWmt) throws Exception{
 		//删除主表信息
@@ -321,7 +364,6 @@ public class VmBusPoPayWmtServiceImpl extends CommonServiceImpl implements VmBus
 					vmBusPoContractPayWmtEntity.getPayAmount(), vmBusPoContractPayWmtEntity.getBpcpRemark());
 			logger.info("-- 【bus_po_contract_pay】实体附表更新操作增强业务成功否：{} --",i);
 		}
-
 
 		//-----------------sql增强 end------------------------------
 

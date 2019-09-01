@@ -22,7 +22,7 @@ import org.jeecgframework.poi.excel.annotation.Excel;
  * @Title: Entity
  * @Description: 报价_投标审核
  * @author onlineGenerator
- * @date 2019-07-30 17:19:29
+ * @date 2019-08-29 16:56:23
  * @version V1.0   
  *
  */
@@ -50,17 +50,6 @@ public class VwBusBidEntity implements java.io.Serializable {
 	private java.lang.String sysCompanyCode;
 	/**流程状态*/
 	private java.lang.String bpmStatus;
-	/**附件文件表id*/
-	@Excel(name="附件文件表id",width=15)
-	private java.lang.String bafSerId;
-	/**附件分类*/
-	private java.lang.String bafAttachClass;
-	/**文件路径*/
-	private java.lang.String bafPath;
-	/**文件名称*/
-	private java.lang.String bafFilename;
-	/**项目立项表id*/
-	private java.lang.String bpSerId;
 	/**项目编号*/
 	@Excel(name="项目编号",width=15)
 	private java.lang.String bpProjId;
@@ -69,8 +58,6 @@ public class VwBusBidEntity implements java.io.Serializable {
 	private java.lang.String bpProjName;
 	/**立项时间*/
 	private java.util.Date bpDate;
-	/**客户资料表id*/
-	private java.lang.String bcSerId;
 	/**客户编号*/
 	private java.lang.String bcId;
 	/**客户名称*/
@@ -115,6 +102,9 @@ public class VwBusBidEntity implements java.io.Serializable {
 	private java.lang.String fromProjId;
 	/**客户资料外键*/
 	private java.lang.String fromCustjId;
+	/**附件*/
+	@Excel(name="附件",width=15)
+	private java.lang.String bdFile;
 	
 	/**
 	 *方法: 取得java.lang.String
@@ -291,91 +281,6 @@ public class VwBusBidEntity implements java.io.Serializable {
 	}
 	/**
 	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  附件文件表id
-	 */
-
-	@Column(name ="BAF_SER_ID",nullable=true,length=36)
-	public java.lang.String getBafSerId(){
-		return this.bafSerId;
-	}
-
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  附件文件表id
-	 */
-	public void setBafSerId(java.lang.String bafSerId){
-		this.bafSerId = bafSerId;
-	}
-	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  附件分类
-	 */
-
-	@Column(name ="BAF_ATTACH_CLASS",nullable=true,length=30)
-	public java.lang.String getBafAttachClass(){
-		return this.bafAttachClass;
-	}
-
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  附件分类
-	 */
-	public void setBafAttachClass(java.lang.String bafAttachClass){
-		this.bafAttachClass = bafAttachClass;
-	}
-	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  文件路径
-	 */
-
-	@Column(name ="BAF_PATH",nullable=true,length=200)
-	public java.lang.String getBafPath(){
-		return this.bafPath;
-	}
-
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  文件路径
-	 */
-	public void setBafPath(java.lang.String bafPath){
-		this.bafPath = bafPath;
-	}
-	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  文件名称
-	 */
-
-	@Column(name ="BAF_FILENAME",nullable=true,length=100)
-	public java.lang.String getBafFilename(){
-		return this.bafFilename;
-	}
-
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  文件名称
-	 */
-	public void setBafFilename(java.lang.String bafFilename){
-		this.bafFilename = bafFilename;
-	}
-	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  项目立项表id
-	 */
-
-	@Column(name ="BP_SER_ID",nullable=true,length=36)
-	public java.lang.String getBpSerId(){
-		return this.bpSerId;
-	}
-
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  项目立项表id
-	 */
-	public void setBpSerId(java.lang.String bpSerId){
-		this.bpSerId = bpSerId;
-	}
-	/**
-	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  项目编号
 	 */
 
@@ -424,23 +329,6 @@ public class VwBusBidEntity implements java.io.Serializable {
 	 */
 	public void setBpDate(java.util.Date bpDate){
 		this.bpDate = bpDate;
-	}
-	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  客户资料表id
-	 */
-
-	@Column(name ="BC_SER_ID",nullable=true,length=36)
-	public java.lang.String getBcSerId(){
-		return this.bcSerId;
-	}
-
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  客户资料表id
-	 */
-	public void setBcSerId(java.lang.String bcSerId){
-		this.bcSerId = bcSerId;
 	}
 	/**
 	 *方法: 取得java.lang.String
@@ -713,5 +601,22 @@ public class VwBusBidEntity implements java.io.Serializable {
 	 */
 	public void setFromCustjId(java.lang.String fromCustjId){
 		this.fromCustjId = fromCustjId;
+	}
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  附件
+	 */
+
+	@Column(name ="BD_FILE",nullable=true,length=500)
+	public java.lang.String getBdFile(){
+		return this.bdFile;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  附件
+	 */
+	public void setBdFile(java.lang.String bdFile){
+		this.bdFile = bdFile;
 	}
 }

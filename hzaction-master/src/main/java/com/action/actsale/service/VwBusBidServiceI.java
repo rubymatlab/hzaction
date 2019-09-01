@@ -13,7 +13,7 @@ public interface VwBusBidServiceI extends CommonService{
  	public void saveOrUpdate(VwBusBidEntity entity) throws Exception;
  	
  	/**
-	 * 自定义按钮-[审核]
+	 * 自定义按钮-[审核]业务处理
 	 * @param id
 	 * @return
 	 */

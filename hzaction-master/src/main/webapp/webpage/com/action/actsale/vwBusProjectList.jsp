@@ -5,24 +5,25 @@
   <div region="center" style="padding:0px;border:0px">
   <t:datagrid name="vwBusProjectList" checkbox="true" fitColumns="true" title="项目立项" sortName="createDate" actionUrl="vwBusProjectController.do?datagrid" idField="id" fit="true" queryMode="group">
    <t:dgCol title="主键"  field="id"  hidden="true"  queryMode="group"  width="120"></t:dgCol>
-   <t:dgCol title="项目编号"  field="bpProjId"  query="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="项目名称"  field="bpProjName"  query="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="立项时间"  field="bpDate"  formatter="yyyy-MM-dd"  query="true"  queryMode="group"  width="120"></t:dgCol>
-   <t:dgCol title="项目关键人"  field="bpKeyPeople"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="项目简介"  field="bpIntroduction"  queryMode="single"  width="500"></t:dgCol>
-   <t:dgCol title="问题or协助"  field="bpQuestions"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="产品解决方案"  field="bpProSolutions"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="竞争情况"  field="bpCompetition"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="项目经理"  field="bpManager"  query="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="项目组成员"  field="bpTeam"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="项目名称"  field="bpProjName"  query="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="方案输出时间"  field="bpOutTime"  formatter="yyyy-MM-dd hh:mm:ss"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="方案定稿时间"  field="bpFinishTime"  formatter="yyyy-MM-dd hh:mm:ss"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="正式挂网时间"  field="bpOnlineTime"  formatter="yyyy-MM-dd hh:mm:ss"  query="true"  queryMode="group"  width="120"></t:dgCol>
-   <t:dgCol title="跟进结果"  field="bpFollowResults"  query="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="客户资料外键"  field="fromCustId"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="客户编号"  field="bcId"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="客户名称"  field="bcName"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="流程状态"  field="bpmStatus"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="产品解决方案"  field="bpProSolutions"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="问题or协助"  field="bpQuestions"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="流程状态"  field="bpmStatus" dictionary="bpm_status"  queryMode="single"  width="120"></t:dgCol>
+   
+   <t:dgCol title="项目编号"  field="bpProjId" hidden="true"   query="true"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="立项时间"  field="bpDate" hidden="true"   formatter="yyyy-MM-dd"  query="true"  queryMode="group"  width="120"></t:dgCol>
+   <t:dgCol title="项目关键人"  field="bpKeyPeople" hidden="true"   queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="项目简介"  field="bpIntroduction" hidden="true"   queryMode="single"  width="500"></t:dgCol>
+   <t:dgCol title="竞争情况"  field="bpCompetition" hidden="true"   queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="项目组成员"  field="bpTeam" hidden="true"   queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="跟进结果"  field="bpFollowResults" hidden="true"   query="true"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="客户资料外键"  field="fromCustId" hidden="true"   queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="客户编号"  field="bcId" hidden="true"   queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="客户名称"  field="bcName" hidden="true"   queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="创建人名称"  field="createName"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="创建人登录名称"  field="createBy"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="更新人名称"  field="updateName"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
@@ -40,7 +41,7 @@
    <t:dgToolBar title="导入" icon="icon-put" funname="ImportXls"></t:dgToolBar>
    <t:dgToolBar title="导出" icon="icon-putout" funname="ExportXls"></t:dgToolBar>
    <t:dgToolBar title="模板下载" icon="icon-putout" funname="ExportXlsByT"></t:dgToolBar>
-   	<t:dgToolBar title="立项转投标" icon="icon-edit"  url="vwBusProjectController.do?doBid" funname="doBid" ></t:dgToolBar>
+   	<t:dgToolBar title="立项转投标" icon="icon-edit"  url="vwBusBidController.do?goAdd" funname="doBid" ></t:dgToolBar>
    	<t:dgToolBar title="立项转合同" icon="icon-edit"  url="vwBusProjectController.do?doContract" funname="doContract" ></t:dgToolBar>
   </t:datagrid>
   </div>
@@ -53,8 +54,13 @@
 			tip('请选择立项转投标项目');
 			return;
 		}
-		url = url+"&id="+rowData['id'];
- 		createdialog('确认 ', '确定'+title+'吗 ?', url,gridname);
+		if(rowData['bpmStatus']=="1")
+			{
+		url = url+"&fromProjId="+rowData['id'];
+ 		createwindow(title,url,800,500);
+			}
+		else
+			tip('该项目已立项转投标');
  	}
  	//自定义按钮-sql增强-立项转合同
  	function doContract(title,url,id){

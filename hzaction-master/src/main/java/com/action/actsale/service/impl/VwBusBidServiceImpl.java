@@ -44,7 +44,7 @@ public class VwBusBidServiceImpl extends CommonServiceImpl implements VwBusBidSe
  		this.doUpdateBus(entity);
  	}
  	/**
-	 * 自定义按钮-[审核]业务处理，视图主页
+	 * 自定义按钮-[审核]业务处理
 	 * @param id
 	 * @return
 	 */
@@ -53,6 +53,8 @@ public class VwBusBidServiceImpl extends CommonServiceImpl implements VwBusBidSe
 	 	//sql增强第1条
 	 	String sqlEnhance_1 ="update bus_bid set bd_state='1' where id= '#{id}'";
 	 	this.executeSqlEnhance(sqlEnhance_1,t);
+	 	String sqlEnhance_2 ="update bus_project set bpm_status='3' where id= '#{from_proj_id}'";
+	 	this.executeSqlEnhance(sqlEnhance_2,t);
 	 	//-----------------sql增强 end------------------------------
 	 	
 	 	//-----------------java增强 start---------------------------
@@ -108,15 +110,9 @@ public class VwBusBidServiceImpl extends CommonServiceImpl implements VwBusBidSe
 		map.put("sys_org_code", t.getSysOrgCode());
 		map.put("sys_company_code", t.getSysCompanyCode());
 		map.put("bpm_status", t.getBpmStatus());
-		map.put("baf_ser_id", t.getBafSerId());
-		map.put("baf_attach_class", t.getBafAttachClass());
-		map.put("baf_path", t.getBafPath());
-		map.put("baf_filename", t.getBafFilename());
-		map.put("bp_ser_id", t.getBpSerId());
 		map.put("bp_proj_id", t.getBpProjId());
 		map.put("bp_proj_name", t.getBpProjName());
 		map.put("bp_date", t.getBpDate());
-		map.put("bc_ser_id", t.getBcSerId());
 		map.put("bc_id", t.getBcId());
 		map.put("bc_name", t.getBcName());
 		map.put("bc_sname", t.getBcSname());
@@ -133,6 +129,7 @@ public class VwBusBidServiceImpl extends CommonServiceImpl implements VwBusBidSe
 		map.put("bd_bid_remark", t.getBdBidRemark());
 		map.put("from_proj_id", t.getFromProjId());
 		map.put("from_custj_id", t.getFromCustjId());
+		map.put("bd_file", t.getBdFile());
 		return map;
 	}
  	
@@ -153,15 +150,9 @@ public class VwBusBidServiceImpl extends CommonServiceImpl implements VwBusBidSe
  		sql  = sql.replace("#{sys_org_code}",String.valueOf(t.getSysOrgCode()));
  		sql  = sql.replace("#{sys_company_code}",String.valueOf(t.getSysCompanyCode()));
  		sql  = sql.replace("#{bpm_status}",String.valueOf(t.getBpmStatus()));
- 		sql  = sql.replace("#{baf_ser_id}",String.valueOf(t.getBafSerId()));
- 		sql  = sql.replace("#{baf_attach_class}",String.valueOf(t.getBafAttachClass()));
- 		sql  = sql.replace("#{baf_path}",String.valueOf(t.getBafPath()));
- 		sql  = sql.replace("#{baf_filename}",String.valueOf(t.getBafFilename()));
- 		sql  = sql.replace("#{bp_ser_id}",String.valueOf(t.getBpSerId()));
  		sql  = sql.replace("#{bp_proj_id}",String.valueOf(t.getBpProjId()));
  		sql  = sql.replace("#{bp_proj_name}",String.valueOf(t.getBpProjName()));
  		sql  = sql.replace("#{bp_date}",String.valueOf(t.getBpDate()));
- 		sql  = sql.replace("#{bc_ser_id}",String.valueOf(t.getBcSerId()));
  		sql  = sql.replace("#{bc_id}",String.valueOf(t.getBcId()));
  		sql  = sql.replace("#{bc_name}",String.valueOf(t.getBcName()));
  		sql  = sql.replace("#{bc_sname}",String.valueOf(t.getBcSname()));
@@ -178,6 +169,7 @@ public class VwBusBidServiceImpl extends CommonServiceImpl implements VwBusBidSe
  		sql  = sql.replace("#{bd_bid_remark}",String.valueOf(t.getBdBidRemark()));
  		sql  = sql.replace("#{from_proj_id}",String.valueOf(t.getFromProjId()));
  		sql  = sql.replace("#{from_custj_id}",String.valueOf(t.getFromCustjId()));
+ 		sql  = sql.replace("#{bd_file}",String.valueOf(t.getBdFile()));
  		sql  = sql.replace("#{UUID}",UUID.randomUUID().toString());
  		return sql;
  	}

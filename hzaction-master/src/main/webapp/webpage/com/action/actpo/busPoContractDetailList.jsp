@@ -6,6 +6,7 @@
 	 <a id="delBusPoContractDetailBtn" href="#">删除</a> 
 	<a id="selectAddBusPoContractDetailBtn" href="#">选择新增</a>
 	<a id="importBusPoContractDetailBtn" href="#">excel导入</a>
+	<a id="exportBusPoContractDetailBtn" href="#">excel模板下载</a>
 </div>
 <table border="0" cellpadding="2" cellspacing="0" id="busPoContractDetail_table">
 	<tr bgcolor="#E6E6E6">
@@ -180,7 +181,10 @@
 	    iconCls: 'icon-remove'  
 	}); 
 	$('#importBusPoContractDetailBtn').linkbutton({   
-	    iconCls: 'icon-undo'  
+	    iconCls: 'icon-put'  
+	}); 
+	$('#exportBusPoContractDetailBtn').linkbutton({   
+	    iconCls: 'icon-putout'  
 	}); 
 	// 选择新增
 	$('#selectAddBusPoContractDetailBtn').bind('click', function(){   
@@ -201,6 +205,12 @@
         resetTrNum('add_busPoContractDetail_table'); 
         return false;
     }); 
+	
+	// 模板下载
+	$('#exportBusPoContractDetailBtn').bind("click",function(e){   
+		location.href = "vmBusPoContractController.do?exportContDetailExcel"
+	}); 
+	
 	
 	// 导入excel
 	$('#importBusPoContractDetailBtn').bind("click",function(e){   

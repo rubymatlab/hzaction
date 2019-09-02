@@ -42,6 +42,8 @@
  <body style="overflow-x: hidden;">
   <t:formvalid formid="formobj" dialog="true" usePlugin="password" layout="table" tiptype="1" action="vwBusProjectController.do?doUpdate" >
 					<input id="id" name="id" type="hidden" value="${vwBusProjectPage.id }"/>
+					<input type="hidden"  id="fromCustId" name="fromCustId" value='${vwBusProjectPage.fromCustId}'/>
+					<input type="hidden"  id="bcId" name="bcId" value='${vwBusProjectPage.bcId}'/>
 	<table cellpadding="0" cellspacing="1" class="formtable">
 		<tr>
 			<td align="right">
@@ -81,102 +83,12 @@
 		</tr>
 		<tr>
 			<td align="right">
-				<label class="Validform_label">问题or协助:</label>
-			</td>
-			<td class="value">
-		     	 <input id="bpQuestions" name="bpQuestions" type="text" maxlength="500" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusProjectPage.bpQuestions}'/>
-				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">问题or协助</label>
-			</td>
-			<td align="right">
-				<label class="Validform_label">产品解决方案:</label>
-			</td>
-			<td class="value">
-		     	 <input id="bpProSolutions" name="bpProSolutions" type="text" maxlength="500" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusProjectPage.bpProSolutions}'/>
-				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">产品解决方案</label>
-			</td>
-		</tr>
-		<tr>
-			<td align="right">
-				<label class="Validform_label">竞争情况:</label>
-			</td>
-			<td class="value">
-		     	 <input id="bpCompetition" name="bpCompetition" type="text" maxlength="500" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusProjectPage.bpCompetition}'/>
-				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">竞争情况</label>
-			</td>
-			<td align="right">
 				<label class="Validform_label">项目经理:</label>
 			</td>
 			<td class="value">
 		     	 <input id="bpManager" name="bpManager" type="text" maxlength="40" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusProjectPage.bpManager}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">项目经理</label>
-			</td>
-		</tr>
-		<tr>
-			<td align="right">
-				<label class="Validform_label">项目组成员:</label>
-			</td>
-			<td class="value">
-		     	 <input id="bpTeam" name="bpTeam" type="text" maxlength="200" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusProjectPage.bpTeam}'/>
-				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">项目组成员</label>
-			</td>
-			<td align="right">
-				<label class="Validform_label">方案输出时间:</label>
-			</td>
-			<td class="value">
-					  <input id="bpOutTime" name="bpOutTime" type="text" style="width: 150px"   ignore="ignore"  value='<fmt:formatDate value='${vwBusProjectPage.bpOutTime}' type="date" pattern="yyyy-MM-dd hh:mm:ss"/>'/>
-				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">方案输出时间</label>
-			</td>
-		</tr>
-		<tr>
-			<td align="right">
-				<label class="Validform_label">方案定稿时间:</label>
-			</td>
-			<td class="value">
-					  <input id="bpFinishTime" name="bpFinishTime" type="text" style="width: 150px"   ignore="ignore"  value='<fmt:formatDate value='${vwBusProjectPage.bpFinishTime}' type="date" pattern="yyyy-MM-dd hh:mm:ss"/>'/>
-				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">方案定稿时间</label>
-			</td>
-			<td align="right">
-				<label class="Validform_label">正式挂网时间:</label>
-			</td>
-			<td class="value">
-					  <input id="bpOnlineTime" name="bpOnlineTime" type="text" style="width: 150px"   ignore="ignore"  value='<fmt:formatDate value='${vwBusProjectPage.bpOnlineTime}' type="date" pattern="yyyy-MM-dd hh:mm:ss"/>'/>
-				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">正式挂网时间</label>
-			</td>
-		</tr>
-		<tr>
-			<td align="right">
-				<label class="Validform_label">跟进结果:</label>
-			</td>
-			<td class="value">
-		     	 <input id="bpFollowResults" name="bpFollowResults" type="text" maxlength="20" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusProjectPage.bpFollowResults}'/>
-				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">跟进结果</label>
-			</td>
-			<td align="right">
-				<label class="Validform_label">客户资料外键:</label>
-			</td>
-			<td class="value">
-		     	 <input id="fromCustId" name="fromCustId" type="text" maxlength="36" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusProjectPage.fromCustId}'/>
-				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">客户资料外键</label>
-			</td>
-		</tr>
-		<tr>
-			<td align="right">
-				<label class="Validform_label">客户编号:</label>
-			</td>
-			<td class="value">
-		     	 <input id="bcId" name="bcId" type="text" maxlength="20" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusProjectPage.bcId}'/>
-				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">客户编号</label>
 			</td>
 			<td align="right">
 				<label class="Validform_label">客户名称:</label>
@@ -201,20 +113,93 @@
 				<label class="Validform_label" style="display: none;">客户名称</label>
 			</td>
 		</tr>
-	
+		<tr>
+			<td align="right">
+				<label class="Validform_label">项目组成员:</label>
+			</td>
+			<td class="value">
+		     	 <input id="bpTeam" name="bpTeam" type="text" maxlength="200" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusProjectPage.bpTeam}'/>
+				<span class="Validform_checktip"></span>
+				<label class="Validform_label" style="display: none;">项目组成员</label>
+			</td>
+			<td align="right">
+				<label class="Validform_label">方案输出时间:</label>
+			</td>
+			<td class="value">
+					  <input id="bpOutTime" name="bpOutTime" type="text" style="width: 150px"   ignore="ignore" class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})"  value='<fmt:formatDate value='${vwBusProjectPage.bpOutTime}' type="date" pattern="yyyy-MM-dd hh:mm:ss"/>'/>
+				<span class="Validform_checktip"></span>
+				<label class="Validform_label" style="display: none;">方案输出时间</label>
+			</td>
+		</tr>
+		<tr>
+			<td align="right">
+				<label class="Validform_label">方案定稿时间:</label>
+			</td>
+			<td class="value">
+					  <input id="bpFinishTime" name="bpFinishTime" type="text" style="width: 150px"   ignore="ignore" class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})"  value='<fmt:formatDate value='${vwBusProjectPage.bpFinishTime}' type="date" pattern="yyyy-MM-dd hh:mm:ss"/>'/>
+				<span class="Validform_checktip"></span>
+				<label class="Validform_label" style="display: none;">方案定稿时间</label>
+			</td>
+			<td align="right">
+				<label class="Validform_label">正式挂网时间:</label>
+			</td>
+			<td class="value">
+					  <input id="bpOnlineTime" name="bpOnlineTime" type="text" style="width: 150px"   ignore="ignore" class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})"  value='<fmt:formatDate value='${vwBusProjectPage.bpOnlineTime}' type="date" pattern="yyyy-MM-dd hh:mm:ss"/>'/>
+				<span class="Validform_checktip"></span>
+				<label class="Validform_label" style="display: none;">正式挂网时间</label>
+			</td>
+		</tr>
 		<tr>
 			<td align="right">
 				<label class="Validform_label">项目简介:</label>
 			</td>
 			<td class="value" colspan="3">
-					<script type="text/javascript"  charset="utf-8" src="plug-in/ueditor/ueditor.config.js"></script>
+					<%-- <script type="text/javascript"  charset="utf-8" src="plug-in/ueditor/ueditor.config.js"></script>
 					<script type="text/javascript"  charset="utf-8" src="plug-in/ueditor/ueditor.all.min.js"></script>
                 <textarea name="bpIntroduction" id="bpIntroduction" style="width: 650px;height:300px">${vwBusProjectPage.bpIntroduction }</textarea>
 				    <script type="text/javascript">
 				        var bpIntroduction_editor = UE.getEditor('bpIntroduction');
-				    </script>
+				    </script> --%>
+				    <textarea id="bpIntroduction" name="bpIntroduction" style="height:auto;width:95%" class="inputxt" rows="3"   ignore="ignore"/>${vwBusProjectPage.bpIntroduction}</textarea>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">项目简介</label>
+			</td>
+		</tr>
+		
+		<tr>
+			<td align="right">
+				<label class="Validform_label">问题or协助:</label>
+			</td>
+			<td class="value">
+		     	 <textarea id="bpQuestions" name="bpQuestions" style="height:auto;width:95%" class="inputxt" rows="2"   ignore="ignore"/>${vwBusProjectPage.bpQuestions}</textarea>
+				<span class="Validform_checktip"></span>
+				<label class="Validform_label" style="display: none;">问题or协助</label>
+			</td>
+			<td align="right">
+				<label class="Validform_label">产品解决方案:</label>
+			</td>
+			<td class="value">
+		     	 <textarea id="bpProSolutions" name="bpProSolutions" style="height:auto;width:95%" class="inputxt" rows="2"   ignore="ignore"/>${vwBusProjectPage.bpProSolutions}</textarea>
+				<span class="Validform_checktip"></span>
+				<label class="Validform_label" style="display: none;">产品解决方案</label>
+			</td>
+		</tr>
+		<tr>
+			<td align="right">
+				<label class="Validform_label">跟进结果:</label>
+			</td>
+			<td class="value">
+				<textarea id="bpFollowResults" name="bpFollowResults" style="height:auto;width:95%" class="inputxt" rows="2"   ignore="ignore">${vwBusProjectPage.bpFollowResults}</textarea>
+				<span class="Validform_checktip"></span>
+				<label class="Validform_label" style="display: none;">跟进结果</label>
+			</td>
+			<td align="right">
+				<label class="Validform_label">竞争情况:</label>
+			</td>
+			<td class="value">
+				<textarea id="bpCompetition" name="bpCompetition" style="height:auto;width:95%" class="inputxt" rows="2"   ignore="ignore">${vwBusProjectPage.bpCompetition}</textarea>
+				<span class="Validform_checktip"></span>
+				<label class="Validform_label" style="display: none;">竞争情况</label>
 			</td>
 		</tr>
 			</table>

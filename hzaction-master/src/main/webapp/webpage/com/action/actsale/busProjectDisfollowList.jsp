@@ -45,7 +45,7 @@
 				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
 						反馈信息
 				  </td>
-				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
+				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;display:none;">
 						项目立项外键
 				  </td>
 	</tr>
@@ -80,7 +80,7 @@
 					  	<input name="busProjectDisfollowList[0].bpdFeedbackInto" maxlength="400" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">反馈信息</label>
 					</td>
-				  <td align="left">
+				  <td align="left" style="display:none;">
 					  	<input name="busProjectDisfollowList[0].fromId" maxlength="36" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">项目立项外键</label>
 					</td>
@@ -117,7 +117,7 @@
 					  	<input name="busProjectDisfollowList[${stuts.index }].bpdFeedbackInto" maxlength="400" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bpdFeedbackInto }"/>
 					  <label class="Validform_label" style="display: none;">反馈信息</label>
 				   </td>
-				   <td align="left">
+				   <td align="left" style="display:none;">
 					  	<input name="busProjectDisfollowList[${stuts.index }].fromId" maxlength="36" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.fromId }"/>
 					  <label class="Validform_label" style="display: none;">项目立项外键</label>
 				   </td>

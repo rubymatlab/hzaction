@@ -42,9 +42,12 @@ public class BusContractServiceImpl extends CommonServiceImpl implements BusCont
 		//-----------------sql增强 start----------------------------
 		//sql增强第1条
 		//把合同状态修改成已审核(1)
-		String sqlEnhance_1 ="update bus_contract set bc_contract_state = 1 where id = '#{id}'";
+		String sqlEnhance_1 ="update bus_contract set bc_contract_state = 2 where id = '#{id}'";
 		this.executeSqlEnhance(sqlEnhance_1,t);
-		logger.info("-- 合同确定成功 --");
+		
+	 	String sqlEnhance_2 ="update bus_project set bpm_status='3' where id= '#{from_proj_id}'";
+	 	this.executeSqlEnhance(sqlEnhance_2,t);
+		//logger.info("-- 合同确定成功 --");
 
 
 		//确定合同了，则向项目管理初始化添加一个项目管理对象

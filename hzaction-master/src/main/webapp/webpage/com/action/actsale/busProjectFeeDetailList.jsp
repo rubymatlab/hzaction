@@ -42,7 +42,7 @@
 				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
 						详细描述
 				  </td>
-				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
+				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;display:none;">
 						项目立项外键
 				  </td>
 	</tr>
@@ -73,7 +73,7 @@
 					  	<input name="busProjectFeeDetailList[0].bpfDesc" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">详细描述</label>
 					</td>
-				  <td align="left">
+				  <td align="left" style="display:none;">
 					  	<input name="busProjectFeeDetailList[0].fromId" maxlength="36" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">项目立项外键</label>
 					</td>
@@ -106,7 +106,7 @@
 					  	<input name="busProjectFeeDetailList[${stuts.index }].bpfDesc" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bpfDesc }"/>
 					  <label class="Validform_label" style="display: none;">详细描述</label>
 				   </td>
-				   <td align="left">
+				   <td align="left" style="display:none;">
 					  	<input name="busProjectFeeDetailList[${stuts.index }].fromId" maxlength="36" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.fromId }"/>
 					  <label class="Validform_label" style="display: none;">项目立项外键</label>
 				   </td>

@@ -33,7 +33,7 @@
    <t:dgCol title="创建日期"  field="createDate"  formatter="yyyy-MM-dd"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="更新日期"  field="updateDate"  formatter="yyyy-MM-dd"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
-   <t:dgDelOpt title="删除" url="vwBusProjectController.do?doDel&id={id}"  urlclass="ace_button" urlfont="fa-trash-o"/>
+   <t:dgDelOpt title="删除" exp="bpmStatus#eq#1" url="vwBusProjectController.do?doDel&id={id}"  urlclass="ace_button" urlfont="fa-trash-o"/>
    <t:dgToolBar title="录入" icon="icon-add" url="vwBusProjectController.do?goAdd" funname="add" width="100%" height="100%"></t:dgToolBar>
    <t:dgToolBar title="编辑" icon="icon-edit" url="vwBusProjectController.do?goUpdate" funname="update" width="100%" height="100%"></t:dgToolBar>
    <t:dgToolBar title="批量删除"  icon="icon-remove" url="vwBusProjectController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>
@@ -42,7 +42,7 @@
    <t:dgToolBar title="导出" icon="icon-putout" funname="ExportXls"></t:dgToolBar>
    <t:dgToolBar title="模板下载" icon="icon-putout" funname="ExportXlsByT"></t:dgToolBar>
    	<t:dgToolBar title="立项转投标" icon="icon-edit"  url="vwBusBidController.do?goAdd" funname="doBid" ></t:dgToolBar>
-   	<t:dgToolBar title="立项转合同" icon="icon-edit"  url="vwBusProjectController.do?doContract" funname="doContract" ></t:dgToolBar>
+   	<t:dgToolBar title="立项转合同" icon="icon-edit"  url="busContractController.do?goAdd" funname="doContract" ></t:dgToolBar>
   </t:datagrid>
   </div>
  </div>
@@ -55,12 +55,12 @@
 			return;
 		}
 		if(rowData['bpmStatus']=="1")
-			{
-		url = url+"&fromProjId="+rowData['id'];
- 		createwindow(title,url,800,500);
-			}
+		{
+			url = url+"&fromProjId="+rowData['id'];
+	 		createwindow(title,url,800,500);
+		}
 		else
-			tip('该项目已立项转投标');
+			tip('该项目已转投标、合同');
  	}
  	//自定义按钮-sql增强-立项转合同
  	function doContract(title,url,id){
@@ -69,9 +69,14 @@
 			tip('请选择立项转合同项目');
 			return;
 		}
-		url = url+"&id="+rowData['id'];
- 		createdialog('确认 ', '确定'+title+'吗 ?', url,gridname);
- 	}
+		if(rowData['bpmStatus']=="1")
+		{
+			url = url+"&fromProjId="+rowData['id'];
+			createwindow(title,url,800,500);
+		}
+		else
+			tip('该项目已转投标、合同');
+	}
  
 //导入
 function ImportXls() {

@@ -31,7 +31,7 @@ public class OpenOfficePDFConverter implements PDFConverter {
 		try {
 			converter.convert(new File(inputFile), new File(pdfFile));
 		} catch (Exception e) {
-			e.printStackTrace();
+			//e.printStackTrace();
 			log.info(e.getMessage());
 		}
 		

@@ -51,10 +51,12 @@ import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import com.action.actbase.entity.BasCustomerEntity;
 import com.action.actsale.entity.BusConQuotedPriceEntity;
 import com.action.actsale.entity.BusContractEntity;
 import com.action.actsale.entity.BusContractPaymentEntity;
 import com.action.actsale.entity.BusCostBudgetingEntity;
+import com.action.actsale.entity.BusProjectEntity;
 import com.action.actsale.page.BusContractPage;
 import com.action.actsale.service.BusContractServiceI;
 import com.alibaba.fastjson.JSONArray;
@@ -100,7 +102,6 @@ public class BusContractController extends BaseController {
 		try{
 			//自定义sql增强按钮
 			busContractService.affirmButton(t);
-			
 			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();
@@ -173,6 +174,9 @@ public class BusContractController extends BaseController {
 		String message = "合同管理删除成功";
 		try{
 			busContractService.delMain(busContract);
+			BusProjectEntity o=systemService.getEntity(BusProjectEntity.class,busContract.getFromProjId());
+			o.setBpmStatus("1");
+			busContractService.saveOrUpdate(o);
 			systemService.addLog(message, Globals.Log_Type_DEL, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();
@@ -219,13 +223,21 @@ public class BusContractController extends BaseController {
 	@RequestMapping(params = "doAdd")
 	@ResponseBody
 	public AjaxJson doAdd(BusContractEntity busContract,BusContractPage busContractPage, HttpServletRequest request) {
-		List<BusConQuotedPriceEntity> busConQuotedPriceList =  busContractPage.getBusConQuotedPriceList();
-		List<BusContractPaymentEntity> busContractPaymentList =  busContractPage.getBusContractPaymentList();
-		List<BusCostBudgetingEntity> busCostBudgetingList =  busContractPage.getBusCostBudgetingList();
+		//List<BusConQuotedPriceEntity> busConQuotedPriceList =  busContractPage.getBusConQuotedPriceList();
+		//List<BusContractPaymentEntity> busContractPaymentList =  busContractPage.getBusContractPaymentList();
+		//List<BusCostBudgetingEntity> busCostBudgetingList =  busContractPage.getBusCostBudgetingList();
 		AjaxJson j = new AjaxJson();
 		String message = "添加成功";
+		BusContractEntity t=new BusContractEntity();
 		try{
-			busContractService.addMain(busContract, busConQuotedPriceList,busContractPaymentList,busCostBudgetingList);
+			MyBeanUtils.copyBeanNotNull2Bean(busContract, t);
+			t.setBcContractState("1");
+			busContractService.save(t);
+			
+			BusProjectEntity o=systemService.getEntity(BusProjectEntity.class,t.getFromProjId());
+			o.setBpmStatus("2");
+			busContractService.saveOrUpdate(o);
+			//busContractService.addMain(busContract, busConQuotedPriceList,busContractPaymentList,busCostBudgetingList);
 			systemService.addLog(message, Globals.Log_Type_INSERT, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();
@@ -233,7 +245,7 @@ public class BusContractController extends BaseController {
 			throw new BusinessException(e.getMessage());
 		}
 		j.setMsg(message);
-		j.setObj(busContract);
+		j.setObj(t);
 		return j;
 	}
 	/**
@@ -269,9 +281,23 @@ public class BusContractController extends BaseController {
 	 */
 	@RequestMapping(params = "goAdd")
 	public ModelAndView goAdd(BusContractEntity busContract, HttpServletRequest req) {
-		if (StringUtil.isNotEmpty(busContract.getId())) {
-			busContract = busContractService.getEntity(BusContractEntity.class, busContract.getId());
-			req.setAttribute("busContractPage", busContract);
+		if (StringUtil.isNotEmpty(busContract.getFromProjId())) {
+			BusProjectEntity busProject=busContractService.getEntity(BusProjectEntity.class, busContract.getFromProjId());
+			BusContractEntity o=new BusContractEntity();
+			o.setFromCustId(busProject.getFromCustId());
+			o.setFromProjId(busProject.getId());
+			o.setFromProjName(busProject.getBpProjName());
+			o.setBcProjectCode(busProject.getBpProjId());
+			
+			BasCustomerEntity basCustomer=busContractService.getEntity(BasCustomerEntity.class, busProject.getFromCustId());
+			if(basCustomer!=null)
+			{
+				o.setBcCustomerCode(basCustomer.getBcSname());
+				o.setBcCustomerName(basCustomer.getBcName());
+			}
+			o.setBcContractState("0");
+			//busContract = busContractService.getEntity(BusContractEntity.class, busContract.getId());
+			req.setAttribute("busContractPage", o);
 		}
 		return new ModelAndView("com/action/actsale/busContract-add");
 	}

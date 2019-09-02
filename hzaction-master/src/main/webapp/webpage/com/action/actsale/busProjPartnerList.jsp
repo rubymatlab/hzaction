@@ -51,7 +51,7 @@
 				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
 						备注
 				  </td>
-				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
+				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;display:none;">
 						项目立项外键
 				  </td>
 	</tr>
@@ -94,7 +94,7 @@
 					  	<input name="busProjPartnerList[0].bppRemark" maxlength="100" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">备注</label>
 					</td>
-				  <td align="left">
+				  <td align="left" style="display:none;">
 					  	<input name="busProjPartnerList[0].fromId" maxlength="36" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">项目立项外键</label>
 					</td>
@@ -139,7 +139,7 @@
 					  	<input name="busProjPartnerList[${stuts.index }].bppRemark" maxlength="100" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bppRemark }"/>
 					  <label class="Validform_label" style="display: none;">备注</label>
 				   </td>
-				   <td align="left">
+				   <td align="left" style="display:none;">
 					  	<input name="busProjPartnerList[${stuts.index }].fromId" maxlength="36" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.fromId }"/>
 					  <label class="Validform_label" style="display: none;">项目立项外键</label>
 				   </td>

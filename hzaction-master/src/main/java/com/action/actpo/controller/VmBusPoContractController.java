@@ -139,45 +139,7 @@ public class VmBusPoContractController extends BaseController {
 		TagUtil.datagrid(response, dataGrid);
 	}
 	
-	
-		@RequestMapping(value = "loadSuggestData")
-		@ResponseBody
-		public Object loadSuggestData(String type, String keyword,HttpServletRequest request) {
-			String sql = "";
-			if(type.equals("project")) {
-				sql = "select bp.bp_proj_id as bpm_proj_id, bp.bp_proj_name as bpm_proj_name from bus_project_manager as bpm, bus_project as bp where bp.id = bpm.from_proj_id"
-						+ "	and bp.bp_proj_name like '%" +keyword+"%'";
-			}else if(type.equals("supplier")){
-				sql = "select bs_name, bs_contact, bs_tel_no from bas_supplier where bs_name like '%"+ keyword +"%'";
-			}
-	
-			return getResultSet(sql);
-		}
-		
-	
-	//	获取结果集
-		public Object getResultSet(String sql) {
-			JSONObject object = new JSONObject();
-			object.put("message", "");
-			try {
-				List<Map<String,Object>> data = this.systemService.findForJdbc(sql);
-				for (Map<String, Object> map : data) {
-					for (String key : map.keySet()) {
-						if(null == map.get(key)){
-							map.put(key,"");
-						}
-					}
-				}
-	
-				net.sf.json.JSONArray array = net.sf.json.JSONArray.fromObject(data);
-				object.put("value", array);
-				object.put("code", 200);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-			object.put("redirect", "");
-			return object;
-		}
+
 		
 	
 	/**
@@ -195,6 +157,7 @@ public class VmBusPoContractController extends BaseController {
 			BusPoContractEntity busPoContract = new BusPoContractEntity();
 			MyBeanUtils.copyBeanNotNull2Bean(vmBusPoContract,busPoContract);
 			busPoContractService.delMain(busPoContract);
+			
 			systemService.addLog(message, Globals.Log_Type_DEL, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();
@@ -537,7 +500,16 @@ public class VmBusPoContractController extends BaseController {
 			return j;
 	}
     
-	
+//	导出excel模板
+	@RequestMapping(params = "exportContDetailExcel")
+	public String exportContDetailExcel(ModelMap map) {
+		map.put(NormalExcelConstants.FILE_NAME,"采购合同明细");
+		map.put(NormalExcelConstants.CLASS,BusPoContractDetailEntity.class);
+		map.put(NormalExcelConstants.PARAMS,new ExportParams("采购合同明细", "导出人:"+ ResourceUtil.getSessionUser().getRealName(),
+		"导出信息"));
+		map.put(NormalExcelConstants.DATA_LIST,new ArrayList());
+		return NormalExcelConstants.JEECG_EXCEL_VIEW;
+	}
 	
 	
     /**

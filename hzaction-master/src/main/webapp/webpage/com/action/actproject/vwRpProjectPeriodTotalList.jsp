@@ -5,12 +5,12 @@
   <div region="center" style="padding:0px;border:0px">
   <t:datagrid name="vwRpProjectPeriodTotalList" checkbox="false" pagination="true" fitColumns="true" title="项目整体周期汇总表" sortName="id" actionUrl="vwRpProjectPeriodTotalController.do?datagrid" idField="id" fit="true" queryMode="group">
    <t:dgCol title="主键"  field="id"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="项目编号"  field="bpProjId"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="项目名称"  field="bpProjName"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="项目经理"  field="bpManager"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="立项时间"  field="bpDate"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="合同签定时间"  field="bcConcludeTime"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="合同天数"  field="contractDays"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="项目编号"  query="true" field="bpProjId"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="项目名称"  query="true" field="bpProjName"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="项目经理"  query="true" field="bpManager"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="立项时间"  query="true" field="bpDate"  queryMode="group"  width="120"></t:dgCol>
+   <t:dgCol title="合同签定时间"  query="true" field="bcConcludeTime"  queryMode="group"  width="120"></t:dgCol>
+   <t:dgCol title="合同天数"  field="contractDays"  queryMode="single" formatter="yyyy-MM-dd" width="120"></t:dgCol>
    <t:dgCol title="验收时间"  field="maxBpfCheckDate"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="验收天数"  field="checkDays"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="最后收款时间"  field="maxBcColDate"  queryMode="single"  width="120"></t:dgCol>

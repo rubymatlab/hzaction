@@ -5,10 +5,10 @@
   <div region="center" style="padding:0px;border:0px">
   <t:datagrid name="vwRpBusProgressInfoList" checkbox="true" pagination="true" fitColumns="true" title="施工进度报表" sortName="id" actionUrl="vwRpBusProgressInfoController.do?datagrid" idField="id" fit="true" queryMode="group">
    <t:dgCol title="主键"  field="id"  hidden="true"  queryMode="group"  width="120"></t:dgCol>
-   <t:dgCol title="项目编号"  field="bpProjId"  queryMode="group"  width="120"></t:dgCol>
-   <t:dgCol title="项目名称"  field="bpmName"  queryMode="group"  width="120"></t:dgCol>
-   <t:dgCol title="项目经理"  field="bpManager"  queryMode="group"  width="120"></t:dgCol>
-   <t:dgCol title="客户名称"  field="bcName"  queryMode="group"  width="120"></t:dgCol>
+   <t:dgCol title="项目编号"  field="bpProjId" query="true"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="项目名称"  field="bpmName" query="true" queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="项目经理"  field="bpManager" query="true" queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="客户名称"  field="bcName" query="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="合同金额万元"  field="bcContAmount"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="brpBackAmountD"  field="brpBackAmountD"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="进度百分比"  field="bpmProgPer"  queryMode="group"  dictionary="proj_per"  width="120"></t:dgCol>

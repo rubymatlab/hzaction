@@ -43,10 +43,10 @@ public class VwRpProjectPeriodTotalEntity implements java.io.Serializable {
 	private java.lang.String bpManager;
 	/**立项时间*/
 	@Excel(name="立项时间",width=15)
-	private java.lang.String bpDate;
+	private java.util.Date bpDate;
 	/**合同签定时间*/
 	@Excel(name="合同签定时间",width=15)
-	private java.lang.String bcConcludeTime;
+	private java.util.Date bcConcludeTime;
 	/**合同天数*/
 	@Excel(name="合同天数",width=15)
 	private java.lang.String contractDays;
@@ -143,7 +143,7 @@ public class VwRpProjectPeriodTotalEntity implements java.io.Serializable {
 	 */
 
 	@Column(name ="BP_DATE",nullable=true,length=32)
-	public java.lang.String getBpDate(){
+	public java.util.Date getBpDate(){
 		return this.bpDate;
 	}
 
@@ -151,7 +151,7 @@ public class VwRpProjectPeriodTotalEntity implements java.io.Serializable {
 	 *方法: 设置java.lang.String
 	 *@param: java.lang.String  立项时间
 	 */
-	public void setBpDate(java.lang.String bpDate){
+	public void setBpDate(java.util.Date bpDate){
 		this.bpDate = bpDate;
 	}
 	/**
@@ -160,7 +160,7 @@ public class VwRpProjectPeriodTotalEntity implements java.io.Serializable {
 	 */
 
 	@Column(name ="BC_CONCLUDE_TIME",nullable=true,length=32)
-	public java.lang.String getBcConcludeTime(){
+	public java.util.Date getBcConcludeTime(){
 		return this.bcConcludeTime;
 	}
 
@@ -168,7 +168,7 @@ public class VwRpProjectPeriodTotalEntity implements java.io.Serializable {
 	 *方法: 设置java.lang.String
 	 *@param: java.lang.String  合同签定时间
 	 */
-	public void setBcConcludeTime(java.lang.String bcConcludeTime){
+	public void setBcConcludeTime(java.util.Date bcConcludeTime){
 		this.bcConcludeTime = bcConcludeTime;
 	}
 	/**

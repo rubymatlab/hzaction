@@ -199,7 +199,7 @@ public class CgUploadController extends BaseController {
 		//AX
 		//在安信项目下操作删除文件
 		busContractMiniDao.delete(file.getId());
-		logger.info("=======删除附件文件ID为:"+file.getId()+"的数据信息=====删除成功======");
+		logger.info("=======删除【附件文件表】ID为:"+file.getId()+"的数据=====删除成功======");
 		//AX
 		
 		j.setSuccess(true);
@@ -235,8 +235,14 @@ public class CgUploadController extends BaseController {
 					String swfName = PinyinUtil.getPinYinHeadChar(oConvertUtils.replaceBlank(FileUtils.getFilePrefix(fileName)));// 取文件名首字母作为SWF文件名
 					String extend = FileUtils.getExtend(fileName);// 获取文件扩展名
 					String noextfilename=DateUtils.getDataString(DateUtils.yyyymmddhhmmss)+StringUtil.random(8);//自定义文件名称
+					
+					
 					String myfilename=noextfilename+"."+extend;//自定义文件名称
+					
 					String savePath = realPath + myfilename;// 文件保存全路径
+					
+					logger.info(savePath);
+					
 					write2Disk(mf, extend, savePath);
 					TSAttachment attachment = new TSAttachment();
 					attachment.setId(UUID.randomUUID().toString().replace("-", ""));

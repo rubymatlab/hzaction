@@ -120,16 +120,12 @@ public class BusContractController extends BaseController {
 	public ModelAndView list(HttpServletRequest request) {
 		return new ModelAndView("com/action/actsale/busContractList");
 	}
-	@RequestMapping(params = "list0")
-	public ModelAndView list0(HttpServletRequest request) {
-		return new ModelAndView("com/action/actsale/busContractList0");
-	}
 	@RequestMapping(params = "list1")
-	public ModelAndView list1(HttpServletRequest request) {
+	public ModelAndView list0(HttpServletRequest request) {
 		return new ModelAndView("com/action/actsale/busContractList1");
 	}
 	@RequestMapping(params = "list2")
-	public ModelAndView list2(HttpServletRequest request) {
+	public ModelAndView list1(HttpServletRequest request) {
 		return new ModelAndView("com/action/actsale/busContractList2");
 	}
 	/**
@@ -143,7 +139,7 @@ public class BusContractController extends BaseController {
 	@RequestMapping(params = "datagrid")
 	public void datagrid(BusContractEntity busContract,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
 		String contractState = request.getParameter("contractState");
-		logger.info("-- 合同完成状态（0制作中，1已审核） --"+contractState);
+		logger.info("-- 合同完成状态（1制作中，2已审核） --"+contractState);
 		
 		CriteriaQuery cq = new CriteriaQuery(BusContractEntity.class, dataGrid);
 		//查询条件组装器

@@ -53,7 +53,7 @@ public class BusPayInfoEntity implements java.io.Serializable {
 	@Excel(name="功能分类",width=15)
 	private java.lang.String bpiClass;
 	/**支付方式*/
-	@Excel(name="支付方式",width=15,dicCode="ax_payment")
+	@Excel(name="支付方式",width=15,dicCode="bus_pa_way")
 	private java.lang.String bpiPayMethod;
 	/**支付时间*/
 	@Excel(name="支付时间",width=15,format = "yyyy-MM-dd")

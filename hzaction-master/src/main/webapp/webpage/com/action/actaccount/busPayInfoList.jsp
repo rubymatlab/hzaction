@@ -39,7 +39,7 @@ $(document).ready(function(){
 									</label>
 					</td>
 				  <td class="value">
-						<t:dictSelect field="busPayInfoList[0].bpiPayMethod" type="list"   typeGroupCode="ax_payment"  defaultVal="${busPayInfoPage.bpiPayMethod}" hasLabel="false"  title="支付方式"></t:dictSelect>     
+						<t:dictSelect field="busPayInfoList[0].bpiPayMethod" type="list"   typeGroupCode="bus_pa_way"  defaultVal="${busPayInfoPage.bpiPayMethod}" hasLabel="false"  title="支付方式"></t:dictSelect>     
 					  <label class="Validform_label" style="display: none;">支付方式</label>
 					</td>
 				</tr>
@@ -185,7 +185,7 @@ $(document).ready(function(){
 									</label>
 					</td>
 				  <td class="value">
-							<t:dictSelect field="busPayInfoList[0].bpiPayMethod" type="list"  typeGroupCode="ax_payment"  defaultVal="${poVal.bpiPayMethod}" hasLabel="false"  title="支付方式"></t:dictSelect>     
+							<t:dictSelect field="busPayInfoList[0].bpiPayMethod" type="list"  typeGroupCode="bus_pa_way"  defaultVal="${poVal.bpiPayMethod}" hasLabel="false"  title="支付方式"></t:dictSelect>     
 					  <label class="Validform_label" style="display: none;">支付方式</label>
 					</td>
 				</tr>
@@ -286,6 +286,10 @@ $(document).ready(function(){
 				  <td align="right">
 					<label class="Validform_label">附件:</label>
 				  </td>
+				  <!-- ??? -->
+				  <%-- <td>
+				  	<h1>${poVal.bpiAccessory}</h1>
+				  </td> --%>
 				  <td class="value">
 					 	<input type="hidden" id="busPayInfoList[0].bpiAccessory" name="busPayInfoList[0].bpiAccessory" 
 					 		value="${poVal.bpiAccessory }"/>
@@ -293,7 +297,7 @@ $(document).ready(function(){
 							<a  target="_blank" id="busPayInfoList[0].bpiAccessory_href">暂时未上传文件</a>
 						</c:if>
 						<c:if test="${!empty poVal.bpiAccessory}">
-							<a  href="${poVal.bpiAccessory}"  target="_blank" id="busPayInfoList[0].bpiAccessory_href">下载</a>
+							<a href="${poVal.bpiAccessory}"  target="_blank" id="busPayInfoList[0].bpiAccessory_href">下载</a>
 						</c:if>
 					   <input class="ui-button" type="button" value="上传附件"
 							onclick="commonUpload(busPayInfoList0bpiAccessoryCallback)"/> 
@@ -307,6 +311,7 @@ $(document).ready(function(){
 						</script>
 					  <label class="Validform_label" style="display: none;">附件</label>
 					</td>
+					<!-- <td><input type="button"  onclick="javaScript:alert(1)" value="测试"></td> -->
 				</tr>
 				
 				
@@ -325,10 +330,46 @@ $(document).ready(function(){
 				</tr> --%>
 				<!-- end -->
 				
-				
 			</table>
 		</c:forEach>
 	</c:if>	
 	</tbody>
 </table>
 </div>
+<script type="text/javascript">
+//通用弹出式文件上传
+function commonUpload(callback,inputId){
+    $.dialog({
+           content: "url:systemController.do?commonUpload",
+           lock : true,
+           title: "文件上传",
+           zIndex:getzIndex(),
+           width:700,
+           height: 200,
+           parent:windowapi,
+           cache:false,
+	       ok: function(){
+               var iframe = this.iframe.contentWindow;
+               
+               console.log(iframe);
+               
+               iframe.uploadCallback(callback,inputId);
+               return true;
+	       },
+	       cancelVal: '关闭',
+	       cancel: function(){
+	       } 
+   });
+}
+//通用弹出式文件上传-回调
+function commonUploadDefaultCallBack(url,name,inputId,swfpath){
+	if(url.indexOf(".png") != -1 || url.indexOf(".jpg") != -1|| url.indexOf(".jpeg") != -1||url.indexOf(".gif")!=-1){
+		var imgHtml = '<img src="'+url+'" width="100">';
+		$("#"+inputId+"-href").attr('href',url).html(imgHtml);
+	}else{
+		$("#"+inputId+"-href").attr('href',url).html('下载');
+	}
+	$("#"+inputId).val(url);
+	$("#"+inputId+"-swfpath").val(swfpath)
+}
+</script>

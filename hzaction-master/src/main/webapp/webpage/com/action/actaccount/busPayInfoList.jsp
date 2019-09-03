@@ -135,7 +135,7 @@ $(document).ready(function(){
 					  	<input name="busPayInfoList[0].bpiVoucherno" placeholder="自动产生" maxlength="20" type="text" class="inputxt"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">凭证号</label>
 					</td>
-				  <td align="right">
+				  <!-- <td align="right">
 					<label class="Validform_label">
 										附件:
 									</label>
@@ -152,7 +152,7 @@ $(document).ready(function(){
 										}
 										</script>
 					  <label class="Validform_label" style="display: none;">附件</label>
-					</td>
+					</td> -->
 				</tr>
 	</c:if>
 	<c:if test="${fn:length(busPayInfoList)  > 0 }">
@@ -283,13 +283,12 @@ $(document).ready(function(){
 					</td>
 					
 					
-				  <td align="right">
+				  <%-- <td align="right">
 					<label class="Validform_label">附件:</label>
 				  </td>
-				  <!-- ??? -->
-				  <%-- <td>
+				  <td>
 				  	<h1>${poVal.bpiAccessory}</h1>
-				  </td> --%>
+				  </td>
 				  <td class="value">
 					 	<input type="hidden" id="busPayInfoList[0].bpiAccessory" name="busPayInfoList[0].bpiAccessory" 
 					 		value="${poVal.bpiAccessory }"/>
@@ -310,10 +309,9 @@ $(document).ready(function(){
 							}
 						</script>
 					  <label class="Validform_label" style="display: none;">附件</label>
-					</td>
+					</td> --%>
 					<!-- <td><input type="button"  onclick="javaScript:alert(1)" value="测试"></td> -->
 				</tr>
-				
 				
 				<!-- start -->
 				<%-- <tr>

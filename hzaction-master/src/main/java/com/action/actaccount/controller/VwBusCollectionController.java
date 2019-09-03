@@ -243,7 +243,7 @@ public class VwBusCollectionController extends BaseController {
 			// 银行卡外键
 			busPayInfo.setFromBankAccId(vwBusCollection.getFromCustId());
 			// 附件bcFile
-			busPayInfo.setBpiAccessory(vwBusCollection.getBcFile());
+//			busPayInfo.setBpiAccessory(vwBusCollection.getBcFile());
 			// 业务外键
 			busPayInfo.setBpiBusId(vwBusCollection.getId());
 			// 功能分类 2

@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
  <head>
-  <title>vw_rp_cost_account</title>
+  <title>项目整体结算表</title>
     <style>
   .ui-button {
   	  display: inline-block;
@@ -50,6 +50,8 @@
 				<div style="width:800px;height:1px;"></div>
 				<t:tabs id="tt" iframe="false" tabPosition="top" fit="false">
 				 <t:tab href="vwRpCostAccountController.do?vwBusPoContractPayList&id=${vwRpCostAccountPage.id}" icon="icon-search" title="采购应付/已付明细" id="vwBusPoContractPay"></t:tab>
+				 <t:tab href="vwRpCostAccountController.do?vwBusOthersProjPayList&id=${vwRpCostAccountPage.id}" icon="icon-search" title="其他支出汇总" id="vwBusOthersProjPay"></t:tab>
+				 <t:tab href="vwRpCostAccountController.do?vwBusOthersPayDetailList&id=${vwRpCostAccountPage.id}" icon="icon-search" title="其他支出明细" id="vwBusOthersPayDetail"></t:tab>
 				</t:tabs>
 			</div>
 			</t:formvalid>
@@ -90,6 +92,54 @@
 				  <td align="left">
 					  		<input name="vwBusPoContractPayList[#index#].formCostAccountId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">项目结算id</label>
+				  </td>
+			</tr>
+		 </tbody>
+		<tbody id="add_vwBusOthersProjPay_table_template">
+			<tr>
+			 <td align="center"><div style="width: 25px;" name="xh"></div></td>
+			 <td align="center"><input style="width:20px;" type="checkbox" name="ck"/></td>
+				  <td align="left">
+					  		<input name="vwBusOthersProjPayList[#index#].bpmProjId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
+					  <label class="Validform_label" style="display: none;">项目编号</label>
+				  </td>
+				  <td align="left">
+					  		<input name="vwBusOthersProjPayList[#index#].bpmName" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
+					  <label class="Validform_label" style="display: none;">项目名称</label>
+				  </td>
+				  <td align="left">
+					  		<input name="vwBusOthersProjPayList[#index#].payTamount" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
+					  <label class="Validform_label" style="display: none;">付款金额</label>
+				  </td>
+			</tr>
+		 </tbody>
+		<tbody id="add_vwBusOthersPayDetail_table_template">
+			<tr>
+			 <td align="center"><div style="width: 25px;" name="xh"></div></td>
+			 <td align="center"><input style="width:20px;" type="checkbox" name="ck"/></td>
+				  <td align="left">
+					  		<input name="vwBusOthersPayDetailList[#index#].bpmProjId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
+					  <label class="Validform_label" style="display: none;">项目编号</label>
+				  </td>
+				  <td align="left">
+					  		<input name="vwBusOthersPayDetailList[#index#].bpmName" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
+					  <label class="Validform_label" style="display: none;">项目名称</label>
+				  </td>
+				  <td align="left">
+					  		<input name="vwBusOthersPayDetailList[#index#].busId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
+					  <label class="Validform_label" style="display: none;">单号</label>
+				  </td>
+				  <td align="left">
+					  		<input name="vwBusOthersPayDetailList[#index#].busType" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
+					  <label class="Validform_label" style="display: none;">单据_费用类型</label>
+				  </td>
+				  <td align="left">
+							<input name="vwBusOthersPayDetailList[#index#].applyDate" maxlength="32" type="text" class="Wdate" onClick="WdatePicker()"  style="width:150px;"  ignore="ignore" />
+					  <label class="Validform_label" style="display: none;">申请日期</label>
+				  </td>
+				  <td align="left">
+					  		<input name="vwBusOthersPayDetailList[#index#].payAmount" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
+					  <label class="Validform_label" style="display: none;">付款金额</label>
 				  </td>
 			</tr>
 		 </tbody>

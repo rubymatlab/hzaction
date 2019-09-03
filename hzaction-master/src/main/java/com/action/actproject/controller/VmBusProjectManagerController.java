@@ -135,11 +135,11 @@ public class VmBusProjectManagerController extends BaseController {
 		}
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, vmBusProjectManager, request.getParameterMap());
 		try{
-		//自定义追加查询条件
-		if( vmBusProjectManager.getBpmStatus() != null) {
-			String bpmStatus = vmBusProjectManager.getBpmStatus();
-			cq.add(Restrictions.eq("bpmStatus", bpmStatus));			
-		}
+			//自定义追加查询条件
+			if( vmBusProjectManager.getBpmStatus() != null) {
+				String bpmStatus = vmBusProjectManager.getBpmStatus();
+				cq.add(Restrictions.eq("bpmStatus", bpmStatus));			
+			}
 		}catch (Exception e) {
 			throw new BusinessException(e.getMessage());
 		}

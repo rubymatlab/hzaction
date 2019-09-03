@@ -2,6 +2,8 @@
 package com.action.actaccount.page;
 import com.action.actaccount.entity.VwRpCostAccountEntity;
 import com.action.actaccount.entity.VwBusPoContractPayEntity;
+import com.action.actaccount.entity.VwBusOthersProjPayEntity;
+import com.action.actaccount.entity.VwBusOthersPayDetailEntity;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -21,9 +23,9 @@ import org.jeecgframework.poi.excel.annotation.ExcelCollection;
 
 /**   
  * @Title: Entity
- * @Description: vw_rp_cost_account
+ * @Description: 项目整体结算表
  * @author onlineGenerator
- * @date 2019-09-01 10:48:56
+ * @date 2019-09-02 18:55:26
  * @version V1.0   
  *
  */
@@ -548,5 +550,23 @@ public class VwRpCostAccountPage implements java.io.Serializable {
 		}
 		public void setVwBusPoContractPayList(List<VwBusPoContractPayEntity> vwBusPoContractPayList) {
 		this.vwBusPoContractPayList = vwBusPoContractPayList;
+		}
+	/**保存-其他支出汇总*/
+    @ExcelCollection(name="其他支出汇总")
+	private List<VwBusOthersProjPayEntity> vwBusOthersProjPayList = new ArrayList<VwBusOthersProjPayEntity>();
+		public List<VwBusOthersProjPayEntity> getVwBusOthersProjPayList() {
+		return vwBusOthersProjPayList;
+		}
+		public void setVwBusOthersProjPayList(List<VwBusOthersProjPayEntity> vwBusOthersProjPayList) {
+		this.vwBusOthersProjPayList = vwBusOthersProjPayList;
+		}
+	/**保存-其他支出明细*/
+    @ExcelCollection(name="其他支出明细")
+	private List<VwBusOthersPayDetailEntity> vwBusOthersPayDetailList = new ArrayList<VwBusOthersPayDetailEntity>();
+		public List<VwBusOthersPayDetailEntity> getVwBusOthersPayDetailList() {
+		return vwBusOthersPayDetailList;
+		}
+		public void setVwBusOthersPayDetailList(List<VwBusOthersPayDetailEntity> vwBusOthersPayDetailList) {
+		this.vwBusOthersPayDetailList = vwBusOthersPayDetailList;
 		}
 }

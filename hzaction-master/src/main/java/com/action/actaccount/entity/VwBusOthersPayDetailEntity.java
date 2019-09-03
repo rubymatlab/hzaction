@@ -19,16 +19,16 @@ import org.jeecgframework.poi.excel.annotation.Excel;
 
 /**   
  * @Title: Entity
- * @Description: 采购应付/已付明细
+ * @Description: 其他支出明细
  * @author onlineGenerator
  * @date 2019-09-02 18:55:25
  * @version V1.0   
  *
  */
 @Entity
-@Table(name = "vw_bus_po_contract_pay", schema = "")
+@Table(name = "vw_bus_others_pay_detail", schema = "")
 @SuppressWarnings("serial")
-public class VwBusPoContractPayEntity implements java.io.Serializable {
+public class VwBusOthersPayDetailEntity implements java.io.Serializable {
 	/**主键*/
 	private java.lang.String id;
 	/**项目编号*/
@@ -37,24 +37,18 @@ public class VwBusPoContractPayEntity implements java.io.Serializable {
 	/**项目名称*/
 	@Excel(name="项目名称",width=15)
 	private java.lang.String bpmName;
-	/**费用分期*/
-	@Excel(name="费用分期",width=15)
-	private java.lang.String bpcpProgreName;
-	/**计划付款日期*/
-	@Excel(name="计划付款日期",width=15,format = "yyyy-MM-dd")
-	private java.util.Date bpcpDate;
-	/**计划付款金额*/
-	@Excel(name="计划付款金额",width=15)
-	private java.lang.String bpcpPayAmount;
-	/**实际付款日期*/
-	@Excel(name="实际付款日期",width=15,format = "yyyy-MM-dd")
-	private java.util.Date bppPayDate;
+	/**单号*/
+	@Excel(name="单号",width=15)
+	private java.lang.String busId;
+	/**单据_费用类型*/
+	@Excel(name="单据_费用类型",width=15)
+	private java.lang.String busType;
+	/**申请日期*/
+	@Excel(name="申请日期",width=15,format = "yyyy-MM-dd")
+	private java.util.Date applyDate;
 	/**付款金额*/
 	@Excel(name="付款金额",width=15)
 	private java.lang.String payAmount;
-	/**项目结算id*/
-	@Excel(name="项目结算id",width=15)
-	private java.lang.String formCostAccountId;
 	
 	/**
 	 *方法: 取得java.lang.String
@@ -115,74 +109,56 @@ public class VwBusPoContractPayEntity implements java.io.Serializable {
 	
 	/**
 	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  费用分期
+	 *@return: java.lang.String  单号
 	 */
 	
-	@Column(name ="BPCP_PROGRE_NAME",nullable=true,length=32)
-	public java.lang.String getBpcpProgreName(){
-		return this.bpcpProgreName;
+	@Column(name ="BUS_ID",nullable=true,length=32)
+	public java.lang.String getBusId(){
+		return this.busId;
 	}
 
 	/**
 	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  费用分期
+	 *@param: java.lang.String  单号
 	 */
-	public void setBpcpProgreName(java.lang.String bpcpProgreName){
-		this.bpcpProgreName = bpcpProgreName;
-	}
-	
-	/**
-	 *方法: 取得java.util.Date
-	 *@return: java.util.Date  计划付款日期
-	 */
-	
-	@Column(name ="BPCP_DATE",nullable=true,length=32)
-	public java.util.Date getBpcpDate(){
-		return this.bpcpDate;
-	}
-
-	/**
-	 *方法: 设置java.util.Date
-	 *@param: java.util.Date  计划付款日期
-	 */
-	public void setBpcpDate(java.util.Date bpcpDate){
-		this.bpcpDate = bpcpDate;
+	public void setBusId(java.lang.String busId){
+		this.busId = busId;
 	}
 	
 	/**
 	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  计划付款金额
+	 *@return: java.lang.String  单据_费用类型
 	 */
 	
-	@Column(name ="BPCP_PAY_AMOUNT",nullable=true,length=32)
-	public java.lang.String getBpcpPayAmount(){
-		return this.bpcpPayAmount;
+	@Column(name ="BUS_TYPE",nullable=true,length=32)
+	public java.lang.String getBusType(){
+		return this.busType;
 	}
 
 	/**
 	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  计划付款金额
+	 *@param: java.lang.String  单据_费用类型
 	 */
-	public void setBpcpPayAmount(java.lang.String bpcpPayAmount){
-		this.bpcpPayAmount = bpcpPayAmount;
+	public void setBusType(java.lang.String busType){
+		this.busType = busType;
 	}
 	
 	/**
 	 *方法: 取得java.util.Date
-	 *@return: java.util.Date  实际付款日期
+	 *@return: java.util.Date  申请日期
 	 */
 	
-	@Column(name ="BPP_PAY_DATE",nullable=true,length=32)
-	public java.util.Date getBppPayDate(){
-		return this.bppPayDate;
+	@Column(name ="APPLY_DATE",nullable=true,length=32)
+	public java.util.Date getApplyDate(){
+		return this.applyDate;
 	}
 
 	/**
 	 *方法: 设置java.util.Date
-	 *@param: java.util.Date  实际付款日期
+	 *@param: java.util.Date  申请日期
 	 */
-	public void setBppPayDate(java.util.Date bppPayDate){
-		this.bppPayDate = bppPayDate;
+	public void setApplyDate(java.util.Date applyDate){
+		this.applyDate = applyDate;
 	}
 	
 	/**
@@ -201,24 +177,6 @@ public class VwBusPoContractPayEntity implements java.io.Serializable {
 	 */
 	public void setPayAmount(java.lang.String payAmount){
 		this.payAmount = payAmount;
-	}
-	
-	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  项目结算id
-	 */
-	
-	@Column(name ="FORM_COST_ACCOUNT_ID",nullable=true,length=32)
-	public java.lang.String getFormCostAccountId(){
-		return this.formCostAccountId;
-	}
-
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  项目结算id
-	 */
-	public void setFormCostAccountId(java.lang.String formCostAccountId){
-		this.formCostAccountId = formCostAccountId;
 	}
 	
 }

@@ -32,7 +32,7 @@
 <table border="0" cellpadding="2" cellspacing="0" id="vwBusPoContractPay_table">
 	<tr bgcolor="#E6E6E6">
 		<td align="center" bgcolor="#EEEEEE" style="width: 25px;">序号</td>
-		<!-- <td align="center" bgcolor="#EEEEEE" style="width: 25px;">操作</td> -->
+<!-- 		<td align="center" bgcolor="#EEEEEE" style="width: 25px;">操作</td> -->
 				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
 						项目编号
 				  </td>

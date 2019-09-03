@@ -1,6 +1,8 @@
 package com.action.actaccount.service;
 import com.action.actaccount.entity.VwRpCostAccountEntity;
 import com.action.actaccount.entity.VwBusPoContractPayEntity;
+import com.action.actaccount.entity.VwBusOthersProjPayEntity;
+import com.action.actaccount.entity.VwBusOthersPayDetailEntity;
 
 import java.util.List;
 import org.jeecgframework.core.common.service.CommonService;
@@ -13,13 +15,13 @@ public interface VwRpCostAccountServiceI extends CommonService{
 	 * 
 	 */
 	public void addMain(VwRpCostAccountEntity vwRpCostAccount,
-	        List<VwBusPoContractPayEntity> vwBusPoContractPayList) throws Exception;
+	        List<VwBusPoContractPayEntity> vwBusPoContractPayList,List<VwBusOthersProjPayEntity> vwBusOthersProjPayList,List<VwBusOthersPayDetailEntity> vwBusOthersPayDetailList) throws Exception;
 	/**
 	 * 修改一对多
 	 * 
 	 */
 	public void updateMain(VwRpCostAccountEntity vwRpCostAccount,
-	        List<VwBusPoContractPayEntity> vwBusPoContractPayList) throws Exception;
+	        List<VwBusPoContractPayEntity> vwBusPoContractPayList,List<VwBusOthersProjPayEntity> vwBusOthersProjPayList,List<VwBusOthersPayDetailEntity> vwBusOthersPayDetailList) throws Exception;
 	        
 	/**
 	 * 删除一对多

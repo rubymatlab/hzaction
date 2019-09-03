@@ -70,9 +70,7 @@ public class BusPayInfoEntity implements java.io.Serializable {
 	/**凭证号*/
 	@Excel(name="凭证号",width=15)
 	private java.lang.String bpiVoucherno;
-	/**附件*/
-//	@Excel(name="附件",width=15)
-//	private java.lang.String bpiAccessory;
+
 	/**业务外键*/
 	@Excel(name="业务外键",width=15)
 	private java.lang.String bpiBusId;
@@ -395,24 +393,7 @@ public class BusPayInfoEntity implements java.io.Serializable {
 		this.bpiVoucherno = bpiVoucherno;
 	}
 	
-	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  附件
-	 */
-	
-//	@Column(name ="BPI_ACCESSORY",nullable=true,length=255)
-//	public java.lang.String getBpiAccessory(){
-//		return this.bpiAccessory;
-//	}
 
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  附件
-	 */
-//	public void setBpiAccessory(java.lang.String bpiAccessory){
-//		this.bpiAccessory = bpiAccessory;
-//	}
-	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  业务外键

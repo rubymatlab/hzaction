@@ -35,8 +35,6 @@
 			            	$('#bpmProjId').val(data.bpmProjId);
 			            	$('#bcCustContractor').val(data.bpmCustName),
 			            	$('#fromProjmId').val(data.id)
-			            	$('brpExtBackDate').val(data.brpBackAmount)
-			            	$('brpBackAmount').val(data.brpBackAmount);
 			            	changeStager();
 			            	createBCollectId(data.bpmProjId,data.id)
 					    },
@@ -97,12 +95,8 @@
 						</label>
 					</td>
 					<td class="value">
-						<%-- 	  <t:dictSelect field="bcTaxPer" type="list"  typeGroupCode="bc_tax_pe"  defaultVal="${vwBusCollectionPage.bcTaxPer}" hasLabel="false"  title="开票税率" ></t:dictSelect>     
-						 --%>	
-						 <select id="TaxPer">
-						 <option>6%</option>
-						 <option>16%</option>
-						 </select>
+						<t:dictSelect field="bcTaxPer" type="list"  typeGroupCode="bc_tax_pe"  defaultVal="${vwBusCollectionPage.bcTaxPer}" hasLabel="false"  title="开票税率" ></t:dictSelect>     
+						
 						 <span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">开票税率</label>
 						</td>
@@ -179,7 +173,7 @@
 							文件:
 						</label>
 					</td>
-					<td class="value">
+					<td class="value" colspan="3">
 		<div class="form jeecgDetail">
 			<t:upload name="bcFile" id="bcFile" queueID="filediv_bcFile" outhtml="false" uploader="cgUploadController.do?saveFiles"  extend="office" buttonText='添加文件'  onUploadStart="bcFileOnUploadStart"> </t:upload>
 			<div class="form" id="filediv_bcFile"></div>
@@ -188,7 +182,7 @@
 					var cgFormId=$("input[name='id']").val();
 					$('#bcFile').uploadify("settings", "formData", {
 						'cgFormId':cgFormId,
-						'cgFormName':'vw_bus_collection',
+						'cgFormName':'bus_collection',
 						'cgFormField':'BC_FILE'
 					});
 				}
@@ -197,6 +191,8 @@
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">文件</label>
 						</td>
+							</tr>
+				<tr>
 					<td align="right">
 						<label class="Validform_label">
 							回款状态:
@@ -207,8 +203,7 @@
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">回款状态</label>
 						</td>
-					</tr>
-				<tr>
+				
 					
 						
 						<td align="right">
@@ -357,7 +352,7 @@
 					$('#bcFile').uploadify('cancel', '*');
 			}
 			function uploadFile(data){
-				if(!$("input[name='id']").val()){
+				if(!$("input[name='id']").val()){ 
 					if(data.obj!=null && data.obj!='undefined'){
 						$("input[name='id']").val(data.obj.id);
 					}
@@ -412,19 +407,4 @@
 			}
 			
 	  	</script>
-<script>
-
-
-$("#bcColAmount").focus(function(){
-	var a = $("#TaxPer").val()
-	var b = $("#bcInvAmount").val()
-	var totle = parseFloat(b)- ( parseFloat(a)*parseFloat(b)/100)
-	$("#bcColAmount").val(totle)
-	// alert()
-	$("bcColAmount").blur()
-});
-
-
-</script>
-
  </body>

@@ -14,14 +14,14 @@
 		<t:formvalid formid="formobj" dialog="true" usePlugin="password" layout="table" action="vwBusCollectionController.do?doUpdate" callback="jeecgFormFileCallBack@Override">
 					<input id="id" name="id" type="hidden" value="${vwBusCollectionPage.id }"/>
 		<table style="width: 600px;" cellpadding="0" cellspacing="1" class="formtable">
-					<%-- <tr>
+					 <tr>
 						<td align="right">
 							<label class="Validform_label">
 								项目名称:
 							</label>
 						</td>
 						<td class="value">
-						   	<input id="bpmName" class="easyui-combogrid" value='${vwBusCollectionPage.bpmName}' style="width:150px" data-options="
+						   	<input id="bpmName" class="easyui-combogrid" ignore="ignore"  value='${vwBusCollectionPage.bpmName}' style="width:150px" data-options="
 			            panelWidth: 500,
 			            idField: 'bpmProjName',
 			            textField: 'bpmProjName',
@@ -35,10 +35,12 @@
 			            	$('#fromProjmId').val(data.id);
 			            	// $('#bpmCustSName').val(data.bpmCustSName);
 			            	window.projectId = data.id;
-			            	console.log(data.id)
+			            	changeStager()
 					    },
 			             fitColumns: true
-			        ">	<span class="Validform_checktip"></span>
+			        ">	
+			        <input type="hidden" id="fromProjmId" name="fromProjmId" ignore="ignore" class="inputxt" value="${vwBusCollectionPage.fromProjmId} }">
+			        <span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">项目名称</label>
 						</td>
 						<td align="right">
@@ -63,9 +65,19 @@
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">项目负责人</label>
 						</td>
+						<td align="right">
+							<label class="Validform_label">
+								客户:
+							</label>
+						</td>
+						<td class="value">
+						    <input id="bcCustContractor" name="bcCustContractor" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusCollectionPage.bcCustContractor}'/>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">客户</label>
+						</td>
 					</tr>
 					<tr>
-						<td align="right">
+						<%-- <td align="right">
 							<label class="Validform_label">
 								创建人登录名称:
 							</label>
@@ -74,7 +86,7 @@
 						    <input id="createBy" name="createBy" type="text" maxlength="50" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusCollectionPage.createBy}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">创建人登录名称</label>
-						</td>
+						</td> --%>
 						<td align="right">
 							<label class="Validform_label">
 								收款单号:
@@ -151,32 +163,11 @@
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">收款时间</label>
 						</td>
-					</tr> --%>
-					<%-- <tr>
-						<td align="right">
-							<label class="Validform_label">
-								文件:
-							</label>
-						</td>
-						<td class="value">
-		<table id="bc_file_fileTable"></table>
-		<div class="form jeecgDetail">
-			<t:upload name="bcFile" id="bcFile" queueID="filediv_bcFile" outhtml="false" uploader="cgUploadController.do?saveFiles"  extend="office" buttonText='添加文件'  onUploadStart="bcFileOnUploadStart"> </t:upload>
-			<div class="form" id="filediv_bcFile"></div>
-			<script type="text/javascript">
-				function bcFileOnUploadStart(file){
-					var cgFormId=$("input[name='id']").val();
-					$('#bcFile').uploadify("settings", "formData", {
-						'cgFormId':cgFormId,
-						'cgFormName':'vw_bus_collection',
-						'cgFormField':'BC_FILE'
-					});
-				}
-			</script>
-		</div>
-							<span class="Validform_checktip"></span>
-							<label class="Validform_label" style="display: none;">文件</label>
-						</td>
+					</tr>
+			
+					
+				
+						 <tr>
 						<td align="right">
 							<label class="Validform_label">
 								回款状态:
@@ -187,8 +178,7 @@
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">回款状态</label>
 						</td>
-					</tr>
-					<tr>
+					
 						<td align="right">
 							<label class="Validform_label">
 								回款金额:
@@ -199,17 +189,50 @@
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">回款金额</label>
 						</td>
-						<td align="right">
+						
+					</tr>
+					 <tr>
+					<td align="right">
 							<label class="Validform_label">
-								客户:
+								文件:
 							</label>
 						</td>
-						<td class="value">
-						    <input id="bcCustContractor" name="bcCustContractor" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusCollectionPage.bcCustContractor}'/>
+						<td class="value" colspan="3">
+							<table id="bc_file_fileTable"></table>
+							<div class="form jeecgDetail">
+								<t:upload name="bcFile" id="bcFile" queueID="filediv_bcFile" outhtml="false" uploader="cgUploadController.do?saveFiles"  extend="office" buttonText='添加文件'  onUploadStart="bcFileOnUploadStart"> </t:upload>
+								<div class="form" id="filediv_bcFile"></div>
+								<script type="text/javascript">
+									function bcFileOnUploadStart(file){
+										var cgFormId=$("input[name='id']").val();
+										$('#bcFile').uploadify("settings", "formData", {
+											'cgFormId':cgFormId,
+											'cgFormName':'bus_collection',
+											'cgFormField':'BC_FILE'
+										});
+									}
+								</script>
+							</div>
 							<span class="Validform_checktip"></span>
-							<label class="Validform_label" style="display: none;">客户</label>
+							<label class="Validform_label" style="display: none;">文件</label>
 						</td>
-					</tr> --%>
+						</tr>
+						<tr>
+						<td align="right">
+							<label class="Validform_label">
+								备注:
+							</label>
+						</td>
+						<td class="value"  colspan="3" >
+						  	 	<textarea id="bcRemark" style="height:auto;width:95%;" class="inputxt" rows="6" name="bcRemark"  ignore="ignore" >${vwBusCollectionPage.bcRemark}</textarea>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">备注</label>
+						</td>
+					</tr>
+				</table>
+				<c:if test="${ payment == true }">
+				<p style="font-weight: bold; font-size: 18px;">支付</p>
+				<table style="width: 600px;" cellpadding="0" cellspacing="1" class="formtable">
 					 <tr>
 					<td align="right">
 						<label class="Validform_label">
@@ -217,7 +240,7 @@
 						</label>
 					</td>
 					<td class="value">
-							<t:dictSelect field="bpiPayMethod" type="list"  typeGroupCode="bc_back"    hasLabel="false"  title="支付方式" ></t:dictSelect>
+							<t:dictSelect field="bpiPayMethod" type="list"  typeGroupCode="cost_type" defaultVal="${vwBusCollectionPage.bpiPayMethod }"   hasLabel="false"  title="支付方式" ></t:dictSelect>
 					     	 <!-- <input id="bpiPayMethod" name="bpiPayMethod" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" /> -->
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">支付方式</label>
@@ -243,7 +266,7 @@
 						 fitColumns: true
 						 
 			        "/> -->
-			        <input id="bbaiAccountNo" class="easyui-combogrid" style="width:150px" data-options="
+			        <input id="bbaiAccountNo" class="easyui-combogrid" style="width:150px" value="${vwBusCollectionPage.bbaiAccountNo }" data-options="
 				        	panelWidth: 150,
 				            idField: 'bbaiAccountNo',
 				            textField: 'bbaiAccountNo',
@@ -271,7 +294,7 @@
 						</label>
 					</td>
 					<td class="value">
-						<t:dictSelect field="bpiFeeType" type="list"  typeGroupCode="bc_back"    hasLabel="false"  title="费用类别" ></t:dictSelect>
+						<t:dictSelect field="bpiFeeType" type="list"  typeGroupCode="cost_type"  defaultVal="${vwBusCollectionPage.bpiFeeType }"   hasLabel="false"  title="费用类别" ></t:dictSelect>
 					     	<!--  <input id="bpiFeeType" name="bpiFeeType" type="text"  maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" /> -->
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">费用类别</label>
@@ -282,7 +305,7 @@
 						</label>
 					</td>
 					<td class="value">
-							<t:dictSelect field="bpiFeeDetail" type="list"  typeGroupCode="bc_back"    hasLabel="false"  title="费用明细" ></t:dictSelect>
+							<t:dictSelect field="bpiFeeDetail" type="list"  typeGroupCode="cost_type" defaultVal="${vwBusCollectionPage.bpiFeeDetail }"    hasLabel="false"  title="费用明细" ></t:dictSelect>
 					     	<!--  <input id="bpiFeeDetail" name="bpiFeeDetail" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" /> -->
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">费用明细</label>
@@ -295,7 +318,7 @@
 						</label>
 					</td>
 					<td class="value">
-					     	 <input id="bpiPayDate" name="bpiPayDate" type="text" maxlength="32"  style="width: 150px" class="inputxt"  ignore="ignore" />
+					     	 <input id="bpiPayDate" name="bpiPayDate" type="text" maxlength="32" defaultVal="${vwBusCollectionPage.bpiPayDate }"  style="width: 150px" class="inputxt"  ignore="ignore" />
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">支付时间</label>
 						</td>
@@ -305,7 +328,7 @@
 						</label>
 					</td>
 					<td class="value">
-						<t:dictSelect field="bpiContent" type="list"  typeGroupCode="bc_back"    hasLabel="false"  title="内容" ></t:dictSelect>
+						<t:dictSelect field="bpiContent" type="list"  typeGroupCode="cost_type"  defaultVal="${vwBusCollectionPage.bpiContent }"  hasLabel="false"  title="内容" ></t:dictSelect>
 					     	 <!-- <input id="bpiContent" name="bpiContent" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" /> -->
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">内容</label>
@@ -318,29 +341,29 @@
 						</label>
 					</td>
 					<td class="value" colspan="3">
-					     	 <input id="bpiVoucherno" name="bpiVoucherno" type="text" maxlength="32" value="${bpiVoucherno}" style="width: 150px" class="inputxt"  ignore="ignore" />
+					     	 <input id="bpiVoucherno" name="bpiVoucherno" readonly="readonly"  type="text" maxlength="32" value="${bpiVoucherno}" style="width: 150px" class="inputxt"  ignore="ignore" />
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">凭证号</label>
 						</td>
 					</tr>
-					<tr>
+					<%-- <tr>
 						<td align="right">
 							<label class="Validform_label">
-								文件:
+								附件:
 							</label>
 						</td>
 						<td class="value" colspan="3">
-						<table id="bc_file_fileTable"></table>
+						<table id="bpi_accessory_fileTable"></table>
 						<div class="form jeecgDetail">
-							<t:upload name="bcFile" id="bcFile" queueID="filediv_bcFile" outhtml="false" uploader="cgUploadController.do?saveFiles"  extend="office" buttonText='添加文件'  onUploadStart="bcFileOnUploadStart"> </t:upload>
+							<t:upload name="bpiAccessory" id="bpiAccessory" queueID="filediv_bpiAccessory" outhtml="false" uploader="cgUploadController.do?saveFiles"  extend="office" buttonText='添加文件'  onUploadStart="bcFileOnUploadStart"> </t:upload>
 							<div class="form" id="filediv_bcFile"></div>
 							<script type="text/javascript">
 								function bcFileOnUploadStart(file){
 									var cgFormId=$("input[name='id']").val();
-									$('#bcFile').uploadify("settings", "formData", {
+									$('#bpiAccessory').uploadify("settings", "formData", {
 										'cgFormId':cgFormId,
-										'cgFormName':'vw_bus_collection',
-										'cgFormField':'BC_FILE'
+										'cgFormName':'bus_pay_info',
+										'cgFormField':'BPI_ACCESSORY'
 									});
 								}
 							</script>
@@ -348,30 +371,91 @@
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">文件</label>
 						</td>
-					</tr>
-					<%-- <tr>
-						<td align="right">
-							<label class="Validform_label">
-								备注:
-							</label>
-						</td>
-						<td class="value"  colspan="3" >
-						  	 	<textarea id="bcRemark" style="height:auto;width:95%;" class="inputxt" rows="6" name="bcRemark"  ignore="ignore" >${vwBusCollectionPage.bcRemark}</textarea>
-							<span class="Validform_checktip"></span>
-							<label class="Validform_label" style="display: none;">备注</label>
-						</td>
 					</tr> --%>
+					
 			</table>
+				</c:if>
 		</t:formvalid>
+		<input id="isPayment" type="hidden" value="${payment}">
  </body>
  	<script src = "webpage/com/action/actpo/dropdown.js"></script>
-	  	<script type="text/javascript">
+	  	<script type="text/javascript">	
 			$(function(){
 				// 支付时间
 				$("#bpiPayDate").val(new Date().toLocaleString())
+				
+				if($("#isPayment").val() == "true"){
+					$("table").eq(0).find(".value").each(function(index, item){
+						var oDiv = $("<div></div>").css({
+							"position": "absolute",
+							"width": "100%",
+							"height": "100%",
+							"z-index": "99",
+							"left": "0px",
+							"top": "0px"
+						})
+						$(item).css("position","relative").append(oDiv)
+					})
+				}
 			});
-
-		  
+			
+			//  加载进度款分期
+			changeStager();
+			function changeStager(){
+				$("#bcProgressStages").combogrid({
+					panelWidth: 150,
+					idField: "brpProgressStages",
+					textField: "brpProgressStages",
+					url: "vmBusCollectPlanController.do?datagrid&fromId="+$('#fromProjmId').val()+"&field=id,brpProgressStages,brpBackAmount,brpExtBackDate,fromId",
+					columns: [[
+			           {field:'brpProgressStages',title:'进度款分期' , width:80},			
+					]],
+					onSelect: function(row, data){
+						$("#brpExtBackDate").val(data.brpExtBackDate)
+						$("#brpBackAmount").val(data.brpBackAmount)
+					},
+					fifle:function(q,row){
+						console.log(q)
+						console.log(row)
+					},
+					fitColumns: true
+				})
+			}
+			
+			
+			// 获取已存在的文件
+			$(function(){
+	  			var cgFormId=$("input[name='id']").val();
+		  		$.ajax({
+		  		   type: "post",
+		  		   url: "vwBusCollectionController.do?getFiles&id=" +  cgFormId,
+		  		   success: function(data){
+		  			 var arrayFileObj = jQuery.parseJSON(data).obj;
+		  			$.each(arrayFileObj,function(n,file){
+		  				var fieldName = file.field.toLowerCase();
+		  				var table = $("#"+fieldName+"_fileTable");
+		  				var tr = $("<tr style=\"height:34px;\"></tr>");
+		  				var title = file.title;
+		  				if(title.length > 15){
+		  					title = title.substring(0,12) + "...";
+		  				}
+		  				var td_title = $("<td>" + title + "</td>");
+		  		  		var td_download = $("<td><a style=\"margin:0px 5px;\" href=\"commonController.do?viewFile&fileid=" + file.fileKey + "&subclassname=org.jeecgframework.web.cgform.entity.upload.CgUploadEntity\" title=\"下载\">下载</a></td>")
+		  		  		var td_view = $("<td><a style=\"margin:0px 5px;\" href=\"javascript:void(0);\" onclick=\"openwindow('预览','commonController.do?openViewFile&fileid=" + file.fileKey + "&subclassname=org.jeecgframework.web.cgform.entity.upload.CgUploadEntity','fList',700,500)\">预览</a></td>");
+		  		  		tr.appendTo(table);
+		  		  		td_title.appendTo(tr);
+		  		  		td_download.appendTo(tr);
+		  		  		td_view.appendTo(tr);
+		  		  		if(location.href.indexOf("load=detail")==-1){
+			  		  		var td_del = $("<td><a style=\"margin:0px 5px;\" href=\"javascript:void(0)\" class=\"jeecgDetail\" onclick=\"del('cgUploadController.do?delFile&id=" + file.fileKey + "',this)\">删除</a></td>");
+			  		  		td_del.appendTo(tr);
+		  		  		}
+		  			 });
+		  		   }
+		  		});
+		  	});
+			
+			
 		  	
 		  	/**
 		 	 * 删除图片数据资源
@@ -445,7 +529,8 @@
 				}
 	  		}
 	  		function upload() {
-					$('#bcFile').uploadify('upload', '*');	
+					$('#bcFile').uploadify('upload', '*');
+					
 			}
 			
 			var neibuClickFlag = false;
@@ -454,14 +539,17 @@
 				$('#btn_sub').trigger('click');
 			}
 			function cancel() {
-					$('#bcFile').uploadify('cancel', '*');	
+					$('#bcFile').uploadify('cancel', '*');
 			}
 			function uploadFile(data){
+				// id 获取
 				if(!$("input[name='id']").val()){
 					if(data.obj!=null && data.obj!='undefined'){
 						$("input[name='id']").val(data.obj.id);
 					}
 				}
+			
+				
 				if($(".uploadify-queue-item").length>0){
 					upload();
 				}else{

@@ -109,7 +109,7 @@ public class VwBusCollectionEntity implements java.io.Serializable {
 	@Excel(name="银行帐号",width=15,dicCode="ba_acc_no")
 	private java.lang.String bbaiAccountNo;
 	/**费用类别*/
-	@Excel(name="费用类别",width=15,dicCode="bus_pa_way")
+	@Excel(name="费用类别",width=15,dicCode="cost_type")
 	private java.lang.String bpiFeeType;
 	/**费用明细*/
 	@Excel(name="费用明细",width=15,dicCode="bus_pa_way")

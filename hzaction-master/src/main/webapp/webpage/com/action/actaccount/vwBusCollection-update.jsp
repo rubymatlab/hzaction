@@ -55,16 +55,6 @@
 						</td>
 					</tr>
 					<tr>
-					<td align="right">
-							<label class="Validform_label">
-								项目负责人:
-							</label>
-						</td>
-						<td class="value">
-						    <input id="bpKeyPeople" name="bpKeyPeople" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusCollectionPage.bpKeyPeople}'/>
-							<span class="Validform_checktip"></span>
-							<label class="Validform_label" style="display: none;">项目负责人</label>
-						</td>
 						<td align="right">
 							<label class="Validform_label">
 								客户:
@@ -75,18 +65,7 @@
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">客户</label>
 						</td>
-					</tr>
-					<tr>
-						<%-- <td align="right">
-							<label class="Validform_label">
-								创建人登录名称:
-							</label>
-						</td>
-						<td class="value">
-						    <input id="createBy" name="createBy" type="text" maxlength="50" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusCollectionPage.createBy}'/>
-							<span class="Validform_checktip"></span>
-							<label class="Validform_label" style="display: none;">创建人登录名称</label>
-						</td> --%>
+					
 						<td align="right">
 							<label class="Validform_label">
 								收款单号:
@@ -120,17 +99,32 @@
 							<label class="Validform_label" style="display: none;">开票税率</label>
 						</td>
 					</tr>
+					
 					<tr>
-						<td align="right">
+					<td align="right">
 							<label class="Validform_label">
-								开票时间:
+								预计回款金额:
 							</label>
 						</td>
 						<td class="value">
-									  <input id="bcInvoiceDate" name="bcInvoiceDate" type="text" style="width: 150px"  class="Wdate" onClick="WdatePicker()"  ignore="ignore" value='<fmt:formatDate value='${vwBusCollectionPage.bcInvoiceDate}' type="date" pattern="yyyy-MM-dd"/>'/>
+						    <input id="brpBackAmount" name="brpBackAmount" type="text" maxlength="32" readonly="readonly" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusCollectionPage.brpBackAmount}'/>
 							<span class="Validform_checktip"></span>
-							<label class="Validform_label" style="display: none;">开票时间</label>
+							<label class="Validform_label" style="display: none;">预计回款金额</label>
 						</td>
+						
+						<td align="right">
+							<label class="Validform_label">
+								预计回款时间:
+							</label>
+						</td>
+						<td class="value">
+									  <input id="brpExtBackDate" name="brpExtBackDate" disabled="disabled" type="text" style="width: 150px"  class="Wdate" onClick="WdatePicker()"  ignore="ignore" value='<fmt:formatDate value='${vwBusCollectionPage.brpExtBackDate}' type="date" pattern="yyyy-MM-dd"/>'/>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">预计回款时间</label>
+						</td>
+					</tr>
+					<tr>
+						
 						<td align="right">
 							<label class="Validform_label">
 								开票金额:
@@ -141,8 +135,21 @@
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">开票金额</label>
 						</td>
+						<td align="right">
+							<label class="Validform_label">
+								开票时间:
+							</label>
+						</td>
+						<td class="value">
+									  <input id="bcInvoiceDate" name="bcInvoiceDate" type="text" style="width: 150px"  class="Wdate" onClick="WdatePicker()"  ignore="ignore" value='<fmt:formatDate value='${vwBusCollectionPage.bcInvoiceDate}' type="date" pattern="yyyy-MM-dd"/>'/>
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">开票时间</label>
+						</td>
 					</tr>
-					<tr>
+					
+						 <tr>
+						
+					
 						<td align="right">
 							<label class="Validform_label">
 								收款金额:
@@ -155,21 +162,6 @@
 						</td>
 						<td align="right">
 							<label class="Validform_label">
-								收款时间:
-							</label>
-						</td>
-						<td class="value">
-									  <input id="bcColDate" name="bcColDate" type="text" style="width: 150px"  class="Wdate" onClick="WdatePicker()"  ignore="ignore" value='<fmt:formatDate value='${vwBusCollectionPage.bcColDate}' type="date" pattern="yyyy-MM-dd"/>'/>
-							<span class="Validform_checktip"></span>
-							<label class="Validform_label" style="display: none;">收款时间</label>
-						</td>
-					</tr>
-			
-					
-				
-						 <tr>
-						<td align="right">
-							<label class="Validform_label">
 								回款状态:
 							</label>
 						</td>
@@ -178,18 +170,6 @@
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">回款状态</label>
 						</td>
-					
-						<td align="right">
-							<label class="Validform_label">
-								回款金额:
-							</label>
-						</td>
-						<td class="value">
-						    <input id="brpBackAmount" name="brpBackAmount" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusCollectionPage.brpBackAmount}'/>
-							<span class="Validform_checktip"></span>
-							<label class="Validform_label" style="display: none;">回款金额</label>
-						</td>
-						
 					</tr>
 					 <tr>
 					<td align="right">
@@ -251,38 +231,25 @@
 						</label>
 					</td>
 					<td class="value">
-					
-		<!-- <input id="bbaiAccountNo" name="bbaiAccountNo" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  data-options="
-			            panelWidth: 150,
-			            idField: 'bpmProjName',
-			            textField: 'bpmProjName',
-			            url: 'vmBusProjectManagerController.do?datagrid&field=id,bpmProjName,bpmProjId,bpmCustName',
-			            columns: [[
-			             {field:'bpmProjName',title:'项目名称',width:80},
-	               		{field:'bpmProjId',title:'项目编号',width:80},
-						
-						]],
-					
-						 fitColumns: true
-						 
-			        "/> -->
-			        <input id="bbaiAccountNo" class="easyui-combogrid" style="width:150px" value="${vwBusCollectionPage.bbaiAccountNo }" data-options="
+								        	<input id="fromPayinfoId" name="fromPayinfoId"  type="hidden"  maxlength="32" value="${ vwBusCollectionPage.fromPayinfoId }" />
+			        	<input id="bbaiAccountNo" class="easyui-combogrid" name="bbaiAccountNo" style="width:150px" value="${vwBusCollectionPage.bbaiAccountNo }" data-options="
 				        	panelWidth: 150,
 				            idField: 'bbaiAccountNo',
 				            textField: 'bbaiAccountNo',
-				            url: 'basBankAccountInfoController.do?datagrid&field=bbaiAccountNo,id',
+				            url: 'basBankAccountInfoController.do?datagrid&field=bbaiAccountNo,id,bbaiSname',
 				            columns: [[
 				             {field:'bbaiAccountNo',title:'银行账号',width:80},
+				             {field: 'bbaiSname',title: '简称'}
 							
 							]],
 							onSelect(row,data){
-								$('#fromCustId').val(data.id)
+								$('#from_bank_acc_id').val(data.id)
 							},
 							 fitColumns: true
 							 
 				        ">
-				        	<input id="fromCustId" name="fromCustId"  type="hidden"  maxlength="32"  />
-				        	<input id="fromProjmId" name="fromProjmId"  type="hidden" value="${vwBusCollectionPage.fromProjmId}"  maxlength="32"  />
+				        	<input id="from_bank_acc_id" name="fromCustId"  type="hidden"  maxlength="32" value="${ vwBusCollectionPage.fromBankAccId }" />
+
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">银行帐号</label>
 						</td>
@@ -318,7 +285,7 @@
 						</label>
 					</td>
 					<td class="value">
-					     	 <input id="bpiPayDate" name="bpiPayDate" type="text" maxlength="32" defaultVal="${vwBusCollectionPage.bpiPayDate }"  style="width: 150px" class="inputxt"  ignore="ignore" />
+					     	 <input id="bpiPayDate" name="bpiPayDate" type="text" maxlength="32" value="${vwBusCollectionPage.bpiPayDate }"  style="width: 150px" class="Wdate" onClick="WdatePicker()"   ignore="ignore" />
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">支付时间</label>
 						</td>
@@ -341,7 +308,7 @@
 						</label>
 					</td>
 					<td class="value" colspan="3">
-					     	 <input id="bpiVoucherno" name="bpiVoucherno" readonly="readonly"  type="text" maxlength="32" value="${bpiVoucherno}" style="width: 150px" class="inputxt"  ignore="ignore" />
+					     	 <input id="bpiVoucherno" name="bpiVoucherno" readonly="readonly"  type="text" maxlength="32" value="${vwBusCollectionPage.bpiVoucherno}" style="width: 150px" class="inputxt"  ignore="ignore" />
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">凭证号</label>
 						</td>
@@ -382,7 +349,9 @@
 	  	<script type="text/javascript">	
 			$(function(){
 				// 支付时间
-				$("#bpiPayDate").val(new Date().toLocaleString())
+	/* 			if(!$("#bpiPayDate").val()){
+					$("#bpiPayDate").val(new Date())
+				} */
 				
 				if($("#isPayment").val() == "true"){
 					$("table").eq(0).find(".value").each(function(index, item){
@@ -391,7 +360,7 @@
 							"width": "100%",
 							"height": "100%",
 							"z-index": "99",
-							"left": "0px",
+							"left": "0px",	
 							"top": "0px"
 						})
 						$(item).css("position","relative").append(oDiv)

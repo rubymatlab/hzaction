@@ -116,7 +116,9 @@ public class VwBusCollectionEntity implements java.io.Serializable {
 	private java.lang.String bpiFeeDetail;
 	/**支付时间*/
 	@Excel(name="支付时间",width=15)
-	private java.lang.String bpiPayDate;
+	private java.util.Date bpiPayDate;
+	/*银行卡外键*/
+	private java.lang.String fromBankAccId;
 	/**内容*/
 	@Excel(name="内容",width=15,dicCode="bus_pa_way")
 	private java.lang.String bpiContent;
@@ -126,7 +128,8 @@ public class VwBusCollectionEntity implements java.io.Serializable {
 	/**项目负责人*/
 	@Excel(name="项目负责人",width=15)
 	private java.lang.String bpKeyPeople;
-	
+	/**财务支付id*/
+	private java.lang.String fromPayinfoId;
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  主键
@@ -530,6 +533,23 @@ public class VwBusCollectionEntity implements java.io.Serializable {
 	}
 	/**
 	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  合同管理外键
+	 */
+
+	@Column(name ="FROM_BANK_ACC_ID",nullable=true,length=32)
+	public java.lang.String getFromBankAccId(){
+		return this.fromBankAccId;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  合同管理外键
+	 */
+	public void setFromBankAccId(java.lang.String fromBankAccId){
+		this.fromBankAccId = fromBankAccId;
+	}
+	/**
+	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  文件
 	 */
 
@@ -670,7 +690,7 @@ public class VwBusCollectionEntity implements java.io.Serializable {
 	 */
 
 	@Column(name ="BPI_PAY_DATE",nullable=true,length=32)
-	public java.lang.String getBpiPayDate(){
+	public java.util.Date getBpiPayDate(){
 		return this.bpiPayDate;
 	}
 
@@ -678,7 +698,7 @@ public class VwBusCollectionEntity implements java.io.Serializable {
 	 *方法: 设置java.lang.String
 	 *@param: java.lang.String  支付时间
 	 */
-	public void setBpiPayDate(java.lang.String bpiPayDate){
+	public void setBpiPayDate(java.util.Date bpiPayDate){
 		this.bpiPayDate = bpiPayDate;
 	}
 	/**
@@ -731,5 +751,22 @@ public class VwBusCollectionEntity implements java.io.Serializable {
 	 */
 	public void setBpKeyPeople(java.lang.String bpKeyPeople){
 		this.bpKeyPeople = bpKeyPeople;
+	}
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  更新人登录名称
+	 */
+
+	@Column(name ="FROM_PAYINFO_ID",nullable=true,length=50)
+	public java.lang.String getFromPayinfoId(){
+		return this.fromPayinfoId;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  更新人登录名称
+	 */
+	public void setFromPayinfoId(java.lang.String fromPayinfoId){
+		this.fromPayinfoId = fromPayinfoId;
 	}
 }

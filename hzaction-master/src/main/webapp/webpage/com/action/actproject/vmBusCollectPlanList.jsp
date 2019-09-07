@@ -141,7 +141,7 @@
 					  <label class="Validform_label" style="display: none;">进度款分期</label>
 				   </td>
 				   <td align="left">
-					  	<input name="vmBusCollectPlanList[${stuts.index }].brpContractAmount" maxlength="32" type="text" class="inputxt all_amount"  style="width:120px;"  ignore="ignore"  value="${poVal.brpContractAmount }"/>
+					  	<input name="vmBusCollectPlanList[${stuts.index }].brpContractAmount" readonly="readonly" maxlength="32" type="text" class="inputxt all_amount"  style="width:120px;"  ignore="ignore"  value="${poVal.brpContractAmount }"/>
 					  <label class="Validform_label" style="display: none;">合同金额</label>
 				   </td>
 				   <td align="left">
@@ -157,11 +157,11 @@
 					  <label class="Validform_label" style="display: none;">已收金额</label>
 				   </td>
 				   <td align="left">
-					  	<input name="vmBusCollectPlanList[${stuts.index }].brpIsInvoice" maxlength="32" type="text" class="inputxt invoice_amount"  style="width:120px;"  ignore="ignore"  value="${poVal.brpIsInvoice }"/>
+					  	<input name="vmBusCollectPlanList[${stuts.index }].brpIsInvoice" maxlength="32" readonly="readonly" type="text" class="inputxt invoice_amount"  style="width:120px;"  ignore="ignore"  value="${poVal.brpIsInvoice }"/>
 					  <label class="Validform_label" style="display: none;">发票金额</label>
 				   </td>
 				   <td align="left">
-							<input name="vmBusCollectPlanList[${stuts.index }].brpInvoiceDate" maxlength="0" type="text" class="Wdate" onClick="WdatePicker()"  style="width:150px;"   ignore="ignore"  value="<fmt:formatDate value='${poVal.brpInvoiceDate}' type="date" pattern="yyyy-MM-dd"/>"/>
+							<input name="vmBusCollectPlanList[${stuts.index }].brpInvoiceDate" maxlength="0" disabled="disabled" type="text" class="Wdate" onClick="WdatePicker()"  style="width:150px;"   ignore="ignore"  value="<fmt:formatDate value='${poVal.brpInvoiceDate}' type="date" pattern="yyyy-MM-dd"/>"/>
 					  <label class="Validform_label" style="display: none;">开票日期</label>
 				   </td>
 				   <td align="left">

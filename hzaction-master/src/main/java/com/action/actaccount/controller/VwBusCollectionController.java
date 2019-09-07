@@ -144,17 +144,12 @@ public class VwBusCollectionController extends BaseController {
 	public AjaxJson doDel(VwBusCollectionEntity vwBusCollection, HttpServletRequest request) {
 		String message = null;
 		AjaxJson j = new AjaxJson();
-		System.out.println( vwBusCollection.getId());
 		vwBusCollection = systemService.getEntity(VwBusCollectionEntity.class, vwBusCollection.getId());
 		message = "项目收款单视图删除成功";
 		try{
 			BusCollectionEntity busConEntity = new 	BusCollectionEntity();
-			System.out.println("one");
 			MyBeanUtils.copyBeanNotNull2Bean(vwBusCollection ,busConEntity);
-			System.out.println("two");
-			System.out.println(busConEntity.getId());
 			BusCollectionService.delete(busConEntity);
-			System.out.println("three");
 			
 			systemService.addLog(message, Globals.Log_Type_DEL, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
@@ -249,25 +244,27 @@ public class VwBusCollectionController extends BaseController {
 		
 		try {
 
-			if(StringUtil.isNotEmpty(vwBusCollection.getFromCustId())) {
+			if(StringUtil.isNotEmpty(vwBusCollection.getBpiVoucherno())) {
 //				实收提交
 				BusPayInfoEntity busPayInfo = new BusPayInfoEntity();
 				MyBeanUtils.copyBeanNotNull2Bean(vwBusCollection ,busPayInfo);
-				// 银行卡外键
-				busPayInfo.setFromBankAccId(vwBusCollection.getFromCustId());
-				// 附件bcFile
-				//  busPayInfo.setBpiAccessory(vwBusCollection.getBcFile());
 				// 业务外键
 				busPayInfo.setBpiBusId(vwBusCollection.getId());
 				// 功能分类 2
 				busPayInfo.setBpiClass(2+"");
-				busPayInfoService.save(busPayInfo);
+				if(StringUtil.isNotEmpty(vwBusCollection.getFromPayinfoId())){
+					// 财务支付id
+					busPayInfo.setId(vwBusCollection.getFromPayinfoId());
+					busPayInfoService.saveOrUpdate(busPayInfo);
+				}else {
+					busPayInfoService.save(busPayInfo);
+				}
+				
 				j.setObj(busPayInfo);
 				
 			}else {
 //				编辑提交
 				BusCollectionEntity busConEntity = new 	BusCollectionEntity();
-				
 				MyBeanUtils.copyBeanNotNull2Bean(vwBusCollection, busConEntity);
 				BusCollectionService.saveOrUpdate(busConEntity);
 			}
@@ -295,8 +292,7 @@ public class VwBusCollectionController extends BaseController {
 	public ModelAndView goAdd(VwBusCollectionEntity vwBusCollection, HttpServletRequest req) {
 		if (StringUtil.isNotEmpty(vwBusCollection.getId())) {
 			vwBusCollection = vwBusCollectionService.getEntity(VwBusCollectionEntity.class, vwBusCollection.getId());
-//			req.setAttribute("vwBusCollectionPage", vwBusCollection);
-		
+			req.setAttribute("vwBusCollectionPage", vwBusCollection);
 		}
 		
 		return new ModelAndView("com/action/actaccount/vwBusCollection-add");
@@ -312,12 +308,12 @@ public class VwBusCollectionController extends BaseController {
 		
 		if (StringUtil.isNotEmpty(vwBusCollection.getId())) {
 			vwBusCollection = vwBusCollectionService.getEntity(VwBusCollectionEntity.class, vwBusCollection.getId());
-			req.setAttribute("vwBusCollectionPage", vwBusCollection);
+			
+			System.out.println(vwBusCollection.getCreateDate());
 			if(StringUtil.isNotEmpty(isPayment)) {
 				// 如果凭证号不为空
-				if(StringUtil.isNotEmpty(vwBusCollection.getBpiVoucherno())){
-					req.setAttribute("bpiVoucherno", vwBusCollection.getBpiVoucherno()); 
-				}else {
+				if(!StringUtil.isNotEmpty(vwBusCollection.getBpiVoucherno())){
+					
 					SimpleDateFormat sdf = new SimpleDateFormat("yyyyMM");
 					Calendar cal = Calendar.getInstance();
 					Date date= cal.getTime();
@@ -335,11 +331,12 @@ public class VwBusCollectionController extends BaseController {
 					}else {
 						newNo = now + newNo;
 					}
-					req.setAttribute("bpiVoucherno", newNo); 
+					vwBusCollection.setBpiVoucherno(newNo);
 				}
 				
 				req.setAttribute("payment", "true");
 			}
+			req.setAttribute("vwBusCollectionPage", vwBusCollection);
 		}
 		return new ModelAndView("com/action/actaccount/vwBusCollection-update");
 	}

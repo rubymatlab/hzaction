@@ -50,7 +50,7 @@
 				<div style="width:800px;height:1px;"></div>
 				<t:tabs id="tt" iframe="false" tabPosition="top" fit="false">
 				 <t:tab href="vwRpCostAccountController.do?vwBusPoContractPayList&id=${vwRpCostAccountPage.id}" icon="icon-search" title="采购应付/已付明细" id="vwBusPoContractPay"></t:tab>
-				 <t:tab href="vwRpCostAccountController.do?vwBusOthersProjPayList&id=${vwRpCostAccountPage.id}" icon="icon-search" title="其他支出汇总" id="vwBusOthersProjPay"></t:tab>
+				 <%-- <t:tab href="vwRpCostAccountController.do?vwBusOthersProjPayList&id=${vwRpCostAccountPage.id}" icon="icon-search" title="其他支出汇总" id="vwBusOthersProjPay"></t:tab> --%>
 				 <t:tab href="vwRpCostAccountController.do?vwBusOthersPayDetailList&id=${vwRpCostAccountPage.id}" icon="icon-search" title="其他支出明细" id="vwBusOthersPayDetail"></t:tab>
 				</t:tabs>
 			</div>

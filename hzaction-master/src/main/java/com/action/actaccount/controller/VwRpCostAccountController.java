@@ -1,11 +1,16 @@
 package com.action.actaccount.controller;
 import com.action.actaccount.entity.VwRpCostAccountEntity;
 import com.action.actaccount.service.VwRpCostAccountServiceI;
+import com.aspose.cells.SaveFormat;
+import com.aspose.cells.Workbook;
+import com.aspose.cells.WorkbookDesigner;
 import com.action.actaccount.page.VwRpCostAccountPage;
 import com.action.actaccount.entity.VwBusPoContractPayEntity;
 import com.action.actaccount.entity.VwBusOthersProjPayEntity;
 import com.action.actaccount.entity.VwBusOthersPayDetailEntity;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.HashMap;
 import java.util.List;
 import java.text.SimpleDateFormat;
 import javax.servlet.http.HttpServletRequest;
@@ -27,19 +32,29 @@ import org.jeecgframework.core.common.model.json.AjaxJson;
 import org.jeecgframework.core.common.model.json.DataGrid;
 import org.jeecgframework.core.constant.Globals;
 import org.jeecgframework.core.util.ExceptionUtil;
+import org.jeecgframework.core.util.LogUtil;
 import org.jeecgframework.core.util.ResourceUtil;
 import org.jeecgframework.core.util.StringUtil;
-import org.jeecgframework.tag.core.easyui.TagUtil;
-import org.jeecgframework.web.system.pojo.base.TSDepart;
-import org.jeecgframework.web.system.service.SystemService;
-import org.jeecgframework.core.util.MyBeanUtils;
+import org.jeecgframework.poi.excel.ExcelExportUtil;
 import org.jeecgframework.poi.excel.ExcelImportUtil;
 import org.jeecgframework.poi.excel.entity.ExportParams;
 import org.jeecgframework.poi.excel.entity.ImportParams;
+import org.jeecgframework.poi.excel.entity.enmus.ExcelType;
 import org.jeecgframework.poi.excel.entity.vo.NormalExcelConstants;
+import org.jeecgframework.poi.excel.export.ExcelExportServer;
+import org.jeecgframework.tag.core.easyui.TagUtil;
+import org.jeecgframework.web.system.pojo.base.TSDepart;
+import org.jeecgframework.web.system.service.SystemService;
+import org.jeecgframework.web.system.util.ExpiredFiles;
+import org.jeecgframework.web.system.util.HashMapDataTableUtil;
+import org.jeecgframework.web.system.util.LicenseUtil;
+import org.jeecgframework.core.util.MyBeanUtils;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
+
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Map;
 
@@ -317,18 +332,22 @@ public class VwRpCostAccountController extends BaseController {
         		try{
         		VwRpCostAccountPage page=new VwRpCostAccountPage();
         		   MyBeanUtils.copyBeanNotNull2Bean(entity,page);
+        		   
             	    Object id0 = entity.getId();
 				    String hql0 = "from VwBusPoContractPayEntity where 1 = 1 AND formCostAccountId = ? ";
         	        List<VwBusPoContractPayEntity> vwBusPoContractPayEntityList = systemService.findHql(hql0,id0);
             		page.setVwBusPoContractPayList(vwBusPoContractPayEntityList);
+            		
             	    Object id1 = entity.getId();
 				    String hql1 = "from VwBusOthersProjPayEntity where 1 = 1 AND bpmProjId = ? ";
         	        List<VwBusOthersProjPayEntity> vwBusOthersProjPayEntityList = systemService.findHql(hql1,id1);
             		page.setVwBusOthersProjPayList(vwBusOthersProjPayEntityList);
+            		
             	    Object id2 = entity.getId();
 				    String hql2 = "from VwBusOthersPayDetailEntity where 1 = 1 AND bpmProjId = ? ";
         	        List<VwBusOthersPayDetailEntity> vwBusOthersPayDetailEntityList = systemService.findHql(hql2,id2);
             		page.setVwBusOthersPayDetailList(vwBusOthersPayDetailEntityList);
+            		
             		pageList.add(page);
             	}catch(Exception e){
             		logger.info(e.getMessage());
@@ -341,6 +360,137 @@ public class VwRpCostAccountController extends BaseController {
             "导出信息"));
         map.put(NormalExcelConstants.DATA_LIST,pageList);
         return NormalExcelConstants.JEECG_EXCEL_VIEW;
+	}
+   
+    
+//    重新导出
+    @RequestMapping(params = "doCreatereport")
+    @ResponseBody
+	public AjaxJson doCreatereport(String ids,VwRpCostAccountEntity vwRpCostAccount,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
+    	
+		String message = null;
+		AjaxJson j = new AjaxJson();
+		message = "打印报表成功";
+		try {
+			if (!LicenseUtil.getLicense()) {
+				LogUtil.info("获取License失败");
+				j.setMsg("获取License失败");
+				return j;
+			}
+			
+
+			/*修改的部分*/
+			String oldfilename="项目整体结算表.xlsx";
+			String newfilename="项目整体结算表.xlsx";
+			/*end修改的部分*/	
+
+			long old = System.currentTimeMillis();
+			String templateFilePath = request.getServletContext().getRealPath("/")+"export\\template\\"+oldfilename;
+			System.out.println(templateFilePath);
+			Workbook wb = new Workbook(templateFilePath);// 原始excel路径
+			WorkbookDesigner designer = new WorkbookDesigner();
+			designer.setWorkbook(wb);
+
+			/*修改的部分*/
+			// 获取后台数据库数据
+			List<Map<String, Object>> dataObject = new ArrayList<Map<String, Object>>();
+			List<Map<String, Object>> dataObject1 = new ArrayList<Map<String, Object>>();
+			List<Map<String, Object>> dataObject2 = new ArrayList<Map<String, Object>>();
+			
+			
+	        	for(String id :ids.split(",")){
+	        		try{
+	        			// 主表信息
+	        			
+	        			StringBuffer sql = new StringBuffer(
+	        					
+	        					"SELECT * FROM vw_rp_cost_account where id='"+id+"'");
+	        	        List<Map<String, Object>> data0 = systemService.findForJdbc(sql.toString());
+	        	        if(data0.size()!=0) {
+	        	        	 for(Map<String, Object> temp:data0 ) {
+	        	        		 dataObject.add(temp);
+		        	        }
+	        	        }
+	        	       
+	        	       
+	        	        // 采购明细
+	        	        
+	            	    sql = new StringBuffer(
+	        					"SELECT * FROM vw_bus_po_contract_pay where bpm_proj_id='"+id+"'");
+	            	    List<Map<String, Object>> data1 = systemService.findForJdbc(sql.toString());
+	        	        if(data1.size()!=0) {
+	        	        	 for(Map<String, Object> temp:data1 ) {
+	        	        		 dataObject1.add(temp);
+		        	        }
+	        	        }else {
+	        	        	Map<String, Object> e=new HashMap<String, Object>();
+	        	        	e.put("bpm_proj_id","");
+	        	        	e.put("bpm_name","");
+	        	        	e.put("bpcp_progre_name","");
+	        	        	e.put("bpcp_date","");
+	        	        	e.put("bpcp_pay_amount","");
+	        	        	e.put("bpp_pay_date","");
+	        	        	e.put("pay_amount","");
+	        	        	e.put("form_cost_account_id","");
+	        	        	dataObject1.add(e);
+	        	        }
+	        	       
+	            		// 其他支出明细
+	        	        sql = new StringBuffer(
+	        					"SELECT * FROM vw_bus_others_pay_detail where bpm_proj_id='"+id+"'");
+	            	    List<Map<String, Object>> data2 = systemService.findForJdbc(sql.toString());
+	        	        if(data2.size()!=0) {
+	        	        	 for(Map<String, Object> temp: data2 ) {
+	        	        		 dataObject2.add(temp);
+		        	        }
+	        	        }else {
+	        	        	Map<String, Object> e=new HashMap<String, Object>();
+	        	        	e.put("bpm_proj_id","");
+	        	        	e.put("bpm_name","");
+	        	        	e.put("bus_id","");
+	        	        	e.put("bus_type","");
+	        	        	e.put("apply_date","");
+	        	        	e.put("pay_amount","");
+	        	        	dataObject2.add(e);
+	        	        }
+	            		
+	            	}catch(Exception e){
+	            		logger.info(e.getMessage());
+	            	}
+		            
+		        }
+						
+			// 绑定数据源
+			designer.setDataSource("order", new HashMapDataTableUtil(dataObject));
+			designer.setDataSource("contarct", new HashMapDataTableUtil(dataObject1));
+			designer.setDataSource("other", new HashMapDataTableUtil(dataObject2));
+				
+			/*end修改的部分*/
+			
+			
+			// 执行
+			designer.process(true);
+			// 生成PDF
+			String localTemp=request.getServletContext().getRealPath("/")+"temp\\";
+			String exportPDF = localTemp+newfilename;
+			File pdfFile = new File(exportPDF);// 输出路径
+			FileOutputStream fileOS = new FileOutputStream(pdfFile);
+			wb.save(fileOS, SaveFormat.XLSX);
+			fileOS.close();
+			wb.dispose();
+			//过期文件删除
+			ExpiredFiles.Delete(localTemp);
+			long now = System.currentTimeMillis();
+			System.out.println("共耗时：" + ((now - old) / 1000.0) + "秒");
+			String tempUrl=request.getRequestURL().toString();
+			message=tempUrl.substring(0,tempUrl.lastIndexOf("/")+1)+"temp/"+newfilename;
+			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
+		} catch (Exception e) {
+			e.printStackTrace();
+			message = "打印报表失败";
+		}
+		j.setMsg(message);
+		return j;
 	}
 
     /**

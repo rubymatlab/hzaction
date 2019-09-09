@@ -396,69 +396,60 @@ public class VwRpCostAccountController extends BaseController {
 			List<Map<String, Object>> dataObject = new ArrayList<Map<String, Object>>();
 			List<Map<String, Object>> dataObject1 = new ArrayList<Map<String, Object>>();
 			List<Map<String, Object>> dataObject2 = new ArrayList<Map<String, Object>>();
-			
-			
-	        	for(String id :ids.split(",")){
-	        		try{
-	        			// 主表信息
-	        			
-	        			StringBuffer sql = new StringBuffer(
-	        					
-	        					"SELECT * FROM vw_rp_cost_account where id='"+id+"'");
-	        	        List<Map<String, Object>> data0 = systemService.findForJdbc(sql.toString());
-	        	        if(data0.size()!=0) {
-	        	        	 for(Map<String, Object> temp:data0 ) {
-	        	        		 dataObject.add(temp);
-		        	        }
-	        	        }
-	        	       
-	        	       
-	        	        // 采购明细
-	        	        
-	            	    sql = new StringBuffer(
-	        					"SELECT * FROM vw_bus_po_contract_pay where bpm_proj_id='"+id+"'");
-	            	    List<Map<String, Object>> data1 = systemService.findForJdbc(sql.toString());
-	        	        if(data1.size()!=0) {
-	        	        	 for(Map<String, Object> temp:data1 ) {
-	        	        		 dataObject1.add(temp);
-		        	        }
-	        	        }else {
-	        	        	Map<String, Object> e=new HashMap<String, Object>();
-	        	        	e.put("bpm_proj_id","");
-	        	        	e.put("bpm_name","");
-	        	        	e.put("bpcp_progre_name","");
-	        	        	e.put("bpcp_date","");
-	        	        	e.put("bpcp_pay_amount","");
-	        	        	e.put("bpp_pay_date","");
-	        	        	e.put("pay_amount","");
-	        	        	e.put("form_cost_account_id","");
-	        	        	dataObject1.add(e);
-	        	        }
-	        	       
-	            		// 其他支出明细
-	        	        sql = new StringBuffer(
-	        					"SELECT * FROM vw_bus_others_pay_detail where bpm_proj_id='"+id+"'");
-	            	    List<Map<String, Object>> data2 = systemService.findForJdbc(sql.toString());
-	        	        if(data2.size()!=0) {
-	        	        	 for(Map<String, Object> temp: data2 ) {
-	        	        		 dataObject2.add(temp);
-		        	        }
-	        	        }else {
-	        	        	Map<String, Object> e=new HashMap<String, Object>();
-	        	        	e.put("bpm_proj_id","");
-	        	        	e.put("bpm_name","");
-	        	        	e.put("bus_id","");
-	        	        	e.put("bus_type","");
-	        	        	e.put("apply_date","");
-	        	        	e.put("pay_amount","");
-	        	        	dataObject2.add(e);
-	        	        }
-	            		
-	            	}catch(Exception e){
-	            		logger.info(e.getMessage());
-	            	}
+			String mainIds = "";
+			String forId = "";
+			String[] idList = ids.split(",");
+			for(int i = 0; i < idList.length; i++) {
+				mainIds += "id='"+idList[i]+"'";
+				forId += "bpm_proj_id='"+idList[i]+"'";
+				
+				if(i < idList.length - 1) {
+					mainIds +=" or ";
+					forId +=" or ";
+				}
+			}
+	        
+    		try{
+    			// 主表信息 id=aaa or id=bb or			
+    			StringBuffer sql = new StringBuffer("SELECT * FROM vw_rp_cost_account where "+mainIds);
+	            dataObject = systemService.findForJdbc(sql.toString());       
+    	        // 采购明细
+    	        
+        	    sql = new StringBuffer("SELECT * FROM vw_bus_po_contract_pay where "+forId);
+        	    dataObject1 = systemService.findForJdbc(sql.toString());
+    	        if(dataObject1.size()==0){
+    	        	Map<String, Object> e=new HashMap<String, Object>();
+    	        	e.put("bpm_proj_id","");
+    	        	e.put("bpm_name","");
+    	        	e.put("bpcp_progre_name","");
+    	        	e.put("bpcp_date","");
+    	        	e.put("bpcp_pay_amount","");
+    	        	e.put("bpp_pay_date","");
+    	        	e.put("pay_amount","");
+    	        	e.put("form_cost_account_id","");
+    	        	dataObject1.add(e);
+    	        }
+    	        
+        		// 其他支出明细
+    	        sql = new StringBuffer(
+    					"SELECT * FROM vw_bus_others_pay_detail where "+forId);
+        	    dataObject2 = systemService.findForJdbc(sql.toString());
+
+    	        if(dataObject2.size() == 0){
+    	        	Map<String, Object> e=new HashMap<String, Object>();
+    	        	e.put("bpm_proj_id","");
+    	        	e.put("bpm_name","");
+    	        	e.put("bus_id","");
+    	        	e.put("bus_type","");
+    	        	e.put("apply_date","");
+    	        	e.put("pay_amount","");
+    	        	dataObject2.add(e);
+    	        }
+        		
+        	}catch(Exception e){
+        		logger.info(e.getMessage());
+        	}
 		            
-		        }
 						
 			// 绑定数据源
 			designer.setDataSource("order", new HashMapDataTableUtil(dataObject));

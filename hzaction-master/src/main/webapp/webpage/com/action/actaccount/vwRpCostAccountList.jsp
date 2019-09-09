@@ -3,7 +3,7 @@
 <t:base type="jquery,easyui,tools,DatePicker"></t:base>
 <div class="easyui-layout" fit="true">
   <div region="center" style="padding:0px;border:0px">
-  <t:datagrid name="vwRpCostAccountList" checkbox="true" fitColumns="false" title="项目整体结算表" sortName="id" actionUrl="vwRpCostAccountController.do?datagrid" idField="id" fit="true" queryMode="group">
+  <t:datagrid name="vwRpCostAccountList" checkbox="false" fitColumns="false" title="项目整体结算表" sortName="id" actionUrl="vwRpCostAccountController.do?datagrid" idField="id" fit="true" queryMode="group">
    <t:dgCol title="id"  field="id"  hidden="true"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="项目编号"  field="bpProjId"  query="true"  queryMode="single"  width="150"></t:dgCol>
    <t:dgCol title="项目名称"  field="bpProjName"  query="true"  queryMode="single"  width="220"></t:dgCol>
@@ -61,7 +61,10 @@ function ImportXls() {
 
 // 导出
 function doCreatereport(title, url, gridname){
-	var rowData = $('#'+gridname).datagrid('getSelections');
+	// 先选中所有的行
+	$('#'+gridname).datagrid("selectAll");
+	var rowData = $('#'+gridname).datagrid("getChecked");
+	
 	var ids = new Array();
 	if (!rowData) {
 		tip('请选择打印报表项目');
@@ -71,6 +74,7 @@ function doCreatereport(title, url, gridname){
 			ids.push(item.id)
 		})
 	}
+	
 	$.ajax({
 		async : false,
 		cache : false,

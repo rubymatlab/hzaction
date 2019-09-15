@@ -70,15 +70,15 @@ public class BusPayInfoEntity implements java.io.Serializable {
 	/**凭证号*/
 	@Excel(name="凭证号",width=15)
 	private java.lang.String bpiVoucherno;
-	/**附件*/
-//	@Excel(name="附件",width=15)
-//	private java.lang.String bpiAccessory;
+
 	/**业务外键*/
 	@Excel(name="业务外键",width=15)
 	private java.lang.String bpiBusId;
 	/**项目管理外键*/
 	@Excel(name="项目管理外键",width=15)
 	private java.lang.String fromProjmId;
+	/**采购付款单外键*/
+	private java.lang.String fromPayId;
 	/**银行账号信息外键*/
 	@Excel(name="银行账号信息外键",width=15)
 	private java.lang.String fromBankAccId;
@@ -395,24 +395,7 @@ public class BusPayInfoEntity implements java.io.Serializable {
 		this.bpiVoucherno = bpiVoucherno;
 	}
 	
-	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  附件
-	 */
-	
-//	@Column(name ="BPI_ACCESSORY",nullable=true,length=255)
-//	public java.lang.String getBpiAccessory(){
-//		return this.bpiAccessory;
-//	}
 
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  附件
-	 */
-//	public void setBpiAccessory(java.lang.String bpiAccessory){
-//		this.bpiAccessory = bpiAccessory;
-//	}
-	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  业务外键
@@ -447,6 +430,24 @@ public class BusPayInfoEntity implements java.io.Serializable {
 	 */
 	public void setFromProjmId(java.lang.String fromProjmId){
 		this.fromProjmId = fromProjmId;
+	}
+	
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  采购付款单外键
+	 */
+	
+	@Column(name ="FROM_PAY_ID",nullable=true,length=32)
+	public java.lang.String getFromPayId(){
+		return this.fromPayId;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  采购付款单外键
+	 */
+	public void setFromPayId(java.lang.String fromPayId){
+		this.fromPayId = fromPayId;
 	}
 	
 	/**

@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
-  <script type="text/javascript">
+<script type="text/javascript">
 $(document).ready(function(){
     	if(location.href.indexOf("load=detail")!=-1){
 			$(":input").attr("disabled","true");
@@ -22,25 +22,29 @@ $(document).ready(function(){
 					<input name="busPayInfoList[0].sysOrgCode" type="hidden"  value="${poVal.sysOrgCode}"/>
 					<input name="busPayInfoList[0].sysCompanyCode" type="hidden"  value="${poVal.sysCompanyCode}"/>
 					<input name="busPayInfoList[0].bpmStatus" type="hidden"  value="${poVal.bpmStatus}"/>
+					<input name="busPayInfoList[0].bpiClass" type="hidden"  value="${poVal.bpiClass}"/>
+					<input name="busPayInfoList[0].bpiBusId" type="hidden"  value="${poVal.bpiBusId}"/>
+					<input name="busPayInfoList[0].fromProjmId" type="hidden"  value="${poVal.fromProjmId}"/>
+					<input name="busPayInfoList[0].fromPayId" type="hidden"  value="${poVal.fromPayId}"/>
 			</tr>
 				<tr>
-				  <td align="right">
-					<label class="Validform_label">
-										功能分类:
-									</label>
-					</td>
-				  <td class="value">
-					  	<input name="busPayInfoList[0].bpiClass" maxlength="30" type="text" class="inputxt"  ignore="ignore" />
-					  <label class="Validform_label" style="display: none;">功能分类</label>
-					</td>
 				  <td align="right">
 					<label class="Validform_label">
 										支付方式:
 									</label>
 					</td>
 				  <td class="value">
-						<t:dictSelect field="busPayInfoList[0].bpiPayMethod" type="list"   typeGroupCode="bus_pa_way"  defaultVal="${busPayInfoPage.bpiPayMethod}" hasLabel="false"  title="支付方式"></t:dictSelect>     
+						<t:dictSelect field="busPayInfoList[0].bpiPayMethod" type="list"   typeGroupCode=""  defaultVal="${busPayInfoPage.bpiPayMethod}" hasLabel="false"  title="支付方式"></t:dictSelect>     
 					  <label class="Validform_label" style="display: none;">支付方式</label>
+					</td>
+				  <td align="right">
+					<label class="Validform_label">
+										银行账号:
+									</label>
+					</td>
+				  <td class="value">
+						<t:dictSelect field="busPayInfoList[0].bpiBankNo" type="list"   typeGroupCode=""  defaultVal="${busPayInfoPage.bpiBankNo}" hasLabel="false"  title="银行账号"></t:dictSelect>     
+					  <label class="Validform_label" style="display: none;">银行账号</label>
 					</td>
 				</tr>
 				<tr>
@@ -50,7 +54,7 @@ $(document).ready(function(){
 									</label>
 					</td>
 				  <td class="value">
-						<input name="busPayInfoList[0].bpiPayDate" maxlength="32" type="text" class="Wdate" onClick="WdatePicker()"  ignore="ignore" />
+					      	<input name="busPayInfoList[0].bpiPayDate" maxlength="32" type="text"  class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">支付时间</label>
 					</td>
 				  <td align="right">
@@ -70,7 +74,7 @@ $(document).ready(function(){
 									</label>
 					</td>
 				  <td class="value">
-						<t:dictSelect field="busPayInfoList[0].bpiFeeDetail" type="list"   typeGroupCode="cost_type"  defaultVal="${busPayInfoPage.bpiFeeDetail}" hasLabel="false"  title="费用明细"></t:dictSelect>     
+						<t:dictSelect field="busPayInfoList[0].bpiFeeDetail" type="list"   typeGroupCode=""  defaultVal="${busPayInfoPage.bpiFeeDetail}" hasLabel="false"  title="费用明细"></t:dictSelect>     
 					  <label class="Validform_label" style="display: none;">费用明细</label>
 					</td>
 				  <td align="right">
@@ -79,10 +83,11 @@ $(document).ready(function(){
 									</label>
 					</td>
 				  <td class="value">
-					  	<input name="busPayInfoList[0].bpiContent" maxlength="20" type="text" class="inputxt"  ignore="ignore" />
+						<t:dictSelect field="busPayInfoList[0].bpiContent" type="list"   typeGroupCode=""  defaultVal="${busPayInfoPage.bpiContent}" hasLabel="false"  title="内容"></t:dictSelect>     
 					  <label class="Validform_label" style="display: none;">内容</label>
 					</td>
 				</tr>
+<<<<<<< HEAD
 				
 				<tr hidden="hidden">
 				  <td align="right">
@@ -126,33 +131,18 @@ $(document).ready(function(){
 							 <input  id="busPayInfoList[0].bbaiSname" name="busPayInfoList[0].bbaiSname" type="text" style="width: 150px" class="searchbox-inputtext"   value="${poVal.bbaiSname }"  ignore="ignore"  onclick="popupClick(this,'bbai_sname,id','bbaiSname,fromBankAccId','ax_bas_bank_account_info')"/> 			 
 					  <label class="Validform_label" style="display: none;">账号简称</label>
 					</td>
+=======
+				<tr>
+>>>>>>> e4fec7fd75dd263d36c24ac0516ef25f534e83a0
 				  <td align="right">
 					<label class="Validform_label">
 										凭证号:
 									</label>
 					</td>
 				  <td class="value">
-					  	<input name="busPayInfoList[0].bpiVoucherno" placeholder="自动产生" maxlength="20" type="text" class="inputxt"  ignore="ignore" />
+					  	<input name="busPayInfoList[0].bpiVoucherno" maxlength="20" type="text" class="inputxt"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">凭证号</label>
 					</td>
-				  <!-- <td align="right">
-					<label class="Validform_label">
-										附件:
-									</label>
-					</td>
-				  <td class="value">
-										<input type="hidden" id="busPayInfoList[0].bpiAccessory" name="busPayInfoList[0].bpiAccessory" />
-									   <input class="ui-button" type="button" value="上传附件"
-													onclick="commonUpload(busPayInfoList0bpiAccessoryCallback)"/> 
-										<a  target="_blank" id="busPayInfoList[0].bpiAccessory_href"></a>
-										<script type="text/javascript">
-										function busPayInfoList0bpiAccessoryCallback(url,name){
-											$("#busPayInfoList\\[0\\]\\.bpiAccessory_href").attr('href',url).html('下载');
-											$("#busPayInfoList\\[0\\]\\.bpiAccessory").val(url);
-										}
-										</script>
-					  <label class="Validform_label" style="display: none;">附件</label>
-					</td> -->
 				</tr>
 	</c:if>
 	<c:if test="${fn:length(busPayInfoList)  > 0 }">
@@ -168,25 +158,30 @@ $(document).ready(function(){
 					<input name="busPayInfoList[0].sysOrgCode" type="hidden" value="${poVal.sysOrgCode}"/>
 					<input name="busPayInfoList[0].sysCompanyCode" type="hidden" value="${poVal.sysCompanyCode}"/>
 					<input name="busPayInfoList[0].bpmStatus" type="hidden" value="${poVal.bpmStatus}"/>
+					<input name="busPayInfoList[0].bpiClass" type="hidden" value="${poVal.bpiClass}"/>
+					<input name="busPayInfoList[0].bpiBusId" type="hidden" value="${poVal.bpiBusId}"/>
+					<input name="busPayInfoList[0].fromProjmId" type="hidden" value="${poVal.fromProjmId}"/>
+					<input name="busPayInfoList[0].fromPayId" type="hidden" value="${poVal.fromPayId}"/>
 			</tr>
 			<tr>
-				  <td align="right">
-					<label class="Validform_label">
-										功能分类:
-									</label>
-					</td>
-				  <td class="value">
-					  	<input name="busPayInfoList[0].bpiClass" maxlength="30" type="text" class="inputxt"  ignore="ignore"  value="${poVal.bpiClass }"/>
-					  <label class="Validform_label" style="display: none;">功能分类</label>
-					</td>
 				  <td align="right">
 					<label class="Validform_label">
 										支付方式:
 									</label>
 					</td>
 				  <td class="value">
-							<t:dictSelect field="busPayInfoList[0].bpiPayMethod" type="list"  typeGroupCode="bus_pa_way"  defaultVal="${poVal.bpiPayMethod}" hasLabel="false"  title="支付方式"></t:dictSelect>     
+							<t:dictSelect field="busPayInfoList[0].bpiPayMethod" type="list"  typeGroupCode=""  defaultVal="${poVal.bpiPayMethod}" hasLabel="false"  title="支付方式"></t:dictSelect>     
 					  <label class="Validform_label" style="display: none;">支付方式</label>
+					</td>
+				  <td align="right">
+
+					<label class="Validform_label">
+										银行账号:
+									</label>
+					</td>
+				  <td class="value">
+							<t:dictSelect field="busPayInfoList[0].bpiBankNo" type="list"  typeGroupCode=""  defaultVal="${poVal.bpiBankNo}" hasLabel="false"  title="银行账号"></t:dictSelect>     
+					  <label class="Validform_label" style="display: none;">银行账号</label>
 					</td>
 				</tr>
 			<tr>
@@ -196,7 +191,7 @@ $(document).ready(function(){
 									</label>
 					</td>
 				  <td class="value">
-							<input name="busPayInfoList[0].bpiPayDate" maxlength="32" type="text" class="Wdate" onClick="WdatePicker()"  ignore="ignore"  value="<fmt:formatDate value='${poVal.bpiPayDate}' type="date" pattern="yyyy-MM-dd"/>"/>
+					      	<input name="busPayInfoList[0].bpiPayDate" maxlength="32" type="text"  class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})"  ignore="ignore"  value="<fmt:formatDate value='${poVal.bpiPayDate}' type="date" pattern="yyyy-MM-dd hh:mm:ss"/>"/>
 					  <label class="Validform_label" style="display: none;">支付时间</label>
 					</td>
 				  <td align="right">
@@ -216,7 +211,7 @@ $(document).ready(function(){
 									</label>
 					</td>
 				  <td class="value">
-							<t:dictSelect field="busPayInfoList[0].bpiFeeDetail" type="list"  typeGroupCode="cost_type"  defaultVal="${poVal.bpiFeeDetail}" hasLabel="false"  title="费用明细"></t:dictSelect>     
+							<t:dictSelect field="busPayInfoList[0].bpiFeeDetail" type="list"  typeGroupCode=""  defaultVal="${poVal.bpiFeeDetail}" hasLabel="false"  title="费用明细"></t:dictSelect>     
 					  <label class="Validform_label" style="display: none;">费用明细</label>
 					</td>
 				  <td align="right">
@@ -225,10 +220,11 @@ $(document).ready(function(){
 									</label>
 					</td>
 				  <td class="value">
-					  	<input name="busPayInfoList[0].bpiContent" maxlength="20" type="text" class="inputxt"  ignore="ignore"  value="${poVal.bpiContent }"/>
+							<t:dictSelect field="busPayInfoList[0].bpiContent" type="list"  typeGroupCode=""  defaultVal="${poVal.bpiContent}" hasLabel="false"  title="内容"></t:dictSelect>     
 					  <label class="Validform_label" style="display: none;">内容</label>
 					</td>
 				</tr>
+<<<<<<< HEAD
 				
 				<tr hidden="hidden">
 				  <td align="right" hidden="hidden">
@@ -274,100 +270,21 @@ $(document).ready(function(){
 					</td>
 				  <td align="right">
 					<label class="Validform_label">
+=======
+			<tr>
+				  <td align="right">
+					<label class="Validform_label">
+>>>>>>> e4fec7fd75dd263d36c24ac0516ef25f534e83a0
 										凭证号:
 									</label>
 					</td>
 				  <td class="value">
-					  	<input name="busPayInfoList[0].bpiVoucherno" placeholder="自动产生" maxlength="20" type="text" class="inputxt"  ignore="ignore"  value="${poVal.bpiVoucherno }"/>
+					  	<input name="busPayInfoList[0].bpiVoucherno" maxlength="20" type="text" class="inputxt"  ignore="ignore"  value="${poVal.bpiVoucherno }"/>
 					  <label class="Validform_label" style="display: none;">凭证号</label>
 					</td>
-					
-					
-				  <%-- <td align="right">
-					<label class="Validform_label">附件:</label>
-				  </td>
-				  <td>
-				  	<h1>${poVal.bpiAccessory}</h1>
-				  </td>
-				  <td class="value">
-					 	<input type="hidden" id="busPayInfoList[0].bpiAccessory" name="busPayInfoList[0].bpiAccessory" 
-					 		value="${poVal.bpiAccessory }"/>
-						<c:if test="${empty poVal.bpiAccessory}">
-							<a  target="_blank" id="busPayInfoList[0].bpiAccessory_href">暂时未上传文件</a>
-						</c:if>
-						<c:if test="${!empty poVal.bpiAccessory}">
-							<a href="${poVal.bpiAccessory}"  target="_blank" id="busPayInfoList[0].bpiAccessory_href">下载</a>
-						</c:if>
-					   <input class="ui-button" type="button" value="上传附件"
-							onclick="commonUpload(busPayInfoList0bpiAccessoryCallback)"/> 
-						<script type="text/javascript">
-							function busPayInfoList0bpiAccessoryCallback(url,name){
-								console.log(url)
-								console.log(name)
-								$("#busPayInfoList\\[0\\]\\.bpiAccessory_href").attr('href',url).html('下载');
-								$("#busPayInfoList\\[0\\]\\.bpiAccessory").val(url);
-							}
-						</script>
-					  <label class="Validform_label" style="display: none;">附件</label>
-					</td> --%>
-					<!-- <td><input type="button"  onclick="javaScript:alert(1)" value="测试"></td> -->
 				</tr>
-				
-				<!-- start -->
-				<%-- <tr>
-				<td>
-					 <!-- 文件路径对应的参数name为‘fileName1’、业务类型是‘photosucai’、自动上传、上传文件扩展名限制doc,txt,jpg、按钮风格：绿色大号按钮 -->
-      				 <t:webUploader name="fileName1" bizType="photosucai" auto="true" extensions="xls" 
-      				 	fileVal="file" buttonStyle="btn-green btn-L" ></t:webUploader>
-				</td>
-				
-				<td>
-					<t:upload name="fiels" id="file_upload" extend="txt" buttonText="添加文件" 
-					multi="false" formData="taskId" uploader="smTaskController.do?importTxt"></t:upload>
-				</td>
-				</tr> --%>
-				<!-- end -->
-				
-			</table>
 		</c:forEach>
 	</c:if>	
 	</tbody>
 </table>
 </div>
-<script type="text/javascript">
-//通用弹出式文件上传
-function commonUpload(callback,inputId){
-    $.dialog({
-           content: "url:systemController.do?commonUpload",
-           lock : true,
-           title: "文件上传",
-           zIndex:getzIndex(),
-           width:700,
-           height: 200,
-           parent:windowapi,
-           cache:false,
-	       ok: function(){
-               var iframe = this.iframe.contentWindow;
-               
-               console.log(iframe);
-               
-               iframe.uploadCallback(callback,inputId);
-               return true;
-	       },
-	       cancelVal: '关闭',
-	       cancel: function(){
-	       } 
-   });
-}
-//通用弹出式文件上传-回调
-function commonUploadDefaultCallBack(url,name,inputId,swfpath){
-	if(url.indexOf(".png") != -1 || url.indexOf(".jpg") != -1|| url.indexOf(".jpeg") != -1||url.indexOf(".gif")!=-1){
-		var imgHtml = '<img src="'+url+'" width="100">';
-		$("#"+inputId+"-href").attr('href',url).html(imgHtml);
-	}else{
-		$("#"+inputId+"-href").attr('href',url).html('下载');
-	}
-	$("#"+inputId).val(url);
-	$("#"+inputId+"-swfpath").val(swfpath)
-}
-</script>

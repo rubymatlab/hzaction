@@ -189,11 +189,11 @@ public class VwBusPoApplyController extends BaseController {
 			break;
 		case "1":
 			// BpaState="2";
-			cq.add(Restrictions.eq("bpaState", "2"));
+			cq.add(Restrictions.eq("bpaState", "1"));
 			break;
 		case "2":
 			// BpaState="6";
-			cq.add(Restrictions.eq("bpaState", "6"));
+			cq.add(Restrictions.eq("bpaState", "2"));
 			break;
 
 		}
@@ -496,7 +496,7 @@ public class VwBusPoApplyController extends BaseController {
 		VwBusPoApplyEntity t = vwBusPoApplyService.get(VwBusPoApplyEntity.class, vwBusPoApply.getId());
 		// BusPoApplyEntity t = busBusPoApplyService.get(BusPoApplyEntity.class,
 		// vwBusPoApply.getId());
-		String sql = "update bus_po_apply set bpa_state=7 where id='" + vwBusPoApply.getId() + "'";
+		String sql = "update bus_po_apply set bpa_state='2' where id='" + vwBusPoApply.getId() + "'";
 
 		// int i=this.systemService.updateBySqlString(sql);
 		boolean IfSuccess = false;
@@ -525,7 +525,7 @@ public class VwBusPoApplyController extends BaseController {
 		AjaxJson j = new AjaxJson();
 		String message = "驳回成功";
 		boolean IfSuccess = false;
-		String sql = "update bus_po_apply set bpa_state=1 where id='" + vwBusPoApply.getId() + "'";
+		String sql = "update bus_po_apply set bpa_state='0' where id='" + vwBusPoApply.getId() + "'";
 		// VwBusPoApplyEntity t =
 		// vwBusPoApplyService.get(VwBusPoApplyEntity.class,
 		// vwBusPoApply.getId());
@@ -560,7 +560,7 @@ public class VwBusPoApplyController extends BaseController {
 		AjaxJson j = new AjaxJson();
 		String message = "送审成功";
 		boolean IfSuccess = false;
-		String sql = "update bus_po_apply set bpa_state=2 where id='" + vwBusPoApply.getId() + "'";
+		String sql = "update bus_po_apply set bpa_state='1' where id='" + vwBusPoApply.getId() + "'";
 		// VwBusPoApplyEntity t =
 		// vwBusPoApplyService.get(VwBusPoApplyEntity.class,
 		// vwBusPoApply.getId());

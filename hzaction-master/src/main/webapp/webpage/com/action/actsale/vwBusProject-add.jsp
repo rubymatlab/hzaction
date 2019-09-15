@@ -36,12 +36,14 @@
 		}
 	});
 	$(".tabs-wrap").css('width','100%');
-	
-	
+	createProjectId();
+  });
+  function createProjectId(){
 	//项目编号
 	var myDate = new Date();
-	$("#bpProjId").val('AX-'+myDate.getFullYear()+'-'+myDate.getTime());
-  });
+	var rand = Math.floor(Math.random () * 900) + 100;
+	$("#bpProjId").val('AX-'+myDate.getFullYear()+'-'+$('#bcId').val()+'-'+rand);
+  }
  </script>
  </head>
  <body style="overflow-x: hidden;">
@@ -55,7 +57,7 @@
 				<label class="Validform_label">项目编号:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bpProjId" name="bpProjId" type="text" maxlength="40" style="width: 150px" class="inputxt"  ignore="ignore" />
+		     	 <input id="bpProjId" name="bpProjId" type="text" maxlength="40" style="width: 150px;background-color:#F0F0F0;" readonly="true"  class="inputxt"  ignore="ignore" />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">项目编号</label>
 			</td>
@@ -112,6 +114,7 @@
                 onSelect: function (row,data) {
                 	$('#fromCustId').val(data.id);
                 	$('#bcId').val(data.bcId);
+                	createProjectId();
 				},
                 fitColumns: true" />
 				<span class="Validform_checktip"></span>

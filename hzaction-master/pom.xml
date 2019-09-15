@@ -153,6 +153,14 @@
 			<scope>system</scope>
           	<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/jeecg-common-plugin-ui-1.0.0-20180813.jar</systemPath>
 		</dependency>
+		<!-- aspose-cells-8.5.2:发票打印PDF -->
+		<dependency>
+			<groupId>com.aspose.cells</groupId>
+			<artifactId>aspose-cells</artifactId>
+			<version>8.6.2</version>
+			<scope>system</scope>
+			<systemPath>${project.basedir}/src/main/webapp/WEB-INF/lib/aspose-cells-8.6.2.jar</systemPath>
+		</dependency>
 		<!-- 自定义的依赖包  end -->
 		
 		<!-- SPRING start -->

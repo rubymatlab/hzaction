@@ -19,9 +19,9 @@ import org.jeecgframework.poi.excel.annotation.Excel;
 
 /**   
  * @Title: Entity
- * @Description: vw_rp_cost_account
+ * @Description: 项目整体结算表
  * @author onlineGenerator
- * @date 2019-09-01 10:48:56
+ * @date 2019-09-02 18:55:26
  * @version V1.0   
  *
  */

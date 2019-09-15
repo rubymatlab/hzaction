@@ -341,6 +341,7 @@
 			$.get("vmBusPoContractController.do?datagrid&field=bpmProjId,fromProjmId",function(row){
 				bpmProjIdList = row.rows;
 			})
+			// 采购合同编号
 			function createBCollectId(projID,fromId){
 				var num = 1;
 				bpmProjIdList.forEach(function(item){

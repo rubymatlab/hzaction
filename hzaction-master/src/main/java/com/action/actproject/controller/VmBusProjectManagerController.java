@@ -135,11 +135,11 @@ public class VmBusProjectManagerController extends BaseController {
 		}
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, vmBusProjectManager, request.getParameterMap());
 		try{
-		//自定义追加查询条件
-		if( vmBusProjectManager.getBpmStatus() != null) {
-			String bpmStatus = vmBusProjectManager.getBpmStatus();
-			cq.add(Restrictions.eq("bpmStatus", bpmStatus));			
-		}
+			//自定义追加查询条件
+			if( vmBusProjectManager.getBpmStatus() != null) {
+				String bpmStatus = vmBusProjectManager.getBpmStatus();
+				cq.add(Restrictions.eq("bpmStatus", bpmStatus));			
+			}
 		}catch (Exception e) {
 			throw new BusinessException(e.getMessage());
 		}
@@ -317,7 +317,7 @@ public class VmBusProjectManagerController extends BaseController {
 		Object id0 = vmBusProjectManager.getId();
 		//===================================================================================
 		//查询-回款计划
-	    String hql0 = "from VmBusCollectPlanEntity where 1 = 1 AND fromId = ? ";
+	    String hql0 = "from VmBusCollectPlanEntity where 1 = 1 AND fromId = ? order by brpProgressStages";
 	    try{
 	    	List<VmBusCollectPlanEntity> vmBusCollectPlanEntityList = systemService.findHql(hql0,id0);
 			req.setAttribute("vmBusCollectPlanList", vmBusCollectPlanEntityList);
@@ -339,7 +339,7 @@ public class VmBusProjectManagerController extends BaseController {
 		Object id1 = vmBusProjectManager.getId();
 		//===================================================================================
 		//查询-项目跟进
-	    String hql1 = "from BusProjectFollowEntity_manager where 1 = 1 AND fromId = ? ";
+	    String hql1 = "from BusProjectFollowEntity_manager where 1 = 1 AND fromId = ? order by createDate";
 	    try{
 	    	List<BusProjectFollowEntity_manager> BusProjectFollowEntity_managerList = systemService.findHql(hql1,id1);
 			req.setAttribute("busProjectFollowList", BusProjectFollowEntity_managerList);

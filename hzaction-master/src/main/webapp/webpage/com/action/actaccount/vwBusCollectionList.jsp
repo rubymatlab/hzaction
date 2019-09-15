@@ -15,7 +15,7 @@
    <t:dgCol title="更新日期"  field="updateDate"  formatter="yyyy-MM-dd"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="所属部门"  field="sysOrgCode"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="所属公司"  field="sysCompanyCode"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="流程状态"  field="bpmStatus"  queryMode="single"  dictionary="bpm_status"  width="120"></t:dgCol>
+  <%--  <t:dgCol title="流程状态"  field="bpmStatus"  queryMode="single"  dictionary="bpm_status"  width="120"></t:dgCol> --%>
    <t:dgCol title="收款单号"  field="bcCollectId"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="进度款分期"  field="bcProgressStages"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="开票税率"  field="bcTaxPer"  queryMode="single"  dictionary="bc_tax_pe"  width="120"></t:dgCol>
@@ -42,11 +42,11 @@
    <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
    <t:dgDelOpt title="删除" url="vwBusCollectionController.do?doDel&id={id}" urlclass="ace_button"  urlfont="fa-trash-o"/>
    <t:dgToolBar title="录入" icon="icon-add" url="vwBusCollectionController.do?goAdd" funname="add"></t:dgToolBar>
-	<t:dgToolBar title="实收" icon="icon-edit" url="vwBusCollectionController.do?goUpdate" funname="update"></t:dgToolBar>
+   <t:dgToolBar title="修改" icon="icon-search" url="vwBusCollectionController.do?goUpdate" funname="update"></t:dgToolBar>
+	<t:dgToolBar title="实收" icon="icon-edit" url="vwBusCollectionController.do?goUpdate&isPayment=1" funname="update"></t:dgToolBar>
 <%--    <t:dgToolBar title="批量删除"  icon="icon-remove" url="vwBusCollectionController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>
-   <t:dgToolBar title="查看" icon="icon-search" url="vwBusCollectionController.do?goUpdate" funname="detail"></t:dgToolBar>
    <t:dgToolBar title="导入" icon="icon-put" funname="ImportXls"></t:dgToolBar>
-   <t:dgToolBar title="导出" icon="icon-putout" funname="ExportXls"></t:dgToolBar>
+   <t:dgToolBar title="导出" icon="icon-putout" funname="ExportXls"></t:dgToolBar>	
    <t:dgToolBar title="模板下载" icon="icon-putout" funname="ExportXlsByT"></t:dgToolBar>
    --%></t:datagrid>
   </div>

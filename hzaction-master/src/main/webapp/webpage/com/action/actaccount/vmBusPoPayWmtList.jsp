@@ -22,7 +22,7 @@
    <t:dgCol title="项目名称"  field="bpmName"  query="true"  queryMode="single"  dictionary="bus_project_manager,bpmName,bpm_name"  popup="true"  width="120"></t:dgCol>
    
    <t:dgCol title="付款单号"  field="bppPayId"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="供应商资料外键"  field="fromSuppId"hidden="true"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="供应商资料外键"  field="fromSuppId" hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="供应商编号"  field="bsId" hidden="true" queryMode="single"  width="120"></t:dgCol>
    
    <t:dgCol title="供应商名称"  field="bsName"  query="true"  queryMode="single"  dictionary="bas_supplier,bsName,bs_name"  popup="true"  width="120"></t:dgCol>

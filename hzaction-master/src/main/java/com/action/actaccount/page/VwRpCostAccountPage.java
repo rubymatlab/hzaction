@@ -2,6 +2,8 @@
 package com.action.actaccount.page;
 import com.action.actaccount.entity.VwRpCostAccountEntity;
 import com.action.actaccount.entity.VwBusPoContractPayEntity;
+import com.action.actaccount.entity.VwBusOthersProjPayEntity;
+import com.action.actaccount.entity.VwBusOthersPayDetailEntity;
 
 import java.math.BigDecimal;
 import java.util.Date;
@@ -21,9 +23,9 @@ import org.jeecgframework.poi.excel.annotation.ExcelCollection;
 
 /**   
  * @Title: Entity
- * @Description: vw_rp_cost_account
+ * @Description: 项目整体结算表
  * @author onlineGenerator
- * @date 2019-09-01 10:48:56
+ * @date 2019-09-02 18:55:26
  * @version V1.0   
  *
  */
@@ -31,62 +33,89 @@ public class VwRpCostAccountPage implements java.io.Serializable {
 	/**id*/
 	private java.lang.String id;
 	/**项目编号*/
+	@Excel(name="项目编号")
 	private java.lang.String bpProjId;
 	/**项目名称*/
+	@Excel(name="项目名称")
 	private java.lang.String bpProjName;
 	/**项目经理*/
+	@Excel(name="项目经理")
 	private java.lang.String bpManager;
 	/**立项时间*/
+	@Excel(name="立项时间")
 	private java.util.Date bpDate;
 	/**客户名称*/
+	@Excel(name="客户名称")
 	private java.lang.String bcName;
 	/**项目立项外键*/
 	private java.lang.String fromProjId;
 	/**合同管理外键*/
 	private java.lang.String fromContractId;
 	/**中标金额*/
+	@Excel(name="中标金额")
 	private java.lang.String bcContAmount;
 	/**管理费*/
+	@Excel(name="管理费")
 	private java.lang.String projManAmount;
 	/**中标服务费*/
+	@Excel(name="中标服务费")
 	private java.lang.String bcWinSfee;
 	/**中标方*/
+	@Excel(name="中标方")
 	private java.lang.String bcWinBidder;
 	/**合同金额*/
+	@Excel(name="合同金额")
 	private java.lang.String bcActionAmount;
 	/**签定日期*/
+	@Excel(name="签定日期")
 	private java.util.Date bcConcludeTime;
 	/**开票时间*/
+	@Excel(name="开票时间")
 	private java.util.Date maxBcInvoiceDate;
 	/**开票金额*/
+	@Excel(name="开票金额")
 	private java.lang.String bcInvAmount;
 	/**已开票待回款*/
+	@Excel(name="已开票待回款")
 	private java.lang.String invBackAmount;
 	/**回款时间*/
+	@Excel(name="回款时间")
 	private java.util.Date maxBcColDate;
 	/**回款总额*/
+	@Excel(name="回款总额")
 	private java.lang.String brpBackAmountD;
 	/**应收金额*/
+	@Excel(name="应收金额")
 	private java.lang.String receivableAmount;
 	/**未收占比*/
+	@Excel(name="未收占比")
 	private java.lang.String notReceivablePer;
 	/**采购应付*/
+	@Excel(name="采购应付")
 	private java.lang.String poPayableTamount;
 	/**采购已付*/
+	@Excel(name="采购已付")
 	private java.lang.String poPayTamount;
 	/**采购未付*/
+	@Excel(name="采购未付")
 	private java.lang.String poNotPayTamount;
 	/**其他支出*/
+	@Excel(name="其他支付")
 	private java.lang.String othersPayAmount;
 	/**支出合计*/
+	@Excel(name="支出合计")
 	private java.lang.String projPayTotal;
 	/**垫资金额*/
+	@Excel(name="垫资金额")
 	private java.lang.String padBranchAmount;
 	/**资金成本*/
+	@Excel(name="资金成本")
 	private java.lang.String padBranchCost;
 	/**现金毛利*/
+	@Excel(name="现金毛利")
 	private java.lang.String cashMarginAmount;
 	/**应收毛利*/
+	@Excel(name="应收毛利")
 	private java.lang.String payableMarginAmount;
 	
 	/**
@@ -548,5 +577,23 @@ public class VwRpCostAccountPage implements java.io.Serializable {
 		}
 		public void setVwBusPoContractPayList(List<VwBusPoContractPayEntity> vwBusPoContractPayList) {
 		this.vwBusPoContractPayList = vwBusPoContractPayList;
+		}
+	/**保存-其他支出汇总*/
+    @ExcelCollection(name="其他支出汇总")
+	private List<VwBusOthersProjPayEntity> vwBusOthersProjPayList = new ArrayList<VwBusOthersProjPayEntity>();
+		public List<VwBusOthersProjPayEntity> getVwBusOthersProjPayList() {
+		return vwBusOthersProjPayList;
+		}
+		public void setVwBusOthersProjPayList(List<VwBusOthersProjPayEntity> vwBusOthersProjPayList) {
+		this.vwBusOthersProjPayList = vwBusOthersProjPayList;
+		}
+	/**保存-其他支出明细*/
+    @ExcelCollection(name="其他支出明细")
+	private List<VwBusOthersPayDetailEntity> vwBusOthersPayDetailList = new ArrayList<VwBusOthersPayDetailEntity>();
+		public List<VwBusOthersPayDetailEntity> getVwBusOthersPayDetailList() {
+		return vwBusOthersPayDetailList;
+		}
+		public void setVwBusOthersPayDetailList(List<VwBusOthersPayDetailEntity> vwBusOthersPayDetailList) {
+		this.vwBusOthersPayDetailList = vwBusOthersPayDetailList;
 		}
 }

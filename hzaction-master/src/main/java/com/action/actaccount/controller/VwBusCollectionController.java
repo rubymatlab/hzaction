@@ -150,8 +150,7 @@ public class VwBusCollectionController extends BaseController {
 			BusCollectionEntity busConEntity = new 	BusCollectionEntity();
 			MyBeanUtils.copyBeanNotNull2Bean(vwBusCollection ,busConEntity);
 			BusCollectionService.delete(busConEntity);
-		
-			//vwBusCollectionService.delete(vwBusCollection);
+			
 			systemService.addLog(message, Globals.Log_Type_DEL, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();
@@ -175,10 +174,14 @@ public class VwBusCollectionController extends BaseController {
 		message = "项目收款单视图删除成功";
 		try{
 			for(String id:ids.split(",")){
+
 				VwBusCollectionEntity vwBusCollection = systemService.getEntity(VwBusCollectionEntity.class, 
 				id
 				);
-				vwBusCollectionService.delete(vwBusCollection);
+				BusCollectionEntity busConEntity = new 	BusCollectionEntity();
+				MyBeanUtils.copyBeanNotNull2Bean(vwBusCollection ,busConEntity);
+				BusCollectionService.delete(busConEntity);
+//				vwBusCollectionService.delete(vwBusCollection);
 				systemService.addLog(message, Globals.Log_Type_DEL, Globals.Log_Leavel_INFO);
 			}
 		}catch(Exception e){
@@ -207,8 +210,8 @@ public class VwBusCollectionController extends BaseController {
 //		List<>
 //		List<VmMergeBusPoApplyDetailEntity>
 		message = "项目收款单视图添加成功";
+		BusCollectionEntity busConEntity = new 	BusCollectionEntity();
 		try{
-			BusCollectionEntity busConEntity = new 	BusCollectionEntity();
 			MyBeanUtils.copyBeanNotNull2Bean(vwBusCollection ,busConEntity);
 			BusCollectionService.save(busConEntity);
 			
@@ -220,7 +223,7 @@ public class VwBusCollectionController extends BaseController {
 			throw new BusinessException(e.getMessage());
 		}
 		j.setMsg(message);
-		j.setObj(vwBusCollection);
+		j.setObj(busConEntity);
 		return j;
 	}
 	
@@ -236,22 +239,38 @@ public class VwBusCollectionController extends BaseController {
 		String message = null;
 		AjaxJson j = new AjaxJson();
 		message = "项目收款单视图更新成功";
-		VwBusCollectionEntity t = vwBusCollectionService.get(VwBusCollectionEntity.class, vwBusCollection.getId());
+		// VwBusCollectionEntity t = vwBusCollectionService.get(VwBusCollectionEntity.class, vwBusCollection.getId());
+		
+		
 		try {
-			BusPayInfoEntity busPayInfo = new BusPayInfoEntity();
-			MyBeanUtils.copyBeanNotNull2Bean(vwBusCollection ,busPayInfo);
-			// 银行卡外键
-			busPayInfo.setFromBankAccId(vwBusCollection.getFromCustId());
-			// 附件bcFile
-//			busPayInfo.setBpiAccessory(vwBusCollection.getBcFile());
-			// 业务外键
-			busPayInfo.setBpiBusId(vwBusCollection.getId());
-			// 功能分类 2
-			busPayInfo.setBpiClass(2+"");
+
+			if(StringUtil.isNotEmpty(vwBusCollection.getBpiVoucherno())) {
+//				实收提交
+				BusPayInfoEntity busPayInfo = new BusPayInfoEntity();
+				MyBeanUtils.copyBeanNotNull2Bean(vwBusCollection ,busPayInfo);
+				// 业务外键
+				busPayInfo.setBpiBusId(vwBusCollection.getId());
+				// 功能分类 2
+				busPayInfo.setBpiClass(2+"");
+				if(StringUtil.isNotEmpty(vwBusCollection.getFromPayinfoId())){
+					// 财务支付id
+					busPayInfo.setId(vwBusCollection.getFromPayinfoId());
+					busPayInfoService.saveOrUpdate(busPayInfo);
+				}else {
+					busPayInfoService.save(busPayInfo);
+				}
+				
+				j.setObj(busPayInfo);
+				
+			}else {
+//				编辑提交
+				BusCollectionEntity busConEntity = new 	BusCollectionEntity();
+				MyBeanUtils.copyBeanNotNull2Bean(vwBusCollection, busConEntity);
+				BusCollectionService.saveOrUpdate(busConEntity);
+			}
 			
-			busPayInfoService.save(busPayInfo);
-			//MyBeanUtils.copyBeanNotNull2Bean(vwBusCollection, t);
-			//vwBusCollectionService.saveOrUpdate(t);
+
+			
 			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -259,6 +278,7 @@ public class VwBusCollectionController extends BaseController {
 			throw new BusinessException(e.getMessage());
 		}
 		j.setMsg(message);
+		
 		return j;
 	}
 	
@@ -272,8 +292,7 @@ public class VwBusCollectionController extends BaseController {
 	public ModelAndView goAdd(VwBusCollectionEntity vwBusCollection, HttpServletRequest req) {
 		if (StringUtil.isNotEmpty(vwBusCollection.getId())) {
 			vwBusCollection = vwBusCollectionService.getEntity(VwBusCollectionEntity.class, vwBusCollection.getId());
-//			req.setAttribute("vwBusCollectionPage", vwBusCollection);
-		
+			req.setAttribute("vwBusCollectionPage", vwBusCollection);
 		}
 		
 		return new ModelAndView("com/action/actaccount/vwBusCollection-add");
@@ -284,28 +303,39 @@ public class VwBusCollectionController extends BaseController {
 	 * @return
 	 */
 	@RequestMapping(params = "goUpdate")
-	public ModelAndView goUpdate(VwBusCollectionEntity vwBusCollection, HttpServletRequest req) {
+	public ModelAndView goUpdate(String isPayment, VwBusCollectionEntity vwBusCollection, HttpServletRequest req) {
 		
-		SimpleDateFormat sdf = new SimpleDateFormat("yyyyMM");
-		Calendar cal = Calendar.getInstance();
-		Date date= cal.getTime();
-		String now = sdf.format(date);
-		String sql = "select  bpi_voucherno from bus_pay_info bpi_voucherno where bpi_voucherno like '"+now+"%' order by create_date desc";
-		List<Map<String, Object>> data = this.systemService.findForJdbc(sql);
-		String newNo = "001";
-		if(data.size() != 0) {
-			int num = data.size() + 1;
-			if(num < 10) {
-				newNo = now + "00" + num;
-			}else if( num < 100) {
-				newNo = now + "0" + num;
-			}
-		}else {
-			newNo = now + newNo;
-		}
-		req.setAttribute("bpiVoucherno", newNo);
+		
 		if (StringUtil.isNotEmpty(vwBusCollection.getId())) {
 			vwBusCollection = vwBusCollectionService.getEntity(VwBusCollectionEntity.class, vwBusCollection.getId());
+			
+			System.out.println(vwBusCollection.getCreateDate());
+			if(StringUtil.isNotEmpty(isPayment)) {
+				// 如果凭证号不为空
+				if(!StringUtil.isNotEmpty(vwBusCollection.getBpiVoucherno())){
+					
+					SimpleDateFormat sdf = new SimpleDateFormat("yyyyMM");
+					Calendar cal = Calendar.getInstance();
+					Date date= cal.getTime();
+					String now = sdf.format(date);
+					String sql = "select  bpi_voucherno from bus_pay_info bpi_voucherno where bpi_voucherno like '"+now+"%' order by create_date desc";
+					List<Map<String, Object>> data = this.systemService.findForJdbc(sql);
+					String newNo = "001";
+					if(data.size() != 0) {
+						int num = data.size() + 1;
+						if(num < 10) {
+							newNo = now + "00" + num;
+						}else if( num < 100) {
+							newNo = now + "0" + num;
+						}
+					}else {
+						newNo = now + newNo;
+					}
+					vwBusCollection.setBpiVoucherno(newNo);
+				}
+				
+				req.setAttribute("payment", "true");
+			}
 			req.setAttribute("vwBusCollectionPage", vwBusCollection);
 		}
 		return new ModelAndView("com/action/actaccount/vwBusCollection-update");

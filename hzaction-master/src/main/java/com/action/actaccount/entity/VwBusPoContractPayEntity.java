@@ -21,7 +21,7 @@ import org.jeecgframework.poi.excel.annotation.Excel;
  * @Title: Entity
  * @Description: 采购应付/已付明细
  * @author onlineGenerator
- * @date 2019-09-01 10:48:56
+ * @date 2019-09-02 18:55:25
  * @version V1.0   
  *
  */

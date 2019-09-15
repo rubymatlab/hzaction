@@ -69,7 +69,7 @@
 				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
 						备注
 				  </td>
-				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
+				  <td hidden="hidden" align="left" bgcolor="#EEEEEE" style="width: 126px;">
 						合同管理主表外键
 				  </td>
 	</tr>
@@ -127,7 +127,7 @@
 					  	<input name="busCostBudgetingList[0].bcbRemark" maxlength="100" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">备注</label>
 					</td>
-				  <td align="left">
+				  <td align="left" hidden="hidden">
 					  	<input name="busCostBudgetingList[0].busContractId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">合同管理主表外键</label>
 					</td>
@@ -187,7 +187,7 @@
 					  	<input name="busCostBudgetingList[${stuts.index }].bcbRemark" maxlength="100" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bcbRemark }"/>
 					  <label class="Validform_label" style="display: none;">备注</label>
 				   </td>
-				   <td align="left">
+				   <td align="left" hidden="hidden">
 					  	<input name="busCostBudgetingList[${stuts.index }].busContractId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.busContractId }"/>
 					  <label class="Validform_label" style="display: none;">合同管理主表外键</label>
 				   </td>

@@ -84,17 +84,17 @@ $(document).ready(function(){
 					</td>
 				</tr>
 				
-				<tr>
+				<tr hidden="hidden">
 				  <td align="right">
 					<label class="Validform_label">
 										业务外键:
 									</label>
 					</td>
-				  <td class="value">
+				  <td class="value" hidden="hidden">
 					  	<input name="busPayInfoList[0].bpiBusId" maxlength="32" type="text" class="inputxt"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">业务外键</label>
 					</td>
-				  <td align="right">
+				  <td align="right" hidden="hidden">
 					<label class="Validform_label">
 										项目管理外键:
 									</label>
@@ -104,7 +104,7 @@ $(document).ready(function(){
 					  <label class="Validform_label" style="display: none;">项目管理外键</label>
 					</td>
 				</tr>
-				<tr>
+				<tr hidden="hidden">
 				  <td align="right">
 					<label class="Validform_label">
 										银行账号信息外键:
@@ -114,7 +114,10 @@ $(document).ready(function(){
 					  	<input name="busPayInfoList[0].fromBankAccId" maxlength="32" type="text" class="inputxt"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">银行账号信息外键</label>
 					</td>
-				  <td align="right">
+				</tr>
+				
+				<tr>
+					<td align="right">
 					<label class="Validform_label">
 										账号简称:
 									</label>
@@ -123,9 +126,6 @@ $(document).ready(function(){
 							 <input  id="busPayInfoList[0].bbaiSname" name="busPayInfoList[0].bbaiSname" type="text" style="width: 150px" class="searchbox-inputtext"   value="${poVal.bbaiSname }"  ignore="ignore"  onclick="popupClick(this,'bbai_sname,id','bbaiSname,fromBankAccId','ax_bas_bank_account_info')"/> 			 
 					  <label class="Validform_label" style="display: none;">账号简称</label>
 					</td>
-				</tr>
-				
-				<tr>
 				  <td align="right">
 					<label class="Validform_label">
 										凭证号:
@@ -230,37 +230,40 @@ $(document).ready(function(){
 					</td>
 				</tr>
 				
-				<tr>
-				  <td align="right">
+				<tr hidden="hidden">
+				  <td align="right" hidden="hidden">
 					<label class="Validform_label">
 										业务外键:
 					</label>
 					</td>
-				  <td class="value">
+				  <td class="value"  hidden="hidden">
 					  	<input name="busPayInfoList[0].bpiBusId" maxlength="32" type="text" class="inputxt"  ignore="ignore"  value="${poVal.bpiBusId }"/>
 					  <label class="Validform_label" style="display: none;">业务外键</label>
 					</td>
-				  <td align="right">
+				  <td align="right" hidden="hidden">
 					<label class="Validform_label">
 										项目管理外键:
 									</label>
 					</td>
-				  <td class="value">
+				  <td class="value" hidden="hidden">
 					  	<input name="busPayInfoList[0].fromProjmId" maxlength="32" type="text" class="inputxt"  ignore="ignore"  value="${poVal.fromProjmId }"/>
 					  <label class="Validform_label" style="display: none;">项目管理外键</label>
 					</td>
 				</tr>
-			<tr>
-				  <td align="right">
+				<tr hidden="hidden">
+				  <td align="right" hidden="hidden">
 					<label class="Validform_label">
 										银行账号信息外键:
 									</label>
 					</td>
-				  <td class="value">
+				  <td class="value"  hidden="hidden">
 					  	<input name="busPayInfoList[0].fromBankAccId" maxlength="32" type="text" class="inputxt"  ignore="ignore"  value="${poVal.fromBankAccId }"/>
 					  <label class="Validform_label" style="display: none;">银行账号信息外键</label>
 					</td>
-				  <td align="right">
+				</tr>
+				
+				<tr>
+				<td align="right">
 					<label class="Validform_label">
 										账号简称:
 									</label>
@@ -269,9 +272,6 @@ $(document).ready(function(){
 							 		<input  id="busPayInfoList[0].bbaiSname" name="busPayInfoList[0].bbaiSname" type="text" style="width: 150px" class="searchbox-inputtext"  value="${poVal.bbaiSname }"   ignore="ignore"   onclick="popupClick(this,'bbai_sname,id','bbaiSname,fromBankAccId','ax_bas_bank_account_info')"/> 			 
 					  <label class="Validform_label" style="display: none;">账号简称</label>
 					</td>
-				</tr>
-				
-				<tr>
 				  <td align="right">
 					<label class="Validform_label">
 										凭证号:

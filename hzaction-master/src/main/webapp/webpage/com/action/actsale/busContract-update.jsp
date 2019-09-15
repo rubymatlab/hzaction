@@ -135,12 +135,12 @@
 				<label class="Validform_label" style="display: none;">客户编号</label>
 			</td>
 			<td align="right">
-				<label class="Validform_label">合同金额万元:</label>
+				<label class="Validform_label">合同金额:</label>
 			</td>
 			<td class="value">
 		     	 <input id="bcContAmount" name="bcContAmount" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${busContractPage.bcContAmount}'/>
 				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">合同金额万元</label>
+				<label class="Validform_label" style="display: none;">合同金额</label>
 			</td>
 		</tr>
 		<tr>
@@ -181,20 +181,20 @@
 		</tr>
 		<tr>
 			<td align="right">
-				<label class="Validform_label">合同开始时间:</label>
+				<label class="Validform_label">初验时间:</label>
 			</td>
 			<td class="value">
-					  <input id="bcContStartTime" name="bcContStartTime" type="text" style="width: 150px"   ignore="ignore"  value='<fmt:formatDate value='${busContractPage.bcContStartTime}' type="date" pattern="yyyy-MM-dd"/>'/>
+					  <input id="bcContStartTime" name="bcContStartTime" onClick="WdatePicker()"  type="text" style="width: 150px" class="Wdate"  ignore="ignore"  value="<fmt:formatDate value='${busContractPage.bcContStartTime}' type='date' pattern='yyyy-MM-dd' />" />
 				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">合同开始时间</label>
+				<label class="Validform_label" style="display: none;">初验时间</label>
 			</td>
 			<td align="right">
-				<label class="Validform_label">合同结束时间:</label>
+				<label class="Validform_label">终验时间:</label>
 			</td>
 			<td class="value">
-					  <input id="bcContEndTime" name="bcContEndTime" type="text" style="width: 150px"   ignore="ignore"  value='<fmt:formatDate value='${busContractPage.bcContEndTime}' type="date" pattern="yyyy-MM-dd"/>'/>
+					  <input id="bcContEndTime" name="bcContEndTime" onClick="WdatePicker()" type="text" class="Wdate" style="width: 150px"   ignore="ignore"  value='<fmt:formatDate value='${busContractPage.bcContEndTime}' type="date" pattern="yyyy-MM-dd"/>' />
 				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">合同结束时间</label>
+				<label class="Validform_label" style="display: none;">终验时间</label>
 			</td>
 		</tr>
 		<tr>
@@ -292,7 +292,7 @@
 			<td align="right">
 				<label class="Validform_label">合同电子档:</label>
 			</td>
-			<td class="value">
+			<td class="value" colspan="4">
 		<table id="bc_contract_file_fileTable"></table>
 		<div class="form jeecgDetail">
 			<t:upload name="bcContractFile" id="bcContractFile" queueID="filediv_bcContractFile" outhtml="false" 
@@ -392,7 +392,7 @@
 					  		<input name="busConQuotedPriceList[#index#].bcqpAmount" maxlength="22" type="text" class="inputxt"  style="width:120px;"  datatype="/^(-?\d+)(\.\d+)?$/"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">金额</label>
 				  </td>
-				  <td align="left">
+				  <td align="left" hidden="hidden">
 					  		<input name="busConQuotedPriceList[#index#].busContractId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">合同管理外键</label>
 				  </td>
@@ -454,7 +454,7 @@
 							<t:dictSelect field="busContractPaymentList[#index#].bcpProgrePayment" type="list"   typeGroupCode="cost_stag"  defaultVal="" hasLabel="false"  title="进度款分期"></t:dictSelect>     
 					  <label class="Validform_label" style="display: none;">进度款分期</label>
 				  </td>
-				  <td align="left">
+				  <td align="left" hidden="hidden">
 					  		<input name="busContractPaymentList[#index#].busContractId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">合同管理外键</label>
 				  </td>
@@ -512,7 +512,7 @@
 					  		<input name="busCostBudgetingList[#index#].bcbRemark" maxlength="100" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">备注</label>
 				  </td>
-				  <td align="left">
+				  <td align="left" hidden="hidden">
 					  		<input name="busCostBudgetingList[#index#].busContractId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">合同管理主表外键</label>
 				  </td>

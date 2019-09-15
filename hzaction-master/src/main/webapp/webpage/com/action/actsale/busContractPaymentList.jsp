@@ -72,7 +72,7 @@
 				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
 						进度款分期
 				  </td>
-				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
+				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;" hidden="hidden">
 						合同管理外键
 				  </td>
 	</tr>
@@ -134,7 +134,7 @@
 							<t:dictSelect field="busContractPaymentList[0].bcpProgrePayment" type="list"   typeGroupCode="cost_stag"  defaultVal="${busContractPaymentPage.bcpProgrePayment}" hasLabel="false"  title="进度款分期"></t:dictSelect>     
 					  <label class="Validform_label" style="display: none;">进度款分期</label>
 					</td>
-				  <td align="left">
+				  <td align="left" hidden="hidden">
 					  	<input name="busContractPaymentList[0].busContractId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">合同管理外键</label>
 					</td>
@@ -198,7 +198,7 @@
 							<t:dictSelect field="busContractPaymentList[${stuts.index }].bcpProgrePayment" type="list"   typeGroupCode="cost_stag"  defaultVal="${poVal.bcpProgrePayment }" hasLabel="false"  title="进度款分期"></t:dictSelect>     
 					  <label class="Validform_label" style="display: none;">进度款分期</label>
 				   </td>
-				   <td align="left">
+				   <td align="left" hidden="hidden">
 					  	<input name="busContractPaymentList[${stuts.index }].busContractId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.busContractId }"/>
 					  <label class="Validform_label" style="display: none;">合同管理外键</label>
 				   </td>

@@ -91,7 +91,7 @@
 			</td>
 			
 		</tr>
-		<tr>
+		<tr  hidden="hidden">
 			<td align="right">
 				<label class="Validform_label">项目管理外键:</label>
 			</td>
@@ -211,7 +211,7 @@
 				<div style="width:800px;height:1px;"></div>
 				<t:tabs id="tt" iframe="false" tabPosition="top" fit="false">
 				 <c:if test="${pay==0 }">
-				 	<t:tab href="vmBusPoPayWmtController.do?vmBusPoContractPayWmtList&id=${vmBusPoPayWmtPage.id}" icon="icon-search" title="采购付款单附表视图_wmt" id="vmBusPoContractPayWmt"></t:tab>
+				 	<t:tab href="vmBusPoPayWmtController.do?vmBusPoContractPayWmtList&id=${vmBusPoPayWmtPage.id}" icon="icon-search" title="采购付款单附表视图" id="vmBusPoContractPayWmt"></t:tab>
 				 </c:if>
 				 <c:if test="${pay==1 }">
 				 	<t:tab href="vmBusPoPayWmtController.do?busPayInfoList&id=${vmBusPoPayWmtPage.id}" icon="icon-search" title="财务支付信息实体" id="busPayInfo"></t:tab>
@@ -241,7 +241,7 @@
 							<input name="vmBusPoContractPayWmtList[#index#].bpcpDate" maxlength="32" type="text" class="Wdate" onClick="WdatePicker()"  style="width:150px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">计划付款日期</label>
 				  </td>
-				  <td align="left">
+				  <td align="left" hidden="hidden">
 					  		<input name="vmBusPoContractPayWmtList[#index#].fromId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">采购合同外键</label>
 				  </td>
@@ -253,11 +253,11 @@
 					  		<input name="vmBusPoContractPayWmtList[#index#].bpcpRemark" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">备注</label>
 				  </td>
-				  <td align="left">
+				  <td align="left" hidden="hidden">
 					  		<input name="vmBusPoContractPayWmtList[#index#].busPoPayId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">采购付款单外键</label>
 				  </td>
-				   <td align="left">
+				   <td align="left" hidden="hidden">
 					  	<input name="vmBusPoContractPayWmtList[#index#].bpcpId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  />
 					  <label class="Validform_label" style="display: none;">采购付款单明细附表外键</label>
 				   </td>

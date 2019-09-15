@@ -30,7 +30,7 @@
 				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
 						计划付款日期
 				  </td>
-				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
+				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;" hidden="hidden">
 						采购合同外键
 				  </td>
 				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
@@ -39,10 +39,10 @@
 				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
 						备注
 				  </td>
-				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
+				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;" hidden="hidden">
 						采购付款单外键
 				  </td>
-				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
+				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;" hidden="hidden">
 						【实体表】采购付款单明细附表外键
 				  </td>
 	</tr>
@@ -77,7 +77,7 @@
 							<input name="vmBusPoContractPayWmtList[0].bpcpDate" maxlength="32"  type="text" class="Wdate" onClick="WdatePicker()"  style="width:150px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">计划付款日期</label>
 					</td>
-				  <td align="left">
+				  <td align="left" hidden="hidden">
 					  	<input name="vmBusPoContractPayWmtList[0].fromId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">采购合同外键</label>
 					</td>
@@ -89,11 +89,11 @@
 					  	<input name="vmBusPoContractPayWmtList[0].bpcpRemark" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">备注</label>
 					</td>
-				  <td align="left">
+				  <td align="left" hidden="hidden">
 					  	<input name="vmBusPoContractPayWmtList[0].busPoPayId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">采购付款单外键</label>
 					</td>
-				  <td align="left">
+				  <td align="left" hidden="hidden">
 					  	<input name="vmBusPoContractPayWmtList[0].bpcpId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">采购付款单明细附表外键</label>
 					</td>
@@ -130,7 +130,7 @@
 							<input name="vmBusPoContractPayWmtList[${stuts.index }].bpcpDate" maxlength="32" type="text" class="Wdate" onClick="WdatePicker()"  style="width:150px;"   ignore="ignore"  value="<fmt:formatDate value='${poVal.bpcpDate}' type="date" pattern="yyyy-MM-dd"/>"/>
 					  <label class="Validform_label" style="display: none;">计划付款日期</label>
 				   </td>
-				   <td align="left">
+				   <td align="left" hidden="hidden">
 					  	<input name="vmBusPoContractPayWmtList[${stuts.index }].fromId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.fromId }"/>
 					  <label class="Validform_label" style="display: none;">采购合同外键</label>
 				   </td>
@@ -142,11 +142,11 @@
 					  	<input name="vmBusPoContractPayWmtList[${stuts.index }].bpcpRemark" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bpcpRemark }"/>
 					  <label class="Validform_label" style="display: none;">备注</label>
 				   </td>
-				   <td align="left">
+				   <td align="left" hidden="hidden">
 					  	<input name="vmBusPoContractPayWmtList[${stuts.index }].busPoPayId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.busPoPayId }"/>
 					  <label class="Validform_label" style="display: none;">采购付款单外键</label>
 				   </td>
-				   <td align="left">
+				   <td align="left" hidden="hidden">
 					  	<input name="vmBusPoContractPayWmtList[${stuts.index }].bpcpId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bpcpId }"/>
 					  <label class="Validform_label" style="display: none;">采购付款单明细附表外键</label>
 				   </td>

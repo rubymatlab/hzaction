@@ -136,7 +136,7 @@
 		<td align="left" bgcolor="#EEEEEE" style="width: 126px;">
 			金额
 		</td>
-		<td align="left" bgcolor="#EEEEEE" style="width: 126px;">
+		<td hidden="hidden" align="left" bgcolor="#EEEEEE" style="width: 126px;">
 			合同管理外键
 		</td>
 	</tr>
@@ -208,7 +208,7 @@
 					<input name="busConQuotedPriceList[0].bcqpAmount" maxlength="22" type="text" class="inputxt" style="width:120px;" datatype="/^(-?\d+)(\.\d+)?$/" ignore="ignore">
 					<label class="Validform_label" style="display: none;">金额</label>
 				</td>
-				<td align="left">
+				<td align="left" hidden="hidden">
 					<input name="busConQuotedPriceList[0].busContractId" maxlength="32" type="text" class="inputxt" style="width:120px;" ignore="ignore">
 					<label class="Validform_label" style="display: none;">合同管理外键</label>
 				</td>
@@ -282,7 +282,7 @@
 						<input name="busConQuotedPriceList[${stuts.index }].bcqpAmount" maxlength="22" type="text" class="inputxt" style="width:120px;" datatype="/^(-?\d+)(\.\d+)?$/" ignore="ignore" value="${poVal.bcqpAmount }" />
 						<label class="Validform_label" style="display: none;">金额</label>
 					</td>
-					<td align="left">
+					<td align="left" hidden="hidden">
 						<input name="busConQuotedPriceList[${stuts.index }].busContractId" maxlength="32" type="text" class="inputxt" style="width:120px;" ignore="ignore" value="${poVal.busContractId }" />
 						<label class="Validform_label" style="display: none;">合同管理外键</label>
 					</td>

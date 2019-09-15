@@ -90,7 +90,7 @@
 				<label class="Validform_label" style="display: none;">供应商编号</label>
 			</td>
 		</tr>
-		<tr>
+		<tr hidden="hidden">
 			<td align="right">
 				<label class="Validform_label">项目管理外键:</label>
 			</td>
@@ -203,7 +203,7 @@
 			</td>
 		</tr>
 		
-		<tr>
+		<tr hidden="hidden">
 			<td>采购合同编号:<input name="bpcPoNo" id="bpcPoNo" value="" /></td>
 			<td>费用分期:<input name="bpcpProgre" id="bpcpProgre" value="" /></td>
 			<td>计划付款金额:<input name="bpcpPayAmount" id="bpcpPayAmount" value="" /></td>
@@ -222,7 +222,7 @@
 				<%-- 增加一个div，用于调节页面大小，否则默认太小 --%>
 				<div style="width:800px;height:1px;"></div>
 				<t:tabs id="tt" iframe="false" tabPosition="top" fit="false">
-				 <t:tab href="vmBusPoPayWmtController.do?vmBusPoContractPayWmtList&id=${vmBusPoPayWmtPage.id}" icon="icon-search" title="采购付款单附表视图_wmt" id="vmBusPoContractPayWmt"></t:tab>
+				 <t:tab href="vmBusPoPayWmtController.do?vmBusPoContractPayWmtList&id=${vmBusPoPayWmtPage.id}" icon="icon-search" title="采购付款单附表视图" id="vmBusPoContractPayWmt"></t:tab>
 				 <t:tab href="vmBusPoPayWmtController.do?busPayInfoList&id=${vmBusPoPayWmtPage.id}" icon="icon-search" title="财务支付信息实体" id="busPayInfo"></t:tab>
 				</t:tabs>
 			</div>
@@ -249,7 +249,7 @@
 							<input name="vmBusPoContractPayWmtList[#index#].bpcpDate" type="text" class="Wdate" onClick="WdatePicker()"  style="width:150px;" ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">计划付款日期</label>
 				  </td>
-				  <td align="left">
+				  <td align="left" hidden="hidden">
 					  	<input name="vmBusPoContractPayWmtList[#index#].fromId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">采购合同外键</label>
 				  </td>
@@ -261,11 +261,11 @@
 					  	<input name="vmBusPoContractPayWmtList[#index#].bpcpRemark" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">备注</label>
 				  </td>
-				  <td align="left">
+				  <td align="left" hidden="hidden">
 					  	<input name="vmBusPoContractPayWmtList[#index#].busPoPayId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">采购付款单外键</label>
 				  </td>
-				  <td align="left">
+				  <td align="left" hidden="hidden">
 					  	<input name="vmBusPoContractPayWmtList[#index#].bpcpId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  />
 					  <label class="Validform_label" style="display: none;">采购付款单明细附表外键</label>
 				   </td>
@@ -310,15 +310,15 @@
 										<a  target="_blank" id="busPayInfoList[#index#].bpiAccessory_href"></a>
 					  <label class="Validform_label" style="display: none;">附件</label>
 				  </td>
-				  <td align="left">
+				  <td align="left" hidden="hidden">
 					  	<input name="busPayInfoList[#index#].bpiBusId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">业务外键</label>
 				  </td>
-				  <td align="left">
+				  <td align="left" hidden="hidden">
 					  	<input name="busPayInfoList[#index#].fromProjmId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">项目管理外键</label>
 				  </td>
-				  <td align="left">
+				  <td align="left" hidden="hidden">
 					  	<input name="busPayInfoList[#index#].fromBankAccId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">银行账号信息外键</label>
 				  </td>

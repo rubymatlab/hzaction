@@ -217,12 +217,6 @@ public class VwBusPoApplyServiceImpl extends CommonServiceImpl implements VwBusP
  		sql  = sql.replace("#{bpa_apply_people}",String.valueOf(t.getBpaApplyPeople()));
  		sql  = sql.replace("#{bpa_state}",String.valueOf(t.getBpaState()));
  		sql  = sql.replace("#{from_projm_id}",String.valueOf(t.getFromProjmId()));
- 		sql  = sql.replace("#{bpad_name}",String.valueOf(t.getBpadName()));
- 		sql  = sql.replace("#{bpad_brand}",String.valueOf(t.getBpadBrand()));
- 		sql  = sql.replace("#{bpad_model}",String.valueOf(t.getBpadModel()));
- 		sql  = sql.replace("#{bpad_number}",String.valueOf(t.getBpadNumber()));
- 		sql  = sql.replace("#{bpad_remark}",String.valueOf(t.getBpadRemark()));
- 		sql  = sql.replace("#{from_id}",String.valueOf(t.getFromId()));
  		sql  = sql.replace("#{bpm_name}",String.valueOf(t.getBpmName()));
  		sql  = sql.replace("#{bc_name}",String.valueOf(t.getBcName()));
  		sql  = sql.replace("#{bp_manager}",String.valueOf(t.getBpManager()));
@@ -277,12 +271,6 @@ public class VwBusPoApplyServiceImpl extends CommonServiceImpl implements VwBusP
 		map.put("bpa_apply_people", t.getBpaApplyPeople());
 		map.put("bpa_state", t.getBpaState());
 		map.put("from_projm_id", t.getFromProjmId());
-		map.put("bpad_name", t.getBpadName());
-		map.put("bpad_brand", t.getBpadBrand());
-		map.put("bpad_model", t.getBpadModel());
-		map.put("bpad_number", t.getBpadNumber());
-		map.put("bpad_remark", t.getBpadRemark());
-		map.put("from_id", t.getFromId());
 		map.put("bpm_name", t.getBpmName());
 		map.put("bc_name", t.getBcName());
 		map.put("bp_manager", t.getBpManager());

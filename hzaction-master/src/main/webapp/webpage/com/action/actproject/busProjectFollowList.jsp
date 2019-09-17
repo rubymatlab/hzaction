@@ -21,7 +21,7 @@
 						下一步计划
 				  </td>
 				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
-						验收时间
+						计划验收时间
 				  </td>
 				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
 						验收结果

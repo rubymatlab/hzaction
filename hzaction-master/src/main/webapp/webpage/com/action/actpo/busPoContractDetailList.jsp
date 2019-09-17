@@ -87,10 +87,10 @@
 					  	<input name="busPoContractDetailList[0].bpcdRemark" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">备注</label>
 					</td>
-<!-- 				  <td align="left">
-					  	<input name="busPoContractDetailList[0].fromId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
+ 				  <td align="left">
+					  	<input name="busPoContractDetailList[0].fromId"  maxlength="32" type="hidden" class="inputxt"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">采购合同外键</label>
-					</td> -->
+					</td>
    			</tr>
 	</c:if>
 	<c:if test="${fn:length(busPoContractDetailList)  > 0 }">
@@ -113,7 +113,7 @@
 					  <label class="Validform_label" style="display: none;">费用类型</label>
 				   </td>
 				   <td align="left">
-							 <input  id="busPoContractDetailList[${stuts.index }].bpcdName" name="busPoContractDetailList[${stuts.index }].bpcdName"  type="text" style="width: 150px" class="inputxt"   ignore="ignore"      value="${poVal.bpcdName }" /> 			 
+							 <input  id="busPoContractDetailList[${stuts.index }].bpcdName" name="busPoContractDetailList[${stuts.index }].bpcdName"  type="text" style="width: 12	0px" class="inputxt"   ignore="ignore"      value="${poVal.bpcdName }" /> 			 
 					  <label class="Validform_label" style="display: none;">名称</label>
 				   </td>
 				   <td align="left">
@@ -133,17 +133,17 @@
 					  <label class="Validform_label" style="display: none;">单价</label>
 				   </td>
 				   <td align="left">
-					  	<input name="busPoContractDetailList[${stuts.index }].bpcdAmount" maxlength="32" type="text" disabled="disabled" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bpcdAmount }"/>
+					  	<input name="busPoContractDetailList[${stuts.index }].bpcdAmount" maxlength="32" type="text" readonly="readonly" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bpcdAmount }"/>
 					  <label class="Validform_label" style="display: none;">金额</label>
 				   </td>
 				   <td align="left">
 					  	<input name="busPoContractDetailList[${stuts.index }].bpcdRemark" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bpcdRemark }"/>
 					  <label class="Validform_label" style="display: none;">备注</label>
 				   </td>
-<%-- 				   <td align="left">
-					  	<input name="busPoContractDetailList[${stuts.index }].fromId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.fromId }"/>
+ 				   <td align="left">
+					  	<input name="busPoContractDetailList[${stuts.index }].fromId" maxlength="32" type="hidden" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.fromId }"/>
 					  <label class="Validform_label" style="display: none;">采购合同外键</label>
-				   </td> --%>
+				   </td> 
    			</tr>
 		</c:forEach>
 	</c:if>	
@@ -252,7 +252,7 @@
     	            	for(var i = 0; i< data.length; i++){
     	            		 var tr =  $("#add_busPoContractDetail_table_template tr").clone();
 	            	 			 $("#add_busPoContractDetail_table").append(tr);
-	            	 			inputBindEvents(tr)
+	            	 			inputBindEvents(tr) // 绑定事件
 	            	 			resetTrNum('add_busPoContractDetail_table');
 	                 		//busPoContractDetailList[#index#].bpcdNumber
 	                 		var name = $(tr).find("input").eq(2).attr("name")
@@ -292,6 +292,10 @@ function popupClickContractDetail(pobj, tablefield, inputnames, pcode) {
         alert($.i18n.prop('popup.param.error.msg'));
         return;
     }
+    if(!window.projectId){
+    	 alert("请选择项目");
+         return;
+    }
     $.dialog({
         content: "url:cgReportController.do?popup&id=" + pcode + "&idkey="+ window.projectId,
         zIndex: getzIndex(),
@@ -324,7 +328,7 @@ function popupClickContractDetail(pobj, tablefield, inputnames, pcode) {
                  			$("input[name='"+inputs[0]+"."+ item +"']").val(selected[i][tableF[index]])
                  		}) 
                  	}
-                }
+                } 
                 firstCompute();
             }
         },
@@ -334,9 +338,14 @@ function popupClickContractDetail(pobj, tablefield, inputnames, pcode) {
 }
 // 输入框事件绑定
 $(function(){
+	// 初始化绑定事件
+	$("#add_busPoContractDetail_table").find("tr").each(function(index,item){
+		inputBindEvents(item )
+	})
 	firstCompute();
 })
 function firstCompute(){
+	console.log(123)
 	// 生成的时候计算一遍 （在进行监听）
 	var oInput = $("input[name$='.bpcdPrice']").add("input[name$='.bpcdNumber']").add("input[name$='.bpcdAmount']");
 	for(var i = 0; i < oInput.length; i += 3){
@@ -352,11 +361,11 @@ function inputBindEvents(tr){
 		nInp = $tr.find("input[name$='.bpcdNumber']"),
 		aInp = $tr.find("input[name$='.bpcdAmount']");
 	pInp.bind("change",function(e){
-		aInp.val(+pInp.val() * +nInp.val())
+		aInp.val((+pInp.val() * +nInp.val()).toFixed(2))
 		computeTotal();
 	})
 	nInp.bind("change",function(e){
-		aInp.val(+pInp.val() * +nInp.val())
+		aInp.val((+pInp.val() * +nInp.val()).toFixed(2))
 		computeTotal();
 	})
 }

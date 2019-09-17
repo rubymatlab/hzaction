@@ -221,7 +221,8 @@ public class VmBusPoContractController extends BaseController {
 			BusPoApplyDetailConEntity busPoApplyDetailConEntity = null;
 			for(VmMergeBusPoApplyDetailEntity entity : vmMergeBusPoApplyDetailList) {
 				busPoApplyDetailConEntity = new BusPoApplyDetailConEntity();
-				busPoApplyDetailConEntity.setFromPoApplyDetId(entity.getId());// 采购申请明细
+				busPoApplyDetailConEntity.setFromPoApplyDetId(entity.getId());// 采购申请明细外键
+				// busPoApplyDetailConEntity.setFromId(fromId);
 				busPoApplyDetailConList.add(busPoApplyDetailConEntity);
 			}
 			

@@ -188,7 +188,7 @@
 									'bpcd_name,bpcd_brand,bpcd_model,bpcd_number,bpcd_remark',
 									'bpadName,bpadBrand,bpadModel,bpadNumber,bpadRemark',
 									'rf_bus_po_apply_detail'); */
-							popupClickContractDetail(this,'bpad_name,bpad_brand,bpad_model,bpad_number,bpad_remark','bpadName,bpadBrand,bpadModel,bpadNumber,bpadRemark','rf_bus_po_apply_detail');
+							popupClickContractDetail(this,'bcqp_name,bcqp_brand,bcqp_model,bcqp_qty,bcqp_remark','bpadName,bpadBrand,bpadModel,bpadNumber,bpadRemark','rf_bus_con_quoted_price');
 							return false;
 									//$this=null;
 						//}

@@ -29,13 +29,13 @@
 		iconCls : 'icon-remove'
 	});
 	$('#ImportXlsBusPoApplyDetailBtn').linkbutton({
-		iconCls : 'icon-put'
+		iconCls : 'icon-putout'
 	});
 	$('#choiceaddBusPoApplyDetailBtn').linkbutton({
 		iconCls : 'icon-sum'
 	});
 	$('#ExportXlsByTBtn').linkbutton({
-		iconCls : 'icon-putout'
+		iconCls : 'icon-put'
 	});
 	
 	//-------------模板下载功能-----------------
@@ -271,9 +271,9 @@
 	class="datagrid-toolbar">
 	<a id="addBusPoApplyDetailBtn" href="#">添加</a> <a
 		id="delBusPoApplyDetailBtn" href="#">删除</a> <a
-		id="ImportXlsBusPoApplyDetailBtn" href="#">excel导入</a> <a
 		id="choiceaddBusPoApplyDetailBtn" href="#">选择新增</a>
-		<a id="ExportXlsByTBtn" href="#">选择新增excel模板下载</a>
+		<a id="ExportXlsByTBtn" href="#">excel模板下载</a><a
+		id="ImportXlsBusPoApplyDetailBtn" href="#">excel导入</a> 
 </div>
 <table border="0" cellpadding="2" cellspacing="0"
 	id="busPoApplyDetail_table">

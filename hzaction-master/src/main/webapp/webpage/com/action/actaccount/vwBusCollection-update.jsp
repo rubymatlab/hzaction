@@ -23,17 +23,16 @@
 						<td class="value">
 						   	<input id="bpmName" class="easyui-combogrid" ignore="ignore"  value='${vwBusCollectionPage.bpmName}' style="width:150px" data-options="
 			            panelWidth: 500,
-			            idField: 'bpmProjName',
-			            textField: 'bpmProjName',
-			            url: 'vmBusProjectManagerController.do?datagrid&field=id,bpmProjId,bpmProjName,bpmCustSName',
+			            idField: 'bpmName',
+			            textField: 'bpmName',
+			            url: 'busProjectManagerController.do?datagrid&field=id,bpmProjId,bpmName',
 			            columns: [[
 			                {field:'bpmProjId',title:'项目编号',width:80},
-			                {field:'bpmProjName',title:'项目名称',width:120}
+			                {field:'bpmName',title:'项目名称',width:120}
 			            ]],
 			            onSelect: function (row,data) {
 			            	$('#bpmProjId').val(data.bpmProjId);
 			            	$('#fromProjmId').val(data.id);
-			            	// $('#bpmCustSName').val(data.bpmCustSName);
 			            	window.projectId = data.id;
 			            	changeStager()
 					    },
@@ -210,7 +209,7 @@
 						</td>
 					</tr>
 				</table>
-				<c:if test="${ payment == true }">
+			<c:if test="${ payment == true }">
 				<p style="font-weight: bold; font-size: 18px;">支付</p>
 				<table style="width: 600px;" cellpadding="0" cellspacing="1" class="formtable">
 					 <tr>
@@ -231,8 +230,10 @@
 						</label>
 					</td>
 					<td class="value">
-								        	<input id="fromPayinfoId" name="fromPayinfoId"  type="hidden"  maxlength="32" value="${ vwBusCollectionPage.fromPayinfoId }" />
-			        	<input id="bbaiAccountNo" class="easyui-combogrid" name="bbaiAccountNo" style="width:150px" value="${vwBusCollectionPage.bbaiAccountNo }" data-options="
+		        		<input id="fromPayinfoId" name="fromPayinfoId"  type="hidden"  maxlength="32" value="${ vwBusCollectionPage.fromPayinfoId }" />
+		        		<input id="tempBbaiAcountNo" type="hidden" value="${vwBusCollectionPage.bbaiAccountNo }">
+		        		<t:dictSelect  id="paySelect" field="bbaiAccountNo" type="select" dictTable="bas_bank_account_info"  dictField="id" dictText="bbai_sname,bbai_account_no"  defaultVal="${vwBusCollectionPage.bbaiAccountNo }"   hasLabel="false"  title="银行账号" ></t:dictSelect>
+			        	<%-- <input id="bbaiAccountNo" class="easyui-combogrid" name="bbaiAccountNo" style="width:150px" value="${vwBusCollectionPage.bbaiAccountNo }" data-options="
 				        	panelWidth: 150,
 				            idField: 'bbaiAccountNo',
 				            textField: 'bbaiAccountNo',
@@ -247,8 +248,8 @@
 							},
 							 fitColumns: true
 							 
-				        ">
-				        	<input id="from_bank_acc_id" name="fromCustId"  type="hidden"  maxlength="32" value="${ vwBusCollectionPage.fromBankAccId }" />
+				        "> --%>
+				        	<input id="from_bank_acc_id" name="fromBankAccId"  type="hidden"  maxlength="32" value="${ vwBusCollectionPage.fromBankAccId }" />
 
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">银行帐号</label>
@@ -261,7 +262,7 @@
 						</label>
 					</td>
 					<td class="value">
-						<t:dictSelect field="bpiFeeType" type="list"  typeGroupCode="cost_type"  defaultVal="${vwBusCollectionPage.bpiFeeType }"   hasLabel="false"  title="费用类别" ></t:dictSelect>
+						<t:dictSelect  field="bpiFeeType" type="list"  typeGroupCode="bc_fee_nam"  defaultVal="${vwBusCollectionPage.bpiFeeType }"   hasLabel="false"  title="费用类别" ></t:dictSelect>
 					     	<!--  <input id="bpiFeeType" name="bpiFeeType" type="text"  maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" /> -->
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">费用类别</label>
@@ -272,13 +273,14 @@
 						</label>
 					</td>
 					<td class="value">
-							<t:dictSelect field="bpiFeeDetail" type="list"  typeGroupCode="cost_type" defaultVal="${vwBusCollectionPage.bpiFeeDetail }"    hasLabel="false"  title="费用明细" ></t:dictSelect>
+							<t:dictSelect field="bpiFeeDetail"  type="list"  typeGroupCode="bc_fee_dtl" defaultVal="${vwBusCollectionPage.bpiFeeDetail }"    hasLabel="false"  title="费用明细" ></t:dictSelect>
 					     	<!--  <input id="bpiFeeDetail" name="bpiFeeDetail" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" /> -->
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">费用明细</label>
 						</td>
 					</tr>
 				<tr>
+
 					<td align="right">
 						<label class="Validform_label">
 							支付时间:
@@ -347,11 +349,15 @@
  </body>
  	<script src = "webpage/com/action/actpo/dropdown.js"></script>
 	  	<script type="text/javascript">	
+	  	
 			$(function(){
-				// 支付时间
-	/* 			if(!$("#bpiPayDate").val()){
-					$("#bpiPayDate").val(new Date())
-				} */
+				$("#paySelect").on("change",function(e){
+					console.log("触发")
+					$("#from_bank_acc_id").val($(this).val());
+				})
+				
+				
+				$("#paySelect").find("option[value="+ $("#from_bank_acc_id").val() +"]").attr("selected","selected");
 				
 				if($("#isPayment").val() == "true"){
 					$("table").eq(0).find(".value").each(function(index, item){

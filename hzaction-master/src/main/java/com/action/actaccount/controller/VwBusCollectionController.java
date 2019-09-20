@@ -150,6 +150,11 @@ public class VwBusCollectionController extends BaseController {
 			BusCollectionEntity busConEntity = new 	BusCollectionEntity();
 			MyBeanUtils.copyBeanNotNull2Bean(vwBusCollection ,busConEntity);
 			BusCollectionService.delete(busConEntity);
+			// 删除支付
+			BusPayInfoEntity busPayInfoEntity = new BusPayInfoEntity();
+			MyBeanUtils.copyBeanNotNull2Bean(vwBusCollection ,busPayInfoEntity);
+			busPayInfoEntity.setId(vwBusCollection.getFromPayinfoId());
+			busPayInfoService.delete(busPayInfoEntity);
 			
 			systemService.addLog(message, Globals.Log_Type_DEL, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
@@ -239,15 +244,21 @@ public class VwBusCollectionController extends BaseController {
 		String message = null;
 		AjaxJson j = new AjaxJson();
 		message = "项目收款单视图更新成功";
-		// VwBusCollectionEntity t = vwBusCollectionService.get(VwBusCollectionEntity.class, vwBusCollection.getId());
+//		VwBusCollectionEntity t = vwBusCollectionService.findUniqueByProperty(VwBusCollectionEntity.class, "id",vwBusCollection.getId());
 		
 		
 		try {
 
 			if(StringUtil.isNotEmpty(vwBusCollection.getBpiVoucherno())) {
 //				实收提交
-				BusPayInfoEntity busPayInfo = new BusPayInfoEntity();
+				BusPayInfoEntity busPayInfo = null;
+				if(StringUtil.isNotEmpty(vwBusCollection.getFromPayinfoId())){
+					busPayInfo = busPayInfoService.findUniqueByProperty(BusPayInfoEntity.class, "id",vwBusCollection.getFromPayinfoId());
+				}else {
+					busPayInfo = new BusPayInfoEntity();
+				}
 				MyBeanUtils.copyBeanNotNull2Bean(vwBusCollection ,busPayInfo);
+				
 				// 业务外键
 				busPayInfo.setBpiBusId(vwBusCollection.getId());
 				// 功能分类 2
@@ -264,13 +275,11 @@ public class VwBusCollectionController extends BaseController {
 				
 			}else {
 //				编辑提交
-				BusCollectionEntity busConEntity = new 	BusCollectionEntity();
+				BusCollectionEntity busConEntity = BusCollectionService.findUniqueByProperty(BusCollectionEntity.class, "id",vwBusCollection.getId());
 				MyBeanUtils.copyBeanNotNull2Bean(vwBusCollection, busConEntity);
 				BusCollectionService.saveOrUpdate(busConEntity);
 			}
-			
-
-			
+				
 			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -309,7 +318,6 @@ public class VwBusCollectionController extends BaseController {
 		if (StringUtil.isNotEmpty(vwBusCollection.getId())) {
 			vwBusCollection = vwBusCollectionService.getEntity(VwBusCollectionEntity.class, vwBusCollection.getId());
 			
-			System.out.println(vwBusCollection.getCreateDate());
 			if(StringUtil.isNotEmpty(isPayment)) {
 				// 如果凭证号不为空
 				if(!StringUtil.isNotEmpty(vwBusCollection.getBpiVoucherno())){

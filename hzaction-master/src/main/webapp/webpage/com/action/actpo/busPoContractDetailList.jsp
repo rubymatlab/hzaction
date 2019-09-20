@@ -359,7 +359,7 @@ function inputBindEvents(tr){
 	var $tr = $(tr);
 	var pInp = $tr.find("input[name$='.bpcdPrice']"),
 		nInp = $tr.find("input[name$='.bpcdNumber']"),
-		aInp = $tr.find("input[name$='.bpcdAmount']");
+		aInp = $tr.find("input[name$='.bpcdAmount']");	
 	pInp.bind("change",function(e){
 		aInp.val((+pInp.val() * +nInp.val()).toFixed(2))
 		computeTotal();

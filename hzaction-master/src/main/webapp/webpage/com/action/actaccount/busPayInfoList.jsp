@@ -22,29 +22,26 @@ $(document).ready(function(){
 					<input name="busPayInfoList[0].sysOrgCode" type="hidden"  value="${poVal.sysOrgCode}"/>
 					<input name="busPayInfoList[0].sysCompanyCode" type="hidden"  value="${poVal.sysCompanyCode}"/>
 					<input name="busPayInfoList[0].bpmStatus" type="hidden"  value="${poVal.bpmStatus}"/>
-					<input name="busPayInfoList[0].bpiClass" type="hidden"  value="${poVal.bpiClass}"/>
 					<input name="busPayInfoList[0].bpiBusId" type="hidden"  value="${poVal.bpiBusId}"/>
-					<input name="busPayInfoList[0].fromProjmId" type="hidden"  value="${poVal.fromProjmId}"/>
-					<input name="busPayInfoList[0].fromPayId" type="hidden"  value="${poVal.fromPayId}"/>
 			</tr>
 				<tr>
+				  <td align="right">
+					<label class="Validform_label">
+										功能分类:
+									</label>
+					</td>
+				  <td class="value">
+					  	<input name="busPayInfoList[0].bpiClass" maxlength="30" type="text" class="inputxt"  ignore="ignore" />
+					  <label class="Validform_label" style="display: none;">功能分类</label>
+					</td>
 				  <td align="right">
 					<label class="Validform_label">
 										支付方式:
 									</label>
 					</td>
 				  <td class="value">
-						<t:dictSelect field="busPayInfoList[0].bpiPayMethod" type="list"   typeGroupCode=""  defaultVal="${busPayInfoPage.bpiPayMethod}" hasLabel="false"  title="支付方式"></t:dictSelect>     
+					  	<input name="busPayInfoList[0].bpiPayMethod" maxlength="20" type="text" class="inputxt"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">支付方式</label>
-					</td>
-				  <td align="right">
-					<label class="Validform_label">
-										银行账号:
-									</label>
-					</td>
-				  <td class="value">
-						<t:dictSelect field="busPayInfoList[0].bpiBankNo" type="list"   typeGroupCode=""  defaultVal="${busPayInfoPage.bpiBankNo}" hasLabel="false"  title="银行账号"></t:dictSelect>     
-					  <label class="Validform_label" style="display: none;">银行账号</label>
 					</td>
 				</tr>
 				<tr>
@@ -54,7 +51,7 @@ $(document).ready(function(){
 									</label>
 					</td>
 				  <td class="value">
-					      	<input name="busPayInfoList[0].bpiPayDate" maxlength="32" type="text"  class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})"  ignore="ignore" />
+						<input name="busPayInfoList[0].bpiPayDate" maxlength="32" type="text" class="Wdate" onClick="WdatePicker()"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">支付时间</label>
 					</td>
 				  <td align="right">
@@ -74,7 +71,7 @@ $(document).ready(function(){
 									</label>
 					</td>
 				  <td class="value">
-						<t:dictSelect field="busPayInfoList[0].bpiFeeDetail" type="list"   typeGroupCode=""  defaultVal="${busPayInfoPage.bpiFeeDetail}" hasLabel="false"  title="费用明细"></t:dictSelect>     
+					  	<input name="busPayInfoList[0].bpiFeeDetail" maxlength="20" type="text" class="inputxt"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">费用明细</label>
 					</td>
 				  <td align="right">
@@ -83,23 +80,21 @@ $(document).ready(function(){
 									</label>
 					</td>
 				  <td class="value">
-						<t:dictSelect field="busPayInfoList[0].bpiContent" type="list"   typeGroupCode=""  defaultVal="${busPayInfoPage.bpiContent}" hasLabel="false"  title="内容"></t:dictSelect>     
+					  	<input name="busPayInfoList[0].bpiContent" maxlength="20" type="text" class="inputxt"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">内容</label>
 					</td>
 				</tr>
-<<<<<<< HEAD
-				
-				<tr hidden="hidden">
+				<tr>
 				  <td align="right">
 					<label class="Validform_label">
-										业务外键:
+										凭证号:
 									</label>
 					</td>
-				  <td class="value" hidden="hidden">
-					  	<input name="busPayInfoList[0].bpiBusId" maxlength="32" type="text" class="inputxt"  ignore="ignore" />
-					  <label class="Validform_label" style="display: none;">业务外键</label>
+				  <td class="value">
+					  	<input name="busPayInfoList[0].bpiVoucherno" maxlength="20" type="text" class="inputxt"  ignore="ignore" />
+					  <label class="Validform_label" style="display: none;">凭证号</label>
 					</td>
-				  <td align="right" hidden="hidden">
+				  <td align="right">
 					<label class="Validform_label">
 										项目管理外键:
 									</label>
@@ -109,7 +104,16 @@ $(document).ready(function(){
 					  <label class="Validform_label" style="display: none;">项目管理外键</label>
 					</td>
 				</tr>
-				<tr hidden="hidden">
+				<tr>
+				  <td align="right">
+					<label class="Validform_label">
+										采购付款单外键:
+									</label>
+					</td>
+				  <td class="value">
+					  	<input name="busPayInfoList[0].fromPayId" maxlength="32" type="text" class="inputxt"  ignore="ignore" />
+					  <label class="Validform_label" style="display: none;">采购付款单外键</label>
+					</td>
 				  <td align="right">
 					<label class="Validform_label">
 										银行账号信息外键:
@@ -118,30 +122,6 @@ $(document).ready(function(){
 				  <td class="value">
 					  	<input name="busPayInfoList[0].fromBankAccId" maxlength="32" type="text" class="inputxt"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">银行账号信息外键</label>
-					</td>
-				</tr>
-				
-				<tr>
-					<td align="right">
-					<label class="Validform_label">
-										账号简称:
-									</label>
-					</td>
-				  <td class="value">
-							 <input  id="busPayInfoList[0].bbaiSname" name="busPayInfoList[0].bbaiSname" type="text" style="width: 150px" class="searchbox-inputtext"   value="${poVal.bbaiSname }"  ignore="ignore"  onclick="popupClick(this,'bbai_sname,id','bbaiSname,fromBankAccId','ax_bas_bank_account_info')"/> 			 
-					  <label class="Validform_label" style="display: none;">账号简称</label>
-					</td>
-=======
-				<tr>
->>>>>>> e4fec7fd75dd263d36c24ac0516ef25f534e83a0
-				  <td align="right">
-					<label class="Validform_label">
-										凭证号:
-									</label>
-					</td>
-				  <td class="value">
-					  	<input name="busPayInfoList[0].bpiVoucherno" maxlength="20" type="text" class="inputxt"  ignore="ignore" />
-					  <label class="Validform_label" style="display: none;">凭证号</label>
 					</td>
 				</tr>
 	</c:if>
@@ -158,30 +138,26 @@ $(document).ready(function(){
 					<input name="busPayInfoList[0].sysOrgCode" type="hidden" value="${poVal.sysOrgCode}"/>
 					<input name="busPayInfoList[0].sysCompanyCode" type="hidden" value="${poVal.sysCompanyCode}"/>
 					<input name="busPayInfoList[0].bpmStatus" type="hidden" value="${poVal.bpmStatus}"/>
-					<input name="busPayInfoList[0].bpiClass" type="hidden" value="${poVal.bpiClass}"/>
 					<input name="busPayInfoList[0].bpiBusId" type="hidden" value="${poVal.bpiBusId}"/>
-					<input name="busPayInfoList[0].fromProjmId" type="hidden" value="${poVal.fromProjmId}"/>
-					<input name="busPayInfoList[0].fromPayId" type="hidden" value="${poVal.fromPayId}"/>
 			</tr>
 			<tr>
+				  <td align="right">
+					<label class="Validform_label">
+										功能分类:
+									</label>
+					</td>
+				  <td class="value">
+					  	<input name="busPayInfoList[0].bpiClass" maxlength="30" type="text" class="inputxt"  ignore="ignore"  value="${poVal.bpiClass }"/>
+					  <label class="Validform_label" style="display: none;">功能分类</label>
+					</td>
 				  <td align="right">
 					<label class="Validform_label">
 										支付方式:
 									</label>
 					</td>
 				  <td class="value">
-							<t:dictSelect field="busPayInfoList[0].bpiPayMethod" type="list"  typeGroupCode=""  defaultVal="${poVal.bpiPayMethod}" hasLabel="false"  title="支付方式"></t:dictSelect>     
+					  	<input name="busPayInfoList[0].bpiPayMethod" maxlength="20" type="text" class="inputxt"  ignore="ignore"  value="${poVal.bpiPayMethod }"/>
 					  <label class="Validform_label" style="display: none;">支付方式</label>
-					</td>
-				  <td align="right">
-
-					<label class="Validform_label">
-										银行账号:
-									</label>
-					</td>
-				  <td class="value">
-							<t:dictSelect field="busPayInfoList[0].bpiBankNo" type="list"  typeGroupCode=""  defaultVal="${poVal.bpiBankNo}" hasLabel="false"  title="银行账号"></t:dictSelect>     
-					  <label class="Validform_label" style="display: none;">银行账号</label>
 					</td>
 				</tr>
 			<tr>
@@ -191,7 +167,7 @@ $(document).ready(function(){
 									</label>
 					</td>
 				  <td class="value">
-					      	<input name="busPayInfoList[0].bpiPayDate" maxlength="32" type="text"  class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})"  ignore="ignore"  value="<fmt:formatDate value='${poVal.bpiPayDate}' type="date" pattern="yyyy-MM-dd hh:mm:ss"/>"/>
+							<input name="busPayInfoList[0].bpiPayDate" maxlength="32" type="text" class="Wdate" onClick="WdatePicker()"  ignore="ignore"  value="<fmt:formatDate value='${poVal.bpiPayDate}' type="date" pattern="yyyy-MM-dd"/>"/>
 					  <label class="Validform_label" style="display: none;">支付时间</label>
 					</td>
 				  <td align="right">
@@ -211,7 +187,7 @@ $(document).ready(function(){
 									</label>
 					</td>
 				  <td class="value">
-							<t:dictSelect field="busPayInfoList[0].bpiFeeDetail" type="list"  typeGroupCode=""  defaultVal="${poVal.bpiFeeDetail}" hasLabel="false"  title="费用明细"></t:dictSelect>     
+					  	<input name="busPayInfoList[0].bpiFeeDetail" maxlength="20" type="text" class="inputxt"  ignore="ignore"  value="${poVal.bpiFeeDetail }"/>
 					  <label class="Validform_label" style="display: none;">费用明细</label>
 					</td>
 				  <td align="right">
@@ -220,67 +196,48 @@ $(document).ready(function(){
 									</label>
 					</td>
 				  <td class="value">
-							<t:dictSelect field="busPayInfoList[0].bpiContent" type="list"  typeGroupCode=""  defaultVal="${poVal.bpiContent}" hasLabel="false"  title="内容"></t:dictSelect>     
+					  	<input name="busPayInfoList[0].bpiContent" maxlength="20" type="text" class="inputxt"  ignore="ignore"  value="${poVal.bpiContent }"/>
 					  <label class="Validform_label" style="display: none;">内容</label>
 					</td>
 				</tr>
-<<<<<<< HEAD
-				
-				<tr hidden="hidden">
-				  <td align="right" hidden="hidden">
-					<label class="Validform_label">
-										业务外键:
-					</label>
-					</td>
-				  <td class="value"  hidden="hidden">
-					  	<input name="busPayInfoList[0].bpiBusId" maxlength="32" type="text" class="inputxt"  ignore="ignore"  value="${poVal.bpiBusId }"/>
-					  <label class="Validform_label" style="display: none;">业务外键</label>
-					</td>
-				  <td align="right" hidden="hidden">
-					<label class="Validform_label">
-										项目管理外键:
-									</label>
-					</td>
-				  <td class="value" hidden="hidden">
-					  	<input name="busPayInfoList[0].fromProjmId" maxlength="32" type="text" class="inputxt"  ignore="ignore"  value="${poVal.fromProjmId }"/>
-					  <label class="Validform_label" style="display: none;">项目管理外键</label>
-					</td>
-				</tr>
-				<tr hidden="hidden">
-				  <td align="right" hidden="hidden">
-					<label class="Validform_label">
-										银行账号信息外键:
-									</label>
-					</td>
-				  <td class="value"  hidden="hidden">
-					  	<input name="busPayInfoList[0].fromBankAccId" maxlength="32" type="text" class="inputxt"  ignore="ignore"  value="${poVal.fromBankAccId }"/>
-					  <label class="Validform_label" style="display: none;">银行账号信息外键</label>
-					</td>
-				</tr>
-				
-				<tr>
-				<td align="right">
-					<label class="Validform_label">
-										账号简称:
-									</label>
-					</td>
-				  <td class="value">
-							 		<input  id="busPayInfoList[0].bbaiSname" name="busPayInfoList[0].bbaiSname" type="text" style="width: 150px" class="searchbox-inputtext"  value="${poVal.bbaiSname }"   ignore="ignore"   onclick="popupClick(this,'bbai_sname,id','bbaiSname,fromBankAccId','ax_bas_bank_account_info')"/> 			 
-					  <label class="Validform_label" style="display: none;">账号简称</label>
-					</td>
-				  <td align="right">
-					<label class="Validform_label">
-=======
 			<tr>
 				  <td align="right">
 					<label class="Validform_label">
->>>>>>> e4fec7fd75dd263d36c24ac0516ef25f534e83a0
 										凭证号:
 									</label>
 					</td>
 				  <td class="value">
 					  	<input name="busPayInfoList[0].bpiVoucherno" maxlength="20" type="text" class="inputxt"  ignore="ignore"  value="${poVal.bpiVoucherno }"/>
 					  <label class="Validform_label" style="display: none;">凭证号</label>
+					</td>
+				  <td align="right">
+					<label class="Validform_label">
+										项目管理外键:
+									</label>
+					</td>
+				  <td class="value">
+					  	<input name="busPayInfoList[0].fromProjmId" maxlength="32" type="text" class="inputxt"  ignore="ignore"  value="${poVal.fromProjmId }"/>
+					  <label class="Validform_label" style="display: none;">项目管理外键</label>
+					</td>
+				</tr>
+			<tr>
+				  <td align="right">
+					<label class="Validform_label">
+										采购付款单外键:
+									</label>
+					</td>
+				  <td class="value">
+					  	<input name="busPayInfoList[0].fromPayId" maxlength="32" type="text" class="inputxt"  ignore="ignore"  value="${poVal.fromPayId }"/>
+					  <label class="Validform_label" style="display: none;">采购付款单外键</label>
+					</td>
+				  <td align="right">
+					<label class="Validform_label">
+										银行账号信息外键:
+									</label>
+					</td>
+				  <td class="value">
+					  	<input name="busPayInfoList[0].fromBankAccId" maxlength="32" type="text" class="inputxt"  ignore="ignore"  value="${poVal.fromBankAccId }"/>
+					  <label class="Validform_label" style="display: none;">银行账号信息外键</label>
 					</td>
 				</tr>
 		</c:forEach>

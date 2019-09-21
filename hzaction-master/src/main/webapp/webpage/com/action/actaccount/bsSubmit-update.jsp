@@ -46,12 +46,12 @@
 	<table cellpadding="0" cellspacing="1" class="formtable">
 		<tr>
 			<td align="right">
-				<label class="Validform_label">项目:</label>
+				<label class="Validform_label">项目名称:</label>
 			</td>
 			<td class="value">
-					<t:dictSelect field="projectName" type="list"   typeGroupCode="proj_name"  defaultVal="${bsSubmitPage.projectName}" hasLabel="false"  title="项目"></t:dictSelect>     
+		     	 <input id="projectName" name="projectName" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${bsSubmitPage.projectName}'/>
 				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">项目</label>
+				<label class="Validform_label" style="display: none;">项目名称</label>
 			</td>
 			<td align="right">
 				<label class="Validform_label">项目编号:</label>
@@ -103,28 +103,38 @@
 				<label class="Validform_label">报销日期:</label>
 			</td>
 			<td class="value">
-					  <input id="bsSubmitDate" name="bsSubmitDate" type="text" style="width: 150px"   ignore="ignore"  value='<fmt:formatDate value='${bsSubmitPage.bsSubmitDate}' type="date" pattern="yyyy-MM-dd"/>'/>
+					  <input id="bsSubmitDate" name="bsSubmitDate" type="text" style="width: 150px"   ignore="ignore"  value='<fmt:formatDate value='${bsSubmitPage.bsSubmitDate}' type="date" pattern="yyyy-MM-dd hh:mm:ss"/>'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">报销日期</label>
 			</td>
 			<td align="right">
-				<label class="Validform_label">票据类型:</label>
+				<label class="Validform_label">备注:</label>
 			</td>
 			<td class="value">
-					<t:dictSelect field="bsBillType" type="radio"   typeGroupCode="billType"  defaultVal="${bsSubmitPage.bsBillType}" hasLabel="false"  title="票据类型"></t:dictSelect>     
+		     	 <input id="bsRemarks" name="bsRemarks" type="text" maxlength="500" style="width: 150px" class="inputxt"  ignore="ignore"  value='${bsSubmitPage.bsRemarks}'/>
 				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">票据类型</label>
+				<label class="Validform_label" style="display: none;">备注</label>
 			</td>
 		</tr>
 		<tr>
 			<td align="right">
+				<label class="Validform_label">票据类型:</label>
+			</td>
+			<td class="value">
+					<t:dictSelect field="bsBillType" type="radio"   typeGroupCode="bill_type"  defaultVal="${bsSubmitPage.bsBillType}" hasLabel="false"  title="票据类型"></t:dictSelect>     
+				<span class="Validform_checktip"></span>
+				<label class="Validform_label" style="display: none;">票据类型</label>
+			</td>
+			<td align="right">
 				<label class="Validform_label">单据状态:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bsState" name="bsState" type="text" maxlength="20" style="width: 150px" class="inputxt"  ignore="ignore"  value='${bsSubmitPage.bsState}'/>
+					<t:dictSelect field="bsState" type="list"   typeGroupCode="bs_state"  defaultVal="${bsSubmitPage.bsState}" hasLabel="false"  title="单据状态"></t:dictSelect>     
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">单据状态</label>
 			</td>
+		</tr>
+		<tr>
 			<td align="right">
 				<label class="Validform_label">报销总金额:</label>
 			</td>
@@ -133,8 +143,6 @@
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">报销总金额</label>
 			</td>
-		</tr>
-		<tr>
 			<td align="right">
 				<label class="Validform_label">报销总金额大写:</label>
 			</td>
@@ -143,11 +151,13 @@
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">报销总金额大写</label>
 			</td>
+		</tr>
+		<tr>
 			<td align="right">
 				<label class="Validform_label">附件:</label>
 			</td>
 			<td class="value">
-		<table id="bsAnnex_fileTable"></table>
+		<table id="bs_annex_fileTable"></table>
 		<div class="form jeecgDetail">
 			<t:upload name="bsAnnex" id="bsAnnex" queueID="filediv_bsAnnex" outhtml="false" uploader="cgUploadController.do?saveFiles"  extend="office" buttonText='添加文件'  onUploadStart="bsAnnexOnUploadStart"> </t:upload>
 			<div class="form" id="filediv_bsAnnex"></div>
@@ -157,7 +167,7 @@
 					$('#bsAnnex').uploadify("settings", "formData", {
 						'cgFormId':cgFormId,
 						'cgFormName':'bs_submit',
-						'cgFormField':'bsAnnex'
+						'cgFormField':'BS_ANNEX'
 					});
 				}
 			</script>
@@ -165,25 +175,23 @@
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">附件</label>
 			</td>
+			<td align="right">
+				<label class="Validform_label">项目管理外键:</label>
+			</td>
+			<td class="value">
+		     	 <input id="fromProjmId" name="fromProjmId" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${bsSubmitPage.fromProjmId}'/>
+				<span class="Validform_checktip"></span>
+				<label class="Validform_label" style="display: none;">项目管理外键</label>
+			</td>
 		</tr>
 	
-		<tr>
-			<td align="right">
-				<label class="Validform_label">备注:</label>
-			</td>
-			<td class="value" colspan="3">
-				 <textarea id="bsRemarks" style="width:600px;height:60px;" class="inputxt" rows="6" name="bsRemarks"  ignore="ignore" >${bsSubmitPage.bsRemarks}</textarea>
-				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">备注</label>
-			</td>
-		</tr>
 			</table>
 			<div style="width: auto;height: 200px;">
 				<%-- 增加一个div，用于调节页面大小，否则默认太小 --%>
 				<div style="width:800px;height:1px;"></div>
 				<t:tabs id="tt" iframe="false" tabPosition="top" fit="false">
 				 <t:tab href="bsSubmitController.do?busSubmitDetailList&id=${bsSubmitPage.id}" icon="icon-search" title="费用报销明细" id="busSubmitDetail"></t:tab>
-				 <t:tab href="bsSubmitController.do?busPayInfoList&id=${bsSubmitPage.id}" icon="icon-search" title="财务支付信息" id="busPayInfo"></t:tab>
+				 <t:tab href="bsSubmitController.do?busPayInfoList&id=${bsSubmitPage.id}&id=${bsSubmitPage.id}&id=${bsSubmitPage.id}" icon="icon-search" title="账务支付信息" id="busPayInfo"></t:tab>
 				</t:tabs>
 			</div>
 			</t:formvalid>
@@ -198,16 +206,12 @@
 					  <label class="Validform_label" style="display: none;">序号</label>
 				  </td>
 				  <td align="left">
-							<t:dictSelect field="busSubmitDetailList[#index#].bsdFeeType" type="list"   typeGroupCode="moneyType"  defaultVal="" hasLabel="false"  title="费用类型"></t:dictSelect>     
+							<t:dictSelect field="busSubmitDetailList[#index#].bsdFeeType" type="list"   typeGroupCode="cost_type"  defaultVal="" hasLabel="false"  title="费用类型"></t:dictSelect>     
 					  <label class="Validform_label" style="display: none;">费用类型</label>
 				  </td>
 				  <td align="left">
 					  		<input name="busSubmitDetailList[#index#].bsdAmount" maxlength="32" type="text" class="inputxt"  style="width:120px;"  datatype="/^(-?\d+)(\.\d+)?$/"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">报销金额</label>
-				  </td>
-				  <td align="left">
-					  		<input name="busSubmitDetailList[#index#].bsdAmountCn" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
-					  <label class="Validform_label" style="display: none;">报销金额大写</label>
 				  </td>
 				  <td align="left">
 					  		<input name="busSubmitDetailList[#index#].bsdDesc" maxlength="500" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
@@ -220,15 +224,15 @@
 			 <td align="center"><div style="width: 25px;" name="xh"></div></td>
 			 <td align="center"><input style="width:20px;" type="checkbox" name="ck"/></td>
 				  <td align="left">
-							<t:dictSelect field="busPayInfoList[#index#].bpiPayMethod" type="list"   typeGroupCode=""  defaultVal="" hasLabel="false"  title="支付方式"></t:dictSelect>     
+					  		<input name="busPayInfoList[#index#].bpiClass" maxlength="30" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
+					  <label class="Validform_label" style="display: none;">功能分类</label>
+				  </td>
+				  <td align="left">
+					  		<input name="busPayInfoList[#index#].bpiPayMethod" maxlength="20" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">支付方式</label>
 				  </td>
 				  <td align="left">
-							<t:dictSelect field="busPayInfoList[#index#].bpiBankNo" type="list"   typeGroupCode=""  defaultVal="" hasLabel="false"  title="银行账号"></t:dictSelect>     
-					  <label class="Validform_label" style="display: none;">银行账号</label>
-				  </td>
-				  <td align="left">
-					      	<input name="busPayInfoList[#index#].bpiPayDate" maxlength="32"  ignore="ignore"  type="text"  class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})"  style="width:150px;" />
+							<input name="busPayInfoList[#index#].bpiPayDate" maxlength="32" type="text" class="Wdate" onClick="WdatePicker()"  style="width:150px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">支付时间</label>
 				  </td>
 				  <td align="left">
@@ -236,16 +240,28 @@
 					  <label class="Validform_label" style="display: none;">费用类别</label>
 				  </td>
 				  <td align="left">
-							<t:dictSelect field="busPayInfoList[#index#].bpiFeeDetail" type="list"   typeGroupCode=""  defaultVal="" hasLabel="false"  title="费用明细"></t:dictSelect>     
+					  		<input name="busPayInfoList[#index#].bpiFeeDetail" maxlength="20" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">费用明细</label>
 				  </td>
 				  <td align="left">
-							<t:dictSelect field="busPayInfoList[#index#].bpiContent" type="list"   typeGroupCode=""  defaultVal="" hasLabel="false"  title="内容"></t:dictSelect>     
+					  		<input name="busPayInfoList[#index#].bpiContent" maxlength="20" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">内容</label>
 				  </td>
 				  <td align="left">
 					  		<input name="busPayInfoList[#index#].bpiVoucherno" maxlength="20" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">凭证号</label>
+				  </td>
+				  <td align="left">
+					  		<input name="busPayInfoList[#index#].fromProjmId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
+					  <label class="Validform_label" style="display: none;">项目管理外键</label>
+				  </td>
+				  <td align="left">
+					  		<input name="busPayInfoList[#index#].fromPayId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
+					  <label class="Validform_label" style="display: none;">采购付款单外键</label>
+				  </td>
+				  <td align="left">
+					  		<input name="busPayInfoList[#index#].fromBankAccId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
+					  <label class="Validform_label" style="display: none;">银行账号信息外键</label>
 				  </td>
 			</tr>
 		 </tbody>

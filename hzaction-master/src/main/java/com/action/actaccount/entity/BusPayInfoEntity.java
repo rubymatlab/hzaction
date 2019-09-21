@@ -19,9 +19,9 @@ import org.jeecgframework.poi.excel.annotation.Excel;
 
 /**   
  * @Title: Entity
- * @Description: 财务支付信息实体
+ * @Description: 账务支付信息
  * @author onlineGenerator
- * @date 2019-08-19 18:01:51
+ * @date 2019-09-18 18:41:19
  * @version V1.0   
  *
  */
@@ -52,8 +52,10 @@ public class BusPayInfoEntity implements java.io.Serializable {
 	/**功能分类*/
 	@Excel(name="功能分类",width=15)
 	private java.lang.String bpiClass;
+	/**业务外键*/
+	private java.lang.String bpiBusId;
 	/**支付方式*/
-	@Excel(name="支付方式",width=15,dicCode="bus_pa_way")
+	@Excel(name="支付方式",width=15)
 	private java.lang.String bpiPayMethod;
 	/**支付时间*/
 	@Excel(name="支付时间",width=15,format = "yyyy-MM-dd")
@@ -62,7 +64,7 @@ public class BusPayInfoEntity implements java.io.Serializable {
 	@Excel(name="费用类别",width=15,dicCode="cost_type")
 	private java.lang.String bpiFeeType;
 	/**费用明细*/
-	@Excel(name="费用明细",width=15,dicCode="cost_type")
+	@Excel(name="费用明细",width=15)
 	private java.lang.String bpiFeeDetail;
 	/**内容*/
 	@Excel(name="内容",width=15)
@@ -70,21 +72,15 @@ public class BusPayInfoEntity implements java.io.Serializable {
 	/**凭证号*/
 	@Excel(name="凭证号",width=15)
 	private java.lang.String bpiVoucherno;
-
-	/**业务外键*/
-	@Excel(name="业务外键",width=15)
-	private java.lang.String bpiBusId;
 	/**项目管理外键*/
 	@Excel(name="项目管理外键",width=15)
 	private java.lang.String fromProjmId;
 	/**采购付款单外键*/
+	@Excel(name="采购付款单外键",width=15)
 	private java.lang.String fromPayId;
 	/**银行账号信息外键*/
 	@Excel(name="银行账号信息外键",width=15)
 	private java.lang.String fromBankAccId;
-	/**账号简称*/
-	@Excel(name="账号简称",width=15)
-	private java.lang.String bbaiSname;
 	
 	/**
 	 *方法: 取得java.lang.String
@@ -289,6 +285,24 @@ public class BusPayInfoEntity implements java.io.Serializable {
 	
 	/**
 	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  业务外键
+	 */
+	
+	@Column(name ="BPI_BUS_ID",nullable=true,length=32)
+	public java.lang.String getBpiBusId(){
+		return this.bpiBusId;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  业务外键
+	 */
+	public void setBpiBusId(java.lang.String bpiBusId){
+		this.bpiBusId = bpiBusId;
+	}
+	
+	/**
+	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  支付方式
 	 */
 	
@@ -395,25 +409,6 @@ public class BusPayInfoEntity implements java.io.Serializable {
 		this.bpiVoucherno = bpiVoucherno;
 	}
 	
-
-	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  业务外键
-	 */
-	
-	@Column(name ="BPI_BUS_ID",nullable=true,length=32)
-	public java.lang.String getBpiBusId(){
-		return this.bpiBusId;
-	}
-
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  业务外键
-	 */
-	public void setBpiBusId(java.lang.String bpiBusId){
-		this.bpiBusId = bpiBusId;
-	}
-	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  项目管理外键
@@ -466,24 +461,6 @@ public class BusPayInfoEntity implements java.io.Serializable {
 	 */
 	public void setFromBankAccId(java.lang.String fromBankAccId){
 		this.fromBankAccId = fromBankAccId;
-	}
-	
-	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  账号简称
-	 */
-	
-	@Column(name ="BBAI_SNAME",nullable=true,length=32)
-	public java.lang.String getBbaiSname(){
-		return this.bbaiSname;
-	}
-
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  账号简称
-	 */
-	public void setBbaiSname(java.lang.String bbaiSname){
-		this.bbaiSname = bbaiSname;
 	}
 	
 }

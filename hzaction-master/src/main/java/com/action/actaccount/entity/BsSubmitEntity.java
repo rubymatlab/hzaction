@@ -21,7 +21,7 @@ import org.jeecgframework.poi.excel.annotation.Excel;
  * @Title: Entity
  * @Description: 费用报销
  * @author onlineGenerator
- * @date 2019-08-02 15:55:01
+ * @date 2019-09-18 18:41:19
  * @version V1.0   
  *
  */
@@ -89,6 +89,7 @@ public class BsSubmitEntity implements java.io.Serializable {
 	@Excel(name="附件",width=15)
 	private java.lang.String bsAnnex;
 	/**项目管理外键*/
+	@Excel(name="项目管理外键",width=15)
 	private java.lang.String fromProjmId;
 	
 	/**

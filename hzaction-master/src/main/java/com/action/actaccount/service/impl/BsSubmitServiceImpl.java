@@ -49,7 +49,7 @@ public class BsSubmitServiceImpl extends CommonServiceImpl implements BsSubmitSe
 				busSubmitDetail.setFromId(bsSubmit.getId());
 				this.save(busSubmitDetail);
 			}
-			/**保存-财务支付信息*/
+			/**保存-账务支付信息*/
 			for(BusPayInfoEntity busPayInfo:busPayInfoList){
 				//外键设置
 				busPayInfo.setBpiBusId(bsSubmit.getId());
@@ -80,6 +80,8 @@ public class BsSubmitServiceImpl extends CommonServiceImpl implements BsSubmitSe
 		//===================================================================================
 		//获取参数
 		Object id0 = bsSubmit.getId();
+		Object id1 = bsSubmit.getId();
+		Object id1 = bsSubmit.getId();
 		Object id1 = bsSubmit.getId();
 		//===================================================================================
 		//1.查询出数据库的明细数据-费用报销明细
@@ -119,46 +121,46 @@ public class BsSubmitServiceImpl extends CommonServiceImpl implements BsSubmitSe
 			}
 		}
 		//===================================================================================
-		//1.查询出数据库的明细数据-财务支付信息
-	    String hql1 = "from BusPayInfoEntity where 1 = 1 AND bpiBusId = ? ";
-	    List<BusPayInfoEntity> busPayInfoOldList = this.findHql(hql1,id1);
-	  //2.筛选更新明细数据-财务支付信息
-	  		if(busPayInfoList!=null&&busPayInfoList.size()>0){
-	  		for(BusPayInfoEntity oldE:busPayInfoOldList){
-	  			boolean isUpdate = false;
-	  				for(BusPayInfoEntity sendE:busPayInfoList){
-	  					//需要更新的明细数据-财务支付信息
-	  					if(oldE.getId().equals(sendE.getId())){
-	  		    			try {
-	  							MyBeanUtils.copyBeanNotNull2Bean(sendE,oldE);
-	  							this.saveOrUpdate(oldE);
-	  						} catch (Exception e) {
-	  							e.printStackTrace();
-	  							throw new BusinessException(e.getMessage());
-	  						}
-	  						isUpdate= true;
-	  		    			break;
-	  		    		}
-	  		    	}
-	  	    		if(!isUpdate){
-	  		    		//如果数据库存在的明细，前台没有传递过来则是删除-财务支付信息
-	  		    		super.delete(oldE);
-	  	    		}
-	  	    		
-	  			}
-	  			//3.持久化新增的数据-财务支付信息
-	  			for(BusPayInfoEntity busPayInfo:busPayInfoList){
-	  				if(oConvertUtils.isEmpty(busPayInfo.getId())){
-	  					//外键设置
-	  					busPayInfo.setBpiBusId(bsSubmit.getId());
-	  					busPayInfo.setFromPayId(bsSubmit.getId());
-	  					busPayInfo.setFromBankAccId(bsSubmit.getId());
-	  					this.save(busPayInfo);
-	  				}
-	  			}
-	  		}
-	  		//执行更新操作增强业务
-	   		this.doUpdateBus(bsSubmit);
+		//1.查询出数据库的明细数据-账务支付信息
+	    String hql1 = "from BusPayInfoEntity where 1 = 1 AND bpiBusId = ?  AND fromPayId = ?  AND fromBankAccId = ? ";
+	    List<BusPayInfoEntity> busPayInfoOldList = this.findHql(hql1,id1,id1,id1);
+		//2.筛选更新明细数据-账务支付信息
+		if(busPayInfoList!=null&&busPayInfoList.size()>0){
+		for(BusPayInfoEntity oldE:busPayInfoOldList){
+			boolean isUpdate = false;
+				for(BusPayInfoEntity sendE:busPayInfoList){
+					//需要更新的明细数据-账务支付信息
+					if(oldE.getId().equals(sendE.getId())){
+		    			try {
+							MyBeanUtils.copyBeanNotNull2Bean(sendE,oldE);
+							this.saveOrUpdate(oldE);
+						} catch (Exception e) {
+							e.printStackTrace();
+							throw new BusinessException(e.getMessage());
+						}
+						isUpdate= true;
+		    			break;
+		    		}
+		    	}
+	    		if(!isUpdate){
+		    		//如果数据库存在的明细，前台没有传递过来则是删除-账务支付信息
+		    		super.delete(oldE);
+	    		}
+	    		
+			}
+			//3.持久化新增的数据-账务支付信息
+			for(BusPayInfoEntity busPayInfo:busPayInfoList){
+				if(oConvertUtils.isEmpty(busPayInfo.getId())){
+					//外键设置
+					busPayInfo.setBpiBusId(bsSubmit.getId());
+					busPayInfo.setFromPayId(bsSubmit.getId());
+					busPayInfo.setFromBankAccId(bsSubmit.getId());
+					this.save(busPayInfo);
+				}
+			}
+		}
+		//执行更新操作增强业务
+ 		this.doUpdateBus(bsSubmit);
 	}
 
 	public void delMain(BsSubmitEntity bsSubmit) throws Exception{
@@ -168,15 +170,17 @@ public class BsSubmitServiceImpl extends CommonServiceImpl implements BsSubmitSe
 		//获取参数
 		Object id0 = bsSubmit.getId();
 		Object id1 = bsSubmit.getId();
+		Object id1 = bsSubmit.getId();
+		Object id1 = bsSubmit.getId();
 		//===================================================================================
 		//删除-费用报销明细
 	    String hql0 = "from BusSubmitDetailEntity where 1 = 1 AND fromId = ? ";
 	    List<BusSubmitDetailEntity> busSubmitDetailOldList = this.findHql(hql0,id0);
 		this.deleteAllEntitie(busSubmitDetailOldList);
 		//===================================================================================
-		//删除-财务支付信息
-	    String hql1 = "from BusPayInfoEntity where 1 = 1 AND bpiBusId = ? ";
-	    List<BusPayInfoEntity> busPayInfoOldList = this.findHql(hql1,id1);
+		//删除-账务支付信息
+	    String hql1 = "from BusPayInfoEntity where 1 = 1 AND bpiBusId = ?  AND fromPayId = ?  AND fromBankAccId = ? ";
+	    List<BusPayInfoEntity> busPayInfoOldList = this.findHql(hql1,id1,id1,id1);
 		this.deleteAllEntitie(busPayInfoOldList);
 		
  		////执行删除操作增强业务
@@ -187,10 +191,10 @@ public class BsSubmitServiceImpl extends CommonServiceImpl implements BsSubmitSe
 	 * @param id
 	 * @return
 	 */
-	 public void doUnaudited(BsSubmitEntity t) throws Exception{
+	 public void doUnauditedBus(BsSubmitEntity t) throws Exception{
 	 	//-----------------sql增强 start----------------------------
 	 	//sql增强第1条
-	 	String sqlEnhance_1 ="update bs_submit set bs_state=1 where id=#{id}";
+	 	String sqlEnhance_1 ="UPDATE  bs_submit SET   bs_state=1 WHERE id = #{id}";
 	 	this.executeSqlEnhance(sqlEnhance_1,t);
 	 	//-----------------sql增强 end------------------------------
 	 	
@@ -202,10 +206,35 @@ public class BsSubmitServiceImpl extends CommonServiceImpl implements BsSubmitSe
 	 * @param id
 	 * @return
 	 */
-	 public void doAudited(BsSubmitEntity t) throws Exception{
+	 public void doAuditedBus(BsSubmitEntity t) throws Exception{
 	 	//-----------------sql增强 start----------------------------
-		 String sqlEnhance_1 ="update bs_submit set bs_state=2 where id=#{id}";
-		 	this.executeSqlEnhance(sqlEnhance_1,t);
+	 	//sql增强第1条
+	 	String sqlEnhance_1 ="UPDATE bs_submit  SET  bs_state=2 WHERE id = #{id}";
+	 	this.executeSqlEnhance(sqlEnhance_1,t);
+	 	//-----------------sql增强 end------------------------------
+	 	
+	 	//-----------------java增强 start---------------------------
+	 	//-----------------java增强 end-----------------------------
+	 }
+ 	/**
+	 * 自定义按钮-[支付]业务处理
+	 * @param id
+	 * @return
+	 */
+	 public void doPayBus(BsSubmitEntity t) throws Exception{
+	 	//-----------------sql增强 start----------------------------
+	 	//-----------------sql增强 end------------------------------
+	 	
+	 	//-----------------java增强 start---------------------------
+	 	//-----------------java增强 end-----------------------------
+	 }
+ 	/**
+	 * 自定义按钮-[打印]业务处理
+	 * @param id
+	 * @return
+	 */
+	 public void doPrintBus(BsSubmitEntity t) throws Exception{
+	 	//-----------------sql增强 start----------------------------
 	 	//-----------------sql增强 end------------------------------
 	 	
 	 	//-----------------java增强 start---------------------------
@@ -219,8 +248,6 @@ public class BsSubmitServiceImpl extends CommonServiceImpl implements BsSubmitSe
 	 */
 	private void doAddBus(BsSubmitEntity t) throws Exception{
 		//-----------------sql增强 start----------------------------
-	 	//sql增强第1条
-	 	
 	 	//-----------------sql增强 end------------------------------
 	 	
 	 	//-----------------java增强 start---------------------------
@@ -258,15 +285,15 @@ public class BsSubmitServiceImpl extends CommonServiceImpl implements BsSubmitSe
 	 */
  	public String replaceVal(String sql,BsSubmitEntity t){
  		sql  = sql.replace("#{id}",String.valueOf(t.getId()));
+ 		sql  = sql.replace("#{bpm_status}",String.valueOf(t.getBpmStatus()));
  		sql  = sql.replace("#{create_name}",String.valueOf(t.getCreateName()));
  		sql  = sql.replace("#{create_by}",String.valueOf(t.getCreateBy()));
- 		sql  = sql.replace("#{create_date}",String.valueOf(t.getCreateDate()));
  		sql  = sql.replace("#{update_name}",String.valueOf(t.getUpdateName()));
  		sql  = sql.replace("#{update_by}",String.valueOf(t.getUpdateBy()));
- 		sql  = sql.replace("#{update_date}",String.valueOf(t.getUpdateDate()));
  		sql  = sql.replace("#{sys_org_code}",String.valueOf(t.getSysOrgCode()));
  		sql  = sql.replace("#{sys_company_code}",String.valueOf(t.getSysCompanyCode()));
- 		sql  = sql.replace("#{bpm_status}",String.valueOf(t.getBpmStatus()));
+ 		sql  = sql.replace("#{create_date}",String.valueOf(t.getCreateDate()));
+ 		sql  = sql.replace("#{update_date}",String.valueOf(t.getUpdateDate()));
  		sql  = sql.replace("#{project_name}",String.valueOf(t.getProjectName()));
  		sql  = sql.replace("#{project_id}",String.valueOf(t.getProjectId()));
  		sql  = sql.replace("#{bs_submiter}",String.valueOf(t.getBsSubmiter()));
@@ -311,15 +338,15 @@ public class BsSubmitServiceImpl extends CommonServiceImpl implements BsSubmitSe
  	private Map<String,Object> populationMap(BsSubmitEntity t){
 		Map<String,Object> map = new HashMap<String,Object>();
 		map.put("id", t.getId());
+		map.put("bpm_status", t.getBpmStatus());
 		map.put("create_name", t.getCreateName());
 		map.put("create_by", t.getCreateBy());
-		map.put("create_date", t.getCreateDate());
 		map.put("update_name", t.getUpdateName());
 		map.put("update_by", t.getUpdateBy());
-		map.put("update_date", t.getUpdateDate());
 		map.put("sys_org_code", t.getSysOrgCode());
 		map.put("sys_company_code", t.getSysCompanyCode());
-		map.put("bpm_status", t.getBpmStatus());
+		map.put("create_date", t.getCreateDate());
+		map.put("update_date", t.getUpdateDate());
 		map.put("project_name", t.getProjectName());
 		map.put("project_id", t.getProjectId());
 		map.put("bs_submiter", t.getBsSubmiter());
@@ -360,6 +387,4 @@ public class BsSubmitServiceImpl extends CommonServiceImpl implements BsSubmitSe
 			}
 		}
  	}
-
-
 }

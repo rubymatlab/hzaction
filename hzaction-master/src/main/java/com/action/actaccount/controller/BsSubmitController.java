@@ -76,7 +76,7 @@ import java.util.HashMap;
  * @Title: Controller
  * @Description: 费用报销
  * @author onlineGenerator
- * @date 2019-09-18 18:41:19
+ * @date 2019-09-22 16:05:41
  * @version V1.0   
  *
  */
@@ -104,6 +104,34 @@ public class BsSubmitController extends BaseController {
 	public ModelAndView list(HttpServletRequest request) {
 		return new ModelAndView("com/action/actaccount/bsSubmitList");
 	}
+	
+	/**
+	 * 费用报销列表 页面跳转
+	 * 
+	 * @return
+	 */
+	@RequestMapping(params = "list0")
+	public ModelAndView list0(HttpServletRequest request) {
+		return new ModelAndView("com/action/actaccount/bsSubmitList0");
+	}
+	/**
+	 * 费用报销列表 页面跳转
+	 * 
+	 * @return
+	 */
+	@RequestMapping(params = "list1")
+	public ModelAndView list1(HttpServletRequest request) {
+		return new ModelAndView("com/action/actaccount/bsSubmitList1");
+	}
+	/**
+	 * 费用报销列表 页面跳转
+	 * 
+	 * @return
+	 */
+	@RequestMapping(params = "list2")
+	public ModelAndView list2(HttpServletRequest request) {
+		return new ModelAndView("com/action/actaccount/bsSubmitList2");
+	}
 
 	/**
 	 * easyui AJAX请求数据
@@ -117,6 +145,15 @@ public class BsSubmitController extends BaseController {
 	@RequestMapping(params = "datagrid")
 	public void datagrid(BsSubmitEntity bsSubmit,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
 		CriteriaQuery cq = new CriteriaQuery(BsSubmitEntity.class, dataGrid);
+		String bsState = request.getParameter("bsstate");
+		bsSubmit.setBsState(bsState);
+		//模糊查询-客户名称
+		if(bsSubmit.getProjectName()!=null) {
+			bsSubmit.setProjectName("*"+bsSubmit.getProjectName()+"*");
+		}
+		if(bsSubmit.getBsSubmiter()!=null) {
+			bsSubmit.setBsSubmiter("*"+bsSubmit.getBsSubmiter()+"*");
+		}
 		//查询条件组装器
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, bsSubmit, request.getParameterMap());
 		try{
@@ -281,7 +318,7 @@ public class BsSubmitController extends BaseController {
 		return new ModelAndView("com/action/actaccount/busSubmitDetailList");
 	}
 	/**
-	 * 加载明细列表[账务支付信息]
+	 * 加载明细列表[支付信息]
 	 * 
 	 * @return
 	 */
@@ -291,13 +328,11 @@ public class BsSubmitController extends BaseController {
 		//===================================================================================
 		//获取参数
 		Object id1 = bsSubmit.getId();
-		Object id1 = bsSubmit.getId();
-		Object id1 = bsSubmit.getId();
 		//===================================================================================
-		//查询-账务支付信息
-	    String hql1 = "from BusPayInfoEntity where 1 = 1 AND bpiBusId = ?  AND fromPayId = ?  AND fromBankAccId = ? ";
+		//查询-支付信息
+	    String hql1 = "from BusPayInfoEntity where 1 = 1 AND fromId = ? ";
 	    try{
-	    	List<BusPayInfoEntity> busPayInfoEntityList = systemService.findHql(hql1,id1,id1,id1);
+	    	List<BusPayInfoEntity> busPayInfoEntityList = systemService.findHql(hql1,id1);
 			req.setAttribute("busPayInfoList", busPayInfoEntityList);
 		}catch(Exception e){
 			logger.info(e.getMessage());
@@ -334,10 +369,8 @@ public class BsSubmitController extends BaseController {
         	        List<BusSubmitDetailEntity> busSubmitDetailEntityList = systemService.findHql(hql0,id0);
             		page.setBusSubmitDetailList(busSubmitDetailEntityList);
             	    Object id1 = entity.getId();
-            	    Object id1 = entity.getId();
-            	    Object id1 = entity.getId();
-				    String hql1 = "from BusPayInfoEntity where 1 = 1 AND bpiBusId = ?  AND fromPayId = ?  AND fromBankAccId = ? ";
-        	        List<BusPayInfoEntity> busPayInfoEntityList = systemService.findHql(hql1,id1,id1,id1);
+				    String hql1 = "from BusPayInfoEntity where 1 = 1 fromId = ? ";
+        	        List<BusPayInfoEntity> busPayInfoEntityList = systemService.findHql(hql1,id1);
             		page.setBusPayInfoList(busPayInfoEntityList);
             		pageList.add(page);
             	}catch(Exception e){
@@ -428,7 +461,9 @@ public class BsSubmitController extends BaseController {
 		String message = "送审成功";
 		BsSubmitEntity t = bsSubmitService.get(BsSubmitEntity.class, bsSubmit.getId());
 		try{
-			bsSubmitService.doUnauditedSql(t);
+			t.setBsState("1");
+			bsSubmitService.saveOrUpdate(t);
+			//bsSubmitService.doUnauditedSql(t);
 			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();
@@ -449,7 +484,9 @@ public class BsSubmitController extends BaseController {
 		String message = "审核完成成功";
 		BsSubmitEntity t = bsSubmitService.get(BsSubmitEntity.class, bsSubmit.getId());
 		try{
-			bsSubmitService.doAuditedSql(t);
+			t.setBsState("2");
+			bsSubmitService.saveOrUpdate(t);
+			//bsSubmitService.doAuditedSql(t);
 			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();
@@ -470,7 +507,7 @@ public class BsSubmitController extends BaseController {
 		String message = "支付成功";
 		BsSubmitEntity t = bsSubmitService.get(BsSubmitEntity.class, bsSubmit.getId());
 		try{
-			bsSubmitService.doPaySql(t);
+			//bsSubmitService.doPaySql(t);
 			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();
@@ -491,7 +528,7 @@ public class BsSubmitController extends BaseController {
 		String message = "打印成功";
 		BsSubmitEntity t = bsSubmitService.get(BsSubmitEntity.class, bsSubmit.getId());
 		try{
-			bsSubmitService.doPrintSql(t);
+			//bsSubmitService.doPrintSql(t);
 			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();
@@ -520,13 +557,11 @@ public class BsSubmitController extends BaseController {
         		   MyBeanUtils.copyBeanNotNull2Bean(entity,page);
 					Object id0 = entity.getId();
 					Object id1 = entity.getId();
-					Object id1 = entity.getId();
-					Object id1 = entity.getId();
 				     String hql0 = "from BusSubmitDetailEntity where 1 = 1 AND fromId = ? ";
 	    			List<BusSubmitDetailEntity> busSubmitDetailOldList = this.bsSubmitService.findHql(hql0,id0);
             		page.setBusSubmitDetailList(busSubmitDetailOldList);
-				     String hql1 = "from BusPayInfoEntity where 1 = 1 AND bpiBusId = ?  AND fromPayId = ?  AND fromBankAccId = ? ";
-	    			List<BusPayInfoEntity> busPayInfoOldList = this.bsSubmitService.findHql(hql1,id1,id1,id1);
+				     String hql1 = "from BusPayInfoEntity where 1 = 1 AND fromId = ? ";
+	    			List<BusPayInfoEntity> busPayInfoOldList = this.bsSubmitService.findHql(hql1,id1);
             		page.setBusPayInfoList(busPayInfoOldList);
             		pageList.add(page);
             	}catch(Exception e){
@@ -550,13 +585,11 @@ public class BsSubmitController extends BaseController {
 			MyBeanUtils.copyBeanNotNull2Bean(task, page);
 				Object id0 = task.getId();
 				Object id1 = task.getId();
-				Object id1 = task.getId();
-				Object id1 = task.getId();
 		    String hql0 = "from BusSubmitDetailEntity where 1 = 1 AND fromId = ? ";
 			List<BusSubmitDetailEntity> busSubmitDetailOldList = this.bsSubmitService.findHql(hql0,id0);
     		page.setBusSubmitDetailList(busSubmitDetailOldList);
-		    String hql1 = "from BusPayInfoEntity where 1 = 1 AND bpiBusId = ?  AND fromPayId = ?  AND fromBankAccId = ? ";
-			List<BusPayInfoEntity> busPayInfoOldList = this.bsSubmitService.findHql(hql1,id1,id1,id1);
+		    String hql1 = "from BusPayInfoEntity where 1 = 1 AND fromId = ? ";
+			List<BusPayInfoEntity> busPayInfoOldList = this.bsSubmitService.findHql(hql1,id1);
     		page.setBusPayInfoList(busPayInfoOldList);
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -581,11 +614,11 @@ public class BsSubmitController extends BaseController {
 		BsSubmitEntity bsSubmit = new BsSubmitEntity();
 		try{
 			MyBeanUtils.copyBeanNotNull2Bean(bsSubmitPage,bsSubmit);
+			bsSubmitService.addMain(bsSubmit, busSubmitDetailList,busPayInfoList);
 		}catch(Exception e){
             logger.info(e.getMessage());
             return Result.error("保存费用报销失败");
         }
-		bsSubmitService.addMain(bsSubmit, busSubmitDetailList,busPayInfoList);
 
 		return Result.success(bsSubmit);
 	}
@@ -607,11 +640,11 @@ public class BsSubmitController extends BaseController {
 		BsSubmitEntity bsSubmit = new BsSubmitEntity();
 		try{
 			MyBeanUtils.copyBeanNotNull2Bean(bsSubmitPage,bsSubmit);
+			bsSubmitService.updateMain(bsSubmit, busSubmitDetailList,busPayInfoList);
 		}catch(Exception e){
             logger.info(e.getMessage());
             return Result.error("费用报销更新失败");
         }
-		bsSubmitService.updateMain(bsSubmit, busSubmitDetailList,busPayInfoList);
 
 		//按Restful约定，返回204状态码, 无内容. 也可以返回200状态码.
 		return Result.success();

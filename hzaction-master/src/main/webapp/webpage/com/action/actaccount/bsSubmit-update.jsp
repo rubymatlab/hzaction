@@ -43,13 +43,14 @@
  <body style="overflow-x: hidden;">
   <t:formvalid formid="formobj" dialog="true" usePlugin="password" layout="table" tiptype="1" action="bsSubmitController.do?doUpdate" callback="jeecgFormFileCallBack@Override">
 					<input id="id" name="id" type="hidden" value="${bsSubmitPage.id }"/>
+					<input id="fromProjmId" name="fromProjmId" type="hidden" value='${bsSubmitPage.fromProjmId}'/>
 	<table cellpadding="0" cellspacing="1" class="formtable">
 		<tr>
 			<td align="right">
 				<label class="Validform_label">项目名称:</label>
 			</td>
 			<td class="value">
-		     	 <input id="projectName" name="projectName" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${bsSubmitPage.projectName}'/>
+		     	 <input id="projectName" name="projectName" type="text" maxlength="32" readonly="true" style="width: 150px;background-color:#F0F0F0;" class="inputxt"  ignore="ignore"  value='${bsSubmitPage.projectName}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">项目名称</label>
 			</td>
@@ -57,7 +58,7 @@
 				<label class="Validform_label">项目编号:</label>
 			</td>
 			<td class="value">
-		     	 <input id="projectId" name="projectId" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${bsSubmitPage.projectId}'/>
+		     	 <input id="projectId" name="projectId" type="text" maxlength="32" readonly="true" style="width: 150px;background-color:#F0F0F0;" class="inputxt"  ignore="ignore"  value='${bsSubmitPage.projectId}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">项目编号</label>
 			</td>
@@ -147,7 +148,7 @@
 				<label class="Validform_label">报销总金额大写:</label>
 			</td>
 			<td class="value">
-		     	 <input id="totalMoneyCn" name="totalMoneyCn" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${bsSubmitPage.totalMoneyCn}'/>
+		     	 <input id="totalMoneyCn" name="totalMoneyCn" type="text" maxlength="32" readonly="true" style="width: 150px;background-color:#F0F0F0;" class="inputxt"  ignore="ignore"  value='${bsSubmitPage.totalMoneyCn}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">报销总金额大写</label>
 			</td>
@@ -176,12 +177,8 @@
 				<label class="Validform_label" style="display: none;">附件</label>
 			</td>
 			<td align="right">
-				<label class="Validform_label">项目管理外键:</label>
 			</td>
 			<td class="value">
-		     	 <input id="fromProjmId" name="fromProjmId" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${bsSubmitPage.fromProjmId}'/>
-				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">项目管理外键</label>
 			</td>
 		</tr>
 	
@@ -191,7 +188,7 @@
 				<div style="width:800px;height:1px;"></div>
 				<t:tabs id="tt" iframe="false" tabPosition="top" fit="false">
 				 <t:tab href="bsSubmitController.do?busSubmitDetailList&id=${bsSubmitPage.id}" icon="icon-search" title="费用报销明细" id="busSubmitDetail"></t:tab>
-				 <t:tab href="bsSubmitController.do?busPayInfoList&id=${bsSubmitPage.id}&id=${bsSubmitPage.id}&id=${bsSubmitPage.id}" icon="icon-search" title="账务支付信息" id="busPayInfo"></t:tab>
+				 <t:tab href="bsSubmitController.do?busPayInfoList&id=${bsSubmitPage.id}" icon="icon-search" title="支付信息" id="busPayInfo"></t:tab>
 				</t:tabs>
 			</div>
 			</t:formvalid>
@@ -262,6 +259,10 @@
 				  <td align="left">
 					  		<input name="busPayInfoList[#index#].fromBankAccId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">银行账号信息外键</label>
+				  </td>
+				  <td align="left">
+					  		<input name="busPayInfoList[#index#].fromId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
+					  <label class="Validform_label" style="display: none;">费用报销外键</label>
 				  </td>
 			</tr>
 		 </tbody>

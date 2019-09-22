@@ -38,18 +38,72 @@
 	});
 	$(".tabs-wrap").css('width','100%');
   });
+  
+  /*金额大写*/
+  var digitUppercase = function(n) {
+	    var fraction = ['角', '分'];
+	    var digit = [
+	        '零', '壹', '贰', '叁', '肆',
+	        '伍', '陆', '柒', '捌', '玖'
+	    ];
+	    var unit = [
+	        ['元', '万', '亿'],
+	        ['', '拾', '佰', '仟']
+	    ];
+	    var head = n < 0 ? '欠' : '';
+	    n = Math.abs(n);
+	    var s = '';
+	    for (var i = 0; i < fraction.length; i++) {
+	        s += (digit[Math.floor(n * 10 * Math.pow(10, i)) % 10] + fraction[i]).replace(/零./, '');
+	    }
+	    s = s || '整';
+	    n = Math.floor(n);
+	    for (var i = 0; i < unit[0].length && n > 0; i++) {
+	        var p = '';
+	        for (var j = 0; j < unit[1].length && n > 0; j++) {
+	            p = digit[n % 10] + unit[1][j] + p;
+	            n = Math.floor(n / 10);
+	        }
+	        s = p.replace(/(零.)*零$/, '').replace(/^$/, '零') + unit[0][i] + s;
+	    }
+	    return head + s.replace(/(零.)*零元/, '元')
+	        .replace(/(零.)+/g, '零')
+	        .replace(/^整$/, '零元整');
+	}
+  
+  function handleInput()
+  {
+	  var digitNumber=digitUppercase($('#totalMoney').val());
+	  $('#totalMoneyCn').val(digitNumber);
+  }
  </script>
  </head>
  <body style="overflow-x: hidden;">
   <t:formvalid formid="formobj" dialog="true" usePlugin="password" layout="table" tiptype="1" action="bsSubmitController.do?doAdd" callback="jeecgFormFileCallBack@Override">
 					<input id="id" name="id" type="hidden" value="${bsSubmitPage.id }"/>
+					<input id="fromProjmId" name="fromProjmId" type="hidden" />
+				
 	<table cellpadding="0" cellspacing="1" class="formtable">
 		<tr>
 			<td align="right">
 				<label class="Validform_label">项目名称:</label>
 			</td>
 			<td class="value">
-		     	 <input id="projectName" name="projectName" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
+		     	<input id="projectName" name="projectName" type="text" maxlength="100" style="width: 150px" class="easyui-combogrid"  ignore="ignore"
+		     	 data-options="panelWidth: 500,
+		     	 idField: 'bpProjName',
+		     	 textField: 'bpProjName',
+		     	 url: 'vwBusProjectController.do?datagrid&field=id,bpProjId,bpProjName',
+		     	 columns: [[ 
+		     	 	{field:'id',title:'客户ID',width:80}, 
+	                {field:'bpProjId',title:'项目编码',width:80}, 
+	                {field:'bpProjName',title:'项目名称',width:120} 
+                ]],
+                onSelect: function (row,data) {
+                	$('#fromProjmId').val(data.id);
+                	$('#projectId').val(data.bpProjId);
+				},
+                fitColumns: true" />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">项目名称</label>
 			</td>
@@ -57,7 +111,7 @@
 				<label class="Validform_label">项目编号:</label>
 			</td>
 			<td class="value">
-		     	 <input id="projectId" name="projectId" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
+		     	 <input id="projectId" name="projectId" readonly="true" type="text" maxlength="32" style="width: 150px;background-color:#F0F0F0;" class="inputxt"  ignore="ignore" />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">项目编号</label>
 			</td>
@@ -139,7 +193,7 @@
 				<label class="Validform_label">报销总金额:</label>
 			</td>
 			<td class="value">
-		     	 <input id="totalMoney" name="totalMoney" type="text" maxlength="32" style="width: 150px" class="inputxt"  datatype="/^(-?\d+)(\.\d+)?$/"  ignore="ignore" />
+		     	 <input id="totalMoney" name="totalMoney" oninput="handleInput()" type="text" maxlength="32" style="width: 150px" class="inputxt"  datatype="/^(-?\d+)(\.\d+)?$/"  ignore="ignore" />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">报销总金额</label>
 			</td>
@@ -147,7 +201,7 @@
 				<label class="Validform_label">报销总金额大写:</label>
 			</td>
 			<td class="value">
-		     	 <input id="totalMoneyCn" name="totalMoneyCn" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
+		     	 <input id="totalMoneyCn" name="totalMoneyCn" type="text" readonly="true" maxlength="32" style="width: 150px;background-color:#F0F0F0;" class="inputxt"  ignore="ignore" />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">报销总金额大写</label>
 			</td>
@@ -157,31 +211,26 @@
 				<label class="Validform_label">附件:</label>
 			</td>
 			<td class="value">
-		<div class="form jeecgDetail">
-			<t:upload name="bsAnnex" id="bsAnnex" queueID="filediv_bsAnnex" outhtml="false" uploader="cgUploadController.do?saveFiles"  extend="office" buttonText='添加文件'  onUploadStart="bsAnnexOnUploadStart"> </t:upload>
-			<div class="form" id="filediv_bsAnnex"></div>
-			<script type="text/javascript">
-				function bsAnnexOnUploadStart(file){
-					var cgFormId=$("input[name='id']").val();
-					$('#bsAnnex').uploadify("settings", "formData", {
-						'cgFormId':cgFormId,
-						'cgFormName':'bs_submit',
-						'cgFormField':'BS_ANNEX'
-					});
-				}
-			</script>
-		</div>
+				<div class="form jeecgDetail">
+					<t:upload name="bsAnnex" id="bsAnnex" queueID="filediv_bsAnnex" outhtml="false" uploader="cgUploadController.do?saveFiles"  extend="office" buttonText='添加文件'  onUploadStart="bsAnnexOnUploadStart"> </t:upload>
+					<div class="form" id="filediv_bsAnnex"></div>
+					<script type="text/javascript">
+						function bsAnnexOnUploadStart(file){
+							var cgFormId=$("input[name='id']").val();
+							$('#bsAnnex').uploadify("settings", "formData", {
+								'cgFormId':cgFormId,
+								'cgFormName':'bs_submit',
+								'cgFormField':'BS_ANNEX'
+							});
+						}
+					</script>
+				</div>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">附件</label>
 			</td>
-			<td align="right">
-				<label class="Validform_label">项目管理外键:</label>
+			<td>
 			</td>
-			<td class="value">
-		     	 <input id="fromProjmId" name="fromProjmId" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
-				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">项目管理外键</label>
-			</td>
+			<td class="value"></td>
 		</tr>
 	
 	</table>
@@ -190,7 +239,7 @@
 				<div style="width:800px;height:1px;"></div>
 				<t:tabs id="tt" iframe="false" tabPosition="top" fit="false">
 				 <t:tab href="bsSubmitController.do?busSubmitDetailList&id=${bsSubmitPage.id}" icon="icon-search" title="费用报销明细" id="busSubmitDetail"></t:tab>
-				 <t:tab href="bsSubmitController.do?busPayInfoList&id=${bsSubmitPage.id}&id=${bsSubmitPage.id}&id=${bsSubmitPage.id}" icon="icon-search" title="账务支付信息" id="busPayInfo"></t:tab>
+				 <t:tab href="bsSubmitController.do?busPayInfoList&id=${bsSubmitPage.id}" icon="icon-search" title="支付信息" id="busPayInfo"></t:tab>
 				</t:tabs>
 			</div>
 			</t:formvalid>
@@ -250,18 +299,12 @@
 					  	<input name="busPayInfoList[#index#].bpiVoucherno" maxlength="20" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">凭证号</label>
 				  </td>
-				  <td align="left">
-					  	<input name="busPayInfoList[#index#].fromProjmId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
-					  <label class="Validform_label" style="display: none;">项目管理外键</label>
-				  </td>
-				  <td align="left">
-					  	<input name="busPayInfoList[#index#].fromPayId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
-					  <label class="Validform_label" style="display: none;">采购付款单外键</label>
-				  </td>
-				  <td align="left">
-					  	<input name="busPayInfoList[#index#].fromBankAccId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
-					  <label class="Validform_label" style="display: none;">银行账号信息外键</label>
-				  </td>
+				  <td>
+					  	<input name="busPayInfoList[#index#].fromProjmId" maxlength="32" type="hidden" />
+					  	<input name="busPayInfoList[#index#].fromPayId" maxlength="32" type="hidden" />
+					  	<input name="busPayInfoList[#index#].fromBankAccId" maxlength="32" type="hidden" />
+					  	<input name="busPayInfoList[#index#].fromId" maxlength="32" type="hidden"  />
+				 </td>
 			</tr>
 		 </tbody>
 		</table>

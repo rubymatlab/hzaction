@@ -24,7 +24,7 @@ import org.jeecgframework.poi.excel.annotation.ExcelCollection;
  * @Title: Entity
  * @Description: 费用报销
  * @author onlineGenerator
- * @date 2019-09-18 18:41:19
+ * @date 2019-09-22 16:05:42
  * @version V1.0   
  *
  */
@@ -462,8 +462,8 @@ public class BsSubmitPage implements java.io.Serializable {
 		public void setBusSubmitDetailList(List<BusSubmitDetailEntity> busSubmitDetailList) {
 		this.busSubmitDetailList = busSubmitDetailList;
 		}
-	/**保存-账务支付信息*/
-    @ExcelCollection(name="账务支付信息")
+	/**保存-支付信息*/
+    @ExcelCollection(name="支付信息")
 	private List<BusPayInfoEntity> busPayInfoList = new ArrayList<BusPayInfoEntity>();
 		public List<BusPayInfoEntity> getBusPayInfoList() {
 		return busPayInfoList;

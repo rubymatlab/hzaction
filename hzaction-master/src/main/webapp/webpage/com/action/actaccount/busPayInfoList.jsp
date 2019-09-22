@@ -23,16 +23,23 @@ $(document).ready(function(){
 					<input name="busPayInfoList[0].sysCompanyCode" type="hidden"  value="${poVal.sysCompanyCode}"/>
 					<input name="busPayInfoList[0].bpmStatus" type="hidden"  value="${poVal.bpmStatus}"/>
 					<input name="busPayInfoList[0].bpiBusId" type="hidden"  value="${poVal.bpiBusId}"/>
+			
+					<input name="busPayInfoList[0].fromProjmId" type="hidden" />
+					<input name="busPayInfoList[0].fromPayId" type="hidden" />
+					<input name="busPayInfoList[0].fromBankAccId" type="hidden" />
+					<input name="busPayInfoList[0].fromId" type="hidden" />
+					<input name="busPayInfoList[0].bpiClass" type="hidden"/>
+					 
 			</tr>
 				<tr>
 				  <td align="right">
 					<label class="Validform_label">
-										功能分类:
+										凭证号:
 									</label>
 					</td>
 				  <td class="value">
-					  	<input name="busPayInfoList[0].bpiClass" maxlength="30" type="text" class="inputxt"  ignore="ignore" />
-					  <label class="Validform_label" style="display: none;">功能分类</label>
+					  	<input name="busPayInfoList[0].bpiVoucherno" maxlength="20" type="text" class="inputxt"  ignore="ignore" />
+					  <label class="Validform_label" style="display: none;">凭证号</label>
 					</td>
 				  <td align="right">
 					<label class="Validform_label">
@@ -84,46 +91,6 @@ $(document).ready(function(){
 					  <label class="Validform_label" style="display: none;">内容</label>
 					</td>
 				</tr>
-				<tr>
-				  <td align="right">
-					<label class="Validform_label">
-										凭证号:
-									</label>
-					</td>
-				  <td class="value">
-					  	<input name="busPayInfoList[0].bpiVoucherno" maxlength="20" type="text" class="inputxt"  ignore="ignore" />
-					  <label class="Validform_label" style="display: none;">凭证号</label>
-					</td>
-				  <td align="right">
-					<label class="Validform_label">
-										项目管理外键:
-									</label>
-					</td>
-				  <td class="value">
-					  	<input name="busPayInfoList[0].fromProjmId" maxlength="32" type="text" class="inputxt"  ignore="ignore" />
-					  <label class="Validform_label" style="display: none;">项目管理外键</label>
-					</td>
-				</tr>
-				<tr>
-				  <td align="right">
-					<label class="Validform_label">
-										采购付款单外键:
-									</label>
-					</td>
-				  <td class="value">
-					  	<input name="busPayInfoList[0].fromPayId" maxlength="32" type="text" class="inputxt"  ignore="ignore" />
-					  <label class="Validform_label" style="display: none;">采购付款单外键</label>
-					</td>
-				  <td align="right">
-					<label class="Validform_label">
-										银行账号信息外键:
-									</label>
-					</td>
-				  <td class="value">
-					  	<input name="busPayInfoList[0].fromBankAccId" maxlength="32" type="text" class="inputxt"  ignore="ignore" />
-					  <label class="Validform_label" style="display: none;">银行账号信息外键</label>
-					</td>
-				</tr>
 	</c:if>
 	<c:if test="${fn:length(busPayInfoList)  > 0 }">
 		<c:forEach items="${busPayInfoList}" var="poVal" varStatus="stuts" begin="0" end="0">
@@ -139,16 +106,24 @@ $(document).ready(function(){
 					<input name="busPayInfoList[0].sysCompanyCode" type="hidden" value="${poVal.sysCompanyCode}"/>
 					<input name="busPayInfoList[0].bpmStatus" type="hidden" value="${poVal.bpmStatus}"/>
 					<input name="busPayInfoList[0].bpiBusId" type="hidden" value="${poVal.bpiBusId}"/>
+			
+					<input name="busPayInfoList[0].fromProjmId" maxlength="32" type="hidden" value="${poVal.fromProjmId }"/>
+					<input name="busPayInfoList[0].fromPayId" maxlength="32" type="hidden" value="${poVal.fromPayId }"/>
+					<input name="busPayInfoList[0].fromBankAccId" maxlength="32" type="hidden" value="${poVal.fromBankAccId }"/>
+					<input name="busPayInfoList[0].fromId" maxlength="32" type="hidden" value="${poVal.fromId }"/>
+					<input name="busPayInfoList[0].bpiClass" maxlength="30" type="hidden" value="${poVal.bpiClass }"/>
 			</tr>
 			<tr>
 				  <td align="right">
 					<label class="Validform_label">
-										功能分类:
+										凭证号:
 									</label>
 					</td>
 				  <td class="value">
-					  	<input name="busPayInfoList[0].bpiClass" maxlength="30" type="text" class="inputxt"  ignore="ignore"  value="${poVal.bpiClass }"/>
-					  <label class="Validform_label" style="display: none;">功能分类</label>
+					  	<input name="busPayInfoList[0].bpiVoucherno" maxlength="20" type="text" class="inputxt"  ignore="ignore"  value="${poVal.bpiVoucherno }"/>
+					  <label class="Validform_label" style="display: none;">凭证号</label>
+					
+					
 					</td>
 				  <td align="right">
 					<label class="Validform_label">
@@ -198,46 +173,6 @@ $(document).ready(function(){
 				  <td class="value">
 					  	<input name="busPayInfoList[0].bpiContent" maxlength="20" type="text" class="inputxt"  ignore="ignore"  value="${poVal.bpiContent }"/>
 					  <label class="Validform_label" style="display: none;">内容</label>
-					</td>
-				</tr>
-			<tr>
-				  <td align="right">
-					<label class="Validform_label">
-										凭证号:
-									</label>
-					</td>
-				  <td class="value">
-					  	<input name="busPayInfoList[0].bpiVoucherno" maxlength="20" type="text" class="inputxt"  ignore="ignore"  value="${poVal.bpiVoucherno }"/>
-					  <label class="Validform_label" style="display: none;">凭证号</label>
-					</td>
-				  <td align="right">
-					<label class="Validform_label">
-										项目管理外键:
-									</label>
-					</td>
-				  <td class="value">
-					  	<input name="busPayInfoList[0].fromProjmId" maxlength="32" type="text" class="inputxt"  ignore="ignore"  value="${poVal.fromProjmId }"/>
-					  <label class="Validform_label" style="display: none;">项目管理外键</label>
-					</td>
-				</tr>
-			<tr>
-				  <td align="right">
-					<label class="Validform_label">
-										采购付款单外键:
-									</label>
-					</td>
-				  <td class="value">
-					  	<input name="busPayInfoList[0].fromPayId" maxlength="32" type="text" class="inputxt"  ignore="ignore"  value="${poVal.fromPayId }"/>
-					  <label class="Validform_label" style="display: none;">采购付款单外键</label>
-					</td>
-				  <td align="right">
-					<label class="Validform_label">
-										银行账号信息外键:
-									</label>
-					</td>
-				  <td class="value">
-					  	<input name="busPayInfoList[0].fromBankAccId" maxlength="32" type="text" class="inputxt"  ignore="ignore"  value="${poVal.fromBankAccId }"/>
-					  <label class="Validform_label" style="display: none;">银行账号信息外键</label>
 					</td>
 				</tr>
 		</c:forEach>

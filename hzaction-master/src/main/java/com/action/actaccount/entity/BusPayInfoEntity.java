@@ -19,9 +19,9 @@ import org.jeecgframework.poi.excel.annotation.Excel;
 
 /**   
  * @Title: Entity
- * @Description: 账务支付信息
+ * @Description: 支付信息
  * @author onlineGenerator
- * @date 2019-09-18 18:41:19
+ * @date 2019-09-22 16:05:41
  * @version V1.0   
  *
  */
@@ -81,6 +81,9 @@ public class BusPayInfoEntity implements java.io.Serializable {
 	/**银行账号信息外键*/
 	@Excel(name="银行账号信息外键",width=15)
 	private java.lang.String fromBankAccId;
+	/**费用报销外键*/
+	@Excel(name="费用报销外键",width=15)
+	private java.lang.String fromId;
 	
 	/**
 	 *方法: 取得java.lang.String
@@ -461,6 +464,24 @@ public class BusPayInfoEntity implements java.io.Serializable {
 	 */
 	public void setFromBankAccId(java.lang.String fromBankAccId){
 		this.fromBankAccId = fromBankAccId;
+	}
+	
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  费用报销外键
+	 */
+	
+	@Column(name ="FROM_ID",nullable=true,length=32)
+	public java.lang.String getFromId(){
+		return this.fromId;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  费用报销外键
+	 */
+	public void setFromId(java.lang.String fromId){
+		this.fromId = fromId;
 	}
 	
 }

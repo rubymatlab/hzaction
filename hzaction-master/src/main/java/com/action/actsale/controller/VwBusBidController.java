@@ -116,6 +116,10 @@ public class VwBusBidController extends BaseController {
 	@RequestMapping(params = "datagrid")
 	public void datagrid(VwBusBidEntity vwBusBid,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
 		CriteriaQuery cq = new CriteriaQuery(VwBusBidEntity.class, dataGrid);
+		//模糊查询
+		if(StringUtil.isNotEmpty(vwBusBid.getBpProjName())){
+			vwBusBid.setBpProjName("*"+vwBusBid.getBpProjName()+"*");
+		}
 		//查询条件组装器
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, vwBusBid, request.getParameterMap());
 		try{

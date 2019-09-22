@@ -120,6 +120,12 @@ public class VwBusCollectionController extends BaseController {
 	public void datagrid(VwBusCollectionEntity vwBusCollection,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
 		CriteriaQuery cq = new CriteriaQuery(VwBusCollectionEntity.class, dataGrid);
 		//查询条件组装器
+		
+		// 客户名称
+		if(StringUtil.isNotEmpty(vwBusCollection.getBcCustContractor())){
+			vwBusCollection.setBcCustContractor("*"+vwBusCollection.getBcCustContractor()+"*");
+		}
+		
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, vwBusCollection, request.getParameterMap());
 		try{
 		//自定义追加查询条件

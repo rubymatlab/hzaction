@@ -15,7 +15,7 @@
    <t:dgCol title="所属公司"  field="sysCompanyCode"  hidden="true"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="流程状态"  field="bpmStatus"  dictionary="state" queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="项目编号"  field="bpmProjId"  query="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="项目名称"  field="bpmProjName"  query="true" dictionary="bus_project_manager,id,bpm_name"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="项目名称"  field="bpmProjName"  query="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="客户名称"  field="bpmCustName"  hidden="true"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="项目经理"  field="bpmManager"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="应收总金额"  field="bpmReceAllAmou"  queryMode="group"  width="120"></t:dgCol>

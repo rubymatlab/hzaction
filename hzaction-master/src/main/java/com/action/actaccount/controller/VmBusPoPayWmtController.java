@@ -124,6 +124,17 @@ public class VmBusPoPayWmtController extends BaseController {
 		logger.info("-- 单据状态:{} --",state);
 
 		vmBusPoPayWmt.setBppState(state);
+		
+		// 模糊查询
+		if(StringUtil.isNotEmpty(vmBusPoPayWmt.getBpmName())){
+			vmBusPoPayWmt.setBpmName("*"+vmBusPoPayWmt.getBpmName()+"*");
+		}
+		if(StringUtil.isNotEmpty(vmBusPoPayWmt.getBsName())){
+			vmBusPoPayWmt.setBsName("*"+vmBusPoPayWmt.getBsName()+"*");
+		}
+		
+		
+		
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, vmBusPoPayWmt, request.getParameterMap());
 		try{
 			//自定义追加查询条件

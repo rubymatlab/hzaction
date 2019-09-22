@@ -197,6 +197,20 @@ public class VwBusPoApplyController extends BaseController {
 			break;
 
 		}
+		
+		
+		//模糊查询
+		
+		if(StringUtil.isNotEmpty(vwBusPoApply.getBpmName())){
+			vwBusPoApply.setBpmName("*"+vwBusPoApply.getBpmName()+"*");
+		}
+		if(StringUtil.isNotEmpty(vwBusPoApply.getBpManager())){
+			vwBusPoApply.setBpManager("*"+vwBusPoApply.getBpManager()+"*");
+		}
+		if(StringUtil.isNotEmpty(vwBusPoApply.getBcName())){
+			vwBusPoApply.setBcName("*"+vwBusPoApply.getBcName()+"*");
+		}
+		
 
 		// 查询条件组装器
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, vwBusPoApply,

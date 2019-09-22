@@ -107,6 +107,18 @@ public class VwBusSpecialPayController extends BaseController {
 	public void datagrid(VwBusSpecialPayEntity vwBusSpecialPay,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
 		CriteriaQuery cq = new CriteriaQuery(VwBusSpecialPayEntity.class, dataGrid);
 		//查询条件组装器
+		
+		//模糊查询
+		if(StringUtil.isNotEmpty(vwBusSpecialPay.getBsName())){
+			vwBusSpecialPay.setBsName("*"+vwBusSpecialPay.getBsName()+"*");
+		}
+		if(StringUtil.isNotEmpty(vwBusSpecialPay.getBpProjName())){
+			vwBusSpecialPay.setBpProjName("*"+vwBusSpecialPay.getBpProjName()+"*");
+		}
+		if(StringUtil.isNotEmpty(vwBusSpecialPay.getBsspApplyPeople())){
+			vwBusSpecialPay.setBsspApplyPeople("*"+vwBusSpecialPay.getBsspApplyPeople()+"*");
+		}
+		
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, vwBusSpecialPay, request.getParameterMap());
 		try{
 		//自定义追加查询条件

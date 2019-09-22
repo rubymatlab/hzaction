@@ -121,6 +121,14 @@ public class VwRpProjectPeriodTotalController extends BaseController {
 	public void datagrid(VwRpProjectPeriodTotalEntity vwRpProjectPeriodTotal,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
 		CriteriaQuery cq = new CriteriaQuery(VwRpProjectPeriodTotalEntity.class, dataGrid);
 		//查询条件组装器
+		
+		if(StringUtil.isNotEmpty(vwRpProjectPeriodTotal.getBcName())){
+			vwRpProjectPeriodTotal.setBcName("*"+vwRpProjectPeriodTotal.getBcName()+"*");
+		}
+		if(StringUtil.isNotEmpty(vwRpProjectPeriodTotal.getBpManager())){
+			vwRpProjectPeriodTotal.setBpManager("*"+vwRpProjectPeriodTotal.getBpManager()+"*");
+		}
+		
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, vwRpProjectPeriodTotal, request.getParameterMap());
 		try{
 		//自定义追加查询条件

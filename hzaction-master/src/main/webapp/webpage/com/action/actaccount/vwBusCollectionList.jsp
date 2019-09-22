@@ -53,6 +53,17 @@
  </div>
  <script type="text/javascript">
  $(document).ready(function(){
+	 $("#vwBusCollectionListForm input[name=bpmName]").combogrid({
+			panelWidth: 500,
+			idField: "bpmName",
+			textField: "bpmName",
+			url: "busProjectManagerController.do?datagrid&field=id,bpmProjId,bpmName",
+			columns: [[
+				{field:'bpmProjId',title:'项目编号',width:80},
+				{field:'bpmName',title:'项目名称',width:80}
+			]],
+			fitColumns: true
+		})
  });
  
    

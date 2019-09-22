@@ -88,6 +88,22 @@ public class VwBusProjectController extends BaseController {
 	@RequestMapping(params = "datagrid")
 	public void datagrid(VwBusProjectEntity vwBusProject,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
 		CriteriaQuery cq = new CriteriaQuery(VwBusProjectEntity.class, dataGrid);
+		// 模糊查询
+		
+		if(StringUtil.isNotEmpty(vwBusProject.getBpManager())){
+			vwBusProject.setBpManager("*"+vwBusProject.getBpManager()+"*");
+		}
+		if(StringUtil.isNotEmpty(vwBusProject.getBpProjName())){
+			vwBusProject.setBpProjName("*"+vwBusProject.getBpProjName()+"*");
+		}
+		if(StringUtil.isNotEmpty(vwBusProject.getBpProjId())){
+			vwBusProject.setBpProjId("*"+vwBusProject.getBpProjId()+"*");
+		}
+//		跟进结果
+		if(StringUtil.isNotEmpty(vwBusProject.getBpFollowResults())){
+			vwBusProject.setBpFollowResults("*"+vwBusProject.getBpFollowResults()+"*");
+		}
+		
 		//查询条件组装器
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, vwBusProject, request.getParameterMap());
 		try{

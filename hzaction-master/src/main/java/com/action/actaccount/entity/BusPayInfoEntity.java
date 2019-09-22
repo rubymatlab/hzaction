@@ -84,6 +84,9 @@ public class BusPayInfoEntity implements java.io.Serializable {
 	/**费用报销外键*/
 	@Excel(name="费用报销外键",width=15)
 	private java.lang.String fromId;
+	/**帐号简称*/
+	@Excel(name="帐号简称",width=15)
+	private java.lang.String bbaiSname;
 	
 	/**
 	 *方法: 取得java.lang.String
@@ -482,6 +485,24 @@ public class BusPayInfoEntity implements java.io.Serializable {
 	 */
 	public void setFromId(java.lang.String fromId){
 		this.fromId = fromId;
+	}
+	
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  帐号简称
+	 */
+	
+	@Column(name ="BBAI_SNAME",nullable=true,length=32)
+	public java.lang.String getBbaiSname(){
+		return this.bbaiSname;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  帐号简称
+	 */
+	public void setBbaiSname(java.lang.String bbaiSname){
+		this.bbaiSname = bbaiSname;
 	}
 	
 }

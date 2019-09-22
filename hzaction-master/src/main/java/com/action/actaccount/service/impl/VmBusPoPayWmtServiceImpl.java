@@ -196,12 +196,24 @@ public class VmBusPoPayWmtServiceImpl extends CommonServiceImpl implements VmBus
 							MyBeanUtils.copyBeanNotNull2Bean(sendE,oldE);
 							
 							//wmt
-							logger.info("-- [银行账号信息外键]和[账号简称]不为空则生成凭证号:{},{} --",oldE.getFromBankAccId(),oldE.getBbaiSname());
+							/*
+							 * logger.info("-- [银行账号信息外键]和[账号简称]不为空则生成凭证号:{},{} --",oldE.getFromBankAccId(),
+							 * oldE.getBbaiSname()); //凭证号产生规则：201907001（年月流水号，自动生成）
+							 * if(oldE.getFromBankAccId()!=null&&oldE.getBbaiSname()!=null
+							 * &&oldE.getFromBankAccId().trim()!=""&&oldE.getBbaiSname().trim()!="") {
+							 * String createBpiVoucherno =
+							 * createBpiVoucherno(actaccountDao.findByBpiVoucherno());
+							 * if(oldE.getBbaiSname()==null||oldE.getBpiVoucherno().trim()=="")
+							 * oldE.setBpiVoucherno(createBpiVoucherno);
+							 * logger.info("-- 自动生成支付凭证号成功!:{} --",createBpiVoucherno); }else {
+							 * logger.info("-- 自动生成支付凭证号失败! --"); }
+							 */
+							logger.info("-- [银行账号信息外键]和[账号简称]不为空则生成凭证号:{},{} --",oldE.getFromBankAccId(),oldE.getBpiVoucherno());
 							//凭证号产生规则：201907001（年月流水号，自动生成）
-							if(oldE.getFromBankAccId()!=null&&oldE.getBbaiSname()!=null
-									&&oldE.getFromBankAccId().trim()!=""&&oldE.getBbaiSname().trim()!="") {
+							if(oldE.getFromBankAccId()!=null&&oldE.getBpiVoucherno()!=null
+									&&oldE.getFromBankAccId().trim()!=""&&oldE.getBpiVoucherno().trim()!="") {
 								String createBpiVoucherno = createBpiVoucherno(actaccountDao.findByBpiVoucherno());
-								if(oldE.getBbaiSname()==null||oldE.getBpiVoucherno().trim()=="")
+								if(oldE.getBpiVoucherno()==null||oldE.getBpiVoucherno().trim()=="")
 									oldE.setBpiVoucherno(createBpiVoucherno);
 								logger.info("-- 自动生成支付凭证号成功!:{} --",createBpiVoucherno);
 							}else {

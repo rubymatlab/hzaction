@@ -57,7 +57,7 @@
 						</label>
 					</td>
 					<td class="value">
-					     	 <input readonly="true" id="bdProjType" name="bdProjType" type="text" maxlength="20" style="width: 150px;background-color:#F0F0F0;" class="inputxt"  ignore="ignore" />
+					     	 <input id="bdProjType" name="bdProjType" type="text" maxlength="20" style="width: 150px;" class="inputxt"  ignore="ignore" />
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">项目类型</label>
 						</td>

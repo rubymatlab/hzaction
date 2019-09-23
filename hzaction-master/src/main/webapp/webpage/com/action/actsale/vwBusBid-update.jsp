@@ -97,7 +97,8 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="bdState" readonly="true" name="bdState" type="text" maxlength="20" style="width: 150px;background-color:#F0F0F0;" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bdState}'/>
+						    <%-- <input id="bdState" readonly="true" name="bdState" type="text" maxlength="20" style="width: 150px;background-color:#F0F0F0;" class="inputxt"  ignore="ignore"  value='${vwBusBidPage.bdState}'/> --%>
+							<t:dictSelect readonly="readonly" field="bdState" type="list"   typeGroupCode="state"  defaultVal="${vwBusBidPage.bdState}" hasLabel="false"  title="审核状态" ></t:dictSelect> 
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">审核状态</label>
 						</td>

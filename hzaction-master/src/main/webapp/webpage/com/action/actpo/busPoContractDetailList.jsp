@@ -159,12 +159,12 @@
 			<td class="value">
 		     	 <input id="purAmount" name="purAmount" type="text" disabled='disabled'  maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
 			</td>
-			<td align="right">
+<%-- 			<td align="right">
 				<label class="Validform_label">已购金额：</label>
 			</td>
 			<td class="value">
 		     	 <input id="puredAmount" name="puredAmount" disabled='disabled' value="${puredAmount} "  type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"/>
-			</td>
+			</td> --%>
 		</tr>
 	</tbody>
 </table>

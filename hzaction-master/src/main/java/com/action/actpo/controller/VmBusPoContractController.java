@@ -82,13 +82,13 @@ import io.swagger.annotations.ApiParam;
 
 /**   
  * @Title: Controller
- * @Description: 采购合同视图
+ * @Description: 采购合同
  * @author onlineGenerator
  * @date 2019-07-30 13:14:33
  * @version V1.0   
  *
  */
-@Api(value="VmBusPoContract",description="采购合同视图",tags="vmBusPoContractController")
+@Api(value="VmBusPoContract",description="采购合同",tags="vmBusPoContractController")
 @Controller
 @RequestMapping("/vmBusPoContractController")
 public class VmBusPoContractController extends BaseController {
@@ -106,7 +106,7 @@ public class VmBusPoContractController extends BaseController {
 	private Validator validator;
 
 	/**
-	 * 采购合同视图列表 页面跳转
+	 * 采购合同列表 页面跳转
 	 * 
 	 * @return
 	 */
@@ -143,7 +143,7 @@ public class VmBusPoContractController extends BaseController {
 		
 	
 	/**
-	 * 删除采购合同视图
+	 * 删除采购合同
 	 * 
 	 * @return
 	 */
@@ -152,7 +152,7 @@ public class VmBusPoContractController extends BaseController {
 	public AjaxJson doDel(VmBusPoContractEntity vmBusPoContract, HttpServletRequest request) {
 		AjaxJson j = new AjaxJson();
 		vmBusPoContract = systemService.getEntity(VmBusPoContractEntity.class, vmBusPoContract.getId());
-		String message = "采购合同视图删除成功";
+		String message = "采购合同删除成功";
 		try{
 			BusPoContractEntity busPoContract = new BusPoContractEntity();
 			MyBeanUtils.copyBeanNotNull2Bean(vmBusPoContract,busPoContract);
@@ -161,7 +161,7 @@ public class VmBusPoContractController extends BaseController {
 			systemService.addLog(message, Globals.Log_Type_DEL, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();
-			message = "采购合同视图删除失败";
+			message = "采购合同删除失败";
 			throw new BusinessException(e.getMessage());
 		}
 		j.setMsg(message);
@@ -169,7 +169,7 @@ public class VmBusPoContractController extends BaseController {
 	}
 
 	/**
-	 * 批量删除采购合同视图
+	 * 批量删除采购合同
 	 * 
 	 * @return
 	 */
@@ -177,7 +177,7 @@ public class VmBusPoContractController extends BaseController {
 	@ResponseBody
 	public AjaxJson doBatchDel(String ids,HttpServletRequest request){
 		AjaxJson j = new AjaxJson();
-		String message = "采购合同视图删除成功";
+		String message = "采购合同删除成功";
 		try{
 			for(String id:ids.split(",")){
 				VmBusPoContractEntity vmBusPoContract = systemService.getEntity(VmBusPoContractEntity.class,
@@ -191,7 +191,7 @@ public class VmBusPoContractController extends BaseController {
 			}
 		}catch(Exception e){
 			e.printStackTrace();
-			message = "采购合同视图删除失败";
+			message = "采购合同删除失败";
 			throw new BusinessException(e.getMessage());
 		}
 		j.setMsg(message);
@@ -199,7 +199,7 @@ public class VmBusPoContractController extends BaseController {
 	}
 
 	/**
-	 * 添加采购合同视图
+	 * 添加采购合同
 	 * 
 	 * @param ids
 	 * @return
@@ -233,7 +233,7 @@ public class VmBusPoContractController extends BaseController {
 			systemService.addLog(message, Globals.Log_Type_INSERT, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();
-			message = "采购合同视图添加失败";
+			message = "采购合同添加失败";
 			throw new BusinessException(e.getMessage());
 		}
 		j.setMsg(message);
@@ -270,7 +270,7 @@ public class VmBusPoContractController extends BaseController {
 	}
 	
 	/**
-	 * 更新采购合同视图
+	 * 更新采购合同
 	 * 
 	 * @param ids
 	 * @return
@@ -298,7 +298,7 @@ public class VmBusPoContractController extends BaseController {
 			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();
-			message = "更新采购合同视图失败";
+			message = "更新采购合同失败";
 			throw new BusinessException(e.getMessage());
 		}
 		j.setMsg(message);
@@ -306,7 +306,7 @@ public class VmBusPoContractController extends BaseController {
 	}
 
 	/**
-	 * 采购合同视图新增页面跳转
+	 * 采购合同新增页面跳转
 	 * 
 	 * @return
 	 */
@@ -320,7 +320,7 @@ public class VmBusPoContractController extends BaseController {
 	}
 	
 	/**
-	 * 采购合同视图编辑页面跳转
+	 * 采购合同编辑页面跳转
 	 * 
 	 * @return
 	 */
@@ -445,9 +445,9 @@ public class VmBusPoContractController extends BaseController {
             	}
             }
         }
-        map.put(NormalExcelConstants.FILE_NAME,"采购合同视图");
+        map.put(NormalExcelConstants.FILE_NAME,"采购合同");
         map.put(NormalExcelConstants.CLASS,VmBusPoContractPage.class);
-        map.put(NormalExcelConstants.PARAMS,new ExportParams("采购合同视图列表", "导出人:Jeecg",
+        map.put(NormalExcelConstants.PARAMS,new ExportParams("采购合同列表", "导出人:Jeecg",
             "导出信息"));
         map.put(NormalExcelConstants.DATA_LIST,pageList);
         return NormalExcelConstants.JEECG_EXCEL_VIEW;
@@ -480,8 +480,8 @@ public class VmBusPoContractController extends BaseController {
 		for (Map.Entry<String, MultipartFile> entity : fileMap.entrySet()) {
 			MultipartFile file = entity.getValue();// 获取上传文件对象
 			ImportParams params = new ImportParams();
-			params.setTitleRows(0);
-			params.setHeadRows(1);
+			params.setTitleRows(2);
+			params.setHeadRows(2);
 			params.setNeedSave(true);
 			try {
 				List<BusPoContractDetailEntity> listBusPoContractDetailEntitys = ExcelImportUtil.importExcel(file.getInputStream(),BusPoContractDetailEntity.class,params);
@@ -558,9 +558,9 @@ public class VmBusPoContractController extends BaseController {
 	*/
 	@RequestMapping(params = "exportXlsByT")
 	public String exportXlsByT(ModelMap map) {
-		map.put(NormalExcelConstants.FILE_NAME,"采购合同视图");
+		map.put(NormalExcelConstants.FILE_NAME,"采购合同");
 		map.put(NormalExcelConstants.CLASS,VmBusPoContractPage.class);
-		map.put(NormalExcelConstants.PARAMS,new ExportParams("采购合同视图列表", "导出人:"+ ResourceUtil.getSessionUser().getRealName(),
+		map.put(NormalExcelConstants.PARAMS,new ExportParams("采购合同列表", "导出人:"+ ResourceUtil.getSessionUser().getRealName(),
 		"导出信息"));
 		map.put(NormalExcelConstants.DATA_LIST,new ArrayList());
 		return NormalExcelConstants.JEECG_EXCEL_VIEW;
@@ -579,7 +579,7 @@ public class VmBusPoContractController extends BaseController {
  	
  	@RequestMapping(value="/list/{pageNo}/{pageSize}",method = RequestMethod.GET)
 	@ResponseBody
-	@ApiOperation(value="采购合同视图列表信息",produces="application/json",httpMethod="GET")
+	@ApiOperation(value="采购合同列表信息",produces="application/json",httpMethod="GET")
 	public ResponseMessage<List<VmBusPoContractPage>> list(@PathVariable("pageNo") int pageNo, @PathVariable("pageSize") int pageSize, HttpServletRequest request) {
 		if(pageSize>Globals.MAX_PAGESIZE){
 			return Result.error("每页请求不能超过" + Globals.MAX_PAGESIZE + "条");
@@ -617,11 +617,11 @@ public class VmBusPoContractController extends BaseController {
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	@ResponseBody
-	@ApiOperation(value="根据ID获取采购合同视图信息",notes="根据ID获取采购合同视图信息",httpMethod="GET",produces="application/json")
+	@ApiOperation(value="根据ID获取采购合同信息",notes="根据ID获取采购合同信息",httpMethod="GET",produces="application/json")
 	public ResponseMessage<?> get(@ApiParam(required=true,name="id",value="ID")@PathVariable("id") String id) {
 		VmBusPoContractEntity task = vmBusPoContractService.get(VmBusPoContractEntity.class, id);
 		if (task == null) {
-			return Result.error("根据ID获取采购合同视图信息为空");
+			return Result.error("根据ID获取采购合同信息为空");
 		}
 		VmBusPoContractPage page = new VmBusPoContractPage();
 		try {
@@ -646,8 +646,8 @@ public class VmBusPoContractController extends BaseController {
  	
  	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	@ApiOperation(value="创建采购合同视图")
-	public ResponseMessage<?> create(@ApiParam(name="采购合同视图对象")@RequestBody VmBusPoContractPage vmBusPoContractPage, UriComponentsBuilder uriBuilder) {
+	@ApiOperation(value="创建采购合同")
+	public ResponseMessage<?> create(@ApiParam(name="采购合同对象")@RequestBody VmBusPoContractPage vmBusPoContractPage, UriComponentsBuilder uriBuilder) {
 		//调用JSR303 Bean Validator进行校验，如果出错返回含400错误码及json格式的错误信息.
 		Set<ConstraintViolation<VmBusPoContractPage>> failures = validator.validate(vmBusPoContractPage);
 		if (!failures.isEmpty()) {
@@ -665,7 +665,7 @@ public class VmBusPoContractController extends BaseController {
 			vmBusPoContractService.addMain(vmBusPoContract, vmMergeBusPoApplyDetailList,busPoContractPayList,busPoContractDetailList);
 		}catch(Exception e){
             logger.info(e.getMessage());
-            return Result.error("保存采购合同视图失败");
+            return Result.error("保存采购合同失败");
         }
 
 		return Result.success(vmBusPoContract);
@@ -673,7 +673,7 @@ public class VmBusPoContractController extends BaseController {
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	@ApiOperation(value="更新采购合同视图",notes="更新采购合同视图")
+	@ApiOperation(value="更新采购合同",notes="更新采购合同")
 	public ResponseMessage<?> update(@RequestBody VmBusPoContractPage vmBusPoContractPage) {
 		//调用JSR303 Bean Validator进行校验，如果出错返回含400错误码及json格式的错误信息.
 		Set<ConstraintViolation<VmBusPoContractPage>> failures = validator.validate(vmBusPoContractPage);
@@ -692,7 +692,7 @@ public class VmBusPoContractController extends BaseController {
 			vmBusPoContractService.updateMain(vmBusPoContract, vmMergeBusPoApplyDetailList,busPoContractPayList,busPoContractDetailList);
 		}catch(Exception e){
             logger.info(e.getMessage());
-            return Result.error("采购合同视图更新失败");
+            return Result.error("采购合同更新失败");
         }
 
 		//按Restful约定，返回204状态码, 无内容. 也可以返回200状态码.
@@ -701,7 +701,7 @@ public class VmBusPoContractController extends BaseController {
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	@ApiOperation(value="删除采购合同视图")
+	@ApiOperation(value="删除采购合同")
 	public ResponseMessage<?> delete(@ApiParam(name="id",value="ID",required=true)@PathVariable("id") String id) {
 		logger.info("delete[{}]" , id);
 		// 验证
@@ -713,7 +713,7 @@ public class VmBusPoContractController extends BaseController {
 			vmBusPoContractService.delMain(vmBusPoContract);
 		} catch (Exception e) {
 			e.printStackTrace();
-			return Result.error("采购合同视图删除失败");
+			return Result.error("采购合同删除失败");
 		}
 
 		return Result.success();

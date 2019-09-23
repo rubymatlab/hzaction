@@ -3,7 +3,7 @@
 <t:base type="jquery,easyui,tools,DatePicker"></t:base>
 <div class="easyui-layout" fit="true">
   <div region="center" style="padding:0px;border:0px">
-  <t:datagrid name="vwBusCollectionList" checkbox="false" pagination="true" fitColumns="true" title="项目收款单视图" sortName="createDate" actionUrl="vwBusCollectionController.do?datagrid" idField="id" fit="true" queryMode="group">
+  <t:datagrid name="vwBusCollectionList" checkbox="false" pagination="true" fitColumns="true" title="项目收款单" sortName="createDate" actionUrl="vwBusCollectionController.do?datagrid" idField="id" fit="true" queryMode="group">
    <t:dgCol title="主键"  field="id"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="项目名称"  field="bpmName"  query="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="项目编号"  field="bpmProjId"  queryMode="single"  width="120"></t:dgCol>

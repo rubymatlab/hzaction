@@ -38,7 +38,7 @@
 					    },
 			             fitColumns: true
 			        ">	
-			        <input type="hidden" id="fromProjmId" name="fromProjmId" ignore="ignore" class="inputxt" value="${vwBusCollectionPage.fromProjmId} }">
+			        <input type="hidden" id="fromProjmId" name="fromProjmId" ignore="ignore" class="inputxt" value="${vwBusCollectionPage.fromProjmId }">
 			        <span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">项目名称</label>
 						</td>

@@ -164,7 +164,6 @@ public class VwBusCollectionController extends BaseController {
 				busPayInfoService.delete(busPayInfoEntity);
 			}
 	
-			
 			systemService.addLog(message, Globals.Log_Type_DEL, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();

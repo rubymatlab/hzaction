@@ -10,7 +10,7 @@
    <t:dgCol title="项目经理"  field="bpManager" query="true" queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="客户名称"  field="bcName" query="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="合同金额万元"  field="bcContAmount"  queryMode="group"  width="120"></t:dgCol>
-   <t:dgCol title="brpBackAmountD"  field="brpBackAmountD"  queryMode="group"  width="120"></t:dgCol>
+   <t:dgCol title="已回款金额（万元）"  field="brpBackAmountD"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="进度百分比"  field="bpmProgPer"  queryMode="group"  dictionary="proj_per"  width="120"></t:dgCol>
    <t:dgCol title="验收结果"  field="bpfCheckResult"  queryMode="group"  dictionary="check_res"  width="120"></t:dgCol>
    <t:dgCol title="验收时间"  field="bpfCheckDate"  formatter="yyyy-MM-dd"  queryMode="group"  width="120"></t:dgCol>

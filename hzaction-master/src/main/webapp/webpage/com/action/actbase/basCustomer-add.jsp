@@ -144,7 +144,7 @@
 					  <label class="Validform_label" style="display: none;">备注</label>
 				  </td>
 				  <td align="left">
-					  	<input name="basCustomerContactsList[#index#].fromId" maxlength="36" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
+					  	<input name="basCustomerContactsList[#index#].fromId" maxlength="36" type="hidden" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">客户资料外键</label>
 				  </td>
 			</tr>

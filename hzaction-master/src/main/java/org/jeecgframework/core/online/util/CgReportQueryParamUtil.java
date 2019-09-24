@@ -82,7 +82,7 @@ public class CgReportQueryParamUtil{
 
 		}else if("group".equals(queryMode)){
 			//范围查询组装
-
+			
 			String begin = request.getParameter(filedName.toLowerCase()+"_begin");
 
 //			sql_inj_throw(begin);

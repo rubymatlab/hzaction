@@ -1,6 +1,6 @@
-package com.action.actproject.controller;
-import com.action.actproject.entity.VwRpProjectPeriodTotalEntity;
-import com.action.actproject.service.VwRpProjectPeriodTotalServiceI;
+package com.action.actpo.controller;
+import com.action.actpo.entity.VwRpPoPayPlanEntity;
+import com.action.actpo.service.VwRpPoPayPlanServiceI;
 import java.util.ArrayList;
 import java.util.List;
 import java.text.SimpleDateFormat;
@@ -77,20 +77,20 @@ import io.swagger.annotations.ApiParam;
 
 /**   
  * @Title: Controller  
- * @Description: 项目整体周期汇总表
+ * @Description: 采购付款计划表
  * @author onlineGenerator
- * @date 2019-09-24 20:17:56
+ * @date 2019-09-25 00:08:25
  * @version V1.0   
  *
  */
-@Api(value="VwRpProjectPeriodTotal",description="项目整体周期汇总表",tags="vwRpProjectPeriodTotalController")
+@Api(value="VwRpPoPayPlan",description="采购付款计划表",tags="vwRpPoPayPlanController")
 @Controller
-@RequestMapping("/vwRpProjectPeriodTotalController")
-public class VwRpProjectPeriodTotalController extends BaseController {
-	private static final Logger logger = LoggerFactory.getLogger(VwRpProjectPeriodTotalController.class);
+@RequestMapping("/vwRpPoPayPlanController")
+public class VwRpPoPayPlanController extends BaseController {
+	private static final Logger logger = LoggerFactory.getLogger(VwRpPoPayPlanController.class);
 
 	@Autowired
-	private VwRpProjectPeriodTotalServiceI vwRpProjectPeriodTotalService;
+	private VwRpPoPayPlanServiceI vwRpPoPayPlanService;
 	@Autowired
 	private SystemService systemService;
 	@Autowired
@@ -99,13 +99,13 @@ public class VwRpProjectPeriodTotalController extends BaseController {
 
 
 	/**
-	 * 项目整体周期汇总表列表 页面跳转
+	 * 采购付款计划表列表 页面跳转
 	 * 
 	 * @return
 	 */
 	@RequestMapping(params = "list")
 	public ModelAndView list(HttpServletRequest request) {
-		return new ModelAndView("com/action/actproject/vwRpProjectPeriodTotalList");
+		return new ModelAndView("com/action/actpo/vwRpPoPayPlanList");
 	}
 
 	/**
@@ -118,38 +118,54 @@ public class VwRpProjectPeriodTotalController extends BaseController {
 	 */
 
 	@RequestMapping(params = "datagrid")
-	public void datagrid(VwRpProjectPeriodTotalEntity vwRpProjectPeriodTotal,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
-		CriteriaQuery cq = new CriteriaQuery(VwRpProjectPeriodTotalEntity.class, dataGrid);
+	public void datagrid(VwRpPoPayPlanEntity vwRpPoPayPlan,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
+		CriteriaQuery cq = new CriteriaQuery(VwRpPoPayPlanEntity.class, dataGrid);
+		//模糊查询
+		
+		if(StringUtil.isNotEmpty(vwRpPoPayPlan.getBpmName())){
+			vwRpPoPayPlan.setBpmName("*"+vwRpPoPayPlan.getBpmName()+"*");
+		}
+		if(StringUtil.isNotEmpty(vwRpPoPayPlan.getBpProjId())){
+			vwRpPoPayPlan.setBpProjId("*"+vwRpPoPayPlan.getBpProjId()+"*");
+		}
+		if(StringUtil.isNotEmpty(vwRpPoPayPlan.getBpManager())){
+			vwRpPoPayPlan.setBpManager("*"+vwRpPoPayPlan.getBpManager()+"*");
+		}
+		if(StringUtil.isNotEmpty(vwRpPoPayPlan.getBsName())){
+			vwRpPoPayPlan.setBsName("*"+vwRpPoPayPlan.getBsName()+"*");
+		}
+		
+		
 		//查询条件组装器
-		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, vwRpProjectPeriodTotal, request.getParameterMap());
+		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, vwRpPoPayPlan, request.getParameterMap());
 		try{
 		//自定义追加查询条件
 		}catch (Exception e) {
 			throw new BusinessException(e.getMessage());
 		}
 		cq.add();
-		this.vwRpProjectPeriodTotalService.getDataGridReturn(cq, true);
+		this.vwRpPoPayPlanService.getDataGridReturn(cq, true);
 		TagUtil.datagrid(response, dataGrid);
 	}
 	
 	/**
-	 * 删除项目整体周期汇总表
+	 * 删除采购付款计划表
 	 * 
 	 * @return
 	 */
 	@RequestMapping(params = "doDel")
 	@ResponseBody
-	public AjaxJson doDel(VwRpProjectPeriodTotalEntity vwRpProjectPeriodTotal, HttpServletRequest request) {
+	public AjaxJson doDel(VwRpPoPayPlanEntity vwRpPoPayPlan, HttpServletRequest request) {
 		String message = null;
 		AjaxJson j = new AjaxJson();
-		vwRpProjectPeriodTotal = systemService.getEntity(VwRpProjectPeriodTotalEntity.class, vwRpProjectPeriodTotal.getId());
-		message = "项目整体周期汇总表删除成功";
+		vwRpPoPayPlan = systemService.getEntity(VwRpPoPayPlanEntity.class, vwRpPoPayPlan.getId());
+		message = "采购付款计划表删除成功";
 		try{
-			vwRpProjectPeriodTotalService.delete(vwRpProjectPeriodTotal);
+			vwRpPoPayPlanService.delete(vwRpPoPayPlan);
 			systemService.addLog(message, Globals.Log_Type_DEL, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();
-			message = "项目整体周期汇总表删除失败";
+			message = "采购付款计划表删除失败";
 			throw new BusinessException(e.getMessage());
 		}
 		j.setMsg(message);
@@ -157,7 +173,7 @@ public class VwRpProjectPeriodTotalController extends BaseController {
 	}
 	
 	/**
-	 * 批量删除项目整体周期汇总表
+	 * 批量删除采购付款计划表
 	 * 
 	 * @return
 	 */
@@ -166,18 +182,18 @@ public class VwRpProjectPeriodTotalController extends BaseController {
 	public AjaxJson doBatchDel(String ids,HttpServletRequest request){
 		String message = null;
 		AjaxJson j = new AjaxJson();
-		message = "项目整体周期汇总表删除成功";
+		message = "采购付款计划表删除成功";
 		try{
 			for(String id:ids.split(",")){
-				VwRpProjectPeriodTotalEntity vwRpProjectPeriodTotal = systemService.getEntity(VwRpProjectPeriodTotalEntity.class, 
+				VwRpPoPayPlanEntity vwRpPoPayPlan = systemService.getEntity(VwRpPoPayPlanEntity.class, 
 				id
 				);
-				vwRpProjectPeriodTotalService.delete(vwRpProjectPeriodTotal);
+				vwRpPoPayPlanService.delete(vwRpPoPayPlan);
 				systemService.addLog(message, Globals.Log_Type_DEL, Globals.Log_Leavel_INFO);
 			}
 		}catch(Exception e){
 			e.printStackTrace();
-			message = "项目整体周期汇总表删除失败";
+			message = "采购付款计划表删除失败";
 			throw new BusinessException(e.getMessage());
 		}
 		j.setMsg(message);
@@ -186,23 +202,23 @@ public class VwRpProjectPeriodTotalController extends BaseController {
 
 
 	/**
-	 * 添加项目整体周期汇总表
+	 * 添加采购付款计划表
 	 * 
 	 * @param ids
 	 * @return
 	 */
 	@RequestMapping(params = "doAdd")
 	@ResponseBody
-	public AjaxJson doAdd(VwRpProjectPeriodTotalEntity vwRpProjectPeriodTotal, HttpServletRequest request) {
+	public AjaxJson doAdd(VwRpPoPayPlanEntity vwRpPoPayPlan, HttpServletRequest request) {
 		String message = null;
 		AjaxJson j = new AjaxJson();
-		message = "项目整体周期汇总表添加成功";
+		message = "采购付款计划表添加成功";
 		try{
-			vwRpProjectPeriodTotalService.save(vwRpProjectPeriodTotal);
+			vwRpPoPayPlanService.save(vwRpPoPayPlan);
 			systemService.addLog(message, Globals.Log_Type_INSERT, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();
-			message = "项目整体周期汇总表添加失败";
+			message = "采购付款计划表添加失败";
 			throw new BusinessException(e.getMessage());
 		}
 		j.setMsg(message);
@@ -210,25 +226,25 @@ public class VwRpProjectPeriodTotalController extends BaseController {
 	}
 	
 	/**
-	 * 更新项目整体周期汇总表
+	 * 更新采购付款计划表
 	 * 
 	 * @param ids
 	 * @return
 	 */
 	@RequestMapping(params = "doUpdate")
 	@ResponseBody
-	public AjaxJson doUpdate(VwRpProjectPeriodTotalEntity vwRpProjectPeriodTotal, HttpServletRequest request) {
+	public AjaxJson doUpdate(VwRpPoPayPlanEntity vwRpPoPayPlan, HttpServletRequest request) {
 		String message = null;
 		AjaxJson j = new AjaxJson();
-		message = "项目整体周期汇总表更新成功";
-		VwRpProjectPeriodTotalEntity t = vwRpProjectPeriodTotalService.get(VwRpProjectPeriodTotalEntity.class, vwRpProjectPeriodTotal.getId());
+		message = "采购付款计划表更新成功";
+		VwRpPoPayPlanEntity t = vwRpPoPayPlanService.get(VwRpPoPayPlanEntity.class, vwRpPoPayPlan.getId());
 		try {
-			MyBeanUtils.copyBeanNotNull2Bean(vwRpProjectPeriodTotal, t);
-			vwRpProjectPeriodTotalService.saveOrUpdate(t);
+			MyBeanUtils.copyBeanNotNull2Bean(vwRpPoPayPlan, t);
+			vwRpPoPayPlanService.saveOrUpdate(t);
 			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
 		} catch (Exception e) {
 			e.printStackTrace();
-			message = "项目整体周期汇总表更新失败";
+			message = "采购付款计划表更新失败";
 			throw new BusinessException(e.getMessage());
 		}
 		j.setMsg(message);
@@ -237,30 +253,30 @@ public class VwRpProjectPeriodTotalController extends BaseController {
 	
 
 	/**
-	 * 项目整体周期汇总表新增页面跳转
+	 * 采购付款计划表新增页面跳转
 	 * 
 	 * @return
 	 */
 	@RequestMapping(params = "goAdd")
-	public ModelAndView goAdd(VwRpProjectPeriodTotalEntity vwRpProjectPeriodTotal, HttpServletRequest req) {
-		if (StringUtil.isNotEmpty(vwRpProjectPeriodTotal.getId())) {
-			vwRpProjectPeriodTotal = vwRpProjectPeriodTotalService.getEntity(VwRpProjectPeriodTotalEntity.class, vwRpProjectPeriodTotal.getId());
-			req.setAttribute("vwRpProjectPeriodTotalPage", vwRpProjectPeriodTotal);
+	public ModelAndView goAdd(VwRpPoPayPlanEntity vwRpPoPayPlan, HttpServletRequest req) {
+		if (StringUtil.isNotEmpty(vwRpPoPayPlan.getId())) {
+			vwRpPoPayPlan = vwRpPoPayPlanService.getEntity(VwRpPoPayPlanEntity.class, vwRpPoPayPlan.getId());
+			req.setAttribute("vwRpPoPayPlanPage", vwRpPoPayPlan);
 		}
-		return new ModelAndView("com/action/actproject/vwRpProjectPeriodTotal-add");
+		return new ModelAndView("com/action/actpo/vwRpPoPayPlan-add");
 	}
 	/**
-	 * 项目整体周期汇总表编辑页面跳转
+	 * 采购付款计划表编辑页面跳转
 	 * 
 	 * @return
 	 */
 	@RequestMapping(params = "goUpdate")
-	public ModelAndView goUpdate(VwRpProjectPeriodTotalEntity vwRpProjectPeriodTotal, HttpServletRequest req) {
-		if (StringUtil.isNotEmpty(vwRpProjectPeriodTotal.getId())) {
-			vwRpProjectPeriodTotal = vwRpProjectPeriodTotalService.getEntity(VwRpProjectPeriodTotalEntity.class, vwRpProjectPeriodTotal.getId());
-			req.setAttribute("vwRpProjectPeriodTotalPage", vwRpProjectPeriodTotal);
+	public ModelAndView goUpdate(VwRpPoPayPlanEntity vwRpPoPayPlan, HttpServletRequest req) {
+		if (StringUtil.isNotEmpty(vwRpPoPayPlan.getId())) {
+			vwRpPoPayPlan = vwRpPoPayPlanService.getEntity(VwRpPoPayPlanEntity.class, vwRpPoPayPlan.getId());
+			req.setAttribute("vwRpPoPayPlanPage", vwRpPoPayPlan);
 		}
-		return new ModelAndView("com/action/actproject/vwRpProjectPeriodTotal-update");
+		return new ModelAndView("com/action/actpo/vwRpPoPayPlan-update");
 	}
 	
 	/**
@@ -270,7 +286,7 @@ public class VwRpProjectPeriodTotalController extends BaseController {
 	 */
 	@RequestMapping(params = "upload")
 	public ModelAndView upload(HttpServletRequest req) {
-		req.setAttribute("controller_name","vwRpProjectPeriodTotalController");
+		req.setAttribute("controller_name","vwRpPoPayPlanController");
 		return new ModelAndView("common/upload/pub_excel_upload");
 	}
 	
@@ -281,16 +297,16 @@ public class VwRpProjectPeriodTotalController extends BaseController {
 	 * @param response
 	 */
 	@RequestMapping(params = "exportXls")
-	public String exportXls(VwRpProjectPeriodTotalEntity vwRpProjectPeriodTotal,HttpServletRequest request,HttpServletResponse response
+	public String exportXls(VwRpPoPayPlanEntity vwRpPoPayPlan,HttpServletRequest request,HttpServletResponse response
 			, DataGrid dataGrid,ModelMap modelMap) {
-		CriteriaQuery cq = new CriteriaQuery(VwRpProjectPeriodTotalEntity.class, dataGrid);
-		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, vwRpProjectPeriodTotal, request.getParameterMap());
-		List<VwRpProjectPeriodTotalEntity> vwRpProjectPeriodTotals = this.vwRpProjectPeriodTotalService.getListByCriteriaQuery(cq,false);
-		modelMap.put(NormalExcelConstants.FILE_NAME,"项目整体周期汇总表");
-		modelMap.put(NormalExcelConstants.CLASS,VwRpProjectPeriodTotalEntity.class);
-		modelMap.put(NormalExcelConstants.PARAMS,new ExportParams("项目整体周期汇总表列表", "导出人:"+ResourceUtil.getSessionUser().getRealName(),
+		CriteriaQuery cq = new CriteriaQuery(VwRpPoPayPlanEntity.class, dataGrid);
+		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, vwRpPoPayPlan, request.getParameterMap());
+		List<VwRpPoPayPlanEntity> vwRpPoPayPlans = this.vwRpPoPayPlanService.getListByCriteriaQuery(cq,false);
+		modelMap.put(NormalExcelConstants.FILE_NAME,"采购付款计划表");
+		modelMap.put(NormalExcelConstants.CLASS,VwRpPoPayPlanEntity.class);
+		modelMap.put(NormalExcelConstants.PARAMS,new ExportParams("采购付款计划表列表", "导出人:"+ResourceUtil.getSessionUser().getRealName(),
 			"导出信息"));
-		modelMap.put(NormalExcelConstants.DATA_LIST,vwRpProjectPeriodTotals);
+		modelMap.put(NormalExcelConstants.DATA_LIST,vwRpPoPayPlans);
 		return NormalExcelConstants.JEECG_EXCEL_VIEW;
 	}
 	/**
@@ -300,11 +316,11 @@ public class VwRpProjectPeriodTotalController extends BaseController {
 	 * @param response
 	 */
 	@RequestMapping(params = "exportXlsByT")
-	public String exportXlsByT(VwRpProjectPeriodTotalEntity vwRpProjectPeriodTotal,HttpServletRequest request,HttpServletResponse response
+	public String exportXlsByT(VwRpPoPayPlanEntity vwRpPoPayPlan,HttpServletRequest request,HttpServletResponse response
 			, DataGrid dataGrid,ModelMap modelMap) {
-    	modelMap.put(NormalExcelConstants.FILE_NAME,"项目整体周期汇总表");
-    	modelMap.put(NormalExcelConstants.CLASS,VwRpProjectPeriodTotalEntity.class);
-    	modelMap.put(NormalExcelConstants.PARAMS,new ExportParams("项目整体周期汇总表列表", "导出人:"+ResourceUtil.getSessionUser().getRealName(),
+    	modelMap.put(NormalExcelConstants.FILE_NAME,"采购付款计划表");
+    	modelMap.put(NormalExcelConstants.CLASS,VwRpPoPayPlanEntity.class);
+    	modelMap.put(NormalExcelConstants.PARAMS,new ExportParams("采购付款计划表列表", "导出人:"+ResourceUtil.getSessionUser().getRealName(),
     	"导出信息"));
     	modelMap.put(NormalExcelConstants.DATA_LIST,new ArrayList());
     	return NormalExcelConstants.JEECG_EXCEL_VIEW;
@@ -325,9 +341,9 @@ public class VwRpProjectPeriodTotalController extends BaseController {
 			params.setHeadRows(1);
 			params.setNeedSave(true);
 			try {
-				List<VwRpProjectPeriodTotalEntity> listVwRpProjectPeriodTotalEntitys = ExcelImportUtil.importExcel(file.getInputStream(),VwRpProjectPeriodTotalEntity.class,params);
-				for (VwRpProjectPeriodTotalEntity vwRpProjectPeriodTotal : listVwRpProjectPeriodTotalEntitys) {
-					vwRpProjectPeriodTotalService.save(vwRpProjectPeriodTotal);
+				List<VwRpPoPayPlanEntity> listVwRpPoPayPlanEntitys = ExcelImportUtil.importExcel(file.getInputStream(),VwRpPoPayPlanEntity.class,params);
+				for (VwRpPoPayPlanEntity vwRpPoPayPlan : listVwRpPoPayPlanEntitys) {
+					vwRpPoPayPlanService.save(vwRpPoPayPlan);
 				}
 				j.setMsg("文件导入成功！");
 			} catch (Exception e) {
@@ -347,74 +363,74 @@ public class VwRpProjectPeriodTotalController extends BaseController {
 	
 	@RequestMapping(value="/list/{pageNo}/{pageSize}", method = RequestMethod.GET)
 	@ResponseBody
-	@ApiOperation(value="项目整体周期汇总表列表信息",produces="application/json",httpMethod="GET")
-	public ResponseMessage<List<VwRpProjectPeriodTotalEntity>> list(@PathVariable("pageNo") int pageNo, @PathVariable("pageSize") int pageSize, HttpServletRequest request) {
+	@ApiOperation(value="采购付款计划表列表信息",produces="application/json",httpMethod="GET")
+	public ResponseMessage<List<VwRpPoPayPlanEntity>> list(@PathVariable("pageNo") int pageNo, @PathVariable("pageSize") int pageSize, HttpServletRequest request) {
 		if(pageSize > Globals.MAX_PAGESIZE){
 			return Result.error("每页请求不能超过" + Globals.MAX_PAGESIZE + "条");
 		}
-		CriteriaQuery query = new CriteriaQuery(VwRpProjectPeriodTotalEntity.class);
+		CriteriaQuery query = new CriteriaQuery(VwRpPoPayPlanEntity.class);
 		query.setCurPage(pageNo<=0?1:pageNo);
 		query.setPageSize(pageSize<1?1:pageSize);
-		List<VwRpProjectPeriodTotalEntity> listVwRpProjectPeriodTotals = this.vwRpProjectPeriodTotalService.getListByCriteriaQuery(query,true);
-		return Result.success(listVwRpProjectPeriodTotals);
+		List<VwRpPoPayPlanEntity> listVwRpPoPayPlans = this.vwRpPoPayPlanService.getListByCriteriaQuery(query,true);
+		return Result.success(listVwRpPoPayPlans);
 	}
 	
 	@RequestMapping(value = "/{id}", method = RequestMethod.GET)
 	@ResponseBody
-	@ApiOperation(value="根据ID获取项目整体周期汇总表信息",notes="根据ID获取项目整体周期汇总表信息",httpMethod="GET",produces="application/json")
+	@ApiOperation(value="根据ID获取采购付款计划表信息",notes="根据ID获取采购付款计划表信息",httpMethod="GET",produces="application/json")
 	public ResponseMessage<?> get(@ApiParam(required=true,name="id",value="ID")@PathVariable("id") String id) {
-		VwRpProjectPeriodTotalEntity task = vwRpProjectPeriodTotalService.get(VwRpProjectPeriodTotalEntity.class, id);
+		VwRpPoPayPlanEntity task = vwRpPoPayPlanService.get(VwRpPoPayPlanEntity.class, id);
 		if (task == null) {
-			return Result.error("根据ID获取项目整体周期汇总表信息为空");
+			return Result.error("根据ID获取采购付款计划表信息为空");
 		}
 		return Result.success(task);
 	}
 
 	@RequestMapping(method = RequestMethod.POST, consumes = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	@ApiOperation(value="创建项目整体周期汇总表")
-	public ResponseMessage<?> create(@ApiParam(name="项目整体周期汇总表对象")@RequestBody VwRpProjectPeriodTotalEntity vwRpProjectPeriodTotal, UriComponentsBuilder uriBuilder) {
+	@ApiOperation(value="创建采购付款计划表")
+	public ResponseMessage<?> create(@ApiParam(name="采购付款计划表对象")@RequestBody VwRpPoPayPlanEntity vwRpPoPayPlan, UriComponentsBuilder uriBuilder) {
 		//调用JSR303 Bean Validator进行校验，如果出错返回含400错误码及json格式的错误信息.
-		Set<ConstraintViolation<VwRpProjectPeriodTotalEntity>> failures = validator.validate(vwRpProjectPeriodTotal);
+		Set<ConstraintViolation<VwRpPoPayPlanEntity>> failures = validator.validate(vwRpPoPayPlan);
 		if (!failures.isEmpty()) {
 			return Result.error(JSONArray.toJSONString(BeanValidators.extractPropertyAndMessage(failures)));
 		}
 
 		//保存
 		try{
-			vwRpProjectPeriodTotalService.save(vwRpProjectPeriodTotal);
+			vwRpPoPayPlanService.save(vwRpPoPayPlan);
 		} catch (Exception e) {
 			e.printStackTrace();
-			return Result.error("项目整体周期汇总表信息保存失败");
+			return Result.error("采购付款计划表信息保存失败");
 		}
-		return Result.success(vwRpProjectPeriodTotal);
+		return Result.success(vwRpPoPayPlan);
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.PUT, consumes = MediaType.APPLICATION_JSON_VALUE)
 	@ResponseBody
-	@ApiOperation(value="更新项目整体周期汇总表",notes="更新项目整体周期汇总表")
-	public ResponseMessage<?> update(@ApiParam(name="项目整体周期汇总表对象")@RequestBody VwRpProjectPeriodTotalEntity vwRpProjectPeriodTotal) {
+	@ApiOperation(value="更新采购付款计划表",notes="更新采购付款计划表")
+	public ResponseMessage<?> update(@ApiParam(name="采购付款计划表对象")@RequestBody VwRpPoPayPlanEntity vwRpPoPayPlan) {
 		//调用JSR303 Bean Validator进行校验，如果出错返回含400错误码及json格式的错误信息.
-		Set<ConstraintViolation<VwRpProjectPeriodTotalEntity>> failures = validator.validate(vwRpProjectPeriodTotal);
+		Set<ConstraintViolation<VwRpPoPayPlanEntity>> failures = validator.validate(vwRpPoPayPlan);
 		if (!failures.isEmpty()) {
 			return Result.error(JSONArray.toJSONString(BeanValidators.extractPropertyAndMessage(failures)));
 		}
 
 		//保存
 		try{
-			vwRpProjectPeriodTotalService.saveOrUpdate(vwRpProjectPeriodTotal);
+			vwRpPoPayPlanService.saveOrUpdate(vwRpPoPayPlan);
 		} catch (Exception e) {
 			e.printStackTrace();
-			return Result.error("更新项目整体周期汇总表信息失败");
+			return Result.error("更新采购付款计划表信息失败");
 		}
 
 		//按Restful约定，返回204状态码, 无内容. 也可以返回200状态码.
-		return Result.success("更新项目整体周期汇总表信息成功");
+		return Result.success("更新采购付款计划表信息成功");
 	}
 
 	@RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
 	@ResponseStatus(HttpStatus.NO_CONTENT)
-	@ApiOperation(value="删除项目整体周期汇总表")
+	@ApiOperation(value="删除采购付款计划表")
 	public ResponseMessage<?> delete(@ApiParam(name="id",value="ID",required=true)@PathVariable("id") String id) {
 		logger.info("delete[{}]" , id);
 		// 验证
@@ -422,10 +438,10 @@ public class VwRpProjectPeriodTotalController extends BaseController {
 			return Result.error("ID不能为空");
 		}
 		try {
-			vwRpProjectPeriodTotalService.deleteEntityById(VwRpProjectPeriodTotalEntity.class, id);
+			vwRpPoPayPlanService.deleteEntityById(VwRpPoPayPlanEntity.class, id);
 		} catch (Exception e) {
 			e.printStackTrace();
-			return Result.error("项目整体周期汇总表删除失败");
+			return Result.error("采购付款计划表删除失败");
 		}
 
 		return Result.success();

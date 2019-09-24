@@ -232,7 +232,7 @@
 					<td class="value">
 		        		<input id="fromPayinfoId" name="fromPayinfoId"  type="hidden"  maxlength="32" value="${ vwBusCollectionPage.fromPayinfoId }" />
 		        		<input id="tempBbaiAcountNo" type="hidden" value="${vwBusCollectionPage.bbaiAccountNo }">
-		        		<t:dictSelect  id="paySelect" field="bbaiAccountNo" type="select" dictTable="bas_bank_account_info"  dictField="id" dictText="bbai_sname,bbai_account_no"  defaultVal="${vwBusCollectionPage.bbaiAccountNo }"   hasLabel="false"  title="银行账号" ></t:dictSelect>
+		        		<t:dictSelect  id="paySelect" field="bbaiAccountNo" type="select" dictTable="bas_bank_account_info"  dictField="id" dictText="bbai_sname"  defaultVal="${vwBusCollectionPage.bbaiAccountNo }"   hasLabel="false"  title="银行账号" ></t:dictSelect>
 			        	<%-- <input id="bbaiAccountNo" class="easyui-combogrid" name="bbaiAccountNo" style="width:150px" value="${vwBusCollectionPage.bbaiAccountNo }" data-options="
 				        	panelWidth: 150,
 				            idField: 'bbaiAccountNo',
@@ -287,7 +287,7 @@
 						</label>
 					</td>
 					<td class="value">
-					     	 <input id="bpiPayDate" name="bpiPayDate" type="text" maxlength="32" value="${vwBusCollectionPage.bpiPayDate }"  style="width: 150px" class="Wdate" onClick="WdatePicker()"   ignore="ignore" />
+					     	 <input id="bpiPayDate" name="bpiPayDate" type="text" maxlength="32" value="${vwBusCollectionPage.bpiPayDate }"  style="width: 150px" class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})"   ignore="ignore" />
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">支付时间</label>
 						</td>

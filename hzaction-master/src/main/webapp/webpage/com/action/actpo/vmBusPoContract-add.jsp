@@ -319,7 +319,7 @@
 					  <label class="Validform_label" style="display: none;">单价</label>
 				  </td>
 				  <td align="left">
-					  	<input name="busPoContractDetailList[#index#].bpcdAmount"  disabled='disabled' maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
+					  	<input name="busPoContractDetailList[#index#].bpcdAmount" readonly="readonly" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">金额</label>
 				  </td>
 				  <td align="left">

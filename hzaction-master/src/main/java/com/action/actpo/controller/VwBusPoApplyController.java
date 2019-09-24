@@ -796,7 +796,7 @@ public class VwBusPoApplyController extends BaseController {
 		for (Map.Entry<String, MultipartFile> entity : fileMap.entrySet()) {
 			MultipartFile file = entity.getValue();// 获取上传文件对象
 			ImportParams params = new ImportParams();
-			params.setTitleRows(0);// excel文件的标题行数
+			params.setTitleRows(1);// excel文件的标题行数
 			params.setHeadRows(1);// excel文件中的表头行数
 			params.setNeedSave(true);
 			try {

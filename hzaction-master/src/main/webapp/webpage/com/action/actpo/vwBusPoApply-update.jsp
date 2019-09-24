@@ -32,226 +32,52 @@
 <t:base type="uploadify"></t:base>
 <script type="text/javascript">
 
-		
-		
-	
 	//--------------下拉菜单—------------------
 
-	$(function() {
-		$("#bpmName")
-				.dropDownSelect(
-						{
-							url : "vwBusPoApplyController/loadSuggestData.do?type=project&keyword="
-						});
-
-	})
-	$.fn
-			.extend({
-				dropDownSelect : function(options) {
-					var _this = this;
-					var dropdowMenu = null;
-					var oData = new Array();
-					var timer = null;
-					var attrs = new Array();
-					var URL = options.url || ""
-					options.index = options.index || 0
-					init();
-					function init() {
-						createView();
-						dropdowMenu = $(_this).parent().find(".dropdown-menu")
-								.eq(0);
-						dropdowMenu.hide();
-						getData("");
-						bindEvent();
-					}
-					function createView() {
-						//找到父级 生成一个div.dropdown,将元素放进去
-						var template = "<div class='dropdown'><button type='button'>▼</button><ul class='dropdown-menu' role='menu'></ul><div>"
-						if (options.pos != "before") {
-							$(_this).before($(template))
-						} else {
-							$(_this).parent().append($(template))
-						}
-						$(_this).parent().find(".dropdown").find('button')
-								.before(_this)
-						$(".dropdown").css({
-							"position" : "relative",
-							"display" : "inline-block",
-							"border-collapse" : "separate"
-						})
-						$(".dropdown button").css({
-							"position" : "absolute",
-							"right" : "0px",
-							"font-size" : "10px",
-							"height" : "100%",
-							"width" : "20px",
-							"padding" : "0px"
-						})
-						$(".dropdown ul.dropdown-menu").css({
-							"position" : "absolute",
-							"z-index" : "999",
-							"background" : "#e1e1e1",
-							"max-height" : "200px",
-							"overflow-y" : "scroll",
-							"width" : "420px",
-							"display" : "none"
-						})
-					}
-					function bindEvent() {
-						$(_this).blur(function() {
-							dropdowMenu.hide();
-						}).focus(function() {
-							dropdowMenu.show();
-						})
-						// 输入筛选
-						.on("input", function(e) {
-							clearTimeout(timer);
-							timer = setTimeout(function() {
-								getData($(_this).val());
-							}, 200)
-						})
-						$(_this).parent().find("button").on("click",
-								function() {
-									_this[0].focus();
-								})
-					}
-					function getData(keyword) {
-						$.ajax({
+			function dealbpaApplyNo(BpProjId) {
+				var url2 = "vwBusPoApplyController/creatBpProjId.do?type=project&BpProjId="
+				$.ajax({
 							method : "GET",
-							url : URL + keyword,
+							url : url2 + BpProjId,
 							success : function(res) {
 
-								renderData(JSON.parse(res))
+								var data = JSON.parse(res);
+								if (data.value.length == 0) {
+
+									$("#bpaApplyNo").val(
+											BpProjId + "-CG-001")
+								} else {
+									//最大的采购申请编号
+									var bpa_apply_no = data.value[0].bpa_apply_no;
+									//获取编号的后三位字符串
+
+									var num = parseInt(bpa_apply_no
+											.substring(
+													bpa_apply_no.length - 3,
+													bpa_apply_no.length)) + 1;
+
+									var newnum = num + "";
+									if (num < 10) {
+										newnum = "00" + num;
+									} else if (num < 100) {
+										newnum = "0" + num;
+									}
+									//重新拼字符串，实现在原来的申请编号基础上加1；
+									bpa_apply_no = bpa_apply_no
+											.substring(
+													0,
+													bpa_apply_no.length - 3)
+											+ newnum;
+
+									$("#bpaApplyNo").val(bpa_apply_no);
+								}
+
 							},
 							fail : function(err) {
 								console.log(err)
 							}
 						})
-					}
-					function renderData(data) {
-						if (data.code == 200) {
-							
-							oData = data.value
-							var html = "<table style='width:100%;background:#e1e1e1)'><tbody>"
-							oData
-									.forEach(function(item, index) {
-										html += "<tr>"
-										for ( var key in item) {
-											html += "<td data-" + key + " style='-webkit-user-select: none'>"
-													+ item[key] + "</td>"
-										}
-									})
-							html += "</tbody></table>"
-							//				显示
-							dropdowMenu.html(html)
-							bindEvent2tr();
-						}
-					}
-					function bindEvent2tr() {
-						dropdowMenu
-								.find("table")
-								.eq(0)
-								.on(
-										"mousedown",
-										"tr",
-										function(e) {
-											if (options.pos == 'before') {
-												$(_this)
-														.val(
-																$(
-																		e.currentTarget)
-																		.find(
-																				"td")
-																		.eq(
-																				options.index)
-																		.html())
-											} else {
-
-												var index = $(e.currentTarget)
-														.index();
-
-												dealbpaApplyNo(oData[index]['bp_proj_id']);
-
-												for ( var key in oData[index]) {
-													var tId = key
-															.replace(
-																	/_\w/g,
-																	function($) {
-																		return $
-																				.slice(
-																						1)
-																				.toUpperCase()
-																	})
-													$("#" + tId)
-															&& $("#" + tId)
-																	.val(
-																			oData[index][key])
-
-												}
-
-											}
-										}).find('tr').hover(
-										function(e) {
-											$(this).find("td").css(
-													"backgroundColor",
-													"#ffffff")
-										},
-										function() {
-											$(this).find("td").css(
-													"backgroundColor",
-													"transparent")
-										})
-					}
-
-					//处理采购编号						
-
-					function dealbpaApplyNo(BpProjId) {
-						var url2 = "vwBusPoApplyController/creatBpProjId.do?type=project&BpProjId="
-						$
-								.ajax({
-									method : "GET",
-									url : url2 + BpProjId,
-									success : function(res) {
-
-										var data = JSON.parse(res);
-										if (data.value.length == 0) {
-
-											$("#bpaApplyNo").val(
-													BpProjId + "-CG-001")
-										} else {
-											//最大的采购申请编号
-											var bpa_apply_no = data.value[0].bpa_apply_no;
-											//获取编号的后三位字符串
-
-											var num = parseInt(bpa_apply_no
-													.substring(
-															bpa_apply_no.length - 3,
-															bpa_apply_no.length)) + 1;
-
-											var newnum = num + "";
-											if (num < 10) {
-												newnum = "00" + num;
-											} else if (num < 100) {
-												newnum = "0" + num;
-											}
-											//重新拼字符串，实现在原来的申请编号基础上加1；
-											bpa_apply_no = bpa_apply_no
-													.substring(
-															0,
-															bpa_apply_no.length - 3)
-													+ newnum;
-
-											$("#bpaApplyNo").val(bpa_apply_no);
-										}
-
-									},
-									fail : function(err) {
-										console.log(err)
-									}
-								})
-					}
-				}
-			});
+			}
 	$(document).ready(function() {
 		$('#tt').tabs({
 			onSelect : function(title) {
@@ -320,8 +146,8 @@
 			<tr>
 				<td align="right"><label class="Validform_label">收货地址:</label>
 				</td>
-				<td class="value"><input id="bpaRecAddr" name="bpaRecAddr"
-					type="text" maxlength="200" style="width: 150px" class="inputxt"
+				<td class="value" colspan="3"><input id="bpaRecAddr" name="bpaRecAddr"
+					type="text" maxlength="200" style="width: 400px" class="inputxt"
 					ignore="ignore" value='${vwBusPoApplyPage.bpaRecAddr}' /> <span
 					class="Validform_checktip"></span> <label class="Validform_label"
 					style="display: none;">收货地址</label></td>				
@@ -425,6 +251,7 @@
 	</table>
 </body>
 <script src="webpage/com/action/actpo/vwBusPoApply.js"></script>
+<script src = "webpage/com/action/actpo/dropdown.js"></script>
 <script type="text/javascript">
 //审核状态的数据处理
 $(function(){
@@ -454,7 +281,24 @@ $(function(){
 	
 $("#bpaState").val(bpaSate_value);
 })
-	
+$(document).ready(function() {
+	$("#bpmName").combogrid({
+		panelWidth: 500,
+		idField: "bpmName",
+		textField: "bpmName",
+		url: "busProjectManagerController.do?datagrid&field=id,bpmProjId,bpmName",
+		columns: [[
+			{field:'bpmProjId',title:'项目编号',width:80},
+			{field:'bpmName',title:'项目名称',width:80}
+		]],
+		onSelect:function(row,data){
+			$("#bpProjId").val(data.bpmProjId);
+			$("#fromProjmId").val(data.id);
+			dealbpaApplyNo(data.bpmProjId)
+		},
+		fitColumns: true
+	})
+})
 
 
 	//加载 已存在的 文件

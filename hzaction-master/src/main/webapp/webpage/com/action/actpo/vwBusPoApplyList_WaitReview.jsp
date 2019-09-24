@@ -116,7 +116,7 @@ $(function(){
 			return;
 		}
 		url = url + "&id=" + rowData['id'];
-		$.dialog.confirm('你确定要宬成项目审核吗?', function(r) {
+		$.dialog.confirm('你确定要完成项目审核吗?', function(r) {
 			if (r) {
 				$.ajax({
 					url : url,
@@ -129,6 +129,7 @@ $(function(){
 						var d = $.parseJSON(data);
 						if (d.success) {
 							var msg = d.msg;
+							$("#vwBusPoApplyList").datagrid("reload");
 							alert(msg);
 						}
 					}
@@ -145,7 +146,7 @@ $(function(){
 			return;
 		}
 		url = url + "&id=" + rowData['id'];
-		$.dialog.confirm('你确定要宬成项目审核吗?', function(r) {
+		$.dialog.confirm('你确定要完成项目审核吗?', function(r) {
 			if (r) {
 				$.ajax({
 					url : url,
@@ -158,6 +159,7 @@ $(function(){
 						var d = $.parseJSON(data);
 						if (d.success) {
 							var msg = d.msg;
+							$("#vwBusPoApplyList").datagrid("reload");
 							alert(msg);
 						}
 					}

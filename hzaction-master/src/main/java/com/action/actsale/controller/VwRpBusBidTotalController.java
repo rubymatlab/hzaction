@@ -92,9 +92,9 @@ public class VwRpBusBidTotalController extends BaseController {
 	public void datagrid(VwRpBusBidTotalEntity vwRpBusBidTotal,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
 
 		//模糊查询
-		/*		if(vwRpBusBidTotal != null && vwRpBusBidTotal.getBpManager() != null) {
-			vwRpBusBidTotal.setBpManager("*"+vwRpBusBidTotal.getBpManager()+"*");
-		}*/
+		if(StringUtil.isNotEmpty(vwRpBusBidTotal.getBpProjName())){
+			vwRpBusBidTotal.setBpProjName("*"+vwRpBusBidTotal.getBpProjName()+"*");
+		}
 		CriteriaQuery cq = new CriteriaQuery(VwRpBusBidTotalEntity.class, dataGrid);
 		//查询条件组装器
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, vwRpBusBidTotal, request.getParameterMap());

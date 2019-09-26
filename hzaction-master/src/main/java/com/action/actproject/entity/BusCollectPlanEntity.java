@@ -57,6 +57,9 @@ public class BusCollectPlanEntity implements java.io.Serializable {
 	/**预计回款日期*/
 	@Excel(name="预计回款日期",width=15,format = "yyyy-MM-dd")
 	private java.util.Date brpExtBackDate;
+	/**计划开票日期*/
+	@Excel(name="计划开票日期",width=15,format = "yyyy-MM-dd")
+	private java.util.Date brpPlanInvoiceDate;
 	/**回款金额*/
 	@Excel(name="回款金额",width=15)
 	private java.lang.String brpBackAmount;
@@ -69,6 +72,7 @@ public class BusCollectPlanEntity implements java.io.Serializable {
 	/**开票日期*/
 	@Excel(name="开票日期",width=15,format = "yyyy-MM-dd")
 	private java.util.Date brpInvoiceDate;
+	
 	/**项目管理外键*/
 	@Excel(name="项目管理外键",width=15)
 	private java.lang.String fromId;
@@ -330,6 +334,26 @@ public class BusCollectPlanEntity implements java.io.Serializable {
 	public void setBrpBackAmount(java.lang.String brpBackAmount){
 		this.brpBackAmount = brpBackAmount;
 	}
+	
+	/**
+	 *方法: 取得java.util.Date
+	 *@return: java.util.Date  计划开票日期
+	 */
+	
+	@Column(name ="BRP_PLAN_INVOICE_DATE",nullable=true)
+	public java.util.Date getBrpPlanInvoiceDate(){
+		return this.brpPlanInvoiceDate;
+	}
+
+	/**
+	 *方法: 设置java.util.Date
+	 *@param: java.util.Date  计划开票日期
+	 */
+	public void setBrpPlanInvoiceDate(java.util.Date brpPlanInvoiceDate){
+		this.brpPlanInvoiceDate = brpPlanInvoiceDate;
+	}
+	
+	
 	
 	/**
 	 *方法: 取得java.lang.String

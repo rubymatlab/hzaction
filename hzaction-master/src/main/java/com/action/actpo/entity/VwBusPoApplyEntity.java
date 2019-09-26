@@ -73,24 +73,7 @@ public class VwBusPoApplyEntity implements java.io.Serializable {
 	/**项目管理外键*/
 	@Excel(name="项目管理外键",width=15)
 	private java.lang.String fromProjmId;
-	/**名称*/
-	@Excel(name="名称",width=15)
-	private java.lang.String bpadName;
-	/**品牌*/
-	@Excel(name="品牌",width=15)
-	private java.lang.String bpadBrand;
-	/**型号*/
-	@Excel(name="型号",width=15)
-	private java.lang.String bpadModel;
-	/**数量*/
-	@Excel(name="数量",width=15)
-	private java.lang.Double bpadNumber;
-	/**备注*/
-	@Excel(name="备注",width=15)
-	private java.lang.String bpadRemark;
-	/**采购申请外键*/
-	@Excel(name="采购申请外键",width=15)
-	private java.lang.String fromId;
+
 	/**项目名称*/
 	@Excel(name="项目名称",width=15)
 	private java.lang.String bpmName;
@@ -438,114 +421,6 @@ public class VwBusPoApplyEntity implements java.io.Serializable {
 	 */
 	public void setFromProjmId(java.lang.String fromProjmId){
 		this.fromProjmId = fromProjmId;
-	}
-	
-	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  名称
-	 */
-	
-	@Column(name ="BPAD_NAME",nullable=true,length=200)
-	public java.lang.String getBpadName(){
-		return this.bpadName;
-	}
-
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  名称
-	 */
-	public void setBpadName(java.lang.String bpadName){
-		this.bpadName = bpadName;
-	}
-	
-	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  品牌
-	 */
-	
-	@Column(name ="BPAD_BRAND",nullable=true,length=200)
-	public java.lang.String getBpadBrand(){
-		return this.bpadBrand;
-	}
-
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  品牌
-	 */
-	public void setBpadBrand(java.lang.String bpadBrand){
-		this.bpadBrand = bpadBrand;
-	}
-	
-	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  型号
-	 */
-	
-	@Column(name ="BPAD_MODEL",nullable=true,length=200)
-	public java.lang.String getBpadModel(){
-		return this.bpadModel;
-	}
-
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  型号
-	 */
-	public void setBpadModel(java.lang.String bpadModel){
-		this.bpadModel = bpadModel;
-	}
-	
-	/**
-	 *方法: 取得java.lang.Double
-	 *@return: java.lang.Double  数量
-	 */
-	
-	@Column(name ="BPAD_NUMBER",nullable=true,scale=2,length=12)
-	public java.lang.Double getBpadNumber(){
-		return this.bpadNumber;
-	}
-
-	/**
-	 *方法: 设置java.lang.Double
-	 *@param: java.lang.Double  数量
-	 */
-	public void setBpadNumber(java.lang.Double bpadNumber){
-		this.bpadNumber = bpadNumber;
-	}
-	
-	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  备注
-	 */
-	
-	@Column(name ="BPAD_REMARK",nullable=true,length=500)
-	public java.lang.String getBpadRemark(){
-		return this.bpadRemark;
-	}
-
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  备注
-	 */
-	public void setBpadRemark(java.lang.String bpadRemark){
-		this.bpadRemark = bpadRemark;
-	}
-	
-	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  采购申请外键
-	 */
-	
-	@Column(name ="FROM_ID",nullable=true,length=32)
-	public java.lang.String getFromId(){
-		return this.fromId;
-	}
-
-	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  采购申请外键
-	 */
-	public void setFromId(java.lang.String fromId){
-		this.fromId = fromId;
 	}
 	
 	/**

@@ -88,6 +88,22 @@ public class VwBusProjectController extends BaseController {
 	@RequestMapping(params = "datagrid")
 	public void datagrid(VwBusProjectEntity vwBusProject,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
 		CriteriaQuery cq = new CriteriaQuery(VwBusProjectEntity.class, dataGrid);
+		// 模糊查询
+		
+		if(StringUtil.isNotEmpty(vwBusProject.getBpManager())){
+			vwBusProject.setBpManager("*"+vwBusProject.getBpManager()+"*");
+		}
+		if(StringUtil.isNotEmpty(vwBusProject.getBpProjName())){
+			vwBusProject.setBpProjName("*"+vwBusProject.getBpProjName()+"*");
+		}
+		if(StringUtil.isNotEmpty(vwBusProject.getBpProjId())){
+			vwBusProject.setBpProjId("*"+vwBusProject.getBpProjId()+"*");
+		}
+//		跟进结果
+		if(StringUtil.isNotEmpty(vwBusProject.getBpFollowResults())){
+			vwBusProject.setBpFollowResults("*"+vwBusProject.getBpFollowResults()+"*");
+		}
+		
 		//查询条件组装器
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, vwBusProject, request.getParameterMap());
 		try{
@@ -142,7 +158,13 @@ public class VwBusProjectController extends BaseController {
 				 * systemService.getEntity(VwBusProjectEntity.class, id );
 				 */
 				BusProjectEntity busProject=systemService.getEntity(BusProjectEntity.class, id);
-				busProjectService.delMain(busProject);
+				if(busProject.getBpmStatus().equals("1"))
+					busProjectService.delMain(busProject);
+				else
+				{
+					message="项目在处理、或已完成，不能删除";
+					break;
+				}
 				//vwBusProjectService.delMain(vwBusProject);
 				systemService.addLog(message, Globals.Log_Type_DEL, Globals.Log_Leavel_INFO);
 			}
@@ -382,7 +404,11 @@ public class VwBusProjectController extends BaseController {
 				for (VwBusProjectPage page : list) {
 					entity1=new VwBusProjectEntity();
 					MyBeanUtils.copyBeanNotNull2Bean(page,entity1);
-		            vwBusProjectService.addMain(entity1, page.getBusProjectFeeDetailList(),page.getBusProjectDisfollowList(),page.getBusProjPartnerList());
+					
+					BusProjectEntity busProject=new BusProjectEntity();
+					MyBeanUtils.copyBeanNotNull2Bean(entity1,busProject);
+					busProjectService.addMain(busProject, page.getBusProjectFeeDetailList(),page.getBusProjectDisfollowList(),page.getBusProjPartnerList());
+		            //vwBusProjectService.addMain(entity1, page.getBusProjectFeeDetailList(),page.getBusProjectDisfollowList(),page.getBusProjPartnerList());
 				}
 				j.setMsg("文件导入成功！");
 			} catch (Exception e) {

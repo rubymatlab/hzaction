@@ -106,13 +106,13 @@ public class VwBusCollectionEntity implements java.io.Serializable {
 	@Excel(name="支付方式",width=15,dicCode="bus_pa_way")
 	private java.lang.String bpiPayMethod;
 	/**银行帐号*/
-	@Excel(name="银行帐号",width=15,dicCode="ba_acc_no")
+	@Excel(name="银行帐号",width=15,dicCode="bc_fee_nam")
 	private java.lang.String bbaiAccountNo;
 	/**费用类别*/
 	@Excel(name="费用类别",width=15,dicCode="cost_type")
 	private java.lang.String bpiFeeType;
 	/**费用明细*/
-	@Excel(name="费用明细",width=15,dicCode="bus_pa_way")
+	@Excel(name="费用明细",width=15,dicCode="bc_fee_dtl")
 	private java.lang.String bpiFeeDetail;
 	/**支付时间*/
 	@Excel(name="支付时间",width=15)
@@ -120,7 +120,7 @@ public class VwBusCollectionEntity implements java.io.Serializable {
 	/*银行卡外键*/
 	private java.lang.String fromBankAccId;
 	/**内容*/
-	@Excel(name="内容",width=15,dicCode="bus_pa_way")
+	@Excel(name="内容",width=15,dicCode="bus_pa_con")
 	private java.lang.String bpiContent;
 	/**凭证号*/
 	@Excel(name="凭证号",width=15)

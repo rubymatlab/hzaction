@@ -69,18 +69,17 @@
 			</td>
 			<td class="value">
 		     	<input id="bpmProjName" name="bpmProjName" type="text" maxlength="50" style="width: 300px;" class="inputxt easyui-combogrid"  ignore="ignore" data-options="
-			            panelWidth: 500,
-			            idField: 'bpmProjName',
-			            textField: 'bpmProjName',
-			            url: 'vmBusProjectManagerController.do?datagrid&field=id,bpmProjId,bpmProjName,bpmCustSName',
+			           panelWidth: 500,
+			            idField: 'bpmName',
+			            textField: 'bpmName',
+			            url: 'busProjectManagerController.do?datagrid&field=id,bpmProjId,bpmName',
 			            columns: [[
 			                {field:'bpmProjId',title:'项目编号',width:80},
-			                {field:'bpmProjName',title:'项目名称',width:120}
+			                {field:'bpmName',title:'项目名称',width:120}
 			            ]],
 			            onSelect: function (row,data) {
 			            	$('#bpmProjId').val(data.bpmProjId);
 			            	$('#fromProjmId').val(data.id);
-			            	// $('#bpmCustSName').val(data.bpmCustSName);
 			            	window.projectId = data.id;
 			            	createBCollectId(data.bpmProjId,data.id)
 					    },
@@ -88,7 +87,7 @@
 			        " />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">项目名称</label>
-				<input type="hidden" id="fromProjmId" name="fromProjmId" ignore="ignore" class="inputxt">
+				<input type="hidden" id="fromProjmId" name="fromProjmId" ignore="ignore" class="inputxt">	
 				<input type="hidden" id="fromSuppId" name="fromSuppId" ignore="ignore" class="inputxt">
 <!-- 				<input type="hidden" id="bpmCustSName" name="bpmCustSName" ignore="ignore" class="inputxt"> -->
 			</td>
@@ -107,6 +106,7 @@
 			                 {field:'bsTelNo',title:'供应商电话',width:120}
 			            ]],
 			            onSelect: function (row,data) {
+			            	console.log('供应商'+data.id)
 			            	$('#bsContact').val(data.bsContact);
 			            	$('#bsTelNo').val(data.bsTelNo);
 			            	$('#fromSuppId').val(data.id)
@@ -229,7 +229,7 @@
 				<%-- 增加一个div，用于调节页面大小，否则默认太小 --%>
 				<div style="width:800px;height:1px;"></div>
 				<t:tabs id="tt" iframe="false" tabPosition="top" fit="false">
-				 <t:tab href="vmBusPoContractController.do?vmMergeBusPoApplyDetailList&id=${vmBusPoContractPage.id}" icon="icon-search" title="采购申请明细" id="vmMergeBusPoApplyDetail"></t:tab>
+				<%--  <t:tab href="vmBusPoContractController.do?vmMergeBusPoApplyDetailList&id=${vmBusPoContractPage.id}" icon="icon-search" title="采购申请明细" id="vmMergeBusPoApplyDetail"></t:tab> --%>
 				 <t:tab href="vmBusPoContractController.do?busPoContractPayList&id=${vmBusPoContractPage.id}" icon="icon-search" title="采购合同付款明细" id="busPoContractPay"></t:tab>
 				 <t:tab href="vmBusPoContractController.do?busPoContractDetailList&id=${vmBusPoContractPage.id}" icon="icon-search" title="采购合同明细" id="busPoContractDetail"></t:tab>
 				</t:tabs>
@@ -319,7 +319,7 @@
 					  <label class="Validform_label" style="display: none;">单价</label>
 				  </td>
 				  <td align="left">
-					  	<input name="busPoContractDetailList[#index#].bpcdAmount"  disabled='disabled' maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
+					  	<input name="busPoContractDetailList[#index#].bpcdAmount" readonly="readonly" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">金额</label>
 				  </td>
 				  <td align="left">
@@ -337,76 +337,75 @@
  <script src = "webpage/com/action/actpo/vmBusPoContract.js"></script>
  <script src = "webpage/com/action/actpo/dropdown.js"></script>
  <script type="text/javascript">
-		 var bpmProjIdList = []
-			$.get("vmBusPoContractController.do?datagrid&field=bpmProjId,fromProjmId",function(row){
-				bpmProjIdList = row.rows;
-			})
-			// 采购合同编号
-			function createBCollectId(projID,fromId){
-				var num = 1;
-				bpmProjIdList.forEach(function(item){
-					console.log(item.fromProjmId,fromId)
-					if(item.fromProjmId == fromId){
-						num++
-					}
-				})
-				$("#bpcPoNo").val(projID+"-CG-"+("00"+num).slice(-3))
-			}
- 	
- 
-	  		function jeecgFormFileCallBack(data){
-	  			if (data.success == true) {
-					uploadFile(data);
-				} else {
-					if (data.responseText == '' || data.responseText == undefined) {
-						$.messager.alert('错误', data.msg);
-						$.Hidemsg();
-					} else {
-						try {
-							var emsg = data.responseText.substring(data.responseText.indexOf('错误描述'), data.responseText.indexOf('错误信息'));
-							$.messager.alert('错误', emsg);
-							$.Hidemsg();
-						} catch(ex) {
-							$.messager.alert('错误', data.responseText + '');
-						}
-					}
-					return false;
+		var bpmProjIdList = []
+		$.get("vmBusPoContractController.do?datagrid&field=bpmProjId,fromProjmId",function(row){
+			bpmProjIdList = row.rows;
+		})
+		// 采购合同编号
+		function createBCollectId(projID,fromId){
+			var num = 1;
+			bpmProjIdList.forEach(function(item){
+				if(item.fromProjmId == fromId){
+					num++
 				}
-				if (!neibuClickFlag) {
+			})
+			$("#bpcPoNo").val(projID+"-CG-"+("00"+num).slice(-3))
+		}
+	
+
+  		function jeecgFormFileCallBack(data){
+  			if (data.success == true) {
+				uploadFile(data);
+			} else {
+				if (data.responseText == '' || data.responseText == undefined) {
+					$.messager.alert('错误', data.msg);
+					$.Hidemsg();
+				} else {
+					try {
+						var emsg = data.responseText.substring(data.responseText.indexOf('错误描述'), data.responseText.indexOf('错误信息'));
+						$.messager.alert('错误', emsg);
+						$.Hidemsg();
+					} catch(ex) {
+						$.messager.alert('错误', data.responseText + '');
+					}
+				}
+				return false;
+			}
+			if (!neibuClickFlag) {
+				var win = frameElement.api.opener;
+				win.reloadTable();
+			}
+  		}
+  		function upload() {
+			$('#bafPath').uploadify('upload', '*');	
+		}	
+		  
+		var neibuClickFlag = false;
+		function neibuClick() {
+			neibuClickFlag = true; 
+			$('#btn_sub').trigger('click');
+		}
+		function cancel() {
+				$('#bafPath').uploadify('cancel', '*');
+		}
+		function uploadFile(data){
+			if(!$("input[name='id']").val()){
+				if(data.obj!=null && data.obj!='undefined'){
+					$("input[name='id']").val(data.obj.id);
+				}
+			}
+			if($(".uploadify-queue-item").length>0){
+				upload();
+			}else{
+				if (neibuClickFlag){
+					alert(data.msg);
+					neibuClickFlag = false;
+				}else {
 					var win = frameElement.api.opener;
 					win.reloadTable();
-				}
-	  		}
-	  		function upload() {
-				$('#bafPath').uploadify('upload', '*');	
-			}	
-			  
-			var neibuClickFlag = false;
-			function neibuClick() {
-				neibuClickFlag = true; 
-				$('#btn_sub').trigger('click');
-			}
-			function cancel() {
-					$('#bafPath').uploadify('cancel', '*');
-			}
-			function uploadFile(data){
-				if(!$("input[name='id']").val()){
-					if(data.obj!=null && data.obj!='undefined'){
-						$("input[name='id']").val(data.obj.id);
-					}
-				}
-				if($(".uploadify-queue-item").length>0){
-					upload();
-				}else{
-					if (neibuClickFlag){
-						alert(data.msg);
-						neibuClickFlag = false;
-					}else {
-						var win = frameElement.api.opener;
-						win.reloadTable();
-						win.tip(data.msg);
-						frameElement.api.close();
-					}
+					win.tip(data.msg);
+					frameElement.api.close();
 				}
 			}
-	  	</script>
+		}
+  	</script>

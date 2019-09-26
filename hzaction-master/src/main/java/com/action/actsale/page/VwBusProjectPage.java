@@ -75,7 +75,7 @@ public class VwBusProjectPage implements java.io.Serializable {
     @Excel(name="跟进结果")
 	private java.lang.String bpFollowResults;
 	/**客户资料外键*/
-    @Excel(name="客户资料外键")
+	/* @Excel(name="客户资料外键") */
 	private java.lang.String fromCustId;
 	/**客户编号*/
     @Excel(name="客户编号")

@@ -13,6 +13,8 @@
  <body>
   <t:formvalid formid="formobj" dialog="true" usePlugin="password" layout="table" action="vwBusSpecialPayController.do?doAdd" callback="jeecgFormFileCallBack@Override">
 					<input id="id" name="id" type="hidden" value="${vwBusSpecialPayPage.id }"/>
+					<input id="fromProjmId" name="fromProjmId" type="hidden" maxlength="36" style="width: 150px" class="inputxt"  ignore="ignore" />
+					<input id="fromSuppId" name="fromSuppId" type="hidden" maxlength="36" style="width: 150px" class="inputxt"  ignore="ignore" />
 		<table style="width: 600px;" cellpadding="0" cellspacing="1" class="formtable">
 				<tr>
 					<td align="right">
@@ -193,33 +195,11 @@
 				<tr>
 					<td align="right">
 						<label class="Validform_label">
-							项目管理外键:
-						</label>
-					</td>
-					<td class="value">
-					     	 <input id="fromProjmId" name="fromProjmId" type="text" maxlength="36" style="width: 150px" class="inputxt"  ignore="ignore" />
-							<span class="Validform_checktip"></span>
-							<label class="Validform_label" style="display: none;">项目管理外键</label>
-						</td>
-					<td align="right">
-						<label class="Validform_label">
-							供应商资料外键:
-						</label>
-					</td>
-					<td class="value">
-					     	 <input id="fromSuppId" name="fromSuppId" type="text" maxlength="36" style="width: 150px" class="inputxt"  ignore="ignore" />
-							<span class="Validform_checktip"></span>
-							<label class="Validform_label" style="display: none;">供应商资料外键</label>
-						</td>
-					</tr>
-				<tr>
-					<td align="right">
-						<label class="Validform_label">
 							项目编号:
 						</label>
 					</td>
 					<td class="value">
-					     	 <input id="bpProjId" name="bpProjId" type="text" maxlength="40" style="width: 150px" class="inputxt"  ignore="ignore" />
+					     	 <input id="bpProjId" name="bpProjId" readonly="readonly" type="text" maxlength="40" style="width: 150px;background-color:#F0F0F0;" class="inputxt"  ignore="ignore" />
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">项目编号</label>
 						</td>
@@ -229,7 +209,24 @@
 						</label>
 					</td>
 					<td class="value">
-					     	 <input id="bpProjName" name="bpProjName" type="text" maxlength="200" style="width: 150px" class="inputxt"  ignore="ignore" />
+					     	 <!-- <input id="bpProjName" name="bpProjName" type="text" maxlength="200" style="width: 150px" class="inputxt"  ignore="ignore" /> -->
+							
+							<input id="bpProjName" name="bpProjName" type="text" maxlength="100" style="width: 150px" class="easyui-combogrid"  ignore="ignore"
+						     	 data-options="panelWidth: 500,
+						     	 idField: 'bpProjName',
+						     	 textField: 'bpProjName',
+						     	 url: 'busProjectController.do?datagrid&field=id,bpProjId,bpProjName,bpManager',
+						     	 columns: [[ 
+					                {field:'bpProjId',title:'项目编号',width:80}, 
+					                {field:'bpProjName',title:'项目名称',width:120} , 
+					                {field:'bpManager',title:'项目经理',width:120} 
+				                ]],
+				                onSelect: function (row,data) {
+				                	$('#fromProjmId').val(data.id);
+				                	$('#bpProjId').val(data.bpProjId);
+				                	$('#bpManager').val(data.bpManager);
+								},
+				                fitColumns: true" />
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">项目名称</label>
 						</td>
@@ -241,7 +238,7 @@
 						</label>
 					</td>
 					<td class="value">
-					     	 <input id="bpManager" name="bpManager" type="text" maxlength="40" style="width: 150px" class="inputxt"  ignore="ignore" />
+					     	 <input id="bpManager" name="bpManager" type="text" readonly="readonly"  maxlength="40" style="width: 150px;background-color:#F0F0F0;" class="inputxt"  ignore="ignore" />
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">项目经理</label>
 						</td>
@@ -251,7 +248,21 @@
 						</label>
 					</td>
 					<td class="value">
-					     	 <input id="bsName" name="bsName" type="text" maxlength="100" style="width: 150px" class="inputxt"  ignore="ignore" />
+					     	 <!-- <input id="bsName" name="bsName" type="text" maxlength="100" style="width: 150px" class="inputxt"  ignore="ignore" /> -->
+							<input id="bsName" name="bsName" type="text" maxlength="100" style="width: 150px" class="easyui-combogrid"  ignore="ignore"
+						     	 data-options="panelWidth: 500,
+						     	 idField: 'bsName',
+						     	 textField: 'bsName',
+						     	 url: 'basSupplierController.do?datagrid&field=id,bsId,bsSname,bsName',
+						     	 columns: [[ 
+					                {field:'bsId',title:'供应商编号',width:80}, 
+					                {field:'bsSname',title:'供应商简称',width:120} , 
+					                {field:'bsName',title:'供应商名称',width:120} 
+				                ]],
+				                onSelect: function (row,data) {
+				                	$('#fromSuppId').val(data.id);
+								},
+				                fitColumns: true" />
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">供应商名称</label>
 						</td>

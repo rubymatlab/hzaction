@@ -243,7 +243,7 @@ public class CgReportController extends BaseController {
 		List<String> paramList = (List<String>) cgReportMap.get(CgReportConstant.PARAMS);
 		//页面参数查询字段（SQL条件语句片段）
 		Map<String,Object> pageSearchFields =  new LinkedHashMap<String,Object>();
-
+  
 		//获取查询条件数据
 		Map<String,Object> paramData = new HashMap<String, Object>();
 		if(paramList!=null&&paramList.size()>0){

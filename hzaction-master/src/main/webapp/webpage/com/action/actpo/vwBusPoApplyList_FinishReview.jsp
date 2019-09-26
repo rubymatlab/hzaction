@@ -11,7 +11,7 @@
 <div class="easyui-layout" fit="true">
 	<div region="center" style="padding: 0px; border: 0px">
 		<t:datagrid name="vwBusPoApplyList" checkbox="true" fitColumns="true"
-			title="采购申请视图" sortName="createDate"
+			title="采购申请" sortName="createDate"
 			actionUrl="vwBusPoApplyController.do?datagrid&state=2" idField="id"
 			fit="true" queryMode="group">
 			<t:dgCol title="主键" field="id" hidden="true" queryMode="single"

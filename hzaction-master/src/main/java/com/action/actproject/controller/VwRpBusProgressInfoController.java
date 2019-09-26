@@ -121,6 +121,18 @@ public class VwRpBusProgressInfoController extends BaseController {
 	public void datagrid(VwRpBusProgressInfoEntity vwRpBusProgressInfo,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
 		CriteriaQuery cq = new CriteriaQuery(VwRpBusProgressInfoEntity.class, dataGrid);
 		//查询条件组装器
+		if(StringUtil.isNotEmpty(vwRpBusProgressInfo.getBpManager())){
+			vwRpBusProgressInfo.setBpManager("*"+vwRpBusProgressInfo.getBpManager()+"*");
+		}
+		if(StringUtil.isNotEmpty(vwRpBusProgressInfo.getBpmName())){
+			vwRpBusProgressInfo.setBpmName("*"+vwRpBusProgressInfo.getBpmName()+"*");
+		}
+		if(StringUtil.isNotEmpty(vwRpBusProgressInfo.getBpProjId())){
+			vwRpBusProgressInfo.setBpProjId("*"+vwRpBusProgressInfo.getBpProjId()+"*");
+		}
+		if(StringUtil.isNotEmpty(vwRpBusProgressInfo.getBcName())){
+			vwRpBusProgressInfo.setBcName("*"+vwRpBusProgressInfo.getBcName()+"*");
+		}
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, vwRpBusProgressInfo, request.getParameterMap());
 		try{
 		//自定义追加查询条件

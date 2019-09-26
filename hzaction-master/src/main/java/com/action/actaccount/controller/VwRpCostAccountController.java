@@ -99,6 +99,24 @@ public class VwRpCostAccountController extends BaseController {
 	@RequestMapping(params = "datagrid")
 	public void datagrid(VwRpCostAccountEntity vwRpCostAccount,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
 		CriteriaQuery cq = new CriteriaQuery(VwRpCostAccountEntity.class, dataGrid);
+
+		//模糊查询
+		if(StringUtil.isNotEmpty(vwRpCostAccount.getBpManager())){
+			vwRpCostAccount.setBpManager("*"+vwRpCostAccount.getBpManager()+"*");
+		}
+		if(StringUtil.isNotEmpty(vwRpCostAccount.getBpProjName())){
+			vwRpCostAccount.setBpProjName("*"+vwRpCostAccount.getBpProjName()+"*");
+		}
+		if(StringUtil.isNotEmpty(vwRpCostAccount.getBpProjId())){
+			vwRpCostAccount.setBpProjId("*"+vwRpCostAccount.getBpProjId()+"*");
+		}
+		if(StringUtil.isNotEmpty(vwRpCostAccount.getBpManager())){
+			vwRpCostAccount.setBpManager("*"+vwRpCostAccount.getBpManager()+"*");
+		}
+		if(StringUtil.isNotEmpty(vwRpCostAccount.getBcName())){
+			vwRpCostAccount.setBcName("*"+vwRpCostAccount.getBcName()+"*");
+		}
+		
 		//查询条件组装器
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, vwRpCostAccount, request.getParameterMap());
 		try{

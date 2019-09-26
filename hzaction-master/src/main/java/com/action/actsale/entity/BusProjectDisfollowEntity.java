@@ -44,7 +44,7 @@ public class BusProjectDisfollowEntity implements java.io.Serializable {
 	@Excel(name="反馈信息",width=15)
 	private java.lang.String bpdFeedbackInto;
 	/**项目立项外键*/
-	@Excel(name="项目立项外键",width=15)
+	/* @Excel(name="项目立项外键",width=15) */
 	private java.lang.String fromId;
 	/**创建人名称*/
 	private java.lang.String createName;

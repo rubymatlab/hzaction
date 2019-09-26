@@ -57,7 +57,7 @@
 				<label class="Validform_label">项目编号:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bpProjId" name="bpProjId" type="text" maxlength="40" style="width: 150px;background-color:#F0F0F0;" readonly="true"  class="inputxt"  ignore="ignore" />
+		     	 <input id="bpProjId" name="bpProjId" type="text" maxlength="40" style="width: 150px;background-color:#F0F0F0;" readonly="true"  class="inputxt"  datatype="*" ignore="checked" />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">项目编号</label>
 			</td>
@@ -65,7 +65,7 @@
 				<label class="Validform_label">项目名称:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bpProjName" name="bpProjName" type="text" maxlength="200" style="width: 150px" class="inputxt"  ignore="ignore" />
+		     	 <input id="bpProjName" name="bpProjName" type="text" maxlength="200" style="width: 150px" class="inputxt"  datatype="*" ignore="checked" />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">项目名称</label>
 			</td>
@@ -107,7 +107,6 @@
 		     	 textField: 'bcName',
 		     	 url: 'basCustomerController.do?datagrid&field=id,bcId,bcName',
 		     	 columns: [[ 
-		     	 	{field:'id',title:'客户ID',width:80}, 
 	                {field:'bcId',title:'客户编号',width:80}, 
 	                {field:'bcName',title:'客户名称',width:120} 
                 ]],
@@ -231,7 +230,8 @@
 			 <td align="center"><div style="width: 25px;" name="xh"></div></td>
 			 <td align="center"><input style="width:20px;" type="checkbox" name="ck"/></td>
 				  <td align="left">
-					  	<input name="busProjectFeeDetailList[#index#].bpfFeeType" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
+					  	<!-- <input name="busProjectFeeDetailList[#index#].bpfFeeType" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" /> -->
+					  <t:dictSelect field="busProjectFeeDetailList[#index#].bpfFeeType" type="list"   typeGroupCode="cost_type"  defaultVal="1" hasLabel="false"  title="费用类型"></t:dictSelect>  
 					  <label class="Validform_label" style="display: none;">费用类型</label>
 				  </td>
 				  <td align="left">
@@ -243,7 +243,7 @@
 					  <label class="Validform_label" style="display: none;">详细描述</label>
 				  </td>
 				  <td align="left">
-					  	<input name="busProjectFeeDetailList[#index#].fromId" maxlength="36" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
+					  	<input name="busProjectFeeDetailList[#index#].fromId" maxlength="36" type="hidden" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">项目立项外键</label>
 				  </td>
 			</tr>
@@ -269,7 +269,7 @@
 					  <label class="Validform_label" style="display: none;">反馈信息</label>
 				  </td>
 				  <td align="left">
-					  	<input name="busProjectDisfollowList[#index#].fromId" maxlength="36" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
+					  	<input name="busProjectDisfollowList[#index#].fromId" maxlength="36" type="hidden" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">项目立项外键</label>
 				  </td>
 			</tr>
@@ -303,7 +303,7 @@
 					  <label class="Validform_label" style="display: none;">备注</label>
 				  </td>
 				  <td align="left">
-					  	<input name="busProjPartnerList[#index#].fromId" maxlength="36" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
+					  	<input name="busProjPartnerList[#index#].fromId" maxlength="36" type="hidden" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">项目立项外键</label>
 				  </td>
 			</tr>

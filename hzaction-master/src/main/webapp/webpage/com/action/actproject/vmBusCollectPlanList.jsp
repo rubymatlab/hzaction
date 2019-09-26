@@ -46,6 +46,9 @@
 						预计回款金额
 				  </td>
 				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
+						计划开票时间
+				  </td>
+				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
 						已收金额
 				  </td>
 				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
@@ -153,7 +156,11 @@
 					  <label class="Validform_label" style="display: none;">预计回款金额</label>
 				   </td>
 				   <td align="left">
-					  	<input name="vmBusCollectPlanList[${stuts.index }].brpAcceptAmount" maxlength="32" type="text" class="inputxt backed_amount"  style="width:120px;"  ignore="ignore"  value="${poVal.brpAcceptAmount }"/>
+							<input name="vmBusCollectPlanList[${stuts.index }].brpPlanInvoiceDate" maxlength="0"  type="text" class="Wdate" onClick="WdatePicker()"  style="width:150px;"   ignore="ignore"  value="<fmt:formatDate value='${poVal.brpPlanInvoiceDate}' type="date" pattern="yyyy-MM-dd"/>"/>
+					  <label class="Validform_label" style="display: none;">计划开票日期</label>
+				   </td>
+				   <td align="left">
+					  	<input name="vmBusCollectPlanList[${stuts.index }].brpAcceptAmount" maxlength="32" readonly="readonly" type="text" class="inputxt backed_amount"  style="width:120px;"  ignore="ignore"  value="${poVal.brpAcceptAmount }"/>
 					  <label class="Validform_label" style="display: none;">已收金额</label>
 				   </td>
 				   <td align="left">
@@ -161,7 +168,7 @@
 					  <label class="Validform_label" style="display: none;">发票金额</label>
 				   </td>
 				   <td align="left">
-							<input name="vmBusCollectPlanList[${stuts.index }].brpInvoiceDate" maxlength="0" disabled="disabled" type="text" class="Wdate" onClick="WdatePicker()"  style="width:150px;"   ignore="ignore"  value="<fmt:formatDate value='${poVal.brpInvoiceDate}' type="date" pattern="yyyy-MM-dd"/>"/>
+							<input name="vmBusCollectPlanList[${stuts.index }].brpInvoiceDate" maxlength="0" readonly="readonly" type="text" class="Wdate" onClick="WdatePicker()"  style="width:150px;"   ignore="ignore"  value="<fmt:formatDate value='${poVal.brpInvoiceDate}' type="date" pattern="yyyy-MM-dd"/>"/>
 					  <label class="Validform_label" style="display: none;">开票日期</label>
 				   </td>
 				   <td align="left">

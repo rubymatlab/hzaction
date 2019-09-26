@@ -47,7 +47,7 @@ public class BasCustomerContactsEntity implements java.io.Serializable {
 	@Excel(name="备注",width=15)
 	private java.lang.String bcRemark;
 	/**客户资料外键*/
-	@Excel(name="客户资料外键",width=15)
+//	@Excel(name="客户资料外键",width=15)
 	private java.lang.String fromId;
 	/**创建人名称*/
 	private java.lang.String createName;

@@ -11,7 +11,7 @@
 <div class="easyui-layout" fit="true">
 	<div region="center" style="padding: 0px; border: 0px">
 		<t:datagrid name="vwBusPoApplyList" checkbox="true" fitColumns="true"
-			title="采购申请视图" sortName="createDate"
+			title="采购申请" sortName="createDate"
 			actionUrl="vwBusPoApplyController.do?datagrid&state=1" idField="id"
 			fit="true" queryMode="group">
 			<t:dgCol title="主键" field="id" hidden="true" queryMode="single"
@@ -137,16 +137,16 @@ $(function(){
 			}
 		})
 	}
-	//自定义按钮-sql增强-送审
+	//自定义按钮-sql增强-驳回
 	function doBtn_submit(title, url, id) {
 		var rowData = $('#' + id).datagrid('getSelected');
 		if (!rowData) {
-			tip('请选择送审项目');
-			alert("请选择送审项目");
+			tip('请选择驳回项目');
+			alert("请选择驳回项目");
 			return;
 		}
 		url = url + "&id=" + rowData['id'];
-		$.dialog.confirm('你确定要完成项目审核吗?', function(r) {
+		$.dialog.confirm('你确定驳回项目吗?', function(r) {
 			if (r) {
 				$.ajax({
 					url : url,

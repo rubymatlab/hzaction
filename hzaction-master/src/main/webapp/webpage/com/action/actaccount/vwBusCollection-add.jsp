@@ -22,7 +22,7 @@
 					</td>
 					<td class="value">
 					     	 	<input id="bpmProjName" class="easyui-combogrid" style="width:150px" data-options="
-			            panelWidth: 150,
+			            panelWidth: 500,
 			            idField: 'bpmProjName',
 			            textField: 'bpmProjName',	
 			            url: 'vmBusProjectManagerController.do?datagrid&field=id,bpmProjName,bpmProjId,bpmCustName',

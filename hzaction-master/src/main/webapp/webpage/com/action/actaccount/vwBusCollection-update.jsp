@@ -219,7 +219,7 @@
 						</label>
 					</td>
 					<td class="value">
-							<t:dictSelect field="bpiPayMethod" type="list"  typeGroupCode="cost_type" defaultVal="${vwBusCollectionPage.bpiPayMethod }"   hasLabel="false"  title="支付方式" ></t:dictSelect>
+							<t:dictSelect field="bpiPayMethod" type="list"  typeGroupCode="bus_pa_way" defaultVal="${vwBusCollectionPage.bpiPayMethod }"   hasLabel="false"  title="支付方式" ></t:dictSelect>
 					     	 <!-- <input id="bpiPayMethod" name="bpiPayMethod" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" /> -->
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">支付方式</label>
@@ -297,7 +297,7 @@
 						</label>
 					</td>
 					<td class="value">
-						<t:dictSelect field="bpiContent" type="list"  typeGroupCode="cost_type"  defaultVal="${vwBusCollectionPage.bpiContent }"  hasLabel="false"  title="内容" ></t:dictSelect>
+						<t:dictSelect field="bpiContent" type="list"  typeGroupCode="bus_pa_con"  defaultVal="${vwBusCollectionPage.bpiContent }"  hasLabel="false"  title="内容" ></t:dictSelect>
 					     	 <!-- <input id="bpiContent" name="bpiContent" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" /> -->
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">内容</label>

@@ -46,7 +46,7 @@
 					<input name="busProjectFollowList[0].sysCompanyCode" type="hidden"/>
 					<input name="busProjectFollowList[0].bpmStatus" type="hidden"/>
 				  <td align="left">
-							<input name="busProjectFollowList[0].bpfFollowDate" maxlength="0"  type="text" class="Wdate" onClick="WdatePicker()"  style="width:150px;"  ignore="ignore" >
+							<input name="busProjectFollowList[0].bpfFollowDate" maxlength="0"  type="text" class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})"  style="width:150px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">跟进日期</label>
 					</td>
 				  <td align="left">

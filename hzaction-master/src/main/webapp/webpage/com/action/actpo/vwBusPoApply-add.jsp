@@ -4,7 +4,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>采购申请视图</title>
+<title>采购申请</title>
 <style>
 .ui-button {
 	display: inline-block;

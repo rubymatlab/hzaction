@@ -120,7 +120,7 @@ public class VwBusCollectionEntity implements java.io.Serializable {
 	/*银行卡外键*/
 	private java.lang.String fromBankAccId;
 	/**内容*/
-	@Excel(name="内容",width=15,dicCode="bus_pa_way")
+	@Excel(name="内容",width=15,dicCode="bus_pa_con")
 	private java.lang.String bpiContent;
 	/**凭证号*/
 	@Excel(name="凭证号",width=15)

@@ -32,31 +32,31 @@ public class BusCostBudgetingEntity implements java.io.Serializable {
 	/**主键*/
 	private java.lang.String id;
 	/**流程状态*/
-	@Excel(name="流程状态",width=15)
+//	@Excel(name="流程状态",width=15)
 	private java.lang.String bpmStatus;
 	/**创建人名称*/
-	@Excel(name="创建人名称",width=15)
+//	@Excel(name="创建人名称",width=15)
 	private java.lang.String createName;
 	/**创建人登录名称*/
-	@Excel(name="创建人登录名称",width=15)
+//	@Excel(name="创建人登录名称",width=15)
 	private java.lang.String createBy;
 	/**更新人名称*/
-	@Excel(name="更新人名称",width=15)
+//	@Excel(name="更新人名称",width=15)
 	private java.lang.String updateName;
 	/**更新人登录名称*/
-	@Excel(name="更新人登录名称",width=15)
+//	@Excel(name="更新人登录名称",width=15)
 	private java.lang.String updateBy;
 	/**所属部门*/
-	@Excel(name="所属部门",width=15)
+//	@Excel(name="所属部门",width=15)
 	private java.lang.String sysOrgCode;
 	/**所属公司*/
-	@Excel(name="所属公司",width=15)
+//	@Excel(name="所属公司",width=15)
 	private java.lang.String sysCompanyCode;
 	/**创建日期*/
-	@Excel(name="创建日期",width=15,format = "yyyy-MM-dd")
+//	@Excel(name="创建日期",width=15,format = "yyyy-MM-dd")
 	private java.util.Date createDate;
 	/**更新日期*/
-	@Excel(name="更新日期",width=15,format = "yyyy-MM-dd")
+//	@Excel(name="更新日期",width=15,format = "yyyy-MM-dd")
 	private java.util.Date updateDate;
 	/**费用类型*/
 	@Excel(name="费用类型",width=15,dicCode="cost_type")
@@ -68,7 +68,7 @@ public class BusCostBudgetingEntity implements java.io.Serializable {
 	@Excel(name="备注",width=15)
 	private java.lang.String bcbRemark;
 	/**合同管理主表外键*/
-	@Excel(name="合同管理主表外键",width=15)
+//	@Excel(name="合同管理主表外键",width=15)
 	private java.lang.String busContractId;
 	
 	/**

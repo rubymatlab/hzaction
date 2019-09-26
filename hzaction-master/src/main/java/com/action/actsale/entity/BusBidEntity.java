@@ -84,10 +84,10 @@ public class BusBidEntity implements java.io.Serializable {
 	@Excel(name="备注",width=15)
 	private java.lang.String bdBidRemark;
 	/**项目立项外键*/
-	@Excel(name="项目立项外键",width=15)
+//	@Excel(name="项目立项外键",width=15)
 	private java.lang.String fromProjId;
 	/**客户资料外键*/
-	@Excel(name="客户资料外键",width=15)
+//	@Excel(name="客户资料外键",width=15)
 	private java.lang.String fromCustjId;
 	
 	/**

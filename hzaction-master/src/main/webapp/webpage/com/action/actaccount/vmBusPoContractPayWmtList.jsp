@@ -8,11 +8,11 @@
 	<input id="chooseClick" name="chooseClick" type="text" style="width: 150px;display: none;" class="searchbox-inputtext"  ignore="ignore"   
 		 onclick="popupClickBus(this,'bpc_po_no,bpcp_progre,bpcp_pay_amount,bpcp_date,from_id,bus_po_pay_id,from_projm_id,from_supp_id,bpcp_id',
 		 'bpcPoNo,bpcpProgre,bpcpPayAmount,bpcpDate,fromId,busPoPayId,fromProjmIdF,fromSuppIdF,bpcpId',
-		 'bus_po_contract_pay_wmt')"  />
-	<!--<input id="testClick" name="testClick" type="text" style="width: 150px" class="searchbox-inputtext"  ignore="ignore"   
+		 'bus_po_contract_pay_wmt')" />
+	<!-- <input id="testClick" name="testClick" type="text" style="width: 150px" class="searchbox-inputtext"  ignore="ignore"   
 		onclick="popupClickBus(this,'bpc_po_no,bpcp_progre,bpcp_pay_amount,bpcp_date,from_id,bus_po_pay_id,pay_amount,bpcp_remark,from_projm_id,from_supp_id',
 		 'bpcPoNo,bpcpProgre,bpcpPayAmount,bpcpDate,fromId,busPoPayId,payAmount,bpcpRemark,fromProjmIdF,fromSuppIdF',
-		 'bus_po_contract_pay_wmt')"  />--> 
+		 'bus_po_contract_pay_wmt')" /> -->
 </div>
 <table border="0" cellpadding="2" cellspacing="0" id="vmBusPoContractPayWmt_table">
 	<tr bgcolor="#E6E6E6">
@@ -65,10 +65,10 @@
 					  	<input name="vmBusPoContractPayWmtList[0].bpcPoNo" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">采购合同编号</label>
 					</td>
-				  <td align="left">
-							<t:dictSelect field="vmBusPoContractPayWmtList[0].bpcpProgre" type="list"   typeGroupCode="cost_stag"  defaultVal="${vmBusPoContractPayWmtPage.bpcpProgre}" hasLabel="false"  title="费用分期"></t:dictSelect>     
+				 <td align="left">
+							<t:dictSelect field="vmBusPoContractPayWmtList[0].bpcpProgre" type="list" typeGroupCode="cost_stag"  hasLabel="false"  title="费用分期"></t:dictSelect>     
 					  <label class="Validform_label" style="display: none;">费用分期</label>
-					</td>
+					</td> 
 				  <td align="left">
 					  	<input name="vmBusPoContractPayWmtList[0].bpcpPayAmount" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">计划付款金额</label>
@@ -119,7 +119,7 @@
 					  <label class="Validform_label" style="display: none;">采购合同编号</label>
 				   </td>
 				   <td align="left">
-							<t:dictSelect field="vmBusPoContractPayWmtList[${stuts.index }].bpcpProgre" type="list"   typeGroupCode="cost_stag"  defaultVal="${poVal.bpcpProgre }" hasLabel="false"  title="费用分期"></t:dictSelect>     
+							<t:dictSelect field="vmBusPoContractPayWmtList[${stuts.index }].bpcpProgre" type="list" typeGroupCode="cost_stag"  defaultVal="${poVal.bpcpProgre }" title="费用分期"></t:dictSelect>     
 					  <label class="Validform_label" style="display: none;">费用分期</label>
 				   </td>
 				   <td align="left">
@@ -212,23 +212,6 @@
 		 	$("#add_vmBusPoContractPayWmt_table").append(tr);
 			resetTrNum('add_vmBusPoContractPayWmt_table');	
     	}
-    }
-    function selectVal(val){
-    	var value = 0;
-    	switch(val){
-    		case "第一分期": value=1; break;
-    		case "第二分期": value=2; break;
-    		case "第三分期": value=3; break;
-    		case "第四分期": value=4; break;
-    		case "第五分期": value=5; break;
-    		case "第六分期": value=6; break;
-    		case "第七分期": value=7; break;
-    		case "第八分期": value=8; break;
-    		case "第九分期": value=9; break;
-    		case "第十分期": value=10; break;
-    		default: value = 0;break;
-    	}
-    	return value;
     }
     
     /**
@@ -395,7 +378,11 @@
 //								console.log(obj)  //每条选中的对象
 //								console.log(selected.length)	//从0开始
 								$("input[name='vmBusPoContractPayWmtList["+index+"].bpcPoNo']").val(obj.bpc_po_no)
-   								$("select[name='vmBusPoContractPayWmtList["+index+"].bpcpProgre']").val(selectVal(obj.bpcp_progre))
+								console.log(obj.bpcp_progre)
+								
+   								/* $("select[name='vmBusPoContractPayWmtList["+index+"].bpcpProgre']")
+   									.find("option:contains("+obj.bpcp_progre+")").attr('selected',true) */
+   								
 								$("input[name='vmBusPoContractPayWmtList["+index+"].bpcpPayAmount']").val(obj.bpcp_pay_amount)
 	 							$("input[name='vmBusPoContractPayWmtList["+index+"].bpcpDate']").val(obj.bpcp_date)
    	 							$("input[name='vmBusPoContractPayWmtList["+index+"].fromId']").val(obj.from_id)
@@ -409,7 +396,11 @@
 								trSize = document.getElementById("add_vmBusPoContractPayWmt_table").getElementsByTagName("tr").length-selected.length
 //								console.log($trSize)
 								$("input[name='vmBusPoContractPayWmtList["+(index+trSize)+"].bpcPoNo']").val(obj.bpc_po_no)
- 								$("select[name='vmBusPoContractPayWmtList["+(index+trSize)+"].bpcpProgre']").val(selectVal(obj.bpcp_progre))
+								
+ 								//$("select[name='vmBusPoContractPayWmtList["+(index+trSize)+"].bpcpProgre']").val(obj.bpcp_progre)
+ 								$("select[name='vmBusPoContractPayWmtList["+(index+trSize)+"].bpcpProgre']")
+   									.find("option:contains("+obj.bpcp_progre+")").attr('selected',true)
+ 								
   								$("input[name='vmBusPoContractPayWmtList["+(index+trSize)+"].bpcpPayAmount']").val(obj.bpcp_pay_amount)
 	 							$("input[name='vmBusPoContractPayWmtList["+(index+trSize)+"].bpcpDate']").val(obj.bpcp_date)
  	 							$("input[name='vmBusPoContractPayWmtList["+(index+trSize)+"].fromId']").val(obj.from_id)

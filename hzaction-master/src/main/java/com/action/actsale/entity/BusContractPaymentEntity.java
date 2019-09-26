@@ -32,34 +32,34 @@ public class BusContractPaymentEntity implements java.io.Serializable {
 	/**主键*/
 	private java.lang.String id;
 	/**创建人名称*/
-	@Excel(name="创建人名称",width=15)
+//	@Excel(name="创建人名称",width=15)
 	private java.lang.String createName;
 	/**创建人登录名称*/
-	@Excel(name="创建人登录名称",width=15)
+//	@Excel(name="创建人登录名称",width=15)
 	private java.lang.String createBy;
 	/**创建日期*/
-	@Excel(name="创建日期",width=15,format = "yyyy-MM-dd")
+//	@Excel(name="创建日期",width=15,format = "yyyy-MM-dd")
 	private java.util.Date createDate;
 	/**更新人名称*/
-	@Excel(name="更新人名称",width=15)
+//	@Excel(name="更新人名称",width=15)
 	private java.lang.String updateName;
 	/**更新人登录名称*/
-	@Excel(name="更新人登录名称",width=15)
+//	@Excel(name="更新人登录名称",width=15)
 	private java.lang.String updateBy;
 	/**更新日期*/
-	@Excel(name="更新日期",width=15,format = "yyyy-MM-dd")
+//	@Excel(name="更新日期",width=15,format = "yyyy-MM-dd")
 	private java.util.Date updateDate;
 	/**所属部门*/
-	@Excel(name="所属部门",width=15)
+//	@Excel(name="所属部门",width=15)
 	private java.lang.String sysOrgCode;
 	/**所属公司*/
-	@Excel(name="所属公司",width=15)
+//	@Excel(name="所属公司",width=15)
 	private java.lang.String sysCompanyCode;
 	/**流程状态*/
-	@Excel(name="流程状态",width=15)
+//	@Excel(name="流程状态",width=15)
 	private java.lang.String bpmStatus;
 	/**序号*/
-	@Excel(name="序号",width=15)
+//	@Excel(name="序号",width=15)
 	private java.lang.String bcpSeqNo;
 	/**合同金额*/
 	@Excel(name="合同金额",width=15)
@@ -71,7 +71,7 @@ public class BusContractPaymentEntity implements java.io.Serializable {
 	@Excel(name="进度款分期",width=15,dicCode="cost_stag")
 	private java.lang.String bcpProgrePayment;
 	/**合同管理外键*/
-	@Excel(name="合同管理外键",width=15)
+//	@Excel(name="合同管理外键",width=15)
 	private java.lang.String busContractId;
 	
 	/**

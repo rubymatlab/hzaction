@@ -1,90 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@include file="/context/mytags.jsp"%>
-<script type="text/javascript">
-	$('#addBusConQuotedPriceBtn').linkbutton({
-		iconCls: 'icon-add'
-	});
-	$('#delBusConQuotedPriceBtn').linkbutton({
-		iconCls: 'icon-remove'
-	});
 
-	$('#addBusConQuotedPriceBtn').bind('click', function() {
-		var tr = $("#add_busConQuotedPrice_table_template tr").clone();
-		$("#add_busConQuotedPrice_table").append(tr);
-		resetTrNum('add_busConQuotedPrice_table');
-		return false;
-	});
-	$('#delBusConQuotedPriceBtn').bind('click', function() {
-		$("#add_busConQuotedPrice_table").find("input[name$='ck']:checked").parent().parent().remove();
-		resetTrNum('add_busConQuotedPrice_table');
-		return false;
-	});
-	
-	
-	$(document).ready(function() {
-		$(".datagrid-toolbar").parent().css("width", "auto");
-		if(location.href.indexOf("load=detail") != -1) {
-			$(":input").attr("disabled", "true");
-			$(".datagrid-toolbar").hide();
-		}
-	});
-	
-	//导入excel样式
-	$('#inport-excel').linkbutton({
-		iconCls: 'icon-undo'
-	});
-	//导入excel事件
-	$('#inport-excel').bind('click', function() {
-		openuploadwinUpload('Excel导入', 'busContractController.do?upload', 'busContractList');
-		return false;
-	});
-	
-	function openuploadwinUpload(title, url, name, width, height) {
-		gridname = name;
-		$.dialog({
-			content: 'url:' + url,
-			zIndex: getzIndex(),
-			cache: false,
-			button: [{
-					name: $.i18n.prop('upload.file.begin'),
-					callback: function() {
-						iframe = this.iframe.contentWindow;
-						iframe.upload();
-						return false;
-					},
-					//自定义回调
-					uploaded(row) {
-						var data = row.obj;
-						//console.log(data);
-						for(var i = 0; i < data.length; i++) {
-							var tr = $("#add_busConQuotedPrice_table_template tr").clone();	//克隆一个tr
-							$("#add_busConQuotedPrice_table").append(tr);	//追加一个tr
-							resetTrNum('add_busConQuotedPrice_table');
-							var name = $(tr).find("input").eq(2).attr("name");
-							var inputs = name.split(".")
-							for(var key in data[i]) {
-								$("input[name='" + inputs[0] + "." + key + "']") &&
-								$("input[name='" + inputs[0] + "." + key + "']").val(data[i][key])
-							} 
-						}
-					},
-					focus: true,
-				},
-				{
-					name: $.i18n.prop('upload.file.cancel'),
-					callback: function() {
-						iframe = this.iframe.contentWindow;
-						iframe.cancel();
-					}
-				}
-			]
-		});
-	}
-	
-</script>
 <div style="padding: 3px; height: 25px;width:auto;" class="datagrid-toolbar">
 	<a id="addBusConQuotedPriceBtn" href="#">添加</a>
 	<a id="delBusConQuotedPriceBtn" href="#">删除</a>
+	<a id="putout-excel" href="#">模板下载</a>
 	<a id="inport-excel" href="#">导入文件</a>
 </div>
 <table border="0" cellpadding="2" cellspacing="0" id="busConQuotedPrice_table">
@@ -291,3 +211,98 @@
 		</c:if>
 	</tbody>
 </table>
+
+
+<script type="text/javascript">
+	$('#addBusConQuotedPriceBtn').linkbutton({
+		iconCls: 'icon-add'
+	});
+	$('#delBusConQuotedPriceBtn').linkbutton({
+		iconCls: 'icon-remove'
+	});
+
+	$('#addBusConQuotedPriceBtn').bind('click', function() {
+		var tr = $("#add_busConQuotedPrice_table_template tr").clone();
+		$("#add_busConQuotedPrice_table").append(tr);
+		resetTrNum('add_busConQuotedPrice_table');
+		return false;
+	});
+	$('#delBusConQuotedPriceBtn').bind('click', function() {
+		$("#add_busConQuotedPrice_table").find("input[name$='ck']:checked").parent().parent().remove();
+		resetTrNum('add_busConQuotedPrice_table');
+		return false;
+	});
+	
+	
+	$(document).ready(function() {
+		$(".datagrid-toolbar").parent().css("width", "auto");
+		if(location.href.indexOf("load=detail") != -1) {
+			$(":input").attr("disabled", "true");
+			$(".datagrid-toolbar").hide();
+		}
+	});
+	
+	
+	
+	//模板下载excel样式
+	$('#putout-excel').linkbutton({
+		iconCls: 'icon-putout'
+	});
+	//模板下载excel事件
+	$('#putout-excel').bind('click', function() {
+		location.href = "busContractController.do?exportXlsByT2"
+	});
+	
+	//导入excel样式
+	$('#inport-excel').linkbutton({
+		iconCls: 'icon-undo'
+	});
+	//导入excel事件
+	$('#inport-excel').bind('click', function() {
+		openuploadwinUpload('Excel导入', 'busContractController.do?upload', 'busContractList');
+		return false;
+	});
+	
+	function openuploadwinUpload(title, url, name, width, height) {
+		gridname = name;
+		$.dialog({
+			content: 'url:' + url,
+			zIndex: getzIndex(),
+			cache: false,
+			button: [{
+					name: $.i18n.prop('upload.file.begin'),
+					callback: function() {
+						iframe = this.iframe.contentWindow;
+						iframe.upload();
+						return false;
+					},
+					//自定义回调
+					uploaded(row) {
+						var data = row.obj;
+						//console.log(data);
+						for(var i = 0; i < data.length; i++) {
+							var tr = $("#add_busConQuotedPrice_table_template tr").clone();	//克隆一个tr
+							$("#add_busConQuotedPrice_table").append(tr);	//追加一个tr
+							resetTrNum('add_busConQuotedPrice_table');
+							var name = $(tr).find("input").eq(2).attr("name");
+							var inputs = name.split(".")
+							for(var key in data[i]) {
+								$("input[name='" + inputs[0] + "." + key + "']") &&
+								$("input[name='" + inputs[0] + "." + key + "']").val(data[i][key])
+							} 
+						}
+					},
+					focus: true,
+				},
+				{
+					name: $.i18n.prop('upload.file.cancel'),
+					callback: function() {
+						iframe = this.iframe.contentWindow;
+						iframe.cancel();
+					}
+				}
+			]
+		});
+	}
+	
+</script>

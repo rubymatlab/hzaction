@@ -25,9 +25,9 @@
    <t:dgCol title="合同完成状态"  field="bcContractState" hidden="true" queryMode="group"  dictionary="state"  width="120"></t:dgCol>
    <t:dgCol title="我方签约人"  field="bcCompContractor" hidden="true" queryMode="group"  width="120"></t:dgCol>
    <%-- <t:dgCol title="合同金额万元"  field="bcContAmount" width="120"></t:dgCol> --%>
-   <t:dgCol title="项目立项外键"  field="fromProjId" hidden="true" queryMode="group"  width="120"></t:dgCol>
+   <%-- <t:dgCol title="项目立项外键"  field="fromProjId" hidden="true" queryMode="group"  width="120"></t:dgCol>
+   <t:dgCol title="客户资料外键"  field="fromCustId" hidden="true" queryMode="group"  width="120"></t:dgCol> --%>
    <t:dgCol title="客户签约人"  field="bcCustContractor" hidden="true"  queryMode="group"  width="120"></t:dgCol>
-   <t:dgCol title="客户资料外键"  field="fromCustId" hidden="true" queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="管理费百分比"  field="bcManPer" hidden="true" queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="中标方"  field="bcWinBidder" hidden="true" queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="中标服务费"  field="bcWinSfee" hidden="true" queryMode="group"  width="120"></t:dgCol>

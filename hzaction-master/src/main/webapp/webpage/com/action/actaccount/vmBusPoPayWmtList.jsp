@@ -3,7 +3,7 @@
 <t:base type="jquery,easyui,tools,DatePicker"></t:base>
 <div class="easyui-layout" fit="true">
   <div region="center" style="padding:0px;border:0px">
-  <t:datagrid name="vmBusPoPayWmtList" checkbox="true" fitColumns="true" title="采购付款单视图_wmt" sortName="createDate" actionUrl="vmBusPoPayWmtController.do?datagrid&state=${state }" idField="id" fit="true" queryMode="group">
+  <t:datagrid name="vmBusPoPayWmtList" checkbox="true" fitColumns="true" title="采购付款单" sortName="createDate" actionUrl="vmBusPoPayWmtController.do?datagrid&state=${state }" idField="id" fit="true" queryMode="group">
    <t:dgCol title="主键"  field="id"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="创建人名称"  field="createName"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="创建人登录名称"  field="createBy"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
@@ -28,7 +28,7 @@
    <t:dgCol title="供应商名称"  field="bsName"  query="true"  queryMode="single"  dictionary="bas_supplier,bsName,bs_name"  popup="true"  width="120"></t:dgCol>
    
    <t:dgCol title="付款金额"  field="bppMoney"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="单据状态"  field="bppState"  queryMode="single"  width="120"></t:dgCol>
+   <%-- <t:dgCol title="单据状态"  field="bppState"  queryMode="single" width="120"></t:dgCol> --%>
    <t:dgCol title="发票金额"  field="bppInvAmount" hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="发票类型"  field="bppInvType" hidden="true" queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="税率百分比"  field="bppTaxRate" hidden="true" queryMode="single"  width="120"></t:dgCol>

@@ -200,8 +200,9 @@
 	        alert($.i18n.prop('popup.param.error.msg'));
 	        return;
 	    }
+	    //console.log(pobj);
 	    $.dialog({
-	        content: "url:cgReportController.do?popup&id=" + pcode + "&idkey="+ window.projectId,
+	        content: "url:cgReportController.do?popup&id=" + pcode + "&idkey="+ window.projectId+"&from_proj_id="+$('#fromProjmId').val(),
 	        zIndex: getzIndex(),
 	        lock: true,
 	        title: $.i18n.prop('common.select'),

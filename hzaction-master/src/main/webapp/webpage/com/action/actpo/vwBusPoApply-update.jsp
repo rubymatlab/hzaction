@@ -93,6 +93,9 @@
 	<t:formvalid formid="formobj" dialog="true" usePlugin="password"
 		layout="table" tiptype="1" action="vwBusPoApplyController.do?doUpdate" callback="jeecgFormFileCallBack@Override">
 		<input id="id" name="id" type="hidden" value="${vwBusPoApplyPage.id }" />
+		<input id="fromProjmId" name="fromProjmId"
+					type="hidden" type="text" maxlength="32" style="width: 150px"
+					class="inputxt" ignore="ignore" />
 		<table cellpadding="0" cellspacing="1" class="formtable">
 			<tr>
 				<td align="right"><label class="Validform_label">采购申请编号:</label>
@@ -286,14 +289,14 @@ $(document).ready(function() {
 		panelWidth: 500,
 		idField: "bpmName",
 		textField: "bpmName",
-		url: "busProjectManagerController.do?datagrid&field=id,bpmProjId,bpmName",
+		url: "busProjectManagerController.do?datagrid&field=fromProjId,bpmProjId,bpmName",
 		columns: [[
 			{field:'bpmProjId',title:'项目编号',width:80},
 			{field:'bpmName',title:'项目名称',width:80}
 		]],
 		onSelect:function(row,data){
 			$("#bpProjId").val(data.bpmProjId);
-			$("#fromProjmId").val(data.id);
+			$("#fromProjmId").val(data.fromProjId);
 			dealbpaApplyNo(data.bpmProjId)
 		},
 		fitColumns: true

@@ -214,7 +214,7 @@
 
 				<td class="value"></td>
 				<td class="value"><input id="fromProjmId" name="fromProjmId"
-					type="hidden" type="text" maxlength="32" style="width: 150px"
+					type="hidden" maxlength="32" style="width: 150px"
 					class="inputxt" ignore="ignore" /> <span
 					class="Validform_checktip"></span> <label class="Validform_label"
 					style="display: none;">项目管理外键</label></td>
@@ -277,15 +277,15 @@ $(document).ready(function() {
 		panelWidth: 500,
 		idField: "bpmName",
 		textField: "bpmName",
-		url: "busProjectManagerController.do?datagrid&field=id,bpmProjId,bpmName",
+		url: "busProjectManagerController.do?datagrid&field=fromProjId,bpmProjId,bpmName",
 		columns: [[
 			{field:'bpmProjId',title:'项目编号',width:80},
 			{field:'bpmName',title:'项目名称',width:80}
 		]],
 		onSelect:function(row,data){
 			$("#bpProjId").val(data.bpmProjId);
-			$("#fromProjmId").val(data.id);
-			dealbpaApplyNo(data.bpmProjId)
+			$("#fromProjmId").val(data.fromProjId);
+			dealbpaApplyNo(data.bpmProjId);
 		},
 		fitColumns: true
 	})

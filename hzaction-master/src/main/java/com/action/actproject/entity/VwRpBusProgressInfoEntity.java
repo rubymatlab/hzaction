@@ -47,8 +47,8 @@ public class VwRpBusProgressInfoEntity implements java.io.Serializable {
 	/**合同金额万元*/
 	@Excel(name="合同金额万元",width=15)
 	private java.lang.String bcContAmount;
-	/**brpBackAmountD*/
-	@Excel(name="brpBackAmountD",width=15)
+	/**已回款金额万元*/
+	@Excel(name="已回款金额万元",width=15)
 	private java.lang.Double brpBackAmountD;
 	/**进度百分比*/
 	@Excel(name="进度百分比",width=15,dicCode="proj_per")

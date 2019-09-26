@@ -140,12 +140,12 @@
 		</tr>
 		<tr>
 			<td align="right">
-				<label class="Validform_label">合同金额万元:</label>
+				<label class="Validform_label">合同金额:</label>
 			</td>
 			<td class="value">
 		     	 <input id="bcContAmount" name="bcContAmount" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
 				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">合同金额万元</label>
+				<label class="Validform_label" style="display: none;">合同金额</label>
 			</td>
 			<td align="right">
 				<label class="Validform_label">管理费百分比:</label>

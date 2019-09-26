@@ -112,6 +112,21 @@ public class BasCustomerController extends BaseController {
 	@RequestMapping(params = "datagrid")
 	public void datagrid(BasCustomerEntity basCustomer,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
 		CriteriaQuery cq = new CriteriaQuery(BasCustomerEntity.class, dataGrid);
+		
+		// 模糊查询
+		if(StringUtil.isNotEmpty(basCustomer.getBcName())){
+			basCustomer.setBcName("*"+basCustomer.getBcName()+"*");
+		}
+		if(StringUtil.isNotEmpty(basCustomer.getBcBankAcc())){
+			basCustomer.setBcBankAcc("*"+basCustomer.getBcBankAcc()+"*");
+		}
+		if(StringUtil.isNotEmpty(basCustomer.getBcBankId())){
+			basCustomer.setBcBankId("*"+basCustomer.getBcBankId()+"*");
+		}
+		if(StringUtil.isNotEmpty(basCustomer.getBcSname())){
+			basCustomer.setBcSname("*"+basCustomer.getBcSname()+"*");
+		}
+		
 		//查询条件组装器
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, basCustomer, request.getParameterMap());
 		try{

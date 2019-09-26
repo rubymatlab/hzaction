@@ -16,15 +16,15 @@
    <t:dgCol title="商务负责人"  field="bdBusinessCharge"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="辅助人员"  field="bdAuxiliaryStaff"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="正式挂网时间"  field="bpOnlineTime"  formatter="yyyy-MM-dd"  hidden="true"  query="true"  queryMode="group"  width="130"></t:dgCol>
-   <t:dgCol title="操作" field="opt" width="100" hidden="true"></t:dgCol>
+<%--    <t:dgCol title="操作" field="opt" width="100" hidden="true"></t:dgCol>
    <t:dgDelOpt title="删除" url="vwRpBusBidTotalController.do?doDel&id={id}" urlclass="ace_button"  urlfont="fa-trash-o"/>
    <t:dgToolBar title="录入" icon="icon-add" url="vwRpBusBidTotalController.do?goAdd" funname="add" operationCode="add"></t:dgToolBar>
 	<t:dgToolBar title="编辑" icon="icon-edit" url="vwRpBusBidTotalController.do?goUpdate" funname="update" operationCode="update"></t:dgToolBar>
    <t:dgToolBar title="批量删除"  icon="icon-remove" url="vwRpBusBidTotalController.do?doBatchDel" operationCode="deleteALLSelect" funname="deleteALLSelect"></t:dgToolBar>
    <t:dgToolBar title="查看" icon="icon-search" url="vwRpBusBidTotalController.do?goUpdate" operationCode="detail" funname="detail"></t:dgToolBar>
    <t:dgToolBar title="导入" icon="icon-put" funname="ImportXls" operationCode="ImportXls"></t:dgToolBar>
+   <t:dgToolBar title="模板下载" icon="icon-putout" funname="ExportXlsByT" operationCode="ExportXlsByT"></t:dgToolBar> --%>
    <t:dgToolBar title="导出" icon="icon-putout" funname="ExportXls" operationCode="ExportXls"></t:dgToolBar>
-   <t:dgToolBar title="模板下载" icon="icon-putout" funname="ExportXlsByT" operationCode="ExportXlsByT"></t:dgToolBar>
   </t:datagrid>
   </div>
  </div>

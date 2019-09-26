@@ -41,7 +41,7 @@ public class BusProjectFeeDetailEntity implements java.io.Serializable {
 	@Excel(name="详细描述",width=15)
 	private java.lang.String bpfDesc;
 	/**项目立项外键*/
-	@Excel(name="项目立项外键",width=15)
+	/* @Excel(name="项目立项外键",width=15) */
 	private java.lang.String fromId;
 	/**创建人名称*/
 	private java.lang.String createName;

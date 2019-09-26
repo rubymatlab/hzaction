@@ -22,7 +22,7 @@ import org.jeecgframework.poi.excel.annotation.Excel;
  * @Title: Entity
  * @Description: 项目整体周期汇总表
  * @author onlineGenerator
- * @date 2019-07-31 16:02:30
+ * @date 2019-09-24 20:17:56
  * @version V1.0   
  *
  */
@@ -42,23 +42,23 @@ public class VwRpProjectPeriodTotalEntity implements java.io.Serializable {
 	@Excel(name="项目经理",width=15)
 	private java.lang.String bpManager;
 	/**立项时间*/
-	@Excel(name="立项时间",width=15)
+	@Excel(name="立项时间",width=15,format = "yyyy-MM-dd")
 	private java.util.Date bpDate;
 	/**合同签定时间*/
-	@Excel(name="合同签定时间",width=15)
+	@Excel(name="合同签定时间",width=15,format = "yyyy-MM-dd")
 	private java.util.Date bcConcludeTime;
 	/**合同天数*/
 	@Excel(name="合同天数",width=15)
 	private java.lang.String contractDays;
 	/**验收时间*/
-	@Excel(name="验收时间",width=15)
-	private java.lang.String maxBpfCheckDate;
+	@Excel(name="验收时间",width=15,format = "yyyy-MM-dd")
+	private java.util.Date maxBpfCheckDate;
 	/**验收天数*/
 	@Excel(name="验收天数",width=15)
 	private java.lang.String checkDays;
 	/**最后收款时间*/
-	@Excel(name="最后收款时间",width=15)
-	private java.lang.String maxBcColDate;
+	@Excel(name="最后收款时间",width=15,format = "yyyy-MM-dd")
+	private java.util.Date maxBcColDate;
 	/**收款天数*/
 	@Excel(name="收款天数",width=15)
 	private java.lang.String colDays;
@@ -138,8 +138,8 @@ public class VwRpProjectPeriodTotalEntity implements java.io.Serializable {
 		this.bpManager = bpManager;
 	}
 	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  立项时间
+	 *方法: 取得java.util.Date
+	 *@return: java.util.Date  立项时间
 	 */
 
 	@Column(name ="BP_DATE",nullable=true,length=32)
@@ -148,15 +148,15 @@ public class VwRpProjectPeriodTotalEntity implements java.io.Serializable {
 	}
 
 	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  立项时间
+	 *方法: 设置java.util.Date
+	 *@param: java.util.Date  立项时间
 	 */
 	public void setBpDate(java.util.Date bpDate){
 		this.bpDate = bpDate;
 	}
 	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  合同签定时间
+	 *方法: 取得java.util.Date
+	 *@return: java.util.Date  合同签定时间
 	 */
 
 	@Column(name ="BC_CONCLUDE_TIME",nullable=true,length=32)
@@ -165,8 +165,8 @@ public class VwRpProjectPeriodTotalEntity implements java.io.Serializable {
 	}
 
 	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  合同签定时间
+	 *方法: 设置java.util.Date
+	 *@param: java.util.Date  合同签定时间
 	 */
 	public void setBcConcludeTime(java.util.Date bcConcludeTime){
 		this.bcConcludeTime = bcConcludeTime;
@@ -189,20 +189,20 @@ public class VwRpProjectPeriodTotalEntity implements java.io.Serializable {
 		this.contractDays = contractDays;
 	}
 	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  验收时间
+	 *方法: 取得java.util.Date
+	 *@return: java.util.Date  验收时间
 	 */
 
 	@Column(name ="MAX_BPF_CHECK_DATE",nullable=true,length=32)
-	public java.lang.String getMaxBpfCheckDate(){
+	public java.util.Date getMaxBpfCheckDate(){
 		return this.maxBpfCheckDate;
 	}
 
 	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  验收时间
+	 *方法: 设置java.util.Date
+	 *@param: java.util.Date  验收时间
 	 */
-	public void setMaxBpfCheckDate(java.lang.String maxBpfCheckDate){
+	public void setMaxBpfCheckDate(java.util.Date maxBpfCheckDate){
 		this.maxBpfCheckDate = maxBpfCheckDate;
 	}
 	/**
@@ -223,20 +223,20 @@ public class VwRpProjectPeriodTotalEntity implements java.io.Serializable {
 		this.checkDays = checkDays;
 	}
 	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  最后收款时间
+	 *方法: 取得java.util.Date
+	 *@return: java.util.Date  最后收款时间
 	 */
 
 	@Column(name ="MAX_BC_COL_DATE",nullable=true,length=32)
-	public java.lang.String getMaxBcColDate(){
+	public java.util.Date getMaxBcColDate(){
 		return this.maxBcColDate;
 	}
 
 	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  最后收款时间
+	 *方法: 设置java.util.Date
+	 *@param: java.util.Date  最后收款时间
 	 */
-	public void setMaxBcColDate(java.lang.String maxBcColDate){
+	public void setMaxBcColDate(java.util.Date maxBcColDate){
 		this.maxBcColDate = maxBcColDate;
 	}
 	/**

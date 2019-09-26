@@ -50,7 +50,7 @@ public class BusProjPartnerEntity implements java.io.Serializable {
 	@Excel(name="备注",width=15)
 	private java.lang.String bppRemark;
 	/**项目立项外键*/
-	@Excel(name="项目立项外键",width=15)
+	/* @Excel(name="项目立项外键",width=15) */
 	private java.lang.String fromId;
 	/**创建人名称*/
 	private java.lang.String createName;

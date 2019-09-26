@@ -48,9 +48,9 @@
 				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
 						备注
 				  </td>
-				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
+<!-- 				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
 						客户资料外键
-				  </td>
+				  </td> -->
 	</tr>
 	<tbody id="add_basCustomerContacts_table">
 	<c:if test="${fn:length(basCustomerContactsList)  <= 0 }">
@@ -88,7 +88,7 @@
 					  <label class="Validform_label" style="display: none;">备注</label>
 					</td>
 				  <td align="left">
-					  	<input name="basCustomerContactsList[0].fromId" maxlength="36" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
+					  	<input name="basCustomerContactsList[0].fromId" maxlength="36" type="hidden" class="inputxt"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">客户资料外键</label>
 					</td>
    			</tr>
@@ -129,7 +129,7 @@
 					  <label class="Validform_label" style="display: none;">备注</label>
 				   </td>
 				   <td align="left">
-					  	<input name="basCustomerContactsList[${stuts.index }].fromId" maxlength="36" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.fromId }"/>
+					  	<input name="basCustomerContactsList[${stuts.index }].fromId" maxlength="36" type="hidden" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.fromId }"/>
 					  <label class="Validform_label" style="display: none;">客户资料外键</label>
 				   </td>
    			</tr>

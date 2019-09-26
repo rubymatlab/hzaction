@@ -71,7 +71,7 @@ import org.jeecgframework.web.cgform.service.config.CgFormFieldServiceI;
 import java.util.HashMap;
 /**   
  * @Title: Controller  
- * @Description: 项目收款单视图
+ * @Description: 项目收款单
  * @author onlineGenerator
  * @date 2019-08-22 15:34:59
  * @version V1.0   
@@ -98,7 +98,7 @@ public class VwBusCollectionController extends BaseController {
 
 	@Autowired
 	/**
-	 * 项目收款单视图列表 页面跳转
+	 * 项目收款单列表 页面跳转
 	 * 
 	 * @return
 	 */
@@ -120,6 +120,12 @@ public class VwBusCollectionController extends BaseController {
 	public void datagrid(VwBusCollectionEntity vwBusCollection,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
 		CriteriaQuery cq = new CriteriaQuery(VwBusCollectionEntity.class, dataGrid);
 		//查询条件组装器
+		
+		// 客户名称
+		if(StringUtil.isNotEmpty(vwBusCollection.getBcCustContractor())){
+			vwBusCollection.setBcCustContractor("*"+vwBusCollection.getBcCustContractor()+"*");
+		}
+		
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, vwBusCollection, request.getParameterMap());
 		try{
 		//自定义追加查询条件
@@ -135,7 +141,7 @@ public class VwBusCollectionController extends BaseController {
 	
 	
 	/**
-	 * 删除项目收款单视图
+	 * 删除项目收款单
 	 * 
 	 * @return
 	 */
@@ -144,17 +150,24 @@ public class VwBusCollectionController extends BaseController {
 	public AjaxJson doDel(VwBusCollectionEntity vwBusCollection, HttpServletRequest request) {
 		String message = null;
 		AjaxJson j = new AjaxJson();
-		vwBusCollection = systemService.getEntity(VwBusCollectionEntity.class, vwBusCollection.getId());
-		message = "项目收款单视图删除成功";
+//		vwBusCollection = systemService.getEntity(VwBusCollectionEntity.class, vwBusCollection.getId());
+		message = "项目收款单删除成功";
 		try{
-			BusCollectionEntity busConEntity = new 	BusCollectionEntity();
-			MyBeanUtils.copyBeanNotNull2Bean(vwBusCollection ,busConEntity);
+			BusCollectionEntity busConEntity = systemService.getEntity(BusCollectionEntity.class, vwBusCollection.getId());
+//			MyBeanUtils.copyBeanNotNull2Bean(vwBusCollection ,busConEntity);
 			BusCollectionService.delete(busConEntity);
-			
+			// 删除支付
+			if(StringUtil.isNotEmpty(vwBusCollection.getFromPayinfoId())) {
+				BusPayInfoEntity busPayInfoEntity = systemService.getEntity(BusPayInfoEntity.class, vwBusCollection.getFromPayinfoId());
+//			MyBeanUtils.copyBeanNotNull2Bean(vwBusCollection ,busPayInfoEntity);
+//			busPayInfoEntity.setId(vwBusCollection.getFromPayinfoId());
+				busPayInfoService.delete(busPayInfoEntity);
+			}
+	
 			systemService.addLog(message, Globals.Log_Type_DEL, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();
-			message = "项目收款单视图删除失败";
+			message = "项目收款单删除失败";
 			throw new BusinessException(e.getMessage());
 		}
 		j.setMsg(message);
@@ -162,7 +175,7 @@ public class VwBusCollectionController extends BaseController {
 	}
 	
 	/**
-	 * 批量删除项目收款单视图
+	 * 批量删除项目收款单
 	 * 
 	 * @return
 	 */
@@ -171,7 +184,7 @@ public class VwBusCollectionController extends BaseController {
 	public AjaxJson doBatchDel(String ids,HttpServletRequest request){
 		String message = null;
 		AjaxJson j = new AjaxJson();
-		message = "项目收款单视图删除成功";
+		message = "项目收款单删除成功";
 		try{
 			for(String id:ids.split(",")){
 
@@ -186,7 +199,7 @@ public class VwBusCollectionController extends BaseController {
 			}
 		}catch(Exception e){
 			e.printStackTrace();
-			message = "项目收款单视图删除失败";
+			message = "项目收款单删除失败";
 			throw new BusinessException(e.getMessage());
 		}
 		j.setMsg(message);
@@ -195,7 +208,7 @@ public class VwBusCollectionController extends BaseController {
 
 
 	/**
-	 * 添加项目收款单视图
+	 * 添加项目收款单
 	 * 
 	 * @param ids
 	 * @return
@@ -209,7 +222,7 @@ public class VwBusCollectionController extends BaseController {
 
 //		List<>
 //		List<VmMergeBusPoApplyDetailEntity>
-		message = "项目收款单视图添加成功";
+		message = "项目收款单添加成功";
 		BusCollectionEntity busConEntity = new 	BusCollectionEntity();
 		try{
 			MyBeanUtils.copyBeanNotNull2Bean(vwBusCollection ,busConEntity);
@@ -219,7 +232,7 @@ public class VwBusCollectionController extends BaseController {
 			systemService.addLog(message, Globals.Log_Type_INSERT, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();
-			message = "项目收款单视图添加失败";
+			message = "项目收款单添加失败";
 			throw new BusinessException(e.getMessage());
 		}
 		j.setMsg(message);
@@ -228,7 +241,7 @@ public class VwBusCollectionController extends BaseController {
 	}
 	
 	/**
-	 * 更新项目收款单视图
+	 * 更新项目收款单
 	 * 
 	 * @param ids
 	 * @return
@@ -238,16 +251,22 @@ public class VwBusCollectionController extends BaseController {
 	public AjaxJson doUpdate(VwBusCollectionEntity vwBusCollection, HttpServletRequest request) {
 		String message = null;
 		AjaxJson j = new AjaxJson();
-		message = "项目收款单视图更新成功";
-		// VwBusCollectionEntity t = vwBusCollectionService.get(VwBusCollectionEntity.class, vwBusCollection.getId());
+		message = "项目收款单更新成功";
+//		VwBusCollectionEntity t = vwBusCollectionService.findUniqueByProperty(VwBusCollectionEntity.class, "id",vwBusCollection.getId());
 		
 		
 		try {
 
 			if(StringUtil.isNotEmpty(vwBusCollection.getBpiVoucherno())) {
 //				实收提交
-				BusPayInfoEntity busPayInfo = new BusPayInfoEntity();
+				BusPayInfoEntity busPayInfo = null;
+				if(StringUtil.isNotEmpty(vwBusCollection.getFromPayinfoId())){
+					busPayInfo = busPayInfoService.findUniqueByProperty(BusPayInfoEntity.class, "id",vwBusCollection.getFromPayinfoId());
+				}else {
+					busPayInfo = new BusPayInfoEntity();
+				}
 				MyBeanUtils.copyBeanNotNull2Bean(vwBusCollection ,busPayInfo);
+				
 				// 业务外键
 				busPayInfo.setBpiBusId(vwBusCollection.getId());
 				// 功能分类 2
@@ -264,17 +283,15 @@ public class VwBusCollectionController extends BaseController {
 				
 			}else {
 //				编辑提交
-				BusCollectionEntity busConEntity = new 	BusCollectionEntity();
+				BusCollectionEntity busConEntity = BusCollectionService.findUniqueByProperty(BusCollectionEntity.class, "id",vwBusCollection.getId());
 				MyBeanUtils.copyBeanNotNull2Bean(vwBusCollection, busConEntity);
 				BusCollectionService.saveOrUpdate(busConEntity);
 			}
-			
-
-			
+				
 			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
 		} catch (Exception e) {
 			e.printStackTrace();
-			message = "项目收款单视图更新失败";
+			message = "项目收款单更新失败";
 			throw new BusinessException(e.getMessage());
 		}
 		j.setMsg(message);
@@ -284,7 +301,7 @@ public class VwBusCollectionController extends BaseController {
 	
 
 	/**
-	 * 项目收款单视图新增页面跳转
+	 * 项目收款单新增页面跳转
 	 * 
 	 * @return
 	 */
@@ -298,7 +315,7 @@ public class VwBusCollectionController extends BaseController {
 		return new ModelAndView("com/action/actaccount/vwBusCollection-add");
 	}
 	/**
-	 * 项目收款单视图编辑页面跳转
+	 * 项目收款单编辑页面跳转
 	 * 
 	 * @return
 	 */
@@ -309,7 +326,6 @@ public class VwBusCollectionController extends BaseController {
 		if (StringUtil.isNotEmpty(vwBusCollection.getId())) {
 			vwBusCollection = vwBusCollectionService.getEntity(VwBusCollectionEntity.class, vwBusCollection.getId());
 			
-			System.out.println(vwBusCollection.getCreateDate());
 			if(StringUtil.isNotEmpty(isPayment)) {
 				// 如果凭证号不为空
 				if(!StringUtil.isNotEmpty(vwBusCollection.getBpiVoucherno())){
@@ -364,9 +380,9 @@ public class VwBusCollectionController extends BaseController {
 		CriteriaQuery cq = new CriteriaQuery(VwBusCollectionEntity.class, dataGrid);
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, vwBusCollection, request.getParameterMap());
 		List<VwBusCollectionEntity> vwBusCollections = this.vwBusCollectionService.getListByCriteriaQuery(cq,false);
-		modelMap.put(NormalExcelConstants.FILE_NAME,"项目收款单视图");
+		modelMap.put(NormalExcelConstants.FILE_NAME,"项目收款单");
 		modelMap.put(NormalExcelConstants.CLASS,VwBusCollectionEntity.class);
-		modelMap.put(NormalExcelConstants.PARAMS,new ExportParams("项目收款单视图列表", "导出人:"+ResourceUtil.getSessionUser().getRealName(),
+		modelMap.put(NormalExcelConstants.PARAMS,new ExportParams("项目收款单列表", "导出人:"+ResourceUtil.getSessionUser().getRealName(),
 			"导出信息"));
 		modelMap.put(NormalExcelConstants.DATA_LIST,vwBusCollections);
 		return NormalExcelConstants.JEECG_EXCEL_VIEW;
@@ -380,9 +396,9 @@ public class VwBusCollectionController extends BaseController {
 	@RequestMapping(params = "exportXlsByT")
 	public String exportXlsByT(VwBusCollectionEntity vwBusCollection,HttpServletRequest request,HttpServletResponse response
 			, DataGrid dataGrid,ModelMap modelMap) {
-    	modelMap.put(NormalExcelConstants.FILE_NAME,"项目收款单视图");
+    	modelMap.put(NormalExcelConstants.FILE_NAME,"项目收款单");
     	modelMap.put(NormalExcelConstants.CLASS,VwBusCollectionEntity.class);
-    	modelMap.put(NormalExcelConstants.PARAMS,new ExportParams("项目收款单视图列表", "导出人:"+ResourceUtil.getSessionUser().getRealName(),
+    	modelMap.put(NormalExcelConstants.PARAMS,new ExportParams("项目收款单列表", "导出人:"+ResourceUtil.getSessionUser().getRealName(),
     	"导出信息"));
     	modelMap.put(NormalExcelConstants.DATA_LIST,new ArrayList());
     	return NormalExcelConstants.JEECG_EXCEL_VIEW;

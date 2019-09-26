@@ -30,8 +30,8 @@
    <t:dgCol title="请求支付日期"  field="bsspApplyPayDate"  formatter="yyyy-MM-dd"  hidden="true"  query="true"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="付款金额"  field="bsspPayAmount"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="单据状态"  field="bsspState"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="项目管理外键"  field="fromProjmId"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="供应商资料外键"  field="fromSuppId"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="项目管理外键"  field="fromProjmId"  queryMode="single" hidden="true"   width="120"></t:dgCol>
+   <t:dgCol title="供应商资料外键"  field="fromSuppId"  queryMode="single" hidden="true"   width="120"></t:dgCol>
    <t:dgCol title="项目编号"  field="bpProjId"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="项目名称"  field="bpProjName"  query="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="项目经理"  field="bpManager"  hidden="true"  queryMode="single"  width="120"></t:dgCol>

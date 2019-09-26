@@ -29,13 +29,13 @@
 		iconCls : 'icon-remove'
 	});
 	$('#ImportXlsBusPoApplyDetailBtn').linkbutton({
-		iconCls : 'icon-put'
+		iconCls : 'icon-putout'
 	});
 	$('#choiceaddBusPoApplyDetailBtn').linkbutton({
 		iconCls : 'icon-sum'
 	});
 	$('#ExportXlsByTBtn').linkbutton({
-		iconCls : 'icon-putout'
+		iconCls : 'icon-put'
 	});
 	
 	//-------------模板下载功能-----------------
@@ -180,26 +180,83 @@
 	
 	//选择新增
 
-	$('#choiceaddBusPoApplyDetailBtn')
-			.bind(
-					'click',
-					function() {
-
+	$('#choiceaddBusPoApplyDetailBtn').bind('click',function() {
 						//$("input[name='busPoApplyDetailList[0].bpadName']")
-						if($.isEmptyObject($this)){alert("请点击要插入数据行的任一文本框");}else{
-							popupClick(
+						//if($.isEmptyObject($this)){alert("请点击要插入数据行的任一文本框");}else{
+							/*popupClick(
 									$this,
 									'bpcd_name,bpcd_brand,bpcd_model,bpcd_number,bpcd_remark',
 									'bpadName,bpadBrand,bpadModel,bpadNumber,bpadRemark',
-									'bus_po_contract_detail_msg');
-							$this=null;
-						}
-						
-
-						
-
+									'rf_bus_po_apply_detail'); */
+							popupClickContractDetail(this,'bcqp_name,bcqp_brand,bcqp_model,bcqp_qty,bcqp_remark','bpadName,bpadBrand,bpadModel,bpadNumber,bpadRemark','rf_bus_con_quoted_price');
+							return false;
+									//$this=null;
+						//}
 					});
 
+	// popup事件重写 
+	function popupClickContractDetail(pobj, tablefield, inputnames, pcode) {
+	    if (inputnames == "" || pcode == "") {
+	        alert($.i18n.prop('popup.param.error.msg'));
+	        return;
+	    }
+	    //console.log(pobj);
+	    $.dialog({
+	        content: "url:cgReportController.do?popup&id=" + pcode + "&idkey="+ window.projectId+"&from_proj_id="+$('#fromProjmId').val(),
+	        zIndex: getzIndex(),
+	        lock: true,
+	        title: $.i18n.prop('common.select'),
+	        width: 800,
+	        height: 400,
+	        parent: windowapi,
+	        cache: false,
+	        ok: function () {
+	            iframe = this.iframe.contentWindow;
+	            var selected = iframe.getSelectRows();
+	            if (selected == '' || selected == null) {
+	                alert($.i18n.prop('common.select.please'));
+	                return false;
+	            } else {
+	                //对应数据库字段不为空的情况下,根据表单中字典TEXT的值来取popup的值 
+	                if (tablefield != "" && tablefield != null) {
+	                    var fields = inputnames.split(",");
+	                    var tableF = tablefield.split(",");
+	                 	for(var i = 0; i < selected.length; i++){
+	                 		 var tr = $("#add_busPoApplyDetail_table_template tr").clone();
+	            	 			 $("#add_busPoApplyDetail_table").append(tr);
+	            	 			inputBindEvents(tr)
+	            	 			resetTrNum('add_busPoApplyDetail_table');
+	                 		//busPoContractDetailList[#index#].bpcdNumber
+	                 		var name = $(tr).find("input").eq(2).attr("name")
+	                 		var inputs = name.split(".");
+	                		fields.forEach(function(item, index){
+	                 			$("input[name='"+inputs[0]+"."+ item +"']").val(selected[i][tableF[index]])
+	                 		}) 
+	                 	}
+	                }
+	                //firstCompute();
+	            }
+	        },
+	        cancelVal: $.i18n.prop('dialog.close'),
+	        cancel: true // 为true等价于function(){}
+	    });
+	}
+	
+	function inputBindEvents(tr){
+		var $tr = $(tr);
+		var pInp = $tr.find("input[name$='.bpcdPrice']"),
+			nInp = $tr.find("input[name$='.bpcdNumber']"),
+			aInp = $tr.find("input[name$='.bpcdAmount']");
+		pInp.bind("change",function(e){
+			aInp.val(+pInp.val() * +nInp.val())
+			computeTotal();
+		})
+		nInp.bind("change",function(e){
+			aInp.val(+pInp.val() * +nInp.val())
+			computeTotal();
+		})
+	}
+	
 	$(document).ready(function() {
 		
 		
@@ -215,9 +272,9 @@
 	class="datagrid-toolbar">
 	<a id="addBusPoApplyDetailBtn" href="#">添加</a> <a
 		id="delBusPoApplyDetailBtn" href="#">删除</a> <a
-		id="ImportXlsBusPoApplyDetailBtn" href="#">excel导入</a> <a
 		id="choiceaddBusPoApplyDetailBtn" href="#">选择新增</a>
-		<a id="ExportXlsByTBtn" href="#">选择新增excel模板下载</a>
+		<a id="ExportXlsByTBtn" href="#">excel模板下载</a><a
+		id="ImportXlsBusPoApplyDetailBtn" href="#">excel导入</a> 
 </div>
 <table border="0" cellpadding="2" cellspacing="0"
 	id="busPoApplyDetail_table">

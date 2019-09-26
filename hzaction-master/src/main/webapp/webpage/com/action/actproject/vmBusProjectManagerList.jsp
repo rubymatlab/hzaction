@@ -15,7 +15,7 @@
    <t:dgCol title="所属公司"  field="sysCompanyCode"  hidden="true"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="流程状态"  field="bpmStatus"  dictionary="state" queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="项目编号"  field="bpmProjId"  query="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="项目名称"  field="bpmProjName"  query="true" dictionary="bus_project_manager,id,bpm_name"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="项目名称"  field="bpmProjName"  query="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="客户名称"  field="bpmCustName"  hidden="true"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="项目经理"  field="bpmManager"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="应收总金额"  field="bpmReceAllAmou"  queryMode="group"  width="120"></t:dgCol>
@@ -29,9 +29,11 @@
    <t:dgCol title="项目立项外键"  field="fromProjId"  hidden="true"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="客户资料外键"  field="fromCustId"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="立项时间"  field="bpmCreDate"  formatter="yyyy-MM-dd"  hidden="true"  query="true"  queryMode="group"  width="120"></t:dgCol>
-   <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
    <t:dgToolBar title="项目跟进" icon="icon-edit" url="vmBusProjectManagerController.do?goUpdate" funname="update" width="100%" height="100%"></t:dgToolBar>
-   <t:dgDelOpt title="删除" url="vmBusProjectManagerController.do?doDel&id={id}"  urlclass="ace_button" urlfont="fa-trash-o"/>
+   <c:if test="${bpmStatus != 1 }">
+	   <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
+	   <t:dgDelOpt title="删除" url="vmBusProjectManagerController.do?doDel&id={id}"  urlclass="ace_button" urlfont="fa-trash-o"/>
+   </c:if>
 <%--    <t:dgToolBar title="录入" icon="icon-add" url="vmBusProjectManagerController.do?goAdd" funname="add" width="100%" height="100%"></t:dgToolBar>
    <t:dgToolBar title="批量删除"  icon="icon-remove" url="vmBusProjectManagerController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>
    <t:dgToolBar title="查看" icon="icon-search" url="vmBusProjectManagerController.do?goUpdate" funname="detail" width="100%" height="100%"></t:dgToolBar>

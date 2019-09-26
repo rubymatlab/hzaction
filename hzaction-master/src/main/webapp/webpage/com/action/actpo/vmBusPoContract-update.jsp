@@ -192,7 +192,7 @@
 				<%-- 增加一个div，用于调节页面大小，否则默认太小 --%>
 				<div style="width:800px;height:1px;"></div>
 				<t:tabs id="tt" iframe="false" tabPosition="top" fit="false">
-				 <t:tab href="vmBusPoContractController.do?vmMergeBusPoApplyDetailList&id=${vmBusPoContractPage.id}" icon="icon-search" title="采购申请明细" id="vmMergeBusPoApplyDetail"></t:tab>
+				<%--  <t:tab href="vmBusPoContractController.do?vmMergeBusPoApplyDetailList&id=${vmBusPoContractPage.id}" icon="icon-search" title="采购申请明细" id="vmMergeBusPoApplyDetail"></t:tab> --%>
 				 <t:tab href="vmBusPoContractController.do?busPoContractPayList&id=${vmBusPoContractPage.id}" icon="icon-search" title="采购合同付款明细" id="busPoContractPay"></t:tab>
 				 <t:tab href="vmBusPoContractController.do?busPoContractDetailList&id=${vmBusPoContractPage.id}" icon="icon-search" title="采购合同明细" id="busPoContractDetail"></t:tab>
 				</t:tabs>
@@ -224,10 +224,10 @@
 					  		<input name="vmMergeBusPoApplyDetailList[#index#].bpadRemark" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">备注</label>
 				  </td>
-<!-- 				  <td align="left">
-					  		<input name="vmMergeBusPoApplyDetailList[#index#].fromId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
+				  <td align="left">
+					  		<input name="vmMergeBusPoApplyDetailList[#index#].fromId" maxlength="32" type="hidden" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">采购合同外键</label>
-				  </td> -->
+				  </td> 
 			</tr>
 		 </tbody>
 		<tbody id="add_busPoContractPay_table_template">
@@ -281,17 +281,17 @@
 					  <label class="Validform_label" style="display: none;">单价</label>
 				  </td>
 				  <td align="left">
-					  		<input name="busPoContractDetailList[#index#].bpcdAmount" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
+					  		<input name="busPoContractDetailList[#index#].bpcdAmount" maxlength="32" type="text" class="inputxt" readonly="readonly"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">金额</label>
 				  </td>
 				  <td align="left">
 					  		<input name="busPoContractDetailList[#index#].bpcdRemark" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">备注</label>
 				  </td>
-<!-- 				  <td align="left">
-					  		<input name="busPoContractDetailList[#index#].fromId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
+				  <td align="left">
+					  		<input name="busPoContractDetailList[#index#].fromId" maxlength="32" type="hidden" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">采购合同外键</label>
-				  </td> -->
+				  </td>
 			</tr>
 		 </tbody>
 		</table>

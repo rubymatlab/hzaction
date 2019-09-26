@@ -210,7 +210,7 @@ public class VmBusPoPayWmtServiceImpl extends CommonServiceImpl implements VmBus
 								logger.info("-- 自动生成支付凭证号成功!:{} --",createBpiVoucherno);
 							}else {
 								logger.info("-- 自动生成支付凭证号失败! --");
-							}
+							}							
 							//wmt
 							
 							this.saveOrUpdate(oldE);

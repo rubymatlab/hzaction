@@ -62,7 +62,8 @@
 					<input name="busProjectFeeDetailList[0].sysCompanyCode" type="hidden"/>
 					<input name="busProjectFeeDetailList[0].bpmStatus" type="hidden"/>
 				  <td align="left">
-					  	<input name="busProjectFeeDetailList[0].bpfFeeType" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
+				  	<t:dictSelect field="busProjectFeeDetailList[0].bpfFeeType" type="list"   typeGroupCode="cost_type"  defaultVal="1" hasLabel="false"  title="费用类型"></t:dictSelect> 
+					  	<!-- <input name="busProjectFeeDetailList[0].bpfFeeType" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" > -->
 					  <label class="Validform_label" style="display: none;">费用类型</label>
 					</td>
 				  <td align="left">

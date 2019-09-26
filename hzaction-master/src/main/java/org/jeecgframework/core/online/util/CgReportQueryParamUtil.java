@@ -46,6 +46,11 @@ public class CgReportQueryParamUtil{
 				if(StringUtil.isEmpty(value)){
 					return;
 				}
+				// 改为模糊查询
+				if(!value.contains("*")) {
+					value = "*"+value+"*";
+				}
+				
 				String uri = request.getQueryString();
 				if(uri.contains(filedName+"=")){
 					String contiansChinesevalue = new String(value.getBytes("ISO-8859-1"), "UTF-8");
@@ -77,7 +82,7 @@ public class CgReportQueryParamUtil{
 
 		}else if("group".equals(queryMode)){
 			//范围查询组装
-
+			
 			String begin = request.getParameter(filedName.toLowerCase()+"_begin");
 
 //			sql_inj_throw(begin);

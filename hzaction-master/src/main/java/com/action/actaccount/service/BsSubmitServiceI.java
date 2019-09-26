@@ -27,6 +27,4 @@ public interface BsSubmitServiceI extends CommonService{
 	 * 
 	 */
 	public void delMain (BsSubmitEntity bsSubmit) throws Exception;
-	public void doUnaudited(BsSubmitEntity t) throws Exception;
-	public void doAudited(BsSubmitEntity t) throws Exception;
 }

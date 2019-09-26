@@ -48,7 +48,7 @@
 				<label class="Validform_label">项目编号:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bpmProjId" name="bpmProjId" type="text" maxlength="32" style="width: 60%" class="inputxt"  ignore="ignore"  value='${vmBusProjectManagerPage.bpmProjId}'/>
+		     	 <input id="bpmProjId" name="bpmProjId" type="text" maxlength="32" readonly="readonly" style="width: 60%" class="inputxt"  ignore="ignore"  value='${vmBusProjectManagerPage.bpmProjId}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">项目编号</label>
 			</td>
@@ -56,7 +56,7 @@
 				<label class="Validform_label">项目名称:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bpmProjName" name="bpmProjName" type="text" maxlength="32" style="width: 60%" class="inputxt"  ignore="ignore"  value='${vmBusProjectManagerPage.bpmProjName}'/>
+		     	 <input id="bpmProjName" name="bpmProjName" type="text" readonly="readonly" maxlength="32" style="width: 60%" class="inputxt"  ignore="ignore"  value='${vmBusProjectManagerPage.bpmProjName}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">项目名称</label>
 			</td>
@@ -66,7 +66,7 @@
 				<label class="Validform_label">客户名称:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bpmCustName" name="bpmCustName" type="text" maxlength="32" style="width: 60%" class="inputxt"  ignore="ignore"  value='${vmBusProjectManagerPage.bpmCustName}'/>
+		     	 <input id="bpmCustName" name="bpmCustName" type="text" readonly="readonly" maxlength="32" style="width: 60%" class="inputxt"  ignore="ignore"  value='${vmBusProjectManagerPage.bpmCustName}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">客户名称</label>
 			</td>
@@ -122,6 +122,10 @@
 					  		<input name="vmBusCollectPlanList[#index#].brpBackAmount" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">回款金额</label>
 				  </td>
+  				  <td align="left">
+					  <input name="vmBusCollectPlanList[#index#].brpPlanInvoiceDate" maxlength="0" type="text" class="Wdate" onClick="WdatePicker()"  style="width:150px;"  ignore="ignore" />
+					  <label class="Validform_label" style="display: none;">计划开票日期</label>
+				  </td>
 				  <td align="left">
 					  		<input name="vmBusCollectPlanList[#index#].brpAcceptAmount" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">已收金额</label>
@@ -153,7 +157,7 @@
 			 <td align="center"><div style="width: 25px;" name="xh"></div></td>
 			 <td align="center"><input style="width:20px;" type="checkbox" name="ck"/></td>
 				  <td align="left">
-							<input name="busProjectFollowList[#index#].bpfFollowDate" maxlength="0" type="text" class="Wdate" onClick="WdatePicker()"  style="width:150px;"  ignore="ignore" />
+							<input name="busProjectFollowList[#index#].bpfFollowDate" maxlength="0" type="text" class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})"  style="width:150px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">跟进日期</label>
 				  </td>
 				  <td align="left">
@@ -170,7 +174,7 @@
 				  </td>
 				  <td align="left">
 							<input name="busProjectFollowList[#index#].bpfCheckDate" maxlength="0" type="text" class="Wdate" onClick="WdatePicker()"  style="width:150px;"  ignore="ignore" />
-					  <label class="Validform_label" style="display: none;">验收时间</label>
+					  <label class="Validform_label" style="display: none;">计划验收时间</label>
 				  </td>
 				  <td align="left">
 							<t:dictSelect field="busProjectFollowList[#index#].bpfCheckResult" type="list"   typeGroupCode="check_res"  defaultVal="" hasLabel="false"  title="验收结果"></t:dictSelect>     

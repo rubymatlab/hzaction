@@ -103,7 +103,7 @@ public class VwBusBidEntity implements java.io.Serializable {
 	/**客户资料外键*/
 	private java.lang.String fromCustjId;
 	/**附件*/
-	@Excel(name="附件",width=15)
+	//@Excel(name="附件",width=15)
 	private java.lang.String bdFile;
 	
 	/**

@@ -94,8 +94,7 @@
 		     	 idField: 'bpProjName',
 		     	 textField: 'bpProjName',
 		     	 url: 'vwBusProjectController.do?datagrid&field=id,bpProjId,bpProjName',
-		     	 columns: [[ 
-		     	 	{field:'id',title:'客户ID',width:80}, 
+		     	 columns: [[  
 	                {field:'bpProjId',title:'项目编码',width:80}, 
 	                {field:'bpProjName',title:'项目名称',width:120} 
                 ]],

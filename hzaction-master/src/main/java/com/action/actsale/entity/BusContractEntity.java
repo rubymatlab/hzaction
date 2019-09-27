@@ -85,8 +85,8 @@ public class BusContractEntity implements java.io.Serializable {
 	/**我方签约人*/
 	@Excel(name="我方签约人",width=15)
 	private java.lang.String bcCompContractor;
-	/**合同金额万元*/
-	@Excel(name="合同金额万元",width=15)
+	/**合同金额*/
+	@Excel(name="合同金额",width=15)
 	private java.lang.String bcContAmount;
 	/**项目立项外键*/
 //	@Excel(name="项目立项外键",width=15)

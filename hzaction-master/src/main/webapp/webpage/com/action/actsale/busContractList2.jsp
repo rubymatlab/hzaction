@@ -43,8 +43,8 @@
    <%-- <t:dgToolBar title="刷新" icon="icon-reload" funname="busContractListsearch"></t:dgToolBar> --%>
    <%-- <t:dgToolBar title="录入" icon="icon-add" url="busContractController.do?goAdd" funname="add" width="100%" height="100%"></t:dgToolBar>
    <t:dgToolBar title="批量删除"  icon="icon-remove" url="busContractController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>
-   <t:dgToolBar title="查看" icon="icon-search" url="busContractController.do?goUpdate" funname="detail" width="100%" height="100%"></t:dgToolBar>
    <t:dgToolBar title="导入" icon="icon-put" funname="ImportXls"></t:dgToolBar> --%>
+   <t:dgToolBar title="查看" icon="icon-search" url="busContractController.do?goUpdate" funname="detail" width="100%" height="100%"></t:dgToolBar>
   </t:datagrid>
   </div>
  </div>

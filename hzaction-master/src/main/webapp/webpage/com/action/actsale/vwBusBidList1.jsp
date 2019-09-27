@@ -26,7 +26,7 @@
    <t:dgCol title="配合人员"  field="bdCoordinator"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="商务负责人"  field="bdBusinessCharge"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="辅助人员"  field="bdAuxiliaryStaff"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="投标金额"  field="bdBidAmout"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="投标预算"  field="bdBidAmout"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="投标日期"  field="bdBidDate"  formatter="yyyy-MM-dd"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="投标内容"  field="bdBidContent"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="审核状态"  field="bdState"  hidden="true"  queryMode="single"  dictionary="state"  width="120"></t:dgCol>

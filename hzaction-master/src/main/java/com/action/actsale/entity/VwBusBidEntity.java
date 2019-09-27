@@ -83,8 +83,8 @@ public class VwBusBidEntity implements java.io.Serializable {
 	/**辅助人员*/
 	@Excel(name="辅助人员",width=15)
 	private java.lang.String bdAuxiliaryStaff;
-	/**投标金额*/
-	@Excel(name="投标金额",width=15)
+	/**投标预算*/
+	@Excel(name="投标预算",width=15)
 	private java.lang.Double bdBidAmout;
 	/**投标日期*/
 	@Excel(name="投标日期",width=15,format = "yyyy-MM-dd")

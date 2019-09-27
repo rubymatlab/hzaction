@@ -71,7 +71,7 @@
 						</td>
 						<td align="right">
 							<label class="Validform_label">
-								投标金额:
+								投标预算:
 							</label>
 						</td>
 						<td class="value">

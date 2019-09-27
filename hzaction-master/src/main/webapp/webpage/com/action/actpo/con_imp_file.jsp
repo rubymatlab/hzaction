@@ -9,7 +9,7 @@
 <body style="overflow-y: hidden" scroll="no">
 <t:formvalid formid="formobj" layout="div" dialog="true" beforeSubmit="upload" >
 	<fieldset class="step">
-	<div class="form"><t:upload name="fiels" dialog="false" onUploadSuccess="handleSuccess" callback="handleCb" width="120" buttonText="选择要导入的文件" uploader="${controller_name}.do?${empty method_name?'importExcel':method_name }" extend="*.xls;*.xlsx" id="file_upload" formData="documentTitle"></t:upload></div>
+	<div class="form"><t:upload name="fiels" dialog="false" onUploadSuccess="handleSuccess" callback="handleCb" width="120" buttonText="选择导入excel文件" uploader="${controller_name}.do?${empty method_name?'importExcel':method_name }" extend="*.xls;*.xlsx" id="file_upload" formData="documentTitle"></t:upload></div>
 	<div class="form" id="filediv" style="height: 50px"></div>
 	</fieldset>
 </t:formvalid>

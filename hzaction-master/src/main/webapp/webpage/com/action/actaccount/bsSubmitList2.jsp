@@ -28,15 +28,15 @@
    <t:dgCol title="报销总金额大写"  field="totalMoneyCn"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="附件"  field="bsAnnex"  hidden="true"  queryMode="single"  downloadName="附件下载"  width="120"></t:dgCol>
    <t:dgCol title="项目管理外键"  field="fromProjmId"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
-   <t:dgDelOpt title="删除" url="bsSubmitController.do?doDel&id={id}"  urlclass="ace_button" urlfont="fa-trash-o"/>
+   <%-- <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
+   <t:dgDelOpt title="删除" url="bsSubmitController.do?doDel&id={id}"  urlclass="ace_button" urlfont="fa-trash-o"/> 
    <t:dgToolBar title="录入" icon="icon-add" url="bsSubmitController.do?goAdd" funname="add" width="100%" height="100%"></t:dgToolBar>
    <t:dgToolBar title="编辑" icon="icon-edit" url="bsSubmitController.do?goUpdate" funname="update" width="100%" height="100%"></t:dgToolBar>
-   <t:dgToolBar title="批量删除"  icon="icon-remove" url="bsSubmitController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>
+   <t:dgToolBar title="批量删除"  icon="icon-remove" url="bsSubmitController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>--%>
    <t:dgToolBar title="查看" icon="icon-search" url="bsSubmitController.do?goUpdate" funname="detail" width="100%" height="100%"></t:dgToolBar>
-   <t:dgToolBar title="导入" icon="icon-put" funname="ImportXls"></t:dgToolBar>
+   <%-- <t:dgToolBar title="导入" icon="icon-put" funname="ImportXls"></t:dgToolBar> --%>
    <t:dgToolBar title="导出" icon="icon-putout" funname="ExportXls"></t:dgToolBar>
-   <t:dgToolBar title="模板下载" icon="icon-putout" funname="ExportXlsByT"></t:dgToolBar>
+   <%-- <t:dgToolBar title="模板下载" icon="icon-putout" funname="ExportXlsByT"></t:dgToolBar> --%>
    	<t:dgToolBar title="支付" icon="icon-edit"  url="bsSubmitController.do?doPay" funname="doPay" ></t:dgToolBar>
    	<t:dgToolBar title="打印" icon="icon-edit"  url="bsSubmitController.do?doPrint" funname="doPrint" ></t:dgToolBar>
   </t:datagrid>
@@ -75,13 +75,33 @@
  	}
  	//自定义按钮-sql增强-打印
  	function doPrint(title,url,id){
- 		var rowData = $('#'+id).datagrid('getSelected');
+ 		var rowData = $('#'+id).datagrid('getSelections');
 		if (!rowData) {
 			tip('请选择打印项目');
 			return;
 		}
-		url = url+"&id="+rowData['id'];
- 		createdialog('确认 ', '确定'+title+'吗 ?', url,gridname);
+		var ids="";
+		$.each(rowData,function(index,item){
+			ids+=item.id+",";
+		});
+		//url = url+"&id="+rowData['id'];
+ 		//createdialog('确认 ', '确定'+title+'吗 ?', url,gridname);
+ 		$.ajax({
+ 			async : false,
+ 			cache : false,
+ 			type : 'POST',
+ 			data : {ids:ids},
+ 			url : url,// 请求的action路径
+ 			success : function(data) {
+ 				var d = $.parseJSON(data);
+ 				if (d.success) {
+ 					window.open(d.msg,"_blank");
+ 					//tip(msg);
+ 				} else {
+ 					tip(d.msg);
+ 				}
+ 			}
+ 		});
  	}
  
 //导入

@@ -100,7 +100,7 @@
 				<td align="right"><label class="Validform_label ">采购申请编号:</label>
 				</td>
 				<td class="value test"><input id="bpaApplyNo" name="bpaApplyNo"
-					type="text" maxlength="40" style="width: 150px" class="inputxt" readonly="readonly"
+					type="text" maxlength="40" style="width: 150px;background-color:#F0F0F0;" class="inputxt" readonly="readonly"
 					ignore="ignore" /> <span class="Validform_checktip"></span></td>
 
 				<td align="right"><label class="Validform_label">申请日期:</label>
@@ -127,7 +127,7 @@
 				<td align="right"><label class="Validform_label">项目编号:</label>
 				</td>
 				<td class="value"><input id="bpProjId" name="bpProjId"
-					type="text" maxlength="40" style="width: 150px" class="inputxt"
+					type="text" maxlength="40" style="width: 150px;background-color:#F0F0F0;" class="inputxt"
 					ignore="ignore"  readonly="readonly"/> <span class="Validform_checktip"></span> <label
 					class="Validform_label" style="display: none;">项目编号</label></td>
 
@@ -254,8 +254,8 @@
 					<label class="Validform_label" style="display: none;">备注</label></td>
 								<td align="left"><input
 									name="busPoApplyDetailList[#index#].purchaseOrNot" maxlength="32"
-									 type="text" class="inputxt" style="width: 120px;"
-									ignore="ignore" /> <label class="Validform_label"
+									 type="text" class="inputxt" style="width: 120px;background-color:#F0F0F0;"
+									ignore="ignore" readonly="readonly" value="未采购" /> <label class="Validform_label"
 									style="display: none;">是否采购</label></td>
 				<td align="left"><input
 					name="busPoApplyDetailList[#index#].fromId" maxlength="32"

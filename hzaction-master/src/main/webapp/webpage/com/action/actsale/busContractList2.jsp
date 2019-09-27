@@ -35,9 +35,9 @@
    <t:dgCol title="合同电子档"  field="bcContractFile" hidden="true" queryMode="single"  downloadName="附件下载"  width="120"></t:dgCol>
    
    <!-- 工具栏 -->
-   <t:dgCol title="操作" field="opt" width="0"></t:dgCol>
+   <%--<t:dgCol title="操作" field="opt" width="0"></t:dgCol>
    <t:dgDelOpt title="删除" url="busContractController.do?doDel&id={id}"  urlclass="ace_button" urlfont="fa-trash-o"/>
-   <%-- <t:dgToolBar title="合同维护" icon="icon-edit" url="busContractController.do?goUpdate" funname="update" width="100%" height="100%"></t:dgToolBar> --%>
+    <t:dgToolBar title="合同维护" icon="icon-edit" url="busContractController.do?goUpdate" funname="update" width="100%" height="100%"></t:dgToolBar> --%>
    <%-- <t:dgToolBar title="模板下载" icon="icon-putout" funname="ExportXlsByT"></t:dgToolBar> --%> 
    <t:dgToolBar title="汇出excel" icon="icon-putout" funname="ExportXls"></t:dgToolBar>
    <%-- <t:dgToolBar title="刷新" icon="icon-reload" funname="busContractListsearch"></t:dgToolBar> --%>

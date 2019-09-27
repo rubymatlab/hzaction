@@ -108,7 +108,7 @@
 				<td align="right"><label class="Validform_label">申请日期:</label>
 				</td>
 				<td class="value"><input id="bpaApplyDate" name="bpaApplyDate"
-					type="text" style="width: 150px" ignore="ignore"
+					type="text" style="width: 150px" ignore="ignore" class="Wdate" onClick="WdatePicker()"
 					value='<fmt:formatDate value='${vwBusPoApplyPage.bpaApplyDate}' type="date" pattern="yyyy-MM-dd"/>' />
 					<span class="Validform_checktip"></span> <label
 					class="Validform_label" style="display: none;">申请日期</label></td>

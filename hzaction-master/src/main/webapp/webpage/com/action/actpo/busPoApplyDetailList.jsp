@@ -218,7 +218,7 @@
 
 	</tr>
 	<tbody id="add_busPoApplyDetail_table">
-		<c:if test="${fn:length(busPoApplyDetailList)  <= 0 }">
+		<%-- <c:if test="${fn:length(busPoApplyDetailList)  <= 0 }">
 
 			<tr>
 				<td align="center"><div style="width: 25px;" name="xh">1</div></td>
@@ -257,7 +257,7 @@
 					<label class="Validform_label" style="display: none;">备注</label></td>
 				<td align="left"><input
 					name="busPoApplyDetailList[0].purchaseOrNot" maxlength="32"
-					type="text" class="inputxt" style="width: 120px;" ignore="ignore"
+					type="text" readonly="readonly" class="inputxt" style="width: 120px;" ignore="ignore"
 					readonly="readonly"> <label class="Validform_label"
 					style="display: none;">是否采购</label></td>
 				<td align="left"><input name="busPoApplyDetailList[0].fromId"
@@ -266,7 +266,7 @@
 					style="display: none;">采购申请外键</label></td>
 
 			</tr>
-		</c:if>
+		</c:if> --%>
 		<c:if test="${fn:length(busPoApplyDetailList)  > 0 }">
 
 			<c:forEach items="${busPoApplyDetailList}" var="poVal"
@@ -323,8 +323,8 @@
 						class="Validform_label" style="display: none;">备注</label></td>
 					<td align="left"><input
 						name="busPoApplyDetailList[${stuts.index }].purchaseOrNot"
-						maxlength="32" type="text" class="inputxt" style="width: 120px;"
-						ignore="ignore" value="" readonly="readonly" /> <label
+						maxlength="32" type="text" class="inputxt" style="width: 120px;background-color:#F0F0F0;"
+						ignore="ignore" value="未采购" readonly="readonly" /> <label
 						class="Validform_label" style="display: none;">是否采购</label></td>
 					<td align="left"><input
 						name="busPoApplyDetailList[${stuts.index }].fromId" maxlength="32"

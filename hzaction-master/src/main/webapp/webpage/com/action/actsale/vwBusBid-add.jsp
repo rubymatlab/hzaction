@@ -110,7 +110,7 @@
 					var cgFormId=$("input[name='id']").val();
 					$('#bdFile').uploadify("settings", "formData", {
 						'cgFormId':cgFormId,
-						'cgFormName':'vw_bus_bid',
+						'cgFormName':'bus_bid',
 						'cgFormField':'BD_FILE'
 					});
 				}

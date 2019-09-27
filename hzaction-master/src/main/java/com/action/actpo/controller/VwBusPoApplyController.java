@@ -503,32 +503,17 @@ public class VwBusPoApplyController extends BaseController {
 	 */
 	@RequestMapping(params = "doBtn_shwc")
 	@ResponseBody
-
 	public AjaxJson doBtn_shwc(VwBusPoApplyEntity vwBusPoApply, HttpServletRequest request) {
 		AjaxJson j = new AjaxJson();
 		String message = "审核完成成功";
-		VwBusPoApplyEntity t = vwBusPoApplyService.get(VwBusPoApplyEntity.class, vwBusPoApply.getId());
-		// BusPoApplyEntity t = busBusPoApplyService.get(BusPoApplyEntity.class,
-		// vwBusPoApply.getId());
-		String sql = "update bus_po_apply set bpa_state='2' where id='" + vwBusPoApply.getId() + "'";
-
-		// int i=this.systemService.updateBySqlString(sql);
-		boolean IfSuccess = false;
-
+		BusPoApplyEntity t = vwBusPoApplyService.get(BusPoApplyEntity.class, vwBusPoApply.getId());
 		try {
-			int i = jdbcDao.executeSql(sql);
-			if (i > 0) {
-				IfSuccess = true;
-			}
-			// vwBusPoApplyService.doBtn_shwcSql(t);
-			// busBusPoApplyService.doBtn_sswcBus(t);
-			// systemService.addLog(message, Globals.Log_Type_UPDATE,
-			// Globals.Log_Leavel_INFO);
+			t.setBpaState("2");
+			vwBusPoApplyService.saveOrUpdate(t);
 		} catch (Exception e) {
 			e.printStackTrace();
 			message = "审核完成失败";
 		}
-		j.setSuccess(IfSuccess);
 		j.setMsg(message);
 		return j;
 	}
@@ -538,26 +523,14 @@ public class VwBusPoApplyController extends BaseController {
 	public AjaxJson doBtn_SendBack(VwBusPoApplyEntity vwBusPoApply, HttpServletRequest request) {
 		AjaxJson j = new AjaxJson();
 		String message = "驳回成功";
-		boolean IfSuccess = false;
-		String sql = "update bus_po_apply set bpa_state='0' where id='" + vwBusPoApply.getId() + "'";
-		// VwBusPoApplyEntity t =
-		// vwBusPoApplyService.get(VwBusPoApplyEntity.class,
-		// vwBusPoApply.getId());
-		// BusPoApplyEntity t = busBusPoApplyService.get(BusPoApplyEntity.class,
-		// vwBusPoApply.getId());
+		BusPoApplyEntity t = vwBusPoApplyService.get(BusPoApplyEntity.class, vwBusPoApply.getId());
 		try {
-			int i = jdbcDao.executeSql(sql);
-			if (i > 0) {
-				IfSuccess = true;
-			}
-			// vwBusPoApplyService.doBtn_submitSql(t);
-			// systemService.addLog(message, Globals.Log_Type_UPDATE,
-			// Globals.Log_Leavel_INFO);
+			t.setBpaState("0");
+			vwBusPoApplyService.saveOrUpdate(t);
 		} catch (Exception e) {
 			e.printStackTrace();
-			message = "驳回失败";
+			message = "审核完成失败";
 		}
-		j.setSuccess(IfSuccess);
 		j.setMsg(message);
 		return j;
 	}
@@ -573,26 +546,14 @@ public class VwBusPoApplyController extends BaseController {
 	public AjaxJson doBtn_submit(VwBusPoApplyEntity vwBusPoApply, HttpServletRequest request) {
 		AjaxJson j = new AjaxJson();
 		String message = "送审成功";
-		boolean IfSuccess = false;
-		String sql = "update bus_po_apply set bpa_state='1' where id='" + vwBusPoApply.getId() + "'";
-		// VwBusPoApplyEntity t =
-		// vwBusPoApplyService.get(VwBusPoApplyEntity.class,
-		// vwBusPoApply.getId());
-		// BusPoApplyEntity t = busBusPoApplyService.get(BusPoApplyEntity.class,
-		// vwBusPoApply.getId());
+		BusPoApplyEntity t=vwBusPoApplyService.getEntity(BusPoApplyEntity.class, vwBusPoApply.getId());
 		try {
-			int i = jdbcDao.executeSql(sql);
-			if (i > 0) {
-				IfSuccess = true;
-			}
-			// vwBusPoApplyService.doBtn_submitSql(t);
-			// systemService.addLog(message, Globals.Log_Type_UPDATE,
-			// Globals.Log_Leavel_INFO);
+			t.setBpaState("1");
+			vwBusPoApplyService.saveOrUpdate(t);
 		} catch (Exception e) {
 			e.printStackTrace();
 			message = "送审失败";
 		}
-		j.setSuccess(IfSuccess);
 		j.setMsg(message);
 		return j;
 	}
@@ -953,10 +914,10 @@ public class VwBusPoApplyController extends BaseController {
 	@RequestMapping(params = "exportXlsByT")
 	public String exportXlsByT(VwBusPoApplyEntity vwBusPoApply, HttpServletRequest request,
 			HttpServletResponse response, DataGrid dataGrid, ModelMap modelMap) {
-		modelMap.put(NormalExcelConstants.FILE_NAME, "选择增加excel模板");
+		modelMap.put(NormalExcelConstants.FILE_NAME, "采购申请列表");
 		modelMap.put(NormalExcelConstants.CLASS, ExcelBusPoApplyDetailEntity.class);
-	//modelMap.put(NormalExcelConstants.PARAMS,new ExportParams("采购申请列表", "导出人:" + ResourceUtil.etSessionUser().getRealName(), "导出信息"));
-	modelMap.put(NormalExcelConstants.PARAMS,new ExportParams("模板使用说明：第一步：启用excel编辑功能，删除模板使用说明行（即第一行），第二步：按照表头输入数据，第三步： 利用excel导入功能导入本模板数据", ""));
+		//modelMap.put(NormalExcelConstants.PARAMS,new ExportParams("采购申请列表", "导出人:" + ResourceUtil.getSessionUser().getRealName(), "导出信息"));
+		modelMap.put(NormalExcelConstants.PARAMS,new ExportParams("采购申请列表", ""));
 		modelMap.put(NormalExcelConstants.DATA_LIST, new ArrayList());
 		return NormalExcelConstants.JEECG_EXCEL_VIEW;
 	}

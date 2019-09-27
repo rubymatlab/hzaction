@@ -23,14 +23,12 @@
 	</t:formvalid>
 	<script type="text/javascript">
 		function handleSuccess(row, files, info) {
-			console.log("handleSuccess")
-			frameElement.api.config.button[0].uploaded(row)
+			//console.log("handleSuccess");
+			frameElement.api.config.button[0].uploaded(row);
 			frameElement.api.close();
 		}
 		function uploadCallback(){
-			console.log("Callback")
-   
-            
+			//console.log("Callback");
     }
 	</script>
 </body>

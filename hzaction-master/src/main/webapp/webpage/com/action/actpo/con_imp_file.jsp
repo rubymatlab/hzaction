@@ -16,7 +16,7 @@
 <script>
 function handleSuccess(row,files,info){
 	// 回调事件
-	frameElement.api.config.button[0].uploaded(row)
+	frameElement.api.config.button[0].uploaded(row);
 	//关闭dialog窗口事件
 	frameElement.api.close();
 }

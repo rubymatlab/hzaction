@@ -179,9 +179,11 @@
 					class="Validform_checktip"></span> <label class="Validform_label"
 					style="display: none;">申请人</label></td>
 				<td align="right"><label class="Validform_label">单据状态:</label></td>
-				<td class="value"><input id="bpaState" name="bpaState"
+				<td class="value"><!-- <input id="bpaState" name="bpaState"
 					type="text" maxlength="20" style="width: 150px" class="inputxt" readonly="readonly"
-					ignore="ignore" /> <span class="Validform_checktip"></span>
+					ignore="ignore" /> -->
+					<t:dictSelect readonly="readonly" field="bpaState" type="list"   typeGroupCode="bs_state"  defaultVal="0" hasLabel="false"  title="审核状态" ></t:dictSelect>
+					 <span class="Validform_checktip"></span>
 			</tr>
 			<tr>
 				<td align="right"><label class="Validform_label">采购申请附件:</label>

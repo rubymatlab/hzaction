@@ -241,6 +241,7 @@
     					return false;
     	            },
     	            uploaded(row){
+    	            	console.log(row);
     	            	var data = row.obj;
     	            	var flag = false;
     	            	for(var key in data[0]){
@@ -252,9 +253,8 @@
     	            	for(var i = 0; i< data.length; i++){
     	            		 var tr =  $("#add_busPoContractDetail_table_template tr").clone();
 	            	 			 $("#add_busPoContractDetail_table").append(tr);
-	            	 			inputBindEvents(tr) // 绑定事件
+	            	 			//inputBindEvents(tr) // 绑定事件
 	            	 			resetTrNum('add_busPoContractDetail_table');
-	                 		//busPoContractDetailList[#index#].bpcdNumber
 	                 		var name = $(tr).find("input").eq(2).attr("name")
 	                 		var inputs = name.split(".");
 	                 		for(var key in data[i]){
@@ -345,7 +345,7 @@ $(function(){
 	firstCompute();
 })
 function firstCompute(){
-	console.log(123)
+	//console.log(123)
 	// 生成的时候计算一遍 （在进行监听）
 	var oInput = $("input[name$='.bpcdPrice']").add("input[name$='.bpcdNumber']").add("input[name$='.bpcdAmount']");
 	for(var i = 0; i < oInput.length; i += 3){

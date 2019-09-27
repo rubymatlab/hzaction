@@ -145,13 +145,9 @@
     	            		num++;
     	            		$("#add_busPoApplyDetail_table").append(tr);
     	            		resetTrNum('add_busPoApplyDetail_table');
-
-    	            		
-	                 		var name = $(tr).find("input").eq(2).attr("name")
-	                 		
+	                 		var name = $(tr).find("input").eq(2).attr("name");
 	                 		var inputs = name.split(".");
 	                 		$("input[name='"+inputs[0]+".purchaseOrNot']").val("未采购");
-	                 		
 	                 		for(var key in data[i]){
 	                 			$("input[name='"+inputs[0]+"."+ key +"']")
 	                 			&& 

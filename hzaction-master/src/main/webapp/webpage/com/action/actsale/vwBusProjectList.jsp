@@ -36,11 +36,11 @@
    <t:dgDelOpt title="删除" exp="bpmStatus#eq#1" url="vwBusProjectController.do?doDel&id={id}"  urlclass="ace_button" urlfont="fa-trash-o"/>
    <t:dgToolBar title="录入" icon="icon-add" url="vwBusProjectController.do?goAdd" funname="add" width="100%" height="100%"></t:dgToolBar>
    <t:dgToolBar title="编辑" icon="icon-edit" url="vwBusProjectController.do?goUpdate" funname="update" width="100%" height="100%"></t:dgToolBar>
-   <t:dgToolBar title="批量删除"  icon="icon-remove" url="vwBusProjectController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>
+   <%-- <t:dgToolBar title="批量删除"  icon="icon-remove" url="vwBusProjectController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar> --%>
    <t:dgToolBar title="查看" icon="icon-search" url="vwBusProjectController.do?goUpdate" funname="detail" width="100%" height="100%"></t:dgToolBar>
-   <t:dgToolBar title="导入" icon="icon-put" funname="ImportXls"></t:dgToolBar>
+   <%-- <t:dgToolBar title="导入" icon="icon-put" funname="ImportXls"></t:dgToolBar> --%>
    <t:dgToolBar title="导出" icon="icon-putout" funname="ExportXls"></t:dgToolBar>
-   <t:dgToolBar title="模板下载" icon="icon-putout" funname="ExportXlsByT"></t:dgToolBar>
+   <%-- <t:dgToolBar title="模板下载" icon="icon-putout" funname="ExportXlsByT"></t:dgToolBar> --%>
    	<t:dgToolBar title="立项转投标" icon="icon-edit"  url="vwBusBidController.do?goAdd" funname="doBid" ></t:dgToolBar>
    	<t:dgToolBar title="立项转合同" icon="icon-edit"  url="busContractController.do?goAdd" funname="doContract" ></t:dgToolBar>
    	<t:dgToolBar title="转已失败" icon="icon-edit"  url="vwBusProjectController.do?doFail" funname="doFail" ></t:dgToolBar>

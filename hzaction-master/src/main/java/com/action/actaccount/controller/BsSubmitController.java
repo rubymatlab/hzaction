@@ -374,13 +374,15 @@ public class BsSubmitController extends BaseController {
         	for(BsSubmitEntity entity:list){
         		try{
         		BsSubmitPage page=new BsSubmitPage();
-        		   MyBeanUtils.copyBeanNotNull2Bean(entity,page);
+        		   
+        		MyBeanUtils.copyBeanNotNull2Bean(entity,page);
             	    Object id0 = entity.getId();
 				    String hql0 = "from BusSubmitDetailEntity where 1 = 1 AND fromId = ? ";
         	        List<BusSubmitDetailEntity> busSubmitDetailEntityList = systemService.findHql(hql0,id0);
-            		page.setBusSubmitDetailList(busSubmitDetailEntityList);
+        	        page.setBusSubmitDetailList(busSubmitDetailEntityList);
+        	        
             	    Object id1 = entity.getId();
-				    String hql1 = "from BusPayInfoEntity where 1 = 1 fromId = ? ";
+				    String hql1 = "from BusPayInfoEntity where 1 = 1 AND fromId = ? ";
         	        List<BusPayInfoEntity> busPayInfoEntityList = systemService.findHql(hql1,id1);
             		page.setBusPayInfoList(busPayInfoEntityList);
             		pageList.add(page);

@@ -122,7 +122,7 @@
 				<label class="Validform_label">票据类型:</label>
 			</td>
 			<td class="value">
-					<t:dictSelect field="bsBillType" type="radio"   typeGroupCode="bill_type"  defaultVal="${bsSubmitPage.bsBillType}" hasLabel="false"  title="票据类型"></t:dictSelect>     
+					<t:dictSelect field="bsBillType" type="radio"   typeGroupCode="bill_type"  defaultVal="${bsSubmitPage.bsBillType==null?0:bsSubmitPage.bsBillType}" hasLabel="false"  title="票据类型"></t:dictSelect>     
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">票据类型</label>
 			</td>
@@ -130,7 +130,7 @@
 				<label class="Validform_label">单据状态:</label>
 			</td>
 			<td class="value">
-					<t:dictSelect field="bsState" type="list"   typeGroupCode="bs_state"  defaultVal="${bsSubmitPage.bsState}" hasLabel="false"  title="单据状态"></t:dictSelect>     
+					<t:dictSelect field="bsState" type="list"   typeGroupCode="bs_state" readonly="readonly"  defaultVal="${bsSubmitPage.bsState==null?0:bsSubmitPage.bsState}" hasLabel="false"  title="单据状态"></t:dictSelect>     
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">单据状态</label>
 			</td>

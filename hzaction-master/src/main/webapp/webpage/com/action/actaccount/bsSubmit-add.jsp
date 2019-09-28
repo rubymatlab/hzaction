@@ -29,6 +29,7 @@
   </style>
   <t:base type="jquery,easyui,tools,DatePicker"></t:base>
   <t:base type="uploadify"></t:base>
+  <script type="text/javascript" src="plug-in/tools/digitUppercase.js"></script>
   <script type="text/javascript">
   $(document).ready(function(){
 	$('#tt').tabs({
@@ -38,44 +39,20 @@
 	});
 	$(".tabs-wrap").css('width','100%');
   });
-  
-  /*金额大写*/
-  var digitUppercase = function(n) {
-	    var fraction = ['角', '分'];
-	    var digit = [
-	        '零', '壹', '贰', '叁', '肆',
-	        '伍', '陆', '柒', '捌', '玖'
-	    ];
-	    var unit = [
-	        ['元', '万', '亿'],
-	        ['', '拾', '佰', '仟']
-	    ];
-	    var head = n < 0 ? '欠' : '';
-	    n = Math.abs(n);
-	    var s = '';
-	    for (var i = 0; i < fraction.length; i++) {
-	        s += (digit[Math.floor(n * 10 * Math.pow(10, i)) % 10] + fraction[i]).replace(/零./, '');
-	    }
-	    s = s || '整';
-	    n = Math.floor(n);
-	    for (var i = 0; i < unit[0].length && n > 0; i++) {
-	        var p = '';
-	        for (var j = 0; j < unit[1].length && n > 0; j++) {
-	            p = digit[n % 10] + unit[1][j] + p;
-	            n = Math.floor(n / 10);
-	        }
-	        s = p.replace(/(零.)*零$/, '').replace(/^$/, '零') + unit[0][i] + s;
-	    }
-	    return head + s.replace(/(零.)*零元/, '元')
-	        .replace(/(零.)+/g, '零')
-	        .replace(/^整$/, '零元整');
+	function handleInput()
+	{
+		 var totalM=0.0;
+		 var trList = $("#add_busSubmitDetail_table").children("tr")
+		 for (var i=0;i<trList.length;i++) {
+		      var tdArr = trList.eq(i).find("td");
+		      var totalmoney = tdArr.eq(4).find('input').val();//收入金额
+		      if(!(totalmoney=="" || totalmoney==null))
+		      	totalM=parseFloat(totalM)+parseFloat(totalmoney);
+		 }
+		 $('#totalMoney').val(totalM);
+		 var digitNumber=digitUppercase(totalM);
+		 $('#totalMoneyCn').val(digitNumber);
 	}
-  
-  function handleInput()
-  {
-	  var digitNumber=digitUppercase($('#totalMoney').val());
-	  $('#totalMoneyCn').val(digitNumber);
-  }
  </script>
  </head>
  <body style="overflow-x: hidden;">
@@ -192,7 +169,7 @@
 				<label class="Validform_label">报销总金额:</label>
 			</td>
 			<td class="value">
-		     	 <input id="totalMoney" name="totalMoney" oninput="handleInput()" type="text" maxlength="32" style="width: 150px" class="inputxt"  datatype="/^(-?\d+)(\.\d+)?$/"  ignore="ignore" />
+		     	 <input id="totalMoney" name="totalMoney" type="text" maxlength="32" readonly="true" style="width: 150px;background-color:#F0F0F0;" class="inputxt"  datatype="/^(-?\d+)(\.\d+)?$/"  ignore="ignore" />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">报销总金额</label>
 			</td>
@@ -257,7 +234,7 @@
 					  <label class="Validform_label" style="display: none;">费用类型</label>
 				  </td>
 				  <td align="left">
-					  	<input name="busSubmitDetailList[#index#].bsdAmount" maxlength="32" type="text" class="inputxt"  style="width:120px;"  datatype="/^(-?\d+)(\.\d+)?$/"  ignore="ignore" />
+					  	<input name="busSubmitDetailList[#index#].bsdAmount" maxlength="32" type="text" onchange="handleInput()" class="inputxt"  style="width:120px;"  datatype="/^(-?\d+)(\.\d+)?$/"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">报销金额</label>
 				  </td>
 				  <td align="left">

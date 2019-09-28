@@ -26,11 +26,15 @@ import org.jeecgframework.core.common.model.json.AjaxJson;
 import org.jeecgframework.core.common.model.json.DataGrid;
 import org.jeecgframework.core.constant.Globals;
 import org.jeecgframework.core.util.ExceptionUtil;
+import org.jeecgframework.core.util.LogUtil;
 import org.jeecgframework.core.util.ResourceUtil;
 import org.jeecgframework.core.util.StringUtil;
 import org.jeecgframework.tag.core.easyui.TagUtil;
 import org.jeecgframework.web.system.pojo.base.TSDepart;
 import org.jeecgframework.web.system.service.SystemService;
+import org.jeecgframework.web.system.util.ExpiredFiles;
+import org.jeecgframework.web.system.util.HashMapDataTableUtil;
+import org.jeecgframework.web.system.util.LicenseUtil;
 import org.jeecgframework.core.util.MyBeanUtils;
 import org.jeecgframework.poi.excel.ExcelImportUtil;
 import org.jeecgframework.poi.excel.entity.ExportParams;
@@ -39,6 +43,9 @@ import org.jeecgframework.poi.excel.entity.vo.NormalExcelConstants;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
+
+import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Map;
 
@@ -47,6 +54,10 @@ import org.jeecgframework.jwt.util.GsonUtil;
 import org.jeecgframework.jwt.util.ResponseMessage;
 import org.jeecgframework.jwt.util.Result;
 import com.alibaba.fastjson.JSONArray;
+import com.aspose.cells.SaveFormat;
+import com.aspose.cells.Workbook;
+import com.aspose.cells.WorkbookDesigner;
+
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -363,13 +374,15 @@ public class BsSubmitController extends BaseController {
         	for(BsSubmitEntity entity:list){
         		try{
         		BsSubmitPage page=new BsSubmitPage();
-        		   MyBeanUtils.copyBeanNotNull2Bean(entity,page);
+        		   
+        		MyBeanUtils.copyBeanNotNull2Bean(entity,page);
             	    Object id0 = entity.getId();
 				    String hql0 = "from BusSubmitDetailEntity where 1 = 1 AND fromId = ? ";
         	        List<BusSubmitDetailEntity> busSubmitDetailEntityList = systemService.findHql(hql0,id0);
-            		page.setBusSubmitDetailList(busSubmitDetailEntityList);
+        	        page.setBusSubmitDetailList(busSubmitDetailEntityList);
+        	        
             	    Object id1 = entity.getId();
-				    String hql1 = "from BusPayInfoEntity where 1 = 1 fromId = ? ";
+				    String hql1 = "from BusPayInfoEntity where 1 = 1 AND fromId = ? ";
         	        List<BusPayInfoEntity> busPayInfoEntityList = systemService.findHql(hql1,id1);
             		page.setBusPayInfoList(busPayInfoEntityList);
             		pageList.add(page);
@@ -523,17 +536,92 @@ public class BsSubmitController extends BaseController {
 	 */
 	@RequestMapping(params = "doPrint")
 	@ResponseBody
-	public AjaxJson doPrint(BsSubmitEntity bsSubmit, HttpServletRequest request) {
+	public AjaxJson doPrint(String ids, HttpServletRequest request) {
 		AjaxJson j = new AjaxJson();
 		String message = "打印成功";
-		BsSubmitEntity t = bsSubmitService.get(BsSubmitEntity.class, bsSubmit.getId());
+		
 		try{
-			//bsSubmitService.doPrintSql(t);
+			if (!LicenseUtil.getLicense()) {
+				LogUtil.info("获取License失败");
+				j.setMsg("获取License失败");
+				return j;
+			}
+			/*修改的部分*/
+			String oldfilename="报销单.xlsx";
+			String newfilename="报销单.pdf";
+			/*end修改的部分*/	
+			long old = System.currentTimeMillis();
+			String templateFilePath = request.getServletContext().getRealPath("/")+"export\\template\\"+oldfilename;
+			System.out.println(templateFilePath);
+			Workbook wb = new Workbook(templateFilePath);// 原始excel路径
+			WorkbookDesigner designer = new WorkbookDesigner();
+			designer.setWorkbook(wb);
+			
+			
+			/*修改的部分*/
+			String[] arrayId=ids.split(",");
+			List<BsSubmitEntity> listBs=new ArrayList<BsSubmitEntity>();
+			BsSubmitEntity bse=new BsSubmitEntity();
+			List<BusSubmitDetailEntity> listB=new ArrayList<BusSubmitDetailEntity>();
+			String str="";
+			for(String id:arrayId)
+			{
+				//申请人、申请部门
+				List<BsSubmitEntity> listO = bsSubmitService.findByProperty(BsSubmitEntity.class,"id", id);
+				for(BsSubmitEntity o :listO)
+				{
+					if(bse.getBsSubmiter()==null)
+						bse.setBsSubmiter(o.getBsSubmiter());
+					else
+						bse.setBsSubmiter(bse.getBsSubmiter()+","+o.getBsSubmiter());
+					if(bse.getBsDept()==null)
+						bse.setBsDept(o.getBsDept());
+					else
+						bse.setBsDept(bse.getBsDept()+","+o.getBsDept());
+					//报销明细
+					List<BusSubmitDetailEntity> listM=bsSubmitService.findByProperty(BusSubmitDetailEntity.class, "fromId", o.getId());
+					double sum=0;
+					for(BusSubmitDetailEntity m:listM)
+					{
+						BusSubmitDetailEntity temp=new BusSubmitDetailEntity();
+						MyBeanUtils.copyBeanNotNull2Bean(m,temp);
+						temp.setUpdateBy(o.getProjectName());
+						sum+=m.getBsdAmount();
+						listB.add(temp);
+					}
+					//项目汇总
+					str+=o.getProjectName()+":"+sum+"元。";
+				}
+			}
+			listBs.add(bse);
+			// 绑定数据源
+			designer.setDataSource("bsSubmit",listBs);
+			designer.setDataSource("busSubmitDetail",listB);
+			designer.setDataSource("str",str);
+			designer.setCalculateFormula(true);
+			// 执行
+			designer.process(true);
+			// 生成PDF
+			String localTemp=request.getServletContext().getRealPath("/")+"temp\\";
+			String exportPDF = localTemp+newfilename;
+			File pdfFile = new File(exportPDF);// 输出路径
+			FileOutputStream fileOS = new FileOutputStream(pdfFile);
+			wb.save(fileOS, SaveFormat.PDF);
+			fileOS.close();
+			wb.dispose();
+			/*end修改的部分*/
+			//过期文件删除
+			ExpiredFiles.Delete(localTemp);
+			long now = System.currentTimeMillis();
+			System.out.println("共耗时：" + ((now - old) / 1000.0) + "秒");
+			String tempUrl=request.getRequestURL().toString();
+			message=tempUrl.substring(0,tempUrl.lastIndexOf("/")+1)+"temp/"+newfilename;
 			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();
 			message = "打印失败";
 		}
+		
 		j.setMsg(message);
 		return j;
 	}

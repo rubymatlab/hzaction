@@ -89,7 +89,7 @@ public class BsSubmitPage implements java.io.Serializable {
     @Excel(name="附件")
 	private java.lang.String bsAnnex;
 	/**项目管理外键*/
-    @Excel(name="项目管理外键")
+    //@Excel(name="项目管理外键")
 	private java.lang.String fromProjmId;
 	
 	/**

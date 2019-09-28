@@ -73,23 +73,20 @@ public class BusPayInfoEntity implements java.io.Serializable {
 	@Excel(name="凭证号",width=15)
 	private java.lang.String bpiVoucherno;
 	/**项目管理外键*/
-	@Excel(name="项目管理外键",width=15)
+	//@Excel(name="项目管理外键",width=15)
 	private java.lang.String fromProjmId;
 	/**采购付款单外键*/
-	@Excel(name="采购付款单外键",width=15)
+	//@Excel(name="采购付款单外键",width=15)
 	private java.lang.String fromPayId;
 	/**银行账号信息外键*/
-	@Excel(name="银行账号信息外键",width=15)
+	//@Excel(name="银行账号信息外键",width=15)
 	private java.lang.String fromBankAccId;
 	/**费用报销外键*/
-	@Excel(name="费用报销外键",width=15)
+	//@Excel(name="费用报销外键",width=15)
 	private java.lang.String fromId;
 	/**帐号简称*/
 	@Excel(name="帐号简称",width=15)
 	private java.lang.String bbaiSname;
-	/**费用报销外键*/
-	@Excel(name="费用报销外键",width=15)
-	private java.lang.String fromId;
 	
 	
 	@Override
@@ -102,15 +99,6 @@ public class BusPayInfoEntity implements java.io.Serializable {
 				+ ", bpiVoucherno=" + bpiVoucherno + ", bpiBusId=" + bpiBusId + ", fromProjmId=" + fromProjmId
 				+ ", fromPayId=" + fromPayId + ", fromBankAccId=" + fromBankAccId + ", bbaiSname=" + bbaiSname
 				+ ", fromId=" + fromId + "]";
-	}
-
-	@Column(name ="FROM_ID",nullable=true,length=30)
-	public java.lang.String getFromId() {
-		return fromId;
-	}
-
-	public void setFromId(java.lang.String fromId) {
-		this.fromId = fromId;
 	}
 
 	/**

@@ -86,10 +86,10 @@ public class BsSubmitEntity implements java.io.Serializable {
 	@Excel(name="报销总金额大写",width=15)
 	private java.lang.String totalMoneyCn;
 	/**附件*/
-	@Excel(name="附件",width=15)
+	//@Excel(name="附件",width=15)
 	private java.lang.String bsAnnex;
 	/**项目管理外键*/
-	@Excel(name="项目管理外键",width=15)
+	//@Excel(name="项目管理外键",width=15)
 	private java.lang.String fromProjmId;
 	
 	/**

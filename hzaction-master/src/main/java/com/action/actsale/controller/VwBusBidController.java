@@ -1,5 +1,6 @@
 package com.action.actsale.controller;
 import com.action.actsale.entity.BusBidEntity;
+import com.action.actsale.entity.BusContractEntity;
 import com.action.actsale.entity.BusProjectEntity;
 import com.action.actsale.entity.VwBusBidEntity;
 import com.action.actsale.service.VwBusBidServiceI;
@@ -273,6 +274,17 @@ public class VwBusBidController extends BaseController {
 		VwBusBidEntity t = vwBusBidService.get(VwBusBidEntity.class, vwBusBid.getId());
 		try{
 			vwBusBidService.doVerifyBtnBus(t);
+			//立项转合同
+			BusContractEntity b=new BusContractEntity();
+			b.setFromProjId(t.getFromProjId());
+			b.setFromCustId(t.getFromCustjId());
+			b.setBcCustomerCode(t.getBcId());
+			b.setBcCustomerName(t.getBcName());
+			b.setBcProjectCode(t.getBpProjId());
+			b.setFromProjName(t.getBpProjName());
+			b.setBcWinBidder(t.getBdWinBidder());
+			b.setBcContractState("1");
+			vwBusBidService.save(b);
 			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();

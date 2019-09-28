@@ -71,7 +71,7 @@
 					  <label class="Validform_label" style="display: none;">费用类型</label>
 					</td>
 				  <td align="left">
-					  	<input name="busSubmitDetailList[0].bsdAmount" maxlength="32" type="text" class="inputxt"  style="width:120px;"  datatype="/^(-?\d+)(\.\d+)?$/"  ignore="ignore" >
+					  	<input name="busSubmitDetailList[0].bsdAmount" onchange="handleInput()" maxlength="32" type="text" class="inputxt"  style="width:120px;"  datatype="/^(-?\d+)(\.\d+)?$/"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">报销金额</label>
 					</td>
 				  <td align="left">
@@ -105,7 +105,7 @@
 					  <label class="Validform_label" style="display: none;">费用类型</label>
 				   </td>
 				   <td align="left">
-					  	<input name="busSubmitDetailList[${stuts.index }].bsdAmount" maxlength="32" type="text" class="inputxt"  style="width:120px;"  datatype="/^(-?\d+)(\.\d+)?$/"  ignore="ignore"  value="${poVal.bsdAmount }"/>
+					  	<input name="busSubmitDetailList[${stuts.index }].bsdAmount" maxlength="32" type="text" onchange="handleInput()" class="inputxt"  style="width:120px;"  datatype="/^(-?\d+)(\.\d+)?$/"  ignore="ignore"  value="${poVal.bsdAmount }"/>
 					  <label class="Validform_label" style="display: none;">报销金额</label>
 				   </td>
 				   <td align="left">

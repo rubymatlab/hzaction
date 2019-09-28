@@ -96,7 +96,8 @@
 						<input name="busProjectFeeDetailList[${stuts.index }].sysCompanyCode" type="hidden" value="${poVal.sysCompanyCode }"/>
 						<input name="busProjectFeeDetailList[${stuts.index }].bpmStatus" type="hidden" value="${poVal.bpmStatus }"/>
 				   <td align="left">
-					  	<input name="busProjectFeeDetailList[${stuts.index }].bpfFeeType" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bpfFeeType }"/>
+					  	<%-- <input name="busProjectFeeDetailList[${stuts.index }].bpfFeeType" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bpfFeeType }"/> --%>
+					  <t:dictSelect field="busProjectFeeDetailList[${stuts.index }].bpfFeeType" type="list"   typeGroupCode="cost_type"  defaultVal="${poVal.bpfFeeType }" hasLabel="false"  title="费用类型"></t:dictSelect> 
 					  <label class="Validform_label" style="display: none;">费用类型</label>
 				   </td>
 				   <td align="left">

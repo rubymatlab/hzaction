@@ -71,7 +71,7 @@
 						</td>
 						<td align="right">
 							<label class="Validform_label">
-								投标金额:
+								投标预算:
 							</label>
 						</td>
 						<td class="value">
@@ -164,7 +164,7 @@
 					var cgFormId=$("input[name='id']").val();
 					$('#bdFile').uploadify("settings", "formData", {
 						'cgFormId':cgFormId,
-						'cgFormName':'vw_bus_bid',
+						'cgFormName':'bus_bid',
 						'cgFormField':'BD_FILE'
 					});
 				}

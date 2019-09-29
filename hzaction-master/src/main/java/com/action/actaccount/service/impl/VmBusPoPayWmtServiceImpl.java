@@ -87,7 +87,7 @@ public class VmBusPoPayWmtServiceImpl extends CommonServiceImpl implements VmBus
 		 * 		2.2	不同项目编号初始追加001，如果是同个项目编号，当前流水号自加1，再进行拼接	
 		 * 		AX-2019-1567865431955-FK-001
 		 * 
-		 */
+		 */ 
 		StringBuffer stringBuffer = new StringBuffer();
 		stringBuffer.append(bpmProjId);
 		stringBuffer.append("-FK-");
@@ -385,15 +385,24 @@ public class VmBusPoPayWmtServiceImpl extends CommonServiceImpl implements VmBus
 		logger.info("-- 【bus_po_contract_pay】实体附表更新操作增强业务：{} --",vmBusPoContractPayWmtList);
 		for (VmBusPoContractPayWmtEntity vmBusPoContractPayWmtEntity : vmBusPoContractPayWmtList) {
 			int i = actaccountDao.updateBusPoContractPayWmtEntity(vmBusPoContractPayWmtEntity.getBpcpId(),
-					vmBusPoContractPayWmtEntity.getPayAmount(), vmBusPoContractPayWmtEntity.getBpcpRemark());
+					vmBusPoContractPayWmtEntity.getPayAmount(), vmBusPoContractPayWmtEntity.getBpcpRemark(),vmBusPoContractPayWmtEntity.getBusPoPayId());
 			logger.info("-- 【bus_po_contract_pay】实体附表更新操作增强业务成功否：{} --",i);
 		}
 
 		//-----------------sql增强 end------------------------------
-
+		
+		
 		//-----------------java增强 start---------------------------
 		//-----------------java增强 end-----------------------------
 	}
+//	/**???
+//	 * 把实体附表BusPoContractPayWmt的[付款金额,备注,采购付款单外键]都清空
+//	 * @param vmBusPoContractPayWmtEntity
+//	 */
+//	public void doUpdateBusEnhance() {
+//		
+//	}
+	
 	/**
 	 * 删除操作增强业务
 	 * @param id
@@ -403,7 +412,9 @@ public class VmBusPoPayWmtServiceImpl extends CommonServiceImpl implements VmBus
 		//-----------------sql增强 start----------------------------
 		//删除实体表信息
 		BusPoPayWmtEntity busPoPayEntity = this.returnBusPoPayEntity(t);
-		actaccountDao.deleteBusPoPayWmtEntity(busPoPayEntity.getId());
+		String id = busPoPayEntity.getId();
+		actaccountDao.deleteBusPoPayWmtEntity(id);
+		actaccountDao.doUpdateBusEnhanceBusPoPayId(id);
 		//-----------------sql增强 end------------------------------
 
 		//-----------------java增强 start---------------------------
@@ -517,6 +528,21 @@ public class VmBusPoPayWmtServiceImpl extends CommonServiceImpl implements VmBus
 			}else{
 				num = this.executeSql(sql);
 			}
+		}
+	}
+
+	/**
+	 * 根据bpcpId把实体附表BusPoContractPayWmt的[付款金额,备注,采购付款单外键]都清空
+	 */
+	@Override
+	public void doBpcpIdUpdate(String bpcpIds){
+		if(bpcpIds.indexOf(",")!=-1) {
+			String[] bpcpIdsStr = bpcpIds.split(",");
+			for (String bpcpId : bpcpIdsStr) {
+				actaccountDao.doUpdateBusEnhance(bpcpId);
+			}
+		}else {
+			actaccountDao.doUpdateBusEnhance(bpcpIds);
 		}
 	}
 }

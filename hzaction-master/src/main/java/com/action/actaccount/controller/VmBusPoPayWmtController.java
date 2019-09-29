@@ -83,8 +83,7 @@ public class VmBusPoPayWmtController extends BaseController {
 	private Validator validator;
 	@Autowired
 	private CgFormFieldServiceI cgFormFieldService;
-
-
+	
 	/**
 	 * 采购付款单视图_wmt列表 页面跳转
 	 * 
@@ -116,7 +115,7 @@ public class VmBusPoPayWmtController extends BaseController {
 		ModelAndView modelAndView = new ModelAndView("com/action/actaccount/vmBusPoPayWmtList2");
 		return modelAndView;
 	}
-
+	
 	/**
 	 * easyui AJAX请求数据
 	 * 
@@ -168,6 +167,7 @@ public class VmBusPoPayWmtController extends BaseController {
 		vmBusPoPayWmt = systemService.getEntity(VmBusPoPayWmtEntity.class, vmBusPoPayWmt.getId());
 		String message = "采购付款单删除成功";
 		try{
+			logger.info("-- 修改实体表【bus_po_contract_pay】外键bus_po_pay_id={}的字段[bpcp_remark,pay_amount,bus_po_pay_id]--",vmBusPoPayWmt.getId());
 			vmBusPoPayWmtService.delMain(vmBusPoPayWmt);
 			systemService.addLog(message, Globals.Log_Type_DEL, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
@@ -231,6 +231,7 @@ public class VmBusPoPayWmtController extends BaseController {
 		j.setObj(vmBusPoPayWmt);
 		return j;
 	}
+	
 	/**
 	 * 更新采购付款单视图_wmt
 	 * 
@@ -241,7 +242,17 @@ public class VmBusPoPayWmtController extends BaseController {
 	@ResponseBody
 	public AjaxJson doUpdate(VmBusPoPayWmtEntity vmBusPoPayWmt,VmBusPoPayWmtPage vmBusPoPayWmtPage, HttpServletRequest request) {
 		logger.info("-- 更新采购付款单视图_wmt --");
+		
 		List<VmBusPoContractPayWmtEntity> vmBusPoContractPayWmtList =  vmBusPoPayWmtPage.getVmBusPoContractPayWmtList();
+		
+		//根据bpcpId把实体附表BusPoContractPayWmt的[付款金额,备注,采购付款单外键]都清空
+		String bpcpIds = request.getParameter("bpcpIds");
+		if(bpcpIds!=null||bpcpIds!="") {
+			logger.info("-- 根据bpcpId把实体附表BusPoContractPayWmt的[付款金额,备注,采购付款单外键]字段清空 --");
+			bpcpIds = new String(bpcpIds);
+			vmBusPoPayWmtService.doBpcpIdUpdate(bpcpIds);
+		}
+		
 		List<BusPayInfoEntity> busPayInfoList =  vmBusPoPayWmtPage.getBusPayInfoList();
 		AjaxJson j = new AjaxJson();
 		String message = "更新成功";

@@ -62,7 +62,7 @@ public class VmBusPoPayWmtEntity implements java.io.Serializable {
 	@Excel(name="发票金额",width=15)
 	private java.math.BigDecimal bppInvAmount;
 	/**发票类型*/
-	@Excel(name="发票类型",width=15)
+	@Excel(name="发票类型",width=15,dicCode="bc_invoice")
 	private java.lang.String bppInvType;
 	/**税率百分比*/
 	@Excel(name="税率百分比",width=15)

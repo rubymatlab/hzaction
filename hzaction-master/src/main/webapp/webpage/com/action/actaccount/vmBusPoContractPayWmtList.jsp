@@ -8,7 +8,7 @@
 	<input id="chooseClick" name="chooseClick" type="text" style="width: 150px;display: none;" class="searchbox-inputtext"  ignore="ignore"   
 		 onclick="popupClickBus(this,'bpc_po_no,bpcp_progre,bpcp_pay_amount,bpcp_date,from_id,bus_po_pay_id,from_projm_id,from_supp_id,bpcp_id',
 		 'bpcPoNo,bpcpProgre,bpcpPayAmount,bpcpDate,fromId,busPoPayId,fromProjmIdF,fromSuppIdF,bpcpId',
-		 'bus_po_contract_pay_wmt')" />
+		 'bus_po_contract_pay_wmt')" /> 
 	<!-- <input id="testClick" name="testClick" type="text" style="width: 150px" class="searchbox-inputtext"  ignore="ignore"   
 		onclick="popupClickBus(this,'bpc_po_no,bpcp_progre,bpcp_pay_amount,bpcp_date,from_id,bus_po_pay_id,pay_amount,bpcp_remark,from_projm_id,from_supp_id',
 		 'bpcPoNo,bpcpProgre,bpcpPayAmount,bpcpDate,fromId,busPoPayId,payAmount,bpcpRemark,fromProjmIdF,fromSuppIdF',
@@ -39,10 +39,10 @@
 				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
 						备注
 				  </td>
-				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;" hidden="hidden">
+				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;" hidden>
 						采购付款单外键
 				  </td>
-				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;" hidden="hidden">
+				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;" hidden>
 						【实体表】采购付款单明细附表外键
 				  </td>
 	</tr>
@@ -62,19 +62,20 @@
 					<input name="vmBusPoContractPayWmtList[0].sysCompanyCode" type="hidden"/>
 					<input name="vmBusPoContractPayWmtList[0].bpmStatus" type="hidden"/>
 				  <td align="left">
-					  	<input name="vmBusPoContractPayWmtList[0].bpcPoNo" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
+					  	<input name="vmBusPoContractPayWmtList[0].bpcPoNo" maxlength="32" type="text" class="inputxt" readonly="readonly" style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">采购合同编号</label>
 					</td>
 				 <td align="left">
-							<t:dictSelect field="vmBusPoContractPayWmtList[0].bpcpProgre" type="list" typeGroupCode="cost_stag"  hasLabel="false"  title="费用分期"></t:dictSelect>     
+							<t:dictSelect field="vmBusPoContractPayWmtList[0].bpcpProgre" type="list" readonly="readonly" typeGroupCode="cost_stag"  hasLabel="false"  title="费用分期"></t:dictSelect>     
 					  <label class="Validform_label" style="display: none;">费用分期</label>
 					</td> 
 				  <td align="left">
-					  	<input name="vmBusPoContractPayWmtList[0].bpcpPayAmount" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
+					  	<input name="vmBusPoContractPayWmtList[0].bpcpPayAmount" maxlength="32" type="text" readonly="readonly" class="inputxt"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">计划付款金额</label>
 					</td>
 				  <td align="left">
-							<input name="vmBusPoContractPayWmtList[0].bpcpDate" maxlength="32"  type="text" class="Wdate" onClick="WdatePicker()"  style="width:150px;"  ignore="ignore" >
+							<!--<input name="vmBusPoContractPayWmtList[0].bpcpDate" maxlength="32"  type="text" readonly="readonly" class="Wdate" onClick="WdatePicker()"  style="width:150px;"  ignore="ignore" >-->
+							<input name="vmBusPoContractPayWmtList[0].bpcpDate" maxlength="32"  type="text" readonly="readonly" class="Wdate"  style="width:150px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">计划付款日期</label>
 					</td>
 				  <td align="left" hidden="hidden">
@@ -82,18 +83,18 @@
 					  <label class="Validform_label" style="display: none;">采购合同外键</label>
 					</td>
 				  <td align="left">
-					  	<input name="vmBusPoContractPayWmtList[0].payAmount" maxlength="32" type="text" class="inputxt" onchange="handleInput()"  style="width:120px;"  ignore="ignore" >
+					  	<input name="vmBusPoContractPayWmtList[0].payAmount" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">付款金额</label>
 					</td>
 				  <td align="left">
 					  	<input name="vmBusPoContractPayWmtList[0].bpcpRemark" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">备注</label>
 					</td>
-				  <td align="left" hidden="hidden">
+				  <td align="left" hidden>
 					  	<input name="vmBusPoContractPayWmtList[0].busPoPayId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">采购付款单外键</label>
 					</td>
-				  <td align="left" hidden="hidden">
+				  <td align="left" hidden>
 					  	<input name="vmBusPoContractPayWmtList[0].bpcpId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">采购付款单明细附表外键</label>
 					</td>
@@ -115,19 +116,21 @@
 						<input name="vmBusPoContractPayWmtList[${stuts.index }].sysCompanyCode" type="hidden" value="${poVal.sysCompanyCode }"/>
 						<input name="vmBusPoContractPayWmtList[${stuts.index }].bpmStatus" type="hidden" value="${poVal.bpmStatus }"/>
 				   <td align="left">
-					  	<input name="vmBusPoContractPayWmtList[${stuts.index }].bpcPoNo" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bpcPoNo }"/>
+					  	<input name="vmBusPoContractPayWmtList[${stuts.index }].bpcPoNo" maxlength="32" type="text" readonly="readonly" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bpcPoNo }"/>
 					  <label class="Validform_label" style="display: none;">采购合同编号</label>
 				   </td>
+				   
 				   <td align="left">
-							<t:dictSelect field="vmBusPoContractPayWmtList[${stuts.index }].bpcpProgre" type="list" typeGroupCode="cost_stag"  defaultVal="${poVal.bpcpProgre }" title="费用分期"></t:dictSelect>     
+						<t:dictSelect field="vmBusPoContractPayWmtList[${stuts.index }].bpcpProgre" type="list" readonly="readonly" typeGroupCode="cost_stag"  defaultVal="${poVal.bpcpProgre }" title="费用分期"></t:dictSelect>     
 					  <label class="Validform_label" style="display: none;">费用分期</label>
 				   </td>
 				   <td align="left">
-					  	<input name="vmBusPoContractPayWmtList[${stuts.index }].bpcpPayAmount" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bpcpPayAmount }"/>
+					  	<input name="vmBusPoContractPayWmtList[${stuts.index }].bpcpPayAmount" maxlength="32" readonly="readonly" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bpcpPayAmount }"/>
 					  <label class="Validform_label" style="display: none;">计划付款金额</label>
 				   </td>
 				   <td align="left">
-							<input name="vmBusPoContractPayWmtList[${stuts.index }].bpcpDate" maxlength="32" type="text" class="Wdate" onClick="WdatePicker()"  style="width:150px;"   ignore="ignore"  value="<fmt:formatDate value='${poVal.bpcpDate}' type="date" pattern="yyyy-MM-dd"/>"/>
+							<!--<input name="vmBusPoContractPayWmtList[${stuts.index }].bpcpDate" maxlength="32" readonly="readonly" type="text" class="Wdate" onClick="WdatePicker()"  style="width:150px;"   ignore="ignore"  value="<fmt:formatDate value='${poVal.bpcpDate}' type="date" pattern="yyyy-MM-dd"/>"/>-->
+							<input name="vmBusPoContractPayWmtList[${stuts.index }].bpcpDate" maxlength="32" readonly="readonly" type="text" class="Wdate"  style="width:150px;"   ignore="ignore"  value="<fmt:formatDate value='${poVal.bpcpDate}' type="date" pattern="yyyy-MM-dd"/>"/>
 					  <label class="Validform_label" style="display: none;">计划付款日期</label>
 				   </td>
 				   <td align="left" hidden="hidden">
@@ -142,11 +145,11 @@
 					  	<input name="vmBusPoContractPayWmtList[${stuts.index }].bpcpRemark" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bpcpRemark }"/>
 					  <label class="Validform_label" style="display: none;">备注</label>
 				   </td>
-				   <td align="left" hidden="hidden">
+				   <td align="left" hidden>
 					  	<input name="vmBusPoContractPayWmtList[${stuts.index }].busPoPayId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.busPoPayId }"/>
 					  <label class="Validform_label" style="display: none;">采购付款单外键</label>
 				   </td>
-				   <td align="left" hidden="hidden">
+				   <td align="left" hidden>
 					  	<input name="vmBusPoContractPayWmtList[${stuts.index }].bpcpId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bpcpId }"/>
 					  <label class="Validform_label" style="display: none;">采购付款单明细附表外键</label>
 				   </td>
@@ -155,21 +158,10 @@
 	</c:if>	
 	</tbody>
 </table>
+
+
 <script type="text/javascript">
-
-
-	function handleInput()
-	{
-		 var totalM=0.0;
-		 var trList = $("#add_vmBusPoContractPayWmt_table").children("tr");
-		 for (var i=0;i<trList.length;i++) {
-		      var tdArr = trList.eq(i).find("td");
-		      var totalmoney = tdArr.eq(7).find('input').val();//付款金额 
-		      if(!(totalmoney=="" || totalmoney==null))
-		      	totalM=parseFloat(totalM)+parseFloat(totalmoney);
-		 }
-		 $('#bppMoney').val(totalM);
-	}
+	
 	$('#addVmBusPoContractPayWmtBtn').linkbutton({   
 	    iconCls: 'icon-add'  
 	});  
@@ -183,11 +175,25 @@
 	 	 return false;
     });  
 	$('#delVmBusPoContractPayWmtBtn').bind('click', function(){
-		$("#add_vmBusPoContractPayWmt_table").find("input[name$='ck']:checked").parent().parent().remove();
-        resetTrNum('add_vmBusPoContractPayWmt_table'); 
 		//start_wmt
-        if($("#add_vmBusPoContractPayWmt_table tr").size()==0)	addTr(1)		       	
+		var checkedInput = $("#add_vmBusPoContractPayWmt_table").find("input[name$='ck']:checked").parent().parent().children("td:last-child").children("input:first-child");
+		var bpcpIdList = []
+		checkedInput.each(function( index, item ) {
+			bpcpIdList.push(item.value)
+		});
+		$("#bpcpIds").val(bpcpIdList)
+		console.log(bpcpIdList)
+		//end_wmt
+		
+		 $("#add_vmBusPoContractPayWmt_table").find("input[name$='ck']:checked").parent().parent().remove();
+        resetTrNum('add_vmBusPoContractPayWmt_table'); 
+		
+		//start_wmt
+        if($("#add_vmBusPoContractPayWmt_table tr").size()==0){
+	        addTr(1)
+        }
         //end_wmt
+        
         return false;
     }); 
     $(document).ready(function(){
@@ -217,14 +223,31 @@
 	 	 return false;
     });  
     
-    
     //添加tr节点
     function addTr(size){
     	for (var i = 0; i < size; i++) {
     		var tr = $("#add_vmBusPoContractPayWmt_table_template tr").clone();
 		 	$("#add_vmBusPoContractPayWmt_table").append(tr);
-			resetTrNum('add_vmBusPoContractPayWmt_table');	
+			resetTrNum('add_vmBusPoContractPayWmt_table');
+			
+			//设置不可编辑
+			setNotEdit(tr)
     	}
+    }
+     //设置不可编辑
+    function setNotEdit(tr){
+    	tr.find('td:gt(1):lt(4) input').each(function(index,item) {
+//			let $item = $(item)
+			item.readOnly=true
+			if(index==2) item.onclick = ""
+//			console.log(item)
+		})
+//		tr.find('td:eq(3) select').each(function(index,item) {
+//			var $item = $(item)
+//          console.log(2)
+//			$item.attr("readOnly",false)
+//			console.log($item)
+//		})
     }
     
     /**
@@ -384,14 +407,14 @@
     			    	//start_wmt
 //						获取当前视图存在多少条数据节点						
 						var trSize = document.getElementById("add_vmBusPoContractPayWmt_table").getElementsByTagName("tr").length - 1
-						//console.log("判断当前用户是否是初始操作:",trSize==0&&$("input[name='vmBusPoContractPayWmtList[0].fromId']").val()=="")
+						console.log("判断当前用户是否是初始操作:",trSize==0&&$("input[name='vmBusPoContractPayWmtList[0].fromId']").val()=="")
 						if(trSize==0 && $("input[name='vmBusPoContractPayWmtList[0].fromId']").val()==""){
 							if(selected.length>1) addTr(selected.length-1)
 							selected.map(function(obj,index){
 //								console.log(obj)  //每条选中的对象
 //								console.log(selected.length)	//从0开始
 								$("input[name='vmBusPoContractPayWmtList["+index+"].bpcPoNo']").val(obj.bpc_po_no)
-								//console.log(obj.bpcp_progre)
+								console.log(obj.bpcp_progre)
 								$("select[name='vmBusPoContractPayWmtList["+(index+trSize)+"].bpcpProgre']")
    									.find("option:contains("+obj.bpcp_progre+")").attr('selected',true)
 								
@@ -406,7 +429,7 @@
 						}else{
 							addTr(selected.length)	
 							selected.map(function(obj,index){
-								//console.log(obj)  //每条选中的对象
+								console.log(obj)  //每条选中的对象
 //								console.log(selected.length)	//从0开始
 								trSize = document.getElementById("add_vmBusPoContractPayWmt_table").getElementsByTagName("tr").length-selected.length
 //								console.log($trSize)
@@ -534,3 +557,4 @@
     	}
     //add--end--Author:gengjiajia date:20160802 for: TASK #1175 批量添加数据的时popup多值的传递
 </script>
+

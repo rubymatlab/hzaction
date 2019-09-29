@@ -2,7 +2,7 @@
 <%@include file="/context/mytags.jsp"%>
 <!DOCTYPE html>
 <html>
- <head>
+ <head> 
   <title>采购付款单视图</title>
     <style>
   .ui-button {
@@ -38,31 +38,19 @@
 	});
 	$(".tabs-wrap").css('width','100%');
   });
-  
-  function handleInput()
-	{
-		 var totalM=0.0;
-		 var trList = $("#add_vmBusPoContractPayWmt_table").children("tr");
-		 for (var i=0;i<trList.length;i++) {
-		      var tdArr = trList.eq(i).find("td");
-		      var totalmoney = tdArr.eq(7).find('input').val();//付款金额 
-		      if(!(totalmoney=="" || totalmoney==null))
-		      	totalM=parseFloat(totalM)+parseFloat(totalmoney);
-		 }
-		 $('#bppMoney').val(totalM);
-	}
  </script>
  </head>
  <body style="overflow-x: hidden;">
-  <t:formvalid formid="formobj" dialog="true" usePlugin="password" layout="table" tiptype="1" action="vmBusPoPayWmtController.do?doAdd" callback="jeecgFormFileCallBack@Override">
+  <t:formvalid formid="formobj" dialog="true" beforeSubmit="judge" usePlugin="password" layout="table" tiptype="1" action="vmBusPoPayWmtController.do?doAdd" callback="jeecgFormFileCallBack@Override">
 					<input id="id" name="id" type="hidden" value="${vmBusPoPayWmtPage.id }"/>
+					<input id="bpcpIds" name="bpcpIds" type="hidden" />
 	<table cellpadding="0" cellspacing="1" class="formtable">
 		<tr>
 			<td align="right">
 				<label class="Validform_label">付款单号:</label>
 			</td>
 			<td class="value" colspan="7">
-		     	 <input id="bppPayId" name="bppPayId" placeholder="自动生成" disabled="disabled" type="text" maxlength="32" style="width: 80%" class="inputxt"  ignore="ignore" />
+		     	 <input id="bppPayId" name="bppPayId" placeholder="自动生成" readonly="readonly" type="text" maxlength="32" style="width: 80%" class="inputxt"  ignore="ignore" />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">付款单号</label>
 			</td>
@@ -81,7 +69,7 @@
 				<label class="Validform_label">项目编号:</label>
 			</td>
 			<td class="value" >
-		     	 <input id="bpmProjId" name="bpmProjId" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
+		     	 <input id="bpmProjId" name="bpmProjId" type="text" maxlength="32" readonly="readonly" style="width: 150px" class="inputxt"  ignore="ignore" />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">项目编号</label>
 			</td>
@@ -98,12 +86,12 @@
 				<label class="Validform_label">供应商编号:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bsId" name="bsId" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
+		     	 <input id="bsId" name="bsId" type="text" maxlength="32" readonly="readonly" style="width: 150px" class="inputxt"  ignore="ignore" />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">供应商编号</label>
 			</td>
 		</tr>
-		<tr  >
+		<tr hidden>
 			<td align="right">
 				<label class="Validform_label">项目管理外键:</label>
 			</td>
@@ -127,7 +115,7 @@
 				<label class="Validform_label">发票类型:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bppInvType" name="bppInvType" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
+		     	<t:dictSelect field="bppInvType" type="list"  typeGroupCode="bc_invoice"  defaultVal="${vmBusPoPayWmtPage.bppInvType}" hasLabel="false" title="发票类型"></t:dictSelect>     
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">发票类型</label>
 			</td>
@@ -169,7 +157,7 @@
 				<label class="Validform_label">付款金额:</label>
 			</td>
 			<td class="value" colspan="3">
-		     	 <input id="bppMoney" name="bppMoney" type="text" maxlength="32" readonly="true" style="width: 150px;background-color:#F0F0F0;" class="inputxt"  ignore="ignore" />
+		     	 <input id="bppMoney" name="bppMoney" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">付款金额</label>
 			</td>
@@ -268,7 +256,7 @@
 					  <label class="Validform_label" style="display: none;">采购合同外键</label>
 				  </td>
 				  <td align="left">
-					  	<input name="vmBusPoContractPayWmtList[#index#].payAmount" maxlength="32" type="text" onchange="handleInput()"  class="inputxt"  style="width:120px;"  ignore="ignore" />
+					  	<input name="vmBusPoContractPayWmtList[#index#].payAmount" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">付款金额</label>
 				  </td>
 				  <td align="left">
@@ -398,5 +386,17 @@
 				}
 			}
 		}
+		
+		//wmt-start
+		function judge(){
+			var bpmNameVal = $("#bpmName").val()
+			var bsNameVal = $("#bsName").val()
+			if(bpmNameVal!=null&&bpmNameVal!=""&&bsNameVal!=null&&bsNameVal!=""){
+				return true;
+			}
+			alert("项目名称和供应商名称不能为空!")
+			return false;
+		}
+		//wmt-end
   	</script>
 	

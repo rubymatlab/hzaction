@@ -99,10 +99,10 @@ public class VwBusSpecialPayEntity implements java.io.Serializable {
 	@Excel(name="单据状态",width=15)
 	private java.lang.String bsspState;
 	/**项目管理外键*/
-	@Excel(name="项目管理外键",width=15)
+	//@Excel(name="项目管理外键",width=15)
 	private java.lang.String fromProjmId;
 	/**供应商资料外键*/
-	@Excel(name="供应商资料外键",width=15)
+	//@Excel(name="供应商资料外键",width=15)
 	private java.lang.String fromSuppId;
 	/**项目编号*/
 	@Excel(name="项目编号",width=15)
@@ -117,7 +117,7 @@ public class VwBusSpecialPayEntity implements java.io.Serializable {
 	@Excel(name="供应商名称",width=15)
 	private java.lang.String bsName;
 	/**附件*/
-	@Excel(name="附件",width=15)
+	//@Excel(name="附件",width=15)
 	private java.lang.String bsspFile;
 	
 	/**

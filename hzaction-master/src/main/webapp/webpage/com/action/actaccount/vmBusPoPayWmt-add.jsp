@@ -49,7 +49,7 @@
 				<label class="Validform_label">付款单号:</label>
 			</td>
 			<td class="value" colspan="7">
-		     	 <input id="bppPayId" name="bppPayId" placeholder="自动生成" type="text" maxlength="32" style="width: 80%" class="inputxt"  ignore="ignore" />
+		     	 <input id="bppPayId" name="bppPayId" placeholder="自动生成" disabled="disabled" type="text" maxlength="32" style="width: 80%" class="inputxt"  ignore="ignore" />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">付款单号</label>
 			</td>
@@ -90,7 +90,7 @@
 				<label class="Validform_label" style="display: none;">供应商编号</label>
 			</td>
 		</tr>
-		<tr >
+		<tr  >
 			<td align="right">
 				<label class="Validform_label">项目管理外键:</label>
 			</td>
@@ -138,7 +138,7 @@
 				<label class="Validform_label">单据状态:</label>
 			</td>
 			<td class="value">
-				<t:dictSelect field="bppState" type="list" typeGroupCode="bs_state"  defaultVal="${vmBusPoPayWmtPage.bppState==null?0:vmBusPoPayWmtPage.bppState}" hasLabel="false"  title="单据状态"></t:dictSelect>     
+				<t:dictSelect field="bppState" type="list" typeGroupCode="bs_state" readonly="readonly" defaultVal="${vmBusPoPayWmtPage.bppState==null?0:vmBusPoPayWmtPage.bppState}" hasLabel="false"  title="单据状态"></t:dictSelect>     
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">单据状态</label>
 			</td>

@@ -42,11 +42,11 @@
 	<t:dgFunOpt funname="doConfirm(id)" title="确认" urlclass="ace_button" urlfont="fa-wrench" />
    <t:dgToolBar title="录入" icon="icon-add" url="vwBusSpecialPayController.do?goAdd" funname="add"></t:dgToolBar>
 	<t:dgToolBar title="编辑" icon="icon-edit" url="vwBusSpecialPayController.do?goUpdate" funname="update"></t:dgToolBar>
-   <t:dgToolBar title="批量删除"  icon="icon-remove" url="vwBusSpecialPayController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>
+   <%-- <t:dgToolBar title="批量删除"  icon="icon-remove" url="vwBusSpecialPayController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar> --%>
    <t:dgToolBar title="查看" icon="icon-search" url="vwBusSpecialPayController.do?goUpdate" funname="detail"></t:dgToolBar>
-   <t:dgToolBar title="导入" icon="icon-put" funname="ImportXls"></t:dgToolBar>
+   <%-- <t:dgToolBar title="导入" icon="icon-put" funname="ImportXls"></t:dgToolBar> --%>
    <t:dgToolBar title="导出" icon="icon-putout" funname="ExportXls"></t:dgToolBar>
-   <t:dgToolBar title="模板下载" icon="icon-putout" funname="ExportXlsByT"></t:dgToolBar>
+   <%-- <t:dgToolBar title="模板下载" icon="icon-putout" funname="ExportXlsByT"></t:dgToolBar> --%>
      	<t:dgToolBar title="送审" icon="icon-edit"  url="vwBusSpecialPayController.do?doAccess" funname="doAccess" ></t:dgToolBar>
      	<t:dgToolBar title="支付" icon="icon-edit"  url="vwBusSpecialPayController.do?doPay" funname="doPay" ></t:dgToolBar>
   </t:datagrid>

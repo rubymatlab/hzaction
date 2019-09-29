@@ -379,6 +379,8 @@
 //								console.log(selected.length)	//从0开始
 								$("input[name='vmBusPoContractPayWmtList["+index+"].bpcPoNo']").val(obj.bpc_po_no)
 								console.log(obj.bpcp_progre)
+								$("select[name='vmBusPoContractPayWmtList["+(index+trSize)+"].bpcpProgre']")
+   									.find("option:contains("+obj.bpcp_progre+")").attr('selected',true)
 								
    								/* $("select[name='vmBusPoContractPayWmtList["+index+"].bpcpProgre']")
    									.find("option:contains("+obj.bpcp_progre+")").attr('selected',true) */

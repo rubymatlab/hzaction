@@ -49,7 +49,7 @@
 				<label class="Validform_label">付款单号:</label>
 			</td>
 			<td class="value" colspan="7">
-		     	 <input id="bppPayId" name="bppPayId" type="text" maxlength="32" style="width: 80%" class="inputxt"  ignore="ignore"  value='${vmBusPoPayWmtPage.bppPayId}'/>
+		     	 <input id="bppPayId" name="bppPayId" type="text" maxlength="32" disabled="disabled" style="width: 80%" class="inputxt"  ignore="ignore"  value='${vmBusPoPayWmtPage.bppPayId}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">付款单号</label>
 			</td>
@@ -91,7 +91,7 @@
 			</td>
 			
 		</tr>
-		<tr>
+		<tr >
 			<td align="right">
 				<label class="Validform_label">项目管理外键:</label>
 			</td>
@@ -120,12 +120,12 @@
 				<label class="Validform_label" style="display: none;">发票类型</label>
 			</td>
 			<td align="right">
-				<label class="Validform_label">税率%:</label>
+				<label class="Validform_label">实际付款时间:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bppTaxRate" name="bppTaxRate" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vmBusPoPayWmtPage.bppTaxRate}'/>
+					  <input id="bppPayDate" name="bppPayDate" type="text" style="width: 150px" class="Wdate" onClick="WdatePicker()" ignore="ignore"  value='<fmt:formatDate value='${vmBusPoPayWmtPage.bppPayDate}' type="date" pattern="yyyy-MM-dd"/>'/>
 				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">税率百分比</label>
+				<label class="Validform_label" style="display: none;">实际付款时间</label>
 			</td>
 			<td align="right" hidden="hidden">
 				<label class="Validform_label">采购总金额:</label>
@@ -135,33 +135,26 @@
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">采购总金额</label>
 			</td>
+			
 			<td align="right">
-				<label class="Validform_label">实际付款时间:</label>
-			</td>
-			<td class="value">
-					  <input id="bppPayDate" name="bppPayDate" type="text" style="width: 150px" class="Wdate" onClick="WdatePicker()" ignore="ignore"  value='<fmt:formatDate value='${vmBusPoPayWmtPage.bppPayDate}' type="date" pattern="yyyy-MM-dd"/>'/>
-				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">实际付款时间</label>
-			</td>
-			<td align="right">
-				<label class="Validform_label">单据状态:${vmBusPoPayWmtPage.bppState}</label>
+				<label class="Validform_label">单据状态:</label>
 			</td>
 			<td class="value">
 					<t:dictSelect field="bppState" type="list"  typeGroupCode="bs_state"  defaultVal="${vmBusPoPayWmtPage.bppState}" hasLabel="false" readonly="readonly" title="单据状态"></t:dictSelect>     
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">单据状态</label>
 			</td>
+			<td align="right">
+				<label class="Validform_label">税率%:</label>
+			</td>
+			<td class="value">
+		     	 <input id="bppTaxRate" name="bppTaxRate" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vmBusPoPayWmtPage.bppTaxRate}'/>
+				<span class="Validform_checktip"></span>
+				<label class="Validform_label" style="display: none;">税率百分比</label>
+			</td>
 		</tr>
 		
 		<tr>
-			<td align="right">
-				<label class="Validform_label">发票金额:</label>
-			</td>
-			<td class="value" colspan="3">
-		     	 <input id="bppInvAmount" name="bppInvAmount" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vmBusPoPayWmtPage.bppInvAmount}'/>
-				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">发票金额</label>
-			</td>
 			<td align="right" hidden="hidden">
 				<label class="Validform_label">发票未开金额:</label>
 			</td>
@@ -177,6 +170,14 @@
 		     	 <input id="bppMoney" name="bppMoney" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vmBusPoPayWmtPage.bppMoney}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">付款金额</label>
+			</td>
+			<td align="right">
+				<label class="Validform_label">发票金额:</label>
+			</td>
+			<td class="value" colspan="3">
+		     	 <input id="bppInvAmount" name="bppInvAmount" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vmBusPoPayWmtPage.bppInvAmount}'/>
+				<span class="Validform_checktip"></span>
+				<label class="Validform_label" style="display: none;">发票金额</label>
 			</td>
 		</tr>
 		<tr>

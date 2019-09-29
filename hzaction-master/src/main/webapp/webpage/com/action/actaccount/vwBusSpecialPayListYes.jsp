@@ -30,8 +30,8 @@
    <t:dgCol title="请求支付日期"  field="bsspApplyPayDate"  formatter="yyyy-MM-dd"  hidden="true"  query="true"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="付款金额"  field="bsspPayAmount"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="单据状态"  field="bsspState"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="项目管理外键"  field="fromProjmId"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="供应商资料外键"  field="fromSuppId"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="项目管理外键"  hidden="true" field="fromProjmId"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="供应商资料外键"  hidden="true" field="fromSuppId"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="项目编号"  field="bpProjId"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="项目名称"  field="bpProjName"  query="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="项目经理"  field="bpManager"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
@@ -42,11 +42,11 @@
 	<t:dgFunOpt funname="doConfirm(id)" title="确认" urlclass="ace_button" urlfont="fa-wrench" />
    <t:dgToolBar title="录入" icon="icon-add" url="vwBusSpecialPayController.do?goAdd" funname="add"></t:dgToolBar>
 	<t:dgToolBar title="编辑" icon="icon-edit" url="vwBusSpecialPayController.do?goUpdate" funname="update"></t:dgToolBar>
-   <t:dgToolBar title="批量删除"  icon="icon-remove" url="vwBusSpecialPayController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>
+   <%-- <t:dgToolBar title="批量删除"  icon="icon-remove" url="vwBusSpecialPayController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar> --%>
    <t:dgToolBar title="查看" icon="icon-search" url="vwBusSpecialPayController.do?goUpdate" funname="detail"></t:dgToolBar>
-   <t:dgToolBar title="导入" icon="icon-put" funname="ImportXls"></t:dgToolBar>
+   <%-- <t:dgToolBar title="导入" icon="icon-put" funname="ImportXls"></t:dgToolBar> --%>
    <t:dgToolBar title="导出" icon="icon-putout" funname="ExportXls"></t:dgToolBar>
-   <t:dgToolBar title="模板下载" icon="icon-putout" funname="ExportXlsByT"></t:dgToolBar>
+   <%-- <t:dgToolBar title="模板下载" icon="icon-putout" funname="ExportXlsByT"></t:dgToolBar> --%>
      	<t:dgToolBar title="送审" icon="icon-edit"  url="vwBusSpecialPayController.do?doAccess" funname="doAccess" ></t:dgToolBar>
      	<t:dgToolBar title="支付" icon="icon-edit"  url="vwBusSpecialPayController.do?doPay" funname="doPay" ></t:dgToolBar>
   </t:datagrid>

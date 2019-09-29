@@ -31,8 +31,9 @@ public interface ActaccountDao {
 	int updateBusPoContractPayWmtEntity(String bpcpId,BigDecimal payAmount,String bpcpRemark);
 	
 	
-	@Sql("select bpp.bpp_pay_id from bus_po_pay bpp ORDER BY bpp.create_date DESC LIMIT 1 ")
-	Map<String, String> getNowByBppPayId();
+	@Sql("select bpp.bpp_pay_id from bus_po_pay bpp where bpp.bpp_pay_id like CONCAT('',:bppPayId,'%') ORDER BY bpp.create_date DESC LIMIT 1")
+	@Arguments({"bppPayId"})
+	Map<String, String> getNowByBppPayId(String bppPayId);
 	
 	@Sql("update bus_po_pay set bpp_state=:bppState where id=:id")
 	@Arguments({"bppState","id"})

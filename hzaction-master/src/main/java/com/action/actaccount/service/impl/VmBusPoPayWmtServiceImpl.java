@@ -75,34 +75,53 @@ public class VmBusPoPayWmtServiceImpl extends CommonServiceImpl implements VmBus
 		this.doDelBus((VmBusPoPayWmtEntity)entity);
 	}
 
-	public String getNowBppPayId(String nowBppPayId) {
-		//String nowBppPayId = "AX-2018-客户简称-项目编号-FK-002";	
-		String year = Calendar.getInstance().get(Calendar.YEAR)+"";
-		String[] split = nowBppPayId.split("-");
-		String nowYear = split[1];
-		String number = split[split.length-1];
-
-		if(!year.equals(nowYear)) return nowBppPayId.replace(nowYear, year).replace(number,"001");
-		int i = Integer.parseInt(number);
-		String nowNumber = null;
-		if(i>=0&&i<9) {
-			nowNumber = "00"+(i+1);
-		}else if(i>=9&&i<99) {
-			nowNumber = "0"+(i+1);
-		}else if(i>=99){
-			nowNumber = ""+(i+1);
+	public String getNowBppPayId(String bpmProjId, String nowBppPayId) {
+//		String bpmProjId = "AX-2019-1567865431955"
+//		String nowBppPayId = "AX-2019-1567865431955-FK-002";
+		/**
+		 * 自动生成付款单号
+		 * 1.初始的项目编号					
+		 * 		AX-2019-1567865431955					
+		 * 2.对初始的项目编号进行拼接流水号
+		 * 		2.1	每个项目编号全都拼接-FK-
+		 * 		2.2	不同项目编号初始追加001，如果是同个项目编号，当前流水号自加1，再进行拼接	
+		 * 		AX-2019-1567865431955-FK-001
+		 * 
+		 */
+		StringBuffer stringBuffer = new StringBuffer();
+		stringBuffer.append(bpmProjId);
+		stringBuffer.append("-FK-");
+		if(!"".equals(nowBppPayId)&&nowBppPayId!=null) {
+			int beginIndex = nowBppPayId.lastIndexOf("-");
+			String substring = nowBppPayId.substring(beginIndex+1);
+			int parseInt = Integer.parseInt(substring);
+			if(parseInt>=0&&parseInt<9) {
+				stringBuffer.append("00").append(parseInt+1);
+			}else if(parseInt>=9&&parseInt<99) {
+				stringBuffer.append("0").append(parseInt+1);
+			}else if(parseInt>=99){
+				stringBuffer.append(parseInt+1);
+			}
+			return stringBuffer.toString();
 		}
-		return nowBppPayId.replace(number, nowNumber);
+		return stringBuffer.append("001").toString();
 	}
-
+	
 	public void addMain(VmBusPoPayWmtEntity vmBusPoPayWmt,
 			List<VmBusPoContractPayWmtEntity> vmBusPoContractPayWmtList,List<BusPayInfoEntity> busPayInfoList) throws Exception{
 		//自动生成【采购付款单视图表】的付款单号bpp_pay_id，
-		logger.info("自动生成付款单号：{}",vmBusPoPayWmt.getBppPayId());
+		//logger.info("自动生成付款单号：{}",vmBusPoPayWmt.getBppPayId());
+		//项目编号
+		String bpmProjId = vmBusPoPayWmt.getBpmProjId();
+		logger.info("当前项目编号:{}",bpmProjId);
 		//获取当前最新付款单号
-		String nowBppPayId1 = actaccountDao.getNowByBppPayId().get("bpp_pay_id");
-		logger.info("-- 当前最新付款单号:{} --",nowBppPayId1);
-		String nowBppPayId2 = getNowBppPayId(nowBppPayId1);
+		Map<String, String> map = actaccountDao.getNowByBppPayId(bpmProjId);
+		String nowBppPayId1 = null;
+		if(map!=null)	nowBppPayId1 = map.get("bpp_pay_id");
+//		String nowBppPayId1 = actaccountDao.getNowByBppPayId(bpmProjId).get("bpp_pay_id");
+		
+		logger.info("-- 当前该项目编号的最新付款单号:{} --",nowBppPayId1);
+		String nowBppPayId2 = getNowBppPayId(bpmProjId,nowBppPayId1);
 		logger.info("-- 更新付款单号:{} --",nowBppPayId2);
 		vmBusPoPayWmt.setBppPayId(nowBppPayId2);
 

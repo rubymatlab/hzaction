@@ -110,9 +110,6 @@ public class VwRpCostAccountController extends BaseController {
 		if(StringUtil.isNotEmpty(vwRpCostAccount.getBpProjId())){
 			vwRpCostAccount.setBpProjId("*"+vwRpCostAccount.getBpProjId()+"*");
 		}
-		if(StringUtil.isNotEmpty(vwRpCostAccount.getBpManager())){
-			vwRpCostAccount.setBpManager("*"+vwRpCostAccount.getBpManager()+"*");
-		}
 		if(StringUtil.isNotEmpty(vwRpCostAccount.getBcName())){
 			vwRpCostAccount.setBcName("*"+vwRpCostAccount.getBcName()+"*");
 		}

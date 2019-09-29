@@ -84,7 +84,8 @@
 						</label>
 					</td>
 					<td class="value">
-							<input id="bcProgressStages" name="bcProgressStages"  type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
+							<!-- <input id="bcProgressStages" name="bcProgressStages"  type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" /> -->
+							<t:dictSelect field="bcProgressStages" type="list"  typeGroupCode="gathering"   defaultVal="1" hasLabel="false"  title="进度款分期" ></t:dictSelect>  
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">进度款分期</label>
 						</td>

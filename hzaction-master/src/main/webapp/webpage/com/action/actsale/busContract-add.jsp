@@ -61,7 +61,7 @@
 				<label class="Validform_label">合同完成状态:</label>
 			</td>
 			<td class="value">
-					  <t:dictSelect field="bcContractState" type="list"   typeGroupCode="state"  defaultVal="${busContractPage.bcContractState}" hasLabel="false"  title="合同完成状态" ></t:dictSelect>     
+					  <t:dictSelect field="bcContractState" type="list" readonly="readonly"   typeGroupCode="state"  defaultVal="${busContractPage.bcContractState}" hasLabel="false"  title="合同完成状态" ></t:dictSelect>     
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">合同完成状态</label>
 			</td>

@@ -61,7 +61,7 @@
 		</td>
 	</tr>
 	<tbody id="add_busConQuotedPrice_table">
-		<c:if test="${fn:length(busConQuotedPriceList)  <= 0 }">
+		<%-- <c:if test="${fn:length(busConQuotedPriceList)  <= 0 }">
 			<tr>
 				<td align="center">
 					<div style="width: 25px;" name="xh">1</div>
@@ -133,7 +133,7 @@
 					<label class="Validform_label" style="display: none;">合同管理外键</label>
 				</td>
 			</tr>
-		</c:if>
+		</c:if> --%>
 		<c:if test="${fn:length(busConQuotedPriceList)  > 0 }">
 			<c:forEach items="${busConQuotedPriceList}" var="poVal" varStatus="stuts">
 				<tr>

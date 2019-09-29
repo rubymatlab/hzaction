@@ -17,7 +17,7 @@
    <t:dgCol title="所属公司"  field="sysCompanyCode"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
   <%--  <t:dgCol title="流程状态"  field="bpmStatus"  queryMode="single"  dictionary="bpm_status"  width="120"></t:dgCol> --%>
    <t:dgCol title="收款单号"  field="bcCollectId"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="进度款分期"  field="bcProgressStages"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="进度款分期"  field="bcProgressStages"  queryMode="single" dictionary="gathering" width="120"></t:dgCol>
    <t:dgCol title="开票税率"  field="bcTaxPer"  queryMode="single"  dictionary="bc_tax_pe"  width="120"></t:dgCol>
    <t:dgCol title="开票时间"  field="bcInvoiceDate"  formatter="yyyy-MM-dd"  query="true"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="开票金额"  field="bcInvAmount"  queryMode="single"  width="120"></t:dgCol>

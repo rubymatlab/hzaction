@@ -174,7 +174,8 @@
 				<label class="Validform_label">签订时间:</label>
 			</td>
 			<td class="value">
-					  <input id="bcConcludeTime" name="bcConcludeTime" type="text" style="width: 150px"   ignore="ignore"  value='<fmt:formatDate value='${busContractPage.bcConcludeTime}' type="date" pattern="yyyy-MM-dd"/>'/>
+					  <%-- <input id="bcConcludeTime" name="bcConcludeTime" type="text" style="width: 150px"   ignore="ignore"  value='<fmt:formatDate value='${busContractPage.bcConcludeTime}' type="date" pattern="yyyy-MM-dd"/>'/> --%>
+				<input id="bcConcludeTime" name="bcConcludeTime" onClick="WdatePicker()"  type="text" style="width: 150px" class="Wdate"  ignore="ignore"  value="<fmt:formatDate value='${busContractPage.bcConcludeTime}' type='date' pattern='yyyy-MM-dd' />" />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">签订时间</label>
 			</td>

@@ -65,7 +65,7 @@
 					<input name="busProjectDisfollowList[0].sysCompanyCode" type="hidden"/>
 					<input name="busProjectDisfollowList[0].bpmStatus" type="hidden"/>
 				  <td align="left">
-					  	<input name="busProjectDisfollowList[0].bpdDisNo" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
+					  	<input name="busProjectDisfollowList[0].bpdDisNo" maxlength="32" type="text" class="inputxt" datatype="n"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">跟进次数</label>
 					</td>
 				  <td align="left">
@@ -102,7 +102,7 @@
 						<input name="busProjectDisfollowList[${stuts.index }].sysCompanyCode" type="hidden" value="${poVal.sysCompanyCode }"/>
 						<input name="busProjectDisfollowList[${stuts.index }].bpmStatus" type="hidden" value="${poVal.bpmStatus }"/>
 				   <td align="left">
-					  	<input name="busProjectDisfollowList[${stuts.index }].bpdDisNo" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bpdDisNo }"/>
+					  	<input name="busProjectDisfollowList[${stuts.index }].bpdDisNo" maxlength="32" type="text" class="inputxt" datatype="n"  style="width:120px;"  ignore="ignore"  value="${poVal.bpdDisNo }"/>
 					  <label class="Validform_label" style="display: none;">跟进次数</label>
 				   </td>
 				   <td align="left">

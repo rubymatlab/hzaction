@@ -56,6 +56,7 @@
 				<label class="Validform_label">项目编号:</label>
 			</td>
 			<td class="value">
+				<input id="fromProjId" name="fromProjId" type="hidden"  value='${vmBusPoContractPage.fromProjmId}'/>
 		     	 <input id="bpmProjId" name="bpmProjId" type="text" disabled="disabled" maxlength="32" style="width: 60%" class="inputxt"  ignore="ignore"  value='${vmBusPoContractPage.bpmProjId}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">项目编号</label>
@@ -332,7 +333,8 @@
 		  		});
 	  			
 	  			// 获取项目管理的外键id
-	  			window.projectId = "${ vmBusPoContractPage.fromProjmId }";
+	  			window.projectId = $("#fromProjId").val();
+	  			console.log(window.projectId)
 		  	});
 		  	
 		  	/**

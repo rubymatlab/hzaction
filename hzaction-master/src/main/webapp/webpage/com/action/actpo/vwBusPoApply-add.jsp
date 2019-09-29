@@ -282,7 +282,7 @@ $(document).ready(function() {
 		url: "busProjectManagerController.do?datagrid&field=fromProjId,bpmProjId,bpmName",
 		columns: [[
 			{field:'bpmProjId',title:'项目编号',width:80},
-			{field:'bpmName',title:'项目名称',width:80}
+			{field:'bpmName',title:'项目名称',width:80},
 		]],
 		onSelect:function(row,data){
 			$("#bpProjId").val(data.bpmProjId);

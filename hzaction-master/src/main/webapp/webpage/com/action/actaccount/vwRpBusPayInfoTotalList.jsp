@@ -9,11 +9,11 @@
    <t:dgCol title="凭证号"  field="bpiVoucherno"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="项目名称"  field="bpmName"  query="true"  queryMode="single"  width="150"></t:dgCol>
    <t:dgCol title="账号简称"  field="bbaiSname"  query="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="费用类别"  field="bpiFeeType" dictionary="cost_type" query="true"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="费用类别"  field="bpiFeeType" dictionary="cost_type"   queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="费用明细"  field="bpiFeeDetail" dictionary="bc_fee_dtl" queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="内容"  field="bpiContent" dictionary="bus_pa_con" queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="报销人"  field="bsSubmiter"  queryMode="group"  width="120"></t:dgCol>
-   <t:dgCol title="供应商名称"  field="bsName"  query="true"  queryMode="single"  width="150"></t:dgCol>
+   <t:dgCol title="供应商名称"  field="bsName"    queryMode="single"  width="150"></t:dgCol>
    <t:dgCol title="收款单位"  field="bsspRecCompany"  hidden="true"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="收款单位"  field="recCompany"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="收款金额_贷方"  field="lenderAmount"  queryMode="group"  width="120"></t:dgCol>

@@ -73,21 +73,34 @@ public class BusPayInfoEntity implements java.io.Serializable {
 	@Excel(name="凭证号",width=15)
 	private java.lang.String bpiVoucherno;
 	/**项目管理外键*/
-	@Excel(name="项目管理外键",width=15)
+	//@Excel(name="项目管理外键",width=15)
 	private java.lang.String fromProjmId;
 	/**采购付款单外键*/
-	@Excel(name="采购付款单外键",width=15)
+	//@Excel(name="采购付款单外键",width=15)
 	private java.lang.String fromPayId;
 	/**银行账号信息外键*/
-	@Excel(name="银行账号信息外键",width=15)
+	//@Excel(name="银行账号信息外键",width=15)
 	private java.lang.String fromBankAccId;
 	/**费用报销外键*/
-	@Excel(name="费用报销外键",width=15)
+	//@Excel(name="费用报销外键",width=15)
 	private java.lang.String fromId;
 	/**帐号简称*/
 	@Excel(name="帐号简称",width=15)
 	private java.lang.String bbaiSname;
 	
+	
+	@Override
+	public String toString() {
+		return "BusPayInfoEntity [id=" + id + ", createName=" + createName + ", createBy=" + createBy + ", createDate="
+				+ createDate + ", updateName=" + updateName + ", updateBy=" + updateBy + ", updateDate=" + updateDate
+				+ ", sysOrgCode=" + sysOrgCode + ", sysCompanyCode=" + sysCompanyCode + ", bpmStatus=" + bpmStatus
+				+ ", bpiClass=" + bpiClass + ", bpiPayMethod=" + bpiPayMethod + ", bpiPayDate=" + bpiPayDate
+				+ ", bpiFeeType=" + bpiFeeType + ", bpiFeeDetail=" + bpiFeeDetail + ", bpiContent=" + bpiContent
+				+ ", bpiVoucherno=" + bpiVoucherno + ", bpiBusId=" + bpiBusId + ", fromProjmId=" + fromProjmId
+				+ ", fromPayId=" + fromPayId + ", fromBankAccId=" + fromBankAccId + ", bbaiSname=" + bbaiSname
+				+ ", fromId=" + fromId + "]";
+	}
+
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  主键

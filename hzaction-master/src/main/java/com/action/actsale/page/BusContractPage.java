@@ -33,31 +33,31 @@ public class BusContractPage implements java.io.Serializable {
 	/**主键*/
 	private java.lang.String id;
 	/**创建人名称*/
-    @Excel(name="创建人名称")
+//    @Excel(name="创建人名称")
 	private java.lang.String createName;
 	/**创建人登录名称*/
-    @Excel(name="创建人登录名称")
+//    @Excel(name="创建人登录名称")
 	private java.lang.String createBy;
 	/**创建日期*/
-    @Excel(name="创建日期",format = "yyyy-MM-dd")
+//    @Excel(name="创建日期",format = "yyyy-MM-dd")
 	private java.util.Date createDate;
 	/**更新人名称*/
-    @Excel(name="更新人名称")
+//    @Excel(name="更新人名称")
 	private java.lang.String updateName;
 	/**更新人登录名称*/
-    @Excel(name="更新人登录名称")
+//    @Excel(name="更新人登录名称")
 	private java.lang.String updateBy;
 	/**更新日期*/
-    @Excel(name="更新日期",format = "yyyy-MM-dd")
+//    @Excel(name="更新日期",format = "yyyy-MM-dd")
 	private java.util.Date updateDate;
 	/**所属部门*/
-    @Excel(name="所属部门")
+//    @Excel(name="所属部门")
 	private java.lang.String sysOrgCode;
 	/**所属公司*/
-    @Excel(name="所属公司")
+//    @Excel(name="所属公司")
 	private java.lang.String sysCompanyCode;
 	/**流程状态*/
-    @Excel(name="流程状态")
+//    @Excel(name="流程状态")
 	private java.lang.String bpmStatus;
 	/**客户编号*/
     @Excel(name="客户编号")
@@ -90,13 +90,13 @@ public class BusContractPage implements java.io.Serializable {
     @Excel(name="合同金额万元")
 	private java.lang.String bcContAmount;
 	/**项目立项外键*/
-    @Excel(name="项目立项外键")
+//    @Excel(name="项目立项外键")
 	private java.lang.String fromProjId;
 	/**客户签约人*/
     @Excel(name="客户签约人")
 	private java.lang.String bcCustContractor;
 	/**客户资料外键*/
-    @Excel(name="客户资料外键")
+//    @Excel(name="客户资料外键")
 	private java.lang.String fromCustId;
 	/**项目名称*/
     @Excel(name="项目名称")

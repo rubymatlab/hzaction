@@ -29,6 +29,7 @@
   </style>
   <t:base type="jquery,easyui,tools,DatePicker"></t:base>
   <t:base type="uploadify"></t:base>
+  <script type="text/javascript" src="plug-in/tools/digitUppercase.js"></script>
   <script type="text/javascript">
   $(document).ready(function(){
 	$('#tt').tabs({
@@ -38,6 +39,20 @@
 	});
 	$(".tabs-wrap").css('width','100%');
   });
+	function handleInput()
+	{
+		 var totalM=0.0;
+		 var trList = $("#add_busSubmitDetail_table").children("tr")
+		 for (var i=0;i<trList.length;i++) {
+		      var tdArr = trList.eq(i).find("td");
+		      var totalmoney = tdArr.eq(4).find('input').val();//收入金额
+		      if(!(totalmoney=="" || totalmoney==null))
+		      	totalM=parseFloat(totalM)+parseFloat(totalmoney);
+		 }
+		 $('#totalMoney').val(totalM);
+		 var digitNumber=digitUppercase(totalM);
+		 $('#totalMoneyCn').val(digitNumber);
+	}
  </script>
  </head>
  <body style="overflow-x: hidden;">
@@ -122,7 +137,7 @@
 				<label class="Validform_label">票据类型:</label>
 			</td>
 			<td class="value">
-					<t:dictSelect field="bsBillType" type="radio"   typeGroupCode="bill_type"  defaultVal="${bsSubmitPage.bsBillType}" hasLabel="false"  title="票据类型"></t:dictSelect>     
+					<t:dictSelect field="bsBillType" type="radio"   typeGroupCode="bill_type"  defaultVal="${bsSubmitPage.bsBillType==null?0:bsSubmitPage.bsBillType}" hasLabel="false"  title="票据类型"></t:dictSelect>     
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">票据类型</label>
 			</td>
@@ -130,7 +145,7 @@
 				<label class="Validform_label">单据状态:</label>
 			</td>
 			<td class="value">
-					<t:dictSelect field="bsState" type="list"   typeGroupCode="bs_state"  defaultVal="${bsSubmitPage.bsState}" hasLabel="false"  title="单据状态"></t:dictSelect>     
+					<t:dictSelect field="bsState" type="list"   typeGroupCode="bs_state" readonly="readonly"  defaultVal="${bsSubmitPage.bsState==null?0:bsSubmitPage.bsState}" hasLabel="false"  title="单据状态"></t:dictSelect>     
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">单据状态</label>
 			</td>
@@ -140,7 +155,7 @@
 				<label class="Validform_label">报销总金额:</label>
 			</td>
 			<td class="value">
-		     	 <input id="totalMoney" name="totalMoney" type="text" maxlength="32" style="width: 150px" class="inputxt"  datatype="/^(-?\d+)(\.\d+)?$/"  ignore="ignore"  value='${bsSubmitPage.totalMoney}'/>
+		     	 <input id="totalMoney" name="totalMoney" type="text" maxlength="32" readonly="true" style="width: 150px;background-color:#F0F0F0;" class="inputxt"  datatype="/^(-?\d+)(\.\d+)?$/"  ignore="ignore"  value='${bsSubmitPage.totalMoney}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">报销总金额</label>
 			</td>
@@ -207,7 +222,7 @@
 					  <label class="Validform_label" style="display: none;">费用类型</label>
 				  </td>
 				  <td align="left">
-					  		<input name="busSubmitDetailList[#index#].bsdAmount" maxlength="32" type="text" class="inputxt"  style="width:120px;"  datatype="/^(-?\d+)(\.\d+)?$/"  ignore="ignore" />
+					  		<input name="busSubmitDetailList[#index#].bsdAmount" oninput="handleInput()" maxlength="32" type="text" class="inputxt"  style="width:120px;"  datatype="/^(-?\d+)(\.\d+)?$/"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">报销金额</label>
 				  </td>
 				  <td align="left">

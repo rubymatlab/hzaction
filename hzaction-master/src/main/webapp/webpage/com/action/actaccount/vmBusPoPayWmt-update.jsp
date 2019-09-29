@@ -3,7 +3,7 @@
 <!DOCTYPE html>
 <html>
  <head>
-  <title>采购付款单视图_wmt</title>
+  <title>采购付款单视图</title>
     <style>
   .ui-button {
   	  display: inline-block;
@@ -91,7 +91,7 @@
 			</td>
 			
 		</tr>
-		<tr  hidden="hidden">
+		<tr>
 			<td align="right">
 				<label class="Validform_label">项目管理外键:</label>
 			</td>
@@ -112,57 +112,6 @@
 		
 		<tr>
 			<td align="right">
-				<label class="Validform_label">付款金额:</label>
-			</td>
-			<td class="value">
-		     	 <input id="bppMoney" name="bppMoney" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vmBusPoPayWmtPage.bppMoney}'/>
-				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">付款金额</label>
-			</td>
-			<td align="right">
-				<label class="Validform_label">采购总金额:</label>
-			</td>
-			<td class="value">
-		     	 <input id="bppMoneySum" name="bppMoneySum" type="text" maxlength="32" placeholder="自动计算" style="width: 150px" class="inputxt"  ignore="ignore" />
-				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">采购总金额</label>
-			</td>
-			<td align="right">
-				<label class="Validform_label">实际付款时间:</label>
-			</td>
-			<td class="value">
-					  <input id="bppPayDate" name="bppPayDate" type="text" style="width: 150px" class="Wdate" onClick="WdatePicker()" ignore="ignore"  value='<fmt:formatDate value='${vmBusPoPayWmtPage.bppPayDate}' type="date" pattern="yyyy-MM-dd"/>'/>
-				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">实际付款时间</label>
-			</td>
-			<td align="right">
-				<label class="Validform_label">单据状态:</label>
-			</td>
-			<td class="value">
-					<t:dictSelect field="bppState" type="list"   typeGroupCode="bs_state"  defaultVal="${vmBusPoPayWmtPage.bppState}" hasLabel="false"  title="单据状态"></t:dictSelect>     
-				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">单据状态</label>
-			</td>
-		</tr>
-		
-		<tr>
-			<td align="right">
-				<label class="Validform_label">发票金额:</label>
-			</td>
-			<td class="value">
-		     	 <input id="bppInvAmount" name="bppInvAmount" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vmBusPoPayWmtPage.bppInvAmount}'/>
-				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">发票金额</label>
-			</td>
-			<td align="right">
-				<label class="Validform_label">发票未开金额:</label>
-			</td>
-			<td class="value">
-		     	 <input id="bppInvAmountNot" name="bppInvAmountNot" placeholder="自动计算" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
-				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">发票未开金额</label>
-			</td>
-			<td align="right">
 				<label class="Validform_label">发票类型:</label>
 			</td>
 			<td class="value">
@@ -177,6 +126,57 @@
 		     	 <input id="bppTaxRate" name="bppTaxRate" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vmBusPoPayWmtPage.bppTaxRate}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">税率百分比</label>
+			</td>
+			<td align="right" hidden="hidden">
+				<label class="Validform_label">采购总金额:</label>
+			</td>
+			<td class="value" hidden="hidden">
+		     	 <input id="bppMoneySum" name="bppMoneySum" type="text" maxlength="32" placeholder="自动计算" style="width: 150px" class="inputxt"  ignore="ignore" />
+				<span class="Validform_checktip"></span>
+				<label class="Validform_label" style="display: none;">采购总金额</label>
+			</td>
+			<td align="right">
+				<label class="Validform_label">实际付款时间:</label>
+			</td>
+			<td class="value">
+					  <input id="bppPayDate" name="bppPayDate" type="text" style="width: 150px" class="Wdate" onClick="WdatePicker()" ignore="ignore"  value='<fmt:formatDate value='${vmBusPoPayWmtPage.bppPayDate}' type="date" pattern="yyyy-MM-dd"/>'/>
+				<span class="Validform_checktip"></span>
+				<label class="Validform_label" style="display: none;">实际付款时间</label>
+			</td>
+			<td align="right">
+				<label class="Validform_label">单据状态:${vmBusPoPayWmtPage.bppState}</label>
+			</td>
+			<td class="value">
+					<t:dictSelect field="bppState" type="list"  typeGroupCode="bs_state"  defaultVal="${vmBusPoPayWmtPage.bppState}" hasLabel="false" readonly="readonly" title="单据状态"></t:dictSelect>     
+				<span class="Validform_checktip"></span>
+				<label class="Validform_label" style="display: none;">单据状态</label>
+			</td>
+		</tr>
+		
+		<tr>
+			<td align="right">
+				<label class="Validform_label">发票金额:</label>
+			</td>
+			<td class="value" colspan="3">
+		     	 <input id="bppInvAmount" name="bppInvAmount" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vmBusPoPayWmtPage.bppInvAmount}'/>
+				<span class="Validform_checktip"></span>
+				<label class="Validform_label" style="display: none;">发票金额</label>
+			</td>
+			<td align="right" hidden="hidden">
+				<label class="Validform_label">发票未开金额:</label>
+			</td>
+			<td class="value" hidden="hidden">
+		     	 <input id="bppInvAmountNot" name="bppInvAmountNot" placeholder="自动计算" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
+				<span class="Validform_checktip"></span>
+				<label class="Validform_label" style="display: none;">发票未开金额</label>
+			</td>
+			<td align="right">
+				<label class="Validform_label">付款金额:</label>
+			</td>
+			<td class="value" colspan="3">
+		     	 <input id="bppMoney" name="bppMoney" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vmBusPoPayWmtPage.bppMoney}'/>
+				<span class="Validform_checktip"></span>
+				<label class="Validform_label" style="display: none;">付款金额</label>
 			</td>
 		</tr>
 		<tr>
@@ -211,10 +211,10 @@
 				<div style="width:800px;height:1px;"></div>
 				<t:tabs id="tt" iframe="false" tabPosition="top" fit="false">
 				 <c:if test="${pay==0 }">
-				 	<t:tab href="vmBusPoPayWmtController.do?vmBusPoContractPayWmtList&id=${vmBusPoPayWmtPage.id}" icon="icon-search" title="采购付款单附表视图" id="vmBusPoContractPayWmt"></t:tab>
+				 	<t:tab href="vmBusPoPayWmtController.do?vmBusPoContractPayWmtList&id=${vmBusPoPayWmtPage.id}" icon="icon-search" title="采购付款单" id="vmBusPoContractPayWmt"></t:tab>
 				 </c:if>
 				 <c:if test="${pay==1 }">
-				 	<t:tab href="vmBusPoPayWmtController.do?busPayInfoList&id=${vmBusPoPayWmtPage.id}" icon="icon-search" title="财务支付信息实体" id="busPayInfo"></t:tab>
+				 	<t:tab href="vmBusPoPayWmtController.do?busPayInfoList&id=${vmBusPoPayWmtPage.id}" icon="icon-search" title="财务支付" id="busPayInfo"></t:tab>
 				 </c:if>
 				</t:tabs>
 			</div>
@@ -230,7 +230,7 @@
 					  <label class="Validform_label" style="display: none;">采购合同编号</label>
 				  </td>
 				  <td align="left">
-							<t:dictSelect field="vmBusPoContractPayWmtList[#index#].bpcpProgre" type="list"   typeGroupCode="cost_stag"  defaultVal="" hasLabel="false"  title="费用分期"></t:dictSelect>     
+							<t:dictSelect field="vmBusPoContractPayWmtList[#index#].bpcpProgre" type="list"   typeGroupCode="cost_stag"  hasLabel="false"  title="费用分期"></t:dictSelect>     
 					  <label class="Validform_label" style="display: none;">费用分期</label>
 				  </td>
 				  <td align="left">
@@ -263,16 +263,18 @@
 				   </td>
 			</tr>
 		 </tbody>
+		 
+		 <!-- 添加 财务支付信息 模版 -->
 		<tbody id="add_busPayInfo_table_template">
 			<tr>
 			 <td align="center"><div style="width: 25px;" name="xh"></div></td>
 			 <td align="center"><input style="width:20px;" type="checkbox" name="ck"/></td>
 				  <td align="left">
-					  		<input name="busPayInfoList[#index#].bpiClass" maxlength="30" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
+					  		<input name="busPayInfoList[#index#].bpiClass" maxlength="30" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"/>
 					  <label class="Validform_label" style="display: none;">功能分类</label>
 				  </td>
 				  <td align="left">
-							<t:dictSelect field="busPayInfoList[#index#].bpiPayMethod" type="list"   typeGroupCode="ax_payment"  defaultVal="" hasLabel="false"  title="支付方式"></t:dictSelect>     
+							<t:dictSelect field="busPayInfoList[#index#].bpiPayMethod" type="list" typeGroupCode="bus_pa_way"  defaultVal="" hasLabel="false"  title="支付方式"></t:dictSelect>     
 					  <label class="Validform_label" style="display: none;">支付方式</label>
 				  </td>
 				  <td align="left">
@@ -280,11 +282,11 @@
 					  <label class="Validform_label" style="display: none;">支付时间</label>
 				  </td>
 				  <td align="left">
-							<t:dictSelect field="busPayInfoList[#index#].bpiFeeType" type="list"   typeGroupCode="cost_type"  defaultVal="" hasLabel="false"  title="费用类别"></t:dictSelect>     
+							<t:dictSelect field="busPayInfoList[#index#].bpiFeeType" type="list" typeGroupCode="cost_type"  defaultVal="" hasLabel="false"  title="费用类别"></t:dictSelect>     
 					  <label class="Validform_label" style="display: none;">费用类别</label>
 				  </td>
 				  <td align="left">
-							<t:dictSelect field="busPayInfoList[#index#].bpiFeeDetail" type="list"   typeGroupCode="cost_type"  defaultVal="" hasLabel="false"  title="费用明细"></t:dictSelect>     
+							<t:dictSelect field="busPayInfoList[#index#].bpiFeeDetail"  type="list"   typeGroupCode="bc_fee_dtl"  defaultVal=""  hasLabel="false"  title="费用明细"></t:dictSelect>     
 					  <label class="Validform_label" style="display: none;">费用明细</label>
 				  </td>
 				  <td align="left">
@@ -312,14 +314,18 @@
 					  	<input name="busPayInfoList[#index#].bbaiSname" name="busPayInfoList[#index#].bbaiSname" type="text" style="width: 150px" class="searchbox-inputtext"  ignore="ignore"    onclick="popupClick(this,'bbai_sname,id','bbaiSname,fromBankAccId','ax_bas_bank_account_info')" value="${poVal.bbaiSname }" />
 					  <label class="Validform_label" style="display: none;">账号简称</label>
 				  </td>
-				  
 				  <td align="left">
+					  	<input name="busPayInfoList[#index#].fromPayId" name="busPayInfoList[#index#].fromPayId" type="text" style="width: 150px" class="searchbox-inputtext"  ignore="ignore" value="${poVal.fromPayId }" />
+					  <label class="Validform_label" style="display: none;">采购付款单外键</label>
+				  </td>
+				  
+				 <!--  <td align="left">
 						<input type="hidden" id="busPayInfoList[#index#].bpiAccessory" name="busPayInfoList[#index#].bpiAccessory" />
 					    <input class="ui-button" type="button" value="上传附件" name="busPayInfoList[#index#].imgBtn"
 								onclick="commonUpload(commonUploadDefaultCallBack,'busPayInfoList\\[#index#\\]\\.bpiAccessory')"/>
 						<a  target="_blank" id="busPayInfoList[#index#].bpiAccessory_href"></a>
 					  <label class="Validform_label" style="display: none;">附件</label>
-				  </td>
+				  </td> -->
 			</tr>
 		 </tbody>
 		</table>

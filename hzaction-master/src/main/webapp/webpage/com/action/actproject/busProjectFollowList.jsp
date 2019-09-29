@@ -45,8 +45,9 @@
 					<input name="busProjectFollowList[0].sysOrgCode" type="hidden"/>
 					<input name="busProjectFollowList[0].sysCompanyCode" type="hidden"/>
 					<input name="busProjectFollowList[0].bpmStatus" type="hidden"/>
+					<input name="busProjectFollowList[0].xh" type="hidden" value="1">
 				  <td align="left">
-							<input name="busProjectFollowList[0].bpfFollowDate" maxlength="0"  type="text" class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})"  style="width:150px;"  ignore="ignore" >
+							<input name="busProjectFollowList[0].bpfFollowDate" maxlength="0"  type="text" class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})"  style="width:150px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">跟进日期</label>
 					</td>
 				  <td align="left">
@@ -62,7 +63,7 @@
 					  <label class="Validform_label" style="display: none;">下一步计划</label>
 					</td>
 				  <td align="left">
-							<input name="busProjectFollowList[0].bpfCheckDate" maxlength="0"  type="text" class="Wdate" onClick="WdatePicker()"  style="width:150px;"  ignore="ignore" >
+							<input name="busProjectFollowList[0].bpfCheckDate" maxlength="0"  type="text" class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})	"  style="width:150px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">验收时间</label>
 					</td>
 				  <td align="left">
@@ -90,6 +91,7 @@
 						<input name="busProjectFollowList[${stuts.index }].sysOrgCode" type="hidden" value="${poVal.sysOrgCode }"/>
 						<input name="busProjectFollowList[${stuts.index }].sysCompanyCode" type="hidden" value="${poVal.sysCompanyCode }"/>
 						<input name="busProjectFollowList[${stuts.index }].bpmStatus" type="hidden" value="${poVal.bpmStatus }"/>
+						<input name="busProjectFollowList[${stuts.index }].xh" type="hidden" value="${poVal.xh }">
 				   <td align="left">
 							<input name="busProjectFollowList[${stuts.index }].bpfFollowDate" maxlength="0" type="text" class="Wdate" onClick="WdatePicker()"  style="width:150px;"   ignore="ignore"  value="<fmt:formatDate value='${poVal.bpfFollowDate}' type="date" pattern="yyyy-MM-dd"/>"/>
 					  <label class="Validform_label" style="display: none;">跟进日期</label>
@@ -134,6 +136,8 @@
  		 var tr =  $("#add_busProjectFollow_table_template tr").clone();
 	 	 $("#add_busProjectFollow_table").append(tr);
 	 	 resetTrNum('add_busProjectFollow_table');
+	 	 var size = $("#add_busProjectFollow_table tr").length;
+	 	$("#add_busProjectFollow_table tr").eq(size-1).find("input[name$='.xh']").val(size)
 	 	 return false;
     });  
 	$('#delBusProjectFollowBtn').bind('click', function(){   

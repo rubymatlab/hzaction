@@ -156,13 +156,13 @@ public class VmBusPoPayWmtController extends BaseController {
 	public AjaxJson doDel(VmBusPoPayWmtEntity vmBusPoPayWmt, HttpServletRequest request) {
 		AjaxJson j = new AjaxJson();
 		vmBusPoPayWmt = systemService.getEntity(VmBusPoPayWmtEntity.class, vmBusPoPayWmt.getId());
-		String message = "采购付款单视图_wmt删除成功";
+		String message = "采购付款单删除成功";
 		try{
 			vmBusPoPayWmtService.delMain(vmBusPoPayWmt);
 			systemService.addLog(message, Globals.Log_Type_DEL, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();
-			message = "采购付款单视图_wmt删除失败";
+			message = "采购付款单删除失败";
 			throw new BusinessException(e.getMessage());
 		}
 		j.setMsg(message);
@@ -179,7 +179,7 @@ public class VmBusPoPayWmtController extends BaseController {
 	public AjaxJson doBatchDel(String ids,HttpServletRequest request){
 		logger.info("-- 批量删除采购付款单视图_wmt --");
 		AjaxJson j = new AjaxJson();
-		String message = "采购付款单视图_wmt删除成功";
+		String message = "采购付款单删除成功";
 		try{
 			for(String id:ids.split(",")){
 				VmBusPoPayWmtEntity vmBusPoPayWmt = systemService.getEntity(VmBusPoPayWmtEntity.class,id);
@@ -188,7 +188,7 @@ public class VmBusPoPayWmtController extends BaseController {
 			}
 		}catch(Exception e){
 			e.printStackTrace();
-			message = "采购付款单视图_wmt删除失败";
+			message = "采购付款单删除失败";
 			throw new BusinessException(e.getMessage());
 		}
 		j.setMsg(message);
@@ -210,12 +210,11 @@ public class VmBusPoPayWmtController extends BaseController {
 		AjaxJson j = new AjaxJson();
 		String message = "添加成功";
 		try{
-
 			vmBusPoPayWmtService.addMain(vmBusPoPayWmt, vmBusPoContractPayWmtList,busPayInfoList);
 			systemService.addLog(message, Globals.Log_Type_INSERT, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();
-			message = "采购付款单视图_wmt添加失败";
+			message = "采购付款单添加失败";
 			throw new BusinessException(e.getMessage());
 		}
 		j.setMsg(message);
@@ -237,6 +236,20 @@ public class VmBusPoPayWmtController extends BaseController {
 		AjaxJson j = new AjaxJson();
 		String message = "更新成功";
 		try{
+			
+			//清除字段的自带‘ , ’号
+			for (BusPayInfoEntity busPayInfoEntity : busPayInfoList) {
+				busPayInfoEntity.setBpiClass(busPayInfoEntity.getBpiClass().replaceAll(",", ""));
+				busPayInfoEntity.setFromProjmId(busPayInfoEntity.getFromProjmId().replaceAll(",", ""));
+				busPayInfoEntity.setFromPayId(busPayInfoEntity.getFromPayId().replaceAll(",", ""));
+				busPayInfoEntity.setFromId(busPayInfoEntity.getFromId().replaceAll(",", ""));
+				
+				if(",".equals(busPayInfoEntity.getBpiBusId()))	
+					busPayInfoEntity.setBpiBusId(busPayInfoEntity.getBpiBusId().replaceAll(",", ""));
+				else
+					busPayInfoEntity.setBpiBusId(busPayInfoEntity.getBpiBusId().split(",")[0]);
+			}
+			
 			vmBusPoPayWmtService.updateMain(vmBusPoPayWmt, vmBusPoContractPayWmtList,busPayInfoList);
 			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
@@ -312,11 +325,15 @@ public class VmBusPoPayWmtController extends BaseController {
 		//===================================================================================
 		//获取参数
 		Object id1 = vmBusPoPayWmt.getId();
+//		System.out.println("获取参数:"+id1);
 		//===================================================================================
 		//查询-财务支付信息实体
 	    String hql1 = "from BusPayInfoEntity where 1 = 1 AND bpiBusId = ? ";
 	    try{
 	    	List<BusPayInfoEntity> busPayInfoEntityList = systemService.findHql(hql1,id1);
+	    	
+//	    	logger.info("== 【测试】加载明细列表[财务支付信息实体]: {}==",busPayInfoEntityList);
+	    	
 			req.setAttribute("busPayInfoList", busPayInfoEntityList);
 		}catch(Exception e){
 			logger.info(e.getMessage());
@@ -358,9 +375,9 @@ public class VmBusPoPayWmtController extends BaseController {
 				}
 			}
 		}
-		map.put(NormalExcelConstants.FILE_NAME,"采购付款单视图_wmt");
+		map.put(NormalExcelConstants.FILE_NAME,"采购付款单");
 		map.put(NormalExcelConstants.CLASS,VmBusPoPayWmtPage.class);
-		map.put(NormalExcelConstants.PARAMS,new ExportParams("采购付款单视图_wmt列表", "导出人:Jeecg",
+		map.put(NormalExcelConstants.PARAMS,new ExportParams("采购付款单列表", "导出人:"+ ResourceUtil.getSessionUser().getRealName(),
 				"导出信息"));
 		map.put(NormalExcelConstants.DATA_LIST,pageList);
 		return NormalExcelConstants.JEECG_EXCEL_VIEW;
@@ -411,9 +428,9 @@ public class VmBusPoPayWmtController extends BaseController {
 	 */
 	@RequestMapping(params = "exportXlsByT")
 	public String exportXlsByT(ModelMap map) {
-		map.put(NormalExcelConstants.FILE_NAME,"采购付款单视图_wmt");
+		map.put(NormalExcelConstants.FILE_NAME,"采购付款单");
 		map.put(NormalExcelConstants.CLASS,VmBusPoPayWmtPage.class);
-		map.put(NormalExcelConstants.PARAMS,new ExportParams("采购付款单视图_wmt列表", "导出人:"+ ResourceUtil.getSessionUser().getRealName(),
+		map.put(NormalExcelConstants.PARAMS,new ExportParams("采购付款单列表", "导出人:"+ ResourceUtil.getSessionUser().getRealName(),
 				"导出信息"));
 		map.put(NormalExcelConstants.DATA_LIST,new ArrayList());
 		return NormalExcelConstants.JEECG_EXCEL_VIEW;

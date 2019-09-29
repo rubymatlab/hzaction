@@ -50,7 +50,7 @@
 				<label class="Validform_label">项目编号:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bpProjId" name="bpProjId" type="text" maxlength="40" style="width: 150px" class="inputxt"  datatype="*" ignore="checked"  value='${vwBusProjectPage.bpProjId}'/>
+		     	 <input id="bpProjId" name="bpProjId" readonly="true" type="text" maxlength="40" style="width: 150px;background-color:#F0F0F0;" class="inputxt"  datatype="*" ignore="checked"  value='${vwBusProjectPage.bpProjId}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">项目编号</label>
 			</td>
@@ -95,7 +95,7 @@
 			</td>
 			<td class="value">
 		     	 <input id="bcName" name="bcName" type="text" maxlength="100" style="width: 150px" class="easyui-combogrid"  ignore="ignore" 
-		     	 data-options="panelWidth: 500,
+		     	 data-options="required:true,panelWidth: 500,
 		     	 idField: 'bcName',
 		     	 textField: 'bcName',
 		     	 url: 'basCustomerController.do?datagrid&field=id,bcId,bcName',

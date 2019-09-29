@@ -68,9 +68,10 @@ public class BusProjectFollowEntity_manager implements java.io.Serializable {
 	@Excel(name="验收结果",width=15,dicCode="check_res")
 	private java.lang.String bpfCheckResult;
 	/**项目管理外键*/
-	@Excel(name="项目管理外键",width=15)
+//	@Excel(name="项目管理外键",width=15)
 	private java.lang.String fromId;
-	
+	/** 序号 **/
+	private java.lang.String xh;
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  主键
@@ -378,6 +379,24 @@ public class BusProjectFollowEntity_manager implements java.io.Serializable {
 	 */
 	public void setFromId(java.lang.String fromId){
 		this.fromId = fromId;
+	}
+	
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  序号
+	 */
+	
+	@Column(name ="XH",nullable=true,length=32)
+	public java.lang.String getXh(){
+		return this.xh;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  序号
+	 */
+	public void setXh(java.lang.String xh){
+		this.xh = xh;
 	}
 	
 }

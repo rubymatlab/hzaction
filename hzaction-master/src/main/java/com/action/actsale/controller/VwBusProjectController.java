@@ -468,6 +468,31 @@ public class VwBusProjectController extends BaseController {
 		j.setMsg(message);
 		return j;
 	}
+	
+	/**
+	 * 自定义按钮-sql增强-转投已失败
+	 * @param ids
+	 * @return
+	 */
+	@RequestMapping(params = "doFail")
+	@ResponseBody
+	public AjaxJson doFail(VwBusProjectEntity vwBusProject, HttpServletRequest request) {
+		AjaxJson j = new AjaxJson();
+		String message = "转已失败成功";
+		//VwBusProjectEntity t = vwBusProjectService.get(VwBusProjectEntity.class, vwBusProject.getId())
+		BusProjectEntity b=vwBusProjectService.getEntity(BusProjectEntity.class, vwBusProject.getId());
+		try{
+			b.setBpmStatus("4");
+			systemService.saveOrUpdate(b);
+			//vwBusProjectService.doBidSql(t);
+			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
+		}catch(Exception e){
+			e.printStackTrace();
+			message = "转已失败失败";
+		}
+		j.setMsg(message);
+		return j;
+	}
  	/**
 	 * 自定义按钮-sql增强-立项转合同
 	 * @param ids

@@ -84,12 +84,14 @@ public class BusBidEntity implements java.io.Serializable {
 	@Excel(name="备注",width=15)
 	private java.lang.String bdBidRemark;
 	/**项目立项外键*/
-	@Excel(name="项目立项外键",width=15)
+//	@Excel(name="项目立项外键",width=15)
 	private java.lang.String fromProjId;
 	/**客户资料外键*/
-	@Excel(name="客户资料外键",width=15)
+//	@Excel(name="客户资料外键",width=15)
 	private java.lang.String fromCustjId;
-	
+	/**附件*/
+	//@Excel(name="附件",width=15)
+	private java.lang.String bdFile;
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  主键
@@ -483,5 +485,22 @@ public class BusBidEntity implements java.io.Serializable {
 	 */
 	public void setFromCustjId(java.lang.String fromCustjId){
 		this.fromCustjId = fromCustjId;
+	}
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  附件
+	 */
+
+	@Column(name ="BD_FILE",nullable=true,length=500)
+	public java.lang.String getBdFile(){
+		return this.bdFile;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  附件
+	 */
+	public void setBdFile(java.lang.String bdFile){
+		this.bdFile = bdFile;
 	}
 }

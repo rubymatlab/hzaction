@@ -119,6 +119,7 @@ public class VmBusPoPayWmtServiceImpl extends CommonServiceImpl implements VmBus
 		for(BusPayInfoEntity busPayInfo:busPayInfoList){
 			//外键设置
 			busPayInfo.setBpiBusId(vmBusPoPayWmt.getId());
+//			logger.info("=== add【测试】保存-财务支付信息实体:{} ===",busPayInfo);
 			this.save(busPayInfo);
 		}
 		//执行新增操作增强业务
@@ -185,6 +186,9 @@ public class VmBusPoPayWmtServiceImpl extends CommonServiceImpl implements VmBus
 		//1.查询出数据库的明细数据-财务支付信息实体
 		String hql1 = "from BusPayInfoEntity where 1 = 1 AND bpiBusId = ? ";
 		List<BusPayInfoEntity> busPayInfoOldList = this.findHql(hql1,id1);
+		
+		
+//		logger.info("=== 【测试】查询出数据库的明细数据-财务支付信息实体 ：{} ===",busPayInfoOldList);
 		//2.筛选更新明细数据-财务支付信息实体
 		if(busPayInfoList!=null&&busPayInfoList.size()>0){
 			for(BusPayInfoEntity oldE:busPayInfoOldList){
@@ -221,6 +225,7 @@ public class VmBusPoPayWmtServiceImpl extends CommonServiceImpl implements VmBus
 				if(!isUpdate){
 					//如果数据库存在的明细，前台没有传递过来则是删除-财务支付信息实体
 					super.delete(oldE);
+//					logger.info("=== 【测试】如果数据库存在的明细，前台没有传递过来则是删除-财务支付信息实体 ===");
 				}
 
 			}
@@ -294,9 +299,9 @@ public class VmBusPoPayWmtServiceImpl extends CommonServiceImpl implements VmBus
 	public void doAuditFinishSql(VmBusPoPayWmtEntity t) throws Exception{
 		//-----------------sql增强 start----------------------------
 		//sql增强第1条
-		String sqlEnhance_1 ="update vm_bus_po_pay_wmt set bpp_state = '3' where id=:id";
+		String sqlEnhance_1 ="update vm_bus_po_pay_wmt set bpp_state = '2' where id=:id";
 		this.executeSqlEnhance(sqlEnhance_1,t);
-		actaccountDao.updateBusPoPayWmtEntityBppState("3", t.getId());
+		actaccountDao.updateBusPoPayWmtEntityBppState("2", t.getId());
 		//-----------------sql增强 end------------------------------
 
 		//-----------------java增强 start---------------------------
@@ -310,9 +315,9 @@ public class VmBusPoPayWmtServiceImpl extends CommonServiceImpl implements VmBus
 	public void doSendAuditSql(VmBusPoPayWmtEntity t) throws Exception{
 		//-----------------sql增强 start----------------------------
 		//sql增强第1条
-		String sqlEnhance_1 ="update vm_bus_po_pay_wmt set bpp_state = '2' where id=:id";
+		String sqlEnhance_1 ="update vm_bus_po_pay_wmt set bpp_state = '1' where id=:id";
 		this.executeSqlEnhance(sqlEnhance_1,t);
-		actaccountDao.updateBusPoPayWmtEntityBppState("2", t.getId());
+		actaccountDao.updateBusPoPayWmtEntityBppState("1", t.getId());
 		//-----------------sql增强 end------------------------------
 
 		//-----------------java增强 start---------------------------

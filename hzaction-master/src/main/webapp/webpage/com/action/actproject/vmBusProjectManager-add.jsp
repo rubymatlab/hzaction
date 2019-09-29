@@ -153,6 +153,7 @@
 			 <td align="center"><div style="width: 25px;" name="xh"></div></td>
 			 <td align="center"><input style="width:20px;" type="checkbox" name="ck"/></td>
 				  <td align="left">
+				  			<input name="busProjectFollowList[#index#].xh" type="hidden">
 							<input name="busProjectFollowList[#index#].bpfFollowDate" type="text" class="Wdate" onClick="WdatePicker()"  style="width:150px;" ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">跟进日期</label>
 				  </td>

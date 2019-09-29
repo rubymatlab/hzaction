@@ -100,7 +100,7 @@
 				<td align="right"><label class="Validform_label ">采购申请编号:</label>
 				</td>
 				<td class="value test"><input id="bpaApplyNo" name="bpaApplyNo"
-					type="text" maxlength="40" style="width: 150px" class="inputxt" readonly="readonly"
+					type="text" maxlength="40" style="width: 150px;background-color:#F0F0F0;" class="inputxt" readonly="readonly"
 					ignore="ignore" /> <span class="Validform_checktip"></span></td>
 
 				<td align="right"><label class="Validform_label">申请日期:</label>
@@ -127,7 +127,7 @@
 				<td align="right"><label class="Validform_label">项目编号:</label>
 				</td>
 				<td class="value"><input id="bpProjId" name="bpProjId"
-					type="text" maxlength="40" style="width: 150px" class="inputxt"
+					type="text" maxlength="40" style="width: 150px;background-color:#F0F0F0;" class="inputxt"
 					ignore="ignore"  readonly="readonly"/> <span class="Validform_checktip"></span> <label
 					class="Validform_label" style="display: none;">项目编号</label></td>
 
@@ -179,9 +179,11 @@
 					class="Validform_checktip"></span> <label class="Validform_label"
 					style="display: none;">申请人</label></td>
 				<td align="right"><label class="Validform_label">单据状态:</label></td>
-				<td class="value"><input id="bpaState" name="bpaState"
+				<td class="value"><!-- <input id="bpaState" name="bpaState"
 					type="text" maxlength="20" style="width: 150px" class="inputxt" readonly="readonly"
-					ignore="ignore" /> <span class="Validform_checktip"></span>
+					ignore="ignore" /> -->
+					<t:dictSelect readonly="readonly" field="bpaState" type="list"   typeGroupCode="bs_state"  defaultVal="0" hasLabel="false"  title="审核状态" ></t:dictSelect>
+					 <span class="Validform_checktip"></span>
 			</tr>
 			<tr>
 				<td align="right"><label class="Validform_label">采购申请附件:</label>
@@ -214,7 +216,7 @@
 
 				<td class="value"></td>
 				<td class="value"><input id="fromProjmId" name="fromProjmId"
-					type="hidden" type="text" maxlength="32" style="width: 150px"
+					type="hidden" maxlength="32" style="width: 150px"
 					class="inputxt" ignore="ignore" /> <span
 					class="Validform_checktip"></span> <label class="Validform_label"
 					style="display: none;">项目管理外键</label></td>
@@ -254,8 +256,8 @@
 					<label class="Validform_label" style="display: none;">备注</label></td>
 								<td align="left"><input
 									name="busPoApplyDetailList[#index#].purchaseOrNot" maxlength="32"
-									 type="text" class="inputxt" style="width: 120px;"
-									ignore="ignore" /> <label class="Validform_label"
+									 type="text" class="inputxt" style="width: 120px;background-color:#F0F0F0;"
+									ignore="ignore" readonly="readonly" value="未采购" /> <label class="Validform_label"
 									style="display: none;">是否采购</label></td>
 				<td align="left"><input
 					name="busPoApplyDetailList[#index#].fromId" maxlength="32"
@@ -277,15 +279,15 @@ $(document).ready(function() {
 		panelWidth: 500,
 		idField: "bpmName",
 		textField: "bpmName",
-		url: "busProjectManagerController.do?datagrid&field=id,bpmProjId,bpmName",
+		url: "busProjectManagerController.do?datagrid&field=fromProjId,bpmProjId,bpmName",
 		columns: [[
 			{field:'bpmProjId',title:'项目编号',width:80},
 			{field:'bpmName',title:'项目名称',width:80}
 		]],
 		onSelect:function(row,data){
 			$("#bpProjId").val(data.bpmProjId);
-			$("#fromProjmId").val(data.id);
-			dealbpaApplyNo(data.bpmProjId)
+			$("#fromProjmId").val(data.fromProjId);
+			dealbpaApplyNo(data.bpmProjId);
 		},
 		fitColumns: true
 	})

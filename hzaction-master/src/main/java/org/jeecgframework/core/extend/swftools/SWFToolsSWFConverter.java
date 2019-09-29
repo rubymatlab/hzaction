@@ -46,7 +46,7 @@ public class SWFToolsSWFConverter implements SWFConverter {
 	        	//ConStant.getSWFToolsPath(extend)
 	        	String command = ConStant.getSWFToolsPath(extend) + " \"" + inputFile
 
-	        					+ "\" -o " +" \""+ swfFile +" \""+ " -s languagedir=D:\\xpdf-chinese-simplified -T 9 -f";
+	        					+ "\" -o " +" \""+ swfFile +" \""+ " -T 9 -f";
 //	        					+ "\" -o " + swfFile + " -s languagedir=D:\\xpdf-chinese-simplified -T 9 -f";
 
 	            //Runtime执行后返回创建的进程对象

@@ -10,7 +10,7 @@
    <t:dgCol title="项目经理"  field="bpManager"  query="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="客户名称"  field="bcName"  query="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="签订时间"  field="bcConcludeTime"  formatter="yyyy-MM-dd"  query="true"  queryMode="group"  width="120"></t:dgCol>
-   <t:dgCol title="费用分期"  field="bpcpProgre"  queryMode="group"  width="120"></t:dgCol>
+   <t:dgCol title="费用分期"  field="bpcpProgre"  dictionary="cost_stag"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="计划付款日期"  field="bpcpDate"  formatter="yyyy-MM-dd"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="计划付款金额"  field="bpcpPayAmount"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="付款金额"  field="bppdPayAmount"  queryMode="group"  width="120"></t:dgCol>

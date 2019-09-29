@@ -93,19 +93,22 @@
 	<t:formvalid formid="formobj" dialog="true" usePlugin="password"
 		layout="table" tiptype="1" action="vwBusPoApplyController.do?doUpdate" callback="jeecgFormFileCallBack@Override">
 		<input id="id" name="id" type="hidden" value="${vwBusPoApplyPage.id }" />
+		<input id="fromProjmId" name="fromProjmId"
+					type="hidden" type="text" maxlength="32" style="width: 150px"
+					class="inputxt" ignore="ignore" />
 		<table cellpadding="0" cellspacing="1" class="formtable">
 			<tr>
 				<td align="right"><label class="Validform_label">采购申请编号:</label>
 				</td>
 				<td class="value"><input id="bpaApplyNo" name="bpaApplyNo"
-					type="text" maxlength="40" style="width: 150px" class="inputxt"
+					type="text" maxlength="40" style="width: 150px;background-color:#F0F0F0;" class="inputxt"
 					ignore="ignore" value='${vwBusPoApplyPage.bpaApplyNo}' readonly="readonly"/> <span
 					class="Validform_checktip"></span> <label class="Validform_label"
 					style="display: none;">采购申请编号</label></td>
 				<td align="right"><label class="Validform_label">申请日期:</label>
 				</td>
 				<td class="value"><input id="bpaApplyDate" name="bpaApplyDate"
-					type="text" style="width: 150px" ignore="ignore"
+					type="text" style="width: 150px" ignore="ignore" class="Wdate" onClick="WdatePicker()"
 					value='<fmt:formatDate value='${vwBusPoApplyPage.bpaApplyDate}' type="date" pattern="yyyy-MM-dd"/>' />
 					<span class="Validform_checktip"></span> <label
 					class="Validform_label" style="display: none;">申请日期</label></td>
@@ -122,7 +125,7 @@
 				<td align="right"><label class="Validform_label">项目编号:</label>
 				</td>
 				<td class="value"><input id="bpProjId" name="bpProjId"
-					type="text" maxlength="40" style="width: 150px" class="inputxt" readonly="readonly"
+					type="text" maxlength="40" style="width: 150px;background-color:#F0F0F0;" class="inputxt" readonly="readonly"
 					ignore="ignore" value='${vwBusPoApplyPage.bpProjId}' /> <span
 					class="Validform_checktip"></span> <label class="Validform_label"
 					style="display: none;">项目编号</label></td>
@@ -214,9 +217,11 @@
 				class="Validform_checktip"></span> <label class="Validform_label"
 				style="display: none;">申请人</label></td>
 			<td align="right"><label class="Validform_label">单据状态:</label></td>
-			<td class="value"><input id="bpaState" name="bpaState"
+			<td class="value"><!-- <input id="bpaState" name="bpaState"
 				type="text" maxlength="20" style="width: 150px" class="inputxt"
-				ignore="ignore" value='' /> <span
+				ignore="ignore" value='' />  -->
+				<t:dictSelect readonly="readonly" field="bpaState" type="list"   typeGroupCode="bs_state"  defaultVal="${vwBusPoApplyPage.bpaState}" hasLabel="false"  title="审核状态" ></t:dictSelect> 
+				<span
 				class="Validform_checktip"></span> <label class="Validform_label"
 				style="display: none;">单据状态</label></td>
 
@@ -286,14 +291,14 @@ $(document).ready(function() {
 		panelWidth: 500,
 		idField: "bpmName",
 		textField: "bpmName",
-		url: "busProjectManagerController.do?datagrid&field=id,bpmProjId,bpmName",
+		url: "busProjectManagerController.do?datagrid&field=fromProjId,bpmProjId,bpmName",
 		columns: [[
 			{field:'bpmProjId',title:'项目编号',width:80},
 			{field:'bpmName',title:'项目名称',width:80}
 		]],
 		onSelect:function(row,data){
 			$("#bpProjId").val(data.bpmProjId);
-			$("#fromProjmId").val(data.id);
+			$("#fromProjmId").val(data.fromProjId);
 			dealbpaApplyNo(data.bpmProjId)
 		},
 		fitColumns: true

@@ -429,7 +429,7 @@ public class BusContractController extends BaseController {
         }
         map.put(NormalExcelConstants.FILE_NAME,"合同管理");
         map.put(NormalExcelConstants.CLASS,BusContractPage.class);
-        map.put(NormalExcelConstants.PARAMS,new ExportParams("合同管理列表", "导出人:Jeecg",
+        map.put(NormalExcelConstants.PARAMS,new ExportParams("合同管理列表", "导出人:安信",
             "导出信息"));
         map.put(NormalExcelConstants.DATA_LIST,pageList);
         return NormalExcelConstants.JEECG_EXCEL_VIEW;
@@ -478,7 +478,7 @@ public class BusContractController extends BaseController {
 			return j;
 	}
 	/**
-	 * 通过excel导入【明细报价附表】数据
+	 * 通过excel导入【合同明细报价附表】数据
 	 * @param request
 	 * @param	id:主表的id
 	 * @return
@@ -486,7 +486,7 @@ public class BusContractController extends BaseController {
 	@RequestMapping(params="importExcelDetail", method = RequestMethod.POST)
 	@ResponseBody
 	public AjaxJson importExcelDetail(String contractId,HttpServletRequest request, HttpServletResponse response) {
-		logger.info("-- 通过excel导入【明细报价附表】 合同管理外键:{}--",contractId);
+		logger.info("-- 通过excel导入【合同明细报价附表】 合同管理外键:{}--",contractId);
 		AjaxJson j = new AjaxJson();
 		MultipartHttpServletRequest multipartRequest = (MultipartHttpServletRequest) request;
 		Map<String, MultipartFile> fileMap = multipartRequest.getFileMap();
@@ -495,8 +495,8 @@ public class BusContractController extends BaseController {
 			logger.info("-- 文件名称:{}--",file.getOriginalFilename());
 			
 			ImportParams params = new ImportParams();
-			params.setTitleRows(0);//excel文件的标题行数
-			params.setHeadRows(1);//excel文件中表头行数
+			params.setTitleRows(2);//excel文件的标题行数
+			params.setHeadRows(2);//excel文件中表头行数
 			params.setNeedSave(true);
 			try {
 				List<BusConQuotedPriceEntity> list =  ExcelImportUtil.importExcel(file.getInputStream(), BusConQuotedPriceEntity.class, params);
@@ -533,14 +533,28 @@ public class BusContractController extends BaseController {
 	
 	
 	/**
-	* 导出excel 使模板
+	* excel模板下载 使模板【合同明细报价附表】
 	*/
+	@RequestMapping(params = "exportXlsByT2")
+	public String exportXlsByT2(ModelMap map) {
+		System.out.println("--- excel模板下载 使模板【合同明细报价附表】 ---");
+		map.put(NormalExcelConstants.FILE_NAME,"合同明细报价附表");
+		map.put(NormalExcelConstants.CLASS,BusConQuotedPriceEntity.class);
+		map.put(NormalExcelConstants.PARAMS,new ExportParams("合同明细报价附表", "导出人:"+ ResourceUtil.getSessionUser().getRealName(),
+		"导出信息"));
+		map.put(NormalExcelConstants.DATA_LIST,new ArrayList());
+		return NormalExcelConstants.JEECG_EXCEL_VIEW;
+	}
+	
+	/**
+	 * 导出excel 使模板【合同管理】
+	 */
 	@RequestMapping(params = "exportXlsByT")
 	public String exportXlsByT(ModelMap map) {
 		map.put(NormalExcelConstants.FILE_NAME,"合同管理");
 		map.put(NormalExcelConstants.CLASS,BusContractPage.class);
 		map.put(NormalExcelConstants.PARAMS,new ExportParams("合同管理列表", "导出人:"+ ResourceUtil.getSessionUser().getRealName(),
-		"导出信息"));
+				"导出信息"));
 		map.put(NormalExcelConstants.DATA_LIST,new ArrayList());
 		return NormalExcelConstants.JEECG_EXCEL_VIEW;
 	}

@@ -14,7 +14,7 @@
 			<div class="form">
 				<t:upload name="fiels" dialog="false"
 					onUploadSuccess="handleSuccess" callback="uploadCallback" width="120"
-					buttonText="选择要导入的excel文件"
+					buttonText="选择导入excel文件"
 					uploader="vwBusPoApplyController.do?importContDetailExcel"
 					extend="*.xls;*.xlsx" id="file_upload" formData="documentTitle"></t:upload>
 			</div>
@@ -23,14 +23,12 @@
 	</t:formvalid>
 	<script type="text/javascript">
 		function handleSuccess(row, files, info) {
-			console.log("handleSuccess")
-			frameElement.api.config.button[0].uploaded(row)
+			//console.log("handleSuccess");
+			frameElement.api.config.button[0].uploaded(row);
 			frameElement.api.close();
 		}
 		function uploadCallback(){
-			console.log("Callback")
-   
-            
+			//console.log("Callback");
     }
 	</script>
 </body>

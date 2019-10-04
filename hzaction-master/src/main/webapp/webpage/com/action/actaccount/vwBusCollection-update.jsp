@@ -162,13 +162,13 @@
 						</td>
 						<td align="right">
 							<label class="Validform_label">
-								回款状态:
+								收款时间:
 							</label>
 						</td>
 						<td class="value">
-									<t:dictSelect field="bcColState" type="list"  typeGroupCode="bc_back"   defaultVal="${vwBusCollectionPage.bcColState}" hasLabel="false"  title="回款状态" ></t:dictSelect>     
+									  <input id="bcColDate" name="bcColDate" type="text" style="width: 150px"  class="Wdate" onClick="WdatePicker()"  ignore="ignore" value='<fmt:formatDate value='${vwBusCollectionPage.bcColDate}' type="date" pattern="yyyy-MM-dd"/>'/>
 							<span class="Validform_checktip"></span>
-							<label class="Validform_label" style="display: none;">回款状态</label>
+							<label class="Validform_label" style="display: none;">收款时间</label>
 						</td>
 					</tr>
 					 <tr>
@@ -197,6 +197,19 @@
 							<label class="Validform_label" style="display: none;">文件</label>
 						</td>
 						</tr>
+						<tr >
+							<td align="right">
+								<label class="Validform_label">
+									回款状态:
+								</label>
+							</td>
+							<td class="value" colspan="3">
+								  <t:dictSelect field="bcColState" type="list"  typeGroupCode="bc_back"  defaultVal="${vwBusCollectionPage.bcColState}" hasLabel="false"  title="回款状态" ></t:dictSelect>     
+								<span class="Validform_checktip"></span>
+								<label class="Validform_label" style="display: none;">回款状态</label>
+						</td>
+				
+						</tr>>
 						<tr>
 						<td align="right">
 							<label class="Validform_label">

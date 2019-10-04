@@ -200,7 +200,7 @@
 							回款状态:
 						</label>
 					</td>
-					<td class="value">
+					<td class="value" colspan="3">
 							  <t:dictSelect field="bcColState" type="list"  typeGroupCode="bc_back"  defaultVal="${vwBusCollectionPage.bcColState}" hasLabel="false"  title="回款状态" ></t:dictSelect>     
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">回款状态</label>

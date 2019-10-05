@@ -68,16 +68,16 @@
 			<td class="value">
 		     	<input id="projectName" name="projectName" type="text" maxlength="100" style="width: 150px" class="easyui-combogrid"  ignore="ignore"
 		     	 data-options="panelWidth: 500,
-		     	 idField: 'bpProjName',
-		     	 textField: 'bpProjName',
-		     	 url: 'vwBusProjectController.do?datagrid&field=id,bpProjId,bpProjName',
+		     	 idField: 'bpmProjName',
+		     	 textField: 'bpmProjName',
+		     	 url: 'vmBusProjectManagerController.do?datagrid&field=id,fromProjId,bpmProjId,bpmProjName',
 		     	 columns: [[  
-	                {field:'bpProjId',title:'项目编码',width:80}, 
-	                {field:'bpProjName',title:'项目名称',width:120} 
+	                {field:'bpmProjId',title:'项目编码',width:80}, 
+	                {field:'bpmProjName',title:'项目名称',width:120} 
                 ]],
                 onSelect: function (row,data) {
-                	$('#fromProjmId').val(data.id);
-                	$('#projectId').val(data.bpProjId);
+                	$('#fromProjmId').val(data.fromProjId);
+                	$('#projectId').val(data.bpmProjId);
 				},
                 fitColumns: true" />
 				<span class="Validform_checktip"></span>

@@ -213,18 +213,18 @@
 							
 							<input id="bpProjName" name="bpProjName" type="text" maxlength="100" style="width: 150px" class="easyui-combogrid"  ignore="ignore"
 						     	 data-options="panelWidth: 500,
-						     	 idField: 'bpProjName',
-						     	 textField: 'bpProjName',
-						     	 url: 'busProjectController.do?datagrid&field=id,bpProjId,bpProjName,bpManager',
+						     	 idField: 'bpmProjName',
+						     	 textField: 'bpmProjName',
+						     	 url: 'vmBusProjectManagerController.do?datagrid&field=id,fromProjId,bpmProjId,bpmProjName,bpmManager',
 						     	 columns: [[ 
-					                {field:'bpProjId',title:'项目编号',width:80}, 
-					                {field:'bpProjName',title:'项目名称',width:120} , 
-					                {field:'bpManager',title:'项目经理',width:120} 
+					                {field:'bpmProjId',title:'项目编号',width:80}, 
+					                {field:'bpmProjName',title:'项目名称',width:120} , 
+					                {field:'bpmManager',title:'项目经理',width:120} 
 				                ]],
 				                onSelect: function (row,data) {
-				                	$('#fromProjmId').val(data.id);
-				                	$('#bpProjId').val(data.bpProjId);
-				                	$('#bpManager').val(data.bpManager);
+				                	$('#fromProjmId').val(data.fromProjId);
+				                	$('#bpProjId').val(data.bpmProjId);
+				                	$('#bpManager').val(data.bpmManager);
 								},
 				                fitColumns: true" />
 							<span class="Validform_checktip"></span>

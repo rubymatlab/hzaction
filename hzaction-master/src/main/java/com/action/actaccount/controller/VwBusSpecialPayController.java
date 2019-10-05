@@ -84,6 +84,11 @@ public class VwBusSpecialPayController extends BaseController {
 		return new ModelAndView("com/action/actaccount/vwBusSpecialPayList");
 	}
 	
+	@RequestMapping(params = "listNo")
+	public ModelAndView listNo(HttpServletRequest request) {
+		return new ModelAndView("com/action/actaccount/vwBusSpecialPayListNo");
+	}
+	
 	@RequestMapping(params = "listYes")
 	public ModelAndView listYes(HttpServletRequest request) {
 		return new ModelAndView("com/action/actaccount/vwBusSpecialPayListYes");
@@ -247,11 +252,36 @@ public class VwBusSpecialPayController extends BaseController {
 		message = "送审成功";
 		VwBusSpecialPayEntity t = vwBusSpecialPayService.get(VwBusSpecialPayEntity.class, vwBusSpecialPay.getId());
 		try{
-			vwBusSpecialPayService.doAccessBus(t);
+			t.setBpmStatus("2");
+			vwBusSpecialPayService.saveOrUpdate(t);
 			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();
 			message = "送审失败";
+		}
+		j.setMsg(message);
+		return j;
+	}
+	
+	/**
+	 * 自定义按钮-[送审]业务
+	 * @param ids
+	 * @return
+	 */
+	@RequestMapping(params = "doConfirm")
+	@ResponseBody
+	public AjaxJson doConfirm(VwBusSpecialPayEntity vwBusSpecialPay, HttpServletRequest request) {
+		String message = null;
+		AjaxJson j = new AjaxJson();
+		message = "审核成功";
+		VwBusSpecialPayEntity t = vwBusSpecialPayService.get(VwBusSpecialPayEntity.class, vwBusSpecialPay.getId());
+		try{
+			t.setBpmStatus("3");
+			vwBusSpecialPayService.saveOrUpdate(t);
+			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
+		}catch(Exception e){
+			e.printStackTrace();
+			message = "审核失败";
 		}
 		j.setMsg(message);
 		return j;

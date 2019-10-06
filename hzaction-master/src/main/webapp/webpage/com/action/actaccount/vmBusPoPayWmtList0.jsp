@@ -3,7 +3,7 @@
 <t:base type="jquery,easyui,tools,DatePicker"></t:base>
 <div class="easyui-layout" fit="true">
   <div region="center" style="padding:0px;border:0px">
-  <t:datagrid name="vmBusPoPayWmtList" checkbox="true" fitColumns="true" title="采购付款单" sortName="createDate" actionUrl="vmBusPoPayWmtController.do?datagrid&state=${state }" idField="id" fit="true" queryMode="group">
+  <t:datagrid name="vmBusPoPayWmtList" checkbox="true" fitColumns="true" title="采购付款单" sortName="createDate" actionUrl="vmBusPoPayWmtController.do?datagrid&state=0" idField="id" fit="true" queryMode="group">
    <t:dgCol title="主键"  field="id"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="创建人名称"  field="createName"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="创建人登录名称"  field="createBy"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
@@ -41,17 +41,14 @@
    <t:dgDelOpt title="删除" url="vmBusPoPayWmtController.do?doDel&id={id}"  urlclass="ace_button" urlfont="fa-trash-o"/>
    <t:dgToolBar title="新增" icon="icon-add" url="vmBusPoPayWmtController.do?goAdd" funname="add" width="100%" height="100%"></t:dgToolBar>
    <t:dgToolBar title="修改" icon="icon-edit" url="vmBusPoPayWmtController.do?goUpdate&pay=0" funname="update" width="100%" height="100%"></t:dgToolBar>
+   <t:dgToolBar title="查看" icon="icon-search" url="vmBusPoPayWmtController.do?goUpdate" funname="detail" width="100%" height="100%"></t:dgToolBar>
    <t:dgToolBar title="批量删除"  icon="icon-remove" url="vmBusPoPayWmtController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>
    <!-- 状态改为2 -->
    <t:dgToolBar title="送审" icon="icon-edit"  url="vmBusPoPayWmtController.do?doSendAudit" funname="doSendAudit" ></t:dgToolBar>
-   <!-- 状态改为3 -->
-   <t:dgToolBar title="审核完成" icon="icon-edit"  url="vmBusPoPayWmtController.do?doAuditFinish" funname="doAuditFinish" ></t:dgToolBar>
-   <!-- 支付 -->
-   <t:dgToolBar title="支付" icon="icon-edit" url="vmBusPoPayWmtController.do?goUpdate&pay=1" funname="update" width="100%" height="100%"></t:dgToolBar>
-   
+   <t:dgToolBar title="导出" icon="icon-putout" funname="ExportXls"></t:dgToolBar>
    <%--<t:dgToolBar title="查看" icon="icon-search" url="vmBusPoPayWmtController.do?goUpdate" funname="detail" width="100%" height="100%"></t:dgToolBar>
    <t:dgToolBar title="导入" icon="icon-put" funname="ImportXls"></t:dgToolBar>
-   <t:dgToolBar title="导出" icon="icon-putout" funname="ExportXls"></t:dgToolBar>
+   
    <t:dgToolBar title="模板下载" icon="icon-putout" funname="ExportXlsByT"></t:dgToolBar> --%>
   </t:datagrid>
   </div>

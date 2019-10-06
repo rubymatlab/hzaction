@@ -99,11 +99,21 @@ public class VmBusPoPayWmtController extends BaseController {
 	 * 
 	 * @return
 	 */
-	@RequestMapping(params = "list")
-	public ModelAndView listTab(HttpServletRequest request) {
-		String state = request.getParameter("state");
-		ModelAndView modelAndView = new ModelAndView("com/action/actaccount/vmBusPoPayWmtList");
-		modelAndView.addObject("state",state) ;
+	@RequestMapping(params = "list0")
+	public ModelAndView list0(HttpServletRequest request) {
+		ModelAndView modelAndView = new ModelAndView("com/action/actaccount/vmBusPoPayWmtList0");
+		return modelAndView;
+	}
+	
+	@RequestMapping(params = "list1")
+	public ModelAndView list1(HttpServletRequest request) {
+		ModelAndView modelAndView = new ModelAndView("com/action/actaccount/vmBusPoPayWmtList1");
+		return modelAndView;
+	}
+	
+	@RequestMapping(params = "list2")
+	public ModelAndView list2(HttpServletRequest request) {
+		ModelAndView modelAndView = new ModelAndView("com/action/actaccount/vmBusPoPayWmtList2");
 		return modelAndView;
 	}
 

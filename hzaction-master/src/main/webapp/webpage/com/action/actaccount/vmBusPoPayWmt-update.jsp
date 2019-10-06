@@ -38,6 +38,18 @@
 	});
 	$(".tabs-wrap").css('width','100%');
   });
+  function handleInput()
+	{
+		 var totalM=0.0;
+		 var trList = $("#add_vmBusPoContractPayWmt_table").children("tr");
+		 for (var i=0;i<trList.length;i++) {
+		      var tdArr = trList.eq(i).find("td");
+		      var totalmoney = tdArr.eq(7).find('input').val();//付款金额 
+		      if(!(totalmoney=="" || totalmoney==null))
+		      	totalM=parseFloat(totalM)+parseFloat(totalmoney);
+		 }
+		 $('#bppMoney').val(totalM);
+	}
  </script>
  </head>
  <body style="overflow-x: hidden;">
@@ -167,7 +179,7 @@
 				<label class="Validform_label">付款金额:</label>
 			</td>
 			<td class="value" colspan="3">
-		     	 <input id="bppMoney" name="bppMoney" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vmBusPoPayWmtPage.bppMoney}'/>
+		     	 <input id="bppMoney" name="bppMoney" type="text" maxlength="32" readonly="true" style="width: 150px;background-color:#F0F0F0;" class="inputxt"  ignore="ignore"  value='${vmBusPoPayWmtPage.bppMoney}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">付款金额</label>
 			</td>
@@ -247,7 +259,7 @@
 					  <label class="Validform_label" style="display: none;">采购合同外键</label>
 				  </td>
 				  <td align="left">
-					  		<input name="vmBusPoContractPayWmtList[#index#].payAmount" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
+					  		<input name="vmBusPoContractPayWmtList[#index#].payAmount" maxlength="32" type="text" class="inputxt" onchange="handleInput()" style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">付款金额</label>
 				  </td>
 				  <td align="left">

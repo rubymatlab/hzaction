@@ -82,7 +82,7 @@
 					  <label class="Validform_label" style="display: none;">采购合同外键</label>
 					</td>
 				  <td align="left">
-					  	<input name="vmBusPoContractPayWmtList[0].payAmount" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
+					  	<input name="vmBusPoContractPayWmtList[0].payAmount" maxlength="32" type="text" class="inputxt" onchange="handleInput()"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">付款金额</label>
 					</td>
 				  <td align="left">
@@ -156,7 +156,20 @@
 	</tbody>
 </table>
 <script type="text/javascript">
-	
+
+
+	function handleInput()
+	{
+		 var totalM=0.0;
+		 var trList = $("#add_vmBusPoContractPayWmt_table").children("tr");
+		 for (var i=0;i<trList.length;i++) {
+		      var tdArr = trList.eq(i).find("td");
+		      var totalmoney = tdArr.eq(7).find('input').val();//付款金额 
+		      if(!(totalmoney=="" || totalmoney==null))
+		      	totalM=parseFloat(totalM)+parseFloat(totalmoney);
+		 }
+		 $('#bppMoney').val(totalM);
+	}
 	$('#addVmBusPoContractPayWmtBtn').linkbutton({   
 	    iconCls: 'icon-add'  
 	});  
@@ -371,14 +384,14 @@
     			    	//start_wmt
 //						获取当前视图存在多少条数据节点						
 						var trSize = document.getElementById("add_vmBusPoContractPayWmt_table").getElementsByTagName("tr").length - 1
-						console.log("判断当前用户是否是初始操作:",trSize==0&&$("input[name='vmBusPoContractPayWmtList[0].fromId']").val()=="")
+						//console.log("判断当前用户是否是初始操作:",trSize==0&&$("input[name='vmBusPoContractPayWmtList[0].fromId']").val()=="")
 						if(trSize==0 && $("input[name='vmBusPoContractPayWmtList[0].fromId']").val()==""){
 							if(selected.length>1) addTr(selected.length-1)
 							selected.map(function(obj,index){
 //								console.log(obj)  //每条选中的对象
 //								console.log(selected.length)	//从0开始
 								$("input[name='vmBusPoContractPayWmtList["+index+"].bpcPoNo']").val(obj.bpc_po_no)
-								console.log(obj.bpcp_progre)
+								//console.log(obj.bpcp_progre)
 								$("select[name='vmBusPoContractPayWmtList["+(index+trSize)+"].bpcpProgre']")
    									.find("option:contains("+obj.bpcp_progre+")").attr('selected',true)
 								
@@ -393,7 +406,7 @@
 						}else{
 							addTr(selected.length)	
 							selected.map(function(obj,index){
-								console.log(obj)  //每条选中的对象
+								//console.log(obj)  //每条选中的对象
 //								console.log(selected.length)	//从0开始
 								trSize = document.getElementById("add_vmBusPoContractPayWmt_table").getElementsByTagName("tr").length-selected.length
 //								console.log($trSize)

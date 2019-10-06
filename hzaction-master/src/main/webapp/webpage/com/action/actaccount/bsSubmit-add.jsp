@@ -42,7 +42,7 @@
 	function handleInput()
 	{
 		 var totalM=0.0;
-		 var trList = $("#add_busSubmitDetail_table").children("tr")
+		 var trList = $("#add_busSubmitDetail_table").children("tr");
 		 for (var i=0;i<trList.length;i++) {
 		      var tdArr = trList.eq(i).find("td");
 		      var totalmoney = tdArr.eq(4).find('input').val();//收入金额

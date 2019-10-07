@@ -62,10 +62,14 @@
 					  	<input name="vmMergeBusPoApplyDetailList[0].bpadRemark" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">备注</label>
 					</td>
-<!-- 				  <td align="left">
-					  	<input name="vmMergeBusPoApplyDetailList[0].fromId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
+				  <td align="left">
+					  	<input name="vmMergeBusPoApplyDetailList[0].fromId" maxlength="32" type="hidden" class="inputxt"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">采购合同外键</label>
-					</td> -->
+					</td>
+					 <td align="left">
+					  	<input name="vmMergeBusPoApplyDetailList[0].fromPoApplyDetId" maxlength="32" type="hidden" class="inputxt"  style="width:120px;"  ignore="ignore" >
+					  <label class="Validform_label" style="display: none;">采购申请外键</label>
+					</td>
    			</tr>
 	</c:if>
 	<c:if test="${fn:length(vmMergeBusPoApplyDetailList)  > 0 }">
@@ -103,10 +107,10 @@
 					  	<input name="vmMergeBusPoApplyDetailList[${stuts.index }].bpadRemark" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bpadRemark }"/>
 					  <label class="Validform_label" style="display: none;">备注</label>
 				   </td>
-<%-- 				   <td align="left">
-					  	<input name="vmMergeBusPoApplyDetailList[${stuts.index }].fromId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.fromId }"/>
-					  <label class="Validform_label" style="display: none;">采购合同外键</label>
-				   </td> --%>
+ 				   <td align="left">
+					  	<input name="vmMergeBusPoApplyDetailList[${stuts.index }].fromPoApplyDetId" maxlength="32" type="hidden" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.fromPoApplyDetId }"/>
+					  <label class="Validform_label" style="display: none;">采购申请外键</label>
+				   </td>
    			</tr>
 		</c:forEach>
 	</c:if>	
@@ -121,7 +125,7 @@
 	    iconCls: 'icon-remove'  
 	}); 
 	$('#addVmMergeBusPoApplyDetailBtn').bind('click', function(){   
-		popupClickMerge(this,'id,bpad_name,bpad_brand,bpad_model,bpad_number,bpad_remark','id,bpadName,bpadBrand,bpadModel,bpadNumber,bpadRemark','rf_bus_po_apply_detail')
+		popupClickMerge(this,'id,bpad_name,bpad_brand,bpad_model,bpad_number,bpad_remark,from_po_apply_det_id','id,bpadName,bpadBrand,bpadModel,bpadNumber,bpadRemark,fromPoApplyDetId','rf_bus_po_apply_detail')
 	 	 return false;
 		
 		

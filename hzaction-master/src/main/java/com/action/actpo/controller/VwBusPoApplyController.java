@@ -227,6 +227,26 @@ public class VwBusPoApplyController extends BaseController {
 	}
 
 	/**
+	 * 查询是否采购
+	 * @return JSON
+	 */
+	@RequestMapping(params = "isPurchase")
+	@ResponseBody
+	public Object isPurchase(String id,VwBusPoApplyEntity vwBusPoApply, HttpServletRequest request) {
+		JSONObject object = new JSONObject();
+		String sql = "SELECT bpad.id FROM bus_po_apply_detail_con AS bpadc, bus_po_apply_detail as bpad where  bpadc.from_po_apply_det_id=bpad.id and bpad.from_id = '"+ id +"'";
+		object.put("message","");
+		try {
+			List<Map<String,Object >> list = this.systemService.findForJdbc(sql);
+			net.sf.json.JSONArray array = net.sf.json.JSONArray.fromObject(list);
+			object.put("values",array);
+		}catch(Exception e) {
+			throw new BusinessException(e.getMessage());
+		}
+		
+		return object;
+	}
+	/**
 	 * 删除采购申请
 	 * 
 	 * @return

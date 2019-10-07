@@ -76,10 +76,10 @@
 							<input name="busPoContractPayList[0].bpcpDate" maxlength="0"  type="text" class="Wdate" onClick="WdatePicker()"  style="width:150px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">计划付款日期</label>
 					</td>
-<!-- 				  <td align="left">
-					  	<input name="busPoContractPayList[0].fromId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
+ 				  <td align="left">
+					  	<input name="busPoContractPayList[0].fromId" maxlength="32" type="text" class="hidden"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">采购合同外键</label>
-					</td> -->
+					</td>
    			</tr>
 	</c:if>
 	<c:if test="${fn:length(busPoContractPayList)  > 0 }">
@@ -109,10 +109,10 @@
 							<input name="busPoContractPayList[${stuts.index }].bpcpDate" maxlength="0" type="text" class="Wdate" onClick="WdatePicker()"  style="width:150px;"   ignore="ignore"  value="<fmt:formatDate value='${poVal.bpcpDate}' type="date" pattern="yyyy-MM-dd"/>"/>
 					  <label class="Validform_label" style="display: none;">计划付款日期</label>
 				   </td>
-<%-- 				   <td align="left">
-					  	<input name="busPoContractPayList[${stuts.index }].fromId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.fromId }"/>
+ 				   <td align="left">
+					  	<input name="busPoContractPayList[${stuts.index }].fromId" maxlength="32" type="hidden" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.fromId }"/>
 					  <label class="Validform_label" style="display: none;">采购合同外键</label>
-				   </td> --%>
+				   </td>
    			</tr>
 		</c:forEach>
 	</c:if>	

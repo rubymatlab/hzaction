@@ -65,8 +65,10 @@ public class VmMergeBusPoApplyDetailEntity implements java.io.Serializable {
 	@Excel(name="备注",width=15)
 	private java.lang.String bpadRemark;
 	/**采购合同外键*/
-	@Excel(name="采购合同外键",width=15)
 	private java.lang.String fromId;
+	
+	/**采购合同外键*/
+	private java.lang.String fromPoApplyDetId;
 	
 	/**
 	 *方法: 取得java.lang.String
@@ -359,4 +361,21 @@ public class VmMergeBusPoApplyDetailEntity implements java.io.Serializable {
 		this.fromId = fromId;
 	}
 	
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  采购合同外键
+	 */
+	
+	@Column(name ="FROM_PO_APPLY_DET_ID",nullable=true,length=32)
+	public java.lang.String getFromPoApplyDetId(){
+		return this.fromPoApplyDetId;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  采购合同外键
+	 */
+	public void setFromPoApplyDetId(java.lang.String fromPoApplyDetId){
+		this.fromPoApplyDetId = fromPoApplyDetId;
+	}
 }

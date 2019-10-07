@@ -72,11 +72,11 @@
 					  <label class="Validform_label" style="display: none;">型号</label>
 					</td>
 				  <td align="left">
-					  	<input name="busPoContractDetailList[0].bpcdNumber" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
+					  	<input name="busPoContractDetailList[0].bpcdNumber" maxlength="32" type="text"  datatype="/^(-?\d+)(\.\d+)?$/" class="inputxt"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">数量</label>
 					</td>
 				  <td align="left">
-					  	<input name="busPoContractDetailList[0].bpcdPrice" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
+					  	<input name="busPoContractDetailList[0].bpcdPrice" maxlength="32" type="text" datatype="/^(-?\d+)(\.\d+)?$/" class="inputxt"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">单价</label>
 					</td>
 				  <td align="left">
@@ -125,11 +125,11 @@
 					  <label class="Validform_label" style="display: none;">型号</label>
 				   </td>
 				   <td align="left">
-					  	<input name="busPoContractDetailList[${stuts.index }].bpcdNumber" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bpcdNumber }"/>
+					  	<input name="busPoContractDetailList[${stuts.index }].bpcdNumber" maxlength="32" type="text" datatype="/^(-?\d+)(\.\d+)?$/" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bpcdNumber }"/>
 					  <label class="Validform_label" style="display: none;">数量</label>
 				   </td>
 				   <td align="left">
-					  	<input name="busPoContractDetailList[${stuts.index }].bpcdPrice" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bpcdPrice }"/>
+					  	<input name="busPoContractDetailList[${stuts.index }].bpcdPrice" maxlength="32" type="text" datatype="/^(-?\d+)(\.\d+)?$/" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bpcdPrice }"/>
 					  <label class="Validform_label" style="display: none;">单价</label>
 				   </td>
 				   <td align="left">

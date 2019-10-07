@@ -383,4 +383,33 @@ function popupClickAll(pobj,tablefield,inputnames,pcode) {
 	    cancel: true // 为true等价于function(){}
 	});
 	}
+	
+	$(function(){
+		var id = $("#id").val();
+		if(id){
+			$.get("vwBusPoApplyController.do?isPurchase&id="+id,function(row){
+				var ids = [];
+				var data = JSON.parse(row)
+ 				data.values.forEach(function(item,index){
+					ids.push(item.id)
+				});
+				isPurchase(ids);
+			})
+		}
+		
+		function isPurchase(array){
+			$("#add_busPoApplyDetail_table").find("tr").each(function(index,item){
+				var val = $(item).find('input[name$="id"]').val();
+				if(array.indexOf(val) != -1){
+					$(item).find("input[name$='purchaseOrNot']").val("已采购");
+				}else{
+					$(item).find("input[name$='purchaseOrNot']").val("未采购");
+				}
+			})
+		}
+
+	})
+	
+	
+	
 </script>

@@ -213,16 +213,14 @@ public class VmBusPoContractController extends BaseController {
 		AjaxJson j = new AjaxJson();
 		String message = "添加成功";
 		try{
-			
-		
 			BusPoContractEntity busPoContract = new BusPoContractEntity();
 			MyBeanUtils.copyBeanNotNull2Bean(vmBusPoContract,busPoContract);
 			List<BusPoApplyDetailConEntity> busPoApplyDetailConList = new ArrayList<BusPoApplyDetailConEntity>();
 			BusPoApplyDetailConEntity busPoApplyDetailConEntity = null;
 			for(VmMergeBusPoApplyDetailEntity entity : vmMergeBusPoApplyDetailList) {
 				busPoApplyDetailConEntity = new BusPoApplyDetailConEntity();
-				busPoApplyDetailConEntity.setFromPoApplyDetId(entity.getId());// 采购申请明细外键
-				// busPoApplyDetailConEntity.setFromId(fromId);
+				busPoApplyDetailConEntity.setFromPoApplyDetId(entity.getFromPoApplyDetId());// 采购申请明细外键
+				busPoApplyDetailConEntity.setFromId(vmBusPoContract.getId()); // 采购合同外键
 				busPoApplyDetailConList.add(busPoApplyDetailConEntity);
 			}
 			
@@ -290,7 +288,8 @@ public class VmBusPoContractController extends BaseController {
 			BusPoApplyDetailConEntity busPoApplyDetailConEntity = null;
 			for(VmMergeBusPoApplyDetailEntity entity : vmMergeBusPoApplyDetailList) {
 				busPoApplyDetailConEntity = new BusPoApplyDetailConEntity();
-				busPoApplyDetailConEntity.setFromPoApplyDetId(entity.getId());// 采购申请明细
+				busPoApplyDetailConEntity.setFromPoApplyDetId(entity.getFromPoApplyDetId());// 采购申请明细
+				busPoApplyDetailConEntity.setFromId(vmBusPoContract.getId()); // 采购合同外键
 				busPoApplyDetailConList.add(busPoApplyDetailConEntity);
 			}
 			busPoContractService.updateMain(busPoContract, busPoContractPayList,busPoApplyDetailConList,busPoContractDetailList);

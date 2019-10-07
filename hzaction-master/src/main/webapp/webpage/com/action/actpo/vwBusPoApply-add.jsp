@@ -100,13 +100,13 @@
 				<td align="right"><label class="Validform_label ">采购申请编号:</label>
 				</td>
 				<td class="value test"><input id="bpaApplyNo" name="bpaApplyNo"
-					type="text" maxlength="40" style="width: 150px;background-color:#F0F0F0;" class="inputxt" readonly="readonly"
+					type="text" maxlength="40" style="width: 60%;background-color:#F0F0F0;" class="inputxt" readonly="readonly"
 					ignore="ignore" /> <span class="Validform_checktip"></span></td>
 
 				<td align="right"><label class="Validform_label">申请日期:</label>
 				</td>
 				<td class="value"><input id="bpaApplyDate" name="bpaApplyDate"
-					type="text" style="width: 150px" class="Wdate"
+					type="text" style="width: 60%" class="Wdate"
 					onClick="WdatePicker()" ignore="ignore" /> <span
 					class="Validform_checktip"></span> <label class="Validform_label"
 					style="display: none;">申请日期</label></td>
@@ -117,7 +117,7 @@
 				<td class="value">
 					<div class="dropdown">
 						<input type="text" class="inputxt " name="bpmName" id="bpmName"
-							maxlength="50" ignore="ignore">
+							maxlength="50" ignore="ignore" style="width:300px;">
 						<ul class="dropdown-menu" role="menu">
 						</ul>
 					</div>
@@ -127,7 +127,7 @@
 				<td align="right"><label class="Validform_label">项目编号:</label>
 				</td>
 				<td class="value"><input id="bpProjId" name="bpProjId"
-					type="text" maxlength="40" style="width: 150px;background-color:#F0F0F0;" class="inputxt"
+					type="text" maxlength="40" style="width: 60%;background-color:#F0F0F0;" class="inputxt"
 					ignore="ignore"  readonly="readonly"/> <span class="Validform_checktip"></span> <label
 					class="Validform_label" style="display: none;">项目编号</label></td>
 
@@ -136,13 +136,13 @@
 			<tr>
 				<td align="right"><label class="Validform_label">收货人:</label></td>
 				<td class="value"><input id="bpaRecPeople" name="bpaRecPeople"
-					type="text" maxlength="40" style="width: 150px" class="inputxt"
+					type="text" maxlength="40" style="width: 60%" class="inputxt"
 					ignore="ignore" /> <span class="Validform_checktip"></span> <label
 					class="Validform_label" style="display: none;">收货人</label></td>
 				<td align="right"><label class="Validform_label">收货人电话:</label>
 				</td>
 				<td class="value"><input id="bpaRecTel" name="bpaRecTel"
-					type="text" maxlength="40" style="width: 150px" class="inputxt"
+					type="text" maxlength="40" style="width: 60%" class="inputxt"
 					ignore="ignore" /> <span class="Validform_checktip"></span> <label
 					class="Validform_label" style="display: none;">收货人电话</label></td>
 			</tr>
@@ -175,12 +175,12 @@
 				<td align="right"><label class="Validform_label">申请人:</label></td>
 				<td class="value"><input id="bpaApplyPeople"
 					name="bpaApplyPeople" type="text" maxlength="40"
-					style="width: 150px" class="inputxt" ignore="ignore" /> <span
+					style="width: 60%" class="inputxt" ignore="ignore" /> <span
 					class="Validform_checktip"></span> <label class="Validform_label"
 					style="display: none;">申请人</label></td>
 				<td align="right"><label class="Validform_label">单据状态:</label></td>
 				<td class="value"><!-- <input id="bpaState" name="bpaState"
-					type="text" maxlength="20" style="width: 150px" class="inputxt" readonly="readonly"
+					type="text" maxlength="20" style="width: 60%" class="inputxt" readonly="readonly"
 					ignore="ignore" /> -->
 					<t:dictSelect readonly="readonly" field="bpaState" type="list"   typeGroupCode="bs_state"  defaultVal="0" hasLabel="false"  title="审核状态" ></t:dictSelect>
 					 <span class="Validform_checktip"></span>
@@ -216,7 +216,7 @@
 
 				<td class="value"></td>
 				<td class="value"><input id="fromProjmId" name="fromProjmId"
-					type="hidden" maxlength="32" style="width: 150px"
+					type="hidden" maxlength="32" style="width: 60%"
 					class="inputxt" ignore="ignore" /> <span
 					class="Validform_checktip"></span> <label class="Validform_label"
 					style="display: none;">项目管理外键</label></td>

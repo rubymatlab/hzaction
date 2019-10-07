@@ -94,21 +94,21 @@
 		layout="table" tiptype="1" action="vwBusPoApplyController.do?doUpdate" callback="jeecgFormFileCallBack@Override">
 		<input id="id" name="id" type="hidden" value="${vwBusPoApplyPage.id }" />
 		<input id="fromProjmId" name="fromProjmId"
-					type="hidden" type="text" maxlength="32" style="width: 150px"
+					type="hidden" type="text" maxlength="32" style="width: 60%"
 					class="inputxt" ignore="ignore" />
 		<table cellpadding="0" cellspacing="1" class="formtable">
 			<tr>
 				<td align="right"><label class="Validform_label">采购申请编号:</label>
 				</td>
 				<td class="value"><input id="bpaApplyNo" name="bpaApplyNo"
-					type="text" maxlength="40" style="width: 150px;background-color:#F0F0F0;" class="inputxt"
+					type="text" maxlength="40" style="width: 60%;background-color:#F0F0F0;" class="inputxt"
 					ignore="ignore" value='${vwBusPoApplyPage.bpaApplyNo}' readonly="readonly"/> <span
 					class="Validform_checktip"></span> <label class="Validform_label"
 					style="display: none;">采购申请编号</label></td>
 				<td align="right"><label class="Validform_label">申请日期:</label>
 				</td>
 				<td class="value"><input id="bpaApplyDate" name="bpaApplyDate"
-					type="text" style="width: 150px" ignore="ignore" class="Wdate" onClick="WdatePicker()"
+					type="text" style="width: 60%" ignore="ignore" class="Wdate" onClick="WdatePicker()"
 					value='<fmt:formatDate value='${vwBusPoApplyPage.bpaApplyDate}' type="date" pattern="yyyy-MM-dd"/>' />
 					<span class="Validform_checktip"></span> <label
 					class="Validform_label" style="display: none;">申请日期</label></td>
@@ -117,7 +117,7 @@
 				<td align="right"><label class="Validform_label">项目名称:</label>
 				</td>
 				<td class="value"><input id="bpmName" name="bpmName"
-					type="text" style="width: 150px" class="searchbox-inputtext"
+					type="text" style="width: 300px" class="searchbox-inputtext"
 					ignore="ignore" disabled="disabled"
 					value='${vwBusPoApplyPage.bpmName}' /> <span
 					class="Validform_checktip"></span> <label class="Validform_label"
@@ -125,7 +125,7 @@
 				<td align="right"><label class="Validform_label">项目编号:</label>
 				</td>
 				<td class="value"><input id="bpProjId" name="bpProjId"
-					type="text" maxlength="40" style="width: 150px;background-color:#F0F0F0;" class="inputxt" readonly="readonly"
+					type="text" maxlength="40" style="width: 60%;background-color:#F0F0F0;" class="inputxt" readonly="readonly"
 					ignore="ignore" value='${vwBusPoApplyPage.bpProjId}' /> <span
 					class="Validform_checktip"></span> <label class="Validform_label"
 					style="display: none;">项目编号</label></td>
@@ -134,14 +134,14 @@
 			<tr>
 				<td align="right"><label class="Validform_label">收货人:</label></td>
 				<td class="value"><input id="bpaRecPeople" name="bpaRecPeople"
-					type="text" maxlength="40" style="width: 150px" class="inputxt"
+					type="text" maxlength="40" style="width: 60%" class="inputxt"
 					ignore="ignore" value='${vwBusPoApplyPage.bpaRecPeople}' /> <span
 					class="Validform_checktip"></span> <label class="Validform_label"
 					style="display: none;">收货人</label></td>
 				<td align="right"><label class="Validform_label">收货人电话:</label>
 				</td>
 				<td class="value"><input id="bpaRecTel" name="bpaRecTel"
-					type="text" maxlength="40" style="width: 150px" class="inputxt"
+					type="text" maxlength="40" style="width: 60%" class="inputxt"
 					ignore="ignore" value='${vwBusPoApplyPage.bpaRecTel}' /> <span
 					class="Validform_checktip"></span> <label class="Validform_label"
 					style="display: none;">收货人电话</label></td>
@@ -212,13 +212,13 @@
 			<td align="right"><label class="Validform_label">申请人:</label></td>
 			<td class="value"><input id="bpaApplyPeople"
 				name="bpaApplyPeople" type="text" maxlength="40"
-				style="width: 150px" class="inputxt" ignore="ignore"
+				style="width: 60%" class="inputxt" ignore="ignore"
 				value='${vwBusPoApplyPage.bpaApplyPeople}' /> <span
 				class="Validform_checktip"></span> <label class="Validform_label"
 				style="display: none;">申请人</label></td>
 			<td align="right"><label class="Validform_label">单据状态:</label></td>
 			<td class="value"><!-- <input id="bpaState" name="bpaState"
-				type="text" maxlength="20" style="width: 150px" class="inputxt"
+				type="text" maxlength="20" style="width: 60%" class="inputxt"
 				ignore="ignore" value='' />  -->
 				<t:dictSelect readonly="readonly" field="bpaState" type="list"   typeGroupCode="bs_state"  defaultVal="${vwBusPoApplyPage.bpaState}" hasLabel="false"  title="审核状态" ></t:dictSelect> 
 				<span

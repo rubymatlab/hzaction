@@ -120,7 +120,7 @@ public class BusPoContractServiceImpl extends CommonServiceImpl implements BusPo
 		}
 		//===================================================================================
 		//1.查询出数据库的明细数据-采购申请明细
-	    String hql1 = "from BusPoApplyDetailConEntity where 1 = 1 AND fromPoApplyDetId = ? ";
+	    String hql1 = "from BusPoApplyDetailConEntity where 1 = 1 AND fromId = ? ";
 	    List<BusPoApplyDetailConEntity> busPoApplyDetailConOldList = this.findHql(hql1,id1);
 		//2.筛选更新明细数据-采购申请明细
 		if(busPoApplyDetailConList!=null&&busPoApplyDetailConList.size()>0){
@@ -150,7 +150,7 @@ public class BusPoContractServiceImpl extends CommonServiceImpl implements BusPo
 			for(BusPoApplyDetailConEntity busPoApplyDetailCon:busPoApplyDetailConList){
 				if(oConvertUtils.isEmpty(busPoApplyDetailCon.getId())){
 					//外键设置
-					busPoApplyDetailCon.setFromPoApplyDetId(busPoContract.getId());
+					//busPoApplyDetailCon.setFromPoApplyDetId(busPoContract.getId());
 					this.save(busPoApplyDetailCon);
 				}
 			}

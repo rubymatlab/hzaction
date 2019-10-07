@@ -41,8 +41,19 @@
   function createProjectId(){
 	//项目编号
 	var myDate = new Date();
-	var rand = Math.floor(Math.random () * 900) + 100;
-	$("#bpProjId").val('AX-'+myDate.getFullYear()+'-'+$('#bcId').val()+'-'+rand);
+	$.ajax({
+		type : "POST",　　　　　　　　　　　
+		url : 'vwBusProjectController.do?doCreateProjectId',　　　　　 
+		data: {id:$('#bcId').val()},　　　　　　
+		success : function(data) {
+			var temp = jQuery.parseJSON(data);
+			$("#bpProjId").val('AX-'+myDate.getFullYear()+'-'+$('#bcId').val()+'-'+temp.msg);
+		},
+		error:function(){
+			tip("产生项目编号错误！");
+		}
+	})
+	
   }
  </script>
  </head>

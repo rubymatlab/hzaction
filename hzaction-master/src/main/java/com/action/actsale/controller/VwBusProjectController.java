@@ -514,5 +514,36 @@ public class VwBusProjectController extends BaseController {
 		j.setMsg(message);
 		return j;
 	}
+	
+	@RequestMapping(params = "doCreateProjectId")
+	@ResponseBody
+	public AjaxJson doCreateProjectId(VwBusProjectEntity vwBusProject, HttpServletRequest request) {
+		AjaxJson j = new AjaxJson();
+		String message = "产生项目编号成功";
+		//VwBusProjectEntity t = vwBusProjectService.get(VwBusProjectEntity.class, vwBusProject.getId());
+		try{
+			String hql="from VwBusProjectEntity as vw where vw.bpProjId like ?";
+			List<VwBusProjectEntity> listVw=vwBusProjectService.findHql(hql, "%-"+vwBusProject.getId()+"-%");
+			if(listVw.size()>1000)
+				message=String.valueOf(listVw.size()+1);
+			else
+			{
+				message=String.valueOf(listVw.size()+1);
+				if(message.length()==1)
+					message="00"+message;
+				else if(message.length()==2)
+					message="0"+message;
+				else
+					message=message;
+			}
+			//vwBusProjectService.doBidSql(t);
+			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
+		}catch(Exception e){
+			e.printStackTrace();
+			message = "产生项目编号失败";
+		}
+		j.setMsg(message);
+		return j;
+	}
  	
 }

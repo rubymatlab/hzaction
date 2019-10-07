@@ -73,11 +73,11 @@ public class BusContractEntity implements java.io.Serializable {
 	/**签订时间*/
 	@Excel(name="签订时间",width=15,format = "yyyy-MM-dd")
 	private java.util.Date bcConcludeTime;
-	/**合同开始时间*/
-	@Excel(name="合同开始时间",width=15,format = "yyyy-MM-dd")
+	/**初验时间*/
+	@Excel(name="初验时间",width=15,format = "yyyy-MM-dd")
 	private java.util.Date bcContStartTime;
-	/**合同结束时间*/
-	@Excel(name="合同结束时间",width=15,format = "yyyy-MM-dd")
+	/**终验时间*/
+	@Excel(name="终验时间",width=15,format = "yyyy-MM-dd")
 	private java.util.Date bcContEndTime;
 	/**合同完成状态*/
 	@Excel(name="合同完成状态",width=15,dicCode="state")

@@ -122,20 +122,20 @@
 		</tr>
 		<tr>
 			<td align="right">
-				<label class="Validform_label">合同开始时间:</label>
+				<label class="Validform_label">初验时间:</label>
 			</td>
 			<td class="value">
 					  <input id="bcContStartTime" name="bcContStartTime" type="text" style="width: 150px"  class="Wdate" onClick="WdatePicker()"  ignore="ignore"  />
 				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">合同开始时间</label>
+				<label class="Validform_label" style="display: none;">初验时间</label>
 			</td>
 			<td align="right">
-				<label class="Validform_label">合同结束时间:</label>
+				<label class="Validform_label">终验时间:</label>
 			</td>
 			<td class="value">
 					  <input id="bcContEndTime" name="bcContEndTime" type="text" style="width: 150px"  class="Wdate" onClick="WdatePicker()"  ignore="ignore"  />
 				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">合同结束时间</label>
+				<label class="Validform_label" style="display: none;">终验时间</label>
 			</td>
 		</tr>
 		<tr>

@@ -38,7 +38,7 @@ public class VwBusPoContractPayEntity implements java.io.Serializable {
 	@Excel(name="项目名称",width=15)
 	private java.lang.String bpmName;
 	/**费用分期*/
-	@Excel(name="费用分期",width=15)
+	@Excel(name="费用分期",width=15,dicCode="cost_stag")
 	private java.lang.String bpcpProgreName;
 	/**计划付款日期*/
 	@Excel(name="计划付款日期",width=15,format = "yyyy-MM-dd")
@@ -53,7 +53,6 @@ public class VwBusPoContractPayEntity implements java.io.Serializable {
 	@Excel(name="付款金额",width=15)
 	private java.lang.String payAmount;
 	/**项目结算id*/
-	@Excel(name="项目结算id",width=15)
 	private java.lang.String formCostAccountId;
 	
 	/**

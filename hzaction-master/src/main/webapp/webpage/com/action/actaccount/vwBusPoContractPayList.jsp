@@ -54,9 +54,9 @@
 				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
 						付款金额
 				  </td>
-				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
+<!-- 				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
 						项目结算id
-				  </td>
+				  </td> -->
 	</tr>
 	<tbody id="add_vwBusPoContractPay_table">
 	<c:if test="${fn:length(vwBusPoContractPayList)  <= 0 }">
@@ -73,7 +73,7 @@
 					  <label class="Validform_label" style="display: none;">项目名称</label>
 					</td>
 				  <td align="left">
-					  	<input name="vwBusPoContractPayList[0].bpcpProgreName" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
+					  <t:dictSelect field="vwBusPoContractPayList[0].bpcpProgreName" type="list"   typeGroupCode="cost_stag"  defaultVal="" hasLabel="false"  title="费用分期"></t:dictSelect> 
 					  <label class="Validform_label" style="display: none;">费用分期</label>
 					</td>
 				  <td align="left">
@@ -93,7 +93,7 @@
 					  <label class="Validform_label" style="display: none;">付款金额</label>
 					</td>
 				  <td align="left">
-					  	<input name="vwBusPoContractPayList[0].formCostAccountId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
+					  	<input name="vwBusPoContractPayList[0].formCostAccountId" maxlength="32" type="hidden" class="inputxt"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">项目结算id</label>
 					</td>
    			</tr>
@@ -113,7 +113,7 @@
 					  <label class="Validform_label" style="display: none;">项目名称</label>
 				   </td>
 				   <td align="left">
-					  	<input name="vwBusPoContractPayList[${stuts.index }].bpcpProgreName" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bpcpProgreName }"/>
+			   		<t:dictSelect field="vwBusPoContractPayList[${stuts.index }].bpcpProgreName" type="list" defaultVal="${poVal.bpcpProgreName }" typeGroupCode="cost_stag"  hasLabel="false"  title="费用分期"></t:dictSelect>     
 					  <label class="Validform_label" style="display: none;">费用分期</label>
 				   </td>
 				   <td align="left">
@@ -133,7 +133,7 @@
 					  <label class="Validform_label" style="display: none;">付款金额</label>
 				   </td>
 				   <td align="left">
-					  	<input name="vwBusPoContractPayList[${stuts.index }].formCostAccountId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.formCostAccountId }"/>
+					  	<input name="vwBusPoContractPayList[${stuts.index }].formCostAccountId" maxlength="32" type="hidden" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.formCostAccountId }"/>
 					  <label class="Validform_label" style="display: none;">项目结算id</label>
 				   </td>
    			</tr>

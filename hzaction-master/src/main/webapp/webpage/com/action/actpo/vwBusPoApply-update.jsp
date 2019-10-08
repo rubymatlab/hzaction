@@ -197,7 +197,8 @@
 					<label class="Validform_label" style="display: none;">备注</label></td>
 				<td align="left"><input
 					name="busPoApplyDetailList[#index#].purchaseOrNot" maxlength="32"
-					type="text" class="inputxt" style="width: 120px;" ignore="ignore" />
+					type="text" class="inputxt" readonly="readonly" value="未采购" 
+					 style="width: 120px; background-color:#F0F0F0;" ignore="ignore" />
 					<label class="Validform_label" style="display: none;">是否采购</label></td>
 				<td align="left"><input
 					name="busPoApplyDetailList[#index#].fromId" maxlength="32"

@@ -4,7 +4,7 @@
 <div style="padding: 3px; height: 25px;width:auto;" class="datagrid-toolbar">
 	<a id="addBusPoContractDetailBtn" href="#">添加</a>
 	 <a id="delBusPoContractDetailBtn" href="#">删除</a> 
-	<a id="selectAddBusPoContractDetailBtn" href="#">选择新增</a>
+	<!-- <a id="selectAddBusPoContractDetailBtn" href="#">选择新增</a> -->
 	<a id="importBusPoContractDetailBtn" href="#">excel导入</a>
 	<a id="exportBusPoContractDetailBtn" href="#">excel模板下载</a>
 </div>

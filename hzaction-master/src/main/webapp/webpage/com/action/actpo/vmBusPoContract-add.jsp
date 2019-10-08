@@ -229,7 +229,7 @@
 				<%-- 增加一个div，用于调节页面大小，否则默认太小 --%>
 				<div style="width:800px;height:1px;"></div>
 				<t:tabs id="tt" iframe="false" tabPosition="top" fit="false">
-				<t:tab href="vmBusPoContractController.do?vmMergeBusPoApplyDetailList&id=${vmBusPoContractPage.id}" icon="icon-search" title="采购申请明细" id="vmMergeBusPoApplyDetail"></t:tab>
+				<t:tab href="vmBusPoContractController.do?vmMergeBusPoApplyDetailList&id=${vmBusPoContractPage.id}" icon="icon-search" title="采购合同申请明细" id="vmMergeBusPoApplyDetail"></t:tab>
 				 <t:tab href="vmBusPoContractController.do?busPoContractPayList&id=${vmBusPoContractPage.id}" icon="icon-search" title="采购合同付款明细" id="busPoContractPay"></t:tab>
 				 <t:tab href="vmBusPoContractController.do?busPoContractDetailList&id=${vmBusPoContractPage.id}" icon="icon-search" title="采购合同明细" id="busPoContractDetail"></t:tab>
 				</t:tabs>

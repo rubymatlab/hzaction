@@ -13,7 +13,7 @@
  <body>
   <t:formvalid formid="formobj" dialog="true" usePlugin="password" layout="table" action="vwBusCollectionController.do?doAdd" callback="jeecgFormFileCallBack@Override">
 					<input id="id" name="id" type="hidden" value="${vwBusCollectionPage.id }"/>
-		<table style="width: 600px;" cellpadding="0" cellspacing="1" class="formtable">
+		<table style="width: 650px;" cellpadding="0" cellspacing="1" class="formtable">
 				<tr>
 					<td align="right">
 						<label class="Validform_label">
@@ -72,7 +72,7 @@
 						</label>
 					</td>
 					<td class="value">
-					     	 <input id="bcCollectId" name="bcCollectId"  type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
+					     	 <input id="bcCollectId" name="bcCollectId"  type="text" maxlength="32" style="width: 180px" class="inputxt"  ignore="ignore" />
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">收款单号</label>
 						</td>	
@@ -84,8 +84,8 @@
 						</label>
 					</td>
 					<td class="value">
-							<!-- <input id="bcProgressStages" name="bcProgressStages"  type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" /> -->
-							<t:dictSelect field="bcProgressStages" type="list"  typeGroupCode="gathering"   defaultVal="1" hasLabel="false"  title="进度款分期" ></t:dictSelect>  
+							<input id="bcProgressStages" name="bcProgressStages"  type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
+							<%-- <t:dictSelect field="bcProgressStages" type="list"  typeGroupCode="gathering"   defaultVal="1" hasLabel="false"  title="进度款分期" ></t:dictSelect>   --%>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">进度款分期</label>
 						</td>
@@ -381,19 +381,49 @@
 					textField: "brpProgressStages",
 					url: "vmBusCollectPlanController.do?datagrid&fromId="+$('#fromProjmId').val()+"&field=id,brpProgressStages,brpBackAmount,brpExtBackDate,fromId",
 					columns: [[
-			           {field:'brpProgressStages',title:'进度款分期' , width:80},			
+			           {field:'brpProgressStages',title:'进度款分期' , width:80, sortTable:false},			
 					]],
 					onSelect: function(row, data){
 						$("#brpExtBackDate").val(data.brpExtBackDate)
 						$("#brpBackAmount").val(data.brpBackAmount)
-					},
-					fifle:function(q,row){
-						console.log(q)
-						console.log(row)
+						var t = $("#bcProgressStages+.combo").find('input').eq(0).val()
+						setTimeout(function(){
+							$("#bcProgressStages+.combo").find('input').eq(0).val(tranfrom(t))
+						},0)
 					},
 					fitColumns: true
 				})
+				setTimeout(function(){
+					formatStage()					
+				},500)
 			}
+			
+			function formatStage(){
+				var tds = $(".panel .datagrid-body td");
+				tds.each(function(index,item){
+					if($(item).attr('field') == "brpProgressStages"){
+						var text = $(item).find("div").html()
+						$(item).find("div").html(tranfrom(text))
+					}
+				})
+			}
+			function tranfrom(num){
+				var result = "";
+				switch(+num){
+					case 1 : result = "首付款"; break;
+					case 2 : result = "第二期"; break;
+					case 3 : result = "第三期"; break;
+					case 4 : result = "第四期"; break;
+					case 5 : result = "第五期"; break;
+					case 6 : result = "第六期"; break;
+					case 7 : result = "第七期"; break;
+					case 8 : result = "第八期"; break;
+					case 9 : result = "尾付款"; break;
+				}
+				return result;
+			}
+			
+			
 			var bpmProjIdList = []
 			$.get("vwBusCollectionController.do?datagrid&field=bpmProjId,fromProjmId",function(row){
 				bpmProjIdList = row.rows;

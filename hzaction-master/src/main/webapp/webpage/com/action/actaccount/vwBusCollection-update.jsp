@@ -13,7 +13,7 @@
  <body>
 		<t:formvalid formid="formobj" dialog="true" usePlugin="password" layout="table" action="vwBusCollectionController.do?doUpdate" callback="jeecgFormFileCallBack@Override">
 					<input id="id" name="id" type="hidden" value="${vwBusCollectionPage.id }"/>
-		<table style="width: 600px;" cellpadding="0" cellspacing="1" class="formtable">
+		<table style="width: 650px;" cellpadding="0" cellspacing="1" class="formtable">
 					 <tr>
 						<td align="right">
 							<label class="Validform_label">
@@ -21,23 +21,7 @@
 							</label>
 						</td>
 						<td class="value">
-						   	<input id="bpmName" class="easyui-combogrid" ignore="ignore"  value='${vwBusCollectionPage.bpmName}' style="width:150px" data-options="
-			            panelWidth: 500,
-			            idField: 'bpmName',
-			            textField: 'bpmName',
-			            url: 'busProjectManagerController.do?datagrid&field=id,bpmProjId,bpmName',
-			            columns: [[
-			                {field:'bpmProjId',title:'项目编号',width:80},
-			                {field:'bpmName',title:'项目名称',width:120}
-			            ]],
-			            onSelect: function (row,data) {
-			            	$('#bpmProjId').val(data.bpmProjId);
-			            	$('#fromProjmId').val(data.id);
-			            	window.projectId = data.id;
-			            	changeStager()
-					    },
-			             fitColumns: true
-			        ">	
+						   	<input id="bpmName" class="inputxt" ignore="ignore" readonly="readonly"  value='${vwBusCollectionPage.bpmName}' style="width:150px" >	
 			        <input type="hidden" id="fromProjmId" name="fromProjmId" ignore="ignore" class="inputxt" value="${vwBusCollectionPage.fromProjmId }">
 			        <span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">项目名称</label>
@@ -48,7 +32,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="bpmProjId" name="bpmProjId" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusCollectionPage.bpmProjId}'/>
+						    <input id="bpmProjId" name="bpmProjId" type="text" readonly="readonly" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusCollectionPage.bpmProjId}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">项目编号</label>
 						</td>
@@ -60,7 +44,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="bcCustContractor" name="bcCustContractor" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusCollectionPage.bcCustContractor}'/>
+						    <input id="bcCustContractor" name="bcCustContractor" readonly="readonly" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusCollectionPage.bcCustContractor}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">客户</label>
 						</td>
@@ -71,7 +55,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="bcCollectId" name="bcCollectId" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusCollectionPage.bcCollectId}'/>
+						    <input id="bcCollectId" name="bcCollectId" type="text" readonly="readonly" maxlength="32" style="width: 180px" class="inputxt"  ignore="ignore"  value='${vwBusCollectionPage.bcCollectId}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">收款单号</label>
 						</td>
@@ -84,7 +68,7 @@
 						</td>
 						<td class="value">
 						    <%-- <input id="bcProgressStages" name="bcProgressStages" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusCollectionPage.bcProgressStages}'/> --%>
-							<t:dictSelect field="bcProgressStages" type="list"  typeGroupCode="gathering"   defaultVal="${vwBusCollectionPage.bcProgressStages}" hasLabel="false"  title="进度款分期" ></t:dictSelect>  
+							<t:dictSelect field="bcProgressStages" type="list" readonly="readonly"  typeGroupCode="gathering"   defaultVal="${vwBusCollectionPage.bcProgressStages}" hasLabel="false"  title="进度款分期" ></t:dictSelect>  
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">进度款分期</label>
 						</td>
@@ -225,7 +209,7 @@
 				</table>
 			<c:if test="${ payment == true }">
 				<p style="font-weight: bold; font-size: 18px;">支付</p>
-				<table style="width: 600px;" cellpadding="0" cellspacing="1" class="formtable">
+				<table style="width: 650px;" cellpadding="0" cellspacing="1" class="formtable">
 					 <tr>
 					<td align="right">
 						<label class="Validform_label">

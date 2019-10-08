@@ -99,15 +99,15 @@
 					  <label class="Validform_label" style="display: none;">预计回款金额</label>
 					</td>
 				  <td align="left">
-					  	<input name="vmBusCollectPlanList[0].brpAcceptAmount" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
+					  	<input name="vmBusCollectPlanList[0].brpAcceptAmount" maxlength="32" type="text" class="inputxt" readonly="readonly" style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">已收金额</label>
 					</td>
 				  <td align="left">
-					  	<input name="vmBusCollectPlanList[0].brpIsInvoice" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
+					  	<input name="vmBusCollectPlanList[0].brpIsInvoice" maxlength="32" type="text" class="inputxt" readonly="readonly" style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">发票金额</label>
 					</td>
 				  <td align="left">
-							<input name="vmBusCollectPlanList[0].brpInvoiceDate" maxlength="0"  type="text" class="Wdate" onClick="WdatePicker()"  style="width:150px;"  ignore="ignore" >
+							<input name="vmBusCollectPlanList[0].brpInvoiceDate" maxlength="0"  type="text" class="Wdate" readonly="readonly" onClick="WdatePicker()"  style="width:150px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">开票日期</label>
 					</td>
 				  <td align="left">
@@ -175,14 +175,14 @@
 					  	<input name="vmBusCollectPlanList[${stuts.index }].brpRemark" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.brpRemark }"/>
 					  <label class="Validform_label" style="display: none;">备注</label>
 				   </td>
-<%-- 				   <td align="left">
-					  	<input name="vmBusCollectPlanList[${stuts.index }].fromId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.fromId }"/>
+				   <td align="left">
+					  	<input name="vmBusCollectPlanList[${stuts.index }].fromId" maxlength="32" type="hidden" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.fromId }"/>
 					  <label class="Validform_label" style="display: none;">项目管理外键</label>
 				   </td>
 				   <td align="left">
-					  	<input name="vmBusCollectPlanList[${stuts.index }].fromConpayId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.fromConpayId }"/>
+					  	<input name="vmBusCollectPlanList[${stuts.index }].fromConpayId" maxlength="32" type="hidden" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.fromConpayId }"/>
 					  <label class="Validform_label" style="display: none;">合同约定收款外键</label>
-				   </td> --%>
+				   </td> 
    			</tr>
 		</c:forEach>
 	</c:if>	

@@ -162,20 +162,20 @@
 					<li>
 	                         <a href="javascript:createdetailwindow('<t:mutiLang langKey="common.ssms.getSysInfos"/>','tSSmsController.do?goMySmsList',800,400)" title="系统消息">系统消息</a>
 					</li>
-					<li >
+					<%-- <li >
 	                         <a href="javascript:window.open('http://yun.jeecg.org')" title="云应用中心">云应用中心</a>
 					</li>
 					<li><a href="javascript:clearLocalstorage()"><t:mutiLang langKey="common.clear.localstorage"/></a></li>
-					<li><a href="javascript:toSwagger()">SwaggerUI</a></li>
+					<li><a href="javascript:toSwagger()">SwaggerUI</a></li> --%>
 				</ul>
 			</li> 
 			
 			
-			<li class="header-bar-nav hiddenty-xs"> 
+			<!-- <li class="header-bar-nav hiddenty-xs"> 
 				<a href="javascript:add('首页风格','userController.do?changestyle','',550,270)" title="换肤">
 					<i class="icon-font">&#xe615;</i>&nbsp;风格切换
 				</a>
-			</li> 
+			</li>  -->
 				
 				
 			<li class="header-bar-nav personInfo">

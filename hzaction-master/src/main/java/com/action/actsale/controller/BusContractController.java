@@ -231,7 +231,7 @@ public class BusContractController extends BaseController {
 		BusContractEntity t=new BusContractEntity();
 		try{
 			MyBeanUtils.copyBeanNotNull2Bean(busContract, t);
-			t.setBcContractState("1");
+			t.setBcContractState("0");
 			busContractService.save(t);
 			
 			BusProjectEntity o=systemService.getEntity(BusProjectEntity.class,t.getFromProjId());
@@ -292,7 +292,7 @@ public class BusContractController extends BaseController {
 			BasCustomerEntity basCustomer=busContractService.getEntity(BasCustomerEntity.class, busProject.getFromCustId());
 			if(basCustomer!=null)
 			{
-				o.setBcCustomerCode(basCustomer.getBcSname());
+				o.setBcCustomerCode(basCustomer.getBcId());
 				o.setBcCustomerName(basCustomer.getBcName());
 			}
 			o.setBcContractState("0");

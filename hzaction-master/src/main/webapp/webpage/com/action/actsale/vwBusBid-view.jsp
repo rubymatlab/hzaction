@@ -14,7 +14,7 @@
 		<input id="id" name="id" type="hidden" value="${vwBusBidPage.id }"/>
 		<%--以下隐藏域为附件信息的ID--%>
 		<input id="bafSerId" name="bafSerId" type="hidden" value="${vwBusBidPage.bafSerId }"/>
-		<table style="width: 600px;" cellpadding="0" cellspacing="1" class="formtable">
+		<table style="width: 800px;" cellpadding="0" cellspacing="1" class="formtable">
 			<tr>
 				<td align="right">
 					<label class="Validform_label">

@@ -16,7 +16,7 @@
 					<input id="fromProjId" name="fromProjId" type="hidden" value="${vwBusBidPage.fromProjId }"/>
 					<input id="fromCustjId" name="fromCustjId" type="hidden" value="${vwBusBidPage.fromCustjId }"/>
 					<input id="bdState" name="bdState" type="hidden" value="${vwBusBidPage.bdState }"/>
-		<table style="width: 800px;" cellpadding="0" cellspacing="1" class="formtable">
+		<table style="width: 680px;" cellpadding="0" cellspacing="1" class="formtable">
 				<tr>
 					<td align="right">
 						<label class="Validform_label">
@@ -122,6 +122,18 @@
 					</tr>
 				
 				
+		<tr>
+				<td align="right">
+						<label class="Validform_label">
+							项目成本:
+						</label>
+					</td>
+					<td class="value">
+					     	 <input id="bdProjCost" name="bdProjCost" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">项目成本</label>
+						</td>
+				</tr>
 				<tr>
 					<td align="right">
 						<label class="Validform_label">

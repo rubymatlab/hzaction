@@ -58,7 +58,7 @@
 		if(rowData['bpmStatus']=="1")
 		{
 			url = url+"&fromProjId="+rowData['id'];
-	 		createwindow(title,url,800,500);
+	 		createwindow(title,url,800,600);
 		}
 		else
 			tip('该项目已转投标、合同');

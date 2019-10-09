@@ -53,7 +53,7 @@
 				<label class="Validform_label">项目编号:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bcProjectCode" name="bcProjectCode" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" value='${busContractPage.bcProjectCode}'/>
+		     	 <input id="bcProjectCode" name="bcProjectCode" readonly="true" type="text" maxlength="32" style="width: 150px;background-color:#F0F0F0;" class="inputxt"  ignore="ignore" value='${busContractPage.bcProjectCode}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">项目编号</label>
 			</td>
@@ -71,7 +71,7 @@
 				<label class="Validform_label">项目名称:</label>
 			</td>
 			<td class="value">
-		     	 <input id="fromProjName" name="fromProjName" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" value='${busContractPage.fromProjName}'/>
+		     	 <input id="fromProjName" name="fromProjName" type="text" readonly="true" maxlength="32" style="width: 150px;background-color:#F0F0F0;" class="inputxt"  ignore="ignore" value='${busContractPage.fromProjName}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">项目名称</label>
 			</td>

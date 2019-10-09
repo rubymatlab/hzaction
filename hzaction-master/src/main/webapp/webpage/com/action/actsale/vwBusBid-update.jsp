@@ -13,7 +13,7 @@
  <body>
 		<t:formvalid formid="formobj" dialog="true" usePlugin="password" layout="table" action="vwBusBidController.do?doUpdate" callback="jeecgFormFileCallBack@Override">
 					<input id="id" name="id" type="hidden" value="${vwBusBidPage.id }"/>
-		<table style="width: 800px;" cellpadding="0" cellspacing="1" class="formtable">
+		<table style="width: 680px;" cellpadding="0" cellspacing="1" class="formtable">
 					<tr>
 						<td align="right">
 							<label class="Validform_label">
@@ -174,11 +174,15 @@
 							<label class="Validform_label" style="display: none;">附件</label>
 						</td>
 				<td align="right">
-					<label class="Validform_label">
-					</label>
-				</td>
-				<td class="value">
-				</td>
+						<label class="Validform_label">
+							项目成本:
+						</label>
+					</td>
+					<td class="value">
+					     	 <input id="bdProjCost" name="bdProjCost" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" value='${vwBusBidPage.bdProjCost}' />
+							<span class="Validform_checktip"></span>
+							<label class="Validform_label" style="display: none;">项目成本</label>
+						</td>
 					</tr>
 				
 					<tr>

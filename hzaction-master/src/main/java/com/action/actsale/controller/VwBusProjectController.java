@@ -198,9 +198,9 @@ public class VwBusProjectController extends BaseController {
 			//vwBusProjectService.addMain(vwBusProject, busProjectFeeDetailList,busProjectDisfollowList,busProjPartnerList);
 			systemService.addLog(message, Globals.Log_Type_INSERT, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
-			e.printStackTrace();
+			//e.printStackTrace();
 			message = "项目立项添加失败";
-			throw new BusinessException(e.getMessage());
+			//throw new BusinessException(e.getMessage());
 		}
 		j.setMsg(message);
 		return j;

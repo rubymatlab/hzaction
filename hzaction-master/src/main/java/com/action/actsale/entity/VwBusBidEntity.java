@@ -105,6 +105,9 @@ public class VwBusBidEntity implements java.io.Serializable {
 	/**附件*/
 	//@Excel(name="附件",width=15)
 	private java.lang.String bdFile;
+	/**项目成本*/
+	@Excel(name="项目成本",width=15)
+	private java.lang.String bdProjCost;
 	
 	/**
 	 *方法: 取得java.lang.String
@@ -618,5 +621,22 @@ public class VwBusBidEntity implements java.io.Serializable {
 	 */
 	public void setBdFile(java.lang.String bdFile){
 		this.bdFile = bdFile;
+	}
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  项目成本
+	 */
+
+	@Column(name ="BD_PROJ_COST",nullable=true,length=32)
+	public java.lang.String getBdProjCost(){
+		return this.bdProjCost;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  项目成本
+	 */
+	public void setBdProjCost(java.lang.String bdProjCost){
+		this.bdProjCost = bdProjCost;
 	}
 }

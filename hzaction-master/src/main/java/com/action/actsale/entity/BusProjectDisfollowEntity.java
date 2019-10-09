@@ -33,7 +33,7 @@ public class BusProjectDisfollowEntity implements java.io.Serializable {
 	private java.lang.String id;
 	/**跟进次数*/
 	@Excel(name="跟进次数",width=15)
-	private java.lang.String bpdDisNo;
+	private java.lang.Integer bpdDisNo;
 	/**跟进日期*/
 	@Excel(name="跟进日期",width=15,format = "yyyy-MM-dd")
 	private java.util.Date bpdFollowDate;
@@ -92,7 +92,7 @@ public class BusProjectDisfollowEntity implements java.io.Serializable {
 	 */
 	
 	@Column(name ="BPD_DIS_NO",nullable=true,length=32)
-	public java.lang.String getBpdDisNo(){
+	public java.lang.Integer getBpdDisNo(){
 		return this.bpdDisNo;
 	}
 
@@ -100,7 +100,7 @@ public class BusProjectDisfollowEntity implements java.io.Serializable {
 	 *方法: 设置java.lang.String
 	 *@param: java.lang.String  跟进次数
 	 */
-	public void setBpdDisNo(java.lang.String bpdDisNo){
+	public void setBpdDisNo(java.lang.Integer bpdDisNo){
 		this.bpdDisNo = bpdDisNo;
 	}
 	

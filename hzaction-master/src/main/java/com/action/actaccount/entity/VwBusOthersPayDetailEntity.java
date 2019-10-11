@@ -41,7 +41,7 @@ public class VwBusOthersPayDetailEntity implements java.io.Serializable {
 	@Excel(name="单号",width=15)
 	private java.lang.String busId;
 	/**单据_费用类型*/
-	@Excel(name="单据_费用类型",width=15)
+	@Excel(name="单据_费用类型",width=15,dicCode="cost_type")
 	private java.lang.String busType;
 	/**申请日期*/
 	@Excel(name="申请日期",width=15,format = "yyyy-MM-dd")

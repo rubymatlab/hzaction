@@ -88,7 +88,7 @@
 		<c:forEach items="${vwBusOthersPayDetailList}" var="poVal" varStatus="stuts">
 			<tr>
 				<td align="center"><div style="width: 25px;" name="xh">${stuts.index+1 }</div></td>
-				<td align="center"><input style="width:20px;"  type="checkbox" name="ck" /></td>
+				<!-- <td align="center"><input style="width:20px;"  type="checkbox" name="ck" /></td> -->
 						<input name="vwBusOthersPayDetailList[${stuts.index }].id" type="hidden" value="${poVal.id }"/>
 				   <td align="left">
 					  	<input name="vwBusOthersPayDetailList[${stuts.index }].bpmProjId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bpmProjId }"/>
@@ -103,7 +103,7 @@
 					  <label class="Validform_label" style="display: none;">单号</label>
 				   </td>
 				   <td align="left">
-					  	<input name="vwBusOthersPayDetailList[${stuts.index }].busType" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.busType }"/>
+				   <t:dictSelect field="vwBusOthersPayDetailList[${stuts.index }].busType" type="list"  defaultVal="${poVal.busType }"  typeGroupCode="cost_type"  hasLabel="false"  title="单据_费用类型"></t:dictSelect> 
 					  <label class="Validform_label" style="display: none;">单据_费用类型</label>
 				   </td>
 				   <td align="left">

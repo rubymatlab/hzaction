@@ -359,7 +359,7 @@ public class VwRpCostAccountController extends BaseController {
             		page.setVwBusOthersProjPayList(vwBusOthersProjPayEntityList);
             		
             	    Object id2 = entity.getId();
-				    String hql2 = "from VwBusOthersPayDetailEntity where 1 = 1 AND bpmProjId = ? ";
+				    String hql2 = "from VwBusOthersPayDetailEntity where 1 = 1 AND id = ? ";
         	        List<VwBusOthersPayDetailEntity> vwBusOthersPayDetailEntityList = systemService.findHql(hql2,id2);
             		page.setVwBusOthersPayDetailList(vwBusOthersPayDetailEntityList);
             		
@@ -416,7 +416,7 @@ public class VwRpCostAccountController extends BaseController {
 			String[] idList = ids.split(",");
 			for(int i = 0; i < idList.length; i++) {
 				mainIds += "id='"+idList[i]+"'";
-				forId += "bpm_proj_id='"+idList[i]+"'";
+				forId += "form_cost_account_id='"+idList[i]+"'";
 				
 				if(i < idList.length - 1) {
 					mainIds +=" or ";
@@ -447,7 +447,7 @@ public class VwRpCostAccountController extends BaseController {
     	        
         		// 其他支出明细
     	        sql = new StringBuffer(
-    					"SELECT * FROM vw_bus_others_pay_detail where "+forId);
+    					"SELECT * FROM vw_bus_others_pay_detail where "+mainIds);
         	    dataObject2 = systemService.findForJdbc(sql.toString());
 
     	        if(dataObject2.size() == 0){

@@ -381,7 +381,7 @@
 					textField: "brpProgressStages",
 					url: "vmBusCollectPlanController.do?datagrid&fromId="+$('#fromProjmId').val()+"&field=id,brpProgressStages,brpBackAmount,brpExtBackDate,fromId",
 					columns: [[
-			           {field:'brpProgressStages',title:'进度款分期' , width:80, sortTable:false},			
+			           {field:'brpProgressStages',title:'进度款分期' , width:80, sortTable:true},			
 					]],
 					onSelect: function(row, data){
 						$("#brpExtBackDate").val(data.brpExtBackDate)

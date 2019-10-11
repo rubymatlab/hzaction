@@ -25,6 +25,7 @@ import org.jeecgframework.core.common.model.json.DataGrid;
 import org.jeecgframework.core.constant.Globals;
 import org.jeecgframework.core.util.StringUtil;
 import org.jeecgframework.tag.core.easyui.TagUtil;
+import org.jeecgframework.tag.vo.datatable.SortDirection;
 import org.jeecgframework.web.system.pojo.base.TSDepart;
 import org.jeecgframework.web.system.service.SystemService;
 import org.jeecgframework.core.util.MyBeanUtils;
@@ -127,6 +128,7 @@ public class VmBusCollectPlanController extends BaseController {
 		//自定义追加查询条件
 			String fromId = vmBusCollectPlan.getFromId();
 			cq.add(Restrictions.eq("fromId", fromId));
+			cq.addOrder("brpProgressStages", SortDirection.asc);
 		}catch (Exception e) {
 			throw new BusinessException(e.getMessage());
 		}

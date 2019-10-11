@@ -268,7 +268,7 @@ public class VmBusProjectManagerController extends BaseController {
 			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();
-			message = "更新项目管理视图失败";
+			message = "更新项目管理失败";
 			throw new BusinessException(e.getMessage());
 		}
 		j.setMsg(message);

@@ -44,6 +44,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.multipart.MultipartFile;
@@ -140,7 +141,8 @@ public class BusContractController extends BaseController {
 	@RequestMapping(params = "datagrid")
 	public void datagrid(BusContractEntity busContract,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
 		String contractState = request.getParameter("contractState");
-		logger.info("-- 合同完成状态（1制作中，2已审核） --"+contractState);
+		
+		logger.info("-- 合同完成状态（0制作中，1已审核） --"+contractState);
 		
 		CriteriaQuery cq = new CriteriaQuery(BusContractEntity.class, dataGrid);
 		//查询条件组装器
@@ -392,12 +394,17 @@ public class BusContractController extends BaseController {
     * @param response
     */
     @RequestMapping(params = "exportXls")
-    public String exportXls(BusContractEntity busContract,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid,ModelMap map) {
+    public String exportXls(@RequestParam String contractState, BusContractEntity busContract,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid,ModelMap map) {
+    	
+    	logger.info("导出excel:{}",contractState.equals("0")?"制作中":"已审核");
+    	busContract.setBcContractState(contractState);
+    	
     	CriteriaQuery cq = new CriteriaQuery(BusContractEntity.class, dataGrid);
     	//查询条件组装器
     	org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, busContract);
     	try{
     	//自定义追加查询条件
+    		
     	}catch (Exception e) {
     		throw new BusinessException(e.getMessage());
     	}

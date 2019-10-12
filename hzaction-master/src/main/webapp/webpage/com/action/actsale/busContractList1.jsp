@@ -113,7 +113,8 @@ function ImportXls() {
 
 //导出
 function ExportXls() {
-	JeecgExcelExport("busContractController.do?exportXls","busContractList");
+	console.log(0)
+	JeecgExcelExport("busContractController.do?exportXls&contractState=0","busContractList");
 }
 
 //模板下载

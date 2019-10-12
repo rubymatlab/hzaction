@@ -241,10 +241,7 @@
 		<tr>
 			 <td align="center"><div style="width: 25px;" name="xh"></div></td>
 			 <td align="center"><input style="width:20px;" type="checkbox" name="ck"/></td>
-				  <td align="left">
-			  		<input name="vmMergeBusPoApplyDetailList[#index#].fromPoApplyDetId" maxlength="32" type="hidden" class="inputxt"  style="width:120px;"  ignore="ignore" />
-					  <label class="Validform_label" style="display: none;">采购申请外键</label>
-				  </td> 
+				 
 				  <td align="left">
 					  	<input name="vmMergeBusPoApplyDetailList[#index#].bpadName" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">名称</label>
@@ -269,6 +266,10 @@
 					  	<input name="vmMergeBusPoApplyDetailList[#index#].fromId" maxlength="32" type="hidden" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">采购合同外键</label>
 				  </td>
+				   <td align="left">
+			  		<input name="vmMergeBusPoApplyDetailList[#index#].fromPoApplyDetId" maxlength="32" type="hidden" class="inputxt"  style="width:120px;"  ignore="ignore" />
+					  <label class="Validform_label" style="display: none;">采购申请外键</label>
+				  </td> 
 				  
 				  
 			</tr>

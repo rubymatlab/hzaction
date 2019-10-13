@@ -37,12 +37,30 @@
    <%-- <t:dgToolBar title="导入" icon="icon-put" funname="ImportXls"></t:dgToolBar> --%>
    <t:dgToolBar title="导出" icon="icon-putout" funname="ExportXls"></t:dgToolBar>
    <%-- <t:dgToolBar title="模板下载" icon="icon-putout" funname="ExportXlsByT"></t:dgToolBar> --%>
-   	<t:dgToolBar title="支付" icon="icon-edit"  url="bsSubmitController.do?doPay" funname="doPay" ></t:dgToolBar>
+   	<t:dgToolBar title="支付" icon="icon-edit"  url="bsSubmitController.do?goUpdate1" funname="update1" ></t:dgToolBar>
    	<t:dgToolBar title="打印" icon="icon-edit"  url="bsSubmitController.do?doPrint" funname="doPrint" ></t:dgToolBar>
   </t:datagrid>
   </div>
  </div>
  <script type="text/javascript">
+ function update1(title,url, id,width,height,isRestful) {
+		gridname=id;
+		var rowsData = $('#'+id).datagrid('getSelections');
+		if (!rowsData || rowsData.length==0) {
+			tip($.i18n.prop('edit.selectItem'));
+			return;
+		}
+		if (rowsData.length>1) {
+			tip($.i18n.prop('edit.selectOneItem'));
+			return;
+		}
+		if(isRestful!='undefined'&&isRestful){
+			url += '/'+rowsData[0].id;
+		}else{
+			url += '&id='+rowsData[0].id;
+		}
+		createwindow(title,url,width,height);
+	}
  	//自定义按钮-sql增强-送审
  	function doUnaudited(title,url,id){
  		var rowData = $('#'+id).datagrid('getSelected');

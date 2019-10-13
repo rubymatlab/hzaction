@@ -261,30 +261,25 @@ public class VmBusPoPayWmtServiceImpl extends CommonServiceImpl implements VmBus
 		this.doUpdateBus(vmBusPoPayWmt,vmBusPoContractPayWmtList);
 	}
 	
+	/*
+	 * 获取自动生成的凭证号
+	 * (non-Javadoc)
+	 * @see com.action.actaccount.service.VmBusPoPayWmtServiceI#getBpiVoucherno()
+	 */
+	public String getBpiVoucherno() {
+		return createBpiVoucherno(actaccountDao.findByBpiVoucherno());
+	}
+	
 	//自动生成【bus_pay_info表】的最新凭证号
 	public String createBpiVoucherno(String voucherno) {
 		String nowYear = Calendar.getInstance().get(Calendar.YEAR)+"";
 		int intNowMonth = Integer.parseInt(Calendar.getInstance().get(Calendar.MONTH)+"")+1;
 		String nowMonth = intNowMonth<10?"0"+intNowMonth:""+intNowMonth;
-		
 		//判空，直接生成最新凭证号
-		if(voucherno==null||voucherno.replace(" ","").equals("")) return nowYear+nowMonth+"001";
-		
-		String year = voucherno.substring(0,4);
-		String month = voucherno.substring(4,6);
-		int intMark = Integer.parseInt(voucherno.substring(6));
-		
-		++intMark;
-		String mark = intMark<10?"00"+intMark:intMark<100?"0"+intMark:intMark+"";
-		if(nowYear.equals(year)&&nowMonth.equals(month)) {
-			//年月相等，年不变月不变，流水号自增
-			return year+month+mark;
-		}else if(nowYear.equals(year)&&!nowMonth.equals(month)){
-			//年等月不等，年不变月变今，流水号自增
-			return year+nowMonth+"001";
-		}
-		//年不等，年变今月变今，流水号自增
-		return nowYear+nowMonth+"001";
+		if(!StringUtil.isNotEmpty(voucherno))
+			return nowYear+nowMonth+"001";
+		else
+			return voucherno;
 	}
 	
 

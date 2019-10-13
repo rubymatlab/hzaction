@@ -202,8 +202,8 @@
 				<%-- 增加一个div，用于调节页面大小，否则默认太小 --%>
 				<div style="width:800px;height:1px;"></div>
 				<t:tabs id="tt" iframe="false" tabPosition="top" fit="false">
+				 <t:tab href="bsSubmitController.do?busPayInfoList&id=${bsSubmitPage.id}" icon="icon-search" title="支付信息" id="busPayInfo"></t:tab>
 				 <t:tab href="bsSubmitController.do?busSubmitDetailList&id=${bsSubmitPage.id}" icon="icon-search" title="费用报销明细" id="busSubmitDetail"></t:tab>
-				 <%-- <t:tab href="bsSubmitController.do?busPayInfoList&id=${bsSubmitPage.id}" icon="icon-search" title="支付信息" id="busPayInfo"></t:tab> --%>
 				</t:tabs>
 			</div>
 			</t:formvalid>
@@ -236,7 +236,7 @@
 			 <td align="center"><div style="width: 25px;" name="xh"></div></td>
 			 <td align="center"><input style="width:20px;" type="checkbox" name="ck"/></td>
 				  <td align="left">
-					  		<input name="busPayInfoList[#index#].bpiClass" maxlength="30" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
+					  		<t:dictSelect field="busPayInfoList[0].bpiClass" type="list"   typeGroupCode="funtype"  defaultVal="${busPayInfoPage.bpiClass}" hasLabel="false"  title="功能分类"></t:dictSelect>     
 					  <label class="Validform_label" style="display: none;">功能分类</label>
 				  </td>
 				  <td align="left">

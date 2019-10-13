@@ -1,6 +1,8 @@
 package com.action.actaccount.controller;
 import com.action.actaccount.entity.BsSubmitEntity;
 import com.action.actaccount.service.BsSubmitServiceI;
+import com.action.actaccount.service.VmBusPoPayWmtServiceI;
+import com.action.actaccount.service.impl.VmBusPoPayWmtServiceImpl;
 import com.action.actaccount.page.BsSubmitPage;
 import com.action.actaccount.entity.BusSubmitDetailEntity;
 import com.action.actaccount.entity.BusPayInfoEntity;
@@ -105,6 +107,8 @@ public class BsSubmitController extends BaseController {
 	private Validator validator;
 	@Autowired
 	private CgFormFieldServiceI cgFormFieldService;
+	@Autowired
+	private VmBusPoPayWmtServiceI vmBusPoPayWmtService;
 
 	/**
 	 * 费用报销列表 页面跳转
@@ -305,6 +309,19 @@ public class BsSubmitController extends BaseController {
 		return new ModelAndView("com/action/actaccount/bsSubmit-update");
 	}
 	
+	/**
+	 * 支付页面跳转
+	 * 
+	 * @return
+	 */
+	@RequestMapping(params = "goUpdate1")
+	public ModelAndView goUpdate1(BsSubmitEntity bsSubmit, HttpServletRequest req) {
+		if (StringUtil.isNotEmpty(bsSubmit.getId())) {
+			bsSubmit = bsSubmitService.getEntity(BsSubmitEntity.class, bsSubmit.getId());
+			req.setAttribute("bsSubmitPage", bsSubmit);
+		}
+		return new ModelAndView("com/action/actaccount/bsSubmit-update1");
+	}
 	
 	/**
 	 * 加载明细列表[费用报销明细]
@@ -344,6 +361,17 @@ public class BsSubmitController extends BaseController {
 	    String hql1 = "from BusPayInfoEntity where 1 = 1 AND fromId = ? ";
 	    try{
 	    	List<BusPayInfoEntity> busPayInfoEntityList = systemService.findHql(hql1,id1);
+	    	if(busPayInfoEntityList.size()==0)
+	    		busPayInfoEntityList.add(new BusPayInfoEntity());
+	    	for(BusPayInfoEntity o:busPayInfoEntityList)
+	    	{
+	    		o.setBpiClass("1");
+	    		if(!StringUtil.isNotEmpty(o.getBpiVoucherno()))
+	    		{
+	    			String createBpiVoucherno = vmBusPoPayWmtService.getBpiVoucherno();
+	    			o.setBpiVoucherno(createBpiVoucherno);
+	    		}
+	    	}
 			req.setAttribute("busPayInfoList", busPayInfoEntityList);
 		}catch(Exception e){
 			logger.info(e.getMessage());

@@ -41,7 +41,8 @@ $(document).ready(function(){
 									</label>
 				  </td>
 				  <td class="value">
-							<input name="busPayInfoList[0].bpiClass" maxlength="120" type="text" class="inputxt"  ignore="ignore"  value="${poVal.bpiClass }"/>
+				  			<t:dictSelect field="busPayInfoList[0].bpiClass" type="list" readonly="readonly"  typeGroupCode="funtype"  defaultVal="${poVal.bpiClass}" hasLabel="false"  title="功能分类"></t:dictSelect>     
+							<%-- <input name="busPayInfoList[0].bpiClass" maxlength="120" type="hidden" class="inputxt"  ignore="ignore"  value="${poVal.bpiClass }"/> --%>
 					  <label class="Validform_label" style="display: none;">功能分类</label>
 					</td>
 					  <label class="Validform_label" style="display: none;">
@@ -112,7 +113,7 @@ $(document).ready(function(){
 									</label>
 					</td>
 				  <td class="value">
-					  	<input name="busPayInfoList[0].bpiVoucherno" maxlength="20" type="text" class="inputxt"  ignore="ignore"  value="${poVal.bpiVoucherno }"/>
+					  	<input name="busPayInfoList[0].bpiVoucherno" readonly="true" maxlength="20" type="text" class="inputxt" style="background-color:#F0F0F0;"  ignore="ignore"  value="${poVal.bpiVoucherno }"/>
 					  <label class="Validform_label" style="display: none;">凭证号</label>
 					</td>
 				</tr>
@@ -201,7 +202,8 @@ $(document).ready(function(){
 									</label>
 				  </td>
 				  <td class="value">
-							<input name="busPayInfoList[0].bpiClass" maxlength="120" type="text" class="inputxt"  ignore="ignore"  value="${poVal.bpiClass }"/>
+				  			<t:dictSelect field="busPayInfoList[0].bpiClass" type="list" readonly="readonly"   typeGroupCode="funtype"  defaultVal="${poVal.bpiClass}" hasLabel="false"  title="功能分类"></t:dictSelect>     
+							<%-- <input name="busPayInfoList[0].bpiClass" maxlength="120" type="text" class="inputxt"  ignore="ignore"  value="${poVal.bpiClass }"/> --%>
 					  <label class="Validform_label" style="display: none;">功能分类</label>
 					</td>
 					  <label class="Validform_label" style="display: none;">
@@ -272,7 +274,7 @@ $(document).ready(function(){
 									</label>
 					</td>
 				  <td class="value">
-					  	<input name="busPayInfoList[0].bpiVoucherno" maxlength="20" type="text" class="inputxt"  ignore="ignore"  value="${poVal.bpiVoucherno }"/>
+					  	<input name="busPayInfoList[0].bpiVoucherno" readonly="true" style="background-color:#F0F0F0;" maxlength="20" type="text" class="inputxt"  ignore="ignore"  value="${poVal.bpiVoucherno }"/>
 					  <label class="Validform_label" style="display: none;">凭证号</label>
 					</td>
 				</tr>

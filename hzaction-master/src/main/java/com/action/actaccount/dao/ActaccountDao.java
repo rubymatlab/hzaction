@@ -48,8 +48,7 @@ public interface ActaccountDao {
 	int updateBusPoPayWmtEntityBppState(String bppState,String id);
 	
 	
-	@Sql("select bpi.bpi_voucherno from bus_pay_info bpi where  bpi.from_bank_acc_id!='' and bpi.bpi_voucherno!='' " + 
-			" ORDER BY bpi.create_date desc limit 1")
+	@Sql("select max(bpi.bpi_voucherno)+1  from bus_pay_info bpi where bpi.bpi_voucherno like CONCAT(date_format(NOW(),'%Y%m'),'%')")
 	String findByBpiVoucherno(); 
 	
 }

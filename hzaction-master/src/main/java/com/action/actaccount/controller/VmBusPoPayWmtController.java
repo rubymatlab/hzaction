@@ -352,7 +352,17 @@ public class VmBusPoPayWmtController extends BaseController {
 	    String hql1 = "from BusPayInfoEntity where 1 = 1 AND bpiBusId = ? ";
 	    try{
 	    	List<BusPayInfoEntity> busPayInfoEntityList = systemService.findHql(hql1,id1);
-	    	
+	    	if(busPayInfoEntityList.size()==0)
+	    		busPayInfoEntityList.add(new BusPayInfoEntity());
+	    	for(BusPayInfoEntity o:busPayInfoEntityList)
+	    	{
+	    		o.setBpiClass("3");
+	    		if(!StringUtil.isNotEmpty(o.getBpiVoucherno()))
+	    		{
+	    			String createBpiVoucherno = vmBusPoPayWmtService.getBpiVoucherno();
+	    			o.setBpiVoucherno(createBpiVoucherno);
+	    		}
+	    	}
 //	    	logger.info("== 【测试】加载明细列表[财务支付信息实体]: {}==",busPayInfoEntityList);
 	    	
 			req.setAttribute("busPayInfoList", busPayInfoEntityList);

@@ -6,6 +6,7 @@ import com.action.actsale.page.VwBusProjectPage;
 import com.action.actsale.entity.BusProjectFeeDetailEntity;
 import com.action.actsale.entity.BusProjectDisfollowEntity;
 import com.action.actsale.entity.BusProjectEntity;
+import com.action.actsale.entity.BusContractEntity;
 import com.action.actsale.entity.BusProjPartnerEntity;
 import java.util.ArrayList;
 import java.util.List;
@@ -481,14 +482,20 @@ public class VwBusProjectController extends BaseController {
 		String message = "转已失败成功";
 		//VwBusProjectEntity t = vwBusProjectService.get(VwBusProjectEntity.class, vwBusProject.getId())
 		BusProjectEntity b=vwBusProjectService.getEntity(BusProjectEntity.class, vwBusProject.getId());
-		try{
-			b.setBpmStatus("4");
-			systemService.saveOrUpdate(b);
-			//vwBusProjectService.doBidSql(t);
-			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
-		}catch(Exception e){
-			e.printStackTrace();
-			message = "转已失败失败";
+		List<BusContractEntity> bce=systemService.findByProperty(BusContractEntity.class, "fromProjId", b.getId());
+		if(bce.size()>0)
+		{
+			message="该项目已转合同，不能'转已失败'";
+		}else{
+			try{
+				b.setBpmStatus("4");
+				systemService.saveOrUpdate(b);
+				//vwBusProjectService.doBidSql(t);
+				systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
+			}catch(Exception e){
+				e.printStackTrace();
+				message = "转已失败失败";
+			}
 		}
 		j.setMsg(message);
 		return j;

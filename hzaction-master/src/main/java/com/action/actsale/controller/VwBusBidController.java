@@ -153,6 +153,9 @@ public class VwBusBidController extends BaseController {
 			o.setBpmStatus("1");
 			vwBusBidService.saveOrUpdate(o);
 			//vwBusBidService.delete(vwBusBid);
+			List<BusContractEntity> bce=systemService.findByProperty(BusContractEntity.class, "fromProjId", t.getFromProjId());
+			for(BusContractEntity b:bce)
+				vwBusBidService.delete(b);
 			systemService.addLog(message, Globals.Log_Type_DEL, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();
@@ -187,7 +190,9 @@ public class VwBusBidController extends BaseController {
 				BusProjectEntity o=systemService.getEntity(BusProjectEntity.class,t.getFromProjId());
 				o.setBpmStatus("1");
 				vwBusBidService.saveOrUpdate(o);
-				
+				List<BusContractEntity> bce=systemService.findByProperty(BusContractEntity.class, "fromProjId", t.getFromProjId());
+				for(BusContractEntity b:bce)
+					vwBusBidService.delete(b);
 				systemService.addLog(message, Globals.Log_Type_DEL, Globals.Log_Leavel_INFO);
 			}
 		}catch(Exception e){
@@ -283,7 +288,7 @@ public class VwBusBidController extends BaseController {
 			b.setBcProjectCode(t.getBpProjId());
 			b.setFromProjName(t.getBpProjName());
 			b.setBcWinBidder(t.getBdWinBidder());
-			b.setBcContractState("1");
+			b.setBcContractState("0");
 			vwBusBidService.save(b);
 			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
 		}catch(Exception e){

@@ -41,7 +41,7 @@
    <t:dgDelOpt title="删除" url="vmBusPoPayWmtController.do?doDel&id={id}"  urlclass="ace_button" urlfont="fa-trash-o"/>
    <t:dgToolBar title="修改" icon="icon-edit" url="vmBusPoPayWmtController.do?goUpdate&pay=0" funname="update" width="100%" height="100%"></t:dgToolBar>
    <t:dgToolBar title="查看" icon="icon-search" url="vmBusPoPayWmtController.do?goUpdate" funname="detail" width="100%" height="100%"></t:dgToolBar>
-   <t:dgToolBar title="批量删除"  icon="icon-remove" url="vmBusPoPayWmtController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>
+   <%-- <t:dgToolBar title="批量删除"  icon="icon-remove" url="vmBusPoPayWmtController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar> --%>
    <!-- 状态改为3 -->
    <t:dgToolBar title="审核完成" icon="icon-edit"  url="vmBusPoPayWmtController.do?doAuditFinish" funname="doAuditFinish" ></t:dgToolBar>
    <t:dgToolBar title="导出" icon="icon-putout" funname="ExportXls"></t:dgToolBar>

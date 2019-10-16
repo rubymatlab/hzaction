@@ -42,7 +42,7 @@
    <t:dgToolBar title="新增" icon="icon-add" url="vmBusPoPayWmtController.do?goAdd" funname="add" width="100%" height="100%"></t:dgToolBar>
    <t:dgToolBar title="修改" icon="icon-edit" url="vmBusPoPayWmtController.do?goUpdate&pay=0" funname="update" width="100%" height="100%"></t:dgToolBar>
    <t:dgToolBar title="查看" icon="icon-search" url="vmBusPoPayWmtController.do?goUpdate" funname="detail" width="100%" height="100%"></t:dgToolBar>
-   <t:dgToolBar title="批量删除"  icon="icon-remove" url="vmBusPoPayWmtController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>
+   <%-- <t:dgToolBar title="批量删除"  icon="icon-remove" url="vmBusPoPayWmtController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar> --%>
    <!-- 状态改为2 -->
    <t:dgToolBar title="送审" icon="icon-edit"  url="vmBusPoPayWmtController.do?doSendAudit" funname="doSendAudit" ></t:dgToolBar>
    <t:dgToolBar title="导出" icon="icon-putout" funname="ExportXls"></t:dgToolBar>

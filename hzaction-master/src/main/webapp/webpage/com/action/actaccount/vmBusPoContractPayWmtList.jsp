@@ -182,17 +182,18 @@
 			bpcpIdList.push(item.value)
 		});
 		$("#bpcpIds").val(bpcpIdList)
-		console.log(bpcpIdList)
+		console.log("删除：",bpcpIdList)
 		//end_wmt
 		
 		 $("#add_vmBusPoContractPayWmt_table").find("input[name$='ck']:checked").parent().parent().remove();
         resetTrNum('add_vmBusPoContractPayWmt_table'); 
 		
 		//start_wmt
-        if($("#add_vmBusPoContractPayWmt_table tr").size()==0){
-	        addTr(1)
-        }
+        if($("#add_vmBusPoContractPayWmt_table tr").size()==0) addTr(1)
         //end_wmt
+        
+        //删除后重新-自动计算
+        delcountMoney()
         
         return false;
     }); 
@@ -420,11 +421,11 @@
 								
    								/* $("select[name='vmBusPoContractPayWmtList["+index+"].bpcpProgre']")
    									.find("option:contains("+obj.bpcp_progre+")").attr('selected',true) */
-   								
 								$("input[name='vmBusPoContractPayWmtList["+index+"].bpcpPayAmount']").val(obj.bpcp_pay_amount)
 	 							$("input[name='vmBusPoContractPayWmtList["+index+"].bpcpDate']").val(obj.bpcp_date)
    	 							$("input[name='vmBusPoContractPayWmtList["+index+"].fromId']").val(obj.from_id)
    	 							$("input[name='vmBusPoContractPayWmtList["+index+"].bpcpId']").val(obj.bpcp_id)
+								
 							});
 						}else{
 							addTr(selected.length)	
@@ -445,7 +446,14 @@
  	 							$("input[name='vmBusPoContractPayWmtList["+(index+trSize)+"].bpcpId']").val(obj.bpcp_id)
 							});
 						}
+						
+						//自动计算
+						countMoney()
+//						$("input[name='vmBusPoContractPayWmtList["+(index+trSize)+"].payAmount']").change(function() {
+//							console.log("非首次:"+$("input[name='vmBusPoContractPayWmtList["+(index+trSize)+"].payAmount']").val())
+//						});
 			    		//end_wmt
+    			    	
     			    	
     			    	if (selected == '' || selected == null ){
     				    	alert("请选择");
@@ -556,5 +564,34 @@
     		}
     	}
     //add--end--Author:gengjiajia date:20160802 for: TASK #1175 批量添加数据的时popup多值的传递
+    
+    //
+    function countMoney() {
+    	var $payAmountList = $("#add_vmBusPoContractPayWmt_table input[name$=payAmount]")
+    	$payAmountList.map(function(index, obj) {
+    		$(obj).change(function() {
+    			var count = 0;
+    			$payAmountList.map(function(i, m) {
+    				if(index != i) {
+    					count += +$(m).val()
+    					//console.log($(obj).val())
+    				} else {
+    					count += +$(m).val()
+    				}
+    			})
+    			$("#bppMoney").val(count)
+    		})
+    	})
+    }
+    //删除后重新-自动计算
+    function delcountMoney(){
+//  	console.log("删除后重新-自动计算：{}",$("#bppMoney").val())
+    	var count = 0
+    	var $payAmountList = $("#add_vmBusPoContractPayWmt_table input[name$=payAmount]")
+    	$payAmountList.map(function(index, obj) {
+    		count+= +$(obj).val()
+    	})
+    	$("#bppMoney").val(count) 
+    }
 </script>
 

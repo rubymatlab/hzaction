@@ -29,6 +29,7 @@ import com.action.actaccount.entity.BusPoPayWmtEntity;
 import com.action.actaccount.entity.VmBusPoContractPayWmtEntity;
 import com.action.actaccount.entity.VmBusPoPayWmtEntity;
 import com.action.actaccount.service.VmBusPoPayWmtServiceI;
+import com.action.actpo.entity.BusPoContractPayEntity;
 
 @Service("vmBusPoPayWmtService")
 @Transactional
@@ -142,7 +143,7 @@ public class VmBusPoPayWmtServiceImpl extends CommonServiceImpl implements VmBus
 			this.save(busPayInfo);
 		}
 		//执行新增操作增强业务
-		this.doAddBus(vmBusPoPayWmt);
+		this.doAddBus(vmBusPoPayWmt,vmBusPoContractPayWmtList);
 	}
 
 	public void updateMain(VmBusPoPayWmtEntity vmBusPoPayWmt,
@@ -343,13 +344,18 @@ public class VmBusPoPayWmtServiceImpl extends CommonServiceImpl implements VmBus
 	 * @param t
 	 * @return
 	 */
-	private void doAddBus(VmBusPoPayWmtEntity t) throws Exception{
+	private void doAddBus(VmBusPoPayWmtEntity t,List<VmBusPoContractPayWmtEntity> vmBusPoContractPayWmtList) throws Exception{
 		//-----------------sql增强 start----------------------------
 		//保存实体表信息
 		BusPoPayWmtEntity busPoPayEntity = this.returnBusPoPayEntity(t);
 		this.save(busPoPayEntity);
 		//-----------------sql增强 end------------------------------
-
+		//保存实体附表信息
+		for (VmBusPoContractPayWmtEntity vm : vmBusPoContractPayWmtList) {
+			actaccountDao.updateBusPoContractPayWmtEntity(
+					vm.getBpcpId(),vm.getPayAmount(), vm.getBpcpRemark(), vm.getBusPoPayId());
+		}
+		
 		//-----------------java增强 start---------------------------
 		//-----------------java增强 end-----------------------------
 	}

@@ -168,7 +168,7 @@
 				<label class="Validform_label">付款金额:</label>
 			</td>
 			<td class="value" colspan="3">
-		     	 <input id="bppMoney" name="bppMoney" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vmBusPoPayWmtPage.bppMoney}'/>
+		     	 <input id="bppMoney" name="bppMoney" readonly="readonly" placeholder="自动计算" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vmBusPoPayWmtPage.bppMoney}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">付款金额</label>
 			</td>
@@ -477,5 +477,6 @@
 				}
 			}
 		}
+		
   	</script>
 

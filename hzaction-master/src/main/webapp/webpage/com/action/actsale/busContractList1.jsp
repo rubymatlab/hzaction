@@ -36,10 +36,10 @@
    
    <!-- 工具栏 -->
    <t:dgCol title="操作" field="opt" width="0"></t:dgCol>
-   <t:dgDelOpt title="删除" url="busContractController.do?doDel&id={id}"  urlclass="ace_button" urlfont="fa-trash-o"/>
    <t:dgToolBar title="合同维护" icon="icon-edit" url="busContractController.do?goUpdate" funname="update" width="100%" height="100%"></t:dgToolBar>
    <t:dgToolBar title="合同确定" icon="icon-save"  url="busContractController.do?affirmButton" funname="affirmButton" ></t:dgToolBar>
    <t:dgToolBar title="汇出excel" icon="icon-putout" funname="ExportXls"></t:dgToolBar>
+	<%--<t:dgDelOpt title="删除" url="busContractController.do?doDel&id={id}"  urlclass="ace_button" urlfont="fa-trash-o"/>--%>
    <%-- <t:dgToolBar title="录入" icon="icon-add" url="busContractController.do?goAdd" funname="add" width="100%" height="100%"></t:dgToolBar>
    <t:dgToolBar title="批量删除"  icon="icon-remove" url="busContractController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>
    <t:dgToolBar title="查看" icon="icon-search" url="busContractController.do?goUpdate" funname="detail" width="100%" height="100%"></t:dgToolBar>

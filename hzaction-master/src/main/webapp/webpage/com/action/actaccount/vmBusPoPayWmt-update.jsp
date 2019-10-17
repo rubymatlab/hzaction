@@ -212,7 +212,7 @@
 				<%-- 增加一个div，用于调节页面大小，否则默认太小 --%>
 				<div style="width:800px;height:1px;"></div>
 				<t:tabs id="tt" iframe="false" tabPosition="top" fit="false">
-				 <c:if test="${pay==0 }">
+				<c:if test="${pay!=1 }">
 				 	<t:tab href="vmBusPoPayWmtController.do?vmBusPoContractPayWmtList&id=${vmBusPoPayWmtPage.id}" icon="icon-search" title="采购付款单" id="vmBusPoContractPayWmt"></t:tab>
 				 </c:if>
 				 <c:if test="${pay==1 }">

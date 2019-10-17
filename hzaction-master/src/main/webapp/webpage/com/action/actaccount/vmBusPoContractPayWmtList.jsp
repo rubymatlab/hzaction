@@ -203,6 +203,7 @@
 			$(":input").attr("disabled","true");
 			$(".datagrid-toolbar").hide();
 		}
+    	countMoney();
     });
     
     
@@ -565,33 +566,34 @@
     	}
     //add--end--Author:gengjiajia date:20160802 for: TASK #1175 批量添加数据的时popup多值的传递
     
-    //
+    
     function countMoney() {
     	var $payAmountList = $("#add_vmBusPoContractPayWmt_table input[name$=payAmount]")
     	$payAmountList.map(function(index, obj) {
     		$(obj).change(function() {
-    			var count = 0;
-    			$payAmountList.map(function(i, m) {
-    				if(index != i) {
-    					count += +$(m).val()
-    					//console.log($(obj).val())
-    				} else {
-    					count += +$(m).val()
-    				}
+    			var $payAmountListTemp = $("#add_vmBusPoContractPayWmt_table input[name$=payAmount]")
+    			$("#bppMoney").val(0)
+    			$payAmountListTemp.map(function(i, m) {
+						var bppMoney = +$("#bppMoney").val()
+						bppMoney += +$(m).val()
+						console.log(bppMoney)
+    					$("#bppMoney").val(bppMoney)
     			})
-    			$("#bppMoney").val(count)
+
     		})
     	})
     }
     //删除后重新-自动计算
     function delcountMoney(){
-//  	console.log("删除后重新-自动计算：{}",$("#bppMoney").val())
-    	var count = 0
+		$("#bppMoney").val(0)
+		var count = 0
     	var $payAmountList = $("#add_vmBusPoContractPayWmt_table input[name$=payAmount]")
     	$payAmountList.map(function(index, obj) {
-    		count+= +$(obj).val()
+//			console.log($(obj).val())
+			count += +$(obj).val()
+			$("#bppMoney").val(count) 
     	})
-    	$("#bppMoney").val(count) 
+//  	console.log(count)
     }
 </script>
 

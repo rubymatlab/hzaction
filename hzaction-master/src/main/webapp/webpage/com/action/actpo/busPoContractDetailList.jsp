@@ -4,7 +4,7 @@
 <div style="padding: 3px; height: 25px;width:auto;" class="datagrid-toolbar">
 	<a id="addBusPoContractDetailBtn" href="#">添加</a>
 	 <a id="delBusPoContractDetailBtn" href="#">删除</a> 
-	<!-- <a id="selectAddBusPoContractDetailBtn" href="#">选择新增</a> -->
+	<a id="selectAddBusPoContractDetailBtn" href="#">选择新增</a>
 	<a id="importBusPoContractDetailBtn" href="#">excel导入</a>
 	<a id="exportBusPoContractDetailBtn" href="#">excel模板下载</a>
 </div>
@@ -144,6 +144,10 @@
 					  	<input name="busPoContractDetailList[${stuts.index }].fromId" maxlength="32" type="hidden" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.fromId }"/>
 					  <label class="Validform_label" style="display: none;">采购合同外键</label>
 				   </td> 
+				   <td align="left">
+					  	<input name="busPoContractDetailList[${stuts.index }].fromPoApplyDetId" maxlength="32" type="hidden" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.fromPoApplyDetId }"/>
+					  <label class="Validform_label" style="display: none;">采购申请外键</label>
+				   </td> 
    			</tr>
 		</c:forEach>
 	</c:if>	
@@ -188,7 +192,7 @@
 	}); 
 	// 选择新增
 	$('#selectAddBusPoContractDetailBtn').bind('click', function(){   
-		popupClickContractDetail(this,'bpad_name,bpad_brand,bpad_model,bpad_number,bpad_remark','bpcdName,bpcdBrand,bpcdModel,bpcdNumber,bpcdRemark','rf_bus_po_apply_detail')
+		popupClickContractDetail(this,'bpad_name,bpad_brand,bpad_model,bpad_number,bpad_remark,from_po_apply_det_id','bpcdName,bpcdBrand,bpcdModel,bpcdNumber,bpcdRemark,fromPoApplyDetId','rf_bus_po_apply_detail')
  		/*  var tr =  $("#add_busPoContractDetail_table_template tr").clone();
 	 	 $("#add_busPoContractDetail_table").append(tr);
 	 	 resetTrNum('add_busPoContractDetail_table'); */

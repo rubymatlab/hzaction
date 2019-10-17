@@ -216,14 +216,27 @@ public class VmBusPoContractController extends BaseController {
 			BusPoContractEntity busPoContract = new BusPoContractEntity();
 			MyBeanUtils.copyBeanNotNull2Bean(vmBusPoContract,busPoContract);
 			List<BusPoApplyDetailConEntity> busPoApplyDetailConList = new ArrayList<BusPoApplyDetailConEntity>();
-			BusPoApplyDetailConEntity busPoApplyDetailConEntity = null;
-			for(VmMergeBusPoApplyDetailEntity entity : vmMergeBusPoApplyDetailList) {
-				busPoApplyDetailConEntity = new BusPoApplyDetailConEntity();
-				busPoApplyDetailConEntity.setFromPoApplyDetId(entity.getFromPoApplyDetId());// 采购申请明细外键
-				busPoApplyDetailConEntity.setFromId(vmBusPoContract.getId()); // 采购合同外键
-				busPoApplyDetailConList.add(busPoApplyDetailConEntity);
-			}
 			
+			//判断提交的明细列表中采购申请外键字段是否有值，如果有，则为选择新增数据，没有这无
+			BusPoApplyDetailConEntity busPoApplyDetailConEntity = null;
+			for(BusPoContractDetailEntity entity:busPoContractDetailList ) {
+				if(StringUtil.isNotEmpty(entity.getFromPoApplyDetId())) {
+					busPoApplyDetailConEntity = new BusPoApplyDetailConEntity();
+					busPoApplyDetailConEntity.setFromPoApplyDetId(entity.getFromPoApplyDetId());// 采购申请明细
+					busPoApplyDetailConEntity.setFromId(vmBusPoContract.getId()); // 采购合同外键
+					busPoApplyDetailConList.add(busPoApplyDetailConEntity);
+				}
+			}
+
+			
+//			BusPoApplyDetailConEntity busPoApplyDetailConEntity = null;
+//			for(VmMergeBusPoApplyDetailEntity entity : vmMergeBusPoApplyDetailList) {
+//				busPoApplyDetailConEntity = new BusPoApplyDetailConEntity();
+//				busPoApplyDetailConEntity.setFromPoApplyDetId(entity.getFromPoApplyDetId());// 采购申请明细外键
+//				busPoApplyDetailConEntity.setFromId(vmBusPoContract.getId()); // 采购合同外键
+//				busPoApplyDetailConList.add(busPoApplyDetailConEntity);
+//			}
+//			
 			busPoContractService.addMain(busPoContract, busPoContractPayList,busPoApplyDetailConList,busPoContractDetailList);
 			vmBusPoContract.setId(busPoContract.getId());
 			//vmBusPoContractService.addMain(vmBusPoContract, vmMergeBusPoApplyDetailList,busPoContractPayList,busPoContractDetailList);
@@ -285,18 +298,29 @@ public class VmBusPoContractController extends BaseController {
 			BusPoContractEntity busPoContract = new BusPoContractEntity();
 			MyBeanUtils.copyBeanNotNull2Bean(vmBusPoContract,busPoContract);
 			List<BusPoApplyDetailConEntity> busPoApplyDetailConList = new ArrayList<BusPoApplyDetailConEntity>();
+//			判断提交的明细列表中采购申请外键字段是否有值，如果有，则为选择新增数据，没有这无
 			BusPoApplyDetailConEntity busPoApplyDetailConEntity = null;
-			for(VmMergeBusPoApplyDetailEntity entity : vmMergeBusPoApplyDetailList) {
-				busPoApplyDetailConEntity = new BusPoApplyDetailConEntity();
-				busPoApplyDetailConEntity.setFromPoApplyDetId(entity.getFromPoApplyDetId());// 采购申请明细
-				busPoApplyDetailConEntity.setFromId(vmBusPoContract.getId()); // 采购合同外键
-				busPoApplyDetailConList.add(busPoApplyDetailConEntity);
+			for(BusPoContractDetailEntity entity:busPoContractDetailList ) {
+				if(StringUtil.isNotEmpty(entity.getFromPoApplyDetId())) {
+					busPoApplyDetailConEntity = new BusPoApplyDetailConEntity();
+					busPoApplyDetailConEntity.setFromPoApplyDetId(entity.getFromPoApplyDetId());// 采购申请明细
+					busPoApplyDetailConEntity.setFromId(vmBusPoContract.getId()); // 采购合同外键
+					busPoApplyDetailConList.add(busPoApplyDetailConEntity);
+				}
 			}
+			
+//			BusPoApplyDetailConEntity busPoApplyDetailConEntity = null;
+//			for(VmMergeBusPoApplyDetailEntity entity : vmMergeBusPoApplyDetailList) {
+//				busPoApplyDetailConEntity = new BusPoApplyDetailConEntity();
+//				busPoApplyDetailConEntity.setFromPoApplyDetId(entity.getFromPoApplyDetId());// 采购申请明细
+//				busPoApplyDetailConEntity.setFromId(vmBusPoContract.getId()); // 采购合同外键
+//				busPoApplyDetailConList.add(busPoApplyDetailConEntity);
+//			}
 			busPoContractService.updateMain(busPoContract, busPoContractPayList,busPoApplyDetailConList,busPoContractDetailList);
 //			vmBusPoContractService.updateMain(vmBusPoContract, vmMergeBusPoApplyDetailList,busPoContractPayList,busPoContractDetailList);
 			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
-			e.printStackTrace();
+			e.printStackTrace(); 
 			message = "更新采购合同失败";
 			throw new BusinessException(e.getMessage());
 		}

@@ -11,6 +11,7 @@
  		 var tr =  $("#add_busPoContractPay_table_template tr").clone();
 	 	 $("#add_busPoContractPay_table").append(tr);
 	 	 resetTrNum('add_busPoContractPay_table');
+	 	 bindEvent()
 	 	 return false;
     });  
 	$('#delBusPoContractPayBtn').bind('click', function(){   
@@ -118,3 +119,34 @@
 	</c:if>	
 	</tbody>
 </table>
+
+
+<table style="margin: 10px 0 0 50px;">
+	<tbody>
+		<tr>
+			<td>总计划付款金额：</td>
+			<td>
+				<input type="text" id="totalPay" readonly=true value="">
+			</td>
+		</tr>
+	</tbody>
+</table>
+
+<script>
+	bindEvent();
+	count();
+	function count(){
+		var result = 0;
+		$("input[name$='.bpcpPayAmount']").each(function(idx,ele){
+			result += +ele.value;
+		})
+		$("#totalPay").val(result);
+	}
+	function bindEvent(){
+		$("input[name$='.bpcpPayAmount']").bind('change',function(e){
+			console.log(11)
+			count()
+		})
+	}
+</script>
+

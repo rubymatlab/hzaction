@@ -36,7 +36,7 @@ public class VwBusCollectionEntity implements java.io.Serializable {
 	@Excel(name="项目名称",width=15)
 	private java.lang.String bpmName;
 	/**项目名称*/
-	@Excel(name="预计回款时间",width=15)
+	@Excel(name="预计回款时间",width=15,format = "yyyy-MM-dd")
 	private java.util.Date brpExtBackDate;
 	/**项目编号*/
 	@Excel(name="项目编号",width=15)
@@ -176,10 +176,6 @@ public class VwBusCollectionEntity implements java.io.Serializable {
 	public java.lang.String getBpmProjId(){
 		return this.bpmProjId;
 	}
-	@Column(name ="BRP_EXT_BACK_DATE",nullable=true,length=32)
-	public java.util.Date getBrpExtBackDate(){
-		return this.brpExtBackDate;
-	}
 	/**
 	 *方法: 设置java.lang.String
 	 *@param: java.lang.String  项目编号
@@ -187,8 +183,12 @@ public class VwBusCollectionEntity implements java.io.Serializable {
 	public void setBpmProjId(java.lang.String bpmProjId){
 		this.bpmProjId = bpmProjId;
 	}
-	
-	public void setBrpExtBackDate(java.util.Date brpBackAmount){
+
+	@Column(name ="BRP_EXT_BACK_DATE",nullable=true,length=32)
+	public java.util.Date getBrpExtBackDate(){
+		return this.brpExtBackDate;
+	}
+	public void setBrpExtBackDate(java.util.Date brpExtBackDate){
 	 this.brpExtBackDate = brpExtBackDate;
 	}
 	/**

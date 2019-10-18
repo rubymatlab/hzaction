@@ -32,7 +32,7 @@
    <t:dgToolBar title="项目跟进" icon="icon-edit" url="vmBusProjectManagerController.do?goUpdate" funname="update" width="100%" height="100%"></t:dgToolBar>
    <c:if test="${bpmStatus != 1 }">
 	   <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
-	   <t:dgDelOpt title="删除" url="vmBusProjectManagerController.do?doDel&id={id}"  urlclass="ace_button" urlfont="fa-trash-o"/>
+	   <%-- <t:dgDelOpt title="删除" url="vmBusProjectManagerController.do?doDel&id={id}"  urlclass="ace_button" urlfont="fa-trash-o"/> --%>
    </c:if>
 <%--    <t:dgToolBar title="录入" icon="icon-add" url="vmBusProjectManagerController.do?goAdd" funname="add" width="100%" height="100%"></t:dgToolBar>
    <t:dgToolBar title="批量删除"  icon="icon-remove" url="vmBusProjectManagerController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>

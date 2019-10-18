@@ -56,6 +56,11 @@
 			tip('请选择合同');
 			return;
 		}
+		var rowsDataS = $('#'+id).datagrid('getSelections');
+		if (rowsDataS.length>1) {
+			tip('请选择一条记录');
+			return;
+		}
 		url = url+"&id="+rowData['id'];
 		bc_createdialog('确认 ', title+'吗 ?', url,gridname);
 	}

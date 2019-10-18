@@ -326,7 +326,6 @@ public class VwBusCollectionController extends BaseController {
 		
 		if (StringUtil.isNotEmpty(vwBusCollection.getId())) {
 			vwBusCollection = vwBusCollectionService.getEntity(VwBusCollectionEntity.class, vwBusCollection.getId());
-			
 			if(StringUtil.isNotEmpty(isPayment)) {
 				// 如果凭证号不为空
 				if(!StringUtil.isNotEmpty(vwBusCollection.getBpiVoucherno())){

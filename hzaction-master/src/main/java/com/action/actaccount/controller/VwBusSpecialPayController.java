@@ -253,6 +253,7 @@ public class VwBusSpecialPayController extends BaseController {
 		VwBusSpecialPayEntity t = vwBusSpecialPayService.get(VwBusSpecialPayEntity.class, vwBusSpecialPay.getId());
 		try{
 			t.setBpmStatus("2");
+			t.setBsspState("1");
 			vwBusSpecialPayService.saveOrUpdate(t);
 			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
 		}catch(Exception e){

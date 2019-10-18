@@ -21,7 +21,7 @@
 							</label>
 						</td>
 						<td class="value">
-						   	<input id="bpmName" class="inputxt" ignore="ignore" readonly="readonly"  value='${vwBusCollectionPage.bpmName}' style="width:150px" >	
+						   	<input id="bpmName" class="inputxt" ignore="ignore" readonly="readonly"  value='${vwBusCollectionPage.bpmName}' style="width:150px;background-color:#F0F0F0;" >	
 			        <input type="hidden" id="fromProjmId" name="fromProjmId" ignore="ignore" class="inputxt" value="${vwBusCollectionPage.fromProjmId }">
 			        <span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">项目名称</label>
@@ -32,7 +32,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="bpmProjId" name="bpmProjId" type="text" readonly="readonly" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusCollectionPage.bpmProjId}'/>
+						    <input id="bpmProjId" name="bpmProjId" type="text" readonly="readonly" maxlength="32" style="width: 150px;background-color:#F0F0F0;" class="inputxt"  ignore="ignore"  value='${vwBusCollectionPage.bpmProjId}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">项目编号</label>
 						</td>
@@ -44,7 +44,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="bcCustContractor" name="bcCustContractor" readonly="readonly" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusCollectionPage.bcCustContractor}'/>
+						    <input id="bcCustContractor" name="bcCustContractor" readonly="readonly" type="text" maxlength="32" style="width: 150px;background-color:#F0F0F0;" class="inputxt"  ignore="ignore"  value='${vwBusCollectionPage.bcCustContractor}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">客户</label>
 						</td>
@@ -55,7 +55,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="bcCollectId" name="bcCollectId" type="text" readonly="readonly" maxlength="32" style="width: 180px" class="inputxt"  ignore="ignore"  value='${vwBusCollectionPage.bcCollectId}'/>
+						    <input id="bcCollectId" name="bcCollectId" type="text" readonly="readonly" maxlength="32" style="width: 180px;background-color:#F0F0F0;" class="inputxt"  ignore="ignore"  value='${vwBusCollectionPage.bcCollectId}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">收款单号</label>
 						</td>
@@ -91,7 +91,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="brpBackAmount" name="brpBackAmount" type="text" maxlength="32" readonly="readonly" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusCollectionPage.brpBackAmount}'/>
+						    <input id="brpBackAmount" name="brpBackAmount" type="text" maxlength="32" readonly="readonly" style="width: 150px;background-color:#F0F0F0;" class="inputxt"  ignore="ignore"  value='${vwBusCollectionPage.brpBackAmount}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">预计回款金额</label>
 						</td>
@@ -102,7 +102,7 @@
 							</label>
 						</td>
 						<td class="value">
-									  <input id="brpExtBackDate" name="brpExtBackDate" disabled="disabled" type="text" style="width: 150px"  class="Wdate" onClick="WdatePicker()"  ignore="ignore" value='<fmt:formatDate value='${vwBusCollectionPage.brpExtBackDate}' type="date" pattern="yyyy-MM-dd"/>'/>
+									  <input id="brpExtBackDate" name="brpExtBackDate" readonly="true" type="text" style="width: 150px;background-color:#F0F0F0;"  class="Wdate"  ignore="ignore" value="<fmt:formatDate value='${vwBusCollectionPage.brpExtBackDate}' type='date' pattern='yyyy-MM-dd'/>"/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">预计回款时间</label>
 						</td>
@@ -193,7 +193,7 @@
 								<label class="Validform_label" style="display: none;">回款状态</label>
 						</td>
 				
-						</tr>>
+						</tr>
 						<tr>
 						<td align="right">
 							<label class="Validform_label">
@@ -308,7 +308,7 @@
 						</label>
 					</td>
 					<td class="value" colspan="3">
-					     	 <input id="bpiVoucherno" name="bpiVoucherno" readonly="readonly"  type="text" maxlength="32" value="${vwBusCollectionPage.bpiVoucherno}" style="width: 150px" class="inputxt"  ignore="ignore" />
+					     	 <input id="bpiVoucherno" name="bpiVoucherno" readonly="readonly"  type="text" maxlength="32" value="${vwBusCollectionPage.bpiVoucherno}" style="width: 150px;background-color:#F0F0F0;" class="inputxt"  ignore="ignore" />
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">凭证号</label>
 						</td>

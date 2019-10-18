@@ -50,7 +50,7 @@
 						</label>
 					</td>
 					<td class="value">
-					     	 <input id="bpmProjId" name="bpmProjId" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
+					     	 <input id="bpmProjId" name="bpmProjId" type="text" readonly="true" maxlength="32" style="width: 150px;background-color:#F0F0F0" class="inputxt"  ignore="ignore" />
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">项目编号</label>
 						</td>
@@ -62,7 +62,7 @@
 						</label>
 					</td>
 					<td class="value">
-					     	 <input id="bcCustContractor" name="bcCustContractor" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
+					     	 <input id="bcCustContractor" name="bcCustContractor" readonly="true" type="text" maxlength="32" style="width: 150px;background-color:#F0F0F0" class="inputxt"  ignore="ignore" />
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">客户</label>
 						</td>
@@ -72,7 +72,7 @@
 						</label>
 					</td>
 					<td class="value">
-					     	 <input id="bcCollectId" name="bcCollectId"  type="text" maxlength="32" style="width: 180px" class="inputxt"  ignore="ignore" />
+					     	 <input id="bcCollectId" name="bcCollectId" readonly="true" type="text" maxlength="32" style="width: 180px;background-color:#F0F0F0" class="inputxt"  ignore="ignore" />
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">收款单号</label>
 						</td>	
@@ -109,7 +109,7 @@
 						</label>
 					</td>
 					<td class="value">
-					     	 <input id="brpBackAmount" name="brpBackAmount" readonly="readonly" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
+					     	 <input id="brpBackAmount" name="brpBackAmount" readonly="readonly" type="text" maxlength="32" style="width: 150px;background-color:#F0F0F0" class="inputxt"  ignore="ignore" />
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">预计回款金额</label>
 						</td>
@@ -119,7 +119,8 @@
 						</label>
 					</td>
 					<td class="value">
-							   <input id="brpExtBackDate"  name="brpExtBackDate" type="text" disabled="disabled" style="width: 150px" class="Wdate" onClick="WdatePicker()"  ignore="ignore" />    
+							   <!-- <input id="brpExtBackDate"  name="brpExtBackDate" type="text" readonly="true" style="width: 150px;background-color:#F0F0F0" class="Wdate" onClick="WdatePicker()"  ignore="ignore" />   -->  
+							<input id="brpExtBackDate"  name="brpExtBackDate" type="text" readonly="true" style="width: 150px;background-color:#F0F0F0" class="Wdate"  ignore="ignore" />  
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">预计回款时间</label>
 						</td>
@@ -384,7 +385,7 @@
 			           {field:'brpProgressStages',title:'进度款分期' , width:80, sortTable:true},			
 					]],
 					onSelect: function(row, data){
-						$("#brpExtBackDate").val(data.brpExtBackDate)
+						$("#brpExtBackDate").val(data.brpExtBackDate.substring(0,10))
 						$("#brpBackAmount").val(data.brpBackAmount)
 						var t = $("#bcProgressStages+.combo").find('input').eq(0).val()
 						setTimeout(function(){

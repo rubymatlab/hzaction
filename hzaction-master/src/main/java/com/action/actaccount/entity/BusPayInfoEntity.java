@@ -87,7 +87,9 @@ public class BusPayInfoEntity implements java.io.Serializable {
 	/**帐号简称*/
 	@Excel(name="帐号简称",width=15)
 	private java.lang.String bbaiSname;
-	
+	/**零星支出单外键*/
+	//@Excel(name="零星支出单外键",width=15)
+	private java.lang.String fromSpecialId;
 	
 	@Override
 	public String toString() {
@@ -518,4 +520,21 @@ public class BusPayInfoEntity implements java.io.Serializable {
 		this.bbaiSname = bbaiSname;
 	}
 	
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  零星支出单外键
+	 */
+	
+	@Column(name ="FROM_SPECIAL_ID",nullable=true,length=32)
+	public java.lang.String getFromSpecialId(){
+		return this.fromSpecialId;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  零星支出单外键
+	 */
+	public void setFromSpecialId(java.lang.String fromSpecialId){
+		this.fromSpecialId = fromSpecialId;
+	}
 }

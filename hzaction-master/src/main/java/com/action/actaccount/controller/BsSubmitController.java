@@ -203,7 +203,29 @@ public class BsSubmitController extends BaseController {
 		j.setMsg(message);
 		return j;
 	}
-
+	/**
+	 * 驳回费用报销
+	 * 
+	 * @return
+	 */
+	@RequestMapping(params = "doReturn")
+	@ResponseBody
+	public AjaxJson doReturn(BsSubmitEntity bsSubmit, HttpServletRequest request) {
+		AjaxJson j = new AjaxJson();
+		bsSubmit = systemService.getEntity(BsSubmitEntity.class, bsSubmit.getId());
+		String message = "驳回成功";
+		try{
+			bsSubmit.setBsState("0");
+			bsSubmitService.saveOrUpdate(bsSubmit);
+			systemService.addLog(message, Globals.Log_Type_DEL, Globals.Log_Leavel_INFO);
+		}catch(Exception e){
+			e.printStackTrace();
+			message = "驳回失败";
+			throw new BusinessException(e.getMessage());
+		}
+		j.setMsg(message);
+		return j;
+	}
 	/**
 	 * 批量删除费用报销
 	 * 

@@ -1,8 +1,10 @@
 package com.action.actaccount.service;
 import com.action.actaccount.entity.VwBusSpecialPayEntity;
+import com.action.actaccount.entity.BusPayInfoEntity;
 import org.jeecgframework.core.common.service.CommonService;
 
 import java.io.Serializable;
+import java.util.List;
 
 public interface VwBusSpecialPayServiceI extends CommonService{
 	
@@ -24,4 +26,23 @@ public interface VwBusSpecialPayServiceI extends CommonService{
 	 * @return
 	 */
 	 public void doPayBus(VwBusSpecialPayEntity t) throws Exception;
+	 
+	/**
+	 * 添加一对多
+	 * 
+	 */
+	public void addMain(VwBusSpecialPayEntity vwBusSpecialPay,
+	        List<BusPayInfoEntity> busPayInfoList) throws Exception;
+	/**
+	 * 修改一对多
+	 * 
+	 */
+	public void updateMain(VwBusSpecialPayEntity vwBusSpecialPay,
+	        List<BusPayInfoEntity> busPayInfoList) throws Exception;
+	        
+	/**
+	 * 删除一对多
+	 * 
+	 */
+	public void delMain (VwBusSpecialPayEntity vwBusSpecialPay) throws Exception;
 }

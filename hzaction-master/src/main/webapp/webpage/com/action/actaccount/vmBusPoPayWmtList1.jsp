@@ -38,7 +38,8 @@
    
    <!-- 工具栏 -->
    <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
-   <t:dgDelOpt title="删除" url="vmBusPoPayWmtController.do?doDel&id={id}"  urlclass="ace_button" urlfont="fa-trash-o"/>
+   <%-- <t:dgDelOpt title="删除" url="vmBusPoPayWmtController.do?doDel&id={id}"  urlclass="ace_button" urlfont="fa-trash-o"/> --%>
+   <t:dgDelOpt title="驳回" url="vmBusPoPayWmtController.do?doReturn&id={id}"  urlclass="ace_button" urlfont="fa-trash-o"/>
    <t:dgToolBar title="修改" icon="icon-edit" url="vmBusPoPayWmtController.do?goUpdate&pay=0" funname="update" width="100%" height="100%"></t:dgToolBar>
    <t:dgToolBar title="查看" icon="icon-search" url="vmBusPoPayWmtController.do?goUpdate" funname="detail" width="100%" height="100%"></t:dgToolBar>
    <%-- <t:dgToolBar title="批量删除"  icon="icon-remove" url="vmBusPoPayWmtController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar> --%>

@@ -178,6 +178,30 @@ public class VmBusPoPayWmtController extends BaseController {
 		j.setMsg(message);
 		return j;
 	}
+	
+	/**
+	 * 驳回采购付款单视图_wmt
+	 * 
+	 * @return
+	 */
+	@RequestMapping(params = "doReturn")
+	@ResponseBody
+	public AjaxJson doReturn(VmBusPoPayWmtEntity vmBusPoPayWmt, HttpServletRequest request) {
+		AjaxJson j = new AjaxJson();
+		vmBusPoPayWmt = systemService.getEntity(VmBusPoPayWmtEntity.class, vmBusPoPayWmt.getId());
+		String message = "驳回成功";
+		try{
+			vmBusPoPayWmt.setBppState("0");
+			systemService.saveOrUpdate(vmBusPoPayWmt);
+			systemService.addLog(message, Globals.Log_Type_DEL, Globals.Log_Leavel_INFO);
+		}catch(Exception e){
+			e.printStackTrace();
+			message = "驳回失败";
+			throw new BusinessException(e.getMessage());
+		}
+		j.setMsg(message);
+		return j;
+	}
 
 	/**
 	 * 批量删除采购付款单视图_wmt

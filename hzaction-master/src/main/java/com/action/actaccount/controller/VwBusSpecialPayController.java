@@ -1,5 +1,8 @@
 package com.action.actaccount.controller;
+import com.action.actaccount.entity.BusPayInfoEntity;
 import com.action.actaccount.entity.VwBusSpecialPayEntity;
+import com.action.actaccount.page.VwBusSpecialPayPage;
+import com.action.actaccount.service.VmBusPoPayWmtServiceI;
 import com.action.actaccount.service.VwBusSpecialPayServiceI;
 import java.util.ArrayList;
 import java.util.List;
@@ -71,6 +74,8 @@ public class VwBusSpecialPayController extends BaseController {
 	private SystemService systemService;
 	@Autowired
 	private CgFormFieldServiceI cgFormFieldService;
+	@Autowired
+	private VmBusPoPayWmtServiceI vmBusPoPayWmtService;
 	
 
 
@@ -160,6 +165,31 @@ public class VwBusSpecialPayController extends BaseController {
 	}
 	
 	/**
+	 * 删除零星支出单
+	 * 
+	 * @return
+	 */
+	@RequestMapping(params = "doReturn")
+	@ResponseBody
+	public AjaxJson doReturn(VwBusSpecialPayEntity vwBusSpecialPay, HttpServletRequest request) {
+		String message = null;
+		AjaxJson j = new AjaxJson();
+		message = "驳回成功";
+		VwBusSpecialPayEntity t = vwBusSpecialPayService.get(VwBusSpecialPayEntity.class, vwBusSpecialPay.getId());
+		try{
+			t.setBpmStatus("1");
+			t.setBsspState("0");
+			vwBusSpecialPayService.saveOrUpdate(t);
+			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
+		}catch(Exception e){
+			e.printStackTrace();
+			message = "驳回失败";
+		}
+		j.setMsg(message);
+		return j;
+	}
+	
+	/**
 	 * 批量删除零星支出单
 	 * 
 	 * @return
@@ -239,6 +269,64 @@ public class VwBusSpecialPayController extends BaseController {
 		return j;
 	}
 	
+	/**
+	 * 更新零星支出单
+	 * 
+	 * @param ids
+	 * @return
+	 */
+	@RequestMapping(params = "doUpdate1")
+	@ResponseBody
+	public AjaxJson doUpdate1(VwBusSpecialPayEntity vwBusSpecialPay,VwBusSpecialPayPage vwBusSpecialPayPage, HttpServletRequest request) {
+		List<BusPayInfoEntity> busPayInfoList =  vwBusSpecialPayPage.getBusPayInfoList();
+		AjaxJson j = new AjaxJson();
+		String message = "更新成功";
+		try{
+			vwBusSpecialPayService.updateMain(vwBusSpecialPay, busPayInfoList);
+			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
+		}catch(Exception e){
+			e.printStackTrace();
+			message = "更新零星支出单失败";
+			throw new BusinessException(e.getMessage());
+		}
+		j.setMsg(message);
+		return j;
+	}
+	
+	/**
+	 * 加载明细列表[支付信息]
+	 * 
+	 * @return
+	 */
+	@RequestMapping(params = "busPayInfoList")
+	public ModelAndView busPayInfoList(VwBusSpecialPayEntity vwBusSpecialPay, HttpServletRequest req) {
+	
+		//===================================================================================
+		//获取参数
+		Object id0 = vwBusSpecialPay.getId();
+		//===================================================================================
+		//查询-支付信息
+	    String hql0 = "from BusPayInfoEntity where 1 = 1 AND fromSpecialId = ? ";
+	    try{
+	    	List<BusPayInfoEntity> busPayInfoEntityList = systemService.findHql(hql0,id0);
+	    	if(busPayInfoEntityList.size()==0)
+	    		busPayInfoEntityList.add(new BusPayInfoEntity());
+	    	for(BusPayInfoEntity o:busPayInfoEntityList)
+	    	{
+	    		o.setBpiClass("4");
+	    		if(!StringUtil.isNotEmpty(o.getBpiVoucherno()))
+	    		{
+	    			String createBpiVoucherno = vmBusPoPayWmtService.getBpiVoucherno();
+	    			o.setBpiVoucherno(createBpiVoucherno);
+	    		}
+	    	}
+			req.setAttribute("busPayInfoList", busPayInfoEntityList);
+		}catch(Exception e){
+			logger.info(e.getMessage());
+		}
+		return new ModelAndView("com/action/actaccount/busPayInfoList");
+	}
+	
  	/**
 	 * 自定义按钮-[送审]业务
 	 * @param ids
@@ -253,6 +341,7 @@ public class VwBusSpecialPayController extends BaseController {
 		VwBusSpecialPayEntity t = vwBusSpecialPayService.get(VwBusSpecialPayEntity.class, vwBusSpecialPay.getId());
 		try{
 			t.setBpmStatus("2");
+			t.setBsspState("1");
 			vwBusSpecialPayService.saveOrUpdate(t);
 			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
@@ -277,6 +366,7 @@ public class VwBusSpecialPayController extends BaseController {
 		VwBusSpecialPayEntity t = vwBusSpecialPayService.get(VwBusSpecialPayEntity.class, vwBusSpecialPay.getId());
 		try{
 			t.setBpmStatus("3");
+			t.setBsspState("2");
 			vwBusSpecialPayService.saveOrUpdate(t);
 			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
@@ -334,6 +424,20 @@ public class VwBusSpecialPayController extends BaseController {
 			req.setAttribute("vwBusSpecialPayPage", vwBusSpecialPay);
 		}
 		return new ModelAndView("com/action/actaccount/vwBusSpecialPay-update");
+	}
+	
+	/**
+	 * 零星支出单编辑页面跳转
+	 * 
+	 * @return
+	 */
+	@RequestMapping(params = "goUpdate1")
+	public ModelAndView goUpdate1(VwBusSpecialPayEntity vwBusSpecialPay, HttpServletRequest req) {
+		if (StringUtil.isNotEmpty(vwBusSpecialPay.getId())) {
+			vwBusSpecialPay = vwBusSpecialPayService.getEntity(VwBusSpecialPayEntity.class, vwBusSpecialPay.getId());
+			req.setAttribute("vwBusSpecialPayPage", vwBusSpecialPay);
+		}
+		return new ModelAndView("com/action/actaccount/vwBusSpecialPay-update1");
 	}
 	
 	/**

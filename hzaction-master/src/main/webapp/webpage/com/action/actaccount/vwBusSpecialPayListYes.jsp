@@ -48,7 +48,7 @@
    <t:dgToolBar title="导出" icon="icon-putout" funname="ExportXls"></t:dgToolBar>
    <%-- <t:dgToolBar title="模板下载" icon="icon-putout" funname="ExportXlsByT"></t:dgToolBar>
      	<t:dgToolBar title="送审" icon="icon-edit"  url="vwBusSpecialPayController.do?doAccess" funname="doAccess" ></t:dgToolBar> --%>
-     	<t:dgToolBar title="支付" icon="icon-edit"  url="vwBusSpecialPayController.do?doPay" funname="doPay" ></t:dgToolBar>
+     	<t:dgToolBar title="支付" icon="icon-edit"  url="vwBusSpecialPayController.do?goUpdate1" funname="update" ></t:dgToolBar>
   </t:datagrid>
   </div>
  </div>

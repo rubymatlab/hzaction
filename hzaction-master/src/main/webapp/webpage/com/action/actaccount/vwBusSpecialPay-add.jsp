@@ -33,7 +33,7 @@
 						</label>
 					</td>
 					<td class="value">
-					     	 <input id="bsspType" name="bsspType" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
+					     	<t:dictSelect field="bsspType" type="radio"  typeGroupCode="bill_type"   defaultVal="0" hasLabel="false"  title="单据类型" ></t:dictSelect>     
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">单据类型</label>
 						</td>
@@ -89,7 +89,8 @@
 						</label>
 					</td>
 					<td class="value">
-					     	 <input id="bsspPayType" name="bsspPayType" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
+					     	 <!-- <input id="bsspPayType" name="bsspPayType" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" /> -->
+							<t:dictSelect field="bsspPayType" type="list"  typeGroupCode="bus_pa_way"  hasLabel="false" defaultVal="1"  title="支付方式"></t:dictSelect> 
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">支付类型</label>
 						</td>
@@ -99,7 +100,7 @@
 						</label>
 					</td>
 					<td class="value">
-					     	 <input id="bsspInvType" name="bsspInvType" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
+					     	 <t:dictSelect field="bsspInvType" type="list"  typeGroupCode="bc_invoice"  defaultVal="1" hasLabel="false"  title="发票类型" ></t:dictSelect>     
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">发票类型</label>
 						</td>
@@ -187,7 +188,8 @@
 						</label>
 					</td>
 					<td class="value">
-					     	 <input id="bsspState" name="bsspState" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
+					     	 <!-- <input id="bsspState" name="bsspState" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" /> -->
+							<t:dictSelect readonly="readonly" field="bsspState" type="list"   typeGroupCode="bs_state"  defaultVal="0" hasLabel="false"  title="审核状态" ></t:dictSelect>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">单据状态</label>
 						</td>
@@ -273,7 +275,7 @@
 							附件:
 						</label>
 					</td>
-					<td class="value">
+					<td class="value" colspan="3">
 		<div class="form jeecgDetail">
 			<t:upload name="bsspFile" id="bsspFile" queueID="filediv_bsspFile" outhtml="false" uploader="cgUploadController.do?saveFiles"  extend="office" buttonText='添加文件'  onUploadStart="bsspFileOnUploadStart"> </t:upload>
 			<div class="form" id="filediv_bsspFile"></div>
@@ -291,12 +293,12 @@
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">附件</label>
 						</td>
-				<td align="right">
+				<!-- <td align="right">
 					<label class="Validform_label">
 					</label>
 				</td>
 				<td class="value">
-				</td>
+				</td> -->
 					</tr>
 				
 				

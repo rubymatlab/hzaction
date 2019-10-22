@@ -169,6 +169,18 @@ $(document).ready(function(){
 					  <label class="Validform_label" style="display: none;">费用报销外键</label>
 					</td>
 				</tr>
+				
+				<tr hidden="hidden">
+				  <td align="right">
+					<label class="Validform_label">
+										零星支出单外键:
+									</label>
+					</td>
+				  <td class="value">
+					  	<input name="busPayInfoList[0].fromSpecialId" maxlength="32" type="text" class="inputxt"  ignore="ignore" />
+					  <label class="Validform_label" style="display: none;">零星支出单外键</label>
+					</td>
+				</tr>
 	</c:if>
 	<c:if test="${fn:length(busPayInfoList)  > 0 }">
 		<c:forEach items="${busPayInfoList}" var="poVal" varStatus="stuts" begin="0" end="0">
@@ -329,6 +341,18 @@ $(document).ready(function(){
 					  	<input name="busPayInfoList[0].fromId" maxlength="32" type="text" class="inputxt"  ignore="ignore"  value="${poVal.fromId }"/>
 					  <label class="Validform_label" style="display: none;">费用报销外键</label>
 					</td>
+					</tr>
+					<tr hidden="hidden">
+				  <td align="right">
+					<label class="Validform_label">
+										零星支出单外键:
+									</label>
+					</td>
+				  <td class="value">
+					  	<input name="busPayInfoList[0].fromSpecialId" maxlength="32" type="text" class="inputxt"  ignore="ignore"  value="${poVal.fromSpecialId }"/>
+					  <label class="Validform_label" style="display: none;">零星支出单外键</label>
+					</td>
+				</tr>
 		</c:forEach>
 	</c:if>	
 	</tbody>

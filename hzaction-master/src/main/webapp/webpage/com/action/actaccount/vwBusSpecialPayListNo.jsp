@@ -38,7 +38,8 @@
    <t:dgCol title="供应商名称"  field="bsName"  query="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="附件"  field="bsspFile"  queryMode="single"  downloadName="附件下载"  width="120"></t:dgCol>
    <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
-   <t:dgDelOpt title="删除" url="vwBusSpecialPayController.do?doDel&id={id}" urlclass="ace_button"  urlfont="fa-trash-o"/>
+   <%-- <t:dgDelOpt title="删除" url="vwBusSpecialPayController.do?doDel&id={id}" urlclass="ace_button"  urlfont="fa-trash-o"/> --%>
+   <t:dgDelOpt title="驳回" url="vwBusSpecialPayController.do?doReturn&id={id}" urlclass="ace_button"  urlfont="fa-trash-o"/>
 	<%--<t:dgFunOpt funname="doConfirm(id)" title="确认" urlclass="ace_button" urlfont="fa-wrench" />
     <t:dgToolBar title="录入" icon="icon-add" url="vwBusSpecialPayController.do?goAdd" funname="add"></t:dgToolBar>
 	<t:dgToolBar title="编辑" icon="icon-edit" url="vwBusSpecialPayController.do?goUpdate" funname="update"></t:dgToolBar>

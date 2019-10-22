@@ -55,6 +55,11 @@
 			tip('请选择立项转投标项目');
 			return;
 		}
+		if(rowData['bpmStatus']=="4")
+		{
+			tip('该项目已转失败');
+			return;
+		}
 		if(rowData['bpmStatus']=="1")
 		{
 			url = url+"&fromProjId="+rowData['id'];
@@ -68,6 +73,11 @@
  		var rowData = $('#'+id).datagrid('getSelected');
 		if (!rowData) {
 			tip('请选择立项转合同项目');
+			return;
+		}
+		if(rowData['bpmStatus']=="4")
+		{
+			tip('该项目已转失败');
 			return;
 		}
 		if(rowData['bpmStatus']=="1")

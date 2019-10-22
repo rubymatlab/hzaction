@@ -135,6 +135,9 @@ public class VwRpBusPayInfoTotalController extends BaseController {
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, vwRpBusPayInfoTotal, request.getParameterMap());
 		try{
 		//自定义追加查询条件
+			Map<String,Object> map = new HashMap<String,Object>();	
+			map.put("bpiVoucherno", "desc");
+			cq.setOrder(map);
 		}catch (Exception e) {
 			throw new BusinessException(e.getMessage());
 		}
@@ -296,6 +299,9 @@ public class VwRpBusPayInfoTotalController extends BaseController {
 			, DataGrid dataGrid,ModelMap modelMap) {
 		CriteriaQuery cq = new CriteriaQuery(VwRpBusPayInfoTotalEntity.class, dataGrid);
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, vwRpBusPayInfoTotal, request.getParameterMap());
+		Map<String,Object> map = new HashMap<String,Object>();	
+		map.put("bpiVoucherno", "desc");
+		cq.setOrder(map);
 		List<VwRpBusPayInfoTotalEntity> vwRpBusPayInfoTotals = this.vwRpBusPayInfoTotalService.getListByCriteriaQuery(cq,false);
 		modelMap.put(NormalExcelConstants.FILE_NAME,"出纳日记账报表");
 		modelMap.put(NormalExcelConstants.CLASS,VwRpBusPayInfoTotalEntity.class);

@@ -118,6 +118,9 @@ public class VwRpCostAccountController extends BaseController {
 		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, vwRpCostAccount, request.getParameterMap());
 		try{
 		//自定义追加查询条件
+			Map<String,Object> map = new HashMap<String,Object>();	
+			map.put("bpProjId", "desc");
+			cq.setOrder(map);
 		}catch (Exception e) {
 			throw new BusinessException(e.getMessage());
 		}
@@ -426,11 +429,12 @@ public class VwRpCostAccountController extends BaseController {
 	        
     		try{
     			// 主表信息 id=aaa or id=bb or			
-    			StringBuffer sql = new StringBuffer("SELECT * FROM vw_rp_cost_account where "+mainIds);
+    			StringBuffer sql = new StringBuffer("SELECT * FROM vw_rp_cost_account where "+mainIds+"order by bp_proj_id desc");
 	            dataObject = systemService.findForJdbc(sql.toString());       
     	        // 采购明细
     	        
-        	    sql = new StringBuffer("SELECT * FROM vw_bus_po_contract_pay where "+forId);
+        	    sql = new StringBuffer("select vbpc.*,vtsti.typename  from vw_bus_po_contract_pay as vbpc, vw_t_s_typegroup_info as vtsti\r\n" + 
+        	    		"where vtsti.typegroupcode = 'cost_stag' and vbpc.bpcp_progre_name = vtsti.typecode and ("+forId+")");
         	    dataObject1 = systemService.findForJdbc(sql.toString());
     	        if(dataObject1.size()==0){
     	        	Map<String, Object> e=new HashMap<String, Object>();
@@ -438,7 +442,7 @@ public class VwRpCostAccountController extends BaseController {
     	        	e.put("bpm_name","");
     	        	e.put("bpcp_progre_name","");
     	        	e.put("bpcp_date","");
-    	        	e.put("bpcp_pay_amount","");
+    	        	e.put("typename","");
     	        	e.put("bpp_pay_date","");
     	        	e.put("pay_amount","");
     	        	e.put("form_cost_account_id","");
@@ -447,7 +451,8 @@ public class VwRpCostAccountController extends BaseController {
     	        
         		// 其他支出明细
     	        sql = new StringBuffer(
-    					"SELECT * FROM vw_bus_others_pay_detail where "+mainIds);
+    					"select vbotpd.*,vtsti.typename  from vw_bus_others_pay_detail as vbotpd, vw_t_s_typegroup_info as vtsti " + 
+    					"where vtsti.typegroupcode = 'cost_type' and vbotpd.bus_type = vtsti.typecode and ("+mainIds+")");
         	    dataObject2 = systemService.findForJdbc(sql.toString());
 
     	        if(dataObject2.size() == 0){
@@ -455,7 +460,7 @@ public class VwRpCostAccountController extends BaseController {
     	        	e.put("bpm_proj_id","");
     	        	e.put("bpm_name","");
     	        	e.put("bus_id","");
-    	        	e.put("bus_type","");
+    	        	e.put("typename","");
     	        	e.put("apply_date","");
     	        	e.put("pay_amount","");
     	        	dataObject2.add(e);

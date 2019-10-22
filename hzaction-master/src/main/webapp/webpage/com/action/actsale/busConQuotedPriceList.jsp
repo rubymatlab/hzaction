@@ -199,7 +199,7 @@
 						<label class="Validform_label" style="display: none;">单价</label>
 					</td>
 					<td align="left">
-						<input name="busConQuotedPriceList[${stuts.index }].bcqpAmount" maxlength="22" type="text" class="inputxt" style="width:120px;" datatype="/^(-?\d+)(\.\d+)?$/" ignore="ignore" value="${poVal.bcqpAmount }" />
+						<input name="busConQuotedPriceList[${stuts.index }].bcqpAmount" readonly="readonly" maxlength="22" type="text" class="inputxt" style="width:120px;" datatype="/^(-?\d+)(\.\d+)?$/" ignore="ignore" value="${poVal.bcqpAmount }" />
 						<label class="Validform_label" style="display: none;">金额</label>
 					</td>
 					<td align="left" hidden="hidden">
@@ -225,13 +225,27 @@
 		var tr = $("#add_busConQuotedPrice_table_template tr").clone();
 		$("#add_busConQuotedPrice_table").append(tr);
 		resetTrNum('add_busConQuotedPrice_table');
+		addEventChange()
 		return false;
 	});
 	$('#delBusConQuotedPriceBtn').bind('click', function() {
 		$("#add_busConQuotedPrice_table").find("input[name$='ck']:checked").parent().parent().remove();
 		resetTrNum('add_busConQuotedPrice_table');
+		
+		if($("#add_busConQuotedPrice_table tr").size()==0) addTr(1)
+		
 		return false;
 	});
+	
+	//添加tr节点
+    function addTr(size){
+    	for (var i = 0; i < size; i++) {
+    		var tr = $("#add_busConQuotedPrice_table_template tr").clone();
+			$("#add_busConQuotedPrice_table").append(tr);
+			resetTrNum('add_busConQuotedPrice_table');
+    	}
+    	addEventChange()
+    }
 	
 	
 	$(document).ready(function() {
@@ -240,8 +254,28 @@
 			$(":input").attr("disabled", "true");
 			$(".datagrid-toolbar").hide();
 		}
+		addEventChange()
 	});
 	
+	//监听事件--进行自动计算
+	function addEventChange(){
+		//数量
+		$("#add_busConQuotedPrice_table tr td input[name$=bcqpQty]").change(function(obj) {
+			var $bcqpPrice = $(obj.target).parent().next().children(":first")
+			if(+$(obj.target).val()>=0&&+$bcqpPrice.val()>=0){
+				$bcqpPrice.parent().next().children(":first").val((+$(obj.target).val()*+$bcqpPrice.val()).toFixed(2))
+			}
+			console.log($bcqpPrice.parent().next().children(":first").val())
+		})
+		//单价
+		$("#add_busConQuotedPrice_table tr td input[name$=bcqpPrice]").change(function(obj) {
+			var $bcqpQty = $(obj.target).parent().prev().children(":first")
+			if($(obj.target).val()>=0&&+$bcqpQty.val()>=0){
+				$(obj.target).parent().next().children(":first").val((+$bcqpQty.val()*+$(obj.target).val()).toFixed(2))
+			}
+			console.log($(obj.target).parent().next().children(":first").val())
+		})
+	}
 	
 	
 	//模板下载excel样式

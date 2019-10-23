@@ -1,5 +1,6 @@
 package com.action.actaccount.service.impl;
 import com.action.actaccount.service.VwBusSpecialPayServiceI;
+import com.action.actproject.entity.BusProjectManagerEntity;
 
 import org.jeecgframework.core.common.exception.BusinessException;
 import org.jeecgframework.core.common.service.impl.CommonServiceImpl;
@@ -104,6 +105,8 @@ public class VwBusSpecialPayServiceImpl extends CommonServiceImpl implements VwB
 			}else{
 				this.saveOrUpdate(vwBusSpecialPay);
 			}
+			
+			List<BusProjectManagerEntity> listBusProjectManager=this.findByProperty(BusProjectManagerEntity.class, "bpmProjId", vwBusSpecialPay.getBpProjId());
 			//===================================================================================
 			//获取参数
 			Object id0 = vwBusSpecialPay.getId();
@@ -119,6 +122,10 @@ public class VwBusSpecialPayServiceImpl extends CommonServiceImpl implements VwB
 						//需要更新的明细数据-支付信息
 						if(oldE.getId().equals(sendE.getId())){
 			    			try {
+			    				if(listBusProjectManager.size()>0)
+			    					sendE.setFromProjmId(listBusProjectManager.get(0).getId());
+								//外键设置
+			    				sendE.setBpiBusId(vwBusSpecialPay.getId());
 								MyBeanUtils.copyBeanNotNull2Bean(sendE,oldE);
 								this.saveOrUpdate(oldE);
 							} catch (Exception e) {
@@ -138,8 +145,10 @@ public class VwBusSpecialPayServiceImpl extends CommonServiceImpl implements VwB
 				//3.持久化新增的数据-支付信息
 				for(BusPayInfoEntity busPayInfo:busPayInfoList){
 					if(oConvertUtils.isEmpty(busPayInfo.getId())){
+						if(listBusProjectManager.size()>0)
+							busPayInfo.setFromProjmId(listBusProjectManager.get(0).getId());
 						//外键设置
-						//busPayInfo.setBpiBusId(vwBusSpecialPay.getId());
+						busPayInfo.setBpiBusId(vwBusSpecialPay.getId());
 						//busPayInfo.setFromPayId(vwBusSpecialPay.getId());
 						//busPayInfo.setFromBankAccId(vwBusSpecialPay.getId());
 						//busPayInfo.setFromId(vwBusSpecialPay.getId());

@@ -54,10 +54,10 @@ function ImportXls() {
 }
 
 //导出
-/* function ExportXls() {
-	JeecgExcelExport("vwRpCostAccountController.do?exportXls","vwRpCostAccountList");
+function ExportXls() {
+	JeecgExcelExport("vwRpCostAccountController.do?doCreatereport","vwRpCostAccountList");
 	
-} */
+}
 
 // 导出
 function doCreatereport(title, url, gridname){

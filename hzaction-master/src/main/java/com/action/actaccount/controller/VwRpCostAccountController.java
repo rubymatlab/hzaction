@@ -386,7 +386,17 @@ public class VwRpCostAccountController extends BaseController {
     @ResponseBody
 	public AjaxJson doCreatereport(String ids,VwRpCostAccountEntity vwRpCostAccount,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
     	
-		String message = null;
+    	CriteriaQuery cq = new CriteriaQuery(VwRpCostAccountEntity.class, dataGrid);
+    	org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, vwRpCostAccount);
+    	cq.add();
+    	List<VwRpCostAccountEntity> list=this.vwRpCostAccountService.getListByCriteriaQuery(cq, false);
+    	ids = "";
+    	if(list != null && list.size()>0) {
+    		for(VwRpCostAccountEntity entity : list) {
+    			ids += entity.getId() + ",";
+    		}
+    	}
+    	String message = null;
 		AjaxJson j = new AjaxJson();
 		message = "打印报表成功";
 		try {

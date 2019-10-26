@@ -144,7 +144,7 @@ public class VwBusBidController extends BaseController {
 		String message = null;
 		AjaxJson j = new AjaxJson();
 		//vwBusBid = systemService.getEntity(VwBusBidEntity.class, vwBusBid.getId());
-		message = "报价_投标审核删除成功";
+		message = "报价/投标审核打回成功";
 		try{
 			BusBidEntity t=systemService.getEntity(BusBidEntity.class,vwBusBid.getId());
 			vwBusBidService.delete(t);
@@ -159,7 +159,7 @@ public class VwBusBidController extends BaseController {
 			systemService.addLog(message, Globals.Log_Type_DEL, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();
-			message = "报价_投标审核删除失败";
+			message = "报价/投标审核打回失败";
 			throw new BusinessException(e.getMessage());
 		}
 		j.setMsg(message);

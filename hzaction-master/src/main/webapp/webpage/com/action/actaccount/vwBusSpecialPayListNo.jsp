@@ -39,8 +39,8 @@
    <t:dgCol title="附件"  field="bsspFile"  queryMode="single"  downloadName="附件下载"  width="120"></t:dgCol>
    <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
    <%-- <t:dgDelOpt title="删除" url="vwBusSpecialPayController.do?doDel&id={id}" urlclass="ace_button"  urlfont="fa-trash-o"/> --%>
-   <t:dgDelOpt title="驳回" url="vwBusSpecialPayController.do?doReturn&id={id}" urlclass="ace_button"  urlfont="fa-trash-o"/>
-	<%--<t:dgFunOpt funname="doConfirm(id)" title="确认" urlclass="ace_button" urlfont="fa-wrench" />
+	<t:dgFunOpt title="驳回" funname="doReturn(id)"  urlclass="ace_button" urlfont="fa-trash-o"></t:dgFunOpt>
+   <%--<t:dgFunOpt funname="doConfirm(id)" title="确认" urlclass="ace_button" urlfont="fa-wrench" />
     <t:dgToolBar title="录入" icon="icon-add" url="vwBusSpecialPayController.do?goAdd" funname="add"></t:dgToolBar>
 	<t:dgToolBar title="编辑" icon="icon-edit" url="vwBusSpecialPayController.do?goUpdate" funname="update"></t:dgToolBar>
    <t:dgToolBar title="批量删除"  icon="icon-remove" url="vwBusSpecialPayController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar> --%>
@@ -56,6 +56,34 @@
  <script type="text/javascript">
  $(document).ready(function(){
  });
+ 
+ function doReturn(id){
+		var tabName= 'bsSubmitListtb';
+		var url="vwBusSpecialPayController.do?doReturn";
+		url = url+"&id="+id;
+		$.dialog.confirm('确定驳回吗？', function(){
+			jQuery.ajax({  
+		        async : false,  
+		        cache:false,  
+		        type: 'GET',  
+		        dataType : "json",
+		        url: url,//请求的action路径  
+		        error: function () {//请求失败处理函数  
+		            tip('请求失败');  
+		        },  
+		        success:function(data){ //请求成功后处理函数。
+				    if(data.success){
+				    	tip(data.msg);
+				    }else{
+				    	tip(data.msg);
+				    }
+			        //重新查询
+			        vwBusSpecialPayListsearch();
+		        }  
+		    });  
+		}, function(){
+		});
+	}
  
      	//自定义按钮-送审
 	 	function doAccess(title,url,gridname){

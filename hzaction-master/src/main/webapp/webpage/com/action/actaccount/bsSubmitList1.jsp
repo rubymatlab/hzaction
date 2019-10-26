@@ -30,7 +30,7 @@
    <t:dgCol title="项目管理外键"  field="fromProjmId"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
    <%-- <t:dgDelOpt title="删除" url="bsSubmitController.do?doDel&id={id}"  urlclass="ace_button" urlfont="fa-trash-o"/> --%>
-   <t:dgDelOpt title="驳回" url="bsSubmitController.do?doReturn&id={id}"  urlclass="ace_button" urlfont="fa-trash-o"/>
+   <t:dgFunOpt title="驳回" funname="doReturn(id)"  urlclass="ace_button" urlfont="fa-trash-o"></t:dgFunOpt>
    <t:dgToolBar title="录入" icon="icon-add" url="bsSubmitController.do?goAdd" funname="add" width="100%" height="100%"></t:dgToolBar>
    <t:dgToolBar title="编辑" icon="icon-edit" url="bsSubmitController.do?goUpdate" funname="update" width="100%" height="100%"></t:dgToolBar>
    <%-- <t:dgToolBar title="批量删除"  icon="icon-remove" url="bsSubmitController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar> --%>
@@ -44,6 +44,33 @@
   </div>
  </div>
  <script type="text/javascript">
+ 	function doReturn(id){
+		var tabName= 'bsSubmitListtb';
+		var url="bsSubmitController.do?doReturn";
+		url = url+"&id="+id;
+		$.dialog.confirm('确定驳回吗？', function(){
+			jQuery.ajax({  
+		        async : false,  
+		        cache:false,  
+		        type: 'GET',  
+		        dataType : "json",
+		        url: url,//请求的action路径  
+		        error: function () {//请求失败处理函数  
+		            tip('请求失败');  
+		        },  
+		        success:function(data){ //请求成功后处理函数。
+				    if(data.success){
+				    	tip(data.msg);
+				    }else{
+				    	tip(data.msg);
+				    }
+			        //重新查询
+			        bsSubmitListsearch();
+		        }  
+		    });  
+		}, function(){
+		});
+	}
  	//自定义按钮-sql增强-送审
  	function doUnaudited(title,url,id){
  		var rowData = $('#'+id).datagrid('getSelected');

@@ -213,7 +213,7 @@ public class VmBusPoPayWmtController extends BaseController {
 	public AjaxJson doBatchDel(String ids,HttpServletRequest request){
 		logger.info("-- 批量删除采购付款单视图_wmt --");
 		AjaxJson j = new AjaxJson();
-		String message = "采购付款单删除成功";
+		String message = "采购付款单驳回成功";
 		try{
 			for(String id:ids.split(",")){
 				VmBusPoPayWmtEntity vmBusPoPayWmt = systemService.getEntity(VmBusPoPayWmtEntity.class,id);
@@ -222,7 +222,7 @@ public class VmBusPoPayWmtController extends BaseController {
 			}
 		}catch(Exception e){
 			e.printStackTrace();
-			message = "采购付款单删除失败";
+			message = "采购付款单驳回失败";
 			throw new BusinessException(e.getMessage());
 		}
 		j.setMsg(message);

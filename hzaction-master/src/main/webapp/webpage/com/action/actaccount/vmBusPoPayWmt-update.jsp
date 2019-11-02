@@ -61,7 +61,7 @@
 			</td>
 			<td class="value">
 					<input id="bpmName" name="bpmName" type="text" style="width: 150px" class="searchbox-inputtext"  ignore="ignore"   
-					onclick="popupClick(this,'bpm_name,bpm_proj_id,id','bpmName,bpmProjId,fromProjId','bus_project_manager')"  value='${vmBusPoPayWmtPage.bpmName}'/>			    
+					onclick="popupClick(this,'bpm_name,bpm_proj_id,id,from_projm_id','bpmName,bpmProjId,fromProjId,busPayInfoList[0].fromProjmId','bus_project_manager')"  value='${vmBusPoPayWmtPage.bpmName}'/>			    
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">项目名称</label>
 			</td>
@@ -92,14 +92,14 @@
 			</td>
 			
 		</tr>
-		<tr hidden>
+		<tr hidden="hidden">
 			<td align="right">
 				<label class="Validform_label">项目管理外键:</label>
 			</td>
 			<td class="value" colspan="3">
 		     	 <input id="fromProjId" name="fromProjId" type="text" maxlength="32" style="width: 80%" class="inputxt"  ignore="ignore"  value='${vmBusPoPayWmtPage.fromProjId}'/>
 				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">项目管理外键</label>
+				<label class="Validform_label" style="display: none;"></label>
 			</td>
 			<td align="right">
 				<label class="Validform_label">供应商资料外键:</label>
@@ -292,24 +292,24 @@
 					  <label class="Validform_label" style="display: none;">费用明细</label>
 				  </td>
 				  <td align="left">
-					  		<input name="busPayInfoList[#index#].bpiContent" maxlength="20" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
+					  		<input name="busPayInfoList[#index#].bpiContent" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">内容</label>
 				  </td>
 				  <td align="left">
-					  		<input name="busPayInfoList[#index#].bpiVoucherno" maxlength="20" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
+					  		<input name="busPayInfoList[#index#].bpiVoucherno" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">凭证号</label>
 				  </td>
 				  
 				  <td align="left">
-					  		<input name="busPayInfoList[#index#].bpiBusId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
+					  		<input name="busPayInfoList[#index#].bpiBusId"type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">业务外键</label>
 				  </td>
 				  <td align="left">
-					  		<input name="busPayInfoList[#index#].fromProjmId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
+					  		<input name="busPayInfoList[#index#].fromProjmId" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">项目管理外键</label>
 				  </td>
 				  <td align="left">
-					  		<input name="busPayInfoList[#index#].fromBankAccId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
+					  		<input name="busPayInfoList[#index#].fromBankAccId" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">银行账号信息外键</label>
 				  </td>
 				  <td align="left">
@@ -334,6 +334,7 @@
  </body>
  <script src = "webpage/com/action/actaccount/vmBusPoPayWmt.js"></script>	
   	<script type="text/javascript">
+  		
 	  	//加载 已存在的 文件
 	  	$(function(){
 	  		var cgFormId=$("input[name='id']").val();
@@ -476,7 +477,9 @@
 					frameElement.api.close();
 				}
 			}
+			
 		}
+		
 		
   	</script>
 

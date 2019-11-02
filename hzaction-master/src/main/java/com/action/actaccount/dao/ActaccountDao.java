@@ -27,11 +27,11 @@ public interface ActaccountDao {
 			" bpp_pay_date=:bppPayDate , bpp_state=:bppState ,bpp_money=:bppMoney , "+
 			" from_projm_id=:fromProjmId , from_supp_id=:fromSuppId ,bpp_accessory=:bppAccessory " + 
 			" where id=:id")
-	@Arguments({"id","bppInvType","bppInvAmount","bppTaxRate","bppPayDate","bppState",
-		"bppMoney","fromProjmId","fromSuppId","bppAccessory"})
-	int updateBusPoPayWmtEntity(String id,String bppInvType,BigDecimal bppInvAmount,
-			String bppTaxRate,Date bppPayDate,String bppState,
-			BigDecimal bppMoney,String fromProjmId,String fromSuppId,String bppAccessory);
+	@Arguments({"id","bppInvType","bppInvAmount","bppTaxRate","bppPayDate",
+		"bppState","bppMoney","fromProjmId","fromSuppId","bppAccessory"})
+	int updateBusPoPayWmtEntity(
+			String id,String bppInvType,BigDecimal bppInvAmount,String bppTaxRate,Date bppPayDate,
+			String bppState,BigDecimal bppMoney,String fromProjmId,String fromSuppId,String bppAccessory);
 	
 	@Sql("update bus_po_contract_pay set pay_amount=:payAmount,bpcp_remark=:bpcpRemark,bus_po_pay_id=:busPoPayId "
 			+ " where id=:bpcpId")

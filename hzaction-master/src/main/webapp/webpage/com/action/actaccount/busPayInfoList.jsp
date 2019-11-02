@@ -5,7 +5,8 @@ $(document).ready(function(){
     	if(location.href.indexOf("load=detail")!=-1){
 			$(":input").attr("disabled","true");
 		}
-    });
+});
+    
 </script>
 <div style="width: auto;height: 300px;overflow-y:auto;overflow-x:auto;">
 <table cellpadding="0" cellspacing="1" class="formtable" id="busPayInfo_table" >
@@ -137,7 +138,7 @@ $(document).ready(function(){
 					  	<input name="busPayInfoList[0].bpiBusId" maxlength="32" type="text" class="inputxt"  ignore="ignore"  value="${poVal.bpiBusId }"/>
 					  <label class="Validform_label" style="display: none;">业务外键</label>
 					</td>
-				</tr>
+				</tr hidden="hidden">
 				<tr hidden="hidden">
 				  <td align="right" >
 					<label class="Validform_label">
@@ -154,7 +155,7 @@ $(document).ready(function(){
 									</label>
 					</td>
 				  <td class="value" >
-					  	<input name="busPayInfoList[0].fromProjmId" maxlength="32" type="text" class="inputxt"  ignore="ignore"  value="${poVal.fromProjmId }"/>
+					  	<input name="busPayInfoList[0].fromProjmId" type="text" class="inputxt"  ignore="ignore"  value="${poVal.fromProjmId }"/>
 					  <label class="Validform_label" style="display: none;">项目管理外键</label>
 					</td>
 				</tr>
@@ -165,7 +166,7 @@ $(document).ready(function(){
 									</label>
 					</td>
 				  <td class="value" >
-					  	<input name="busPayInfoList[0].fromId" maxlength="32" type="text" class="inputxt"  ignore="ignore"  value="${poVal.fromId }"/>
+					  	<input name="busPayInfoList[0].fromId"  type="text" class="inputxt"  ignore="ignore"  value="${poVal.fromId }"/>
 					  <label class="Validform_label" style="display: none;">费用报销外键</label>
 					</td>
 				</tr>
@@ -318,7 +319,7 @@ $(document).ready(function(){
 					</label>
 					</td>
 				  <td class="value" >
-					  	<input name="busPayInfoList[0].fromPayId" maxlength="32" type="text" class="inputxt"  ignore="ignore"  value="${poVal.fromPayId }"/>
+					  	<input name="busPayInfoList[0].fromPayId" type="text" class="inputxt"  ignore="ignore"  value="${poVal.fromPayId }"/>
 					  <label class="Validform_label" style="display: none;">采购付款单外键</label>
 					</td>
 					<td align="right">
@@ -327,7 +328,7 @@ $(document).ready(function(){
 									</label>
 					</td>
 				  <td class="value" >
-					  	<input name="busPayInfoList[0].fromProjmId" maxlength="32" type="text" class="inputxt"  ignore="ignore"  value="${poVal.fromProjmId }"/>
+					  	<input name="busPayInfoList[0].fromProjmId" type="text" class="inputxt"  ignore="ignore"  value="${poVal.fromProjmId }"/>
 					  <label class="Validform_label" style="display: none;">项目管理外键</label>
 					</td>
 				</tr>
@@ -338,7 +339,7 @@ $(document).ready(function(){
 									</label>
 					</td>
 				  <td class="value" >
-					  	<input name="busPayInfoList[0].fromId" maxlength="32" type="text" class="inputxt"  ignore="ignore"  value="${poVal.fromId }"/>
+					  	<input name="busPayInfoList[0].fromId" type="text" class="inputxt"  ignore="ignore"  value="${poVal.fromId }"/>
 					  <label class="Validform_label" style="display: none;">费用报销外键</label>
 					</td>
 					</tr>

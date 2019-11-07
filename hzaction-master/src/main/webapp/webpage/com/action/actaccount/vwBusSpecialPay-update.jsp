@@ -15,7 +15,7 @@
 					<input id="id" name="id" type="hidden" value="${vwBusSpecialPayPage.id }"/>
 					<input id="fromProjmId" name="fromProjmId" type="hidden" maxlength="36" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusSpecialPayPage.fromProjmId}'/>
 					<input id="fromSuppId" name="fromSuppId" type="hidden" maxlength="36" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusSpecialPayPage.fromSuppId}'/>
-		<table style="width: 600px;" cellpadding="0" cellspacing="1" class="formtable">
+		<table style="width: 680px;" cellpadding="0" cellspacing="1" class="formtable">
 					<tr>
 						<td align="right">
 							<label class="Validform_label">
@@ -23,7 +23,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="bsspSmspId" name="bsspSmspId" type="text" maxlength="40" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusSpecialPayPage.bsspSmspId}'/>
+						    <input id="bsspSmspId" name="bsspSmspId" type="text" maxlength="40" readonly="true" style="width: 200px;background-color:#F0F0F0;" class="inputxt"  ignore="ignore"  value='${vwBusSpecialPayPage.bsspSmspId}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">单号</label>
 						</td>

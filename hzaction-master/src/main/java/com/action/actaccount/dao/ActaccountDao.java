@@ -55,7 +55,7 @@ public interface ActaccountDao {
 	@Arguments({"bsSubmitId"})
 	String findByBsSubmitId(String bsSubmitId);
 	
-	@Sql("SELECT count(bs.id)+1 FROM bs_submit bs where bs.bs_submit_id like CONCAT('',:bsSubmitId,'%')")
+	@Sql("select count(bs.id)+1 from vw_bus_special_pay bs where bs.bssp_smsp_id like CONCAT('',:bsspSmspId,'%')")
 	@Arguments({"bsspSmspId"})
 	String findByBsspSmspId(String bsspSmspId);
 }

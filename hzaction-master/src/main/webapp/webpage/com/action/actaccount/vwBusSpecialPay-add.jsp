@@ -8,6 +8,22 @@
   <t:base type="uploadify"></t:base>
   <script type="text/javascript">
   //编写自定义JS代码
+  function createBsspSmspId(bsspSmspId){
+		//报销单号,传入项目编号
+		$.ajax({
+			type : "POST",　　　　　　　　　　　
+			url : 'vwBusSpecialPayController.do?doBsspSmspId',　　　　　 
+			data: {bpProjId:bsspSmspId},　　　　　　
+			success : function(data) {
+				var temp = jQuery.parseJSON(data);
+				$("#bsspSmspId").val(temp.msg);
+			},
+			error:function(){
+				tip("产生报销单号错误！");
+			}
+		})
+		
+	  }
   </script>
  </head>
  <body>
@@ -15,7 +31,7 @@
 					<input id="id" name="id" type="hidden" value="${vwBusSpecialPayPage.id }"/>
 					<input id="fromProjmId" name="fromProjmId" type="hidden" maxlength="36" style="width: 150px" class="inputxt"  ignore="ignore" />
 					<input id="fromSuppId" name="fromSuppId" type="hidden" maxlength="36" style="width: 150px" class="inputxt"  ignore="ignore" />
-		<table style="width: 600px;" cellpadding="0" cellspacing="1" class="formtable">
+		<table style="width: 680px;" cellpadding="0" cellspacing="1" class="formtable">
 				<tr>
 					<td align="right">
 						<label class="Validform_label">
@@ -23,7 +39,7 @@
 						</label>
 					</td>
 					<td class="value">
-					     	 <input id="bsspSmspId" name="bsspSmspId" type="text" maxlength="40" style="width: 150px" class="inputxt"  ignore="ignore" />
+					     	 <input id="bsspSmspId" name="bsspSmspId" readonly="true" type="text" maxlength="40" style="width: 200px;background-color:#F0F0F0;" class="inputxt"  ignore="ignore" />
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">单号</label>
 						</td>
@@ -227,6 +243,7 @@
 				                	$('#fromProjmId').val(data.fromProjId);
 				                	$('#bpProjId').val(data.bpmProjId);
 				                	$('#bpManager').val(data.bpmManager);
+				                	createBsspSmspId(data.bpmProjId);
 								},
 				                fitColumns: true" />
 							<span class="Validform_checktip"></span>

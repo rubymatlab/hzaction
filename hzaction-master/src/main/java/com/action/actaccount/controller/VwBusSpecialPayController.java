@@ -548,4 +548,33 @@ public class VwBusSpecialPayController extends BaseController {
 		return j;
 	}
 	
+	@RequestMapping(params = "doBsspSmspId")
+	@ResponseBody
+	public AjaxJson doBsspSmspId(String bpProjId, HttpServletRequest request) {
+		AjaxJson j = new AjaxJson();
+		String message = "产生单号成功";
+		try{
+			String bsspSmspId=vwBusSpecialPayService.getBsspSmspId(bpProjId);
+			int number=Integer.parseInt(bsspSmspId);
+			if(number>1000)
+				message=String.valueOf(number);
+			else
+			{
+				message=String.valueOf(number);
+				if(message.length()==1)
+					message="00"+message;
+				else if(message.length()==2)
+					message="0"+message;
+				else
+					message=message;
+			}
+			message=bpProjId+"-LX-"+message;
+		}catch(Exception e){
+			e.printStackTrace();
+			message = "产生单号失败";
+		}
+		j.setMsg(message);
+		return j;
+	}
+	
 }

@@ -5,6 +5,7 @@ import com.action.actproject.entity.BusProjectManagerEntity;
 import org.jeecgframework.core.common.exception.BusinessException;
 import org.jeecgframework.core.common.service.impl.CommonServiceImpl;
 
+import com.action.actaccount.dao.ActaccountDao;
 import com.action.actaccount.entity.BusPayInfoEntity;
 import com.action.actaccount.entity.VwBusSpecialPayEntity;
 import org.springframework.stereotype.Service;
@@ -32,7 +33,8 @@ public class VwBusSpecialPayServiceImpl extends CommonServiceImpl implements VwB
 
 	@Autowired
 	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
-	
+	@Autowired
+	private ActaccountDao actaccountDao;
  	public void delete(VwBusSpecialPayEntity entity) throws Exception{
  		super.delete(entity);
  	}
@@ -171,5 +173,11 @@ public class VwBusSpecialPayServiceImpl extends CommonServiceImpl implements VwB
 		    List<BusPayInfoEntity> busPayInfoOldList = this.findHql(hql0,id0);
 			this.deleteAllEntitie(busPayInfoOldList);
 			
+		}
+
+		@Override
+		public String getBsspSmspId(String bsspSmspId) {
+			// TODO Auto-generated method stub
+			return actaccountDao.findByBsspSmspId(bsspSmspId);
 		}
 }

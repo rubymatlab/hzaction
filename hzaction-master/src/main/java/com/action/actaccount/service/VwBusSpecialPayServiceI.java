@@ -45,4 +45,10 @@ public interface VwBusSpecialPayServiceI extends CommonService{
 	 * 
 	 */
 	public void delMain (VwBusSpecialPayEntity vwBusSpecialPay) throws Exception;
+	/**
+	 * 自动产生单号
+	 * @param bsspSmspId
+	 * @return
+	 */
+	public String getBsspSmspId(String bsspSmspId);
 }

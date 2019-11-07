@@ -14,10 +14,10 @@
    <t:dgCol title="所属公司"  field="sysCompanyCode"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="创建日期"  field="createDate"  formatter="yyyy-MM-dd"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="更新日期"  field="updateDate"  formatter="yyyy-MM-dd"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="报销单号"  field="bsSubmitId"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="项目名称"  field="projectName"  query="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="项目编号"  field="projectId"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="报销人"  field="bsSubmiter"  query="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="报销单号"  field="bsSubmitId"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="部门"  field="bsDept"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="申请日期"  field="bsBeginDate"  formatter="yyyy-MM-dd"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="报销日期"  field="bsSubmitDate"  formatter="yyyy-MM-dd hh:mm:ss"  hidden="true"  query="true"  queryMode="group"  width="120"></t:dgCol>

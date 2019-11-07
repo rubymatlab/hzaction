@@ -27,4 +27,9 @@ public interface BsSubmitServiceI extends CommonService{
 	 * 
 	 */
 	public void delMain (BsSubmitEntity bsSubmit) throws Exception;
+	
+	/**
+	 * 获取报销单ID
+	 */
+	public String getBsSubmitId(String bsSubmitId);
 }

@@ -833,4 +833,33 @@ public class BsSubmitController extends BaseController {
 		j.setObj(files);
 		return j;
 	}
+	
+	@RequestMapping(params = "doBsSubmitId")
+	@ResponseBody
+	public AjaxJson doBsSubmitId(String bpProjId, HttpServletRequest request) {
+		AjaxJson j = new AjaxJson();
+		String message = "产生报销单号成功";
+		try{
+			String bsSubmitId=bsSubmitService.getBsSubmitId(bpProjId);
+			int number=Integer.parseInt(bsSubmitId);
+			if(number>1000)
+				message=String.valueOf(number);
+			else
+			{
+				message=String.valueOf(number);
+				if(message.length()==1)
+					message="00"+message;
+				else if(message.length()==2)
+					message="0"+message;
+				else
+					message=message;
+			}
+			message=bpProjId+"-BX-"+message;
+		}catch(Exception e){
+			e.printStackTrace();
+			message = "产生报销单号失败";
+		}
+		j.setMsg(message);
+		return j;
+	}
 }

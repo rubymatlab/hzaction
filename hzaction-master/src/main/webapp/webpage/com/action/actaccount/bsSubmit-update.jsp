@@ -91,7 +91,7 @@
 				<label class="Validform_label">报销单号:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bsSubmitId" name="bsSubmitId" type="text" maxlength="40" style="width: 150px" class="inputxt"  ignore="ignore"  value='${bsSubmitPage.bsSubmitId}'/>
+		     	 <input id="bsSubmitId" name="bsSubmitId" type="text" readonly="true" maxlength="40" style="width: 150px;background-color:#F0F0F0;" class="inputxt"  ignore="ignore"  value='${bsSubmitPage.bsSubmitId}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">报销单号</label>
 			</td>

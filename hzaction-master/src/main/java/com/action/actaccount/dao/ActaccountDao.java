@@ -51,4 +51,8 @@ public interface ActaccountDao {
 	@Sql("select max(bpi.bpi_voucherno)+1  from bus_pay_info bpi where bpi.bpi_voucherno like CONCAT(date_format(NOW(),'%Y%m'),'%')")
 	String findByBpiVoucherno(); 
 	
+	@Sql("SELECT count(bs.id)+1 FROM bs_submit bs where bs.bs_submit_id like CONCAT('',:bsSubmitId,'%')")
+	@Arguments({"bsSubmitId"})
+	String findByBsSubmitId(String bsSubmitId);
+	
 }

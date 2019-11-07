@@ -3,6 +3,8 @@ import com.action.actaccount.service.BsSubmitServiceI;
 import com.action.actproject.entity.BusProjectManagerEntity;
 
 import org.jeecgframework.core.common.service.impl.CommonServiceImpl;
+
+import com.action.actaccount.dao.ActaccountDao;
 import com.action.actaccount.entity.BsSubmitEntity;
 import com.action.actaccount.entity.BusSubmitDetailEntity;
 import com.action.actaccount.entity.BusPayInfoEntity;
@@ -35,6 +37,8 @@ public class BsSubmitServiceImpl extends CommonServiceImpl implements BsSubmitSe
 
 	@Autowired
 	private NamedParameterJdbcTemplate namedParameterJdbcTemplate;
+	@Autowired
+	private ActaccountDao actaccountDao;
  	public void delete(BsSubmitEntity entity) throws Exception{
  		super.delete(entity);
  		//执行删除操作增强业务
@@ -400,4 +404,9 @@ public class BsSubmitServiceImpl extends CommonServiceImpl implements BsSubmitSe
 			}
 		}
  	}
+	@Override
+	public String getBsSubmitId(String bsSubmitId) {
+		// TODO Auto-generated method stub
+		return actaccountDao.findByBsSubmitId(bsSubmitId);
+	}
 }

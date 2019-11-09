@@ -5,6 +5,8 @@ $(document).ready(function(){
     	if(location.href.indexOf("load=detail")!=-1){
 			$(":input").attr("disabled","true");
 		}
+    	
+    	$("input[name*='busPayInfoList[0].fromProjmId']").val($("#fromProjId").val())
 });
     
 </script>
@@ -312,7 +314,7 @@ $(document).ready(function(){
 					  <label class="Validform_label" style="display: none;">业务外键</label>
 					</td>
 				</tr>
-				<tr hidden="hidden">
+				<tr  hidden="hidden">
 				  <td align="right" >
 					<label class="Validform_label">
 										采购付款单外键:

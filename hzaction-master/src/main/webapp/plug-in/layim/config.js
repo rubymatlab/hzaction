@@ -4,6 +4,7 @@
 //动态配置Ip为当前服务器
 var chatIp = document.location.host;
 var id = "";
+$.ajaxSettings.async = false;
 jQuery.post("chat/imController.do?getUserid", {
 
 }, function (text) {
@@ -18,7 +19,7 @@ if(!/^http(s*):\/\//.test(location.href)){
 if (typeof WebSocket != 'undefined') {
 layui.use('layim', function(layim){
 //      //建立WebSocket通讯
-    var socket = new WebSocket("ws://"+chatIp+"/jeecg/WebSocket/"+id);
+    var socket = new WebSocket("ws://"+chatIp+"/hzaction/WebSocket/"+id);
 
     //基础配置
     layim.config({

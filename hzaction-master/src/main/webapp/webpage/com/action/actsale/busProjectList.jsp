@@ -17,7 +17,7 @@
    <t:dgCol title="项目组成员"  field="bpTeam"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="方案输出时间"  field="bpOutTime"  formatter="yyyy-MM-dd hh:mm:ss"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="方案定稿时间"  field="bpFinishTime"  formatter="yyyy-MM-dd hh:mm:ss"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="正式挂网时间"  field="bpOnlineTime"  formatter="yyyy-MM-dd hh:mm:ss"  query="true"  queryMode="group"  width="120"></t:dgCol>
+   <t:dgCol title="预计挂网时间"  field="bpOnlineTime"  formatter="yyyy-MM-dd hh:mm:ss"  query="true"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="跟进结果"  field="bpFollowResults"  query="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="客户资料外键"  field="fromCustId"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="创建人名称"  field="createName"  hidden="true"  queryMode="single"  width="120"></t:dgCol>

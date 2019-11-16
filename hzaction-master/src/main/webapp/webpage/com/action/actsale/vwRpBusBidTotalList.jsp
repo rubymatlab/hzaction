@@ -15,7 +15,7 @@
    <t:dgCol title="配合人员"  field="bdCoordinator"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="商务负责人"  field="bdBusinessCharge"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="辅助人员"  field="bdAuxiliaryStaff"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="正式挂网时间"  field="bpOnlineTime"  formatter="yyyy-MM-dd"  hidden="true"  query="true"  queryMode="group"  width="130"></t:dgCol>
+   <t:dgCol title="预计挂网时间"  field="bpOnlineTime"  formatter="yyyy-MM-dd"  hidden="true"  query="true"  queryMode="group"  width="130"></t:dgCol>
 <%--    <t:dgCol title="操作" field="opt" width="100" hidden="true"></t:dgCol>
    <t:dgDelOpt title="删除" url="vwRpBusBidTotalController.do?doDel&id={id}" urlclass="ace_button"  urlfont="fa-trash-o"/>
    <t:dgToolBar title="录入" icon="icon-add" url="vwRpBusBidTotalController.do?goAdd" funname="add" operationCode="add"></t:dgToolBar>

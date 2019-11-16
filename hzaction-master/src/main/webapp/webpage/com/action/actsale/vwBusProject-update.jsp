@@ -140,12 +140,12 @@
 				<label class="Validform_label" style="display: none;">方案定稿时间</label>
 			</td>
 			<td align="right">
-				<label class="Validform_label">正式挂网时间:</label>
+				<label class="Validform_label">预计挂网时间:</label>
 			</td>
 			<td class="value">
 					  <input id="bpOnlineTime" name="bpOnlineTime" type="text" style="width: 150px"   ignore="ignore" class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})"  value='<fmt:formatDate value='${vwBusProjectPage.bpOnlineTime}' type="date" pattern="yyyy-MM-dd hh:mm:ss"/>'/>
 				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">正式挂网时间</label>
+				<label class="Validform_label" style="display: none;">预计挂网时间</label>
 			</td>
 		</tr>
 		<tr>

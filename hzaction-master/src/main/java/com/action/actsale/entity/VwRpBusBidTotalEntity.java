@@ -62,7 +62,7 @@ public class VwRpBusBidTotalEntity implements java.io.Serializable {
 	/**辅助人员*/
 	@Excel(name="辅助人员",width=15)
 	private java.lang.String bdAuxiliaryStaff;
-	/**正式挂网时间*/
+	/**预计挂网时间*/
 	private java.util.Date bpOnlineTime;
 	
 	/**
@@ -257,7 +257,7 @@ public class VwRpBusBidTotalEntity implements java.io.Serializable {
 	}
 	/**
 	 *方法: 取得java.util.Date
-	 *@return: java.util.Date  正式挂网时间
+	 *@return: java.util.Date  预计挂网时间
 	 */
 
 	@Column(name ="BP_ONLINE_TIME",nullable=true,length=32)
@@ -267,7 +267,7 @@ public class VwRpBusBidTotalEntity implements java.io.Serializable {
 
 	/**
 	 *方法: 设置java.util.Date
-	 *@param: java.util.Date  正式挂网时间
+	 *@param: java.util.Date  预计挂网时间
 	 */
 	public void setBpOnlineTime(java.util.Date bpOnlineTime){
 		this.bpOnlineTime = bpOnlineTime;

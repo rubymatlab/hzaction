@@ -117,12 +117,12 @@
 		</tr>
 		<tr>
 			<td align="right">
-				<label class="Validform_label">项目组成员:</label>
+				<label class="Validform_label">项目阶段:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bpTeam" name="bpTeam" type="text" maxlength="200" style="width: 150px" class="inputxt"  ignore="ignore" />
+		     	 <t:dictSelect field="bpTeam" type="list"  typeGroupCode="bp_type"  defaultVal="0" hasLabel="false"  title="项目阶段" ></t:dictSelect>
 				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">项目组成员</label>
+				<label class="Validform_label" style="display: none;">项目阶段</label>
 			</td>
 			<td align="right">
 				<label class="Validform_label">方案输出时间:</label>

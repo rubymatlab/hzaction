@@ -31,14 +31,14 @@ import org.jeecgframework.poi.excel.annotation.Excel;
 public class BusProjectDisfollowEntity implements java.io.Serializable {
 	/**主键*/
 	private java.lang.String id;
-	/**跟进次数*/
-	@Excel(name="跟进次数",width=15)
+	/**跟进次数
+	@Excel(name="跟进次数",width=15)*/
 	private java.lang.Integer bpdDisNo;
 	/**跟进日期*/
 	@Excel(name="跟进日期",width=15,format = "yyyy-MM-dd")
 	private java.util.Date bpdFollowDate;
-	/**项目阶段*/
-	@Excel(name="项目阶段",width=15)
+	/**项目阶段
+	@Excel(name="项目阶段",width=15)*/
 	private java.lang.String bpdStage;
 	/**项目情况*/
 	@Excel(name="项目情况",width=15)

@@ -133,12 +133,12 @@
 		</tr>
 		<tr>
 			<td align="right">
-				<label class="Validform_label">项目组成员:</label>
+				<label class="Validform_label">项目阶段:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bpTeam" name="bpTeam" type="text" maxlength="200" style="width: 150px" class="inputxt"  ignore="ignore" />
+		     	 <t:dictSelect field="bpTeam" type="list"  typeGroupCode="bp_type"  defaultVal="0" hasLabel="false"  title="项目阶段" ></t:dictSelect>     
 				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">项目组成员</label>
+				<label class="Validform_label" style="display: none;">项目阶段</label>
 			</td>
 			<td align="right">
 				<label class="Validform_label">方案输出时间:</label>
@@ -188,14 +188,6 @@
 		
 		<tr>
 			<td align="right">
-				<label class="Validform_label">问题or协助:</label>
-			</td>
-			<td class="value">
-		     	 <textarea id="bpQuestions" name="bpQuestions" style="height:auto;width:95%" class="inputxt" rows="2"   ignore="ignore"></textarea>
-				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">问题or协助</label>
-			</td>
-			<td align="right">
 				<label class="Validform_label">产品解决方案:</label>
 			</td>
 			<td class="value">
@@ -203,17 +195,6 @@
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">产品解决方案</label>
 			</td>
-		</tr>
-		<tr>
-			<td align="right">
-				<label class="Validform_label">跟进结果:</label>
-			</td>
-			<td class="value">
-				<textarea id="bpFollowResults" name="bpFollowResults" style="height:auto;width:95%" class="inputxt" rows="2"   ignore="ignore"></textarea>
-				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">跟进结果</label>
-			</td>
-			
 			<td align="right">
 				<label class="Validform_label">竞争情况:</label>
 			</td>

@@ -14,7 +14,7 @@
    <t:dgCol title="问题or协助"  field="bpQuestions"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="竞争情况"  field="bpCompetition"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="项目经理"  field="bpManager"  query="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="项目组成员"  field="bpTeam"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="项目阶段"  field="bpTeam"  queryMode="single"  dictionary="bp_type"  width="120"></t:dgCol>
    <t:dgCol title="方案输出时间"  field="bpOutTime"  formatter="yyyy-MM-dd"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="方案定稿时间"  field="bpFinishTime"  formatter="yyyy-MM-dd"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="预计挂网时间"  field="bpOnlineTime"  formatter="yyyy-MM-dd"  query="true"  queryMode="group"  width="120"></t:dgCol>

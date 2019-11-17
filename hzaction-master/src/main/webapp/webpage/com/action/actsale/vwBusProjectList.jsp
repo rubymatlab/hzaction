@@ -5,22 +5,22 @@
   <div region="center" style="padding:0px;border:0px">
   <t:datagrid name="vwBusProjectList" checkbox="true" fitColumns="true" title="项目立项" sortName="createDate" actionUrl="vwBusProjectController.do?datagrid" idField="id" fit="true" queryMode="group">
    <t:dgCol title="主键"  field="id"  hidden="true"  queryMode="group"  width="120"></t:dgCol>
-   <t:dgCol title="项目经理"  field="bpManager"  query="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="项目名称"  field="bpProjName"  query="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="方案输出时间"  field="bpOutTime"  formatter="yyyy-MM-dd"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="方案定稿时间"  field="bpFinishTime"  formatter="yyyy-MM-dd"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="项目经理"  field="bpManager"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="项目预算"  field="bpAmount"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="项目阶段"  field="bpTeam" query="true" hidden="true"  queryMode="single"  dictionary="bp_type"  width="120"></t:dgCol>
    <t:dgCol title="预计挂网时间"  field="bpOnlineTime"  formatter="yyyy-MM-dd"  query="true"  queryMode="group"  width="120"></t:dgCol>
-   <t:dgCol title="产品解决方案"  field="bpProSolutions"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="问题or协助"  field="bpQuestions"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="流程状态"  field="bpmStatus" dictionary="bpm_status"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="流程状态"  field="bpmStatus" query="true" dictionary="bpm_status"  queryMode="single"  width="120"></t:dgCol>
    
-   <t:dgCol title="项目编号"  field="bpProjId" hidden="true"   query="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="立项时间"  field="bpDate" hidden="true"   formatter="yyyy-MM-dd"  query="true"  queryMode="group"  width="120"></t:dgCol>
+   <t:dgCol title="方案输出时间"  field="bpOutTime" hidden="true"  formatter="yyyy-MM-dd"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="方案定稿时间"  field="bpFinishTime" hidden="true"  formatter="yyyy-MM-dd"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="产品解决方案"  field="bpProSolutions"  hidden="true" queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="项目编号"  field="bpProjId" hidden="true"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="立项时间"  field="bpDate" hidden="true"   formatter="yyyy-MM-dd"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="项目关键人"  field="bpKeyPeople" hidden="true"   queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="项目简介"  field="bpIntroduction" hidden="true"   queryMode="single"  width="500"></t:dgCol>
    <t:dgCol title="竞争情况"  field="bpCompetition" hidden="true"   queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="项目组成员"  field="bpTeam" hidden="true"   queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="跟进结果"  field="bpFollowResults" hidden="true"   query="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="客户资料外键"  field="fromCustId" hidden="true"   queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="客户编号"  field="bcId" hidden="true"   queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="客户名称"  field="bcName" hidden="true"   queryMode="single"  width="120"></t:dgCol>

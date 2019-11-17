@@ -38,53 +38,53 @@ public class VwBusProjectPage implements java.io.Serializable {
 	/**项目名称*/
     @Excel(name="项目名称")
 	private java.lang.String bpProjName;
-	/**立项时间*/
-    @Excel(name="立项时间",format = "yyyy-MM-dd")
+	/**立项时间
+    @Excel(name="立项时间",format = "yyyy-MM-dd")*/
 	private java.util.Date bpDate;
-	/**项目关键人*/
-    @Excel(name="项目关键人")
+	/**项目关键人
+    @Excel(name="项目关键人")*/
 	private java.lang.String bpKeyPeople;
 	/**项目预算*/
 	@Excel(name="项目预算",width=15)
 	private java.math.BigDecimal bpAmount;
-	/**项目简介*/
-    @Excel(name="项目简介")
+	/**项目简介
+    @Excel(name="项目简介")*/
 	private java.lang.String bpIntroduction;
 	/**问题or协助*/
     @Excel(name="问题or协助")
 	private java.lang.String bpQuestions;
-	/**产品解决方案*/
-    @Excel(name="产品解决方案")
+	/**产品解决方案
+    @Excel(name="产品解决方案")*/
 	private java.lang.String bpProSolutions;
-	/**竞争情况*/
-    @Excel(name="竞争情况")
+	/**竞争情况
+    @Excel(name="竞争情况")*/
 	private java.lang.String bpCompetition;
 	/**项目经理*/
     @Excel(name="项目经理")
 	private java.lang.String bpManager;
-	/**项目组成员*/
-    @Excel(name="项目组成员")
+	/**项目阶段*/
+    @Excel(name="项目阶段",width=15,dicCode="bp_type")
 	private java.lang.String bpTeam;
-	/**方案输出时间*/
-    @Excel(name="方案输出时间",format = "yyyy-MM-dd")
+	/**方案输出时间
+    @Excel(name="方案输出时间",format = "yyyy-MM-dd")*/
 	private java.util.Date bpOutTime;
-	/**方案定稿时间*/
-    @Excel(name="方案定稿时间",format = "yyyy-MM-dd")
+	/**方案定稿时间
+    @Excel(name="方案定稿时间",format = "yyyy-MM-dd")*/
 	private java.util.Date bpFinishTime;
 	/**预计挂网时间*/
     @Excel(name="预计挂网时间",format = "yyyy-MM-dd")
 	private java.util.Date bpOnlineTime;
-	/**跟进结果*/
-    @Excel(name="跟进结果")
+	/**跟进结果
+    @Excel(name="跟进结果")*/
 	private java.lang.String bpFollowResults;
 	/**客户资料外键*/
 	/* @Excel(name="客户资料外键") */
 	private java.lang.String fromCustId;
-	/**客户编号*/
-    @Excel(name="客户编号")
+	/**客户编号
+    @Excel(name="客户编号")*/
 	private java.lang.String bcId;
-	/**客户名称*/
-    @Excel(name="客户名称")
+	/**客户名称
+    @Excel(name="客户名称")*/
 	private java.lang.String bcName;
 	/**流程状态*/
 	private java.lang.String bpmStatus;
@@ -274,7 +274,7 @@ public class VwBusProjectPage implements java.io.Serializable {
 	}
 	/**
 	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  项目组成员
+	 *@return: java.lang.String  项目阶段
 	 */
 	public java.lang.String getBpTeam(){
 		return this.bpTeam;
@@ -282,7 +282,7 @@ public class VwBusProjectPage implements java.io.Serializable {
 
 	/**
 	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  项目组成员
+	 *@param: java.lang.String  项目阶段
 	 */
 	public void setBpTeam(java.lang.String bpTeam){
 		this.bpTeam = bpTeam;

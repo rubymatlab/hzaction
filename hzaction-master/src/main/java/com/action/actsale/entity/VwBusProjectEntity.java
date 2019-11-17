@@ -61,8 +61,8 @@ public class VwBusProjectEntity implements java.io.Serializable {
 	/**项目经理*/
 	@Excel(name="项目经理",width=15)
 	private java.lang.String bpManager;
-	/**项目组成员*/
-	@Excel(name="项目组成员",width=15)
+	/**项目阶段*/
+	@Excel(name="项目阶段",width=15,dicCode="bp_type")
 	private java.lang.String bpTeam;
 	/**方案输出时间*/
 	@Excel(name="方案输出时间",width=15,format = "yyyy-MM-dd")
@@ -305,7 +305,7 @@ public class VwBusProjectEntity implements java.io.Serializable {
 	
 	/**
 	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  项目组成员
+	 *@return: java.lang.String  项目阶段
 	 */
 	
 	@Column(name ="BP_TEAM",nullable=true,length=200)
@@ -315,7 +315,7 @@ public class VwBusProjectEntity implements java.io.Serializable {
 
 	/**
 	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  项目组成员
+	 *@param: java.lang.String  项目阶段
 	 */
 	public void setBpTeam(java.lang.String bpTeam){
 		this.bpTeam = bpTeam;

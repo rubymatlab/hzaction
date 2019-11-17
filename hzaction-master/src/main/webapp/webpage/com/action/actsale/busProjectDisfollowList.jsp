@@ -33,17 +33,20 @@
 	<tr bgcolor="#E6E6E6">
 		<td align="center" bgcolor="#EEEEEE" style="width: 25px;">序号</td>
 		<td align="center" bgcolor="#EEEEEE" style="width: 25px;">操作</td>
-				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
+				  <!-- <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
 						跟进次数
-				  </td>
+				  </td> -->
 				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
 						跟进日期
-				  </td>
+				  </td><!-- 
 				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
 						项目阶段
+				  </td> -->
+				  <td align="left" bgcolor="#EEEEEE" style="width: 500px;">
+						项目情况
 				  </td>
-				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
-						反馈信息
+				  <td align="left" bgcolor="#EEEEEE" style="width: 500px;">
+						问题or协助
 				  </td>
 				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;display:none;">
 						项目立项外键
@@ -64,21 +67,21 @@
 					<input name="busProjectDisfollowList[0].sysOrgCode" type="hidden"/>
 					<input name="busProjectDisfollowList[0].sysCompanyCode" type="hidden"/>
 					<input name="busProjectDisfollowList[0].bpmStatus" type="hidden"/>
-				  <td align="left">
+				  <!-- <td align="left">
 					  	<input name="busProjectDisfollowList[0].bpdDisNo" maxlength="32" type="text" class="inputxt" datatype="n"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">跟进次数</label>
-					</td>
+					</td> -->
 				  <td align="left">
 							<input name="busProjectDisfollowList[0].bpdFollowDate" maxlength="32"  type="text" class="Wdate" onClick="WdatePicker()"  style="width:150px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">跟进日期</label>
 					</td>
 				  <td align="left">
-					  	<input name="busProjectDisfollowList[0].bpdStage" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
-					  <label class="Validform_label" style="display: none;">项目阶段</label>
+					  	<input name="busProjectDisfollowList[0].bpdFeedbackInto" maxlength="400" type="text" class="inputxt"  style="width:400px;"  ignore="ignore" >
+					  <label class="Validform_label" style="display: none;">项目情况</label>
 					</td>
 				  <td align="left">
-					  	<input name="busProjectDisfollowList[0].bpdFeedbackInto" maxlength="400" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
-					  <label class="Validform_label" style="display: none;">反馈信息</label>
+				  		<input name="busProjectDisfollowList[0].bpdQuestions" maxlength="3000" type="text" class="inputxt"  style="width:400px;"  ignore="ignore" />
+					  <label class="Validform_label" style="display: none;">问题or协助</label>
 					</td>
 				  <td align="left" style="display:none;">
 					  	<input name="busProjectDisfollowList[0].fromId" maxlength="36" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
@@ -101,22 +104,22 @@
 						<input name="busProjectDisfollowList[${stuts.index }].sysOrgCode" type="hidden" value="${poVal.sysOrgCode }"/>
 						<input name="busProjectDisfollowList[${stuts.index }].sysCompanyCode" type="hidden" value="${poVal.sysCompanyCode }"/>
 						<input name="busProjectDisfollowList[${stuts.index }].bpmStatus" type="hidden" value="${poVal.bpmStatus }"/>
-				   <td align="left">
+				   <%-- <td align="left">
 					  	<input name="busProjectDisfollowList[${stuts.index }].bpdDisNo" maxlength="32" type="text" class="inputxt" datatype="n"  style="width:120px;"  ignore="ignore"  value="${poVal.bpdDisNo }"/>
 					  <label class="Validform_label" style="display: none;">跟进次数</label>
-				   </td>
+				   </td> --%>
 				   <td align="left">
 							<input name="busProjectDisfollowList[${stuts.index }].bpdFollowDate" maxlength="32" type="text" class="Wdate" onClick="WdatePicker()"  style="width:150px;"   ignore="ignore"  value="<fmt:formatDate value='${poVal.bpdFollowDate}' type="date" pattern="yyyy-MM-dd"/>"/>
 					  <label class="Validform_label" style="display: none;">跟进日期</label>
 				   </td>
 				   <td align="left">
-					  	<input name="busProjectDisfollowList[${stuts.index }].bpdStage" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bpdStage }"/>
-					  <label class="Validform_label" style="display: none;">项目阶段</label>
+					  	<input name="busProjectDisfollowList[${stuts.index }].bpdFeedbackInto" maxlength="400" type="text" class="inputxt"  style="width:400px;"  ignore="ignore"  value="${poVal.bpdFeedbackInto }"/>
+					  <label class="Validform_label" style="display: none;">项目情况</label>
 				   </td>
 				   <td align="left">
-					  	<input name="busProjectDisfollowList[${stuts.index }].bpdFeedbackInto" maxlength="400" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bpdFeedbackInto }"/>
-					  <label class="Validform_label" style="display: none;">反馈信息</label>
-				   </td>
+				   		<input name="busProjectDisfollowList[${stuts.index }].bpdQuestions" maxlength="3000" type="text" class="inputxt"  style="width:400px;"  ignore="ignore" value="${poVal.bpdQuestions }"/>
+					  <label class="Validform_label" style="display: none;">问题or协助</label>
+					</td>
 				   <td align="left" style="display:none;">
 					  	<input name="busProjectDisfollowList[${stuts.index }].fromId" maxlength="36" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.fromId }"/>
 					  <label class="Validform_label" style="display: none;">项目立项外键</label>

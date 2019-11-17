@@ -19,7 +19,7 @@ import org.jeecgframework.poi.excel.annotation.Excel;
 
 /**   
  * @Title: Entity
- * @Description: 分配跟进明细
+ * @Description: 项目跟进情况
  * @author onlineGenerator
  * @date 2019-08-14 22:03:22
  * @version V1.0   
@@ -40,9 +40,12 @@ public class BusProjectDisfollowEntity implements java.io.Serializable {
 	/**项目阶段*/
 	@Excel(name="项目阶段",width=15)
 	private java.lang.String bpdStage;
-	/**反馈信息*/
-	@Excel(name="反馈信息",width=15)
+	/**项目情况*/
+	@Excel(name="项目情况",width=15)
 	private java.lang.String bpdFeedbackInto;
+	/**问题or协助*/
+	@Excel(name="问题or协助",width=15)
+	private java.lang.String bpdQuestions;
 	/**项目立项外键*/
 	/* @Excel(name="项目立项外键",width=15) */
 	private java.lang.String fromId;
@@ -142,7 +145,7 @@ public class BusProjectDisfollowEntity implements java.io.Serializable {
 	
 	/**
 	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  反馈信息
+	 *@return: java.lang.String  项目情况
 	 */
 	
 	@Column(name ="BPD_FEEDBACK_INTO",nullable=true,length=400)
@@ -152,10 +155,28 @@ public class BusProjectDisfollowEntity implements java.io.Serializable {
 
 	/**
 	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  反馈信息
+	 *@param: java.lang.String  项目情况
 	 */
 	public void setBpdFeedbackInto(java.lang.String bpdFeedbackInto){
 		this.bpdFeedbackInto = bpdFeedbackInto;
+	}
+
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  问题or协助
+	 */
+
+	@Column(name ="BPD_QUESTIONS",nullable=true,length=3000)
+	public java.lang.String getBpdQuestions(){
+		return this.bpdQuestions;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  问题or协助
+	 */
+	public void setBpdQuestions(java.lang.String bpdQuestions){
+		this.bpdQuestions = bpdQuestions;
 	}
 	
 	/**

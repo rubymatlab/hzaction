@@ -249,7 +249,7 @@ public class BusProjectController extends BaseController {
 		return new ModelAndView("com/action/actsale/busProjectFeeDetailList");
 	}
 	/**
-	 * 加载明细列表[分配跟进明细]
+	 * 加载明细列表[项目跟进情况]
 	 * 
 	 * @return
 	 */
@@ -260,7 +260,7 @@ public class BusProjectController extends BaseController {
 		//获取参数
 		Object id1 = busProject.getId();
 		//===================================================================================
-		//查询-分配跟进明细
+		//查询-项目跟进情况
 	    String hql1 = "from BusProjectDisfollowEntity where 1 = 1 AND fromId = ? ";
 	    try{
 	    	List<BusProjectDisfollowEntity> busProjectDisfollowEntityList = systemService.findHql(hql1,id1);
@@ -271,7 +271,7 @@ public class BusProjectController extends BaseController {
 		return new ModelAndView("com/action/actsale/busProjectDisfollowList");
 	}
 	/**
-	 * 加载明细列表[立项合作伙伴资料]
+	 * 加载明细列表[合作伙伴资料]
 	 * 
 	 * @return
 	 */
@@ -282,7 +282,7 @@ public class BusProjectController extends BaseController {
 		//获取参数
 		Object id2 = busProject.getId();
 		//===================================================================================
-		//查询-立项合作伙伴资料
+		//查询-合作伙伴资料
 	    String hql2 = "from BusProjPartnerEntity where 1 = 1 AND fromId = ? ";
 	    try{
 	    	List<BusProjPartnerEntity> busProjPartnerEntityList = systemService.findHql(hql2,id2);

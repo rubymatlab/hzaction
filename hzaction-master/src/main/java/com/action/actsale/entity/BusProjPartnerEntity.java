@@ -19,7 +19,7 @@ import org.jeecgframework.poi.excel.annotation.Excel;
 
 /**   
  * @Title: Entity
- * @Description: 立项合作伙伴资料
+ * @Description: 合作伙伴资料
  * @author onlineGenerator
  * @date 2019-08-14 22:03:22
  * @version V1.0   

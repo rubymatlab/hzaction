@@ -537,8 +537,8 @@ public class VwBusProjectPage implements java.io.Serializable {
 		public void setBusProjectFeeDetailList(List<BusProjectFeeDetailEntity> busProjectFeeDetailList) {
 		this.busProjectFeeDetailList = busProjectFeeDetailList;
 		}
-	/**保存-分配跟进明细*/
-    @ExcelCollection(name="分配跟进明细")
+	/**保存-项目跟进情况*/
+    @ExcelCollection(name="项目跟进情况")
 	private List<BusProjectDisfollowEntity> busProjectDisfollowList = new ArrayList<BusProjectDisfollowEntity>();
 		public List<BusProjectDisfollowEntity> getBusProjectDisfollowList() {
 		return busProjectDisfollowList;
@@ -546,8 +546,8 @@ public class VwBusProjectPage implements java.io.Serializable {
 		public void setBusProjectDisfollowList(List<BusProjectDisfollowEntity> busProjectDisfollowList) {
 		this.busProjectDisfollowList = busProjectDisfollowList;
 		}
-	/**保存-立项合作伙伴资料*/
-    @ExcelCollection(name="立项合作伙伴资料")
+	/**保存-合作伙伴资料*/
+    @ExcelCollection(name="合作伙伴资料")
 	private List<BusProjPartnerEntity> busProjPartnerList = new ArrayList<BusProjPartnerEntity>();
 		public List<BusProjPartnerEntity> getBusProjPartnerList() {
 		return busProjPartnerList;

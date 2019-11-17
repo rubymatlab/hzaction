@@ -48,13 +48,13 @@ public class VwBusProjectServiceImpl extends CommonServiceImpl implements VwBusP
 				busProjectFeeDetail.setFromId(vwBusProject.getId());
 				this.save(busProjectFeeDetail);
 			}
-			/**保存-分配跟进明细*/
+			/**保存-项目跟进情况*/
 			for(BusProjectDisfollowEntity busProjectDisfollow:busProjectDisfollowList){
 				//外键设置
 				busProjectDisfollow.setFromId(vwBusProject.getId());
 				this.save(busProjectDisfollow);
 			}
-			/**保存-立项合作伙伴资料*/
+			/**保存-合作伙伴资料*/
 			for(BusProjPartnerEntity busProjPartner:busProjPartnerList){
 				//外键设置
 				busProjPartner.setFromId(vwBusProject.getId());
@@ -119,15 +119,15 @@ public class VwBusProjectServiceImpl extends CommonServiceImpl implements VwBusP
 			}
 		}
 		//===================================================================================
-		//1.查询出数据库的明细数据-分配跟进明细
+		//1.查询出数据库的明细数据-项目跟进情况
 	    String hql1 = "from BusProjectDisfollowEntity where 1 = 1 AND fromId = ? ";
 	    List<BusProjectDisfollowEntity> busProjectDisfollowOldList = this.findHql(hql1,id1);
-		//2.筛选更新明细数据-分配跟进明细
+		//2.筛选更新明细数据-项目跟进情况
 		if(busProjectDisfollowList!=null&&busProjectDisfollowList.size()>0){
 		for(BusProjectDisfollowEntity oldE:busProjectDisfollowOldList){
 			boolean isUpdate = false;
 				for(BusProjectDisfollowEntity sendE:busProjectDisfollowList){
-					//需要更新的明细数据-分配跟进明细
+					//需要更新的明细数据-项目跟进情况
 					if(oldE.getId().equals(sendE.getId())){
 		    			try {
 							MyBeanUtils.copyBeanNotNull2Bean(sendE,oldE);
@@ -141,12 +141,12 @@ public class VwBusProjectServiceImpl extends CommonServiceImpl implements VwBusP
 		    		}
 		    	}
 	    		if(!isUpdate){
-		    		//如果数据库存在的明细，前台没有传递过来则是删除-分配跟进明细
+		    		//如果数据库存在的明细，前台没有传递过来则是删除-项目跟进情况
 		    		super.delete(oldE);
 	    		}
 	    		
 			}
-			//3.持久化新增的数据-分配跟进明细
+			//3.持久化新增的数据-项目跟进情况
 			for(BusProjectDisfollowEntity busProjectDisfollow:busProjectDisfollowList){
 				if(oConvertUtils.isEmpty(busProjectDisfollow.getId())){
 					//外键设置
@@ -156,15 +156,15 @@ public class VwBusProjectServiceImpl extends CommonServiceImpl implements VwBusP
 			}
 		}
 		//===================================================================================
-		//1.查询出数据库的明细数据-立项合作伙伴资料
+		//1.查询出数据库的明细数据-合作伙伴资料
 	    String hql2 = "from BusProjPartnerEntity where 1 = 1 AND fromId = ? ";
 	    List<BusProjPartnerEntity> busProjPartnerOldList = this.findHql(hql2,id2);
-		//2.筛选更新明细数据-立项合作伙伴资料
+		//2.筛选更新明细数据-合作伙伴资料
 		if(busProjPartnerList!=null&&busProjPartnerList.size()>0){
 		for(BusProjPartnerEntity oldE:busProjPartnerOldList){
 			boolean isUpdate = false;
 				for(BusProjPartnerEntity sendE:busProjPartnerList){
-					//需要更新的明细数据-立项合作伙伴资料
+					//需要更新的明细数据-合作伙伴资料
 					if(oldE.getId().equals(sendE.getId())){
 		    			try {
 							MyBeanUtils.copyBeanNotNull2Bean(sendE,oldE);
@@ -178,12 +178,12 @@ public class VwBusProjectServiceImpl extends CommonServiceImpl implements VwBusP
 		    		}
 		    	}
 	    		if(!isUpdate){
-		    		//如果数据库存在的明细，前台没有传递过来则是删除-立项合作伙伴资料
+		    		//如果数据库存在的明细，前台没有传递过来则是删除-合作伙伴资料
 		    		super.delete(oldE);
 	    		}
 	    		
 			}
-			//3.持久化新增的数据-立项合作伙伴资料
+			//3.持久化新增的数据-合作伙伴资料
 			for(BusProjPartnerEntity busProjPartner:busProjPartnerList){
 				if(oConvertUtils.isEmpty(busProjPartner.getId())){
 					//外键设置
@@ -208,12 +208,12 @@ public class VwBusProjectServiceImpl extends CommonServiceImpl implements VwBusP
 	    List<BusProjectFeeDetailEntity> busProjectFeeDetailOldList = this.findHql(hql0,id0);
 		this.deleteAllEntitie(busProjectFeeDetailOldList);
 		//===================================================================================
-		//删除-分配跟进明细
+		//删除-项目跟进情况
 	    String hql1 = "from BusProjectDisfollowEntity where 1 = 1 AND fromId = ? ";
 	    List<BusProjectDisfollowEntity> busProjectDisfollowOldList = this.findHql(hql1,id1);
 		this.deleteAllEntitie(busProjectDisfollowOldList);
 		//===================================================================================
-		//删除-立项合作伙伴资料
+		//删除-合作伙伴资料
 	    String hql2 = "from BusProjPartnerEntity where 1 = 1 AND fromId = ? ";
 	    List<BusProjPartnerEntity> busProjPartnerOldList = this.findHql(hql2,id2);
 		this.deleteAllEntitie(busProjPartnerOldList);

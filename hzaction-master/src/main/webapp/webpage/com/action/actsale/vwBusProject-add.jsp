@@ -228,9 +228,9 @@
 				<%-- 增加一个div，用于调节页面大小，否则默认太小 --%>
 				<div style="width:800px;height:1px;"></div>
 				<t:tabs id="tt" iframe="false" tabPosition="top" fit="false">
+				 <t:tab href="vwBusProjectController.do?busProjectDisfollowList&id=${vwBusProjectPage.id}" icon="icon-search" title="项目跟进情况" id="busProjectDisfollow"></t:tab>
 				 <t:tab href="vwBusProjectController.do?busProjectFeeDetailList&id=${vwBusProjectPage.id}" icon="icon-search" title="项目立项费用明细" id="busProjectFeeDetail"></t:tab>
-				 <t:tab href="vwBusProjectController.do?busProjectDisfollowList&id=${vwBusProjectPage.id}" icon="icon-search" title="分配跟进明细" id="busProjectDisfollow"></t:tab>
-				 <t:tab href="vwBusProjectController.do?busProjPartnerList&id=${vwBusProjectPage.id}" icon="icon-search" title="立项合作伙伴资料" id="busProjPartner"></t:tab>
+				 <t:tab href="vwBusProjectController.do?busProjPartnerList&id=${vwBusProjectPage.id}" icon="icon-search" title="合作伙伴资料" id="busProjPartner"></t:tab>
 				</t:tabs>
 			</div>
 			</t:formvalid>
@@ -263,21 +263,21 @@
 		<tr>
 			 <td align="center"><div style="width: 25px;" name="xh"></div></td>
 			 <td align="center"><input style="width:20px;" type="checkbox" name="ck"/></td>
-				  <td align="left">
+				  <!-- <td align="left">
 					  	<input name="busProjectDisfollowList[#index#].bpdDisNo" maxlength="32" type="text" class="inputxt" datatype="n"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">跟进次数</label>
-				  </td>
+				  </td> -->
 				  <td align="left">
 							<input name="busProjectDisfollowList[#index#].bpdFollowDate" type="text" class="Wdate" onClick="WdatePicker()"  style="width:150px;" ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">跟进日期</label>
 				  </td>
 				  <td align="left">
-					  	<input name="busProjectDisfollowList[#index#].bpdStage" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
-					  <label class="Validform_label" style="display: none;">项目阶段</label>
+					  	<input name="busProjectDisfollowList[#index#].bpdFeedbackInto" maxlength="400" type="text" class="inputxt"  style="width:400px;"  ignore="ignore" />
+					  <label class="Validform_label" style="display: none;">项目情况</label>
 				  </td>
 				  <td align="left">
-					  	<input name="busProjectDisfollowList[#index#].bpdFeedbackInto" maxlength="400" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
-					  <label class="Validform_label" style="display: none;">反馈信息</label>
+					  <input name="busProjectDisfollowList[#index#].bpdQuestions" maxlength="3000" type="text" class="inputxt"  style="width:400px;"  ignore="ignore" />
+					  <label class="Validform_label" style="display: none;">问题or协助</label>
 				  </td>
 				  <td align="left">
 					  	<input name="busProjectDisfollowList[#index#].fromId" maxlength="36" type="hidden" class="inputxt"  style="width:120px;"  ignore="ignore" />

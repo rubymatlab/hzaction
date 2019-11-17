@@ -54,7 +54,7 @@ public class BusBidEntity implements java.io.Serializable {
 	@Excel(name="拟中标方",width=15)
 	private java.lang.String bdWinBidder;
 	/**项目类型*/
-	@Excel(name="项目类型",width=15)
+	@Excel(name="项目类型",width=15,dicCode="bp_type1")
 	private java.lang.String bdProjType;
 	/**主标人员*/
 	@Excel(name="主标人员",width=15)

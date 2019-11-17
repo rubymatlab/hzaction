@@ -21,7 +21,7 @@
    <t:dgCol title="客户名称"  field="bcName"  query="true"  queryMode="single"  dictionary="bas_customer,bc_name,bc_name"  width="120"></t:dgCol>
    <t:dgCol title="客户简称"  field="bcSname"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="拟中标方"  field="bdWinBidder"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="项目类型"  field="bdProjType"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="项目类型"  field="bdProjType"  hidden="true" dictionary="bp_type1" queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="主标人员"  field="bdMainBidder"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="配合人员"  field="bdCoordinator"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="商务负责人"  field="bdBusinessCharge"  hidden="true"  queryMode="single"  width="120"></t:dgCol>

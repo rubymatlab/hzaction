@@ -57,7 +57,8 @@
 						</label>
 					</td>
 					<td class="value">
-					     	 <input id="bdProjType" name="bdProjType" type="text" maxlength="20" style="width: 150px;" class="inputxt"  ignore="ignore" />
+					     	 <!-- <input id="bdProjType" name="bdProjType" type="text" maxlength="20" style="width: 150px;" class="inputxt"  ignore="ignore" /> -->
+							<t:dictSelect field="bdProjType" type="list"  typeGroupCode="bp_type1"   defaultVal="1" hasLabel="false"  title="项目类型" ></t:dictSelect> 
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">项目类型</label>
 						</td>

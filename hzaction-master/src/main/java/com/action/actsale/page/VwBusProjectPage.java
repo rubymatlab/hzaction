@@ -44,6 +44,9 @@ public class VwBusProjectPage implements java.io.Serializable {
 	/**项目关键人*/
     @Excel(name="项目关键人")
 	private java.lang.String bpKeyPeople;
+	/**项目预算*/
+	@Excel(name="项目预算",width=15)
+	private java.math.BigDecimal bpAmount;
 	/**项目简介*/
     @Excel(name="项目简介")
 	private java.lang.String bpIntroduction;
@@ -176,6 +179,23 @@ public class VwBusProjectPage implements java.io.Serializable {
 	 */
 	public void setBpKeyPeople(java.lang.String bpKeyPeople){
 		this.bpKeyPeople = bpKeyPeople;
+	}
+	/**
+	 *方法: 取得java.math.BigDecimal
+	 *@return: java.math.BigDecimal  项目预算
+	 */
+
+	@Column(name ="BP_AMOUNT",nullable=true,length=32)
+	public java.math.BigDecimal getBpAmount(){
+		return this.bpAmount;
+	}
+
+	/**
+	 *方法: 设置java.math.BigDecimal
+	 *@param: java.math.BigDecimal  项目预算
+	 */
+	public void setBpAmount(java.math.BigDecimal bpAmount){
+		this.bpAmount = bpAmount;
 	}
 	/**
 	 *方法: 取得java.lang.String

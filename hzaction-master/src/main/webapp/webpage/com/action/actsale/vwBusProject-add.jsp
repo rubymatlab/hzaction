@@ -86,17 +86,17 @@
 				<label class="Validform_label">立项时间:</label>
 			</td>
 			<td class="value">
-					  <input id="bpDate" name="bpDate" type="text" style="width: 150px"  class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})"  ignore="ignore"  />
+					  <input id="bpDate" name="bpDate" type="text" style="width: 150px"  class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})"  ignore="ignore"  />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">立项时间</label>
 			</td>
 			<td align="right">
-				<label class="Validform_label">项目关键人:</label>
+				<label class="Validform_label">项目预算:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bpKeyPeople" name="bpKeyPeople" type="text" maxlength="20" style="width: 150px" class="inputxt"  ignore="ignore" />
+		     	 <input id="bpAmount" name="bpAmount" type="text" maxlength="20" style="width: 150px" class="inputxt" datatype="n" ignore="ignore" />
 				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">项目关键人</label>
+				<label class="Validform_label" style="display: none;">项目预算</label>
 			</td>
 		</tr>
 		<tr>
@@ -144,7 +144,7 @@
 				<label class="Validform_label">方案输出时间:</label>
 			</td>
 			<td class="value">
-					  <input id="bpOutTime" name="bpOutTime" type="text" style="width: 150px"  class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" ignore="ignore"  />
+					  <input id="bpOutTime" name="bpOutTime" type="text" style="width: 150px"  class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dds'})" ignore="ignore"  />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">方案输出时间</label>
 			</td>
@@ -154,7 +154,7 @@
 				<label class="Validform_label">方案定稿时间:</label>
 			</td>
 			<td class="value">
-					  <input id="bpFinishTime" name="bpFinishTime" type="text" style="width: 150px"  class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" ignore="ignore"  />
+					  <input id="bpFinishTime" name="bpFinishTime" type="text" style="width: 150px"  class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" ignore="ignore"  />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">方案定稿时间</label>
 			</td>
@@ -162,7 +162,7 @@
 				<label class="Validform_label">预计挂网时间:</label>
 			</td>
 			<td class="value">
-					  <input id="bpOnlineTime" name="bpOnlineTime" type="text" style="width: 150px"  class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" ignore="ignore"  />
+					  <input id="bpOnlineTime" name="bpOnlineTime" type="text" style="width: 150px"  class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" ignore="ignore"  />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">预计挂网时间</label>
 			</td>

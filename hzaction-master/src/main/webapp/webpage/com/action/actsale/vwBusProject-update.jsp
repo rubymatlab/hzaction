@@ -73,12 +73,12 @@
 				<label class="Validform_label" style="display: none;">立项时间</label>
 			</td>
 			<td align="right">
-				<label class="Validform_label">项目关键人:</label>
+				<label class="Validform_label">项目预算:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bpKeyPeople" name="bpKeyPeople" type="text" maxlength="20" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vwBusProjectPage.bpKeyPeople}'/>
+		     	 <input id="bpAmount" name="bpAmount" type="text" maxlength="20" style="width: 150px" class="inputxt" datatype="n" ignore="ignore"  value='${vwBusProjectPage.bpAmount}'/>
 				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">项目关键人</label>
+				<label class="Validform_label" style="display: none;">项目预算</label>
 			</td>
 		</tr>
 		<tr>

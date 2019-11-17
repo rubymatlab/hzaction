@@ -15,9 +15,9 @@
    <t:dgCol title="竞争情况"  field="bpCompetition"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="项目经理"  field="bpManager"  query="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="项目组成员"  field="bpTeam"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="方案输出时间"  field="bpOutTime"  formatter="yyyy-MM-dd hh:mm:ss"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="方案定稿时间"  field="bpFinishTime"  formatter="yyyy-MM-dd hh:mm:ss"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="预计挂网时间"  field="bpOnlineTime"  formatter="yyyy-MM-dd hh:mm:ss"  query="true"  queryMode="group"  width="120"></t:dgCol>
+   <t:dgCol title="方案输出时间"  field="bpOutTime"  formatter="yyyy-MM-dd"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="方案定稿时间"  field="bpFinishTime"  formatter="yyyy-MM-dd"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="预计挂网时间"  field="bpOnlineTime"  formatter="yyyy-MM-dd"  query="true"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="跟进结果"  field="bpFollowResults"  query="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="客户资料外键"  field="fromCustId"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="创建人名称"  field="createName"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
@@ -31,7 +31,7 @@
    <t:dgCol title="流程状态"  field="bpmStatus"  queryMode="single"  dictionary="bpm_status"  width="120"></t:dgCol>
    <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
    <t:dgDelOpt title="删除" url="busProjectController.do?doDel&id={id}"  urlclass="ace_button" urlfont="fa-trash-o"/>
-   <t:dgToolBar title="录入" icon="icon-add" url="busProjectController.do?goAdd" funname="add" width="100%" height="100%"></t:dgToolBar>
+   <t:dgToolBar title="新建" icon="icon-add" url="busProjectController.do?goAdd" funname="add" width="100%" height="100%"></t:dgToolBar>
    <t:dgToolBar title="编辑" icon="icon-edit" url="busProjectController.do?goUpdate" funname="update" width="100%" height="100%"></t:dgToolBar>
    <t:dgToolBar title="批量删除"  icon="icon-remove" url="busProjectController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>
    <t:dgToolBar title="查看" icon="icon-search" url="busProjectController.do?goUpdate" funname="detail" width="100%" height="100%"></t:dgToolBar>

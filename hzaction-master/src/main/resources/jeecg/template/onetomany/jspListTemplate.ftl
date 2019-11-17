@@ -12,7 +12,7 @@
      <#--//update-begin--Author:zhangjiaqiang  Date:20160925 for：TASK #1344 [链接图标] online功能测试的按钮链接图标修改 -->
    <t:dgDelOpt title="删除" url="${entityName?uncap_first}Controller.do?del&id={id}" urlclass="ace_button" urlfont="fa-trash-o"/>
    <#--//update-end--Author:zhangjiaqiang  Date:20160925 for：TASK #1344 [链接图标] online功能测试的按钮链接图标修改 -->
- 	  <t:dgToolBar title="录入" icon="icon-add" url="${entityName?uncap_first}Controller.do?addorupdate" funname="add" width="100%" height="100%"></t:dgToolBar>
+ 	  <t:dgToolBar title="新建" icon="icon-add" url="${entityName?uncap_first}Controller.do?addorupdate" funname="add" width="100%" height="100%"></t:dgToolBar>
    <t:dgToolBar title="编辑" icon="icon-edit" url="${entityName?uncap_first}Controller.do?addorupdate" funname="update" width="100%" height="100%"></t:dgToolBar>
   </t:datagrid>
   </div>

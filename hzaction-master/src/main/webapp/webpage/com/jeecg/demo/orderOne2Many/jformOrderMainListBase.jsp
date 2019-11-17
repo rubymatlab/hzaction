@@ -12,7 +12,7 @@
    <t:dgCol title="备注"  field="content"  hidden="true"  queryMode="single" downloadName="附件下载"  width="120"></t:dgCol>
    <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
    <t:dgDelOpt title="删除" url="jformOrderMainController.do?doDel&id={id}"  urlclass="ace_button" urlfont="fa-trash-o"/>
-   <t:dgToolBar title="录入" icon="icon-add" url="jformOrderMainController.do?goAdd" funname="add" width="100%" height="100%"></t:dgToolBar>
+   <t:dgToolBar title="新建" icon="icon-add" url="jformOrderMainController.do?goAdd" funname="add" width="100%" height="100%"></t:dgToolBar>
    <t:dgToolBar title="编辑" icon="icon-edit" url="jformOrderMainController.do?goUpdate" funname="update" width="100%" height="100%"></t:dgToolBar>
    <t:dgToolBar title="批量删除"  icon="icon-remove" url="jformOrderMainController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>
    <t:dgToolBar title="导入数据" icon="icon-put" funname="ImportXls"></t:dgToolBar>

@@ -41,7 +41,7 @@
    <%-- <t:dgDelOpt title="删除" url="vwBusSpecialPayController.do?doDel&id={id}" urlclass="ace_button"  urlfont="fa-trash-o"/> --%>
 	<t:dgFunOpt title="驳回" funname="doReturn(id)"  urlclass="ace_button" urlfont="fa-trash-o"></t:dgFunOpt>
    <%--<t:dgFunOpt funname="doConfirm(id)" title="确认" urlclass="ace_button" urlfont="fa-wrench" />
-    <t:dgToolBar title="录入" icon="icon-add" url="vwBusSpecialPayController.do?goAdd" funname="add"></t:dgToolBar>
+    <t:dgToolBar title="新建" icon="icon-add" url="vwBusSpecialPayController.do?goAdd" funname="add"></t:dgToolBar>
 	<t:dgToolBar title="编辑" icon="icon-edit" url="vwBusSpecialPayController.do?goUpdate" funname="update"></t:dgToolBar>
    <t:dgToolBar title="批量删除"  icon="icon-remove" url="vwBusSpecialPayController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar> --%>
    <t:dgToolBar title="查看" icon="icon-search" url="vwBusSpecialPayController.do?goUpdate" funname="detail"></t:dgToolBar>

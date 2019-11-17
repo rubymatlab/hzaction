@@ -34,7 +34,7 @@
 	   <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
 	   <%-- <t:dgDelOpt title="删除" url="vmBusProjectManagerController.do?doDel&id={id}"  urlclass="ace_button" urlfont="fa-trash-o"/> --%>
    </c:if>
-<%--    <t:dgToolBar title="录入" icon="icon-add" url="vmBusProjectManagerController.do?goAdd" funname="add" width="100%" height="100%"></t:dgToolBar>
+<%--    <t:dgToolBar title="新建" icon="icon-add" url="vmBusProjectManagerController.do?goAdd" funname="add" width="100%" height="100%"></t:dgToolBar>
    <t:dgToolBar title="批量删除"  icon="icon-remove" url="vmBusProjectManagerController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>
    <t:dgToolBar title="查看" icon="icon-search" url="vmBusProjectManagerController.do?goUpdate" funname="detail" width="100%" height="100%"></t:dgToolBar>
    <t:dgToolBar title="导入" icon="icon-put" funname="ImportXls"></t:dgToolBar>

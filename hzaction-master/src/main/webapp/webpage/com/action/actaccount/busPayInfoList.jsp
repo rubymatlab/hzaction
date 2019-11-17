@@ -64,7 +64,7 @@ $(document).ready(function(){
 									</label>
 					</td>
 				  <td class="value">
-					      	<input name="busPayInfoList[0].bpiPayDate" maxlength="32" type="text"  class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})"  ignore="ignore"  value="<fmt:formatDate value='${poVal.bpiPayDate}' type="date" pattern="yyyy-MM-dd hh:mm:ss"/>"/>
+					      	<input name="busPayInfoList[0].bpiPayDate" maxlength="32" type="text"  class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})"  ignore="ignore"  value="<fmt:formatDate value='${poVal.bpiPayDate}' type="date" pattern="yyyy-MM-dd"/>"/>
 						<!-- <input name="busPayInfoList[0].bpiPayDate" maxlength="32" type="text" class="Wdate" onClick="WdatePicker()"  ignore="ignore" /> -->
 					  <label class="Validform_label" style="display: none;">支付时间</label>
 					</td>
@@ -237,7 +237,7 @@ $(document).ready(function(){
 									</label>
 					</td>
 				  <td class="value">
-					      	<input name="busPayInfoList[0].bpiPayDate" maxlength="32" type="text"  class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})"  ignore="ignore"  value="<fmt:formatDate value='${poVal.bpiPayDate}' type="date" pattern="yyyy-MM-dd hh:mm:ss"/>"/>
+					      	<input name="busPayInfoList[0].bpiPayDate" maxlength="32" type="text"  class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})"  ignore="ignore"  value="<fmt:formatDate value='${poVal.bpiPayDate}' type="date" pattern="yyyy-MM-dd"/>"/>
 						<!-- <input name="busPayInfoList[0].bpiPayDate" maxlength="32" type="text" class="Wdate" onClick="WdatePicker()"  ignore="ignore" /> -->
 					  <label class="Validform_label" style="display: none;">支付时间</label>
 					</td>

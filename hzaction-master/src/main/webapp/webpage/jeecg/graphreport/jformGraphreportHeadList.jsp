@@ -17,7 +17,7 @@
    <t:dgDelOpt title="删除" url="jformGraphreportHeadController.do?doDel&id={id}" urlclass="ace_button"  urlfont="fa-trash-o"/>
    <t:dgFunOpt  funname="addlisttab(code,content)" title="function.test" urlclass="ace_button"  urlfont="fa-gavel"></t:dgFunOpt>
    <t:dgFunOpt  funname="popMenuLinkGraph(code,content)" title="config.place" urlclass="ace_button"  urlfont="fa-cog"></t:dgFunOpt>
-   <t:dgToolBar title="录入" icon="icon-add" url="jformGraphreportHeadController.do?goAdd" funname="add" width="100%" height="100%"></t:dgToolBar>
+   <t:dgToolBar title="新建" icon="icon-add" url="jformGraphreportHeadController.do?goAdd" funname="add" width="100%" height="100%"></t:dgToolBar>
    <t:dgToolBar title="编辑" icon="icon-edit" url="jformGraphreportHeadController.do?goUpdate" funname="update" width="100%" height="100%"></t:dgToolBar>
    <t:dgToolBar title="批量删除"  icon="icon-remove" url="jformGraphreportHeadController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>
    <t:dgToolBar title="查看" icon="icon-search" url="jformGraphreportHeadController.do?goUpdate" funname="detail"></t:dgToolBar>

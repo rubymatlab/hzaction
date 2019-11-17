@@ -20,7 +20,7 @@
    <t:dgCol title="报销人"  field="bsSubmiter"  query="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="部门"  field="bsDept"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="申请日期"  field="bsBeginDate"  formatter="yyyy-MM-dd"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="报销日期"  field="bsSubmitDate"  formatter="yyyy-MM-dd hh:mm:ss"  hidden="true"  query="true"  queryMode="group"  width="120"></t:dgCol>
+   <t:dgCol title="报销日期"  field="bsSubmitDate"  formatter="yyyy-MM-dd"  hidden="true"  query="true"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="备注"  field="bsRemarks"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="票据类型"  field="bsBillType"  hidden="true"  queryMode="single"  dictionary="bill_type"  width="120"></t:dgCol>
    <t:dgCol title="单据状态"  field="bsState"  hidden="true"  queryMode="single"  dictionary="bs_state"  width="120"></t:dgCol>
@@ -30,7 +30,7 @@
    <t:dgCol title="项目管理外键"  field="fromProjmId"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
    <t:dgDelOpt title="删除" url="bsSubmitController.do?doDel&id={id}"  urlclass="ace_button" urlfont="fa-trash-o"/>
-   <t:dgToolBar title="录入" icon="icon-add" url="bsSubmitController.do?goAdd" funname="add" width="100%" height="100%"></t:dgToolBar>
+   <t:dgToolBar title="新建" icon="icon-add" url="bsSubmitController.do?goAdd" funname="add" width="100%" height="100%"></t:dgToolBar>
    <t:dgToolBar title="编辑" icon="icon-edit" url="bsSubmitController.do?goUpdate" funname="update" width="100%" height="100%"></t:dgToolBar>
    <%-- <t:dgToolBar title="批量删除"  icon="icon-remove" url="bsSubmitController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar> --%>
    <t:dgToolBar title="查看" icon="icon-search" url="bsSubmitController.do?goUpdate" funname="detail" width="100%" height="100%"></t:dgToolBar>

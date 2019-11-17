@@ -20,7 +20,7 @@
    <t:dgFunOpt funname="do${btn.buttonCode?cap_first}(id)" title="${btn.buttonName}" urlclass="ace_button" <#if btn.buttonName?index_of("下载") gt -1>urlfont="fa-download"<#else>urlfont="fa-wrench"</#if>/>
    </#if>
    </#list> 
-   <t:dgToolBar title="录入" icon="icon-add" url="${entityName?uncap_first}Controller.do?goAdd" funname="add" width="100%" height="100%"></t:dgToolBar>
+   <t:dgToolBar title="新建" icon="icon-add" url="${entityName?uncap_first}Controller.do?goAdd" funname="add" width="100%" height="100%"></t:dgToolBar>
    <#if cgformConfig.cgFormHead.isTree == 'Y'>
    <t:dgToolBar title="编辑" icon="icon-edit" url="${entityName?uncap_first}Controller.do?goUpdate" funname="updatetree" width="100%" height="100%"></t:dgToolBar>
    <t:dgToolBar title="批量删除"  icon="icon-remove" url="${entityName?uncap_first}Controller.do?doBatchDel" funname="deleteALLSelecttree"></t:dgToolBar>

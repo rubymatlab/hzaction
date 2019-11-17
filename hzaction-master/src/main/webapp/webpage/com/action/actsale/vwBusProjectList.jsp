@@ -7,9 +7,9 @@
    <t:dgCol title="主键"  field="id"  hidden="true"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="项目经理"  field="bpManager"  query="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="项目名称"  field="bpProjName"  query="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="方案输出时间"  field="bpOutTime"  formatter="yyyy-MM-dd hh:mm:ss"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="方案定稿时间"  field="bpFinishTime"  formatter="yyyy-MM-dd hh:mm:ss"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="预计挂网时间"  field="bpOnlineTime"  formatter="yyyy-MM-dd hh:mm:ss"  query="true"  queryMode="group"  width="120"></t:dgCol>
+   <t:dgCol title="方案输出时间"  field="bpOutTime"  formatter="yyyy-MM-dd"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="方案定稿时间"  field="bpFinishTime"  formatter="yyyy-MM-dd"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="预计挂网时间"  field="bpOnlineTime"  formatter="yyyy-MM-dd"  query="true"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="产品解决方案"  field="bpProSolutions"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="问题or协助"  field="bpQuestions"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="流程状态"  field="bpmStatus" dictionary="bpm_status"  queryMode="single"  width="120"></t:dgCol>
@@ -34,7 +34,7 @@
    <t:dgCol title="更新日期"  field="updateDate"  formatter="yyyy-MM-dd"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
    <t:dgDelOpt title="删除" exp="bpmStatus#eq#1" url="vwBusProjectController.do?doDel&id={id}"  urlclass="ace_button" urlfont="fa-trash-o"/>
-   <t:dgToolBar title="录入" icon="icon-add" url="vwBusProjectController.do?goAdd" funname="add" width="100%" height="100%"></t:dgToolBar>
+   <t:dgToolBar title="新建" icon="icon-add" url="vwBusProjectController.do?goAdd" funname="add" width="100%" height="100%"></t:dgToolBar>
    <t:dgToolBar title="编辑" icon="icon-edit" url="vwBusProjectController.do?goUpdate" funname="update" width="100%" height="100%"></t:dgToolBar>
    <%-- <t:dgToolBar title="批量删除"  icon="icon-remove" url="vwBusProjectController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar> --%>
    <t:dgToolBar title="查看" icon="icon-search" url="vwBusProjectController.do?goUpdate" funname="detail" width="100%" height="100%"></t:dgToolBar>

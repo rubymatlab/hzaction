@@ -37,7 +37,7 @@
    <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
    <%-- <t:dgDelOpt title="打回" url="vwBusBidController.do?doDel&id={id}" urlclass="ace_button"  urlfont="fa-trash-o"/> --%>
 	<%-- <t:dgFunOpt funname="doVerifyBtn(id)" title="审核" urlclass="ace_button" urlfont="fa-wrench" /> 
-   <t:dgToolBar title="录入" icon="icon-add" url="vwBusBidController.do?goAdd" funname="add"></t:dgToolBar>
+   <t:dgToolBar title="新建" icon="icon-add" url="vwBusBidController.do?goAdd" funname="add"></t:dgToolBar>
 	<t:dgToolBar title="编辑" icon="icon-edit" url="vwBusBidController.do?goUpdate" funname="update"></t:dgToolBar>
    <t:dgToolBar title="批量删除"  icon="icon-remove" url="vwBusBidController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>
    <t:dgToolBar title="导入" icon="icon-put" funname="ImportXls"></t:dgToolBar>

@@ -27,7 +27,7 @@
    <t:dgCol title="供应商资料外键"  field="fromSuppId"  hidden="true"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
    <t:dgDelOpt title="删除" url="busPoContractController.do?doDel&id={id}"  urlclass="ace_button" urlfont="fa-trash-o"/>
-   <t:dgToolBar title="录入" icon="icon-add" url="busPoContractController.do?goAdd" funname="add" width="100%" height="100%"></t:dgToolBar>
+   <t:dgToolBar title="新建" icon="icon-add" url="busPoContractController.do?goAdd" funname="add" width="100%" height="100%"></t:dgToolBar>
    <t:dgToolBar title="编辑" icon="icon-edit" url="busPoContractController.do?goUpdate" funname="update" width="100%" height="100%"></t:dgToolBar>
    <t:dgToolBar title="批量删除"  icon="icon-remove" url="busPoContractController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>
    <t:dgToolBar title="查看" icon="icon-search" url="busPoContractController.do?goUpdate" funname="detail" width="100%" height="100%"></t:dgToolBar>

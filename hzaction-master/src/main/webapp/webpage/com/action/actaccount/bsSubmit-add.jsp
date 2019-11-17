@@ -150,7 +150,7 @@
 				<label class="Validform_label">报销日期:</label>
 			</td>
 			<td class="value">
-					  <input id="bsSubmitDate" name="bsSubmitDate" type="text" style="width: 150px"  class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" ignore="ignore"  />
+					  <input id="bsSubmitDate" name="bsSubmitDate" type="text" style="width: 150px"  class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" ignore="ignore"  />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">报销日期</label>
 			</td>

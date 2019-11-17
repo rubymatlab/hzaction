@@ -285,7 +285,7 @@
 						</label>
 					</td>
 					<td class="value">
-					     	 <input id="bpiPayDate" name="bpiPayDate" type="text" maxlength="32" value="${vwBusCollectionPage.bpiPayDate }"  style="width: 150px" class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})"   ignore="ignore" />
+					     	 <input id="bpiPayDate" name="bpiPayDate" type="text" maxlength="32" value="${vwBusCollectionPage.bpiPayDate }"  style="width: 150px" class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})"   ignore="ignore" />
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">支付时间</label>
 						</td>

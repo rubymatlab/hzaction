@@ -68,7 +68,7 @@
 				<label class="Validform_label">立项时间:</label>
 			</td>
 			<td class="value">
-					  <input id="bpDate" name="bpDate" type="text" style="width: 150px"   ignore="ignore" class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})"  value='<fmt:formatDate value='${vwBusProjectPage.bpDate}' type="date" pattern="yyyy-MM-dd hh:mm:ss"/>'/>
+					  <input id="bpDate" name="bpDate" type="text" style="width: 150px"   ignore="ignore" class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})"  value='<fmt:formatDate value='${vwBusProjectPage.bpDate}' type="date" pattern="yyyy-MM-dd"/>'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">立项时间</label>
 			</td>
@@ -125,7 +125,7 @@
 				<label class="Validform_label">方案输出时间:</label>
 			</td>
 			<td class="value">
-					  <input id="bpOutTime" name="bpOutTime" type="text" style="width: 150px"   ignore="ignore" class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})"  value='<fmt:formatDate value='${vwBusProjectPage.bpOutTime}' type="date" pattern="yyyy-MM-dd hh:mm:ss"/>'/>
+					  <input id="bpOutTime" name="bpOutTime" type="text" style="width: 150px"   ignore="ignore" class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})"  value='<fmt:formatDate value='${vwBusProjectPage.bpOutTime}' type="date" pattern="yyyy-MM-dd"/>'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">方案输出时间</label>
 			</td>
@@ -135,7 +135,7 @@
 				<label class="Validform_label">方案定稿时间:</label>
 			</td>
 			<td class="value">
-					  <input id="bpFinishTime" name="bpFinishTime" type="text" style="width: 150px"   ignore="ignore" class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})"  value='<fmt:formatDate value='${vwBusProjectPage.bpFinishTime}' type="date" pattern="yyyy-MM-dd hh:mm:ss"/>'/>
+					  <input id="bpFinishTime" name="bpFinishTime" type="text" style="width: 150px"   ignore="ignore" class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})"  value='<fmt:formatDate value='${vwBusProjectPage.bpFinishTime}' type="date" pattern="yyyy-MM-dd"/>'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">方案定稿时间</label>
 			</td>
@@ -143,7 +143,7 @@
 				<label class="Validform_label">预计挂网时间:</label>
 			</td>
 			<td class="value">
-					  <input id="bpOnlineTime" name="bpOnlineTime" type="text" style="width: 150px"   ignore="ignore" class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})"  value='<fmt:formatDate value='${vwBusProjectPage.bpOnlineTime}' type="date" pattern="yyyy-MM-dd hh:mm:ss"/>'/>
+					  <input id="bpOnlineTime" name="bpOnlineTime" type="text" style="width: 150px"   ignore="ignore" class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})"  value='<fmt:formatDate value='${vwBusProjectPage.bpOnlineTime}' type="date" pattern="yyyy-MM-dd"/>'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">预计挂网时间</label>
 			</td>

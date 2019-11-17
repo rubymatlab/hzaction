@@ -128,7 +128,7 @@
 				<label class="Validform_label">方案输出时间:</label>
 			</td>
 			<td class="value">
-					  <input id="bpOutTime" name="bpOutTime" type="text" style="width: 150px"   ignore="ignore"  value='<fmt:formatDate value='${busProjectPage.bpOutTime}' type="date" pattern="yyyy-MM-dd hh:mm:ss"/>'/>
+					  <input id="bpOutTime" name="bpOutTime" type="text" style="width: 150px"   ignore="ignore"  value='<fmt:formatDate value='${busProjectPage.bpOutTime}' type="date" pattern="yyyy-MM-dd"/>'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">方案输出时间</label>
 			</td>
@@ -138,7 +138,7 @@
 				<label class="Validform_label">方案定稿时间:</label>
 			</td>
 			<td class="value">
-					  <input id="bpFinishTime" name="bpFinishTime" type="text" style="width: 150px"   ignore="ignore"  value='<fmt:formatDate value='${busProjectPage.bpFinishTime}' type="date" pattern="yyyy-MM-dd hh:mm:ss"/>'/>
+					  <input id="bpFinishTime" name="bpFinishTime" type="text" style="width: 150px"   ignore="ignore"  value='<fmt:formatDate value='${busProjectPage.bpFinishTime}' type="date" pattern="yyyy-MM-dd"/>'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">方案定稿时间</label>
 			</td>
@@ -146,7 +146,7 @@
 				<label class="Validform_label">预计挂网时间:</label>
 			</td>
 			<td class="value">
-					  <input id="bpOnlineTime" name="bpOnlineTime" type="text" style="width: 150px"   ignore="ignore"  value='<fmt:formatDate value='${busProjectPage.bpOnlineTime}' type="date" pattern="yyyy-MM-dd hh:mm:ss"/>'/>
+					  <input id="bpOnlineTime" name="bpOnlineTime" type="text" style="width: 150px"   ignore="ignore"  value='<fmt:formatDate value='${busProjectPage.bpOnlineTime}' type="date" pattern="yyyy-MM-dd"/>'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">预计挂网时间</label>
 			</td>

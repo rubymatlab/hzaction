@@ -32,7 +32,7 @@
   	</#if>
    </#list> 
    <#--//update-end--Author:zhangjiaqiang  Date:20160925 for：TASK #1344 [链接图标] online功能测试的按钮链接图标修改 -->
-   <t:dgToolBar title="录入" icon="icon-add" url="${entityName?uncap_first}Controller.do?goAdd" funname="add"></t:dgToolBar>
+   <t:dgToolBar title="新建" icon="icon-add" url="${entityName?uncap_first}Controller.do?goAdd" funname="add"></t:dgToolBar>
    <#--//update-begin--Author:gj_shaojc  Date:20180402 for：TASK #2606 【代码生成器】树形列表生成，多选处理 -->
    <#if cgformConfig.cgFormHead.isTree == 'Y'>
    <t:dgToolBar title="编辑" icon="icon-edit" url="${entityName?uncap_first}Controller.do?goUpdate" funname="updatetree" width="100%" height="100%"></t:dgToolBar>

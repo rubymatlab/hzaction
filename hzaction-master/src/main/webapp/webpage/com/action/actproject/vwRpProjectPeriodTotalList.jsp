@@ -8,7 +8,7 @@
    <t:dgCol title="项目编号"  field="bpProjId"  query="true"  queryMode="single"  width="150"></t:dgCol>
    <t:dgCol title="项目名称"  field="bpProjName"  query="true"  queryMode="single"  width="150"></t:dgCol>
    <t:dgCol title="项目经理"  field="bpManager"  query="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="立项时间"  field="bpDate"  formatter="yyyy-MM-dd hh:mm:ss"  query="true"  queryMode="group"  width="130"></t:dgCol>
+   <t:dgCol title="立项时间"  field="bpDate"  formatter="yyyy-MM-dd"  query="true"  queryMode="group"  width="130"></t:dgCol>
    <t:dgCol title="合同签定时间"  field="bcConcludeTime"  formatter="yyyy-MM-dd"  query="true"  queryMode="group"  width="130"></t:dgCol>
    <t:dgCol title="合同天数"  field="contractDays"  queryMode="single"  width="80"></t:dgCol>
    <t:dgCol title="验收时间"  field="maxBpfCheckDate"  formatter="yyyy-MM-dd"  queryMode="single"  width="120"></t:dgCol>
@@ -18,7 +18,7 @@
    <t:dgCol title="客户名称"  field="bcName"  query="true"  queryMode="single"  width="120"></t:dgCol>
    <%--   <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
  <t:dgDelOpt title="删除" url="vwRpProjectPeriodTotalController.do?doDel&id={id}" urlclass="ace_button"  urlfont="fa-trash-o"/>
-   <t:dgToolBar title="录入" icon="icon-add" url="vwRpProjectPeriodTotalController.do?goAdd" funname="add"></t:dgToolBar>
+   <t:dgToolBar title="新建" icon="icon-add" url="vwRpProjectPeriodTotalController.do?goAdd" funname="add"></t:dgToolBar>
 	<t:dgToolBar title="编辑" icon="icon-edit" url="vwRpProjectPeriodTotalController.do?goUpdate" funname="update"></t:dgToolBar>
    <t:dgToolBar title="批量删除"  icon="icon-remove" url="vwRpProjectPeriodTotalController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>
    <t:dgToolBar title="查看" icon="icon-search" url="vwRpProjectPeriodTotalController.do?goUpdate" funname="detail"></t:dgToolBar>

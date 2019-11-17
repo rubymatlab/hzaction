@@ -23,7 +23,7 @@
    
    <t:dgDelOpt title="删除" url="jeecgListDemoController.do?doDel&id={id}" urlclass="ace_button"  urlfont="fa-trash-o"/>
    <t:dgFunOpt exp="status#eq#N" title="审核" funname="szqm(id)" urlclass="ace_button"  urlfont="fa-check" />
-   <t:dgToolBar title="录入" icon="icon-add" url="jeecgListDemoController.do?goAdd" funname="add" width="770" height="500"></t:dgToolBar>
+   <t:dgToolBar title="新建" icon="icon-add" url="jeecgListDemoController.do?goAdd" funname="add" width="770" height="500"></t:dgToolBar>
    <t:dgToolBar title="编辑" icon="icon-edit" url="jeecgListDemoController.do?goUpdate" funname="update" width="770"></t:dgToolBar>
    <t:dgToolBar title="查看" icon="icon-search" url="jeecgListDemoController.do?goUpdate" funname="detail" width="770"></t:dgToolBar>
   </t:datagrid>

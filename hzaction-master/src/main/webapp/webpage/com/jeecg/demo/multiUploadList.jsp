@@ -18,7 +18,7 @@
    <t:dgCol title="测试文件3"  field="testFile3"  queryMode="single"  downloadName="附件下载"  width="120"></t:dgCol>
    <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
    <t:dgDelOpt title="删除" url="multiUploadController.do?doDel&id={id}" urlclass="ace_button"  urlfont="fa-trash-o"/>
-   <t:dgToolBar title="录入" icon="icon-add" url="multiUploadController.do?goAdd" funname="add"></t:dgToolBar>
+   <t:dgToolBar title="新建" icon="icon-add" url="multiUploadController.do?goAdd" funname="add"></t:dgToolBar>
    <t:dgToolBar title="编辑" icon="icon-edit" url="multiUploadController.do?goUpdate" funname="update"></t:dgToolBar>
    <t:dgToolBar title="批量删除"  icon="icon-remove" url="multiUploadController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>
    <t:dgToolBar title="查看" icon="icon-search" url="multiUploadController.do?goUpdate" funname="detail"></t:dgToolBar>

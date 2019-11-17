@@ -109,7 +109,7 @@
 				<label class="Validform_label">申请日期:</label>
 			</td>
 			<td class="value">
-					  <input id="bsBeginDate" name="bsBeginDate" type="text" style="width: 150px"   ignore="ignore"  value='<fmt:formatDate value='${bsSubmitPage.bsBeginDate}' type="date" pattern="yyyy-MM-dd"/>'/>
+					  <input id="bsBeginDate" name="bsBeginDate" type="text" style="width: 150px" class="Wdate" onClick="WdatePicker()" ignore="ignore"  value='<fmt:formatDate value='${bsSubmitPage.bsBeginDate}' type="date" pattern="yyyy-MM-dd"/>'/> 
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">申请日期</label>
 			</td>
@@ -119,7 +119,7 @@
 				<label class="Validform_label">报销日期:</label>
 			</td>
 			<td class="value">
-					  <input id="bsSubmitDate" name="bsSubmitDate" type="text" style="width: 150px"   ignore="ignore"  value='<fmt:formatDate value='${bsSubmitPage.bsSubmitDate}' type="date" pattern="yyyy-MM-dd hh:mm:ss"/>'/>
+					  <input id="bsSubmitDate" name="bsSubmitDate" type="text" style="width: 150px"   ignore="ignore"  value='<fmt:formatDate value='${bsSubmitPage.bsSubmitDate}' type="date" pattern="yyyy-MM-dd"/>'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">报销日期</label>
 			</td>

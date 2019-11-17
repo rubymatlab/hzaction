@@ -144,7 +144,7 @@
 				<label class="Validform_label">方案输出时间:</label>
 			</td>
 			<td class="value">
-					  <input id="bpOutTime" name="bpOutTime" type="text" style="width: 150px"  class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dds'})" ignore="ignore"  />
+					  <input id="bpOutTime" name="bpOutTime" type="text" style="width: 150px"  class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" ignore="ignore"  />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">方案输出时间</label>
 			</td>

@@ -18,7 +18,7 @@
    <t:dgCol title="预计挂网时间"  field="bpOnlineTime"  formatter="yyyy-MM-dd"  hidden="true"  query="true"  queryMode="group"  width="130"></t:dgCol>
 <%--    <t:dgCol title="操作" field="opt" width="100" hidden="true"></t:dgCol>
    <t:dgDelOpt title="删除" url="vwRpBusBidTotalController.do?doDel&id={id}" urlclass="ace_button"  urlfont="fa-trash-o"/>
-   <t:dgToolBar title="录入" icon="icon-add" url="vwRpBusBidTotalController.do?goAdd" funname="add" operationCode="add"></t:dgToolBar>
+   <t:dgToolBar title="新建" icon="icon-add" url="vwRpBusBidTotalController.do?goAdd" funname="add" operationCode="add"></t:dgToolBar>
 	<t:dgToolBar title="编辑" icon="icon-edit" url="vwRpBusBidTotalController.do?goUpdate" funname="update" operationCode="update"></t:dgToolBar>
    <t:dgToolBar title="批量删除"  icon="icon-remove" url="vwRpBusBidTotalController.do?doBatchDel" operationCode="deleteALLSelect" funname="deleteALLSelect"></t:dgToolBar>
    <t:dgToolBar title="查看" icon="icon-search" url="vwRpBusBidTotalController.do?goUpdate" operationCode="detail" funname="detail"></t:dgToolBar>

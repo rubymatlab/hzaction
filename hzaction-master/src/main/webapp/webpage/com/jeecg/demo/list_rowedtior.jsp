@@ -14,7 +14,7 @@
     <t:dgCol title="入职状态"  field="status" query="true" dictionary="sf_yn" extendParams="editor:'combobox'" width="100"></t:dgCol>
     <t:dgCol title="个人介绍"  field="content"  hidden="true"   queryMode="group"  width="500" extendParams="editor:'text'" ></t:dgCol>
   
-    <t:dgToolBar  title="录入" icon="icon-add"  funname="addRow"></t:dgToolBar>
+    <t:dgToolBar  title="新建" icon="icon-add"  funname="addRow"></t:dgToolBar>
 	<t:dgToolBar  title="编辑" icon="icon-edit"  funname="editRow"></t:dgToolBar>
 	<t:dgToolBar  title="保存" icon="icon-save" url="jeecgListDemoController.do?saveRows" funname="saveData"></t:dgToolBar>
 	<t:dgToolBar  title="取消编辑" icon="icon-undo" funname="reject"></t:dgToolBar>

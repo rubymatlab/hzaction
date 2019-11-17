@@ -41,7 +41,7 @@
    <t:dgCol title="项目负责人"  field="bpKeyPeople"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
    <t:dgDelOpt title="删除" url="vwBusCollectionController.do?doDel&id={id}" urlclass="ace_button"  urlfont="fa-trash-o"/>
-   <t:dgToolBar title="录入" icon="icon-add" url="vwBusCollectionController.do?goAdd" funname="add"></t:dgToolBar>
+   <t:dgToolBar title="新建" icon="icon-add" url="vwBusCollectionController.do?goAdd" funname="add"></t:dgToolBar>
    <t:dgToolBar title="修改" icon="icon-search" url="vwBusCollectionController.do?goUpdate" funname="update"></t:dgToolBar>
 	<t:dgToolBar title="实收" icon="icon-edit" url="vwBusCollectionController.do?goUpdate&isPayment=1" funname="update"></t:dgToolBar>
 <%--    <t:dgToolBar title="批量删除"  icon="icon-remove" url="vwBusCollectionController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>

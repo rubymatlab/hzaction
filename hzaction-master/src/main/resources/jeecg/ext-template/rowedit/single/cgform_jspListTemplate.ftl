@@ -62,7 +62,7 @@
     </#if> 
    </#list>
    <#--//update-end--Author:zhangjiaqiang  Date:20160925 for：TASK #1344 [链接图标] online功能测试的按钮链接图标修改 -->
-    <t:dgToolBar operationCode="add" title="录入" icon="icon-add"  funname="addRow"></t:dgToolBar>
+    <t:dgToolBar operationCode="add" title="新建" icon="icon-add"  funname="addRow"></t:dgToolBar>
     <t:dgToolBar operationCode="edit" title="编辑" icon="icon-edit"  funname="editRow"></t:dgToolBar>
     <t:dgToolBar operationCode="save" title="保存" icon="icon-save" url="${entityName?uncap_first}Controller.do?saveRows" funname="saveData"></t:dgToolBar>
     <t:dgToolBar operationCode="undo" title="取消编辑" icon="icon-undo" funname="reject"></t:dgToolBar>

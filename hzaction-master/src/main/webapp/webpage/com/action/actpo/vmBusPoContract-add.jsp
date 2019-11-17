@@ -184,7 +184,7 @@
 				<label class="Validform_label">采购日期:</label>
 			</td>
 			<td class="value">
-					  <input id="bpcPoDate" name="bpcPoDate" type="text" style="width: 60%"  class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd HH:mm:ss'})" ignore="ignore"  />
+					  <input id="bpcPoDate" name="bpcPoDate" type="text" style="width: 60%"  class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" ignore="ignore"  />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">采购日期</label>
 			</td>

@@ -28,7 +28,7 @@
     <t:dgCol title="个人介绍"  field="content"  hidden="true"   queryMode="group"  width="150"></t:dgCol>
    <t:dgCol title="操作" field="opt" width="250"></t:dgCol>
    <t:dgDelOpt title="删除" url="jeecgListDemoController.do?doDel&id={id}" urlclass="btn btn-danger btn-xs"  urlfont="fa-trash-o"/>
-   <t:dgToolBar title="录入" icon="icon-add" url="jeecgListDemoController.do?goBootStrapTableAdd" funname="add" width="770" height="500"></t:dgToolBar>
+   <t:dgToolBar title="新建" icon="icon-add" url="jeecgListDemoController.do?goBootStrapTableAdd" funname="add" width="770" height="500"></t:dgToolBar>
    <t:dgToolBar title="编辑" icon="icon-edit" url="jeecgListDemoController.do?goBootStrapTableUpdate" funname="update" width="770"></t:dgToolBar>
    <t:dgToolBar title="批量删除"  icon="icon-remove" url="jeecgListDemoController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>
   </t:datagrid>

@@ -18,7 +18,7 @@
    <t:dgToolBar title="导出" icon="icon-putout" funname="ExportXls"></t:dgToolBar>
 <%--    <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
    <t:dgDelOpt title="删除" url="vwRpPoPayPlanController.do?doDel&id={id}" urlclass="ace_button"  urlfont="fa-trash-o"/>
-   <t:dgToolBar title="录入" icon="icon-add" url="vwRpPoPayPlanController.do?goAdd" funname="add"></t:dgToolBar>
+   <t:dgToolBar title="新建" icon="icon-add" url="vwRpPoPayPlanController.do?goAdd" funname="add"></t:dgToolBar>
 	<t:dgToolBar title="编辑" icon="icon-edit" url="vwRpPoPayPlanController.do?goUpdate" funname="update"></t:dgToolBar>
    <t:dgToolBar title="批量删除"  icon="icon-remove" url="vwRpPoPayPlanController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>
    <t:dgToolBar title="查看" icon="icon-search" url="vwRpPoPayPlanController.do?goUpdate" funname="detail"></t:dgToolBar>

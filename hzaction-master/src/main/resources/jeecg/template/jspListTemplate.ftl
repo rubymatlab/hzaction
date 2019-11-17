@@ -10,7 +10,7 @@
   </#list>
    <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
    <t:dgDelOpt title="删除" url="${entityName?uncap_first}Controller.do?del&id={id}" urlclass="ace_button"  urlfont="fa-trash-o"/>
-   <t:dgToolBar title="录入" icon="icon-add" url="${entityName?uncap_first}Controller.do?addorupdate" funname="add"></t:dgToolBar>
+   <t:dgToolBar title="新建" icon="icon-add" url="${entityName?uncap_first}Controller.do?addorupdate" funname="add"></t:dgToolBar>
    <t:dgToolBar title="编辑" icon="icon-edit" url="${entityName?uncap_first}Controller.do?addorupdate" funname="update"></t:dgToolBar>
    <t:dgToolBar title="查看" icon="icon-search" url="${entityName?uncap_first}Controller.do?addorupdate" funname="detail"></t:dgToolBar>
   </t:datagrid>

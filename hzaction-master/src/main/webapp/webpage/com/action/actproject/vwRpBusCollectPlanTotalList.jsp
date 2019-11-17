@@ -19,7 +19,7 @@
    <t:dgCol title="签订时间"  field="bcConcludeTime"  query="true"   queryMode="group"  width="120" formatter="yyyy-MM-dd"></t:dgCol>
 <%--    <t:dgCol title="操作" field="opt" hidden="true" width="100"></t:dgCol>
    <t:dgDelOpt title="删除" url="vwRpBusCollectPlanTotalController.do?doDel&id={id}" urlclass="ace_button"  urlfont="fa-trash-o"/>
-   <t:dgToolBar title="录入" icon="icon-add" url="vwRpBusCollectPlanTotalController.do?goAdd" funname="add" operationCode="add"></t:dgToolBar>
+   <t:dgToolBar title="新建" icon="icon-add" url="vwRpBusCollectPlanTotalController.do?goAdd" funname="add" operationCode="add"></t:dgToolBar>
 	<t:dgToolBar title="编辑" icon="icon-edit" url="vwRpBusCollectPlanTotalController.do?goUpdate" funname="update" operationCode="update"></t:dgToolBar>
    <t:dgToolBar title="批量删除"  icon="icon-remove" url="vwRpBusCollectPlanTotalController.do?doBatchDel" funname="deleteALLSelect" operationCode="deleteALLSelect"></t:dgToolBar>
    <t:dgToolBar title="查看" icon="icon-search" url="vwRpBusCollectPlanTotalController.do?goUpdate" funname="detail" operationCode="detail"></t:dgToolBar>

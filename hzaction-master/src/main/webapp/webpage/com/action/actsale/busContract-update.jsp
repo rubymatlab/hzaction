@@ -444,16 +444,16 @@
 					  <label class="Validform_label" style="display: none;">序号</label>
 				  </td>
 				  <td align="left">
+							<t:dictSelect field="busContractPaymentList[#index#].bcpProgrePayment" type="list"   typeGroupCode="cost_stag"  defaultVal="" hasLabel="false"  title="进度款分期"></t:dictSelect>     
+					  <label class="Validform_label" style="display: none;">进度款分期</label>
+				  </td>
+				  <td align="left">
 					  		<input name="busContractPaymentList[#index#].bcpContractAmount" maxlength="10" type="text" class="inputxt"  style="width:120px;"  datatype="n"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">合同金额</label>
 				  </td>
 				  <td align="left">
 					  		<input name="busContractPaymentList[#index#].bcpPaymentClause" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">付款条件</label>
-				  </td>
-				  <td align="left">
-							<t:dictSelect field="busContractPaymentList[#index#].bcpProgrePayment" type="list"   typeGroupCode="cost_stag"  defaultVal="" hasLabel="false"  title="进度款分期"></t:dictSelect>     
-					  <label class="Validform_label" style="display: none;">进度款分期</label>
 				  </td>
 				  <td align="left" hidden="hidden">
 					  		<input name="busContractPaymentList[#index#].busContractId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />

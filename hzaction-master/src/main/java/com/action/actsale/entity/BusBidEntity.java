@@ -70,7 +70,7 @@ public class BusBidEntity implements java.io.Serializable {
 	private java.lang.String bdAuxiliaryStaff;
 	/**投标金额*/
 	@Excel(name="投标金额",width=15)
-	private java.lang.Double bdBidAmout;
+	private java.math.BigDecimal bdBidAmout;
 	/**投标日期*/
 	@Excel(name="投标日期",width=15,format = "yyyy-MM-dd")
 	private java.util.Date bdBidDate;
@@ -376,7 +376,7 @@ public class BusBidEntity implements java.io.Serializable {
 	 */
 
 	@Column(name ="BD_BID_AMOUT",nullable=true,scale=2,length=12)
-	public java.lang.Double getBdBidAmout(){
+	public java.math.BigDecimal getBdBidAmout(){
 		return this.bdBidAmout;
 	}
 
@@ -384,7 +384,7 @@ public class BusBidEntity implements java.io.Serializable {
 	 *方法: 设置java.lang.Double
 	 *@param: java.lang.Double  投标金额
 	 */
-	public void setBdBidAmout(java.lang.Double bdBidAmout){
+	public void setBdBidAmout(java.math.BigDecimal bdBidAmout){
 		this.bdBidAmout = bdBidAmout;
 	}
 	/**

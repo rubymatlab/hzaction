@@ -58,6 +58,7 @@ import com.action.actsale.entity.BusContractEntity;
 import com.action.actsale.entity.BusContractPaymentEntity;
 import com.action.actsale.entity.BusCostBudgetingEntity;
 import com.action.actsale.entity.BusProjectEntity;
+import com.action.actsale.entity.VwBusContractEntity;
 import com.action.actsale.page.BusContractPage;
 import com.action.actsale.service.BusContractServiceI;
 import com.alibaba.fastjson.JSONArray;
@@ -142,9 +143,9 @@ public class BusContractController extends BaseController {
 	public void datagrid(BusContractEntity busContract,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
 		String contractState = request.getParameter("contractState");
 		
-		logger.info("-- 合同完成状态（0制作中，1已审核） --"+contractState);
+		/* logger.info("-- 合同完成状态（0制作中，1已审核） --"+contractState); */
 		
-		CriteriaQuery cq = new CriteriaQuery(BusContractEntity.class, dataGrid);
+		CriteriaQuery cq = new CriteriaQuery(VwBusContractEntity.class, dataGrid);
 		//查询条件组装器
 		busContract.setBcContractState(contractState);
 		//模糊查询-客户名称
@@ -399,7 +400,7 @@ public class BusContractController extends BaseController {
     	logger.info("导出excel:{}",contractState.equals("0")?"制作中":"已审核");
     	busContract.setBcContractState(contractState);
     	
-    	CriteriaQuery cq = new CriteriaQuery(BusContractEntity.class, dataGrid);
+    	CriteriaQuery cq = new CriteriaQuery(VwBusContractEntity.class, dataGrid);
     	//查询条件组装器
     	org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, busContract);
     	try{
@@ -409,10 +410,10 @@ public class BusContractController extends BaseController {
     		throw new BusinessException(e.getMessage());
     	}
     	cq.add();
-    	List<BusContractEntity> list=this.busContractService.getListByCriteriaQuery(cq, false);
+    	List<VwBusContractEntity> list=this.busContractService.getListByCriteriaQuery(cq, false);
     	List<BusContractPage> pageList=new ArrayList<BusContractPage>();
         if(list!=null&&list.size()>0){
-        	for(BusContractEntity entity:list){
+        	for(VwBusContractEntity entity:list){
         		try{
         		BusContractPage page=new BusContractPage();
         		   MyBeanUtils.copyBeanNotNull2Bean(entity,page);

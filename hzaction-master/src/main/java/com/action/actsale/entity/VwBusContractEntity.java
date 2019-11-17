@@ -1,15 +1,12 @@
-
-package com.action.actsale.page;
-import com.action.actsale.entity.BusContractEntity;
-import com.action.actsale.entity.BusConQuotedPriceEntity;
-import com.action.actsale.entity.BusContractPaymentEntity;
-import com.action.actsale.entity.BusCostBudgetingEntity;
-
+package com.action.actsale.entity;
 import java.math.BigDecimal;
 import java.util.Date;
-import java.util.List;
-import java.util.ArrayList;
-
+import java.lang.String;
+import java.lang.Double;
+import java.lang.Integer;
+import java.math.BigDecimal;
+import javax.xml.soap.Text;
+import java.sql.Blob;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -19,7 +16,6 @@ import javax.persistence.Table;
 import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.SequenceGenerator;
 import org.jeecgframework.poi.excel.annotation.Excel;
-import org.jeecgframework.poi.excel.annotation.ExcelCollection;
 
 /**   
  * @Title: Entity
@@ -29,90 +25,107 @@ import org.jeecgframework.poi.excel.annotation.ExcelCollection;
  * @version V1.0   
  *
  */
-public class BusContractPage implements java.io.Serializable {
+@Entity
+@Table(name = "vw_bus_contract", schema = "")
+@SuppressWarnings("serial")
+public class VwBusContractEntity implements java.io.Serializable {
 	/**主键*/
 	private java.lang.String id;
 	/**创建人名称*/
+//	@Excel(name="创建人名称",width=15)
 	private java.lang.String createName;
 	/**创建人登录名称*/
+//	@Excel(name="创建人登录名称",width=15)
 	private java.lang.String createBy;
 	/**创建日期*/
+//	@Excel(name="创建日期",width=15,format = "yyyy-MM-dd")
 	private java.util.Date createDate;
 	/**更新人名称*/
+//	@Excel(name="更新人名称",width=15)
 	private java.lang.String updateName;
 	/**更新人登录名称*/
+//	@Excel(name="更新人登录名称",width=15)
 	private java.lang.String updateBy;
 	/**更新日期*/
+//	@Excel(name="更新日期",width=15,format = "yyyy-MM-dd")
 	private java.util.Date updateDate;
 	/**所属部门*/
+//	@Excel(name="所属部门",width=15)
 	private java.lang.String sysOrgCode;
 	/**所属公司*/
+//	@Excel(name="所属公司",width=15)
 	private java.lang.String sysCompanyCode;
 	/**流程状态*/
+//	@Excel(name="流程状态",width=15)
 	private java.lang.String bpmStatus;
-	/**客户编号
-    @Excel(name="客户编号")*/
+	/**客户编号*/
+	@Excel(name="客户编号",width=15)
 	private java.lang.String bcCustomerCode;
 	/**客户名称*/
-    @Excel(name="客户名称")
+	@Excel(name="客户名称",width=15)
 	private java.lang.String bcCustomerName;
 	/**项目编号*/
-    @Excel(name="项目编号")
+	@Excel(name="项目编号",width=15)
 	private java.lang.String bcProjectCode;
 	/**合同名称*/
-    @Excel(name="合同名称")
+	@Excel(name="合同名称",width=15)
 	private java.lang.String bcContractName;
 	/**签订时间*/
-    @Excel(name="签订时间",format = "yyyy-MM-dd")
+	@Excel(name="签订时间",width=15,format = "yyyy-MM-dd")
 	private java.util.Date bcConcludeTime;
-	/**合同开始时间
-    @Excel(name="合同开始时间",format = "yyyy-MM-dd")*/
+	/**初验时间*/
+	@Excel(name="初验时间",width=15,format = "yyyy-MM-dd")
 	private java.util.Date bcContStartTime;
-	/**合同结束时间
-    @Excel(name="合同结束时间",format = "yyyy-MM-dd")*/
+	/**终验时间*/
+	@Excel(name="终验时间",width=15,format = "yyyy-MM-dd")
 	private java.util.Date bcContEndTime;
-	/**合同完成状态
-    @Excel(name="合同完成状态")*/
+	/**合同完成状态*/
+	@Excel(name="合同完成状态",width=15,dicCode="state")
 	private java.lang.String bcContractState;
-	/**我方签约人
-    @Excel(name="我方签约人")*/
+	/**我方签约人*/
+	@Excel(name="我方签约人",width=15)
 	private java.lang.String bcCompContractor;
-	/**合同金额万元
-    @Excel(name="合同金额万元")*/
+	/**合同金额*/
+	@Excel(name="合同金额",width=15)
 	private java.lang.String bcContAmount;
 	/**项目立项外键*/
-//    @Excel(name="项目立项外键")
+//	@Excel(name="项目立项外键",width=15)
 	private java.lang.String fromProjId;
-	/**客户签约人
-    @Excel(name="客户签约人")*/
+	/**客户签约人*/
+	@Excel(name="客户签约人",width=15)
 	private java.lang.String bcCustContractor;
 	/**客户资料外键*/
-//    @Excel(name="客户资料外键")
+//	@Excel(name="客户资料外键",width=15)
 	private java.lang.String fromCustId;
 	/**项目名称*/
-    @Excel(name="项目名称")
+	@Excel(name="项目名称",width=15)
 	private java.lang.String fromProjName;
-	/**管理费百分比
-    @Excel(name="管理费百分比")*/
+	/**管理费百分比*/
+	@Excel(name="管理费百分比",width=15)
 	private java.math.BigDecimal bcManPer;
-	/**中标方
-    @Excel(name="中标方")*/
+	/**中标方*/
+	@Excel(name="中标方",width=15)
 	private java.lang.String bcWinBidder;
-	/**中标服务费
-    @Excel(name="中标服务费")*/
+	/**中标服务费*/
+	@Excel(name="中标服务费",width=15)
 	private java.math.BigDecimal bcWinSfee;
 	/**安信金额*/
-    @Excel(name="安信金额")
+	@Excel(name="安信金额",width=15)
 	private java.math.BigDecimal bcActionAmount;
-	/**合同电子档
-    @Excel(name="合同电子档")*/
+	/**合同电子档*/
+	@Excel(name="合同电子档",width=15)
 	private java.lang.String bcContractFile;
 	@Excel(name="项目经理",width=15)
 	private java.lang.String bpManager;
+	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  主键
 	 */
+	@Id
+	@GeneratedValue(generator = "paymentableGenerator")
+	@GenericGenerator(name = "paymentableGenerator", strategy = "uuid")
+	@Column(name ="ID",nullable=false,length=36)
 	public java.lang.String getId(){
 		return this.id;
 	}
@@ -124,10 +137,13 @@ public class BusContractPage implements java.io.Serializable {
 	public void setId(java.lang.String id){
 		this.id = id;
 	}
+	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  创建人名称
 	 */
+	
+	@Column(name ="CREATE_NAME",nullable=true,length=50)
 	public java.lang.String getCreateName(){
 		return this.createName;
 	}
@@ -139,10 +155,13 @@ public class BusContractPage implements java.io.Serializable {
 	public void setCreateName(java.lang.String createName){
 		this.createName = createName;
 	}
+	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  创建人登录名称
 	 */
+	
+	@Column(name ="CREATE_BY",nullable=true,length=50)
 	public java.lang.String getCreateBy(){
 		return this.createBy;
 	}
@@ -154,10 +173,13 @@ public class BusContractPage implements java.io.Serializable {
 	public void setCreateBy(java.lang.String createBy){
 		this.createBy = createBy;
 	}
+	
 	/**
 	 *方法: 取得java.util.Date
 	 *@return: java.util.Date  创建日期
 	 */
+	
+	@Column(name ="CREATE_DATE",nullable=true)
 	public java.util.Date getCreateDate(){
 		return this.createDate;
 	}
@@ -169,10 +191,13 @@ public class BusContractPage implements java.io.Serializable {
 	public void setCreateDate(java.util.Date createDate){
 		this.createDate = createDate;
 	}
+	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  更新人名称
 	 */
+	
+	@Column(name ="UPDATE_NAME",nullable=true,length=50)
 	public java.lang.String getUpdateName(){
 		return this.updateName;
 	}
@@ -184,10 +209,13 @@ public class BusContractPage implements java.io.Serializable {
 	public void setUpdateName(java.lang.String updateName){
 		this.updateName = updateName;
 	}
+	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  更新人登录名称
 	 */
+	
+	@Column(name ="UPDATE_BY",nullable=true,length=50)
 	public java.lang.String getUpdateBy(){
 		return this.updateBy;
 	}
@@ -199,10 +227,13 @@ public class BusContractPage implements java.io.Serializable {
 	public void setUpdateBy(java.lang.String updateBy){
 		this.updateBy = updateBy;
 	}
+	
 	/**
 	 *方法: 取得java.util.Date
 	 *@return: java.util.Date  更新日期
 	 */
+	
+	@Column(name ="UPDATE_DATE",nullable=true)
 	public java.util.Date getUpdateDate(){
 		return this.updateDate;
 	}
@@ -214,10 +245,13 @@ public class BusContractPage implements java.io.Serializable {
 	public void setUpdateDate(java.util.Date updateDate){
 		this.updateDate = updateDate;
 	}
+	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  所属部门
 	 */
+	
+	@Column(name ="SYS_ORG_CODE",nullable=true,length=50)
 	public java.lang.String getSysOrgCode(){
 		return this.sysOrgCode;
 	}
@@ -229,10 +263,13 @@ public class BusContractPage implements java.io.Serializable {
 	public void setSysOrgCode(java.lang.String sysOrgCode){
 		this.sysOrgCode = sysOrgCode;
 	}
+	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  所属公司
 	 */
+	
+	@Column(name ="SYS_COMPANY_CODE",nullable=true,length=50)
 	public java.lang.String getSysCompanyCode(){
 		return this.sysCompanyCode;
 	}
@@ -244,10 +281,13 @@ public class BusContractPage implements java.io.Serializable {
 	public void setSysCompanyCode(java.lang.String sysCompanyCode){
 		this.sysCompanyCode = sysCompanyCode;
 	}
+	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  流程状态
 	 */
+	
+	@Column(name ="BPM_STATUS",nullable=true,length=32)
 	public java.lang.String getBpmStatus(){
 		return this.bpmStatus;
 	}
@@ -259,10 +299,13 @@ public class BusContractPage implements java.io.Serializable {
 	public void setBpmStatus(java.lang.String bpmStatus){
 		this.bpmStatus = bpmStatus;
 	}
+	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  客户编号
 	 */
+	
+	@Column(name ="BC_CUSTOMER_CODE",nullable=true,length=32)
 	public java.lang.String getBcCustomerCode(){
 		return this.bcCustomerCode;
 	}
@@ -274,10 +317,13 @@ public class BusContractPage implements java.io.Serializable {
 	public void setBcCustomerCode(java.lang.String bcCustomerCode){
 		this.bcCustomerCode = bcCustomerCode;
 	}
+	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  客户名称
 	 */
+	
+	@Column(name ="BC_CUSTOMER_NAME",nullable=true,length=32)
 	public java.lang.String getBcCustomerName(){
 		return this.bcCustomerName;
 	}
@@ -289,10 +335,13 @@ public class BusContractPage implements java.io.Serializable {
 	public void setBcCustomerName(java.lang.String bcCustomerName){
 		this.bcCustomerName = bcCustomerName;
 	}
+	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  项目编号
 	 */
+	
+	@Column(name ="BC_PROJECT_CODE",nullable=true,length=32)
 	public java.lang.String getBcProjectCode(){
 		return this.bcProjectCode;
 	}
@@ -304,10 +353,13 @@ public class BusContractPage implements java.io.Serializable {
 	public void setBcProjectCode(java.lang.String bcProjectCode){
 		this.bcProjectCode = bcProjectCode;
 	}
+	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  合同名称
 	 */
+	
+	@Column(name ="BC_CONTRACT_NAME",nullable=true,length=32)
 	public java.lang.String getBcContractName(){
 		return this.bcContractName;
 	}
@@ -319,10 +371,13 @@ public class BusContractPage implements java.io.Serializable {
 	public void setBcContractName(java.lang.String bcContractName){
 		this.bcContractName = bcContractName;
 	}
+	
 	/**
 	 *方法: 取得java.util.Date
 	 *@return: java.util.Date  签订时间
 	 */
+	
+	@Column(name ="BC_CONCLUDE_TIME",nullable=true)
 	public java.util.Date getBcConcludeTime(){
 		return this.bcConcludeTime;
 	}
@@ -334,10 +389,13 @@ public class BusContractPage implements java.io.Serializable {
 	public void setBcConcludeTime(java.util.Date bcConcludeTime){
 		this.bcConcludeTime = bcConcludeTime;
 	}
+	
 	/**
 	 *方法: 取得java.util.Date
 	 *@return: java.util.Date  合同开始时间
 	 */
+	
+	@Column(name ="BC_CONT_START_TIME",nullable=true)
 	public java.util.Date getBcContStartTime(){
 		return this.bcContStartTime;
 	}
@@ -349,10 +407,13 @@ public class BusContractPage implements java.io.Serializable {
 	public void setBcContStartTime(java.util.Date bcContStartTime){
 		this.bcContStartTime = bcContStartTime;
 	}
+	
 	/**
 	 *方法: 取得java.util.Date
 	 *@return: java.util.Date  合同结束时间
 	 */
+	
+	@Column(name ="BC_CONT_END_TIME",nullable=true)
 	public java.util.Date getBcContEndTime(){
 		return this.bcContEndTime;
 	}
@@ -364,10 +425,13 @@ public class BusContractPage implements java.io.Serializable {
 	public void setBcContEndTime(java.util.Date bcContEndTime){
 		this.bcContEndTime = bcContEndTime;
 	}
+	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  合同完成状态
 	 */
+	
+	@Column(name ="BC_CONTRACT_STATE",nullable=true,length=32)
 	public java.lang.String getBcContractState(){
 		return this.bcContractState;
 	}
@@ -379,10 +443,13 @@ public class BusContractPage implements java.io.Serializable {
 	public void setBcContractState(java.lang.String bcContractState){
 		this.bcContractState = bcContractState;
 	}
+	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  我方签约人
 	 */
+	
+	@Column(name ="BC_COMP_CONTRACTOR",nullable=true,length=32)
 	public java.lang.String getBcCompContractor(){
 		return this.bcCompContractor;
 	}
@@ -394,10 +461,13 @@ public class BusContractPage implements java.io.Serializable {
 	public void setBcCompContractor(java.lang.String bcCompContractor){
 		this.bcCompContractor = bcCompContractor;
 	}
+	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  合同金额万元
 	 */
+	
+	@Column(name ="BC_CONT_AMOUNT",nullable=true,length=32)
 	public java.lang.String getBcContAmount(){
 		return this.bcContAmount;
 	}
@@ -409,10 +479,13 @@ public class BusContractPage implements java.io.Serializable {
 	public void setBcContAmount(java.lang.String bcContAmount){
 		this.bcContAmount = bcContAmount;
 	}
+	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  项目立项外键
 	 */
+	
+	@Column(name ="FROM_PROJ_ID",nullable=true,length=32)
 	public java.lang.String getFromProjId(){
 		return this.fromProjId;
 	}
@@ -424,10 +497,13 @@ public class BusContractPage implements java.io.Serializable {
 	public void setFromProjId(java.lang.String fromProjId){
 		this.fromProjId = fromProjId;
 	}
+	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  客户签约人
 	 */
+	
+	@Column(name ="BC_CUST_CONTRACTOR",nullable=true,length=32)
 	public java.lang.String getBcCustContractor(){
 		return this.bcCustContractor;
 	}
@@ -439,10 +515,13 @@ public class BusContractPage implements java.io.Serializable {
 	public void setBcCustContractor(java.lang.String bcCustContractor){
 		this.bcCustContractor = bcCustContractor;
 	}
+	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  客户资料外键
 	 */
+	
+	@Column(name ="FROM_CUST_ID",nullable=true,length=32)
 	public java.lang.String getFromCustId(){
 		return this.fromCustId;
 	}
@@ -454,10 +533,13 @@ public class BusContractPage implements java.io.Serializable {
 	public void setFromCustId(java.lang.String fromCustId){
 		this.fromCustId = fromCustId;
 	}
+	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  项目名称
 	 */
+	
+	@Column(name ="FROM_PROJ_NAME",nullable=true,length=32)
 	public java.lang.String getFromProjName(){
 		return this.fromProjName;
 	}
@@ -469,10 +551,13 @@ public class BusContractPage implements java.io.Serializable {
 	public void setFromProjName(java.lang.String fromProjName){
 		this.fromProjName = fromProjName;
 	}
+	
 	/**
 	 *方法: 取得java.math.BigDecimal
 	 *@return: java.math.BigDecimal  管理费百分比
 	 */
+	
+	@Column(name ="BC_MAN_PER",nullable=true,length=32)
 	public java.math.BigDecimal getBcManPer(){
 		return this.bcManPer;
 	}
@@ -484,10 +569,13 @@ public class BusContractPage implements java.io.Serializable {
 	public void setBcManPer(java.math.BigDecimal bcManPer){
 		this.bcManPer = bcManPer;
 	}
+	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  中标方
 	 */
+	
+	@Column(name ="BC_WIN_BIDDER",nullable=true,length=32)
 	public java.lang.String getBcWinBidder(){
 		return this.bcWinBidder;
 	}
@@ -499,10 +587,13 @@ public class BusContractPage implements java.io.Serializable {
 	public void setBcWinBidder(java.lang.String bcWinBidder){
 		this.bcWinBidder = bcWinBidder;
 	}
+	
 	/**
 	 *方法: 取得java.math.BigDecimal
 	 *@return: java.math.BigDecimal  中标服务费
 	 */
+	
+	@Column(name ="BC_WIN_SFEE",nullable=true,length=32)
 	public java.math.BigDecimal getBcWinSfee(){
 		return this.bcWinSfee;
 	}
@@ -514,10 +605,13 @@ public class BusContractPage implements java.io.Serializable {
 	public void setBcWinSfee(java.math.BigDecimal bcWinSfee){
 		this.bcWinSfee = bcWinSfee;
 	}
+	
 	/**
 	 *方法: 取得java.math.BigDecimal
 	 *@return: java.math.BigDecimal  安信金额
 	 */
+	
+	@Column(name ="BC_ACTION_AMOUNT",nullable=true,length=32)
 	public java.math.BigDecimal getBcActionAmount(){
 		return this.bcActionAmount;
 	}
@@ -529,10 +623,13 @@ public class BusContractPage implements java.io.Serializable {
 	public void setBcActionAmount(java.math.BigDecimal bcActionAmount){
 		this.bcActionAmount = bcActionAmount;
 	}
+	
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  合同电子档
 	 */
+	
+	@Column(name ="BC_CONTRACT_FILE",nullable=true,length=100)
 	public java.lang.String getBcContractFile(){
 		return this.bcContractFile;
 	}
@@ -562,32 +659,5 @@ public class BusContractPage implements java.io.Serializable {
 	public void setBpManager(java.lang.String bpManager){
 		this.bpManager = bpManager;
 	}
-
-	/**保存-合同明细报价附表*/
-    @ExcelCollection(name="合同明细报价附表")
-	private List<BusConQuotedPriceEntity> busConQuotedPriceList = new ArrayList<BusConQuotedPriceEntity>();
-		public List<BusConQuotedPriceEntity> getBusConQuotedPriceList() {
-		return busConQuotedPriceList;
-		}
-		public void setBusConQuotedPriceList(List<BusConQuotedPriceEntity> busConQuotedPriceList) {
-		this.busConQuotedPriceList = busConQuotedPriceList;
-		}
-	/**保存-合同约定收款附表*/
-    @ExcelCollection(name="合同约定收款附表")
-	private List<BusContractPaymentEntity> busContractPaymentList = new ArrayList<BusContractPaymentEntity>();
-		public List<BusContractPaymentEntity> getBusContractPaymentList() {
-		return busContractPaymentList;
-		}
-		public void setBusContractPaymentList(List<BusContractPaymentEntity> busContractPaymentList) {
-		this.busContractPaymentList = busContractPaymentList;
-		}
-	/**保存-成本预算附表*/
-    @ExcelCollection(name="成本预算附表")
-	private List<BusCostBudgetingEntity> busCostBudgetingList = new ArrayList<BusCostBudgetingEntity>();
-		public List<BusCostBudgetingEntity> getBusCostBudgetingList() {
-		return busCostBudgetingList;
-		}
-		public void setBusCostBudgetingList(List<BusCostBudgetingEntity> busCostBudgetingList) {
-		this.busCostBudgetingList = busCostBudgetingList;
-		}
+	
 }

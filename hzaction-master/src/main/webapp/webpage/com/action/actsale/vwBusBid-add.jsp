@@ -81,7 +81,7 @@
 						</label>
 					</td>
 					<td class="value">
-					     	 <input id="bdBidAmout" name="bdBidAmout" type="text" maxlength="12" style="width: 150px" class="inputxt"  datatype="/^(-?\d+)(\.\d+)?$/"  ignore="ignore" />
+					     	 <input id="bdBidAmout" name="bdBidAmout" type="text" maxlength="10" style="width: 150px" class="inputxt"  datatype="/^(-?\d+)(\.\d+)?$/"  ignore="ignore" />
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">投标金额</label>
 						</td>

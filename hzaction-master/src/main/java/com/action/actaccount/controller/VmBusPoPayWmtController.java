@@ -165,14 +165,14 @@ public class VmBusPoPayWmtController extends BaseController {
 	public AjaxJson doDel(VmBusPoPayWmtEntity vmBusPoPayWmt, HttpServletRequest request) {
 		AjaxJson j = new AjaxJson();
 		vmBusPoPayWmt = systemService.getEntity(VmBusPoPayWmtEntity.class, vmBusPoPayWmt.getId());
-		String message = "采购付款单删除成功";
+		String message = "采购付款单驳回成功";
 		try{
 			logger.info("-- 修改实体表【bus_po_contract_pay】外键bus_po_pay_id={}的字段[bpcp_remark,pay_amount,bus_po_pay_id]--",vmBusPoPayWmt.getId());
 			vmBusPoPayWmtService.delMain(vmBusPoPayWmt);
 			systemService.addLog(message, Globals.Log_Type_DEL, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();
-			message = "采购付款单删除失败";
+			message = "采购付款单驳回失败";
 			throw new BusinessException(e.getMessage());
 		}
 		j.setMsg(message);

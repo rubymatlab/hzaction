@@ -32,5 +32,6 @@ public interface VmBusPoPayWmtServiceI extends CommonService{
 	public void doAuditFinishSql(VmBusPoPayWmtEntity t) throws Exception;
 	public void doSendAuditSql(VmBusPoPayWmtEntity t) throws Exception;
 	public void doBpcpIdUpdate(String bpcpIds);
+	public void doUpdateBppState(String id);
 	public String getBpiVoucherno();
 }

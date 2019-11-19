@@ -546,4 +546,18 @@ public class VmBusPoPayWmtServiceImpl extends CommonServiceImpl implements VmBus
 			actaccountDao.doUpdateBusEnhance(bpcpIds);
 		}
 	}
+	
+	/**
+	 * 驳回，修改虚表和实表的单据状态
+	 */
+	@Override
+	public void doUpdateBppState(String id) {
+		// TODO Auto-generated method stub
+		try {
+			actaccountDao.updateBusPoPayWmtEntityBppState("0", id);
+		}catch(Exception e) {
+			e.printStackTrace();
+			logger.error("--- 驳回失败！ ---");
+		}
+	}
 }

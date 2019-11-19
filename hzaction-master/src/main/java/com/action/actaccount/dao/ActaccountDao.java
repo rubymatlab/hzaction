@@ -43,7 +43,7 @@ public interface ActaccountDao {
 	@Arguments({"bppPayId"})
 	Map<String, String> getNowByBppPayId(String bppPayId);
 	
-	@Sql("update bus_po_pay set bpp_state=:bppState where id=:id")
+	@Sql("update bus_po_pay set bpp_state=:bppState, update_date=now() where id=:id")
 	@Arguments({"bppState","id"})
 	int updateBusPoPayWmtEntityBppState(String bppState,String id);
 	

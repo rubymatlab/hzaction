@@ -259,12 +259,19 @@ public class CommonDao extends GenericBaseCommonDao implements ICommonDao, IGene
 //				FileCopyUtils.copy(mf.getBytes(), savefile);
 
 				//默认上传文件是否转换为swf，实现在线预览功能开关
-				String globalSwfTransformFlag = ResourceUtil.getConfigByName("swf.transform.flag");
-				if ( "true".equals(globalSwfTransformFlag) && uploadFile.getSwfpath() != null) {
-					// 转SWF
-					reflectHelper.setMethodValue(uploadFile.getSwfpath(), path + FileUtils.getFilePrefix(myfilename) + ".swf");
-					SwfToolsUtil.convert2SWF(savePath);
-				}
+					savePathPublic = savePath;
+					String globalSwfTransformFlag = ResourceUtil.getConfigByName("swf.transform.flag");
+					if ("true".equals(globalSwfTransformFlag) && uploadFile.getSwfpath() != null) {
+						// 转SWF
+						reflectHelper.setMethodValue(uploadFile.getSwfpath(),
+								path + FileUtils.getFilePrefix(myfilename) + ".swf");
+						new Thread() {
+							public void run() {
+								SwfToolsUtil.convert2SWF(savePathPublic);
+							}
+						}.start();
+					}
+			            
 
 
 			}
@@ -273,6 +280,9 @@ public class CommonDao extends GenericBaseCommonDao implements ICommonDao, IGene
 		}
 		return object;
 	}
+	
+	/*增加savePathPublic*/
+	private String savePathPublic;
     
 	private String toHexString(int index){
         String hexString = Integer.toHexString(index);   

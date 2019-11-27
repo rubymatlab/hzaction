@@ -37,6 +37,22 @@
 	});
 	$(".tabs-wrap").css('width','100%');
   });
+  function createCusID(){
+      $.ajax({
+          type : "POST",
+          url : 'basCustomerController.do?doCreateCustomerId',
+          data: {id:""},
+          success : function(res) {
+              var data = JSON.parse(res);
+              $("#bcId").val(data.msg)
+          },
+          error:function(){
+              tip("产生客户编号错误！");
+          }
+      })
+  }
+  createCusID();
+
  </script>
  </head>
  <body style="overflow-x: hidden;">
@@ -48,7 +64,7 @@
 				<label class="Validform_label">客户编号:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bcId" name="bcId" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
+		     	 <input id="bcId" name="bcId" type="text" readonly="readonly" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">客户编号</label>
 			</td>
@@ -70,11 +86,24 @@
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">客户简称</label>
 			</td>
+
+			<td align="right">
+				<label class="Validform_label">客户行业:</label>
+			</td>
+			<td class="value">
+				<t:dictSelect field="bcClass" type="list" typeGroupCode="bc_class"
+							  hasLabel="false"
+							  title="客户行业"></t:dictSelect>
+				<span class="Validform_checktip"></span>
+				<label class="Validform_label" style="display: none;">客户行业</label>
+			</td>
+		</tr>
+		<tr>
 			<td align="right">
 				<label class="Validform_label">客户地址:</label>
 			</td>
-			<td class="value">
-		     	 <input id="bcAddress" name="bcAddress" type="text" maxlength="100" style="width: 150px" class="inputxt"  ignore="ignore" />
+			<td class="value" colspan="3">
+				<input id="bcAddress" name="bcAddress" type="text" maxlength="100" style="width: 350px" class="inputxt"  ignore="ignore" />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">客户地址</label>
 			</td>
@@ -101,8 +130,8 @@
 			<td align="right">
 				<label class="Validform_label">备注:</label>
 			</td>
-			<td class="value">
-		     	 <input id="bcRemark" name="bcRemark" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
+			<td class="value" colspan="3">
+		     	 <input id="bcRemark" name="bcRemark" type="text" maxlength="32" style="width: 350px" class="inputxt"  ignore="ignore" />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">备注</label>
 			</td>

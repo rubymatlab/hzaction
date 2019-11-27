@@ -88,7 +88,25 @@ public class VmBusProjectManagerEntity implements java.io.Serializable {
 	private java.lang.String fromCustId;
 	/**立项时间*/
 	private java.util.Date bpmCreDate;
-	
+	/**客户资料外键*/
+	private java.lang.String bcClass;
+
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  客户行业
+	 */
+	@Column(name ="BC_CLASS",nullable=true,length=32)
+	public String getBcClass() {
+		return bcClass;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  客户行业
+	 */
+	public void setBcClass(String bcClass) {
+		this.bcClass = bcClass;
+	}
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  id

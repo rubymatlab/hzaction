@@ -45,6 +45,9 @@ public class BasCustomerPage implements java.io.Serializable {
 	/**开户行*/
     @Excel(name="开户行")
 	private java.lang.String bcBankId;
+	//	客户分类
+	@Excel(name="客户分类",width=15)
+	private java.lang.String bcClass;
 	/**开户帐号*/
     @Excel(name="开户帐号")
 	private java.lang.String bcBankAcc;
@@ -335,4 +338,21 @@ public class BasCustomerPage implements java.io.Serializable {
 		public void setBasCustomerContactsList(List<BasCustomerContactsEntity> basCustomerContactsList) {
 		this.basCustomerContactsList = basCustomerContactsList;
 		}
+
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  客户行业
+	 */
+	@Column(name ="BC_CLASS",nullable=true,length=32)
+	public String getBcClass() {
+		return bcClass;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  客户行业
+	 */
+	public void setBcClass(String bcClass) {
+		this.bcClass = bcClass;
+	}
 }

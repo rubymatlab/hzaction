@@ -3,7 +3,7 @@
 <t:base type="jquery,easyui,tools,DatePicker"></t:base>
 <div class="easyui-layout" fit="true">
   <div region="center" style="padding:0px;border:0px">
-  <t:datagrid name="vmBusProjectManagerList" checkbox="false" fitColumns="true" title="项目管理" sortName="createDate" actionUrl="vmBusProjectManagerController.do?datagrid&bpmStatus=${bpmStatus}" idField="id" fit="true" queryMode="group">
+  <t:datagrid name="vmBusProjectManagerList" checkbox="false" fitColumns="false" title="项目管理" sortName="createDate" actionUrl="vmBusProjectManagerController.do?datagrid&bpmStatus=${bpmStatus}" idField="id" fit="true" queryMode="group">
    <t:dgCol title="id"  field="id"  hidden="true"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="创建人名称"  field="createName"  hidden="true"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="创建人登录名称"  field="createBy"  hidden="true"  queryMode="group"  width="120"></t:dgCol>
@@ -13,26 +13,27 @@
    <t:dgCol title="更新日期"  field="updateDate"  formatter="yyyy-MM-dd"  hidden="true"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="所属部门"  field="sysOrgCode"  hidden="true"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="所属公司"  field="sysCompanyCode"  hidden="true"  queryMode="group"  width="120"></t:dgCol>
-   <t:dgCol title="流程状态"  field="bpmStatus"  dictionary="state" queryMode="group"  width="120"></t:dgCol>
+   <t:dgCol title="流程状态"  field="bpmStatus"  dictionary="state" hidden="true" queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="项目编号"  field="bpmProjId"  query="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="项目名称"  field="bpmProjName"  query="true"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="项目名称"  field="bpmProjName"  query="true"  queryMode="single"  width="200"></t:dgCol>
    <t:dgCol title="客户名称"  field="bpmCustName"  hidden="true"  queryMode="group"  width="120"></t:dgCol>
-   <t:dgCol title="项目经理"  field="bpmManager"  queryMode="group"  width="120"></t:dgCol>
-   <t:dgCol title="应收总金额"  field="bpmReceAllAmou"  queryMode="group"  width="120"></t:dgCol>
-   <t:dgCol title="已收总金额"  field="bpmReceAllAmouD"  queryMode="group"  width="120"></t:dgCol>
-   <t:dgCol title="项目进度"  field="bpmProjProg"  queryMode="group"  dictionary="proj_prog"  width="120"></t:dgCol>
-   <t:dgCol title="进度百分比"  field="bpmProgPer"  queryMode="group"  dictionary="proj_per"  width="120"></t:dgCol>
-   <t:dgCol title="验收结果"  field="bpmCheckRes"   queryMode="group" dictionary="check_res" width="120"></t:dgCol>
+   <t:dgCol title="客户行业"  field="bcClass"  query="true"   dictionary="bc_class" hidden="true" queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="项目经理"  field="bpmManager"  queryMode="group"  width="80"></t:dgCol>
+   <t:dgCol title="应收总金额"  field="bpmReceAllAmou"  queryMode="group"  width="80"></t:dgCol>
+   <t:dgCol title="已收总金额"  field="bpmReceAllAmouD"  queryMode="group"  width="80"></t:dgCol>
+   <t:dgCol title="项目进度"  field="bpmProjProg"  queryMode="group"  dictionary="proj_prog"  width="80"></t:dgCol>
+   <t:dgCol title="进度百分比"  field="bpmProgPer"  queryMode="group"  dictionary="proj_per"  width="80"></t:dgCol>
    <t:dgCol title="验收时间"  field="bpmCheckDate"  formatter="yyyy-MM-dd"  queryMode="group"  width="120"></t:dgCol>
-   <t:dgCol title="施工问题"  field="bpmQues"  queryMode="group"  width="120"></t:dgCol>
-   <t:dgCol title="下一步计划"  field="bpmNextPlan"  queryMode="group"  width="120"></t:dgCol>
+   <t:dgCol title="跟进情况汇报"  field="bpmCheckRes"   queryMode="group" dictionary="check_res" width="350"></t:dgCol>
+   <t:dgCol title="施工问题"  field="bpmQues"  queryMode="group"  width="350"></t:dgCol>
+   <t:dgCol title="下一步计划"  field="bpmNextPlan"  queryMode="group"  width="350"></t:dgCol>
    <t:dgCol title="项目立项外键"  field="fromProjId"  hidden="true"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="客户资料外键"  field="fromCustId"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="立项时间"  field="bpmCreDate"  formatter="yyyy-MM-dd"  hidden="true"  query="true"  queryMode="group"  width="120"></t:dgCol>
-   <t:dgToolBar title="项目跟进" icon="icon-edit" url="vmBusProjectManagerController.do?goUpdate" funname="update" width="100%" height="100%"></t:dgToolBar>
+   <t:dgToolBar title="编辑" icon="icon-edit" url="vmBusProjectManagerController.do?goUpdate" funname="update" width="100%" height="100%"></t:dgToolBar>
    <c:if test="${bpmStatus != 1 }">
 	   <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
-	   <%-- <t:dgDelOpt title="删除" url="vmBusProjectManagerController.do?doDel&id={id}"  urlclass="ace_button" urlfont="fa-trash-o"/> --%>
+	   <t:dgDelOpt title="删除" url="vmBusProjectManagerController.do?doDel&id={id}"  urlclass="ace_button" urlfont="fa-trash-o"/>
    </c:if>
 <%--    <t:dgToolBar title="新建" icon="icon-add" url="vmBusProjectManagerController.do?goAdd" funname="add" width="100%" height="100%"></t:dgToolBar>
    <t:dgToolBar title="批量删除"  icon="icon-remove" url="vmBusProjectManagerController.do?doBatchDel" funname="deleteALLSelect"></t:dgToolBar>
@@ -41,7 +42,7 @@
    <t:dgToolBar title="导出" icon="icon-putout" funname="ExportXls"></t:dgToolBar>
    <t:dgToolBar title="模板下载" icon="icon-putout" funname="ExportXlsByT"></t:dgToolBar> --%>
    <c:if test="${bpmStatus == 0}">
-   	<t:dgToolBar title="项目确认审核" icon="icon-edit"  url="vmBusProjectManagerController.do?doUpdateStatus" funname="doUpdateStatus" ></t:dgToolBar>
+   	<t:dgToolBar title="完工确认" icon="icon-edit"  url="vmBusProjectManagerController.do?doUpdateStatus" funname="doUpdateStatus" ></t:dgToolBar>
    </c:if>
    <c:if test="${bpmStatus == 1}">
    	<t:dgToolBar title="刷新" icon="icon-reload"  url="vmBusProjectManagerController.do?doReload" funname="doReload" ></t:dgToolBar>

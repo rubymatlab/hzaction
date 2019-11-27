@@ -20,7 +20,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="bsId" name="bsId" type="text" maxlength="20" style="width: 150px" class="inputxt"  ignore="ignore"  value='${basSupplierPage.bsId}'/>
+						    <input id="bsId" name="bsId" type="text" readonly="readonly" maxlength="20" style="width: 150px" class="inputxt"  ignore="ignore"  value='${basSupplierPage.bsId}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">供应商编号</label>
 						</td>

@@ -23,9 +23,9 @@
 				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
 						计划验收时间
 				  </td>
-				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
-						验收结果
-				  </td>
+				  <%--<td align="left" bgcolor="#EEEEEE" style="width: 126px;">--%>
+						<%--验收结果--%>
+				  <%--</td>--%>
 <!-- 				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
 						项目管理外键
 				  </td> -->
@@ -51,25 +51,25 @@
 					  <label class="Validform_label" style="display: none;">跟进日期</label>
 					</td>
 				  <td align="left">
-					  	<input name="busProjectFollowList[0].bpfFollowReport" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
+					  	<input name="busProjectFollowList[0].bpfFollowReport" maxlength="32" type="text" class="inputxt"  style="width:300px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">跟进情况汇报</label>
 					</td>
 				  <td align="left">
-					  	<input name="busProjectFollowList[0].bpfQuestions" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
+					  	<input name="busProjectFollowList[0].bpfQuestions" maxlength="32" type="text" class="inputxt"  style="width:300px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">施工困难_问题</label>
 					</td>
 				  <td align="left">
-					  	<input name="busProjectFollowList[0].bpfNextPlan" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
+					  	<input name="busProjectFollowList[0].bpfNextPlan" maxlength="32" type="text" class="inputxt"  style="width:300px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">下一步计划</label>
 					</td>
 				  <td align="left">
 							<input name="busProjectFollowList[0].bpfCheckDate" maxlength="0"  type="text" class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})	"  style="width:150px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">验收时间</label>
 					</td>
-				  <td align="left">
-							<t:dictSelect field="busProjectFollowList[0].bpfCheckResult" type="list"   typeGroupCode="check_res"  defaultVal="${busProjectFollowPage.bpfCheckResult}" hasLabel="false"  title="验收结果"></t:dictSelect>     
-					  <label class="Validform_label" style="display: none;">验收结果</label>
-					</td>
+				  <%--<td align="left">--%>
+							<%--<t:dictSelect field="busProjectFollowList[0].bpfCheckResult" type="list"   typeGroupCode="check_res"  defaultVal="${busProjectFollowPage.bpfCheckResult}" hasLabel="false"  title="验收结果"></t:dictSelect>     --%>
+					  <%--<label class="Validform_label" style="display: none;">验收结果</label>--%>
+					<%--</td>--%>
 <!-- 				  <td align="left">
 					  	<input name="busProjectFollowList[0].fromId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">项目管理外键</label>
@@ -97,25 +97,25 @@
 					  <label class="Validform_label" style="display: none;">跟进日期</label>
 				   </td>
 				   <td align="left">
-					  	<input name="busProjectFollowList[${stuts.index }].bpfFollowReport" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bpfFollowReport }"/>
+					  	<input name="busProjectFollowList[${stuts.index }].bpfFollowReport" maxlength="32" type="text" class="inputxt"  style="width:300px;"  ignore="ignore"  value="${poVal.bpfFollowReport }"/>
 					  <label class="Validform_label" style="display: none;">跟进情况汇报</label>
 				   </td>
 				   <td align="left">
-					  	<input name="busProjectFollowList[${stuts.index }].bpfQuestions" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bpfQuestions }"/>
+					  	<input name="busProjectFollowList[${stuts.index }].bpfQuestions" maxlength="32" type="text" class="inputxt"  style="width:300px;"  ignore="ignore"  value="${poVal.bpfQuestions }"/>
 					  <label class="Validform_label" style="display: none;">施工困难_问题</label>
 				   </td>
 				   <td align="left">
-					  	<input name="busProjectFollowList[${stuts.index }].bpfNextPlan" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bpfNextPlan }"/>
+					  	<input name="busProjectFollowList[${stuts.index }].bpfNextPlan" maxlength="32" type="text" class="inputxt"  style="width:300px;"  ignore="ignore"  value="${poVal.bpfNextPlan }"/>
 					  <label class="Validform_label" style="display: none;">下一步计划</label>
 				   </td>
 				   <td align="left">
 							<input name="busProjectFollowList[${stuts.index }].bpfCheckDate" maxlength="0" type="text" class="Wdate" onClick="WdatePicker()"  style="width:150px;"   ignore="ignore"  value="<fmt:formatDate value='${poVal.bpfCheckDate}' type="date" pattern="yyyy-MM-dd"/>"/>
 					  <label class="Validform_label" style="display: none;">验收时间</label>
 				   </td>
-				   <td align="left">
-							<t:dictSelect field="busProjectFollowList[${stuts.index }].bpfCheckResult" type="list"   typeGroupCode="check_res"  defaultVal="${poVal.bpfCheckResult }" hasLabel="false"  title="验收结果"></t:dictSelect>     
-					  <label class="Validform_label" style="display: none;">验收结果</label>
-				   </td>
+				   <%--<td align="left">--%>
+							<%--<t:dictSelect field="busProjectFollowList[${stuts.index }].bpfCheckResult" type="list"   typeGroupCode="check_res"  defaultVal="${poVal.bpfCheckResult }" hasLabel="false"  title="验收结果"></t:dictSelect>     --%>
+					  <%--<label class="Validform_label" style="display: none;">验收结果</label>--%>
+				   <%--</td>--%>
 <%-- 				   <td align="left">
 					  	<input name="busProjectFollowList[${stuts.index }].fromId" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.fromId }"/>
 					  <label class="Validform_label" style="display: none;">项目管理外键</label>

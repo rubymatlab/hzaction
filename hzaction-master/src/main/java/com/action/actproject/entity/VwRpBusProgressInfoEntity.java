@@ -44,6 +44,9 @@ public class VwRpBusProgressInfoEntity implements java.io.Serializable {
 	/**客户名称*/
 	@Excel(name="客户名称",width=15)
 	private java.lang.String bcName;
+	/**客户行业*/
+	@Excel(name="客户行业",width=15)
+	private java.lang.String bcClass;
 	/**合同金额万元*/
 	@Excel(name="合同金额万元",width=15)
 	private java.lang.String bcContAmount;
@@ -65,7 +68,25 @@ public class VwRpBusProgressInfoEntity implements java.io.Serializable {
 	/**下一步计划*/
 	@Excel(name="下一步计划",width=15)
 	private java.lang.String bpfNextPlan;
-	
+
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  客户行业
+	 */
+	@Column(name ="BC_CLASS",nullable=true,length=32)
+	public String getBcClass() {
+		return bcClass;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  客户行业
+	 */
+	public void setBcClass(String bcClass) {
+		this.bcClass = bcClass;
+	}
+
+
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  主键

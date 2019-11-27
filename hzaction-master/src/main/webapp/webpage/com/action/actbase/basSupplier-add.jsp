@@ -7,6 +7,23 @@
   <t:base type="jquery,easyui,tools,DatePicker"></t:base>
   <script type="text/javascript">
   //编写自定义JS代码
+
+
+  function createSupID(){
+      $.ajax({
+          type : "POST",
+          url : 'basSupplierController.do?doCreateSupplierId',
+          data: {id:""},
+          success : function(res) {
+              var data = JSON.parse(res);
+              $("#bsId").val(data.msg)
+          },
+          error:function(){
+              tip("产生客户编号错误！");
+          }
+      })
+  }
+  createSupID();
   </script>
  </head>
  <body>
@@ -20,7 +37,7 @@
 						</label>
 					</td>
 					<td class="value">
-					     	 <input id="bsId" name="bsId" type="text" maxlength="20" style="width: 150px" class="inputxt"  ignore="ignore" />
+					     	 <input id="bsId" name="bsId" readonly="readonly" type="text" maxlength="20" style="width: 150px" class="inputxt"  ignore="ignore" />
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">供应商编号</label>
 						</td>

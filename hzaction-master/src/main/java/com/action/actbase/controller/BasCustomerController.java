@@ -112,7 +112,7 @@ public class BasCustomerController extends BaseController {
 	@RequestMapping(params = "datagrid")
 	public void datagrid(BasCustomerEntity basCustomer,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
 		CriteriaQuery cq = new CriteriaQuery(BasCustomerEntity.class, dataGrid);
-		
+
 		// 模糊查询
 		if(StringUtil.isNotEmpty(basCustomer.getBcName())){
 			basCustomer.setBcName("*"+basCustomer.getBcName()+"*");
@@ -515,4 +515,46 @@ public class BasCustomerController extends BaseController {
 
 		return Result.success();
 	}
+
+
+	@RequestMapping(params = "doCreateCustomerId")
+	@ResponseBody
+	public AjaxJson doCreateProjectId(BasCustomerEntity vwBusProject, HttpServletRequest request) {
+		AjaxJson j = new AjaxJson();
+		String message = "产生客户编号成功";
+		//VwBusProjectEntity t = vwBusProjectService.get(VwBusProjectEntity.class, vwBusProject.getId());
+		try{
+			String sql = "select max(bc_id) from bas_customer";
+			List<Map<String,Object>> result = this.systemService.findForJdbc(sql);
+			for(Map<String,Object> map : result){
+				for(String key : map.keySet()){
+					String maxid = map.get(key).toString();
+					if(maxid.length() < 4){
+						message = "C001";
+					}else{
+						maxid = maxid.substring(1);
+						int i = Integer.parseInt( maxid );
+						i++;
+						if(i<10){
+							message = "C00"+i;
+						}else if(i<100){
+							message = "C0"+i;
+						}else{
+							message = "C"+i;
+						}
+					}
+				}
+			}
+
+			//vwBusProjectService.doBidSql(t);
+			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
+		}catch(Exception e){
+			e.printStackTrace();
+			message = "产生客户编号失败";
+		}
+		j.setMsg(message);
+		return j;
+	}
+
+
 }

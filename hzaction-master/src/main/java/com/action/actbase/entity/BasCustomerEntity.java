@@ -52,6 +52,10 @@ public class BasCustomerEntity implements java.io.Serializable {
 	/**备注*/
 	@Excel(name="备注",width=15)
 	private java.lang.String bcRemark;
+	/**客户分类*/
+	@Excel(name="客户分类",width=15)
+	private java.lang.String bcClass;
+
 	/**创建人名称*/
 	private java.lang.String createName;
 	/**创建人登录名称*/
@@ -376,8 +380,25 @@ public class BasCustomerEntity implements java.io.Serializable {
 	 *方法: 设置java.lang.String
 	 *@param: java.lang.String  流程状态
 	 */
+
 	public void setBpmStatus(java.lang.String bpmStatus){
 		this.bpmStatus = bpmStatus;
 	}
-	
+
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  客户行业
+	 */
+	@Column(name ="BC_CLASS",nullable=true,length=32)
+	public String getBcClass() {
+		return bcClass;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  客户行业
+	 */
+	public void setBcClass(String bcClass) {
+		this.bcClass = bcClass;
+	}
 }

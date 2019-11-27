@@ -48,7 +48,7 @@
 				<label class="Validform_label">客户编号:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bcId" name="bcId" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${basCustomerPage.bcId}'/>
+		     	 <input id="bcId" name="bcId" type="text" readonly="readonly" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${basCustomerPage.bcId}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">客户编号</label>
 			</td>
@@ -71,10 +71,22 @@
 				<label class="Validform_label" style="display: none;">客户简称</label>
 			</td>
 			<td align="right">
-				<label class="Validform_label">客户地址:</label>
+				<label class="Validform_label">客户行业:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bcAddress" name="bcAddress" type="text" maxlength="100" style="width: 150px" class="inputxt"  ignore="ignore"  value='${basCustomerPage.bcAddress}'/>
+				<t:dictSelect field="bcClass" type="list" typeGroupCode="bc_class"
+							  hasLabel="false" defaultVal="${basCustomerPage.bcClass}"
+							  title="客户行业"></t:dictSelect>
+				<span class="Validform_checktip"></span>
+				<label class="Validform_label" style="display: none;">客户行业</label>
+			</td>
+		</tr>
+		<tr>
+			<td align="right">
+				<label class="Validform_label">客户地址:</label>
+			</td>
+			<td class="value" colspan="3">
+				<input id="bcAddress" name="bcAddress" type="text" maxlength="100" style="width: 350px" class="inputxt"  ignore="ignore"  value='${basCustomerPage.bcAddress}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">客户地址</label>
 			</td>
@@ -101,8 +113,8 @@
 			<td align="right">
 				<label class="Validform_label">备注:</label>
 			</td>
-			<td class="value">
-		     	 <input id="bcRemark" name="bcRemark" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${basCustomerPage.bcRemark}'/>
+			<td class="value" colspan="3">
+		     	 <input id="bcRemark" name="bcRemark" type="text" maxlength="32" style="width: 350px" class="inputxt"  ignore="ignore"  value='${basCustomerPage.bcRemark}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">备注</label>
 			</td>

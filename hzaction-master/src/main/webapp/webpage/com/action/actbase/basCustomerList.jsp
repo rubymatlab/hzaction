@@ -9,6 +9,7 @@
    <t:dgCol title="客户名称"  field="bcName"  query="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="客户简称"  field="bcSname"  query="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="客户地址"  field="bcAddress"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="客户分类"  field="bcClass"  query="true" dictionary="bc_class" queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="开户行"  field="bcBankId"  query="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="开户帐号"  field="bcBankAcc"  query="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="备注"  field="bcRemark"  queryMode="single"  width="120"></t:dgCol>

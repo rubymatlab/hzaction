@@ -99,7 +99,8 @@ public class CommonController extends BaseController {
 			String swfpath = oConvertUtils.getString(reflectHelper.getMethodValue("swfpath"));
 
 			swfpath=swfpath.replace("\\","/");
-
+			swfpath=swfpath.replace(".swf", ".pdf");
+			
 			request.setAttribute("swfpath", swfpath);
 			return new ModelAndView("common/upload/swfView");
 		}

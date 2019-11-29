@@ -14,7 +14,7 @@ public class SwfToolsUtil {
 		SWFConverter swfConverter = new SWFToolsSWFConverter();
 		if(extend.equals("pdf"))
 		{
-			swfConverter.convert2SWF(inputFile,extend);
+			//swfConverter.convert2SWF(inputFile,extend);
 		}
 		if(extend.equals("doc")||extend.equals("docx")||extend.equals("xls")||extend.equals("pptx")||extend.equals("xlsx")||extend.equals("ppt")||extend.equals("txt")||extend.equals("odt"))
 		{

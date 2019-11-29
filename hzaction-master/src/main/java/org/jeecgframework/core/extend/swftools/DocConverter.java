@@ -15,15 +15,17 @@ public class DocConverter {
 
 	public  void convert(String inputFile,String swfFile,String extend){
 		this.pdfConverter.convert2PDF(inputFile,extend);
-		String pdfFile = FileUtils.getFilePrefix(inputFile)+".pdf";
-		this.swfConverter.convert2SWF(pdfFile, swfFile);
+		//zhyongfeng
+		//String pdfFile = FileUtils.getFilePrefix(inputFile)+".pdf";
+		//this.swfConverter.convert2SWF(pdfFile, swfFile);
 	}
 	
 	public void convert(String inputFile,String extend){
 		this.pdfConverter.convert2PDF(inputFile,extend);
-		String pdfFile = FileUtils.getFilePrefix2(inputFile)+".pdf";
-		extend=FileUtils.getExtend(pdfFile);
-		this.swfConverter.convert2SWF(pdfFile,extend);
+		//zhyongfeng
+		//String pdfFile = FileUtils.getFilePrefix2(inputFile)+".pdf";
+		//extend=FileUtils.getExtend(pdfFile);
+		//this.swfConverter.convert2SWF(pdfFile,extend);
 		
 	}
 	

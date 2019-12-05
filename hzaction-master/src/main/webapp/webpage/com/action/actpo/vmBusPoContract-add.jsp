@@ -38,6 +38,9 @@
 		}
 	});
 	$(".tabs-wrap").css('width','100%');
+
+
+
   });
  </script>
  </head>
@@ -55,12 +58,12 @@
 				<label class="Validform_label" style="display: none;">采购合同编号</label>
 			</td>
 			<td align="right">
-				<label class="Validform_label">项目编号:</label>
+				<label class="Validform_label">项目经理:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bpmProjId" name="bpmProjId" readonly="readonly" type="text" maxlength="32" style="width: 60%" class="inputxt"  ignore="ignore" />
+		     	 <input id="bpManager" name="bpManager" readonly="readonly" type="text" maxlength="32" style="width: 60%" class="inputxt"  ignore="ignore" />
 				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">项目编号</label>
+				<label class="Validform_label" style="display: none;">项目经理</label>
 			</td>
 		</tr>
 		<tr>
@@ -70,18 +73,19 @@
 			<td class="value">
 		     	<input id="bpmProjName" name="bpmProjName" type="text" maxlength="50" style="width: 300px;" class="inputxt easyui-combogrid"  ignore="ignore" data-options="
 			           panelWidth: 500,
-			            idField: 'bpmName',
-			            textField: 'bpmName',
-			            url: 'busProjectManagerController.do?datagrid&field=id,bpmProjId,bpmName',
+			            idField: 'bpmProjName',
+			            textField: 'bpmProjName',
+			            url: 'vmBusProjectManagerController.do?datagrid&field=id,bpmProjId,bpmProjName,bpmManager,fromProjId',
 			            columns: [[
 			                {field:'bpmProjId',title:'项目编号',width:80},
-			                {field:'bpmName',title:'项目名称',width:120}
+			                {field:'bpmProjName',title:'项目名称',width:120}
 			            ]],
 			            onSelect: function (row,data) {
-			            	$('#bpmProjId').val(data.bpmProjId);
+			            	$('#bpManager').val(data.bpmManager);
 			            	$('#fromProjmId').val(data.id);
 			            	window.projectId = data.id;
-			            	createBCollectId(data.bpmProjId,data.id)
+			            	createBCollectId(data.bpmProjId,data.id);
+							getRecData(data.fromProjId)
 					    },
 			             fitColumns: true
 			        " />
@@ -351,7 +355,11 @@
 		$.get("vmBusPoContractController.do?datagrid&field=bpmProjId,fromProjmId",function(row){
 			bpmProjIdList = row.rows;
 		})
-		// 采购合同编号
+
+
+
+
+        // 采购合同编号
 		function createBCollectId(projID,fromId){
 			var num = 1;
 			bpmProjIdList.forEach(function(item){
@@ -361,7 +369,26 @@
 			})
 			$("#bpcPoNo").val(projID+"-CG-"+("00"+num).slice(-3))
 		}
-	
+		// 获取收货缺省值
+		function getRecData(id){
+		    console.log(id)
+            $.ajax({
+                type: "post",
+                url:"vmBusPoContractController.do?getRecData",
+                data:{
+                    fromProjmId: id
+                },
+                success:function(data){
+                    var oData = JSON.parse(data);
+                    $("#bpcRecTel").val(oData.obj[0].bpa_rec_tel);
+                    $("#bpcRecAddr").val(oData.obj[0].bpa_rec_addr);
+                    $("#bpcRecPeople").val(oData.obj[0].bpa_rec_people);
+                },
+                fail:function(err){
+                    console.log(err)
+                }
+            })
+		}
 
   		function jeecgFormFileCallBack(data){
   			if (data.success == true) {

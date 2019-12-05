@@ -15,8 +15,9 @@
    <t:dgCol title="所属公司"  field="sysCompanyCode"  hidden="true"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="流程状态"  field="bpmStatus"  hidden="true"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="采购合同编号"  field="bpcPoNo"  queryMode="group"  width="120"></t:dgCol>
-   <t:dgCol title="项目编号"  field="bpmProjId"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="项目编号"  field="bpmProjId" hidden="true" queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="项目名称"  field="bpmProjName"  query="true"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="项目经理"  field="bpManager"    query="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="项目管理外键"  field="fromProjmId"  hidden="true"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="供应商资料外键"  field="fromSuppId"  hidden="true"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="供应商"  field="bsName"  query="true"  queryMode="single"  width="120"></t:dgCol>
@@ -31,7 +32,6 @@
    <t:dgCol title="总金额"  field="allAmount"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="预计付款日期"  field="bpExpPayDate"  formatter="yyyy-MM-dd"  hidden="true"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="采购情况汇报"  field="bpSitReport"  hidden="true"  queryMode="group"  width="120"></t:dgCol>
-   <t:dgCol title="项目经理"  field="bpManager"  hidden="true"  query="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="客户名称"  field="bcName"  hidden="true"  query="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
    <t:dgDelOpt title="删除" url="vmBusPoContractController.do?doDel&id={id}"  urlclass="ace_button" urlfont="fa-trash-o"/>

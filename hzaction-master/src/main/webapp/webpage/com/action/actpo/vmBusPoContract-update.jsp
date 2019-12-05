@@ -53,13 +53,13 @@
 				<label class="Validform_label" style="display: none;">采购合同编号</label>
 			</td>
 			<td align="right">
-				<label class="Validform_label">项目编号:</label>
+				<label class="Validform_label">项目经理:</label>
 			</td>
 			<td class="value">
 				<input id="fromProjId" name="fromProjId" type="hidden"  value='${vmBusPoContractPage.fromProjmId}'/>
-		     	 <input id="bpmProjId" name="bpmProjId" type="text" disabled="disabled" maxlength="32" style="width: 60%" class="inputxt"  ignore="ignore"  value='${vmBusPoContractPage.bpmProjId}'/>
+		     	 <input id="bpManager" name="bpManager" type="text" disabled="disabled" maxlength="32" style="width: 60%" class="inputxt"  ignore="ignore"  value='${vmBusPoContractPage.bpManager}'/>
 				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">项目编号</label>
+				<label class="Validform_label" style="display: none;">项目经理</label>
 			</td>
 		</tr>
 		<tr>

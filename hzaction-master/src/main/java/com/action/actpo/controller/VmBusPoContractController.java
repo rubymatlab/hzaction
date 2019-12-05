@@ -138,8 +138,21 @@ public class VmBusPoContractController extends BaseController {
 		this.vmBusPoContractService.getDataGridReturn(cq, true);
 		TagUtil.datagrid(response, dataGrid);
 	}
-	
 
+	@RequestMapping(params = "getRecData")
+	@ResponseBody
+	public AjaxJson getRecData(VmBusPoContractEntity entity ,HttpServletRequest request, HttpServletResponse response){
+		AjaxJson resJson = new AjaxJson();
+		String projId = entity.getFromProjmId();
+		try{
+			String sql = "SELECT max(bpa_apply_no),bpa_rec_tel,bpa_rec_addr,bpa_rec_people FROM vw_bus_po_apply where from_projm_id = '" + projId +"'";
+			List<Map<String,Object>> result = this.systemService.findForJdbc(sql);
+			resJson.setObj(result);
+		}catch (Exception e){
+			e.printStackTrace();
+		}
+		return resJson;
+	}
 		
 	
 	/**

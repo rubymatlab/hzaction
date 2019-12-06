@@ -52,6 +52,9 @@ public class VwBusProjectEntity implements java.io.Serializable {
 	/**问题or协助*/
 	@Excel(name="问题or协助",width=15)
 	private java.lang.String bpQuestions;
+	/**项目情况*/
+	@Excel(name="项目情况",width=15)
+	private java.lang.String bpdFeedbackInto;
 	/**产品解决方案*/
 	@Excel(name="产品解决方案",width=15)
 	private java.lang.String bpProSolutions;
@@ -240,7 +243,6 @@ public class VwBusProjectEntity implements java.io.Serializable {
 	public java.lang.String getBpQuestions(){
 		return this.bpQuestions;
 	}
-
 	/**
 	 *方法: 设置java.lang.String
 	 *@param: java.lang.String  问题or协助
@@ -249,6 +251,18 @@ public class VwBusProjectEntity implements java.io.Serializable {
 		this.bpQuestions = bpQuestions;
 	}
 	
+	@Column(name ="BPD_FEEDBACK_INTO",nullable=true,length=3000)
+	public java.lang.String getBpdFeedbackInto(){
+		return this.bpdFeedbackInto;
+	}
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  项目情况
+	 */
+	public void setBpdFeedbackInto(java.lang.String bpdFeedbackInto){
+		this.bpdFeedbackInto = bpdFeedbackInto;
+	}
+
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  产品解决方案

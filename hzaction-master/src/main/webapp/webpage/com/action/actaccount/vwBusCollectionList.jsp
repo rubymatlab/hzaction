@@ -13,7 +13,8 @@
    <t:dgCol title="更新日期"  field="updateDate"  formatter="yyyy-MM-dd"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="所属部门"  field="sysOrgCode"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="所属公司"  field="sysCompanyCode"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
-   <%--  <t:dgCol title="流程状态"  field="bpmStatus"  queryMode="single"  dictionary="bpm_status"  width="120"></t:dgCol> --%>
+   <%--<t:dgCol title="流程状态"  field="bpmStatus"  queryMode="single"  dictionary="bpm_status"  width="120"></t:dgCol> --%>
+   <t:dgCol title="客户行业"  field="bcClass"  hidden="true" query="true" queryMode="single"  dictionary="bc_class"  width="120"></t:dgCol>
    <t:dgCol title="项目编号"  field="bpmProjId"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="项目名称"  field="bpmName"  query="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="客户"  field="bcCustContractor"  query="true"  queryMode="single"  width="120"></t:dgCol>

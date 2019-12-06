@@ -130,6 +130,32 @@ public class VwBusCollectionEntity implements java.io.Serializable {
 	private java.lang.String bpKeyPeople;
 	/**财务支付id*/
 	private java.lang.String fromPayinfoId;
+
+	/**客户行业*/
+	private java.lang.String bcClass;
+
+
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  客户行业
+	 */
+	@Column(name ="BC_CLASS",nullable=true,length=32)
+	public java.lang.String getBcClass(){
+		return this.bcClass;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  主键
+	 */
+
+	public void setBcClass(java.lang.String bcClass){
+		this.bcClass = bcClass;
+	}
+
+
+
+
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  主键

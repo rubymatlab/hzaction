@@ -24,6 +24,7 @@
    <t:dgCol title="付款单号"  field="bppPayId"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="供应商资料外键"  field="fromSuppId" hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="供应商编号"  field="bsId" hidden="true" queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="项目经理"  field="bpManager" hidden="true" queryMode="single"  width="120"></t:dgCol>
    
    <t:dgCol title="供应商名称"  field="bsName"  query="true"  queryMode="single"  dictionary="bas_supplier,bsName,bs_name"  popup="true"  width="120"></t:dgCol>
    
@@ -32,7 +33,7 @@
    <t:dgCol title="发票金额"  field="bppInvAmount" hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="发票类型"  field="bppInvType" hidden="true" queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="税率百分比"  field="bppTaxRate" hidden="true" queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="实际付款时间"  field="bppPayDate" hidden="true" formatter="yyyy-MM-dd"  query="true"  queryMode="group"  width="120"></t:dgCol>
+   <t:dgCol title="申请付款时间"  field="bppPayDate" hidden="true" formatter="yyyy-MM-dd"  query="true"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="附件"  field="bppAccessory" hidden="true" queryMode="single"  downloadName="附件下载"  width="120"></t:dgCol>
    
    

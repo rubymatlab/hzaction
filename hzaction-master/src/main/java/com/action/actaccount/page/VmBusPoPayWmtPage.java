@@ -3,6 +3,8 @@ package com.action.actaccount.page;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.persistence.Column;
+
 import org.jeecgframework.poi.excel.annotation.Excel;
 import org.jeecgframework.poi.excel.annotation.ExcelCollection;
 
@@ -53,6 +55,9 @@ public class VmBusPoPayWmtPage implements java.io.Serializable {
 	/**发票类型*/
 	@Excel(name="发票类型")
 	private java.lang.String bppInvType;
+	/**项目经理*/
+	@Excel(name="项目经理",width=15)
+	private java.lang.String bpManager;
 	/**税率百分比*/
 	@Excel(name="税率百分比")
 	private java.lang.String bppTaxRate;
@@ -148,7 +153,23 @@ public class VmBusPoPayWmtPage implements java.io.Serializable {
 	public java.lang.String getUpdateName(){
 		return this.updateName;
 	}
-
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  项目经理
+	 */
+	
+	@Column(name ="BP_MANAGER",nullable=true,length=32)
+	public java.lang.String getBpManager(){
+		return this.bpManager;
+	}
+	
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  项目经理
+	 */
+	public void setBpManager(java.lang.String bpManager){
+		this.bpManager = bpManager;
+	}
 	/**
 	 *方法: 设置java.lang.String
 	 *@param: java.lang.String  更新人名称

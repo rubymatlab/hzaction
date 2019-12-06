@@ -67,6 +67,9 @@ public class BusContractPaymentEntity implements java.io.Serializable {
 	/**付款条件*/
 	@Excel(name="付款条件",width=15)
 	private java.lang.String bcpPaymentClause;
+	/**付款比例*/
+	@Excel(name="付款比例",width=15)
+	private java.lang.String bcpPaymentProportion;
 	/**进度款分期*/
 	@Excel(name="进度款分期",width=15,dicCode="cost_stag")
 	private java.lang.String bcpProgrePayment;
@@ -111,6 +114,23 @@ public class BusContractPaymentEntity implements java.io.Serializable {
 	 */
 	public void setCreateName(java.lang.String createName){
 		this.createName = createName;
+	}
+	/**
+	 *方法: 取得java.lang.String 
+	 *@return: java.lang.String  付款比例
+	 */
+	
+	@Column(name ="BCP_PAYMENT_PROPORTION",nullable=true,length=50)
+	public java.lang.String getBcpPaymentProportion(){
+		return this.bcpPaymentProportion;
+	}
+	
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  付款比例
+	 */
+	public void setBcpPaymentProportion(java.lang.String bcpPaymentProportion){
+		this.bcpPaymentProportion = bcpPaymentProportion;
 	}
 	
 	/**

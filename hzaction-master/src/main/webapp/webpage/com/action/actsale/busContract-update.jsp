@@ -42,7 +42,7 @@
  </script>
  </head>
  <body style="overflow-x: hidden;">
-  <t:formvalid formid="formobj" dialog="true" usePlugin="password" layout="table" tiptype="1" action="busContractController.do?doUpdate" callback="jeecgFormFileCallBack@Override">
+  <t:formvalid formid="formobj" dialog="true" beforeSubmit="judge" usePlugin="password" layout="table" tiptype="1" action="busContractController.do?doUpdate" callback="jeecgFormFileCallBack@Override">
 					<input id="id" name="id" type="hidden" value="${busContractPage.id }"/>
 	<table cellpadding="0" cellspacing="1" class="formtable">
 		<tr hidden="hidden">
@@ -229,12 +229,12 @@
 		</tr>
 		<tr>
 			<td align="right">
-				<label class="Validform_label">客户签约人:</label>
+				<label class="Validform_label">成本预算:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bcCustContractor" name="bcCustContractor" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${busContractPage.bcCustContractor}'/>
+		     	 <input id="bcCosting" name="bcCosting" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${busContractPage.bcCosting}'/>
 				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">客户签约人</label>
+				<label class="Validform_label" style="display: none;">成本预算</label>
 			</td>
 			<td align="right">
 				<label class="Validform_label">安信金额:</label>
@@ -386,6 +386,10 @@
 					  <label class="Validform_label" style="display: none;">数量</label>
 				  </td>
 				  <td align="left">
+					  		<input name="busConQuotedPriceList[#index#].bcqpUnit" maxlength="22" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" />
+					  <label class="Validform_label" style="display: none;">单位</label>
+				  </td>
+				  <td align="left">
 					  		<input name="busConQuotedPriceList[#index#].bcqpPrice" maxlength="22" type="text" class="inputxt"  style="width:120px;"  datatype="/^(-?\d+)(\.\d+)?$/"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">单价</label>
 				  </td>
@@ -446,6 +450,10 @@
 				  <td align="left">
 							<t:dictSelect field="busContractPaymentList[#index#].bcpProgrePayment" type="list"   typeGroupCode="cost_stag"  defaultVal="" hasLabel="false"  title="进度款分期"></t:dictSelect>     
 					  <label class="Validform_label" style="display: none;">进度款分期</label>
+				  </td>
+				  <td align="left">
+					  		<input name="busContractPaymentList[#index#].bcpPaymentProportion" maxlength="10" type="text" class="inputxt"  style="width:120px;"  datatype="n"  ignore="ignore" />
+					  <label class="Validform_label" style="display: none;">付款比例</label>
 				  </td>
 				  <td align="left">
 					  		<input name="busContractPaymentList[#index#].bcpContractAmount" maxlength="10" type="text" class="inputxt"  style="width:120px;"  datatype="n"  ignore="ignore" />
@@ -665,6 +673,18 @@
 				}
 			}
 		}
+		
+		
+		//wmt-start
+		function judge(){
+			var bcContractName = $("#bcContractName").val().replace(/(^\s*)|(\s*$)/g, "")
+			if(bcContractName!=""){
+				return true;
+			}
+			alert("合同名称不能为空!")
+			return false;
+		}
+		//wmt-end
 		
   	</script>
   	

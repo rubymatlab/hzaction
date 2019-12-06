@@ -1,5 +1,3 @@
-
-
 //初始化下标
 function resetTrNum(tableId) {
 	$tbody = $("#"+tableId+"");
@@ -46,6 +44,7 @@ function resetTrNum(tableId) {
 		});
 		$(this).find('div[name=\'xh\']').html(i+1);
 	});
+	
 }
 //通用弹出式文件上传
 function commonUpload(callback,inputId){

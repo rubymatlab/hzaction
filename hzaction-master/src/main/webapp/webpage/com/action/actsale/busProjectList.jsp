@@ -4,7 +4,7 @@
 <div class="easyui-layout" fit="true">
   <div region="center" style="padding:0px;border:0px">
   <t:datagrid name="busProjectList" checkbox="true" fitColumns="true" title="项目立项" sortName="createDate" actionUrl="busProjectController.do?datagrid" idField="id" fit="true" queryMode="group">
-   <t:dgCol title="主键"  field="id"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="主键"  field="id"  hidden="false"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="项目编号"  field="bpProjId"  query="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="项目名称"  field="bpProjName"  query="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="立项时间"  field="bpDate"  formatter="yyyy-MM-dd"  query="true"  queryMode="group"  width="120"></t:dgCol>

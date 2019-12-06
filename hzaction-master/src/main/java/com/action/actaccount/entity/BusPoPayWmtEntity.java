@@ -42,10 +42,10 @@ public class BusPoPayWmtEntity implements java.io.Serializable {
 	@Excel(name="发票金额",width=15)
 	private java.math.BigDecimal bppInvAmount;
 	/**税率百分比*/
-	@Excel(name="税率百分比",width=15)
+	@Excel(name="税率百分比",width=15,dicCode="tax_rate")
 	private java.lang.String bppTaxRate;
 	/**实际付款时间*/
-	@Excel(name="实际付款时间",width=15,format = "yyyy-MM-dd")
+	@Excel(name="申请付款时间",width=15,format = "yyyy-MM-dd")
 	private java.util.Date bppPayDate;
 	/**单据状态*/
 	@Excel(name="单据状态",width=15,dicCode="bs_state")
@@ -56,6 +56,9 @@ public class BusPoPayWmtEntity implements java.io.Serializable {
 	/**项目管理外键*/
 	@Excel(name="项目管理外键",width=15)
 	private java.lang.String fromProjmId;
+	/**项目经理*/
+	@Excel(name="项目经理",width=15)
+	private java.lang.String bpManager;
 	/**供应商资料外键*/
 	@Excel(name="供应商资料外键",width=15)
 	private java.lang.String fromSuppId;
@@ -235,6 +238,23 @@ public class BusPoPayWmtEntity implements java.io.Serializable {
 	 */
 	public void setFromProjmId(java.lang.String fromProjmId){
 		this.fromProjmId = fromProjmId;
+	}
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  项目经理
+	 */
+	
+	@Column(name ="BP_MANAGER",nullable=true,length=32)
+	public java.lang.String getBpManager(){
+		return this.bpManager;
+	}
+	
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  项目经理
+	 */
+	public void setBpManager(java.lang.String bpManager){
+		this.bpManager = bpManager;
 	}
 	/**
 	 *方法: 取得java.lang.String
@@ -428,11 +448,11 @@ public class BusPoPayWmtEntity implements java.io.Serializable {
 	public String toString() {
 		return "BusPoPayWmtEntity [id=" + id + ", bppPayId=" + bppPayId + ", bppInvType=" + bppInvType
 				+ ", bppInvAmount=" + bppInvAmount + ", bppTaxRate=" + bppTaxRate + ", bppPayDate=" + bppPayDate
-				+ ", bppState=" + bppState + ", bppMoney=" + bppMoney + ", fromProjmId=" + fromProjmId + ", fromSuppId="
-				+ fromSuppId + ", bppAccessory=" + bppAccessory + ", createName=" + createName + ", createBy="
-				+ createBy + ", createDate=" + createDate + ", updateName=" + updateName + ", updateBy=" + updateBy
-				+ ", updateDate=" + updateDate + ", sysOrgCode=" + sysOrgCode + ", sysCompanyCode=" + sysCompanyCode
-				+ ", bpmStatus=" + bpmStatus + "]";
+				+ ", bppState=" + bppState + ", bppMoney=" + bppMoney + ", fromProjmId=" + fromProjmId + ", bpManager="
+				+ bpManager + ", fromSuppId=" + fromSuppId + ", bppAccessory=" + bppAccessory + ", createName="
+				+ createName + ", createBy=" + createBy + ", createDate=" + createDate + ", updateName=" + updateName
+				+ ", updateBy=" + updateBy + ", updateDate=" + updateDate + ", sysOrgCode=" + sysOrgCode
+				+ ", sysCompanyCode=" + sysCompanyCode + ", bpmStatus=" + bpmStatus + "]";
 	}
 
 }

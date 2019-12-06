@@ -10,6 +10,9 @@
 	$('#addBusContractPaymentBtn').bind('click', function(){   
  		 var tr =  $("#add_busContractPayment_table_template tr").clone();
 	 	 $("#add_busContractPayment_table").append(tr);
+	 	 
+	 	tr.children(":last").prev().children("input").css("width","500px")
+	 	 
 	 	 resetTrNum('add_busContractPayment_table');
 	 	 return false;
     });  
@@ -65,6 +68,9 @@
 				  </td>
 				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
 						进度款分期
+				  </td>
+				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
+						付款比例
 				  </td>
 				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
 						合同金额
@@ -127,11 +133,15 @@
 					  <label class="Validform_label" style="display: none;">进度款分期</label>
 					</td>
 				  <td align="left">
+					  	<input name="busContractPaymentList[0].bcpPaymentProportion" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
+					  <label class="Validform_label" style="display: none;">付款比例</label>
+					</td>
+				  <td align="left">
 					  	<input name="busContractPaymentList[0].bcpContractAmount" maxlength="10" type="text" class="inputxt"  style="width:120px;"  datatype="n"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">合同金额</label>
 					</td>
 				  <td align="left">
-					  	<input name="busContractPaymentList[0].bcpPaymentClause" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore" >
+					  	<input name="busContractPaymentList[0].bcpPaymentClause" maxlength="1000" type="text" class="inputxt"  style="width:500px;"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">付款条件</label>
 					</td>
 				  <td align="left" hidden="hidden">
@@ -191,11 +201,15 @@
 					  <label class="Validform_label" style="display: none;">进度款分期</label>
 				   </td>
 				   <td align="left">
+					  	<input name="busContractPaymentList[${stuts.index }].bcpPaymentProportion" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bcpPaymentProportion }"/>
+					  <label class="Validform_label" style="display: none;">付款比例</label>
+				   </td>
+				   <td align="left">
 					  	<input name="busContractPaymentList[${stuts.index }].bcpContractAmount" maxlength="10" type="text" class="inputxt"  style="width:120px;"  datatype="n"  ignore="ignore"  value="${poVal.bcpContractAmount }"/>
 					  <label class="Validform_label" style="display: none;">合同金额</label>
 				   </td>
 				   <td align="left">
-					  	<input name="busContractPaymentList[${stuts.index }].bcpPaymentClause" maxlength="32" type="text" class="inputxt"  style="width:120px;"  ignore="ignore"  value="${poVal.bcpPaymentClause }"/>
+					  	<input name="busContractPaymentList[${stuts.index }].bcpPaymentClause" maxlength="1000" type="text" class="inputxt"  style="width:500px;"  ignore="ignore"  value="${poVal.bcpPaymentClause }"/>
 					  <label class="Validform_label" style="display: none;">付款条件</label>
 				   </td>
 				   <td align="left" hidden="hidden">

@@ -71,6 +71,9 @@ public class BusConQuotedPriceEntity implements java.io.Serializable {
 	/**数量*/
 	@Excel(name="数量",width=15)
 	private java.lang.Double bcqpQty;
+	/**型号*/
+	@Excel(name="单位",width=15)
+	private java.lang.String bcqpUnit;
 	/**单价*/
 	@Excel(name="单价",width=15)
 	private java.lang.Double bcqpPrice;
@@ -316,6 +319,23 @@ public class BusConQuotedPriceEntity implements java.io.Serializable {
 	public void setBcqpModel(java.lang.String bcqpModel){
 		this.bcqpModel = bcqpModel;
 	}
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  单位
+	 */
+	
+	@Column(name ="BCQP_UNIT",nullable=true,length=32)
+	public java.lang.String getBcqpUnit(){
+		return this.bcqpUnit;
+	}
+	
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  单位
+	 */
+	public void setBcqpUnit(java.lang.String bcqpUnit){
+		this.bcqpUnit = bcqpUnit;
+	}
 	
 	/**
 	 *方法: 取得java.lang.Double
@@ -389,11 +409,4 @@ public class BusConQuotedPriceEntity implements java.io.Serializable {
 		this.busContractId = busContractId;
 	}
 
-	@Override
-	public String toString() {
-		return "BusConQuotedPriceEntity [bcqpName=" + bcqpName + ", bcqpBrand=" + bcqpBrand + ", bcqpModel=" + bcqpModel
-				+ ", bcqpQty=" + bcqpQty + ", bcqpPrice=" + bcqpPrice + ", bcqpAmount=" + bcqpAmount
-				+ ", busContractId=" + busContractId + "]";
-	}
-	
 }

@@ -271,7 +271,6 @@ public class VmBusPoPayWmtController extends BaseController {
 	@ResponseBody
 	public AjaxJson doUpdate(VmBusPoPayWmtEntity vmBusPoPayWmt,VmBusPoPayWmtPage vmBusPoPayWmtPage, HttpServletRequest request) {
 		logger.info("-- 更新采购付款单视图_wmt --");
-		
 		List<VmBusPoContractPayWmtEntity> vmBusPoContractPayWmtList =  vmBusPoPayWmtPage.getVmBusPoContractPayWmtList();
 		
 		//根据bpcpId把实体附表BusPoContractPayWmt的[付款金额,备注,采购付款单外键]都清空

@@ -65,7 +65,7 @@ public class VmBusPoPayWmtEntity implements java.io.Serializable {
 	@Excel(name="发票类型",width=15,dicCode="bc_invoice")
 	private java.lang.String bppInvType;
 	/**税率百分比*/
-	@Excel(name="税率百分比",width=15)
+	@Excel(name="税率百分比",width=15,dicCode="tax_rate")
 	private java.lang.String bppTaxRate;
 	/**实际付款时间*/
 	@Excel(name="实际付款时间",width=15,format = "yyyy-MM-dd")
@@ -76,6 +76,9 @@ public class VmBusPoPayWmtEntity implements java.io.Serializable {
 	/**项目管理外键*/
 	@Excel(name="项目管理外键",width=15)
 	private java.lang.String fromProjId;
+	/**项目经理*/
+	@Excel(name="项目经理",width=15)
+	private java.lang.String bpManager;
 	/**项目编号*/
 	@Excel(name="项目编号",width=15)
 	private java.lang.String bpmProjId;
@@ -112,7 +115,23 @@ public class VmBusPoPayWmtEntity implements java.io.Serializable {
 	public void setId(java.lang.String id){
 		this.id = id;
 	}
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  项目经理
+	 */
 	
+	@Column(name ="BP_MANAGER",nullable=true,length=32)
+	public java.lang.String getBpManager(){
+		return this.bpManager;
+	}
+	
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  项目经理
+	 */
+	public void setBpManager(java.lang.String bpManager){
+		this.bpManager = bpManager;
+	}
 	/**
 	 *方法: 取得java.lang.String
 	 *@return: java.lang.String  创建人名称

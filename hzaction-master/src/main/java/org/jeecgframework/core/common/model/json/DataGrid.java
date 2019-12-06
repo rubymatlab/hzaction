@@ -146,4 +146,12 @@ public class DataGrid {
 		treefield = null;
 
 	}
+
+	@Override
+	public String toString() {
+		return "DataGrid [page=" + page + ", rows=" + rows + ", sort=" + sort + ", order=" + order + ", field=" + field
+				+ ", treefield=" + treefield + ", results=" + results + ", total=" + total + ", footer=" + footer
+				+ ", sqlbuilder=" + sqlbuilder + ", dataStyle=" + dataStyle + "]";
+	}
+	
 }

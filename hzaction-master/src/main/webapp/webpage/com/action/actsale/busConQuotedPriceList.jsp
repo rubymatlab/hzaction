@@ -51,6 +51,9 @@
 			数量
 		</td>
 		<td align="left" bgcolor="#EEEEEE" style="width: 126px;">
+			单位
+		</td>
+		<td align="left" bgcolor="#EEEEEE" style="width: 126px;">
 			单价
 		</td>
 		<td align="left" bgcolor="#EEEEEE" style="width: 126px;">
@@ -193,6 +196,10 @@
 					<td align="left">
 						<input name="busConQuotedPriceList[${stuts.index }].bcqpQty" maxlength="22" type="text" class="inputxt" style="width:120px;" datatype="/^(-?\d+)(\.\d+)?$/" ignore="ignore" value="${poVal.bcqpQty }" />
 						<label class="Validform_label" style="display: none;">数量</label>
+					</td>
+					<td align="left">
+						<input name="busConQuotedPriceList[${stuts.index }].bcqpUnit" maxlength="22" type="text" class="inputxt" style="width:120px;" ignore="ignore" value="${poVal.bcqpUnit }" />
+						<label class="Validform_label" style="display: none;">单位</label>
 					</td>
 					<td align="left">
 						<input name="busConQuotedPriceList[${stuts.index }].bcqpPrice" maxlength="22" type="text" class="inputxt" style="width:120px;" datatype="/^(-?\d+)(\.\d+)?$/" ignore="ignore" value="${poVal.bcqpPrice }" />

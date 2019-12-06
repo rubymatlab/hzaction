@@ -39,16 +39,23 @@ public class BusContractServiceImpl extends CommonServiceImpl implements BusCont
 	 * @return
 	 */
 	public void affirmButton(BusContractEntity t){
+		//logger.info("-- 合同确定成功 --");
 		//-----------------sql增强 start----------------------------
+		
 		//sql增强第1条
 		//把合同状态修改成已审核(1)
 		String sqlEnhance_1 ="update bus_contract set bc_contract_state = 1 where id = '#{id}'";
 		this.executeSqlEnhance(sqlEnhance_1,t);
 		
+		//sql增强第2条
 	 	String sqlEnhance_2 ="update bus_project set bpm_status='3' where id= '#{from_proj_id}'";
 	 	this.executeSqlEnhance(sqlEnhance_2,t);
-		//logger.info("-- 合同确定成功 --");
-
+	 	
+	 	//sql增强第3条
+	 	//用合同名称更新项目立项中的项目名称
+	 	String sqlEnhance_3 ="update bus_project set bp_proj_name='#{bc_contract_name}' where id= '#{from_proj_id}'";
+	 	this.executeSqlEnhance(sqlEnhance_3,t);
+	 	
 
 		//确定合同了，则向项目管理初始化添加一个项目管理对象
 		BusProjectManagerEntity projectManagerEntity = this.addBusProjectManager(t);
@@ -135,7 +142,7 @@ public class BusContractServiceImpl extends CommonServiceImpl implements BusCont
 		map.put("bc_customer_name", t.getBcCustomerName());
 		map.put("bc_project_code", t.getBcProjectCode());
 		map.put("bc_contract_name", t.getBcContractName());
-		map.put("bc_cust_contractor", t.getBcCustContractor());
+		map.put("bc_costing", t.getBcCosting());
 		map.put("bc_comp_contractor", t.getBcCompContractor());
 		map.put("bc_conclude_time", t.getBcConcludeTime());
 		map.put("bc_cont_start_time", t.getBcContStartTime());
@@ -190,7 +197,7 @@ public class BusContractServiceImpl extends CommonServiceImpl implements BusCont
 		//保存主表信息
 		if(StringUtil.isNotEmpty(busContract.getId())){
 			try {
-				BusContractEntity temp = findUniqueByProperty(BusContractEntity.class, "id", busContract.getId());
+				BusContractEntity temp = findUniqueByProperty(BusContractEntity.class,"id", busContract.getId());
 				MyBeanUtils.copyBeanNotNull2Bean(busContract, temp);
 				this.saveOrUpdate(temp);
 			} catch (Exception e) {

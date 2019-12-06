@@ -55,6 +55,7 @@ public class VmBusPoPayWmtServiceImpl extends CommonServiceImpl implements VmBus
 		busPoPayWmtEntity.setFromProjmId(vmEntity.getFromProjId());
 		busPoPayWmtEntity.setFromSuppId(vmEntity.getFromSuppId());
 		busPoPayWmtEntity.setBppAccessory(vmEntity.getBppAccessory());
+		busPoPayWmtEntity.setBpManager(vmEntity.getBpManager());
 		
 		//赋值CG自带的系统属性值
 		busPoPayWmtEntity.setCreateDate(vmEntity.getCreateDate());
@@ -379,7 +380,8 @@ public class VmBusPoPayWmtServiceImpl extends CommonServiceImpl implements VmBus
 				busPoPayEntity.getBppMoney(),
 				busPoPayEntity.getFromProjmId(),
 				busPoPayEntity.getFromSuppId(),
-				busPoPayEntity.getBppAccessory()
+				busPoPayEntity.getBppAccessory(),
+				busPoPayEntity.getBpManager()
 		);
 
 		//采购付款单附表【bus_po_contract_pay】附表更新操作

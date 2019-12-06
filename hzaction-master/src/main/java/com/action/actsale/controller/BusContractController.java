@@ -140,20 +140,25 @@ public class BusContractController extends BaseController {
 	 */
 
 	@RequestMapping(params = "datagrid")
-	public void datagrid(BusContractEntity busContract,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
+	public void datagrid(VwBusContractEntity vwBusContractEntity,BusContractEntity busContract,HttpServletRequest request, HttpServletResponse response, DataGrid dataGrid) {
 		String contractState = request.getParameter("contractState");
 		
-		/* logger.info("-- 合同完成状态（0制作中，1已审核） --"+contractState); */
+		/*logger.info("-- 合同完成状态（0制作中，1已审核） --"+contractState); */
+		
+//		dataGrid.setField(dataGrid.getField().replace("bcActionAmount,", "bcActionAmount"));
 		
 		CriteriaQuery cq = new CriteriaQuery(VwBusContractEntity.class, dataGrid);
-		//查询条件组装器
-		busContract.setBcContractState(contractState);
-		//模糊查询-客户名称
-		if(busContract.getFromProjName()!=null) {
-			busContract.setFromProjName("*"+busContract.getFromProjName()+"*");
-		}
 		
-		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, busContract, request.getParameterMap());
+		//查询条件组装器
+		vwBusContractEntity.setBcContractState(contractState);
+		//模糊查询-客户名称
+		if(vwBusContractEntity.getFromProjName()!=null) {
+			vwBusContractEntity.setFromProjName("*"+vwBusContractEntity.getFromProjName()+"*");
+		}
+		if(vwBusContractEntity.getBpManager()!=null) {
+			vwBusContractEntity.setBpManager("*"+vwBusContractEntity.getBpManager()+"*");
+		}
+		org.jeecgframework.core.extend.hqlsearch.HqlGenerateUtil.installHql(cq, vwBusContractEntity, request.getParameterMap());
 		try{
 		//自定义追加查询条件
 		}catch (Exception e) {

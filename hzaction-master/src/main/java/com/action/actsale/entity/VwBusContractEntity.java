@@ -91,9 +91,12 @@ public class VwBusContractEntity implements java.io.Serializable {
 	/**项目立项外键*/
 //	@Excel(name="项目立项外键",width=15)
 	private java.lang.String fromProjId;
-	/**客户签约人*/
-	@Excel(name="客户签约人",width=15)
-	private java.lang.String bcCustContractor;
+//	/**客户签约人*/
+//	@Excel(name="客户签约人",width=15)
+//	private java.lang.String bcCustContractor;
+	/**成本预算*/
+	@Excel(name="成本预算",width=15)
+	private java.math.BigDecimal bcCosting;
 	/**客户资料外键*/
 //	@Excel(name="客户资料外键",width=15)
 	private java.lang.String fromCustId;
@@ -498,22 +501,23 @@ public class VwBusContractEntity implements java.io.Serializable {
 		this.fromProjId = fromProjId;
 	}
 	
-	/**
-	 *方法: 取得java.lang.String
-	 *@return: java.lang.String  客户签约人
-	 */
-	
-	@Column(name ="BC_CUST_CONTRACTOR",nullable=true,length=32)
-	public java.lang.String getBcCustContractor(){
-		return this.bcCustContractor;
-	}
 
 	/**
-	 *方法: 设置java.lang.String
-	 *@param: java.lang.String  客户签约人
+	 *方法: 取得java.math.BigDecimal
+	 *@return: java.math.BigDecimal  成本预算
 	 */
-	public void setBcCustContractor(java.lang.String bcCustContractor){
-		this.bcCustContractor = bcCustContractor;
+	
+	@Column(name ="BC_COSTING",nullable=true,length=32)
+	public java.math.BigDecimal getBcCosting(){
+		return this.bcCosting;
+	}
+	
+	/**
+	 *方法: 设置java.math.BigDecimal
+	 *@param: java.math.BigDecimal  成本预算
+	 */
+	public void setBcCosting(java.math.BigDecimal bcCosting){
+		this.bcCosting = bcCosting;
 	}
 	
 	/**
@@ -659,5 +663,5 @@ public class VwBusContractEntity implements java.io.Serializable {
 	public void setBpManager(java.lang.String bpManager){
 		this.bpManager = bpManager;
 	}
-	
+
 }

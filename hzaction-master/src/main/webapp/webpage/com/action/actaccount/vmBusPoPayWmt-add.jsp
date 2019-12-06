@@ -61,7 +61,8 @@
 				<label class="Validform_label">项目名称<b style="color:red">*</b> :</label>
 			</td>
 			<td class="value">
-				<input id="bpmName" name="bpmName" type="text" style="width: 150px" class="searchbox-inputtext"  ignore="ignore"  onclick="popupClick(this,'bpm_name,bpm_proj_id,id','bpmName,bpmProjId,fromProjId','bus_project_manager')"/>			 
+				<input id="bpmName" name="bpmName" type="text" style="width: 150px" class="searchbox-inputtext"  ignore="ignore"  
+					onclick="popupClick(this,'bpm_name,bpm_proj_id,id,from_projm_id,bp_manager','bpmName,bpmProjId,fromProjId,busPayInfoList[0].fromProjmId,bpManager','bus_project_manager')"/>			 
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">项目名称</label>
 			</td>
@@ -112,13 +113,14 @@
 		
 		<tr>
 			<td align="right">
-				<label class="Validform_label">发票类型:</label>
+				<label class="Validform_label">项目经理</label>
 			</td>
 			<td class="value">
-		     	<t:dictSelect field="bppInvType" type="list"  typeGroupCode="bc_invoice"  defaultVal="${vmBusPoPayWmtPage.bppInvType}" hasLabel="false" title="发票类型"></t:dictSelect>     
+		     	 <input id="bpManager" name="bpManager" type="text" readonly="readonly" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" value='${vmBusPoPayWmtPage.bpManager}'/>
 				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">发票类型</label>
+				<label class="Validform_label" style="display: none;">项目经理</label>
 			</td>
+			
 			<td align="right" hidden="hidden">
 				<label class="Validform_label">采购总金额:</label>
 			</td>
@@ -128,12 +130,12 @@
 				<label class="Validform_label" style="display: none;">采购总金额</label>
 			</td>
 			<td align="right">
-				<label class="Validform_label">实际付款时间:</label>
+				<label class="Validform_label">申请付款时间:</label>
 			</td>
 			<td class="value">
 					  <input id="bppPayDate" name="bppPayDate" type="text" style="width: 150px"  class="Wdate" onClick="WdatePicker()"  ignore="ignore"  />
 				<span class="Validform_checktip"></span>
-				<label class="Validform_label" style="display: none;">实际付款时间</label>
+				<label class="Validform_label" style="display: none;">申请付款时间</label>
 			</td>
 			<td align="right">
 				<label class="Validform_label">单据状态:</label>
@@ -147,7 +149,8 @@
 				<label class="Validform_label">税率%:</label>
 			</td>
 			<td class="value">
-		     	 <input id="bppTaxRate" name="bppTaxRate" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
+		     	 <!-- <input id="bppTaxRate" name="bppTaxRate" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" /> -->
+		    	<t:dictSelect field="bppTaxRate" type="list" typeGroupCode="tax_rate" defaultVal="${vmBusPoPayWmtPage.bppTaxRate==null?0:vmBusPoPayWmtPage.bppTaxRate}" hasLabel="false"  title="税率百分比"></t:dictSelect>     
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">税率百分比</label>
 			</td>
@@ -156,11 +159,21 @@
 			<td align="right">
 				<label class="Validform_label">付款金额:</label>
 			</td>
-			<td class="value" colspan="3">
-		     	 <input id="bppMoney" name="bppMoney" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
+			<td class="value" >
+		     	 <input id="bppMoney" name="bppMoney" placeholder="自动计算" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">付款金额</label>
 			</td>
+			
+			<td align="right">
+				<label class="Validform_label">发票类型:</label>
+			</td>
+			<td class="value">
+		     	<t:dictSelect field="bppInvType" type="list"  typeGroupCode="bc_invoice"  defaultVal="${vmBusPoPayWmtPage.bppInvType}" hasLabel="false" title="发票类型"></t:dictSelect>     
+				<span class="Validform_checktip"></span>
+				<label class="Validform_label" style="display: none;">发票类型</label>
+			</td>
+			
 			<td align="right">
 				<label class="Validform_label">发票金额:</label>
 			</td>
@@ -389,9 +402,9 @@
 		
 		//wmt-start
 		function judge(){
-			var bpmNameVal = $("#bpmName").val()
-			var bsNameVal = $("#bsName").val()
-			if(bpmNameVal!=null&&bpmNameVal!=""&&bsNameVal!=null&&bsNameVal!=""){
+			var bpmNameVal = $("#bpmName").val().replace(/(^\s*)|(\s*$)/g, "")
+			var bsNameVal = $("#bsName").val().replace(/(^\s*)|(\s*$)/g, "")
+			if(bpmNameVal!=""&&bsNameVal!=""){
 				return true;
 			}
 			alert("项目名称和供应商名称不能为空!")

@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
-
+import org.hibernate.criterion.Restrictions;
 import org.jeecgframework.core.common.controller.BaseController;
 import org.jeecgframework.core.common.exception.BusinessException;
 import org.jeecgframework.core.common.hibernate.qbc.CriteriaQuery;
@@ -103,6 +103,10 @@ public class VwBusProjectController extends BaseController {
 //		跟进结果
 		if(StringUtil.isNotEmpty(vwBusProject.getBpFollowResults())){
 			vwBusProject.setBpFollowResults("*"+vwBusProject.getBpFollowResults()+"*");
+		}
+		if (StringUtil.isNotEmpty(vwBusProject.getBpmStatus())) {
+			String[] tempString = vwBusProject.getBpmStatus().split(",");
+			cq.add(Restrictions.in("bpmStatus", tempString));
 		}
 		
 		//查询条件组装器

@@ -6,13 +6,13 @@
   <t:datagrid name="vwBusProjectList" checkbox="true" fitColumns="true" title="项目立项" sortName="createDate" actionUrl="vwBusProjectController.do?datagrid" idField="id" fit="true" queryMode="group">
    <t:dgCol title="主键"  field="id"  hidden="true"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="项目名称"  field="bpProjName"  query="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="项目经理"  field="bpManager"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="项目经理"  field="bpManager" query="true" queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="项目预算"  field="bpAmount"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="项目阶段"  field="bpTeam" query="true" hidden="true"  queryMode="single"  dictionary="bp_type"  width="120"></t:dgCol>
    <t:dgCol title="预计挂网时间"  field="bpOnlineTime"  formatter="yyyy-MM-dd"  query="true"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="问题or协助"  field="bpQuestions"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="流程状态"  field="bpmStatus" query="true" dictionary="bpm_status"  queryMode="single"  width="120"></t:dgCol>
-   
+   <t:dgCol title="流程状态"  field="bpmStatus" dictionary="bpm_status"  queryMode="single"  width="120"></t:dgCol>
+  
    <t:dgCol title="方案输出时间"  field="bpOutTime" hidden="true"  formatter="yyyy-MM-dd"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="方案定稿时间"  field="bpFinishTime" hidden="true"  formatter="yyyy-MM-dd"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="产品解决方案"  field="bpProSolutions"  hidden="true" queryMode="single"  width="120"></t:dgCol>
@@ -43,11 +43,32 @@
    <%-- <t:dgToolBar title="模板下载" icon="icon-putout" funname="ExportXlsByT"></t:dgToolBar> --%>
    	<t:dgToolBar title="立项转投标" icon="icon-edit"  url="vwBusBidController.do?goAdd" funname="doBid" ></t:dgToolBar>
    	<t:dgToolBar title="立项转合同" icon="icon-edit"  url="busContractController.do?goAdd" funname="doContract" ></t:dgToolBar>
-   	<t:dgToolBar title="转已失败" icon="icon-edit"  url="vwBusProjectController.do?doFail" funname="doFail" ></t:dgToolBar>
+   	<t:dgToolBar title="转已失败" icon="icon-edit"  url="vwBusProjectController.do?doFail" funname="doFail" ></t:dgToolBar> 
+  
   </t:datagrid>
+  <%-- <t:dictSelect field="bpmStatus" type="checkbox"  typeGroupCode="bpm_status"  defaultVal="" hasLabel="false"  title="离职方式" ></t:dictSelect> --%>
   </div>
  </div>
  <script type="text/javascript">
+ function checkStatus(){
+	 var params="";
+	 if($("input[name='bpmStatus1']").prop('checked'))
+		 params=params+","+1;
+	 if($("input[name='bpmStatus2']").prop('checked'))
+		 params=params+","+2;
+	 if($("input[name='bpmStatus3']").prop('checked'))
+		 params=params+","+3;
+	 if($("input[name='bpmStatus4']").prop('checked'))
+		 params=params+","+4;
+	 if(params!="")
+		 params = params.substr(1);
+	 $('#formBpmStatus').val(params);
+ }
+	 $("#vwBusProjectListForm").append('<input type="hidden" id="formBpmStatus" name="bpmStatus" value=""/>');
+	 $("#vwBusProjectListForm").append('<input type="checkbox" name="bpmStatus1" onclick="checkStatus()">待提交');
+	 $("#vwBusProjectListForm").append('<input type="checkbox" name="bpmStatus2" onclick="checkStatus()">处理中');
+	 $("#vwBusProjectListForm").append('<input type="checkbox" name="bpmStatus3" onclick="checkStatus()">已完成');
+	 $("#vwBusProjectListForm").append('<input type="checkbox" name="bpmStatus4" onclick="checkStatus()">已失败');
  	//自定义按钮-sql增强-立项转投标
  	function doBid(title,url,id){
  		var rowData = $('#'+id).datagrid('getSelected');

@@ -88,7 +88,7 @@ public class VmBusProjectManagerEntity implements java.io.Serializable {
 	private java.lang.String fromCustId;
 	/**立项时间*/
 	private java.util.Date bpmCreDate;
-	/**客户资料外键*/
+	/**客户行业*/
 	private java.lang.String bcClass;
 
 	/**

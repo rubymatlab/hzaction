@@ -15,6 +15,7 @@
    <t:dgCol title="问题or协助"  field="bpQuestions"  queryMode="single"  width="160"></t:dgCol>
    <t:dgCol title="流程状态"  field="bpmStatus" dictionary="bpm_status"  queryMode="single"  width="60"></t:dgCol>
   
+   <t:dgCol title="客户行业"  field="bcClass"  query="true"   dictionary="bc_class" hidden="true" queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="方案输出时间"  field="bpOutTime" hidden="true"  formatter="yyyy-MM-dd"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="方案定稿时间"  field="bpFinishTime" hidden="true"  formatter="yyyy-MM-dd"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="产品解决方案"  field="bpProSolutions"  hidden="true" queryMode="single"  width="120"></t:dgCol>
@@ -65,12 +66,13 @@
 		 params = params.substr(1);
 	 $('#formBpmStatus').val(params);
  }
-	 $("#vwBusProjectListForm").append('<input type="hidden" id="formBpmStatus" name="bpmStatus" value=""/>');
-	 $("#vwBusProjectListForm").append('<input type="checkbox" name="bpmStatus1" onclick="checkStatus()">待提交');
-	 $("#vwBusProjectListForm").append('<input type="checkbox" name="bpmStatus2" onclick="checkStatus()">处理中');
-	 $("#vwBusProjectListForm").append('<input type="checkbox" name="bpmStatus3" onclick="checkStatus()">已完成');
-	 $("#vwBusProjectListForm").append('<input type="checkbox" name="bpmStatus4" onclick="checkStatus()">已失败');
- 	//自定义按钮-sql增强-立项转投标
+	 $("#vwBusProjectListForm span:eq(0)").append('<span><input type="hidden" id="formBpmStatus" name="bpmStatus" value=""/>');
+	 $("#vwBusProjectListForm span:eq(0)").append('<input type="checkbox" name="bpmStatus1" onclick="checkStatus()">待提交');
+	 $("#vwBusProjectListForm span:eq(0)").append('<input type="checkbox" name="bpmStatus2" onclick="checkStatus()">处理中');
+	 $("#vwBusProjectListForm span:eq(0)").append('<input type="checkbox" name="bpmStatus3" onclick="checkStatus()">已完成');
+	 $("#vwBusProjectListForm span:eq(0)").append('<input type="checkbox" name="bpmStatus4" onclick="checkStatus()">已失败</span>'); 
+
+//自定义按钮-sql增强-立项转投标
  	function doBid(title,url,id){
  		var rowData = $('#'+id).datagrid('getSelected');
 		if (!rowData) {

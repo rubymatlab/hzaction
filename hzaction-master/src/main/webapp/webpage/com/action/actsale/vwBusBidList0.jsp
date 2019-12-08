@@ -16,24 +16,27 @@
    <t:dgCol title="流程状态"  field="bpmStatus"  hidden="true"  queryMode="single"  dictionary="bpm_status"  width="120"></t:dgCol>
    <t:dgCol title="项目编号"  field="bpProjId"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="项目名称"  field="bpProjName"  query="true"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="项目经理"  field="bpManager"  query="true"  queryMode="single"  width="60"></t:dgCol>
+   <t:dgCol title="投标预算"  field="bdBidAmout"  queryMode="single"  width="60"></t:dgCol>
+   <t:dgCol title="投标日期"  field="bdBidDate"  formatter="yyyy-MM-dd"  queryMode="single"  width="60"></t:dgCol>
+   <t:dgCol title="商务负责人"  field="bdBusinessCharge"  queryMode="single"  width="60"></t:dgCol>
+   <t:dgCol title="主标人员"  field="bdMainBidder" queryMode="single"  width="60"></t:dgCol>
+   <t:dgCol title="配合人员"  field="bdCoordinator" queryMode="single"  width="60"></t:dgCol>
+   <t:dgCol title="辅助人员"  field="bdAuxiliaryStaff" queryMode="single"  width="60"></t:dgCol>
+   
+  
    <t:dgCol title="立项时间"  field="bpDate"  formatter="yyyy-MM-dd"  hidden="true"  query="true"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="客户编号"  field="bcId"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="客户名称"  field="bcName"  query="true"  queryMode="single"  dictionary="bas_customer,bc_name,bc_name"  width="120"></t:dgCol>
+   <t:dgCol title="客户名称"  field="bcName" hidden="true" query="true"  queryMode="single"  dictionary="bas_customer,bc_name,bc_name"  width="120"></t:dgCol>
    <t:dgCol title="客户简称"  field="bcSname"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="拟中标方"  field="bdWinBidder"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="项目类型"  field="bdProjType"  hidden="true"  dictionary="bp_type1" queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="主标人员"  field="bdMainBidder"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="配合人员"  field="bdCoordinator"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="商务负责人"  field="bdBusinessCharge"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="辅助人员"  field="bdAuxiliaryStaff"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="投标预算"  field="bdBidAmout"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="投标日期"  field="bdBidDate"  formatter="yyyy-MM-dd"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="投标内容"  field="bdBidContent"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="审核状态"  field="bdState"  hidden="true"  queryMode="single"  dictionary="state"  width="120"></t:dgCol>
-   <t:dgCol title="备注"  field="bdBidRemark"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="备注"  field="bdBidRemark" hidden="true" queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="项目立项外键"  field="fromProjId"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="客户资料外键"  field="fromCustjId"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="附件"  field="bdFile"  queryMode="single"  downloadName="附件下载"  width="120"></t:dgCol>
+   <t:dgCol title="附件"  field="bdFile" hidden="true" queryMode="single"  downloadName="附件下载"  width="120"></t:dgCol>
    <t:dgCol title="操作" field="opt" width="100"></t:dgCol>
    <%-- <t:dgDelOpt title="打回" url="vwBusBidController.do?doDel&id={id}" urlclass="ace_button"  urlfont="fa-trash-o"/> --%>
 	<t:dgFunOpt title="打回" funname="doReturn(id)"  urlclass="ace_button" urlfont="fa-trash-o"></t:dgFunOpt>

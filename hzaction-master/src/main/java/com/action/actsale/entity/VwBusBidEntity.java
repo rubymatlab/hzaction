@@ -56,6 +56,9 @@ public class VwBusBidEntity implements java.io.Serializable {
 	/**项目名称*/
 	@Excel(name="项目名称",width=15)
 	private java.lang.String bpProjName;
+	/**项目经理*/
+	@Excel(name="项目经理",width=15)
+	private java.lang.String bpManager;
 	/**立项时间*/
 	private java.util.Date bpDate;
 	/**客户编号*/
@@ -65,8 +68,8 @@ public class VwBusBidEntity implements java.io.Serializable {
 	private java.lang.String bcName;
 	/**客户简称*/
 	private java.lang.String bcSname;
-	/**拟中标方*/
-	@Excel(name="拟中标方",width=15)
+	/**拟中标方
+	@Excel(name="拟中标方",width=15)*/
 	private java.lang.String bdWinBidder;
 	/**项目类型*/
 	@Excel(name="项目类型",width=15,dicCode="bp_type1")
@@ -89,14 +92,14 @@ public class VwBusBidEntity implements java.io.Serializable {
 	/**投标日期*/
 	@Excel(name="投标日期",width=15,format = "yyyy-MM-dd")
 	private java.util.Date bdBidDate;
-	/**投标内容*/
-	@Excel(name="投标内容",width=15)
+	/**投标内容
+	@Excel(name="投标内容",width=15)*/
 	private java.lang.String bdBidContent;
 	/**审核状态*/
 	@Excel(name="审核状态",width=15,dicCode="state")
 	private java.lang.String bdState;
-	/**备注*/
-	@Excel(name="备注",width=15)
+	/**备注
+	@Excel(name="备注",width=15)*/
 	private java.lang.String bdBidRemark;
 	/**项目立项外键*/
 	private java.lang.String fromProjId;
@@ -105,8 +108,8 @@ public class VwBusBidEntity implements java.io.Serializable {
 	/**附件*/
 	//@Excel(name="附件",width=15)
 	private java.lang.String bdFile;
-	/**项目成本*/
-	@Excel(name="项目成本",width=15)
+	/**项目成本
+	@Excel(name="项目成本",width=15)*/
 	private java.lang.String bdProjCost;
 	
 	/**
@@ -315,6 +318,23 @@ public class VwBusBidEntity implements java.io.Serializable {
 	 */
 	public void setBpProjName(java.lang.String bpProjName){
 		this.bpProjName = bpProjName;
+	}
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  项目经理
+	 */
+	
+	@Column(name ="BP_MANAGER",nullable=true,length=40)
+	public java.lang.String getBpManager(){
+		return this.bpManager;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  项目经理
+	 */
+	public void setBpManager(java.lang.String bpManager){
+		this.bpManager = bpManager;
 	}
 	/**
 	 *方法: 取得java.util.Date

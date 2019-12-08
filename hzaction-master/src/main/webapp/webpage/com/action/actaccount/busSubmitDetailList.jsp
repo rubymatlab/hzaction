@@ -33,9 +33,9 @@
 	<tr bgcolor="#E6E6E6">
 		<td align="center" bgcolor="#EEEEEE" style="width: 25px;">序号</td>
 		<td align="center" bgcolor="#EEEEEE" style="width: 25px;">操作</td>
-				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
+				  <!-- <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
 						序号
-				  </td>
+				  </td> -->
 				  <td align="left" bgcolor="#EEEEEE" style="width: 126px;">
 						费用类型
 				  </td>
@@ -62,10 +62,10 @@
 					<input name="busSubmitDetailList[0].createDate" type="hidden"/>
 					<input name="busSubmitDetailList[0].updateDate" type="hidden"/>
 					<input name="busSubmitDetailList[0].fromId" type="hidden"/>
-				  <td align="left">
+				  <!-- <td align="left">
 					  	<input name="busSubmitDetailList[0].bsdSeqNo" maxlength="32" type="text" class="inputxt"  style="width:120px;"  datatype="n"  ignore="ignore" >
 					  <label class="Validform_label" style="display: none;">序号</label>
-					</td>
+					</td> -->
 				  <td align="left">
 							<t:dictSelect field="busSubmitDetailList[0].bsdFeeType" type="list"   typeGroupCode="cost_type"  defaultVal="${busSubmitDetailPage.bsdFeeType}" hasLabel="false"  title="费用类型"></t:dictSelect>     
 					  <label class="Validform_label" style="display: none;">费用类型</label>
@@ -96,10 +96,10 @@
 						<input name="busSubmitDetailList[${stuts.index }].createDate" type="hidden" value="${poVal.createDate }"/>
 						<input name="busSubmitDetailList[${stuts.index }].updateDate" type="hidden" value="${poVal.updateDate }"/>
 						<input name="busSubmitDetailList[${stuts.index }].fromId" type="hidden" value="${poVal.fromId }"/>
-				   <td align="left">
+				   <%-- <td align="left">
 					  	<input name="busSubmitDetailList[${stuts.index }].bsdSeqNo" maxlength="32" type="text" class="inputxt"  style="width:120px;"  datatype="n"  ignore="ignore"  value="${poVal.bsdSeqNo }"/>
 					  <label class="Validform_label" style="display: none;">序号</label>
-				   </td>
+				   </td> --%>
 				   <td align="left">
 							<t:dictSelect field="busSubmitDetailList[${stuts.index }].bsdFeeType" type="list"   typeGroupCode="cost_type"  defaultVal="${poVal.bsdFeeType }" hasLabel="false"  title="费用类型"></t:dictSelect>     
 					  <label class="Validform_label" style="display: none;">费用类型</label>

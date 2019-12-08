@@ -146,19 +146,19 @@
 			</td>
 		</tr>
 		<tr>
-			<td align="right">
+			<!-- <td align="right">
 				<label class="Validform_label">报销日期:</label>
 			</td>
 			<td class="value">
 					  <input id="bsSubmitDate" name="bsSubmitDate" type="text" style="width: 150px"  class="Wdate" onClick="WdatePicker({dateFmt:'yyyy-MM-dd'})" ignore="ignore"  />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">报销日期</label>
-			</td>
+			</td> -->
 			<td align="right">
 				<label class="Validform_label">备注:</label>
 			</td>
-			<td class="value">
-		     	 <input id="bsRemarks" name="bsRemarks" type="text" maxlength="500" style="width: 150px" class="inputxt"  ignore="ignore" />
+			<td class="value" colspan="3">
+		     	 <input id="bsRemarks" name="bsRemarks" type="text" maxlength="500" style="width: 80%" class="inputxt"  ignore="ignore" />
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">备注</label>
 			</td>
@@ -241,11 +241,11 @@
 	<tbody id="add_busSubmitDetail_table_template">
 		<tr>
 			 <td align="center"><div style="width: 25px;" name="xh"></div></td>
-			 <td align="center"><input style="width:20px;" type="checkbox" name="ck"/></td>
-				  <td align="left">
+			 <td align="center"><input style="width:20px;" type="checkbox" name="ck"/>
+			 <!-- <td align="left">
 					  	<input name="busSubmitDetailList[#index#].bsdSeqNo" maxlength="32" type="text" class="inputxt"  style="width:120px;"  datatype="n"  ignore="ignore" />
 					  <label class="Validform_label" style="display: none;">序号</label>
-				  </td>
+				  </td> -->
 				  <td align="left">
 							<t:dictSelect field="busSubmitDetailList[#index#].bsdFeeType" type="list"    typeGroupCode="cost_type"  defaultVal="" hasLabel="false"  title="费用类型"></t:dictSelect>     
 					  <label class="Validform_label" style="display: none;">费用类型</label>

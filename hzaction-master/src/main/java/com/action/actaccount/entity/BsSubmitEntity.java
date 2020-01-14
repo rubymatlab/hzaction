@@ -91,6 +91,9 @@ public class BsSubmitEntity implements java.io.Serializable {
 	/**项目管理外键*/
 	//@Excel(name="项目管理外键",width=15)
 	private java.lang.String fromProjmId;
+	/**发票号*/
+	//@Excel(name="发票号",width=15)
+	private java.lang.String bsInvoice;
 	
 	/**
 	 *方法: 取得java.lang.String
@@ -525,6 +528,24 @@ public class BsSubmitEntity implements java.io.Serializable {
 	 */
 	public void setFromProjmId(java.lang.String fromProjmId){
 		this.fromProjmId = fromProjmId;
+	}
+	
+	/**
+	 *方法: 取得java.lang.String
+	 *@return: java.lang.String  发票号
+	 */
+	
+	@Column(name ="BS_INVOICE",nullable=true,length=500)
+	public java.lang.String getBsInvoice(){
+		return this.bsInvoice;
+	}
+
+	/**
+	 *方法: 设置java.lang.String
+	 *@param: java.lang.String  发票号
+	 */
+	public void setBsInvoice(java.lang.String bsInvoice){
+		this.bsInvoice = bsInvoice;
 	}
 	
 }

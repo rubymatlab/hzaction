@@ -109,7 +109,8 @@
 				<label class="Validform_label">申请日期:</label>
 			</td>
 			<td class="value">
-					  <input id="bsBeginDate" name="bsBeginDate" type="text" style="width: 150px"   ignore="ignore"  value='<fmt:formatDate value='${bsSubmitPage.bsBeginDate}' type="date" pattern="yyyy-MM-dd"/>'/>
+					<input id="bsBeginDate" name="bsBeginDate" type="text" style="width: 150px" class="Wdate" onClick="WdatePicker()" ignore="ignore"  value='<fmt:formatDate value='${bsSubmitPage.bsBeginDate}' type="date" pattern="yyyy-MM-dd"/>'/>
+					  <%-- <input id="bsBeginDate" name="bsBeginDate" type="text" style="width: 150px"   ignore="ignore"  value='<fmt:formatDate value='${bsSubmitPage.bsBeginDate}' type="date" pattern="yyyy-MM-dd"/>'/> --%>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">申请日期</label>
 			</td>
@@ -130,6 +131,17 @@
 		     	 <input id="bsRemarks" name="bsRemarks" type="text" maxlength="500" style="width: 80%" class="inputxt"  ignore="ignore"  value='${bsSubmitPage.bsRemarks}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">备注</label>
+			</td>
+		</tr>
+		
+		<tr>
+			<td align="right">
+				<label class="Validform_label">发票号（多个用,号分割）:</label>
+			</td>
+			<td class="value" colspan="3">
+		     	<input id="bsInvoice" name="bsInvoice" type="text" maxlength="500" style="width: 80%" class="inputxt"  ignore="ignore"  value='${bsSubmitPage.bsInvoice}' datatype="*" ajaxurl="bsSubmitController.do?checkType&id=${bsSubmitPage.id}&invoice=${bsSubmitPage.bsInvoice}" />
+				<span class="Validform_checktip"></span>
+				<label class="Validform_label" style="display: none;">发票号</label>
 			</td>
 		</tr>
 		<tr>
@@ -422,4 +434,7 @@
 				}
 			}
 		}
+		$("#bsInvoice").on("input",function(e){
+			$(this).attr("ajaxurl","bsSubmitController.do?checkType&id=${bsSubmitPage.id}&invoice="+$(this).val());
+        });
   	</script>

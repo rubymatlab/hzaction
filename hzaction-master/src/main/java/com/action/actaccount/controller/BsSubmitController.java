@@ -26,11 +26,13 @@ import org.jeecgframework.core.common.exception.BusinessException;
 import org.jeecgframework.core.common.hibernate.qbc.CriteriaQuery;
 import org.jeecgframework.core.common.model.json.AjaxJson;
 import org.jeecgframework.core.common.model.json.DataGrid;
+import org.jeecgframework.core.common.model.json.ValidForm;
 import org.jeecgframework.core.constant.Globals;
 import org.jeecgframework.core.util.ExceptionUtil;
 import org.jeecgframework.core.util.LogUtil;
 import org.jeecgframework.core.util.ResourceUtil;
 import org.jeecgframework.core.util.StringUtil;
+import org.jeecgframework.core.util.oConvertUtils;
 import org.jeecgframework.tag.core.easyui.TagUtil;
 import org.jeecgframework.web.system.pojo.base.TSDepart;
 import org.jeecgframework.web.system.service.SystemService;
@@ -146,6 +148,37 @@ public class BsSubmitController extends BaseController {
 	@RequestMapping(params = "list2")
 	public ModelAndView list2(HttpServletRequest request) {
 		return new ModelAndView("com/action/actaccount/bsSubmitList2");
+	}
+	
+	/**
+	 * 检查字段是否重复
+	 *
+	 * @param request
+	 * @return
+	 */
+	@RequestMapping(params = "checkType")
+	@ResponseBody
+	public ValidForm checkType(HttpServletRequest request) {
+		ValidForm v = new ValidForm();
+		String strInvoice=oConvertUtils.getString(request.getParameter("invoice"));
+		String id=oConvertUtils.getString(request.getParameter("id"));
+		String hql = "from BsSubmitEntity where bsInvoice like ? and id != ?";
+		strInvoice=strInvoice.replace("，", ",").replace(";", ",").replace("；", ",");
+		String[] arrInvoice=strInvoice.split(",");
+		String temp="";
+		for(String o:arrInvoice) {
+			List<Object> types = this.systemService.findHql(hql,"%"+o+"%",id);
+			if(types.size()>0) {
+				temp+=o+";";
+			}
+		}
+		
+		if(temp.contains(";"))
+		{
+			v.setInfo("发票号已存在："+temp);
+			v.setStatus("n");
+		}
+		return v;
 	}
 
 	/**

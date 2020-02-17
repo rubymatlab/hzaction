@@ -53,7 +53,7 @@ public class BasCustomerEntity implements java.io.Serializable {
 	@Excel(name="备注",width=15)
 	private java.lang.String bcRemark;
 	/**客户分类*/
-	@Excel(name="客户分类",width=15)
+	@Excel(name="客户分类",width=15,dicCode="bc_class")
 	private java.lang.String bcClass;
 
 	/**创建人名称*/

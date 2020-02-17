@@ -15,9 +15,9 @@
    <t:dgCol title="所属公司"  field="sysCompanyCode"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="流程状态"  field="bpmStatus"  hidden="true"  queryMode="single"  dictionary="bpm_status"  width="120"></t:dgCol>
    <t:dgCol title="采购合同外键"  field="fromId"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="发票编号"  field="biCode"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="发票编号"  field="biCode" query="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="发票金额"  field="biAmount"  queryMode="single"  width="120"></t:dgCol>
-   <t:dgCol title="开票日期"  field="biDate"  formatter="yyyy-MM-dd"  queryMode="single"  width="120"></t:dgCol>
+   <t:dgCol title="开票日期"  field="biDate" query="true"  formatter="yyyy-MM-dd"  queryMode="group"  width="120"></t:dgCol>
    <t:dgCol title="发票类型"  field="biType"  queryMode="single"  dictionary="bi_type"  width="120"></t:dgCol>
    <t:dgCol title="税率"  field="biTaxRate"  queryMode="single"  dictionary="bi_taxRate"  width="120"></t:dgCol>
    <t:dgCol title="操作" field="opt" width="100"></t:dgCol>

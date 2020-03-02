@@ -443,14 +443,14 @@ public class BasSupplierController extends BaseController {
 	@ResponseBody
 	public AjaxJson doCreateProjectId(BasSupplierEntity vwBusProject, HttpServletRequest request) {
 		AjaxJson j = new AjaxJson();
-		String message = "产生客户编号成功";
+		String message = "产生编号成功";
 		try{
 			String sql = "select max(bs_id) from bas_supplier";
 			List<Map<String,Object>> result = this.systemService.findForJdbc(sql);
 			for(Map<String,Object> map : result){
 				for(String key : map.keySet()){
 					String maxid = map.get(key).toString();
-					if(maxid.length() < 4){
+					if(maxid.length() < 4 ){
 						message = "S001";
 					}else{
 						maxid = maxid.substring(1);
@@ -471,7 +471,7 @@ public class BasSupplierController extends BaseController {
 			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();
-			message = "产生客户编号失败";
+			message = "S001";
 		}
 		j.setMsg(message);
 		return j;

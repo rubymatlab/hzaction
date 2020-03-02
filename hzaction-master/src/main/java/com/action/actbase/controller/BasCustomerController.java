@@ -550,7 +550,7 @@ public class BasCustomerController extends BaseController {
 			systemService.addLog(message, Globals.Log_Type_UPDATE, Globals.Log_Leavel_INFO);
 		}catch(Exception e){
 			e.printStackTrace();
-			message = "产生客户编号失败";
+			message = "C001";
 		}
 		j.setMsg(message);
 		return j;

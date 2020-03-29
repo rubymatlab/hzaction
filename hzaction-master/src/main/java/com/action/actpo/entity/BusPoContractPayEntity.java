@@ -59,7 +59,7 @@ public class BusPoContractPayEntity implements java.io.Serializable {
 	@Excel(name="计划付款日期",width=15,format = "yyyy-MM-dd")
 	private java.util.Date bpcpDate;
 	/**采购合同外键*/
-	@Excel(name="采购合同外键",width=15)
+//	@Excel(name="采购合同外键",width=15)
 	private java.lang.String fromId;
 	/**付款金额*/
 	@Excel(name="付款金额",width=15)
@@ -68,7 +68,7 @@ public class BusPoContractPayEntity implements java.io.Serializable {
 	@Excel(name="备注",width=15)
 	private java.lang.String bpcpRemark;
 	/**采购付款单外键*/
-	@Excel(name="采购付款单外键",width=15)
+//	@Excel(name="采购付款单外键",width=15)
 	private java.lang.String busPoPayId;
 	
 	/**

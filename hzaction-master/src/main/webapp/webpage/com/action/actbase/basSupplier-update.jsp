@@ -104,7 +104,7 @@
 							</label>
 						</td>
 						<td class="value">
-						    <input id="bsTelNo" name="bsTelNo" type="text" maxlength="40" style="width: 300px" class="inputxt"  ignore="ignore"  value='${basSupplierPage.bsTelNo}'/>
+						    <input id="bsTelNo" name="bsTelNo" type="text" maxlength="40" style="width: 300px" class="inputxt"  ignore="ignore"  datatype="m" value='${basSupplierPage.bsTelNo}'/>
 							<span class="Validform_checktip"></span>
 							<label class="Validform_label" style="display: none;">供应商联系人电话</label>
 						</td>

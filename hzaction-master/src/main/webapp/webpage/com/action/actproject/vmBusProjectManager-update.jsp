@@ -190,17 +190,17 @@
         </td>
         <td align="left">
             <input name="busProjectFollowList[#index#].bpfFollowReport" maxlength="32" type="text" class="inputxt"
-                   style="width:120px;" ignore="ignore"/>
+                   style="width:300px;" ignore="ignore"/>
             <label class="Validform_label" style="display: none;">跟进情况汇报</label>
         </td>
         <td align="left">
             <input name="busProjectFollowList[#index#].bpfQuestions" maxlength="32" type="text" class="inputxt"
-                   style="width:120px;" ignore="ignore"/>
+                   style="width:300px;" ignore="ignore"/>
             <label class="Validform_label" style="display: none;">施工困难_问题</label>
         </td>
         <td align="left">
             <input name="busProjectFollowList[#index#].bpfNextPlan" maxlength="32" type="text" class="inputxt"
-                   style="width:120px;" ignore="ignore"/>
+                   style="width:300px;" ignore="ignore"/>
             <label class="Validform_label" style="display: none;">下一步计划</label>
         </td>
         <td align="left">

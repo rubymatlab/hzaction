@@ -357,8 +357,6 @@
 		})
 
 
-
-
         // 采购合同编号
 		function createBCollectId(projID,fromId){
 			var num = 1;

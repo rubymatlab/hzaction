@@ -150,7 +150,7 @@
 				<label class="Validform_label">税率%:</label>
 			</td>
 			<td class="value">
-				<%-- <input id="bppTaxRate" name="bppTaxRate" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vmBusPoPayWmtPage.bppTaxRate}'/> --%>
+				<input id="bppTaxRate" name="bppTaxRate" type="text" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore"  value='${vmBusPoPayWmtPage.bppTaxRate}'/>
 				<t:dictSelect field="bppTaxRate" type="list" typeGroupCode="tax_rate" defaultVal="${vmBusPoPayWmtPage.bppTaxRate==null?0:vmBusPoPayWmtPage.bppTaxRate}" hasLabel="false"  title="税率百分比"></t:dictSelect>     
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">税率百分比</label>

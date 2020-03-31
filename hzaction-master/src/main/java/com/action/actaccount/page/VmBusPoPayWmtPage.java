@@ -68,7 +68,7 @@ public class VmBusPoPayWmtPage implements java.io.Serializable {
 	@Excel(name="附件")
 	private java.lang.String bppAccessory;
 	/**项目管理外键*/
-	@Excel(name="项目管理外键")
+//	@Excel(name="项目管理外键")
 	private java.lang.String fromProjId;
 	/**项目编号*/
 	@Excel(name="项目编号")
@@ -77,7 +77,7 @@ public class VmBusPoPayWmtPage implements java.io.Serializable {
 	@Excel(name="项目名称")
 	private java.lang.String bpmName;
 	/**供应商资料外键*/
-	@Excel(name="供应商资料外键")
+//	@Excel(name="供应商资料外键")
 	private java.lang.String fromSuppId;
 	/**供应商编号*/
 	@Excel(name="供应商编号")
@@ -464,7 +464,7 @@ public class VmBusPoPayWmtPage implements java.io.Serializable {
 	}
 
 	/**保存-采购付款单附表视图_wmt*/
-	@ExcelCollection(name="采购付款单附表视图_wmt")
+	@ExcelCollection(name="采购付款单")
 	private List<VmBusPoContractPayWmtEntity> vmBusPoContractPayWmtList = new ArrayList<VmBusPoContractPayWmtEntity>();
 	public List<VmBusPoContractPayWmtEntity> getVmBusPoContractPayWmtList() {
 		return vmBusPoContractPayWmtList;

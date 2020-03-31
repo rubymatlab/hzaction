@@ -59,10 +59,10 @@ public class BusPoApplyDetailConEntity implements java.io.Serializable {
 	@Excel(name="流程状态",width=15)
 	private java.lang.String bpmStatus;
 	/**采购合同外键*/
-	@Excel(name="采购合同外键",width=15)
+//	@Excel(name="采购合同外键",width=15)
 	private java.lang.String fromId;
 	/**采购申请明细外键*/
-	@Excel(name="采购申请明细外键",width=15)
+//	@Excel(name="采购申请明细外键",width=15)
 	private java.lang.String fromPoApplyDetId;
 	
 	/**

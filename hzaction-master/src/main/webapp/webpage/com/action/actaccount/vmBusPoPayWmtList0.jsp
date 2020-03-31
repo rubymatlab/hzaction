@@ -3,7 +3,8 @@
 <t:base type="jquery,easyui,tools,DatePicker"></t:base>
 <div class="easyui-layout" fit="true">
   <div region="center" style="padding:0px;border:0px">
-  <t:datagrid name="vmBusPoPayWmtList" checkbox="true" fitColumns="true" title="采购付款单" sortName="createDate" actionUrl="vmBusPoPayWmtController.do?datagrid&state=0" idField="id" fit="true" queryMode="group">
+  <t:datagrid name="vmBusPoPayWmtList" checkbox="true" singleSelect="true" fitColumns="true" title="采购付款单" sortName="createDate" 
+              actionUrl="vmBusPoPayWmtController.do?datagrid&state=0" idField="id" fit="true" queryMode="group">
    <t:dgCol title="主键"  field="id"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="创建人名称"  field="createName"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
    <t:dgCol title="创建人登录名称"  field="createBy"  hidden="true"  queryMode="single"  width="120"></t:dgCol>
@@ -111,7 +112,7 @@
  	//自定义按钮-sql增强-送审
  	function doSendAudit(title,url,id){
  		var rowData = $('#'+id).datagrid('getSelected');
-		if (!rowData) {
+ 		if (!rowData) {
 			tip('请选择送审项目');
 			return;
 		}

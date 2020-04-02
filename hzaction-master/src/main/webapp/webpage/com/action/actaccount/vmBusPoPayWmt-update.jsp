@@ -61,7 +61,7 @@
 			</td>
 			<td class="value">
 					<input id="bpmName" name="bpmName" type="text" style="width: 150px" class="searchbox-inputtext"  ignore="ignore"   
-					onclick="popupClick(this,'bpm_name,bpm_proj_id,id,from_projm_id,bp_manager','bpmName,bpmProjId,fromProjId,busPayInfoList[0].fromProjmId,bpManager','bus_project_manager')"  value='${vmBusPoPayWmtPage.bpmName}'/>			    
+					onclick="popupClick(this,'bpm_name,bpm_proj_id,id,from_projm_id','bpmName,bpmProjId,fromProjId,busPayInfoList[0].fromProjmId','bus_project_manager')"  value='${vmBusPoPayWmtPage.bpmName}'/>			    
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">项目名称</label>
 			</td>
@@ -116,7 +116,7 @@
 				<label class="Validform_label">项目经理</label>
 			</td>
 			<td class="value">
-		     	 <input id="bpManager" name="bpManager" type="text" readonly="readonly" maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" value='${vmBusPoPayWmtPage.bpManager}'/>
+		     	 <input id="bpManager" name="bpManager" type="text"  maxlength="32" style="width: 150px" class="inputxt"  ignore="ignore" value='${vmBusPoPayWmtPage.bpManager}'/>
 				<span class="Validform_checktip"></span>
 				<label class="Validform_label" style="display: none;">项目经理</label>
 			</td>
